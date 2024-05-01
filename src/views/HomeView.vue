@@ -32,7 +32,7 @@
         </div>
 
         <div v-if="findMatchingBike(item.id)">
-          <img :src="findMatchingBike(item.id).src" />
+          <img :src="'.' + findMatchingBike(item.id).src" />
         </div>
       </label>
     </transition-group>
@@ -140,6 +140,8 @@ export default {
         if (!largest_bike || largest_bike.bike_length_cm < bike.bike_length_cm) largest_bike = bike
       })
 
+      if (!largest_bike) return
+
       // factor to scale the image
       const factor = canvas.width / largest_bike.bike_length_cm
       const padding_percent = 0.1
@@ -148,7 +150,7 @@ export default {
         const bike = this.findMatchingBike(id)
         if (!bike?.src) return
         const img = new Image()
-        img.src = bike.src
+        img.src = '.' + bike.src
         await img.decode()
 
         const img_ratio = img.width / img.height

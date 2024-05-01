@@ -30,7 +30,7 @@ export default {
   computed: {},
   methods: {
     loadCargo() {
-      fetch('/Cargo bike measurements - Bakfiets.csv')
+      fetch('./Cargo bike measurements - Bakfiets.csv')
         .then((response) => response.text())
         .then((csv) => {
           const data = this.csvJSON(csv)
