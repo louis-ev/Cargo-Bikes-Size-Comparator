@@ -2,28 +2,28 @@
   <div class="_homeView">
     <canvas ref="bikes" width="1280" height="960" />
 
-    {{ enabled_bikes }}
+    <div class="_bike_list">
+      <label
+        class="_item"
+        v-for="item in cargo_data"
+        :key="item.id"
+        :for="item.id"
+        :data-active="enabled_bikes.includes(item.id)"
+      >
+        <input
+          type="checkbox"
+          :checked="enabled_bikes.includes(item.id)"
+          :id="item.id"
+          @change="toggleBike(item.id)"
+        />
 
-    <label
-      class="_item"
-      v-for="item in cargo_data"
-      :key="item.id"
-      :for="item.id"
-      :data-active="enabled_bikes.includes(item.id)"
-    >
-      <input
-        type="checkbox"
-        :checked="enabled_bikes.includes(item.id)"
-        :id="item.id"
-        @change="toggleBike(item.id)"
-      />
-
-      <strong>{{ item.Manufacturer }}</strong> / {{ item.Model }}
-      {{ item['Overall length (cm)'] }}
-      <div v-if="findMatchingBike(item.id)">
-        <img :src="findMatchingBike(item.id).src" />
-      </div>
-    </label>
+        <strong>{{ item.Manufacturer }}</strong> / {{ item.Model }}
+        {{ item['Overall length (cm)'] }}
+        <div v-if="findMatchingBike(item.id)">
+          <img :src="findMatchingBike(item.id).src" />
+        </div>
+      </label>
+    </div>
   </div>
 </template>
 <script>
@@ -74,6 +74,7 @@ export default {
       const ctx = canvas.getContext('2d')
       ctx.fillStyle = 'beige'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.globalCompositeOperation = 'darken' // AKA add / linear-dodge
 
       // get largest bike image
       let largest_bike
@@ -99,8 +100,9 @@ export default {
 
         const left_margin = (-bike.left_margin_percent + padding_percent / 2) * draw_w
         const bottom_margin = bike.bottom_margin_percent * draw_h
+        const draw_y = (canvas.height - draw_h) / 2 - bottom_margin
 
-        ctx.drawImage(img, left_margin, -bottom_margin, draw_w, draw_h)
+        ctx.drawImage(img, left_margin, draw_y, draw_w, draw_h)
       }
     }
   }
@@ -108,7 +110,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 ._homeView {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
   canvas {
+    flex: 1 1 auto;
     width: 100%;
     height: auto;
   }
