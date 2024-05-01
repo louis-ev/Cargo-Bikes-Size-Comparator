@@ -30,5 +30,13 @@
     "bike_length_cm": 264.5,
     "left_margin_percent": 0.046,
     "bottom_margin_percent": 0.12
+  },
+  {
+    "id": "Hêta/Douze Cycles",
+    "src": "/cargo/toyotacycle120544.png",
+    "bike_length_percent": 0.91907514,
+    "bike_length_cm": 264.5,
+    "left_margin_percent": 0.046,
+    "bottom_margin_percent": 0.12
   }
 ]

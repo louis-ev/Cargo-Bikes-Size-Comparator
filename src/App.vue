@@ -1,9 +1,9 @@
 <template>
   <div class="">
-    <nav>
+    <!-- <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-    </nav>
+    </nav> -->
     <RouterView :cargo_data="cargo_data" />
   </div>
 </template>
