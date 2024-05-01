@@ -4,23 +4,31 @@
     "src": "/cargo/CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
-    "left_margin_percent": 0.0738255,
-    "bottom_margin_percent": 0.05
+    "left_margin_percent": 0.074,
+    "bottom_margin_percent": 0.02
   },
   {
     "id": "Muli/Muli Cycles",
     "src": "/cargo/Muli2022_Mu_beige_frei.png",
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
-    "left_margin_percent": 0.10067114,
-    "bottom_margin_percent": 0.1
+    "left_margin_percent": 0.101,
+    "bottom_margin_percent": 0.02
   },
   {
     "id": "Carrie/Riese und Müller",
     "src": "/cargo/carrie.png",
-    "bike_length_percent": 0.76510067,
-    "bike_length_cm": 198,
-    "left_margin_percent": 0.10067114,
-    "bottom_margin_percent": 0.1
+    "bike_length_percent": 0.932888591,
+    "bike_length_cm": 209,
+    "left_margin_percent": 0.034,
+    "bottom_margin_percent": 0.08
+  },
+  {
+    "id": "Load 75/Riese and Muller",
+    "src": "/cargo/load475peanut-3000x.png",
+    "bike_length_percent": 0.91907514,
+    "bike_length_cm": 264.5,
+    "left_margin_percent": 0.046,
+    "bottom_margin_percent": 0.12
   }
 ]

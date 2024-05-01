@@ -36,7 +36,7 @@ export default {
           const data = this.csvJSON(csv)
 
           this.cargo_data = data.map((item) => {
-            item.Model = item.Model ? item.Model.replaceAll('/', '_') : 'NOT_AVAILABLE'
+            item.Model = item.Model ? item.Model.replaceAll('/', '_').trim() : 'NOT_AVAILABLE'
             item.Manufacturer = item.Manufacturer
               ? item.Manufacturer.replaceAll('/', '_')
               : 'NOT_AVAILABLE'

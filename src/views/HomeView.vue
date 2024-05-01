@@ -1,6 +1,6 @@
 <template>
   <div class="_homeView">
-    <canvas ref="bikes" width="1280" height="720" />
+    <canvas ref="bikes" width="1280" height="960" />
 
     {{ enabled_bikes }}
 
@@ -36,7 +36,12 @@ export default {
   components: {},
   data() {
     return {
-      enabled_bikes: ['Cargo/Chike', 'Muli/Muli Cycles']
+      enabled_bikes: [
+        'Carrie/Riese und Müller',
+        'Cargo/Chike',
+        'Muli/Muli Cycles',
+        'Load 75/Riese and Muller'
+      ]
     }
   },
   created() {},
@@ -71,31 +76,31 @@ export default {
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // get largest bike image
-      const max_bike_length = Math.max(
-        ...this.enabled_bikes.map((b) => {
-          const bike = this.findMatchingBike(b)
-          return bike?.bike_length_cm || 0
-        })
-      )
+      let largest_bike
+      this.enabled_bikes.map((b) => {
+        const bike = this.findMatchingBike(b)
+        if (!largest_bike || largest_bike.bike_length_cm < bike.bike_length_cm) largest_bike = bike
+      })
 
       // factor to scale the image
-      const factor = canvas.width / max_bike_length
+      const factor = canvas.width / largest_bike.bike_length_cm
+      const padding_percent = 0.1
 
       for await (const id of this.enabled_bikes) {
-        const bike_image = this.findMatchingBike(id)
-        if (!bike_image?.src) return
+        const bike = this.findMatchingBike(id)
+        if (!bike?.src) return
         const img = new Image()
-        img.src = bike_image.src
+        img.src = bike.src
         await img.decode()
 
         const img_ratio = img.width / img.height
-        const draw_w = bike_image.bike_length_cm * factor
+        const draw_w = (bike.bike_length_cm / (bike.bike_length_percent + padding_percent)) * factor
         const draw_h = draw_w / img_ratio
 
-        const left_margin = bike_image.left_margin_percent * draw_w
-        const top_margin = bike_image.bottom_margin_percent * draw_h
+        const left_margin = (-bike.left_margin_percent + padding_percent / 2) * draw_w
+        const bottom_margin = bike.bottom_margin_percent * draw_h
 
-        ctx.drawImage(img, -left_margin, 0, draw_w, draw_h)
+        ctx.drawImage(img, left_margin, -bottom_margin, draw_w, draw_h)
       }
     }
   }
