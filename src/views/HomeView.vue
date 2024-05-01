@@ -1,12 +1,12 @@
 <template>
   <div class="_homeView">
     <div class="_canvasWrapper">
-      <canvas ref="bikes" width="1920" height="1920" />
       <select v-model="canvas_composite_operation">
         <option v-for="operation in globalCompositeOperations" :key="operation" :value="operation">
           {{ operation }}
         </option>
       </select>
+      <canvas ref="bikes" width="1920" height="1920" />
     </div>
 
     <transition-group tag="div" class="_bikeList" name="list">
@@ -48,14 +48,9 @@ export default {
   components: {},
   data() {
     return {
-      enabled_bikes: [
-        'Carrie/Riese und Müller',
-        'Cargo/Chike',
-        'Muli/Muli Cycles',
-        'Load 75/Riese and Muller'
-      ],
+      enabled_bikes: [],
 
-      canvas_composite_operation: 'darken',
+      canvas_composite_operation: 'source-over',
       globalCompositeOperations: [
         'source-over',
         'source-in',
@@ -86,7 +81,10 @@ export default {
       ]
     }
   },
-  created() {},
+  created() {
+    const enabled_bikes = localStorage.getItem('enabled_bikes')
+    if (enabled_bikes) this.enabled_bikes = JSON.parse(enabled_bikes)
+  },
   mounted() {
     this.showBikes()
   },
@@ -94,6 +92,7 @@ export default {
   watch: {
     enabled_bikes: {
       handler() {
+        localStorage.setItem('enabled_bikes', JSON.stringify(this.enabled_bikes))
         this.showBikes()
       },
       deep: true
