@@ -21,10 +21,14 @@
             @change="toggleBike(item.id)"
           />
 
-          <!-- <div>
-            {{ item.Model }}
-            <small>{{ item.Manufacturer }}</small>
-          </div> -->
+          <div>
+            <div>
+              <strong>{{ item.model }}</strong>
+            </div>
+            <div>
+              <small>{{ item.manufacturer }}</small>
+            </div>
+          </div>
 
           <div v-if="item.id">
             <img :src="'.' + item.src" />
@@ -185,8 +189,7 @@ export default {
 
       for await (const id of this.enabled_bikes) {
         const bike = this.findMatchingBike(id)
-        debugger
-        if (!bike?.src) return
+        if (!bike?.src) continue
 
         const img = new Image()
         img.src = '.' + bike.src
@@ -197,25 +200,24 @@ export default {
         const draw_h = draw_w / img_ratio
 
         const left_margin = -bike.left_margin_percent * draw_w
-        const bottom_margin = -bike.bottom_margin_percent * draw_h
-        const draw_y = canvas.height - draw_h - bottom_margin
+        const draw_y = canvas.height - draw_h + bike.bottom_margin_percent * draw_h
 
         ctx.drawImage(img, left_margin, draw_y, draw_w, draw_h)
       }
 
       // repère
-      const radius = 5
-      ctx.beginPath()
-      ctx.arc(bottomLeft.x, bottomLeft.y, radius, 0, 2 * Math.PI)
-      ctx.fillStyle = 'red'
-      ctx.fill()
-      ctx.beginPath()
-      ctx.moveTo(bottomLeft.x, bottomLeft.y)
-      ctx.lineTo(bottomLeft.x, 0)
-      ctx.moveTo(bottomLeft.x, bottomLeft.y)
-      ctx.lineTo(canvas.width, bottomLeft.y)
-      ctx.strokeStyle = 'red'
-      ctx.stroke()
+      // const radius = 5
+      // ctx.beginPath()
+      // ctx.arc(bottomLeft.x, bottomLeft.y, radius, 0, 2 * Math.PI)
+      // ctx.fillStyle = 'red'
+      // ctx.fill()
+      // ctx.beginPath()
+      // ctx.moveTo(bottomLeft.x, bottomLeft.y)
+      // ctx.lineTo(bottomLeft.x, 0)
+      // ctx.moveTo(bottomLeft.x, bottomLeft.y)
+      // ctx.lineTo(canvas.width, bottomLeft.y)
+      // ctx.strokeStyle = 'red'
+      // ctx.stroke()
     }
   }
 }
@@ -235,7 +237,7 @@ canvas {
   flex: 0 0 auto;
   width: 320px;
   padding: 1rem;
-  background-color: black;
+  background-color: var(--color-background);
 
   overflow-y: auto;
 }
@@ -248,7 +250,7 @@ canvas {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.25rem;
-  padding: 0 0.25rem;
+  padding: 0.25rem 0;
 }
 
 ._item {
@@ -256,12 +258,13 @@ canvas {
   flex-direction: row nowrap;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid currentColor;
-  border-radius: 0.25rem;
-  background-color: #fff;
+  padding: 0.5rem 0.5rem;
+  line-height: 1.2;
+  background-color: white;
 
-  transition: background-color 0.5s ease;
+  cursor: pointer;
+
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   &[data-disabled='true'] {
     border-style: dashed;
@@ -269,12 +272,12 @@ canvas {
   }
 
   &:hover:not([data-disabled='true']) {
-    border-color: #00ccc0;
+    box-shadow: 0 0 0.15rem 0.15rem var(--color-accent);
   }
 
   &[data-active='true'] {
-    background-color: #00ccc0;
-    border-color: #00ccc0;
+    // background-color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   img {

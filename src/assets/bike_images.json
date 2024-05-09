@@ -2,6 +2,9 @@
   {
     "id": "chike",
     "id_in_csv": "Chike/Cargo",
+
+    "manufacturer": "Chike",
+    "model": "Cargo",
     "src": "/cargo/CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
@@ -11,6 +14,9 @@
   {
     "id": "muli",
     "id_in_csv": "Muli/Muli Cycles",
+
+    "manufacturer": "Muli Cycles",
+    "model": "Muli",
     "src": "/cargo/Muli2022_Mu_beige_frei.png",
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
@@ -19,7 +25,10 @@
   },
   {
     "id": "carrie-rm",
-    "id_in_csv": "Chike/Cargo",
+    "id_in_csv": "Riese and Muller/Carrie",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Carrie",
     "src": "/cargo/carrie.png",
     "bike_length_percent": 0.932888591,
     "bike_length_cm": 209,
@@ -29,6 +38,9 @@
   {
     "id": "load75-rm",
     "id_in_csv": "Load 75/Riese and Muller",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Load 75",
     "src": "/cargo/load475peanut-3000x.png",
     "bike_length_percent": 0.921,
     "bike_length_cm": 264.5,
@@ -37,8 +49,10 @@
   },
   {
     "id": "cargo-verso",
-    "model": "Cargo Verso",
+    "id_in_csv": "Douze Cycles/Cargo Verso",
+
     "manufacturer": "Douze Cycles",
+    "model": "Cargo Verso",
     "src": "/cargo/toyotacycle120544.png",
     "bike_length_percent": 0.86012105,
     "bike_length_cm": 275,

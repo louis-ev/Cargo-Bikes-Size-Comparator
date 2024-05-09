@@ -15,7 +15,7 @@ body,
 a,
 .green {
   text-decoration: none;
-  color: hsla(190, 100%, 37%, 1);
+  color: var(--color-accent-link);
   transition: 0.4s;
   padding: 3px;
 }

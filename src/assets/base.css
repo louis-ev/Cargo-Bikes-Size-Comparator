@@ -1,6 +1,10 @@
 :root {
   --color-background: #eee;
   --color-text: #333;
+
+  --color-accent: #ff54ff;
+  --color-accent-green: #00ff00;
+  --color-accent-links: #00eaff;
 }
 
 *,
@@ -33,4 +37,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  accent-color: var(--color-accent);
 }
