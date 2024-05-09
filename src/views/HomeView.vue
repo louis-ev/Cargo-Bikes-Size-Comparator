@@ -35,8 +35,21 @@
           </div>
         </label>
       </transition-group>
+
+      <details>
+        <summary>Advanced</summary>
+        <div>
+          <label>Grid step (cm)</label>
+          <input type="range" step="1" min="1" max="100" v-model.number="grid_step" />
+        </div>
+        <div>
+          <label>Padding (%)</label>
+          <input type="range" step="1" min="0" max="30" v-model.number="default_padding_percent" />
+        </div>
+      </details>
     </div>
     <div class="_canvasWrapper">
+      <template v-if="enabled_bikes.length === 0"> Select bikes to compare </template>
       <canvas ref="bikes" width="1920" height="1920" />
     </div>
   </div>
@@ -50,6 +63,9 @@ export default {
   data() {
     return {
       enabled_bikes: [],
+
+      default_padding_percent: 10,
+      grid_step: 20,
 
       canvas_composite_operation: 'source-over',
       globalCompositeOperations: [
@@ -102,6 +118,16 @@ export default {
       handler(val) {
         this.showBikes()
       }
+    },
+    default_padding_percent: {
+      handler(val) {
+        this.showBikes()
+      }
+    },
+    grid_step: {
+      handler(val) {
+        this.showBikes()
+      }
     }
   },
   computed: {
@@ -146,28 +172,6 @@ export default {
       )
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      const gridSpacing = 20
-      const gridColor = '#ffffff'
-
-      for (let x = 1; x <= canvas.width; x += gridSpacing) {
-        ctx.beginPath()
-        ctx.moveTo(x, 0)
-        ctx.lineTo(x, canvas.height)
-        ctx.strokeStyle = gridColor
-        ctx.stroke()
-      }
-
-      // Dessiner les lignes horizontales
-      for (let y = 1; y <= canvas.height; y += gridSpacing) {
-        ctx.beginPath()
-        ctx.moveTo(0, y)
-        ctx.lineTo(canvas.width, y)
-        ctx.strokeStyle = gridColor
-        ctx.stroke()
-      }
-
-      ctx.globalCompositeOperation = this.canvas_composite_operation
-
       // get largest bike image
       let largest_bike
       this.enabled_bikes.map((b) => {
@@ -177,16 +181,38 @@ export default {
 
       if (!largest_bike) return
 
-      const padding = canvas.width / 10
+      const padding = canvas.width / (100 / this.default_padding_percent)
+      const each_px_measures_in_cm = (canvas.width - padding * 2) / largest_bike.bike_length_cm
 
-      // factor to scale the image
-      const factor = (canvas.width - padding * 2) / largest_bike.bike_length_cm
+      ctx.strokeStyle = 'gray'
+      ctx.fillStyle = 'black'
 
-      const bottomLeft = {
-        x: 70,
-        y: canvas.height - 120
+      let cm_count = 0
+      const step = this.grid_step
+
+      for (let x = padding; x <= canvas.width; x += each_px_measures_in_cm * step) {
+        ctx.beginPath()
+        ctx.moveTo(x, 0)
+        ctx.lineTo(x, canvas.height)
+        ctx.stroke()
+
+        ctx.fillText(cm_count, x + 4, canvas.height - 10)
+        cm_count += step
       }
-      ctx.moveTo(bottomLeft.x, bottomLeft.y)
+
+      cm_count = 0
+      for (let y = canvas.height - padding; y >= 0; y -= each_px_measures_in_cm * step) {
+        ctx.beginPath()
+        ctx.moveTo(0, y)
+        ctx.lineTo(canvas.width, y)
+        ctx.stroke()
+
+        ctx.fillText(cm_count, 0, y - 4)
+
+        cm_count += step
+      }
+
+      ctx.globalCompositeOperation = this.canvas_composite_operation
 
       for await (const id of this.enabled_bikes) {
         const bike = this.findMatchingBike(id)
@@ -197,29 +223,17 @@ export default {
         await img.decode()
 
         const img_ratio = img.width / img.height
-        const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * factor
+        const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
         const draw_h = draw_w / img_ratio
 
         const draw_x = -bike.left_margin_percent * draw_w + padding
 
-        const draw_y = canvas.height - padding / 2 - draw_h + bike.bottom_margin_percent * draw_h
+        const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
 
         ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
       }
 
       // repère
-      // const radius = 5
-      // ctx.beginPath()
-      // ctx.arc(bottomLeft.x, bottomLeft.y, radius, 0, 2 * Math.PI)
-      // ctx.fillStyle = 'red'
-      // ctx.fill()
-      // ctx.beginPath()
-      // ctx.moveTo(bottomLeft.x, bottomLeft.y)
-      // ctx.lineTo(bottomLeft.x, 0)
-      // ctx.moveTo(bottomLeft.x, bottomLeft.y)
-      // ctx.lineTo(canvas.width, bottomLeft.y)
-      // ctx.strokeStyle = 'red'
-      // ctx.stroke()
     }
   }
 }
