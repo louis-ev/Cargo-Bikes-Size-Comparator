@@ -9,28 +9,25 @@
       <transition-group tag="div" class="_bikeList" name="list">
         <label
           class="_item"
-          v-for="item in sorted_cargo_data"
+          v-for="item in sorted_bikes"
           :key="item.id"
           :for="item.id"
-          :data-disabled="!findMatchingBike(item.id)"
           :data-active="enabled_bikes.includes(item.id)"
-          v-show="findMatchingBike(item.id)"
         >
           <input
             type="checkbox"
             :checked="enabled_bikes.includes(item.id)"
             :id="item.id"
-            :disabled="!findMatchingBike(item.id)"
             @change="toggleBike(item.id)"
           />
 
-          <div>
+          <!-- <div>
             {{ item.Model }}
             <small>{{ item.Manufacturer }}</small>
-          </div>
+          </div> -->
 
-          <div v-if="findMatchingBike(item.id)">
-            <img :src="'.' + findMatchingBike(item.id).src" />
+          <div v-if="item.id">
+            <img :src="'.' + item.src" />
           </div>
         </label>
       </transition-group>
@@ -41,11 +38,9 @@
   </div>
 </template>
 <script>
-import bikes from '@/assets/bike_images.json'
-
 export default {
   props: {
-    cargo_data: Array
+    bikes: Array
   },
   components: {},
   data() {
@@ -106,18 +101,23 @@ export default {
     }
   },
   computed: {
-    sorted_cargo_data() {
-      if (!this.cargo_data) return []
-      return this.cargo_data.slice().sort((a, b) => {
-        if (this.enabled_bikes.includes(a.id)) return -1
-        if (this.enabled_bikes.includes(b.id)) return 1
-        return a
-      })
+    sorted_bikes() {
+      if (!this.bikes) return []
+      return this.bikes
+        .slice()
+        .sort((a, b) => {
+          if (this.enabled_bikes.includes(a.id)) return -1
+          if (this.enabled_bikes.includes(b.id)) return 1
+          return a
+        })
+        .sort((a, b) => {
+          return a.bike_length_cm - b.bike_length_cm
+        })
     }
   },
   methods: {
     findMatchingBike(id) {
-      return bikes.find((i) => i.id === id)
+      return this.bikes.find((i) => i.id === id)
     },
     toggleBike(id) {
       if (this.enabled_bikes.includes(id)) {
@@ -185,7 +185,9 @@ export default {
 
       for await (const id of this.enabled_bikes) {
         const bike = this.findMatchingBike(id)
+        debugger
         if (!bike?.src) return
+
         const img = new Image()
         img.src = '.' + bike.src
         await img.decode()
@@ -195,9 +197,8 @@ export default {
         const draw_h = draw_w / img_ratio
 
         const left_margin = -bike.left_margin_percent * draw_w
-        // const bottom_margin = -bike.bottom_margin_percent * draw_h
-        // const bottom_margin = -bike.bottom_margin_percent * draw_h
-        const draw_y = (canvas.height - draw_h) / 2 - 0 //bottom_margin
+        const bottom_margin = -bike.bottom_margin_percent * draw_h
+        const draw_y = canvas.height - draw_h - bottom_margin
 
         ctx.drawImage(img, left_margin, draw_y, draw_w, draw_h)
       }
@@ -234,7 +235,7 @@ canvas {
   flex: 0 0 auto;
   width: 320px;
   padding: 1rem;
-  background-color: #eee;
+  background-color: black;
 
   overflow-y: auto;
 }

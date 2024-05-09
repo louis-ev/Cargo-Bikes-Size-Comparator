@@ -1,42 +1,48 @@
 [
   {
-    "id": "Cargo/Chike",
+    "id": "chike",
+    "id_in_csv": "Chike/Cargo",
     "src": "/cargo/CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
-    "left_margin_percent": 0.073,
-    "bottom_margin_percent": 0.15
+    "left_margin_percent": 0.075,
+    "bottom_margin_percent": 0.088
   },
   {
-    "id": "Muli/Muli Cycles",
+    "id": "muli",
+    "id_in_csv": "Muli/Muli Cycles",
     "src": "/cargo/Muli2022_Mu_beige_frei.png",
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
-    "left_margin_percent": 0.104,
-    "bottom_margin_percent": -0.088
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.223
   },
   {
-    "id": "Carrie/Riese und Müller",
+    "id": "carrie-rm",
+    "id_in_csv": "Chike/Cargo",
     "src": "/cargo/carrie.png",
     "bike_length_percent": 0.932888591,
     "bike_length_cm": 209,
     "left_margin_percent": 0.034,
-    "bottom_margin_percent": 0.163
+    "bottom_margin_percent": 0.045
   },
   {
-    "id": "Load 75/Riese and Muller",
+    "id": "load75-rm",
+    "id_in_csv": "Load 75/Riese and Muller",
     "src": "/cargo/load475peanut-3000x.png",
-    "bike_length_percent": 0.91907514,
+    "bike_length_percent": 0.921,
     "bike_length_cm": 264.5,
-    "left_margin_percent": 0.041,
-    "bottom_margin_percent": -0.06
+    "left_margin_percent": 0.045,
+    "bottom_margin_percent": 0.02
   },
   {
-    "id": "Hêta/Douze Cycles",
+    "id": "cargo-verso",
+    "model": "Cargo Verso",
+    "manufacturer": "Douze Cycles",
     "src": "/cargo/toyotacycle120544.png",
-    "bike_length_percent": 0.91907514,
-    "bike_length_cm": 264.5,
-    "left_margin_percent": 0.046,
-    "bottom_margin_percent": 0.12
+    "bike_length_percent": 0.86012105,
+    "bike_length_cm": 275,
+    "left_margin_percent": 0.061,
+    "bottom_margin_percent": 0.105
   }
 ]

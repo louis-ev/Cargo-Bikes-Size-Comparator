@@ -4,11 +4,13 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav> -->
-    <RouterView :cargo_data="cargo_data" />
+    {{ cargo_data }}
+    <RouterView :bikes="bikes" />
   </div>
 </template>
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import bikes from '@/assets/bike_images.json'
 
 export default {
   props: {},
@@ -18,7 +20,8 @@ export default {
   },
   data() {
     return {
-      cargo_data: undefined
+      bikes: bikes,
+      measurements: []
     }
   },
   created() {
@@ -27,22 +30,31 @@ export default {
   mounted() {},
   beforeUnmount() {},
   watch: {},
-  computed: {},
+  computed: {
+    supercharged_bikes() {
+      return this.bikes.map((item) => {
+        const found = data.find((i) => i.Manufacturer + '/' + i.Model === item.id_in_csv)
+        if (found) item._measurements = found
+        return item
+      })
+    }
+  },
   methods: {
     loadCargo() {
       fetch('./Cargo bike measurements - Bakfiets.csv')
         .then((response) => response.text())
         .then((csv) => {
           const data = this.csvJSON(csv)
+          this.measurements = data
 
-          this.cargo_data = data.map((item) => {
-            item.Model = item.Model ? item.Model.replaceAll('/', '_').trim() : 'NOT_AVAILABLE'
-            item.Manufacturer = item.Manufacturer
-              ? item.Manufacturer.replaceAll('/', '_')
-              : 'NOT_AVAILABLE'
-            item.id = item.Model + '/' + item.Manufacturer
-            return item
-          })
+          // this.cargo_data = data.map((item) => {
+          //   item.Model = item.Model ? item.Model.replaceAll('/', '_').trim() : 'NOT_AVAILABLE'
+          //   item.Manufacturer = item.Manufacturer
+          //     ? item.Manufacturer.replaceAll('/', '_')
+          //     : 'NOT_AVAILABLE'
+          //   item.id = item.Model + '/' + item.Manufacturer
+          //   return item
+          // })
         })
         .catch((error) => console.error('Erreur lors du chargement du fichier CSV:', error))
     },
