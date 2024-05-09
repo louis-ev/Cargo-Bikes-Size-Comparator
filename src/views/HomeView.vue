@@ -177,9 +177,10 @@ export default {
 
       if (!largest_bike) return
 
+      const padding = canvas.width / 10
+
       // factor to scale the image
-      const factor = canvas.width / largest_bike.bike_length_cm
-      const padding_percent = 0
+      const factor = (canvas.width - padding * 2) / largest_bike.bike_length_cm
 
       const bottomLeft = {
         x: 70,
@@ -196,13 +197,14 @@ export default {
         await img.decode()
 
         const img_ratio = img.width / img.height
-        const draw_w = (bike.bike_length_cm / (bike.bike_length_percent + padding_percent)) * factor
+        const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * factor
         const draw_h = draw_w / img_ratio
 
-        const left_margin = -bike.left_margin_percent * draw_w
-        const draw_y = canvas.height - draw_h + bike.bottom_margin_percent * draw_h
+        const draw_x = -bike.left_margin_percent * draw_w + padding
 
-        ctx.drawImage(img, left_margin, draw_y, draw_w, draw_h)
+        const draw_y = canvas.height - padding / 2 - draw_h + bike.bottom_margin_percent * draw_h
+
+        ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
       }
 
       // repère
