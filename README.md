@@ -1,5 +1,11 @@
 # 2024-CARGO_DIM
 
+Remove BG : https://www.experte.com/background-remover
+Measure left margin between edge and left edge of rear wheel.
+Same for bottom margin.
+
+---
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

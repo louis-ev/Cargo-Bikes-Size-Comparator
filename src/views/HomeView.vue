@@ -1,41 +1,43 @@
 <template>
   <div class="_homeView">
-    <div class="_canvasWrapper">
+    <div class="_sidebar">
       <select v-model="canvas_composite_operation">
         <option v-for="operation in globalCompositeOperations" :key="operation" :value="operation">
           {{ operation }}
         </option>
       </select>
+      <transition-group tag="div" class="_bikeList" name="list">
+        <label
+          class="_item"
+          v-for="item in sorted_cargo_data"
+          :key="item.id"
+          :for="item.id"
+          :data-disabled="!findMatchingBike(item.id)"
+          :data-active="enabled_bikes.includes(item.id)"
+          v-show="findMatchingBike(item.id)"
+        >
+          <input
+            type="checkbox"
+            :checked="enabled_bikes.includes(item.id)"
+            :id="item.id"
+            :disabled="!findMatchingBike(item.id)"
+            @change="toggleBike(item.id)"
+          />
+
+          <div>
+            {{ item.Model }}
+            <small>{{ item.Manufacturer }}</small>
+          </div>
+
+          <div v-if="findMatchingBike(item.id)">
+            <img :src="'.' + findMatchingBike(item.id).src" />
+          </div>
+        </label>
+      </transition-group>
+    </div>
+    <div class="_canvasWrapper">
       <canvas ref="bikes" width="1920" height="1920" />
     </div>
-
-    <transition-group tag="div" class="_bikeList" name="list">
-      <label
-        class="_item"
-        v-for="item in sorted_cargo_data"
-        :key="item.id"
-        :for="item.id"
-        :data-disabled="!findMatchingBike(item.id)"
-        :data-active="enabled_bikes.includes(item.id)"
-      >
-        <input
-          type="checkbox"
-          :checked="enabled_bikes.includes(item.id)"
-          :id="item.id"
-          :disabled="!findMatchingBike(item.id)"
-          @change="toggleBike(item.id)"
-        />
-
-        <div>
-          {{ item.Model }}
-          <small>{{ item.Manufacturer }}</small>
-        </div>
-
-        <div v-if="findMatchingBike(item.id)">
-          <img :src="'.' + findMatchingBike(item.id).src" />
-        </div>
-      </label>
-    </transition-group>
   </div>
 </template>
 <script>
@@ -126,10 +128,39 @@ export default {
     },
     async showBikes() {
       const canvas = this.$refs.bikes
+      if (!canvas) return
+
+      canvas.height = canvas.parentNode.clientHeight
+      canvas.width = canvas.parentNode.clientWidth
+
       const ctx = canvas.getContext('2d')
       ctx.globalCompositeOperation = 'source-over'
-      ctx.fillStyle = 'white'
+
+      // bg
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
+        '--color-background'
+      )
       ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      const gridSpacing = 20
+      const gridColor = '#ffffff'
+
+      for (let x = 1; x <= canvas.width; x += gridSpacing) {
+        ctx.beginPath()
+        ctx.moveTo(x, 0)
+        ctx.lineTo(x, canvas.height)
+        ctx.strokeStyle = gridColor
+        ctx.stroke()
+      }
+
+      // Dessiner les lignes horizontales
+      for (let y = 1; y <= canvas.height; y += gridSpacing) {
+        ctx.beginPath()
+        ctx.moveTo(0, y)
+        ctx.lineTo(canvas.width, y)
+        ctx.strokeStyle = gridColor
+        ctx.stroke()
+      }
 
       ctx.globalCompositeOperation = this.canvas_composite_operation
 
@@ -144,7 +175,13 @@ export default {
 
       // factor to scale the image
       const factor = canvas.width / largest_bike.bike_length_cm
-      const padding_percent = 0.1
+      const padding_percent = 0
+
+      const bottomLeft = {
+        x: 70,
+        y: canvas.height - 120
+      }
+      ctx.moveTo(bottomLeft.x, bottomLeft.y)
 
       for await (const id of this.enabled_bikes) {
         const bike = this.findMatchingBike(id)
@@ -157,12 +194,27 @@ export default {
         const draw_w = (bike.bike_length_cm / (bike.bike_length_percent + padding_percent)) * factor
         const draw_h = draw_w / img_ratio
 
-        const left_margin = (-bike.left_margin_percent + padding_percent / 2) * draw_w
-        const bottom_margin = bike.bottom_margin_percent * draw_h
-        const draw_y = (canvas.height - draw_h) / 2 - bottom_margin
+        const left_margin = -bike.left_margin_percent * draw_w
+        // const bottom_margin = -bike.bottom_margin_percent * draw_h
+        // const bottom_margin = -bike.bottom_margin_percent * draw_h
+        const draw_y = (canvas.height - draw_h) / 2 - 0 //bottom_margin
 
         ctx.drawImage(img, left_margin, draw_y, draw_w, draw_h)
       }
+
+      // repère
+      const radius = 5
+      ctx.beginPath()
+      ctx.arc(bottomLeft.x, bottomLeft.y, radius, 0, 2 * Math.PI)
+      ctx.fillStyle = 'red'
+      ctx.fill()
+      ctx.beginPath()
+      ctx.moveTo(bottomLeft.x, bottomLeft.y)
+      ctx.lineTo(bottomLeft.x, 0)
+      ctx.moveTo(bottomLeft.x, bottomLeft.y)
+      ctx.lineTo(canvas.width, bottomLeft.y)
+      ctx.strokeStyle = 'red'
+      ctx.stroke()
     }
   }
 }
@@ -171,16 +223,24 @@ export default {
 ._homeView {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  height: 100svh;
+}
+canvas {
+  width: 100%;
+  height: auto;
+}
 
-  canvas {
-    flex: 1 1 auto;
-    width: 100%;
-    height: auto;
-  }
+._sidebar {
+  flex: 0 0 auto;
+  width: 320px;
+  padding: 1rem;
+  background-color: #eee;
+
+  overflow-y: auto;
 }
 
 ._canvasWrapper {
+  overflow: hidden;
 }
 
 ._bikeList {
