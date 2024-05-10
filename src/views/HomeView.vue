@@ -67,9 +67,10 @@
       </details>
 
       <div class="_madeBy">
-        Made by <a href="https://louiseveillard.com/">Louis Eveillard</a>
+        Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a>
         <br />
-        Questions/feedbacks <a href="mailto:louiseveillard@gmail.com"> hello@louiseveillard.com</a>
+        Questions/feedbacks
+        <a href="mailto:hello@louiseveillard.com" target="_blank">hello@louiseveillard.com</a>
       </div>
     </div>
     <div class="_canvasWrapper">
