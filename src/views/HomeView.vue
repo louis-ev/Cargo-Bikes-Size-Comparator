@@ -80,7 +80,6 @@ export default {
   components: {},
   data() {
     return {
-      enabled_bikes: [],
       ro: null,
 
       default_padding_percent: 5,
@@ -117,10 +116,7 @@ export default {
       ]
     }
   },
-  created() {
-    const enabled_bikes = localStorage.getItem('enabled_bikes')
-    if (enabled_bikes) this.enabled_bikes = JSON.parse(enabled_bikes)
-  },
+  created() {},
   mounted() {
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
@@ -132,7 +128,6 @@ export default {
   watch: {
     enabled_bikes: {
       handler() {
-        localStorage.setItem('enabled_bikes', JSON.stringify(this.enabled_bikes))
         this.showBikes()
       },
       deep: true
@@ -153,17 +148,35 @@ export default {
       }
     }
   },
-  computed: {},
+  computed: {
+    enabled_bikes() {
+      if (this.$route.query.enabled_bikes) {
+        try {
+          return JSON.parse(this.$route.query.enabled_bikes)
+        } catch (e) {
+          return []
+        }
+      }
+      return []
+    }
+  },
   methods: {
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
     },
     toggleBike(id) {
-      if (this.enabled_bikes.includes(id)) {
-        this.enabled_bikes = this.enabled_bikes.filter((i) => i !== id)
+      let enabled_bikes = this.enabled_bikes
+      if (enabled_bikes.includes(id)) {
+        enabled_bikes = enabled_bikes.filter((i) => i !== id)
       } else {
-        this.enabled_bikes.push(id)
+        enabled_bikes.push(id)
       }
+
+      this.$router.push({
+        query: {
+          enabled_bikes: JSON.stringify(enabled_bikes)
+        }
+      })
     },
     async showBikes() {
       console.log('showBikes')
