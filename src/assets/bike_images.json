@@ -13,7 +13,7 @@
   },
   {
     "id": "muli",
-    "id_in_csv": "Muli/Muli Cycles",
+    "id_in_csv": "Muli Cycles/Muli",
 
     "manufacturer": "Muli Cycles",
     "model": "Muli",
@@ -37,7 +37,7 @@
   },
   {
     "id": "load75-rm",
-    "id_in_csv": "Load 75/Riese and Muller",
+    "id_in_csv": "Riese and Muller/Load 75",
 
     "manufacturer": "Riese und Müller",
     "model": "Load 75",

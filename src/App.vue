@@ -5,7 +5,7 @@
       <RouterLink to="/about">About</RouterLink>
     </nav> -->
     {{ cargo_data }}
-    <RouterView :bikes="bikes" />
+    <RouterView :bikes="sorted_bikes" />
   </div>
 </template>
 <script>
@@ -33,9 +33,17 @@ export default {
   computed: {
     supercharged_bikes() {
       return this.bikes.map((item) => {
-        const found = data.find((i) => i.Manufacturer + '/' + i.Model === item.id_in_csv)
+        const found = this.measurements.find(
+          (i) => i.Manufacturer + '/' + i.Model === item.id_in_csv
+        )
         if (found) item._measurements = found
         return item
+      })
+    },
+    sorted_bikes() {
+      if (!this.supercharged_bikes) return []
+      return this.supercharged_bikes.slice().sort((a, b) => {
+        return a.bike_length_cm - b.bike_length_cm
       })
     }
   },

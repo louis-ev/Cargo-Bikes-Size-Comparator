@@ -9,29 +9,35 @@
       <transition-group tag="div" class="_bikeList" name="list">
         <label
           class="_item"
-          v-for="item in sorted_bikes"
+          v-for="item in bikes"
           :key="item.id"
           :for="item.id"
           :data-active="enabled_bikes.includes(item.id)"
         >
-          <input
-            type="checkbox"
-            :checked="enabled_bikes.includes(item.id)"
-            :id="item.id"
-            @change="toggleBike(item.id)"
-          />
+          <div class="_itemTop">
+            <input
+              type="checkbox"
+              :checked="enabled_bikes.includes(item.id)"
+              :id="item.id"
+              @change="toggleBike(item.id)"
+            />
 
-          <div>
-            <div>
-              <strong>{{ item.model }}</strong>
+            <div class="_names">
+              <div>
+                <strong>{{ item.model }}</strong>
+              </div>
+              <div>
+                <small>{{ item.manufacturer }}</small>
+              </div>
             </div>
-            <div>
-              <small>{{ item.manufacturer }}</small>
+
+            <div v-if="item.id">
+              <img :src="'.' + item.src" />
             </div>
           </div>
 
-          <div v-if="item.id">
-            <img :src="'.' + item.src" />
+          <div class="_itemBottom" v-if="enabled_bikes.includes(item.id) && item._measurements">
+            <small>{{ getMeasurements(item) }}</small>
           </div>
         </label>
       </transition-group>
@@ -130,21 +136,7 @@ export default {
       }
     }
   },
-  computed: {
-    sorted_bikes() {
-      if (!this.bikes) return []
-      return this.bikes
-        .slice()
-        .sort((a, b) => {
-          if (this.enabled_bikes.includes(a.id)) return -1
-          if (this.enabled_bikes.includes(b.id)) return 1
-          return a
-        })
-        .sort((a, b) => {
-          return a.bike_length_cm - b.bike_length_cm
-        })
-    }
-  },
+  computed: {},
   methods: {
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
@@ -234,6 +226,11 @@ export default {
       }
 
       // repère
+    },
+    getMeasurements(bike) {
+      return Object.entries(bike._measurements)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(', ')
     }
   }
 }
@@ -270,10 +267,6 @@ canvas {
 }
 
 ._item {
-  display: flex;
-  flex-direction: row nowrap;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.5rem 0.5rem;
   line-height: 1.2;
   background-color: white;
@@ -295,8 +288,24 @@ canvas {
     // background-color: var(--color-accent);
     border-color: var(--color-accent);
   }
+}
 
+._itemTop {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  ._names {
+    flex: 1 1 auto;
+  }
+
+  input {
+    flex: 0 0 auto;
+  }
   img {
+    flex: 0 0 auto;
     width: 50px;
   }
 }
