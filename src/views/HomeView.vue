@@ -67,10 +67,23 @@
       </details>
 
       <div class="_madeBy">
-        Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a>
-        <br />
-        Questions/feedbacks
-        <a href="mailto:hello@louiseveillard.com" target="_blank">hello@louiseveillard.com</a>
+        <div>Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a></div>
+        <div>
+          Source code
+          <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank">
+            available on Github
+          </a>
+        </div>
+        <div>
+          Code/design
+          <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank"
+            >free, open-source under AGPL v3</a
+          >
+        </div>
+        <div>
+          Questions/feedbacks
+          <a href="mailto:hello@louiseveillard.com" target="_blank">hello@louiseveillard.com</a>
+        </div>
       </div>
     </div>
     <div class="_canvasWrapper">
