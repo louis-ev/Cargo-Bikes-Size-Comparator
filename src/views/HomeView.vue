@@ -216,8 +216,11 @@ export default {
       const canvas = this.$refs.bikes
       if (!canvas) return
 
-      canvas.height = canvas.parentNode.clientHeight * window.devicePixelRatio
       canvas.width = canvas.parentNode.clientWidth * window.devicePixelRatio
+      canvas.height = Math.min(
+        canvas.parentNode.clientHeight * window.devicePixelRatio,
+        canvas.width
+      )
 
       const ctx = canvas.getContext('2d')
       ctx.globalCompositeOperation = 'source-over'
@@ -340,7 +343,7 @@ canvas {
 ._canvasWrapper {
   flex: 1 1 auto;
   overflow: hidden;
-  min-width: 320px;
+  min-width: 420px;
 }
 ._noBikes {
   display: flex;
