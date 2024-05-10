@@ -1,20 +1,10 @@
 <template>
   <div class="_homeView">
     <div class="_sidebar">
-      <select v-model="canvas_composite_operation">
-        <option v-for="operation in globalCompositeOperations" :key="operation" :value="operation">
-          {{ operation }}
-        </option>
-      </select>
+      <h1>List of bikes</h1>
       <transition-group tag="div" class="_bikeList" name="list">
-        <label
-          class="_item"
-          v-for="item in bikes"
-          :key="item.id"
-          :for="item.id"
-          :data-active="enabled_bikes.includes(item.id)"
-        >
-          <div class="_itemTop">
+        <div class="_item" v-for="item in bikes" :key="item.id">
+          <label :for="item.id" class="_itemTop" :data-active="enabled_bikes.includes(item.id)">
             <input
               type="checkbox"
               :checked="enabled_bikes.includes(item.id)"
@@ -23,23 +13,24 @@
             />
 
             <div class="_names">
-              <div>
-                <strong>{{ item.model }}</strong>
-              </div>
-              <div>
-                <small>{{ item.manufacturer }}</small>
-              </div>
+              <strong>{{ item.model }}</strong>
+              /
+              <small>{{ item.manufacturer }}</small>
             </div>
 
             <div v-if="item.id">
               <img :src="'.' + item.src" />
             </div>
-          </div>
+          </label>
 
           <div class="_itemBottom" v-if="enabled_bikes.includes(item.id) && item._measurements">
-            <small>{{ getMeasurements(item) }}</small>
+            <div class="_measurements" v-if="getMeasurements(item)">
+              <small v-html="getMeasurements(item)" />
+              <br />
+            </div>
+            <a :href="item.url" target="_blank">website</a>
           </div>
-        </label>
+        </div>
       </transition-group>
 
       <details>
@@ -52,6 +43,15 @@
           <label>Padding (%)</label>
           <input type="range" step="1" min="0" max="30" v-model.number="default_padding_percent" />
         </div>
+        <select v-model="canvas_composite_operation">
+          <option
+            v-for="operation in globalCompositeOperations"
+            :key="operation"
+            :value="operation"
+          >
+            {{ operation }}
+          </option>
+        </select>
       </details>
     </div>
     <div class="_canvasWrapper">
@@ -61,11 +61,16 @@
   </div>
 </template>
 <script>
+import { SlickList, SlickItem } from 'vue-slicksort'
+
 export default {
   props: {
     bikes: Array
   },
-  components: {},
+  components: {
+    SlickList,
+    SlickItem
+  },
   data() {
     return {
       enabled_bikes: [],
@@ -229,8 +234,11 @@ export default {
     },
     getMeasurements(bike) {
       return Object.entries(bike._measurements)
-        .map(([k, v]) => `${k}: ${v}`)
-        .join(', ')
+        .reduce((acc, [k, v]) => {
+          if (k && k !== '\r' && v && v !== '\r') acc.push(`${k}: ${v}`)
+          return acc
+        }, [])
+        .join('<br>')
     }
   }
 }
@@ -267,35 +275,24 @@ canvas {
 }
 
 ._item {
-  padding: 0.5rem 0.5rem;
   line-height: 1.2;
   background-color: white;
-
-  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
 
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-
-  &[data-disabled='true'] {
-    border-style: dashed;
-    color: #999;
-  }
-
-  &:hover:not([data-disabled='true']) {
-    box-shadow: 0 0 0.15rem 0.15rem var(--color-accent);
-  }
-
-  &[data-active='true'] {
-    // background-color: var(--color-accent);
-    border-color: var(--color-accent);
-  }
 }
 
 ._itemTop {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 1rem;
 
   ._names {
     flex: 1 1 auto;
@@ -308,6 +305,19 @@ canvas {
     flex: 0 0 auto;
     width: 50px;
   }
+
+  &:hover:not([data-disabled='true']) {
+    // box-shadow: 0 0 0.15rem 0.15rem var(--color-accent);
+    background-color: var(--color-accent);
+  }
+
+  &[data-active='true'] {
+    // background-color: var(--color-accent);
+  }
+}
+
+._itemBottom {
+  padding: 0rem 1rem 0.75rem;
 }
 
 .list-move, /* apply transition to moving elements */

@@ -34,7 +34,7 @@ export default {
     supercharged_bikes() {
       return this.bikes.map((item) => {
         const found = this.measurements.find(
-          (i) => i.Manufacturer + '/' + i.Model === item.id_in_csv
+          (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
         )
         if (found) item._measurements = found
         return item

@@ -9,7 +9,8 @@
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
     "left_margin_percent": 0.075,
-    "bottom_margin_percent": 0.088
+    "bottom_margin_percent": 0.088,
+    "url": "https://chike.de/en/"
   },
   {
     "id": "muli",
@@ -21,7 +22,8 @@
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
     "left_margin_percent": 0.1,
-    "bottom_margin_percent": 0.223
+    "bottom_margin_percent": 0.223,
+    "url": "https://muli-cycles.de/en"
   },
   {
     "id": "carrie-rm",
@@ -33,7 +35,8 @@
     "bike_length_percent": 0.932888591,
     "bike_length_cm": 209,
     "left_margin_percent": 0.034,
-    "bottom_margin_percent": 0.045
+    "bottom_margin_percent": 0.045,
+    "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
   {
     "id": "load75-rm",
@@ -45,7 +48,8 @@
     "bike_length_percent": 0.921,
     "bike_length_cm": 264.5,
     "left_margin_percent": 0.045,
-    "bottom_margin_percent": 0.02
+    "bottom_margin_percent": 0.02,
+    "url": "https://www.r-m.de/en-en/bikes/load-75"
   },
   {
     "id": "cargo-verso",
@@ -57,6 +61,20 @@
     "bike_length_percent": 0.86012105,
     "bike_length_cm": 275,
     "left_margin_percent": 0.061,
-    "bottom_margin_percent": 0.105
+    "bottom_margin_percent": 0.105,
+    "url": "https://www.douze-cycles.com/velos-cargos/heta"
+  },
+  {
+    "id": "bullit",
+    "id_in_csv": "Bullitt/",
+
+    "manufacturer": "Larry vs Harry",
+    "model": "Bullit",
+    "src": "/cargo/bullitt_2020_0046.png",
+    "bike_length_percent": 0.73463357,
+    "bike_length_cm": 243,
+    "left_margin_percent": 0.1452,
+    "bottom_margin_percent": 0.225,
+    "url": "https://www.larryvsharry.com/en/ebullitt"
   }
 ]

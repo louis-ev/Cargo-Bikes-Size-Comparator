@@ -14,10 +14,8 @@ body,
 
 a,
 .green {
-  text-decoration: none;
   color: var(--color-accent-link);
   transition: 0.4s;
-  padding: 3px;
 }
 
 @media (hover: hover) {
