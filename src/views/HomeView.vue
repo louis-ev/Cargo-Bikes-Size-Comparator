@@ -65,6 +65,12 @@
           <button @click="nextGlobalCompositeOperation">+</button>
         </div>
       </details>
+
+      <div class="_madeBy">
+        Made by <a href="https://louiseveillard.com/">Louis Eveillard</a>
+        <br />
+        Questions/feedbacks <a href="mailto:louiseveillard@gmail.com"> hello@louiseveillard.com</a>
+      </div>
     </div>
     <div class="_canvasWrapper">
       <div class="_noBikes" v-if="enabled_bikes.length === 0">
@@ -416,5 +422,10 @@ canvas {
    animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
+}
+
+._madeBy {
+  font-size: 0.8rem;
+  color: #999;
 }
 </style>
