@@ -61,6 +61,8 @@
               {{ operation }}
             </option>
           </select>
+          <button @click="prevGlobalCompositeOperation">-</button>
+          <button @click="nextGlobalCompositeOperation">+</button>
         </div>
       </details>
     </div>
@@ -256,6 +258,14 @@ export default {
           return acc
         }, [])
         .join('<br>')
+    },
+    prevGlobalCompositeOperation() {
+      const index = this.globalCompositeOperations.indexOf(this.canvas_composite_operation)
+      this.canvas_composite_operation = this.globalCompositeOperations[index - 1]
+    },
+    nextGlobalCompositeOperation() {
+      const index = this.globalCompositeOperations.indexOf(this.canvas_composite_operation)
+      this.canvas_composite_operation = this.globalCompositeOperations[index + 1]
     }
   }
 }
