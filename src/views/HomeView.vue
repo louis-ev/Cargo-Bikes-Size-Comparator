@@ -35,7 +35,7 @@
               <small v-html="getMeasurements(item)" />
               <br />
             </div>
-            <a :href="item.url" target="_blank">website</a>
+            <a :href="item.url" target="_blank"> <span>&#8594;</span> Website</a>
           </div>
         </div>
       </transition-group>
@@ -316,7 +316,7 @@ canvas {
 }
 
 ._item {
-  line-height: 1.1;
+  line-height: 1.2;
   background-color: white;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -378,6 +378,9 @@ canvas {
 
 ._itemBottom {
   padding: 0.75rem 1rem;
+}
+._measurements {
+  margin-bottom: 0.5rem;
 }
 
 .list-move, /* apply transition to moving elements */
