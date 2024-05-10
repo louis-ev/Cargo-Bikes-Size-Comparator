@@ -58,7 +58,7 @@
     "manufacturer": "Douze Cycles",
     "model": "Cargo Verso",
     "src": "/cargo/toyotacycle120544.png",
-    "bike_length_percent": 0.86012105,
+    "bike_length_percent": 0.86,
     "bike_length_cm": 275,
     "left_margin_percent": 0.061,
     "bottom_margin_percent": 0.105,
@@ -71,10 +71,23 @@
     "manufacturer": "Larry vs Harry",
     "model": "Bullit",
     "src": "/cargo/bullitt_2020_0046.png",
-    "bike_length_percent": 0.73463357,
+    "bike_length_percent": 0.735,
     "bike_length_cm": 243,
     "left_margin_percent": 0.1452,
     "bottom_margin_percent": 0.225,
+    "url": "https://www.larryvsharry.com/en/ebullitt"
+  },
+  {
+    "id": "urbanarrow",
+    "id_in_csv": "Urban Arrow/Family",
+
+    "manufacturer": "Urban Arrow",
+    "model": "Family",
+    "src": "/cargo/UA-family-performance-plus-white-F1_WEB.png",
+    "bike_length_percent": 0.73,
+    "bike_length_cm": 260,
+    "left_margin_percent": 0.135,
+    "bottom_margin_percent": 0.259,
     "url": "https://www.larryvsharry.com/en/ebullitt"
   }
 ]

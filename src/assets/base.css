@@ -20,6 +20,7 @@ body {
   background: var(--color-background);
   line-height: 1.6;
   font-family:
+    'Inter',
     Inter,
     -apple-system,
     BlinkMacSystemFont,

@@ -3,8 +3,13 @@
     <div class="_sidebar">
       <h1>List of bikes</h1>
       <transition-group tag="div" class="_bikeList" name="list">
-        <div class="_item" v-for="item in bikes" :key="item.id">
-          <label :for="item.id" class="_itemTop" :data-active="enabled_bikes.includes(item.id)">
+        <div
+          class="_item"
+          v-for="item in bikes"
+          :key="item.id"
+          :data-active="enabled_bikes.includes(item.id)"
+        >
+          <label :for="item.id" class="_itemTop">
             <input
               type="checkbox"
               :checked="enabled_bikes.includes(item.id)"
@@ -16,6 +21,8 @@
               <strong>{{ item.model }}</strong>
               /
               <small>{{ item.manufacturer }}</small>
+              <br />
+              <small>{{ item.bike_length_cm }} cm</small>
             </div>
 
             <div v-if="item.id">
@@ -35,23 +42,26 @@
 
       <details>
         <summary>Advanced</summary>
-        <div>
+        <div class="_advanced">
           <label>Grid step (cm)</label>
           <input type="range" step="1" min="1" max="100" v-model.number="grid_step" />
         </div>
-        <div>
+        <div class="_advanced">
           <label>Padding (%)</label>
           <input type="range" step="1" min="0" max="30" v-model.number="default_padding_percent" />
         </div>
-        <select v-model="canvas_composite_operation">
-          <option
-            v-for="operation in globalCompositeOperations"
-            :key="operation"
-            :value="operation"
-          >
-            {{ operation }}
-          </option>
-        </select>
+        <div class="_advanced">
+          <label>Layer blending</label>
+          <select v-model="canvas_composite_operation">
+            <option
+              v-for="operation in globalCompositeOperations"
+              :key="operation"
+              :value="operation"
+            >
+              {{ operation }}
+            </option>
+          </select>
+        </div>
       </details>
     </div>
     <div class="_canvasWrapper">
@@ -61,21 +71,17 @@
   </div>
 </template>
 <script>
-import { SlickList, SlickItem } from 'vue-slicksort'
-
 export default {
   props: {
     bikes: Array
   },
-  components: {
-    SlickList,
-    SlickItem
-  },
+  components: {},
   data() {
     return {
       enabled_bikes: [],
+      ro: null,
 
-      default_padding_percent: 10,
+      default_padding_percent: 5,
       grid_step: 20,
 
       canvas_composite_operation: 'source-over',
@@ -115,8 +121,12 @@ export default {
   },
   mounted() {
     this.showBikes()
+    this.ro = new ResizeObserver(this.showBikes)
+    this.ro.observe(this.$el)
   },
-  beforeUnmount() {},
+  beforeUnmount() {
+    this.ro.unobserve(this.$el)
+  },
   watch: {
     enabled_bikes: {
       handler() {
@@ -154,11 +164,12 @@ export default {
       }
     },
     async showBikes() {
+      console.log('showBikes')
       const canvas = this.$refs.bikes
       if (!canvas) return
 
-      canvas.height = canvas.parentNode.clientHeight
-      canvas.width = canvas.parentNode.clientWidth
+      canvas.height = canvas.parentNode.clientHeight * window.devicePixelRatio
+      canvas.width = canvas.parentNode.clientWidth * window.devicePixelRatio
 
       const ctx = canvas.getContext('2d')
       ctx.globalCompositeOperation = 'source-over'
@@ -181,8 +192,8 @@ export default {
       const padding = canvas.width / (100 / this.default_padding_percent)
       const each_px_measures_in_cm = (canvas.width - padding * 2) / largest_bike.bike_length_cm
 
-      ctx.strokeStyle = 'gray'
-      ctx.fillStyle = 'black'
+      ctx.strokeStyle = '#ccc'
+      ctx.fillStyle = '#999'
 
       let cm_count = 0
       const step = this.grid_step
@@ -193,7 +204,9 @@ export default {
         ctx.lineTo(x, canvas.height)
         ctx.stroke()
 
-        ctx.fillText(cm_count, x + 4, canvas.height - 10)
+        ctx.font = '10px Inter'
+
+        ctx.fillText(cm_count, x + 4, canvas.height - 4)
         cm_count += step
       }
 
@@ -211,7 +224,11 @@ export default {
 
       ctx.globalCompositeOperation = this.canvas_composite_operation
 
-      for await (const id of this.enabled_bikes) {
+      const sorted_enabled_bikes = this.enabled_bikes.sort((a, b) => {
+        return this.findMatchingBike(b).bike_length_cm - this.findMatchingBike(a).bike_length_cm
+      })
+
+      for await (const id of sorted_enabled_bikes) {
         const bike = this.findMatchingBike(id)
         if (!bike?.src) continue
 
@@ -264,27 +281,37 @@ canvas {
 }
 
 ._canvasWrapper {
+  flex: 1 1 auto;
   overflow: hidden;
 }
 
 ._bikeList {
   display: flex;
   flex-flow: column nowrap;
-  gap: 0.25rem;
+  gap: 0.5rem;
   padding: 0.25rem 0;
 }
 
 ._item {
-  line-height: 1.2;
+  line-height: 1.1;
   background-color: white;
   border-radius: 0.5rem;
   overflow: hidden;
 
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  &[data-active='true'] ._itemTop {
+    background-color: var(--color-accent);
+  }
+
+  &:hover,
+  &:focus-visible {
+    // box-shadow: 0 0.05rem 0.2rem 0rem var(--color-accent);
+  }
 }
 
 ._itemTop {
-  padding: 0.75rem 1rem;
+  padding: 0.25rem 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
 
@@ -293,6 +320,10 @@ canvas {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+
+  input {
+    cursor: pointer;
+  }
 
   ._names {
     flex: 1 1 auto;
@@ -306,18 +337,24 @@ canvas {
     width: 50px;
   }
 
-  &:hover:not([data-disabled='true']) {
-    // box-shadow: 0 0 0.15rem 0.15rem var(--color-accent);
+  &:hover,
+  &:focus-visible {
     background-color: var(--color-accent);
-  }
-
-  &[data-active='true'] {
-    // background-color: var(--color-accent);
   }
 }
 
+._advanced {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 0.25rem;
+}
+
 ._itemBottom {
-  padding: 0rem 1rem 0.75rem;
+  padding: 0.75rem 1rem;
 }
 
 .list-move, /* apply transition to moving elements */
