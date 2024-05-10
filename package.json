@@ -1,7 +1,6 @@
 {
-  "name": "-2024-cargo-dim",
-  "version": "0.0.0",
-  "private": true,
+  "name": "2024-cargo-dim",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

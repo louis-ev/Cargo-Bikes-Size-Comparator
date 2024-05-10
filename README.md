@@ -1,4 +1,7 @@
-# 2024-CARGO_DIM
+# 2024-CARGO_DIM
+
+Source code for https://bikes.louiseveillard.com/
+Contributions welcome.
 
 Remove BG : https://www.experte.com/background-remover
 Measure left margin between edge and left edge of rear wheel.
