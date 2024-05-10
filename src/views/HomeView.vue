@@ -30,12 +30,12 @@
             </div>
           </label>
 
-          <div class="_itemBottom" v-if="enabled_bikes.includes(item.id) && item._measurements">
-            <div class="_measurements" v-if="getMeasurements(item)">
+          <div class="_itemBottom" v-if="enabled_bikes.includes(item.id)">
+            <div class="_measurements" v-if="item._measurements">
               <small v-html="getMeasurements(item)" />
               <br />
             </div>
-            <a :href="item.url" target="_blank"> <span>&#8594;</span> Website</a>
+            <a :href="item.url" target="_blank"> <span>&#8594;</span>website</a>
           </div>
         </div>
       </transition-group>
@@ -68,8 +68,21 @@
 
       <div class="_madeBy">
         <div>
+          <a href="mailto:hello@louiseveillard.com" target="_blank">Questions/feedbacks</a>
+        </div>
+        <hr />
+        <div>
           Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
           Nantes (FR)
+        </div>
+        <div>
+          Specific measures taken from
+          <a
+            href="https://docs.google.com/spreadsheets/d/1vPCfYStt8fXQQtYDFfNS70kR8B2V2dDwAs_r0VlUlWw/"
+            target="_blank"
+          >
+            this document
+          </a>
         </div>
         <div>
           Source code
@@ -82,10 +95,6 @@
           <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank"
             >free, open-source under AGPL v3</a
           >
-        </div>
-        <div>
-          Questions/feedbacks
-          <a href="mailto:hello@louiseveillard.com" target="_blank">hello@louiseveillard.com</a>
         </div>
       </div>
     </div>
@@ -158,17 +167,17 @@ export default {
       deep: true
     },
     canvas_composite_operation: {
-      handler(val) {
+      handler() {
         this.showBikes()
       }
     },
     default_padding_percent: {
-      handler(val) {
+      handler() {
         this.showBikes()
       }
     },
     grid_step: {
-      handler(val) {
+      handler() {
         this.showBikes()
       }
     }
@@ -204,7 +213,6 @@ export default {
       })
     },
     async showBikes() {
-      console.log('showBikes')
       const canvas = this.$refs.bikes
       if (!canvas) return
 
@@ -417,7 +425,7 @@ canvas {
 }
 
 ._itemBottom {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem 1rem;
 }
 ._measurements {
   margin-bottom: 0.5rem;
@@ -442,7 +450,15 @@ canvas {
 }
 
 ._madeBy {
+  margin-top: 1rem;
   font-size: 0.8rem;
   color: #999;
+
+  hr {
+    margin: 1rem 0;
+
+    border: none;
+    border-top: 1px solid #ccc;
+  }
 }
 </style>
