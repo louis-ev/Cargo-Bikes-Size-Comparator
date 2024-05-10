@@ -1,7 +1,11 @@
 <template>
   <div class="_homeView">
     <div class="_sidebar">
-      <h1>List of bikes</h1>
+      <h1>Cargo Bikes<br />Size Comparator</h1>
+      <div class="_infos">
+        <small>Click on bikes in this list to compare their size :</small>
+      </div>
+
       <transition-group tag="div" class="_bikeList" name="list">
         <div
           class="_item"
@@ -41,7 +45,7 @@
       </transition-group>
 
       <details>
-        <summary>Advanced</summary>
+        <summary>Advanced options</summary>
         <div class="_advanced">
           <label>Grid step (cm)</label>
           <input type="range" step="1" min="1" max="100" v-model.number="grid_step" />
@@ -100,7 +104,7 @@
     </div>
     <div class="_canvasWrapper">
       <div class="_noBikes" v-if="enabled_bikes.length === 0">
-        Click on two or more bikes to compare their size
+        <small>Click on two bikes or more in the sidebar to compare their size</small>
       </div>
       <canvas ref="bikes" width="1920" height="1920" />
     </div>
