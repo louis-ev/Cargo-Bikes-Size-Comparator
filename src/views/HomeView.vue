@@ -152,9 +152,9 @@ export default {
   },
   computed: {
     enabled_bikes() {
-      if (this.$route.query.enabled_bikes) {
+      if (this.$route.query.bikes) {
         try {
-          return JSON.parse(this.$route.query.enabled_bikes)
+          return JSON.parse(this.$route.query.bikes)
         } catch (e) {
           return []
         }
@@ -176,7 +176,7 @@ export default {
 
       this.$router.push({
         query: {
-          enabled_bikes: JSON.stringify(enabled_bikes)
+          bikes: JSON.stringify(enabled_bikes)
         }
       })
     },
