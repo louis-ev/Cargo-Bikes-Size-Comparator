@@ -67,7 +67,10 @@
       </details>
 
       <div class="_madeBy">
-        <div>Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a></div>
+        <div>
+          Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
+          Nantes (FR)
+        </div>
         <div>
           Source code
           <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank">
