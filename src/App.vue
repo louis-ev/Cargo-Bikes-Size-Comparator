@@ -4,7 +4,6 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav> -->
-    {{ cargo_data }}
     <RouterView :bikes="sorted_bikes" />
   </div>
 </template>
@@ -54,15 +53,6 @@ export default {
         .then((csv) => {
           const data = this.csvJSON(csv)
           this.measurements = data
-
-          // this.cargo_data = data.map((item) => {
-          //   item.Model = item.Model ? item.Model.replaceAll('/', '_').trim() : 'NOT_AVAILABLE'
-          //   item.Manufacturer = item.Manufacturer
-          //     ? item.Manufacturer.replaceAll('/', '_')
-          //     : 'NOT_AVAILABLE'
-          //   item.id = item.Model + '/' + item.Manufacturer
-          //   return item
-          // })
         })
         .catch((error) => console.error('Erreur lors du chargement du fichier CSV:', error))
     },
