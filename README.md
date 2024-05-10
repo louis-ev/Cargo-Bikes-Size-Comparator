@@ -1,4 +1,4 @@
-# 2024-CARGO_DIM
+# Cargo Bikes Size Comparator
 
 Source code for https://bikes.louiseveillard.com/
 Contributions welcome.
