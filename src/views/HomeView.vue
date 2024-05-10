@@ -309,6 +309,7 @@ canvas {
 ._canvasWrapper {
   flex: 1 1 auto;
   overflow: hidden;
+  min-width: 320px;
 }
 ._noBikes {
   display: flex;
