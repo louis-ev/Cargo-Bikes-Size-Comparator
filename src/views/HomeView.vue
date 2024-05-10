@@ -67,7 +67,9 @@
       </details>
     </div>
     <div class="_canvasWrapper">
-      <template v-if="enabled_bikes.length === 0"> Select bikes to compare </template>
+      <div class="_noBikes" v-if="enabled_bikes.length === 0">
+        Click on two or more bikes to compare their size
+      </div>
       <canvas ref="bikes" width="1920" height="1920" />
     </div>
   </div>
@@ -219,7 +221,8 @@ export default {
         ctx.lineTo(x, canvas.height)
         ctx.stroke()
 
-        ctx.font = '10px Inter'
+        const font_size = (canvas.parentNode.clientHeight / 80) * window.devicePixelRatio * 1
+        ctx.font = `${font_size}px Inter`
 
         ctx.fillText(cm_count, x + 4, canvas.height - 4)
         cm_count += step
@@ -306,6 +309,19 @@ canvas {
 ._canvasWrapper {
   flex: 1 1 auto;
   overflow: hidden;
+}
+._noBikes {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  // font-weight: 400;
+  text-transform: lowercase;
+  color: #999;
 }
 
 ._bikeList {
