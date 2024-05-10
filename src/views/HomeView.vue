@@ -216,7 +216,10 @@ export default {
       const canvas = this.$refs.bikes
       if (!canvas) return
 
-      canvas.width = canvas.parentNode.clientWidth * window.devicePixelRatio
+      canvas.width = Math.min(
+        canvas.parentNode.clientWidth * window.devicePixelRatio,
+        canvas.parentNode.clientHeight * window.devicePixelRatio * 1.5
+      )
       canvas.height = Math.min(
         canvas.parentNode.clientHeight * window.devicePixelRatio,
         canvas.width
@@ -230,6 +233,10 @@ export default {
         '--color-background'
       )
       ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      ctx.strokeStyle = '#ccc'
+      ctx.strokeWidth = 1
+      ctx.strokeRect(1, 1, canvas.width - 1, canvas.height - 1)
 
       // get largest bike image
       let largest_bike
@@ -269,7 +276,7 @@ export default {
         ctx.lineTo(canvas.width, y)
         ctx.stroke()
 
-        ctx.fillText(cm_count, 0, y - 4)
+        ctx.fillText(cm_count, 0 + 4, y - 4)
 
         cm_count += step
       }
@@ -326,9 +333,14 @@ export default {
   flex-flow: row nowrap;
   height: 100svh;
 }
+
 canvas {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+}
+
+h1 {
+  font-weight: 800;
 }
 
 ._sidebar {
@@ -344,6 +356,9 @@ canvas {
   flex: 1 1 auto;
   overflow: hidden;
   min-width: 420px;
+  margin: 1rem;
+  margin-left: 0;
+  // border: 1px solid #ccc;
 }
 ._noBikes {
   display: flex;
