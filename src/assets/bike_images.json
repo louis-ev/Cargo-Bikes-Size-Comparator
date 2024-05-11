@@ -88,7 +88,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.135,
     "bottom_margin_percent": 0.259,
-    "url": "https://www.larryvsharry.com/en/ebullitt"
+    "url": "https://urbanarrow.com/"
   },
   {
     "id": "decathlon-r500e",
@@ -114,7 +114,7 @@
     "bike_length_cm": 200,
     "left_margin_percent": 0.036,
     "bottom_margin_percent": 0.152,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://moustachebikes.com/fr/en/electric-bikes/lundi-20-cargo/lundi-20-cargo-3/"
   },
   {
     "id": "yuba-fastrack",
@@ -127,7 +127,7 @@
     "bike_length_cm": 191,
     "left_margin_percent": 0.079,
     "bottom_margin_percent": 0.113,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://www.yubaeurope.com/en/bikes-add-ons/fastrack/fastrack"
   },
   {
     "id": "tern-gsd",
@@ -140,7 +140,7 @@
     "bike_length_cm": 180,
     "left_margin_percent": 0.115,
     "bottom_margin_percent": 0.07,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://www.ternbicycles.com/en/bikes/472/gsd"
   },
   {
     "id": "omnium-minimax",
@@ -153,7 +153,7 @@
     "bike_length_cm": 202,
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.086,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://omniumcargo.com/mini-max/"
   },
   {
     "id": "lepetitporteur",
@@ -166,7 +166,7 @@
     "bike_length_cm": 167,
     "left_margin_percent": 0.041,
     "bottom_margin_percent": 0.015,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://www.lepetitporteur.com/"
   },
   {
     "id": "nakamura",
@@ -179,6 +179,6 @@
     "bike_length_cm": 220,
     "left_margin_percent": 0.008,
     "bottom_margin_percent": 0.216,
-    "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
+    "url": "https://www.intersport.fr/vtc_electrique_adulte_crossover_longtail-nakamura-p-YF60WT~ANM/"
   }
 ]
