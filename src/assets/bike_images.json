@@ -131,7 +131,7 @@
   },
   {
     "id": "tern-gsd",
-    "id_in_csv": "",
+    "id_in_csv": "Tern/GSD Gen. 2",
 
     "manufacturer": "Tern",
     "model": "GSD",
@@ -173,12 +173,103 @@
     "id_in_csv": "",
 
     "manufacturer": "Nakamura",
-    "model": "CROSSOVER LONGTAIL",
+    "model": "Crossover",
     "src": "/cargo/nakamura-co.png",
     "bike_length_percent": 0.98,
     "bike_length_cm": 220,
     "left_margin_percent": 0.008,
     "bottom_margin_percent": 0.216,
     "url": "https://www.intersport.fr/vtc_electrique_adulte_crossover_longtail-nakamura-p-YF60WT~ANM/"
+  },
+  {
+    "id": "lovens",
+    "id_in_csv": "",
+
+    "manufacturer": "Lovens",
+    "model": "Explorer S75 ",
+    "src": "/cargo/lovens-explorer75.png",
+    "bike_length_percent": 0.947,
+    "bike_length_cm": 260,
+    "left_margin_percent": 0.032,
+    "bottom_margin_percent": 0.06,
+    "url": "https://lovensbikes.com/fr/lovens-explorer-s75/"
+  },
+  {
+    "id": "yoonit",
+    "id_in_csv": "",
+
+    "manufacturer": "Yoonit",
+    "model": "",
+    "src": "/cargo/yoonit-classic.png",
+    "bike_length_percent": 0.725,
+    "bike_length_cm": 177,
+    "left_margin_percent": 0.138,
+    "bottom_margin_percent": 0.137,
+    "url": "https://www.yoonitbikes.com/"
+  },
+  {
+    "id": "multicharger2",
+    "id_in_csv": "R&M/Multicharger",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Multicharger2",
+    "src": "/cargo/multicharger.png",
+    "bike_length_percent": 0.98,
+    "bike_length_cm": 197,
+    "left_margin_percent": 0.012,
+    "bottom_margin_percent": 0.011,
+    "url": "https://www.r-m.de/fr/bikes/multicharger2-mixte/"
+  },
+  {
+    "id": "multitinker",
+    "id_in_csv": "R&M/Multitinker",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Multitinker",
+    "src": "/cargo/multitinker.png",
+    "bike_length_percent": 0.833,
+    "bike_length_cm": 189,
+    "left_margin_percent": 0.09,
+    "bottom_margin_percent": 0.045,
+    "url": "https://www.r-m.de/fr/bikes/multitinker/"
+  },
+  {
+    "id": "packster70",
+    "id_in_csv": "R&M/Packster 70",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Packster 70",
+    "src": "/cargo/packster-70.png",
+    "bike_length_percent": 0.875,
+    "bike_length_cm": 249,
+    "left_margin_percent": 0.077,
+    "bottom_margin_percent": 0.238,
+    "url": "https://www.r-m.de/fr/bikes/packster-70/"
+  },
+  {
+    "id": "bunch-bike",
+    "id_in_csv": "",
+
+    "manufacturer": "Bunch Bike",
+    "model": "The Original 4",
+    "src": "/cargo/bunch-bike.png",
+    "bike_length_percent": 0.963,
+    "bike_length_cm": 211,
+    "left_margin_percent": 0.021,
+    "bottom_margin_percent": 0.283,
+    "url": "https://bunchbike.com/products/the-original-4-upgraded-electric-cargo-bike-for-families"
+  },
+  {
+    "id": "cargo-classic",
+    "id_in_csv": "",
+
+    "manufacturer": "Cannondale",
+    "model": "Cargowagen Neo",
+    "src": "/cargo/cargowagen.png",
+    "bike_length_percent": 1,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.034,
+    "bottom_margin_percent": 0,
+    "url": "https://www.cannondale.com/fr-fr/bikes/electric/e-cargo/cargowagen-neo/cargowagen-neo-1"
   }
 ]
