@@ -3,7 +3,12 @@
     <div class="_sidebar">
       <h1>Cargo Bikes<br />Size Comparator</h1>
       <div class="_infos">
-        <small>Click on bikes in this list to compare their size :</small>
+        <small v-if="enabled_bikes.length <= 1">
+          Click on bikes in this list to compare their size :
+        </small>
+        <small v-else>
+          <button class="_reset" @click="resetBikes">Reset</button>
+        </small>
       </div>
 
       <transition-group tag="div" class="_bikeList" name="list">
@@ -23,8 +28,9 @@
 
             <div class="_names">
               <strong>{{ item.model }}</strong>
-              /
-              <small>{{ item.manufacturer }}</small>
+              <template v-if="item.manufacturer">
+                <small> – {{ item.manufacturer }}</small>
+              </template>
               <br />
               <small>{{ item.bike_length_cm }} cm</small>
             </div>
@@ -202,6 +208,11 @@ export default {
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
     },
+    resetBikes() {
+      this.$router.push({
+        query: {}
+      })
+    },
     toggleBike(id) {
       let enabled_bikes = this.enabled_bikes
       if (enabled_bikes.includes(id)) {
@@ -209,7 +220,6 @@ export default {
       } else {
         enabled_bikes.push(id)
       }
-
       this.$router.push({
         query: {
           bikes: JSON.stringify(enabled_bikes)
@@ -482,5 +492,11 @@ h1 {
     border: none;
     border-top: 1px solid #ccc;
   }
+}
+
+._reset {
+  padding: 0 0.25rem;
+
+  cursor: pointer;
 }
 </style>
