@@ -20,11 +20,13 @@ export default {
   data() {
     return {
       bikes: bikes,
-      measurements: []
+      bakfiets_measures: [],
+      longtails_measures: []
     }
   },
   created() {
-    this.loadCargo()
+    this.loadBakfiets()
+    this.loadLongtails()
   },
   mounted() {},
   beforeUnmount() {},
@@ -32,10 +34,12 @@ export default {
   computed: {
     supercharged_bikes() {
       return this.bikes.map((item) => {
-        const found = this.measurements.find(
-          (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
-        )
-        if (found) item._measurements = found
+        if (this.all_measures.length > 0) {
+          const found = this.all_measures.find(
+            (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
+          )
+          if (found) item._measurements = found
+        }
         return item
       })
     },
@@ -44,15 +48,27 @@ export default {
       return this.supercharged_bikes.slice().sort((a, b) => {
         return a.bike_length_cm - b.bike_length_cm
       })
+    },
+    all_measures() {
+      return this.bakfiets_measures.concat(this.longtails_measures)
     }
   },
   methods: {
-    loadCargo() {
+    loadBakfiets() {
       fetch('./Cargo bike measurements - Bakfiets.csv')
         .then((response) => response.text())
         .then((csv) => {
           const data = this.csvJSON(csv)
-          this.measurements = data
+          this.bakfiets_measures = data
+        })
+        .catch((error) => console.error('Erreur lors du chargement du fichier CSV:', error))
+    },
+    loadLongtails() {
+      fetch('./Cargo bike measurements - Longtail_midtail.csv')
+        .then((response) => response.text())
+        .then((csv) => {
+          const data = this.csvJSON(csv)
+          this.longtails_measures = data
         })
         .catch((error) => console.error('Erreur lors du chargement du fichier CSV:', error))
     },
