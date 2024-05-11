@@ -2,6 +2,11 @@
   <div class="_homeView">
     <div class="_sidebar">
       <h1>Cargo Bikes<br />Size Comparator</h1>
+
+      <div class="_search">
+        <input type="search" v-model="search_str" placeholder="Search by model or manufacturer" />
+      </div>
+
       <div class="_infos">
         <small v-if="enabled_bikes.length <= 1">
           Click on bikes in this list to compare their size :
@@ -14,7 +19,7 @@
       <transition-group tag="div" class="_bikeList" name="list">
         <div
           class="_item"
-          v-for="item in bikes"
+          v-for="item in filtered_bikes"
           :key="item.id"
           :data-active="enabled_bikes.includes(item.id)"
         >
@@ -27,8 +32,8 @@
             />
 
             <div class="_names">
-              <strong>{{ item.model }}</strong>
-              <template v-if="item.manufacturer">
+              <strong>{{ item.model || item.manufacturer }}</strong>
+              <template v-if="item.manufacturer && item.model">
                 <small> – {{ item.manufacturer }}</small>
               </template>
               <br />
@@ -129,6 +134,8 @@ export default {
       default_padding_percent: 5,
       grid_step: 20,
 
+      search_str: '',
+
       canvas_composite_operation: 'source-over',
       globalCompositeOperations: [
         'source-over',
@@ -202,6 +209,14 @@ export default {
         }
       }
       return []
+    },
+    filtered_bikes() {
+      return this.bikes.filter((bike) => {
+        return (
+          bike.model.toLowerCase().includes(this.search_str.toLowerCase()) ||
+          bike.manufacturer.toLowerCase().includes(this.search_str.toLowerCase())
+        )
+      })
     }
   },
   methods: {
@@ -298,7 +313,7 @@ export default {
       ctx.globalCompositeOperation = this.canvas_composite_operation
 
       const sorted_enabled_bikes = this.enabled_bikes.sort((a, b) => {
-        return this.findMatchingBike(b).bike_length_cm - this.findMatchingBike(a).bike_length_cm
+        return this.findMatchingBike(b)?.bike_length_cm - this.findMatchingBike(a)?.bike_length_cm
       })
 
       for await (const id of sorted_enabled_bikes) {
@@ -437,7 +452,10 @@ h1 {
   }
   img {
     flex: 0 0 auto;
-    width: 50px;
+    height: 30px;
+    width: 40px;
+    object-fit: scale-down;
+    object-position: right;
   }
 
   &:hover,
@@ -466,19 +484,19 @@ h1 {
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.5s ease;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(0px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
+  z-index: -1;
 }
 
 ._madeBy {
@@ -498,5 +516,12 @@ h1 {
   padding: 0 0.25rem;
 
   cursor: pointer;
+}
+._search {
+  margin-bottom: 1rem;
+
+  input {
+    width: 100%;
+  }
 }
 </style>

@@ -46,3 +46,14 @@ h1 {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
+
+input[type='search'] {
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+  padding: 5px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+}
