@@ -3,8 +3,6 @@
     <div class="_sidebar">
       <h1>Cargo Bikes<br />Size Comparator</h1>
 
-      {{ enabled_bikes }}
-
       <div class="_search">
         <input type="search" v-model="search_str" placeholder="Search by model or manufacturer" />
       </div>
@@ -82,15 +80,6 @@
           <button @click="prevGlobalCompositeOperation">-</button>
           <button @click="nextGlobalCompositeOperation">+</button>
         </div>
-        <div class="_advanced">
-          <label for="canvas_image_style_outline2">Outline View</label>
-          <input
-            type="checkbox"
-            name="canvas_image_style_outline2"
-            id="canvas_image_style_outline2"
-            v-model="canvas_image_style_outline"
-          />
-        </div>
       </details>
 
       <div class="_madeBy">
@@ -131,15 +120,15 @@
       </div>
       <template v-else>
         <div class="_canvasOptions">
-          <div class="_advanced _setImageStyle">
-            <label for="canvas_image_style_outline">Outline View</label>
+          <label class="_advanced _setImageStyle" for="canvas_image_style_outline">
+            Outline View
             <input
               type="checkbox"
               name="canvas_image_style_outline"
               id="canvas_image_style_outline"
               v-model="canvas_image_style_outline"
             />
-          </div>
+          </label>
         </div>
       </template>
       <canvas ref="bikes" width="1920" height="1920" />
@@ -627,8 +616,8 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
   pointer-events: none;
+  padding: 1rem;
 
   display: flex;
   flex-direction: row wrap;
