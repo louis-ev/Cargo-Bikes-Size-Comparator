@@ -7,14 +7,15 @@
         <input type="search" v-model="search_str" placeholder="Search by model or manufacturer" />
       </div>
 
-      <div class="_infos">
-        <small v-if="enabled_bikes.length <= 1">
+      <small class="_infos">
+        <template v-if="enabled_bikes.length === 0">
           Click on bikes in this list to compare their size :
-        </small>
-        <small v-else>
+        </template>
+        <template v-else>
+          <span>{{ enabled_bikes.length }} bikes selected</span>
           <button class="_reset" @click="resetBikes">Reset</button>
-        </small>
-      </div>
+        </template>
+      </small>
 
       <transition-group tag="div" class="_bikeList" name="list">
         <div
@@ -620,5 +621,13 @@ h1 {
     border-radius: 0.5rem;
     padding: 0.5rem;
   }
+}
+
+._infos {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 </style>
