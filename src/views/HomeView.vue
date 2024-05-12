@@ -11,7 +11,7 @@
 
       <small class="_infos">
         <template v-if="enabled_bikes.length === 0">
-          Click on bikes in this list to compare their size :
+          Click on bikes in this list to compare their size
         </template>
         <template v-else>
           <span>{{ enabled_bikes.length }} bikes selected</span>
@@ -99,8 +99,8 @@
         </div>
         <hr />
         <div>
-          Made by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
-          Nantes (FR)
+          Created by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
+          Nantes (FR), with help from various contributors.
         </div>
         <div>
           Specific measures taken from
@@ -602,6 +602,10 @@ h1 {
 
     border: none;
     border-top: 1px solid #ccc;
+  }
+
+  > * {
+    margin-bottom: 0.5rem;
   }
 }
 
