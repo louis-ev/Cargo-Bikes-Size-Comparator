@@ -391,10 +391,13 @@ export default {
           edge_detect(processorCanvas)
 
           // colorize
-          const color_options = ['11bb11', '3333ff', 'bbbb00', 'ff0000', 'ff00ff', '00bbbbb']
-          // find the index of the current bike
-          const index = this.enabled_bikes.indexOf(bike.id)
-          const color = color_options[index % color_options.length]
+          let color = bike.color
+          if (!color) {
+            const color_options = ['11bb11', '3333ff', 'bbbb00', 'ff0000', 'ff00ff', '00bbbbb']
+            // find the index of the current bike
+            const index = this.enabled_bikes.indexOf(bike.id)
+            color = color_options[index % color_options.length]
+          }
           colorize(processorCanvas, color)
 
           ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
