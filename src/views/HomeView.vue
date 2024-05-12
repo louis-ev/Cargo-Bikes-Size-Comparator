@@ -33,9 +33,14 @@
             />
 
             <div class="_names">
-              <strong>{{ item.model || item.manufacturer }}</strong>
+              <strong
+                >{{ item.model || item.manufacturer }}
+                <template v-if="item.frame_made_in">
+                  {{ unicodeFlag(item.frame_made_in) }}
+                </template>
+              </strong>
               <template v-if="item.manufacturer && item.model">
-                <small> – {{ item.manufacturer }}</small>
+                <small> – {{ item.manufacturer }} </small>
               </template>
               <br />
               <small>{{ item.bike_length_cm }} cm</small>
@@ -47,6 +52,11 @@
           </label>
 
           <div class="_itemBottom" v-if="enabled_bikes.includes(item.id)">
+            <div class="_madeIn" v-if="item.frame_made_in">
+              Bike mostly manufactured and assembled in <strong>{{ item.frame_made_in }}</strong
+              >.
+            </div>
+
             <div class="_measurements" v-if="item._measurements">
               <small v-html="getMeasurements(item)" />
               <br />
@@ -267,6 +277,12 @@ export default {
       this.$router.push({
         query: {}
       })
+    },
+    unicodeFlag(country) {
+      if (country === 'USA') return '🇺🇸'
+      if (country === 'Germany') return '🇩🇪'
+      if (country === 'France') return '🇫🇷'
+      return
     },
     toggleBike(id) {
       let enabled_bikes = this.enabled_bikes
@@ -558,6 +574,9 @@ h1 {
 
 ._itemBottom {
   padding: 0.5rem 1rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
 }
 ._measurements {
   margin-bottom: 0.5rem;
