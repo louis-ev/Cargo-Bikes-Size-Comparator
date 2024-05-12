@@ -170,6 +170,34 @@
     "url": "https://omniumcargo.com/mini-max/"
   },
   {
+    "id": "omnium-cargo",
+    "id_in_csv": "",
+
+    "manufacturer": "Omnium",
+    "model": "Cargo V3 M",
+    "src": "/cargo/omnium-cargo-v3.png",
+    "bike_length_percent": 0.95,
+    "bike_length_cm": 224,
+    "left_margin_percent": 0.027,
+    "bottom_margin_percent": 0.175,
+    "color": "B39364",
+    "url": "https://omniumcargo.com/cargo/"
+  },
+  {
+    "id": "omnium-mini",
+    "id_in_csv": "",
+
+    "manufacturer": "Omnium",
+    "model": "Mini V3 M",
+    "src": "/cargo/omnium-mini-v3.png",
+    "bike_length_percent": 0.935,
+    "bike_length_cm": 165,
+    "left_margin_percent": 0.037,
+    "bottom_margin_percent": 0.066,
+    "color": "B39364",
+    "url": "https://omniumcargo.com/mini/"
+  },
+  {
     "id": "lepetitporteur",
     "id_in_csv": "",
 
