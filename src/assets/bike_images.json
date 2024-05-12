@@ -10,6 +10,7 @@
     "bike_length_cm": 192,
     "left_margin_percent": 0.075,
     "bottom_margin_percent": 0.088,
+    "color": "8AA5C3",
     "url": "https://chike.de/en/"
   },
   {
@@ -23,6 +24,7 @@
     "bike_length_cm": 198,
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.223,
+    "color": "BFA38A",
     "url": "https://muli-cycles.de/en"
   },
   {
@@ -36,6 +38,7 @@
     "bike_length_cm": 209,
     "left_margin_percent": 0.15,
     "bottom_margin_percent": 0.095,
+    "color": "78A4AA",
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
   {
@@ -49,6 +52,7 @@
     "bike_length_cm": 264.5,
     "left_margin_percent": 0.045,
     "bottom_margin_percent": 0.02,
+    "color": "CD884B",
     "url": "https://www.r-m.de/en-en/bikes/load-75"
   },
   {
@@ -62,6 +66,7 @@
     "bike_length_cm": 275,
     "left_margin_percent": 0.077,
     "bottom_margin_percent": 0.105,
+    "color": "CE373A",
     "url": "https://www.douze-cycles.com/velos-cargos/heta"
   },
   {
@@ -75,6 +80,7 @@
     "bike_length_cm": 243,
     "left_margin_percent": 0.1452,
     "bottom_margin_percent": 0.225,
+    "color": "F6AA07",
     "url": "https://www.larryvsharry.com/en/ebullitt"
   },
   {
@@ -88,6 +94,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.135,
     "bottom_margin_percent": 0.259,
+    "color": "DCDCDC",
     "url": "https://urbanarrow.com/"
   },
   {
@@ -101,6 +108,7 @@
     "bike_length_cm": 220,
     "left_margin_percent": 0.0375,
     "bottom_margin_percent": 0.072,
+    "color": "A2AC9D",
     "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924"
   },
   {
@@ -114,6 +122,7 @@
     "bike_length_cm": 200,
     "left_margin_percent": 0.036,
     "bottom_margin_percent": 0.152,
+    "color": "000000",
     "url": "https://moustachebikes.com/fr/en/electric-bikes/lundi-20-cargo/lundi-20-cargo-3/"
   },
   {
@@ -127,6 +136,7 @@
     "bike_length_cm": 191,
     "left_margin_percent": 0.079,
     "bottom_margin_percent": 0.113,
+    "color": "B6B9B7",
     "url": "https://www.yubaeurope.com/en/bikes-add-ons/fastrack/fastrack"
   },
   {
@@ -140,6 +150,7 @@
     "bike_length_cm": 180,
     "left_margin_percent": 0.115,
     "bottom_margin_percent": 0.07,
+    "color": "FFDD1A",
     "url": "https://www.ternbicycles.com/en/bikes/472/gsd"
   },
   {
@@ -153,6 +164,7 @@
     "bike_length_cm": 202,
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.086,
+    "color": "B39364",
     "url": "https://omniumcargo.com/mini-max/"
   },
   {
@@ -166,6 +178,7 @@
     "bike_length_cm": 167,
     "left_margin_percent": 0.041,
     "bottom_margin_percent": 0.015,
+    "color": "FD7C02",
     "url": "https://www.lepetitporteur.com/"
   },
   {
@@ -179,6 +192,7 @@
     "bike_length_cm": 220,
     "left_margin_percent": 0.008,
     "bottom_margin_percent": 0.216,
+    "color": "E0CDC2",
     "url": "https://www.intersport.fr/vtc_electrique_adulte_crossover_longtail-nakamura-p-YF60WT~ANM/"
   },
   {
@@ -192,6 +206,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.032,
     "bottom_margin_percent": 0.06,
+    "color": "959595",
     "url": "https://lovensbikes.com/fr/lovens-explorer-s75/"
   },
   {
@@ -205,6 +220,7 @@
     "bike_length_cm": 177,
     "left_margin_percent": 0.138,
     "bottom_margin_percent": 0.137,
+    "color": "787FC1",
     "url": "https://www.yoonitbikes.com/"
   },
   {
@@ -218,6 +234,7 @@
     "bike_length_cm": 197,
     "left_margin_percent": 0.012,
     "bottom_margin_percent": 0.011,
+    "color": "CDA921",
     "url": "https://www.r-m.de/fr/bikes/multicharger2-mixte/"
   },
   {
@@ -231,6 +248,7 @@
     "bike_length_cm": 189,
     "left_margin_percent": 0.09,
     "bottom_margin_percent": 0.045,
+    "color": "1576A2",
     "url": "https://www.r-m.de/fr/bikes/multitinker/"
   },
   {
@@ -244,6 +262,7 @@
     "bike_length_cm": 249,
     "left_margin_percent": 0.077,
     "bottom_margin_percent": 0.238,
+    "color": "D21D1D",
     "url": "https://www.r-m.de/fr/bikes/packster-70/"
   },
   {
@@ -257,6 +276,7 @@
     "bike_length_cm": 211,
     "left_margin_percent": 0.021,
     "bottom_margin_percent": 0.283,
+    "color": "DE3C2D",
     "url": "https://bunchbike.com/products/the-original-4-upgraded-electric-cargo-bike-for-families"
   },
   {
@@ -270,6 +290,7 @@
     "bike_length_cm": 185,
     "left_margin_percent": 0.034,
     "bottom_margin_percent": 0,
+    "color": "D11B11",
     "url": "https://www.cannondale.com/fr-fr/bikes/electric/e-cargo/cargowagen-neo/cargowagen-neo-1"
   }
 ]
