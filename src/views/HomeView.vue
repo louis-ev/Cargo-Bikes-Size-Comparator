@@ -130,10 +130,6 @@
 
         <template v-if="show_license">
           <div class="_license">
-            <p>
-              This website is free and open-source under AGPL v3. Bike images from the
-              manufacturer's website.
-            </p>
             <pre>
 Copyright (C) 2024 Louis Eveillard
 
