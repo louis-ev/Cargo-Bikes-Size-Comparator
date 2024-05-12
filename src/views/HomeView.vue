@@ -12,7 +12,12 @@
           Click on bikes in this list to compare their size
         </template>
         <template v-else>
-          <span>{{ enabled_bikes.length }} bikes selected</span>
+          <span>
+            <template v-if="enabled_bikes.length === 1">
+              {{ enabled_bikes.length }} bike selected
+            </template>
+            <template v-else> {{ enabled_bikes.length }} bikes selected </template>
+          </span>
           <button class="_reset" @click="resetBikes">Reset</button>
         </template>
       </small>
