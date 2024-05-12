@@ -79,6 +79,13 @@
           <button @click="prevGlobalCompositeOperation">-</button>
           <button @click="nextGlobalCompositeOperation">+</button>
         </div>
+        <div class="_advanced">
+          <label>Image style</label>
+          <select v-model="canvas_image_style">
+            <option value="photo">Photo</option>
+            <option value="line">Outline</option>
+          </select>
+        </div>
       </details>
 
       <div class="_madeBy">
@@ -118,10 +125,12 @@
         <small>Click on two bikes or more in the sidebar to compare their size</small>
       </div>
       <canvas ref="bikes" width="1920" height="1920" />
+      <canvas ref="processor" width="1920" height="1920" style="display: none" />
     </div>
   </div>
 </template>
 <script>
+import { edge_detect, colorize } from '../helpers.js'
 export default {
   props: {
     bikes: Array
@@ -164,7 +173,9 @@ export default {
         'saturation',
         'color',
         'luminosity'
-      ]
+      ],
+
+      canvas_image_style: 'photo'
     }
   },
   created() {},
@@ -185,6 +196,17 @@ export default {
     },
     canvas_composite_operation: {
       handler() {
+        this.showBikes()
+      }
+    },
+    canvas_image_style: {
+      handler() {
+        // could add these defaults in if desired
+        // if (this.canvas_image_style === 'line') {
+        //   this.canvas_composite_operation = 'multiply'
+        // } else {
+        //   this.canvas_composite_operation = 'source-over'
+        // }
         this.showBikes()
       }
     },
@@ -332,7 +354,42 @@ export default {
 
         const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
 
-        ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+        if (this.canvas_image_style === 'line') {
+          // Offscreen canvas for edge detection on the image
+          const processorCanvas = this.$refs.processor
+          if (!processorCanvas) return
+
+          processorCanvas.width = Math.min(
+            processorCanvas.parentNode.clientWidth * window.devicePixelRatio,
+            processorCanvas.parentNode.clientHeight * window.devicePixelRatio * 1.5
+          )
+          processorCanvas.height = Math.min(
+            processorCanvas.parentNode.clientHeight * window.devicePixelRatio,
+            processorCanvas.width
+          )
+
+          const processorCtx = processorCanvas.getContext('2d')
+          processorCtx.globalCompositeOperation = 'source-over'
+
+          // white BG for a clean edge detect result
+          processorCtx.fillStyle = 'white'
+          processorCtx.fillRect(0, 0, canvas.width, canvas.height)
+          processorCtx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+
+          // detect edges
+          edge_detect(processorCanvas)
+
+          // colorize
+          const color_options = ['11bb11', '3333ff', 'bbbb00', 'ff0000', 'ff00ff', '00bbbbb']
+          // find the index of the current bike
+          const index = this.enabled_bikes.indexOf(bike.id)
+          const color = color_options[index % color_options.length]
+          colorize(processorCanvas, color)
+
+          ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
+        } else {
+          ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+        }
       }
 
       // repère
