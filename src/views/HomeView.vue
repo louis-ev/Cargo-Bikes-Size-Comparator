@@ -80,11 +80,13 @@
           <button @click="nextGlobalCompositeOperation">+</button>
         </div>
         <div class="_advanced">
-          <label>Image style</label>
-          <select v-model="canvas_image_style">
-            <option value="photo">Photo</option>
-            <option value="line">Outline</option>
-          </select>
+          <label for="canvas_image_style_outline2">Outline View</label>
+          <input
+            type="checkbox"
+            name="canvas_image_style_outline2"
+            id="canvas_image_style_outline2"
+            v-model="canvas_image_style_outline"
+          />
         </div>
       </details>
 
@@ -127,11 +129,13 @@
       <template v-else>
         <div class="_canvasOptions">
           <div class="_advanced _setImageStyle">
-            <label>Image style</label>
-            <select v-model="canvas_image_style">
-              <option value="photo">Photo</option>
-              <option value="line">Outline</option>
-            </select>
+            <label for="canvas_image_style_outline">Outline View</label>
+            <input
+              type="checkbox"
+              name="canvas_image_style_outline"
+              id="canvas_image_style_outline"
+              v-model="canvas_image_style_outline"
+            />
           </div>
         </div>
       </template>
@@ -186,7 +190,7 @@ export default {
         'luminosity'
       ],
 
-      canvas_image_style: 'photo'
+      canvas_image_style_outline: false
     }
   },
   created() {},
@@ -210,7 +214,7 @@ export default {
         this.showBikes()
       }
     },
-    canvas_image_style: {
+    canvas_image_style_outline: {
       handler() {
         // could add these defaults in if desired
         // if (this.canvas_image_style === 'line') {
@@ -365,7 +369,7 @@ export default {
 
         const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
 
-        if (this.canvas_image_style === 'line') {
+        if (this.canvas_image_style_outline) {
           // Offscreen canvas for edge detection on the image
           const processorCanvas = this.$refs.processor
           if (!processorCanvas) return
@@ -607,7 +611,7 @@ h1 {
 
   display: flex;
   flex-direction: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
 
   > * {
