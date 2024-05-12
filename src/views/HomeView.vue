@@ -3,6 +3,8 @@
     <div class="_sidebar">
       <h1>Cargo Bikes<br />Size Comparator</h1>
 
+      {{ enabled_bikes }}
+
       <div class="_search">
         <input type="search" v-model="search_str" placeholder="Search by model or manufacturer" />
       </div>
@@ -361,14 +363,23 @@ export default {
 
       ctx.globalCompositeOperation = this.canvas_composite_operation
 
-      const sorted_enabled_bikes = this.enabled_bikes.sort((a, b) => {
-        return this.findMatchingBike(b)?.bike_length_cm - this.findMatchingBike(a)?.bike_length_cm
-      })
+      const sorted_enabled_bikes = this.enabled_bikes
+        .reduce((acc, id, index) => {
+          const bike = this.findMatchingBike(id)
+          if (!bike?.src) return
 
-      for await (const id of sorted_enabled_bikes) {
-        const bike = this.findMatchingBike(id)
-        if (!bike?.src) continue
+          // if (!bike.color) {
+          const color_options = ['ff0000', '11bb11', '3333ff', 'bbbb00', 'ff00ff', '00bbbbb']
+          bike.color = color_options[index % color_options.length]
+          // }
+          acc.push(bike)
+          return acc
+        }, [])
+        .sort((a, b) => {
+          return this.findMatchingBike(b)?.bike_length_cm - this.findMatchingBike(a)?.bike_length_cm
+        })
 
+      for await (const bike of sorted_enabled_bikes) {
         const img = new Image()
         img.src = '.' + bike.src
         await img.decode()
@@ -408,12 +419,6 @@ export default {
 
           // colorize
           let color = bike.color
-          if (!color) {
-            const color_options = ['11bb11', '3333ff', 'bbbb00', 'ff0000', 'ff00ff', '00bbbbb']
-            // find the index of the current bike
-            const index = this.enabled_bikes.indexOf(bike.id)
-            color = color_options[index % color_options.length]
-          }
           colorize(processorCanvas, color)
 
           ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
