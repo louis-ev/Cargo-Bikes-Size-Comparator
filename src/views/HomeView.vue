@@ -341,7 +341,9 @@ export default {
       const each_px_measures_in_cm = (canvas.width - padding * 2) / largest_bike.bike_length_cm
 
       ctx.strokeStyle = '#ccc'
-      ctx.fillStyle = '#999'
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
+        '--color-text-secondary'
+      )
 
       let cm_count = 0
       const step = this.grid_step
@@ -503,7 +505,7 @@ h1 {
 
   // font-weight: 400;
   text-transform: lowercase;
-  color: #999;
+  color: var(--color-text-secondary);
 }
 
 ._bikeList {
@@ -608,7 +610,7 @@ h1 {
 ._madeBy {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: #999;
+  color: var(--color-text-secondary);
 
   hr {
     margin: 1rem 0;
