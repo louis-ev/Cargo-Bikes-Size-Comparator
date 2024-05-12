@@ -124,6 +124,17 @@
       <div class="_noBikes" v-if="enabled_bikes.length === 0">
         <small>Click on two bikes or more in the sidebar to compare their size</small>
       </div>
+      <template v-else>
+        <div class="_canvasOptions">
+          <div class="_advanced _setImageStyle">
+            <label>Image style</label>
+            <select v-model="canvas_image_style">
+              <option value="photo">Photo</option>
+              <option value="line">Outline</option>
+            </select>
+          </div>
+        </div>
+      </template>
       <canvas ref="bikes" width="1920" height="1920" />
       <canvas ref="processor" width="1920" height="1920" style="display: none" />
     </div>
@@ -439,6 +450,7 @@ h1 {
 }
 
 ._canvasWrapper {
+  position: relative;
   flex: 1 1 auto;
   overflow: hidden;
   min-width: 420px;
@@ -526,7 +538,7 @@ h1 {
   flex-direction: row nowrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   margin-bottom: 0.25rem;
 }
@@ -579,6 +591,27 @@ h1 {
 
   input {
     width: 100%;
+  }
+}
+
+._canvasOptions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: center;
+  gap: 0.5rem;
+
+  > * {
+    pointer-events: auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
   }
 }
 </style>
