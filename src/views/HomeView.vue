@@ -251,13 +251,24 @@ export default {
     filtered_bikes() {
       return this.bikes.filter((bike) => {
         return (
-          bike.model.toLowerCase().includes(this.search_str.toLowerCase()) ||
-          bike.manufacturer.toLowerCase().includes(this.search_str.toLowerCase())
+          this.normalizeStringForSearch(bike.model).includes(
+            this.normalizeStringForSearch(this.search_str)
+          ) ||
+          this.normalizeStringForSearch(bike.manufacturer).includes(
+            this.normalizeStringForSearch(this.search_str)
+          )
         )
       })
     }
   },
   methods: {
+    normalizeStringForSearch(str) {
+      return str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+    },
+
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
     },
