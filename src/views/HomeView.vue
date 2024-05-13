@@ -66,7 +66,9 @@
               <small v-html="getMeasurements(item)" />
               <br />
             </div>
-            <a :href="item.url" target="_blank"> <span>&#8594;</span>website</a>
+            <div class="_source">
+              <a :href="item.url" target="_blank"> <span>&#8594;</span>website</a>
+            </div>
           </div>
         </div>
       </transition-group>
@@ -99,14 +101,21 @@
 
       <div class="_madeBy">
         <div>
-          <a href="mailto:hello@louiseveillard.com" target="_blank">Questions/feedbacks</a>
-        </div>
-        <div>No cookies, no tracking, no ads, and RGPD compliant.</div>
-        <hr />
-        <div>
           Created by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
-          Nantes (FR), with help from various contributors.
+          Nantes (FR), with contributions from around the world.
         </div>
+        <div>
+          Report errors and bugs / send feedbacks / contribute bikes
+          <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank"
+            >on Github</a
+          >
+          or
+          <a href="mailto:hello@louiseveillard.com" target="_blank">via email</a>
+        </div>
+        <div>
+          No cookies, no tracking, no ads, and fully RGPD-compliant. Website hosted in France.
+        </div>
+        <hr />
         <div>
           Specific measures taken from
           <a
