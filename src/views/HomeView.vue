@@ -101,6 +101,7 @@
         <div>
           <a href="mailto:hello@louiseveillard.com" target="_blank">Questions/feedbacks</a>
         </div>
+        <div>No cookies, no tracking, no ads, and RGPD compliant.</div>
         <hr />
         <div>
           Created by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in
