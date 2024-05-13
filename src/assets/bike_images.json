@@ -323,5 +323,19 @@
     "bottom_margin_percent": 0,
     "color": "D11B11",
     "url": "https://www.cannondale.com/fr-fr/bikes/electric/e-cargo/cargowagen-neo/cargowagen-neo-1"
+  },
+  {
+    "id": "evo-longtail",
+    "id_in_csv": "",
+
+    "manufacturer": "Oklo",
+    "model": "Evo Longtail",
+    "src": "oklo-evo-fantilo-lt.png",
+    "bike_length_percent": 0.86093,
+    "bike_length_cm": 210,
+    "left_margin_percent": 0.08897,
+    "bottom_margin_percent": 0.23061,
+    "color": "9b2423",
+    "url": "https://www.oklo.bike/produit/velo-evo-longtail/"
   }
 ]
