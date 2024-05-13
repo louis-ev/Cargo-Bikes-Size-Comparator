@@ -5,7 +5,7 @@
 
     "manufacturer": "Chike",
     "model": "Cargo",
-    "src": "/cargo/CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
+    "src": "CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
     "left_margin_percent": 0.075,
@@ -19,7 +19,7 @@
 
     "manufacturer": "Muli Cycles",
     "model": "Muli",
-    "src": "/cargo/Muli2022_Mu_beige_frei.png",
+    "src": "Muli2022_Mu_beige_frei.png",
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
     "left_margin_percent": 0.1,
@@ -34,7 +34,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Carrie",
-    "src": "/cargo/carrie.png",
+    "src": "carrie.png",
     "bike_length_percent": 0.7,
     "bike_length_cm": 209,
     "left_margin_percent": 0.15,
@@ -48,7 +48,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Load 75",
-    "src": "/cargo/load475peanut-3000x.png",
+    "src": "load475peanut-3000x.png",
     "bike_length_percent": 0.921,
     "bike_length_cm": 264.5,
     "left_margin_percent": 0.045,
@@ -62,7 +62,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "Cargo Verso",
-    "src": "/cargo/toyotacycle120544.png",
+    "src": "toyotacycle120544.png",
     "bike_length_percent": 0.86,
     "bike_length_cm": 275,
     "left_margin_percent": 0.077,
@@ -77,7 +77,7 @@
 
     "manufacturer": "Larry vs Harry",
     "model": "Bullit",
-    "src": "/cargo/bullitt_2020_0046.png",
+    "src": "bullitt_2020_0046.png",
     "bike_length_percent": 0.735,
     "bike_length_cm": 243,
     "left_margin_percent": 0.1452,
@@ -91,7 +91,7 @@
 
     "manufacturer": "Urban Arrow",
     "model": "Family",
-    "src": "/cargo/UA-family-performance-plus-white-F1_WEB.png",
+    "src": "UA-family-performance-plus-white-F1_WEB.png",
     "bike_length_percent": 0.73,
     "bike_length_cm": 260,
     "left_margin_percent": 0.135,
@@ -105,7 +105,7 @@
 
     "manufacturer": "Decathlon",
     "model": "R500E",
-    "src": "/cargo/decathlon-r500e.png",
+    "src": "decathlon-r500e.png",
     "bike_length_percent": 0.911,
     "bike_length_cm": 220,
     "left_margin_percent": 0.0375,
@@ -119,7 +119,7 @@
 
     "manufacturer": "Moustache",
     "model": "Lundi 20.3",
-    "src": "/cargo/moustache-lundi-203.png",
+    "src": "moustache-lundi-203.png",
     "bike_length_percent": 0.93,
     "bike_length_cm": 200,
     "left_margin_percent": 0.036,
@@ -133,7 +133,7 @@
 
     "manufacturer": "Yuba",
     "model": "Fastrack",
-    "src": "/cargo/yuba-fastrack.png",
+    "src": "yuba-fastrack.png",
     "bike_length_percent": 0.843,
     "bike_length_cm": 191,
     "left_margin_percent": 0.079,
@@ -147,7 +147,7 @@
 
     "manufacturer": "Tern",
     "model": "GSD",
-    "src": "/cargo/tern-gsd.png",
+    "src": "tern-gsd.png",
     "bike_length_percent": 0.811,
     "bike_length_cm": 180,
     "left_margin_percent": 0.115,
@@ -161,7 +161,7 @@
 
     "manufacturer": "Omnium",
     "model": "Mini Max V3 M",
-    "src": "/cargo/omnium-minimax.png",
+    "src": "omnium-minimax.png",
     "bike_length_percent": 0.96,
     "bike_length_cm": 202,
     "left_margin_percent": 0.027,
@@ -175,13 +175,13 @@
 
     "manufacturer": "Omnium",
     "model": "Cargo V3 M",
-    "src": "/cargo/omnium-cargo-v3.png",
+    "src": "omnium-cargo-v3.png",
     "bike_length_percent": 0.95,
     "bike_length_cm": 224,
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.175,
     "color": "B39364",
-    "url": "https://omniumcargo.com/cargo/"
+    "url": "https://omniumcargo.com"
   },
   {
     "id": "omnium-mini",
@@ -189,7 +189,7 @@
 
     "manufacturer": "Omnium",
     "model": "Mini V3 M",
-    "src": "/cargo/omnium-mini-v3.png",
+    "src": "omnium-mini-v3.png",
     "bike_length_percent": 0.935,
     "bike_length_cm": 165,
     "left_margin_percent": 0.037,
@@ -203,7 +203,7 @@
 
     "manufacturer": "",
     "model": "Le Petit Porteur OG",
-    "src": "/cargo/lepetitporteur.png",
+    "src": "lepetitporteur.png",
     "bike_length_percent": 0.908,
     "bike_length_cm": 167,
     "left_margin_percent": 0.041,
@@ -217,7 +217,7 @@
 
     "manufacturer": "Nakamura",
     "model": "Crossover",
-    "src": "/cargo/nakamura-co.png",
+    "src": "nakamura-co.png",
     "bike_length_percent": 0.98,
     "bike_length_cm": 220,
     "left_margin_percent": 0.008,
@@ -231,7 +231,7 @@
 
     "manufacturer": "Lovens",
     "model": "Explorer S75 ",
-    "src": "/cargo/lovens-explorer75.png",
+    "src": "lovens-explorer75.png",
     "bike_length_percent": 0.947,
     "bike_length_cm": 260,
     "left_margin_percent": 0.032,
@@ -245,7 +245,7 @@
 
     "manufacturer": "Yoonit",
     "model": "",
-    "src": "/cargo/yoonit-classic.png",
+    "src": "yoonit-classic.png",
     "bike_length_percent": 0.725,
     "bike_length_cm": 177,
     "left_margin_percent": 0.138,
@@ -260,7 +260,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multicharger2",
-    "src": "/cargo/multicharger.png",
+    "src": "multicharger.png",
     "bike_length_percent": 0.98,
     "bike_length_cm": 197,
     "left_margin_percent": 0.012,
@@ -274,7 +274,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multitinker",
-    "src": "/cargo/multitinker.png",
+    "src": "multitinker.png",
     "bike_length_percent": 0.833,
     "bike_length_cm": 189,
     "left_margin_percent": 0.09,
@@ -288,7 +288,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Packster 70",
-    "src": "/cargo/packster-70.png",
+    "src": "packster-70.png",
     "bike_length_percent": 0.875,
     "bike_length_cm": 249,
     "left_margin_percent": 0.077,
@@ -302,7 +302,7 @@
 
     "manufacturer": "Bunch Bike",
     "model": "The Original 4",
-    "src": "/cargo/bunch-bike.png",
+    "src": "bunch-bike.png",
     "bike_length_percent": 0.963,
     "bike_length_cm": 211,
     "left_margin_percent": 0.021,
@@ -316,7 +316,7 @@
 
     "manufacturer": "Cannondale",
     "model": "Cargowagen Neo",
-    "src": "/cargo/cargowagen.png",
+    "src": "cargowagen.png",
     "bike_length_percent": 1,
     "bike_length_cm": 185,
     "left_margin_percent": 0.034,

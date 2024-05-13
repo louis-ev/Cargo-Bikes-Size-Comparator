@@ -52,7 +52,7 @@
             </div>
 
             <div v-if="item.id">
-              <img :src="'.' + item.src" />
+              <img :src="getBikeThumbImage(item)" />
             </div>
           </label>
 
@@ -175,6 +175,13 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 </template>
 <script>
 import { edge_detect, colorize } from '../helpers.js'
+const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
+  query: { format: 'png', w: 100 }
+})
+const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
+  query: { format: 'png' }
+})
+
 export default {
   props: {
     bikes: Array
@@ -186,6 +193,9 @@ export default {
 
       default_padding_percent: 5,
       grid_step: 20,
+
+      bike_images_thumbs_urls: [],
+      bike_images_full_paths: [],
 
       search_str: '',
       show_license: false,
@@ -224,7 +234,10 @@ export default {
     }
   },
   created() {},
-  mounted() {
+  async mounted() {
+    this.bike_images_thumbs_urls = await this.loadAllThumbs()
+    this.bike_images_full_paths = await this.loadAllFullPaths()
+
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
     if (this.$el) {
@@ -313,6 +326,42 @@ export default {
       if (country === 'Germany') return '🇩🇪'
       if (country === 'France') return '🇫🇷'
       return
+    },
+    async loadAllThumbs() {
+      const urls = []
+      for (let [source, thumb] of Object.entries(bike_images_thumbs_paths)) {
+        const import_statment = thumb()
+        const url = (await import_statment).default
+        const original_filename = source.split('/').pop()
+        urls.push({
+          url,
+          original_filename
+        })
+      }
+      return urls
+    },
+    async loadAllFullPaths() {
+      const full_paths = []
+      for (let [source, full_path] of Object.entries(bike_images_full_paths)) {
+        const import_statment = full_path()
+        const url = (await import_statment).default
+        const original_filename = source.split('/').pop()
+        full_paths.push({
+          url,
+          original_filename
+        })
+      }
+      return full_paths
+    },
+    getBikeThumbImage(bike) {
+      const thumb = this.bike_images_thumbs_urls.find((i) => i.original_filename === bike.src)
+      if (!thumb) return
+      return thumb.url
+    },
+    getBikeFullImage(bike) {
+      const full_path = this.bike_images_full_paths.find((i) => i.original_filename === bike.src)
+      if (!full_path) return
+      return full_path.url
     },
     toggleBike(id) {
       let enabled_bikes = this.enabled_bikes
@@ -418,7 +467,8 @@ export default {
 
       for await (const bike of sorted_enabled_bikes) {
         const img = new Image()
-        img.src = '.' + bike.src
+
+        img.src = this.getBikeFullImage(bike)
         await img.decode()
 
         const img_ratio = img.width / img.height
