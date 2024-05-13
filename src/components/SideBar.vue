@@ -93,11 +93,23 @@
       <summary>Advanced options</summary>
       <div class="_advanced">
         <label>Grid step (cm)</label>
-        <input type="range" step="1" min="1" max="100" v-model.number="grid_step" />
+        <input
+          type="range"
+          step="1"
+          min="1"
+          max="100"
+          @input="$emit('update:grid_step', +$event.target.value)"
+        />
       </div>
       <div class="_advanced">
         <label>Padding (%)</label>
-        <input type="range" step="1" min="0" max="30" v-model.number="default_padding_percent" />
+        <input
+          type="range"
+          step="1"
+          min="0"
+          max="30"
+          @input="$emit('update:default_padding_percent', +$event.target.value)"
+        />
       </div>
     </details>
 
