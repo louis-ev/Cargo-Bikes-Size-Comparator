@@ -6,12 +6,14 @@
       v-model:default_padding_percent="default_padding_percent"
       v-model:grid_step="grid_step"
       v-model:canvas_composite_operation="canvas_composite_operation"
+      :canvas_image_style_outline="canvas_image_style_outline"
     />
     <CanvasView
       :enabled_bikes="enabled_bikes"
       :canvas_composite_operation="canvas_composite_operation"
       :default_padding_percent="default_padding_percent"
       :grid_step="grid_step"
+      v-model:canvas_image_style_outline="canvas_image_style_outline"
     />
   </div>
 </template>
@@ -32,6 +34,7 @@ export default {
       ro: null,
 
       default_padding_percent: 5,
+      canvas_image_style_outline: false,
       grid_step: 20,
       canvas_composite_operation: 'source-over'
     }
@@ -52,9 +55,13 @@ export default {
       return []
     },
     enabled_bikes() {
-      return this.enabled_bikes_ids.reduce((acc, id) => {
+      return this.enabled_bikes_ids.reduce((acc, id, index) => {
         const bike = this.findMatchingBike(id)
-        if (bike) acc.push(bike)
+        if (bike) {
+          const color_options = ['ff0000', '11bb11', '3333ff', 'bbbb00', 'ff00ff', '00bbbb']
+          bike.color = color_options[index % color_options.length]
+          acc.push(bike)
+        }
         return acc
       }, [])
     }

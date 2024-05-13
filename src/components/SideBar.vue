@@ -61,7 +61,12 @@
             <small>{{ item.bike_length_cm }} cm</small>
           </div>
 
-          <div v-if="item.id">
+          <div v-if="item.id" class="_img">
+            <div
+              v-if="bikeIsEnabled(item.id) && canvas_image_style_outline"
+              class="_color"
+              :style="{ '--outline-color': `#${item.color}` }"
+            />
             <img :src="getBikeThumbImage(item)" />
           </div>
         </label>
@@ -182,7 +187,8 @@ export default {
   props: {
     bikes: Array,
     enabled_bikes: Array,
-    canvas_composite_operation: String
+    canvas_composite_operation: String,
+    canvas_image_style_outline: Boolean
   },
   components: {},
   data() {
@@ -347,6 +353,11 @@ h1 {
 
   &[data-active='true'] ._itemTop {
     background-color: var(--color-accent);
+
+    img {
+      filter: grayscale(100%);
+      mix-blend-mode: multiply;
+    }
   }
 
   &:hover,
@@ -356,33 +367,64 @@ h1 {
 }
 
 ._itemTop {
-  padding: 0.25rem 1rem;
+  padding: 0;
+
   cursor: pointer;
   border-radius: 0.5rem;
 
   display: flex;
   flex-direction: row nowrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 1rem;
+
+  overflow: hidden;
 
   input {
     cursor: pointer;
+    margin: 0 1rem;
   }
 
   ._names {
     flex: 1 1 auto;
+    padding: 0.25rem 0;
   }
 
   input {
     flex: 0 0 auto;
   }
-  img {
+  ._img {
+    position: relative;
     flex: 0 0 auto;
-    height: 30px;
-    width: 40px;
-    object-fit: scale-down;
-    object-position: right;
+    width: 52px;
+    padding: 0.25rem;
+
+    ._color {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.8;
+      background-color: #fff;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--outline-color);
+      }
+    }
+
+    img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      object-fit: scale-down;
+      object-position: center;
+    }
   }
 
   &:hover,

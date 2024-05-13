@@ -1,7 +1,7 @@
 <template>
   <div class="_canvasWrapper">
     <div class="_noBikes" v-if="enabled_bikes.length === 0">
-      <small>Click on two bikes or more in the sidebar to compare their size</small>
+      <span>Click on two bikes or more in the sidebar to compare their size !</span>
     </div>
     <template v-else>
       <div class="_canvasOptions">
@@ -11,7 +11,8 @@
             type="checkbox"
             name="canvas_image_style_outline"
             id="canvas_image_style_outline"
-            v-model="canvas_image_style_outline"
+            :checked="canvas_image_style_outline"
+            @change="$emit('update:canvas_image_style_outline', $event.target.checked)"
           />
         </label>
       </div>
@@ -31,13 +32,13 @@ export default {
     enabled_bikes: Array,
     canvas_composite_operation: String,
     default_padding_percent: Number,
-    grid_step: Number
+    grid_step: Number,
+    canvas_image_style_outline: Boolean
   },
   components: {},
   data() {
     return {
-      bike_images_full_paths: [],
-      canvas_image_style_outline: false
+      bike_images_full_paths: []
     }
   },
   created() {},
@@ -130,11 +131,11 @@ export default {
       this.enabled_bikes.map((bike) => {
         if (!largest_bike || largest_bike.bike_length_cm < bike.bike_length_cm) largest_bike = bike
       })
-
-      if (!largest_bike) return
+      // if (!largest_bike) return
 
       const padding = canvas.width / (100 / this.default_padding_percent)
-      const each_px_measures_in_cm = (canvas.width - padding * 2) / largest_bike.bike_length_cm
+      const each_px_measures_in_cm =
+        (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
 
       ctx.strokeStyle = '#ccc'
       ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
@@ -172,11 +173,8 @@ export default {
       ctx.globalCompositeOperation = this.canvas_composite_operation
 
       const sorted_enabled_bikes = this.enabled_bikes
-        .reduce((acc, bike, index) => {
+        .reduce((acc, bike) => {
           if (!bike?.src) return
-          const color_options = ['ff0000', '11bb11', '3333ff', 'bbbb00', 'ff00ff', '00bbbbb']
-          bike.color = color_options[index % color_options.length]
-          // }
           acc.push(bike)
           return acc
         }, [])
@@ -254,6 +252,11 @@ canvas {
   // border: 1px solid #ccc;
 }
 ._noBikes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -262,9 +265,11 @@ canvas {
   height: 100%;
   padding: 1rem;
 
-  // font-weight: 400;
-  text-transform: lowercase;
-  color: var(--color-text-secondary);
+  span {
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
 }
 
 ._canvasOptions {
