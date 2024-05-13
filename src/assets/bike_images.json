@@ -337,5 +337,20 @@
     "bottom_margin_percent": 0.23061,
     "color": "9b2423",
     "url": "https://www.oklo.bike/produit/velo-evo-longtail/"
+  },
+  {
+    "id": "etnicycles-oleron",
+    "id_in_csv": "",
+
+    "manufacturer": "ETNI Cycles",
+    "model": "Oléron",
+    "src": "etnicycles-oleron.png",
+    "bike_length_percent": 0.916,
+    "bike_length_cm": 204,
+    "left_margin_percent": 0.072,
+    "bottom_margin_percent": 0.26661,
+    "color": "3C4B5A",
+    "frame_made_in": "France",
+    "url": "https://www.etnicycles.com/"
   }
 ]
