@@ -36,7 +36,8 @@ export default {
   components: {},
   data() {
     return {
-      bike_images_full_paths: []
+      bike_images_full_paths: [],
+      canvas_image_style_outline: false
     }
   },
   created() {},

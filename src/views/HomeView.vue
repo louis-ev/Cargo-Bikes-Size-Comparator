@@ -33,8 +33,7 @@ export default {
 
       default_padding_percent: 5,
       grid_step: 20,
-      canvas_composite_operation: 'source-over',
-      canvas_image_style_outline: false
+      canvas_composite_operation: 'source-over'
     }
   },
   created() {},
