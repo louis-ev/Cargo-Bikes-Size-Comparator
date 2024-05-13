@@ -228,7 +228,6 @@ export default {
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
     if (this.$el) {
-      debugger
       this.ro.observe(this.$el)
     }
   },
