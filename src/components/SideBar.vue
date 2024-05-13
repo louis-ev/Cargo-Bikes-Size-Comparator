@@ -338,7 +338,7 @@ h1 {
 
   input {
     cursor: pointer;
-    margin: 0 1rem;
+    margin: 1rem;
   }
 
   ._names {
