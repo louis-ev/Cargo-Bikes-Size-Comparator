@@ -54,7 +54,8 @@ h1 {
 }
 
 input[type='search'] {
-  border: 1px solid var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-text-secondary);
   border-radius: 5px;
   padding: 5px;
 
