@@ -7,20 +7,31 @@
         <input type="search" v-model="search_str" placeholder="Search by model or manufacturer" />
       </div>
 
-      <small class="_infos">
-        <template v-if="enabled_bikes.length === 0">
-          Click on bikes in this list to compare their size
-        </template>
-        <template v-else>
-          <span>
-            <template v-if="enabled_bikes.length === 1">
-              {{ enabled_bikes.length }} bike selected
-            </template>
-            <template v-else> {{ enabled_bikes.length }} bikes selected </template>
-          </span>
-          <button class="_reset" @click="resetBikes">Reset</button>
-        </template>
-      </small>
+      <div v-if="filtered_bikes.length === 0" class="_noMatch">
+        No bikes matched your search.<br />
+        To contribute a bike,
+        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank"
+          >read the guide</a
+        >
+        or ask me <a href="mailto:hello@louiseveillard.com" target="_blank">via email</a>.
+      </div>
+
+      <template v-else>
+        <small class="_infos">
+          <template v-if="enabled_bikes.length === 0">
+            Click on bikes in this list to compare their size
+          </template>
+          <template v-else>
+            <span>
+              <template v-if="enabled_bikes.length === 1">
+                {{ enabled_bikes.length }} bike selected
+              </template>
+              <template v-else> {{ enabled_bikes.length }} bikes selected </template>
+            </span>
+            <button class="_reset" @click="resetBikes">Reset</button>
+          </template>
+        </small>
+      </template>
 
       <transition-group tag="div" class="_bikeList" name="list">
         <div
@@ -73,6 +84,7 @@
         </div>
       </transition-group>
 
+      <hr />
       <details>
         <summary>Advanced options</summary>
         <div class="_advanced">
@@ -593,6 +605,9 @@ h1 {
   color: var(--color-text-secondary);
 }
 
+._noMatch {
+}
+
 ._bikeList {
   display: flex;
   flex-flow: column nowrap;
@@ -696,13 +711,6 @@ h1 {
   margin-top: 1rem;
   font-size: 0.8rem;
   color: var(--color-text-secondary);
-
-  hr {
-    margin: 1rem 0;
-
-    border: none;
-    border-top: 1px solid #ccc;
-  }
 
   > * {
     margin-bottom: 0.5rem;

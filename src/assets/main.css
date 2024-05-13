@@ -63,3 +63,9 @@ input[type='search'] {
     border-color: var(--color-accent);
   }
 }
+hr {
+  margin: 1rem 0;
+
+  border: none;
+  border-top: 1px solid #ccc;
+}
