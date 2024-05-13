@@ -51,9 +51,9 @@
             <div class="_names">
               <strong
                 >{{ item.model || item.manufacturer }}
-                <template v-if="item.frame_made_in">
+                <span class="_flag" v-if="item.frame_made_in">
                   {{ unicodeFlag(item.frame_made_in) }}
-                </template>
+                </span>
               </strong>
               <template v-if="item.manufacturer && item.model">
                 <small> – {{ item.manufacturer }} </small>
@@ -757,5 +757,10 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+}
+
+._flag {
+  font-size: 0.6rem;
+  margin-left: 0.15rem;
 }
 </style>
