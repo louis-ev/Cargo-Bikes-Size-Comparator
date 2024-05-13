@@ -5,12 +5,10 @@
       :enabled_bikes="enabled_bikes"
       v-model:default_padding_percent="default_padding_percent"
       v-model:grid_step="grid_step"
-      v-model:canvas_composite_operation="canvas_composite_operation"
       :canvas_image_style_outline="canvas_image_style_outline"
     />
     <CanvasView
       :enabled_bikes="enabled_bikes"
-      :canvas_composite_operation="canvas_composite_operation"
       :default_padding_percent="default_padding_percent"
       :grid_step="grid_step"
       v-model:canvas_image_style_outline="canvas_image_style_outline"
@@ -35,8 +33,7 @@ export default {
 
       default_padding_percent: 5,
       canvas_image_style_outline: false,
-      grid_step: 20,
-      canvas_composite_operation: 'source-over'
+      grid_step: 20
     }
   },
   created() {},

@@ -30,7 +30,6 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
 export default {
   props: {
     enabled_bikes: Array,
-    canvas_composite_operation: String,
     default_padding_percent: Number,
     grid_step: Number,
     canvas_image_style_outline: Boolean
@@ -56,12 +55,6 @@ export default {
   },
   watch: {
     canvas_image_style_outline() {
-      // could add these defaults in if desired
-      // if (this.canvas_image_style === 'line') {
-      //   this.canvas_composite_operation = 'multiply'
-      // } else {
-      //   this.canvas_composite_operation = 'source-over'
-      // }
       this.showBikes()
     },
     default_padding_percent() {
@@ -75,9 +68,6 @@ export default {
         this.showBikes()
       },
       deep: true
-    },
-    canvas_composite_operation() {
-      this.showBikes()
     }
   },
   computed: {},
@@ -170,7 +160,11 @@ export default {
         cm_count += step
       }
 
-      ctx.globalCompositeOperation = this.canvas_composite_operation
+      if (this.canvas_image_style_outline) {
+        ctx.globalCompositeOperation = 'multiply'
+      } else {
+        ctx.globalCompositeOperation = 'source-over'
+      }
 
       const sorted_enabled_bikes = this.enabled_bikes
         .reduce((acc, bike) => {

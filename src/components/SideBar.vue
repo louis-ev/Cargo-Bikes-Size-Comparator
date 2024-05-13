@@ -99,20 +99,6 @@
         <label>Padding (%)</label>
         <input type="range" step="1" min="0" max="30" v-model.number="default_padding_percent" />
       </div>
-      <div class="_advanced">
-        <label>Layer blending</label>
-        <select :value="canvas_composite_operation" @change="updateCanvasCompositeOperation">
-          <option
-            v-for="operation in globalCompositeOperations"
-            :key="operation"
-            :value="operation"
-          >
-            {{ operation }}
-          </option>
-        </select>
-        <button @click="prevGlobalCompositeOperation">-</button>
-        <button @click="nextGlobalCompositeOperation">+</button>
-      </div>
     </details>
 
     <div class="_madeBy">
@@ -187,7 +173,6 @@ export default {
   props: {
     bikes: Array,
     enabled_bikes: Array,
-    canvas_composite_operation: String,
     canvas_image_style_outline: Boolean
   },
   components: {},
@@ -195,36 +180,7 @@ export default {
     return {
       search_str: '',
       show_license: false,
-      bike_images_thumbs_urls: [],
-
-      globalCompositeOperations: [
-        'source-over',
-        'source-in',
-        'source-out',
-        'source-atop',
-        'destination-over',
-        'destination-in',
-        'destination-out',
-        'destination-atop',
-        'lighter',
-        'copy',
-        'xor',
-        'multiply',
-        'screen',
-        'overlay',
-        'darken',
-        'lighten',
-        'color-dodge',
-        'color-burn',
-        'hard-light',
-        'soft-light',
-        'difference',
-        'exclusion',
-        'hue',
-        'saturation',
-        'color',
-        'luminosity'
-      ]
+      bike_images_thumbs_urls: []
     }
   },
   created() {},
@@ -285,17 +241,6 @@ export default {
           return acc
         }, [])
         .join('<br>')
-    },
-    prevGlobalCompositeOperation() {
-      const index = this.globalCompositeOperations.indexOf(this.canvas_composite_operation)
-      this.$emit('update:canvas_composite_operation', this.globalCompositeOperations[index - 1])
-    },
-    nextGlobalCompositeOperation() {
-      const index = this.globalCompositeOperations.indexOf(this.canvas_composite_operation)
-      this.$emit('update:canvas_composite_operation', this.globalCompositeOperations[index + 1])
-    },
-    updateCanvasCompositeOperation(event) {
-      this.$emit('update:canvas_composite_operation', event.target.value)
     },
 
     getBikeThumbImage(bike) {
