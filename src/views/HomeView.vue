@@ -33,7 +33,9 @@ export default {
 
       default_padding_percent: 5,
       canvas_image_style_outline: false,
-      grid_step: 20
+      grid_step: 20,
+
+      bike_outline_colors: ['3333ff', 'ff0000', '11bb11', 'bbbb00', 'ff00ff', '00bbbb']
     }
   },
   created() {},
@@ -55,7 +57,7 @@ export default {
       return this.enabled_bikes_ids.reduce((acc, id, index) => {
         const bike = this.findMatchingBike(id)
         if (bike) {
-          const color_options = ['ff0000', '11bb11', '3333ff', 'bbbb00', 'ff00ff', '00bbbb']
+          const color_options = this.bike_outline_colors
           bike.color = color_options[index % color_options.length]
           acc.push(bike)
         }
