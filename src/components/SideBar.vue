@@ -384,7 +384,9 @@ h1 {
     }
   }
 
-  &:hover,
+  @media (hover: hover) and (pointer: fine) {
+    background-color: var(--color-accent);
+  }
   &:focus-visible {
     background-color: var(--color-accent);
   }
