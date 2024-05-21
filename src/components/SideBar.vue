@@ -44,6 +44,7 @@
             type="checkbox"
             :checked="bikeIsEnabled(item.id)"
             :id="item.id"
+            :disabled="!item.bike_length_cm"
             @change="toggleBike(item.id)"
           />
 
@@ -58,7 +59,10 @@
               <small> – {{ item.manufacturer }} </small>
             </template>
             <br />
-            <small>{{ item.bike_length_cm }} cm</small>
+            <small>
+              <template v-if="item.bike_length_cm">{{ item.bike_length_cm }} cm</template>
+              <template v-else>Missing length information</template>
+            </small>
           </div>
 
           <div v-if="item.id" class="_img">
@@ -326,13 +330,19 @@ h1 {
 ._itemTop {
   padding: 0;
 
-  cursor: pointer;
   border-radius: 0.5rem;
 
   display: flex;
   flex-direction: row nowrap;
   align-items: stretch;
   justify-content: space-between;
+
+  &:not(:has(input[disabled])) {
+    cursor: pointer;
+  }
+  &:has(input[disabled]) {
+    cursor: not-allowed;
+  }
 
   overflow: hidden;
 
@@ -386,12 +396,12 @@ h1 {
   }
 
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background-color: var(--color-accent);
+    &:hover,
+    &:focus-visible {
+      &:not(:has(input[disabled])) {
+        background-color: var(--color-accent);
+      }
     }
-  }
-  &:focus-visible {
-    background-color: var(--color-accent);
   }
 }
 
