@@ -514,5 +514,50 @@
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.187,
     "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+  },
+  {
+    "id": "cargo-lt",
+    "id_in_csv": "",
+
+    "manufacturer": "Douze Cycles",
+    "model": "LT",
+    "src": "douze-cycles-lt2.png",
+    "bike_length_percent": 1,
+    "bike_length_cm": 205,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
+    "color": "3A5172",
+    "frame_made_in": "France",
+    "url": "https://www.douze-cycles.com/velos-cargos/lt"
+  },
+  {
+    "id": "cargo-v2-600",
+    "id_in_csv": "",
+
+    "manufacturer": "Douze Cycles",
+    "model": "LT 600",
+    "src": "douze-cycles-v2-600.png",
+    "bike_length_percent": 1,
+    "bike_length_cm": 243.5,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
+    "color": "000000",
+    "frame_made_in": "France",
+    "url": "https://www.douze-cycles.com/velos-cargos/v2"
+  },
+  {
+    "id": "cargo-v2-800",
+    "id_in_csv": "",
+
+    "manufacturer": "Douze Cycles",
+    "model": "LT 800",
+    "src": "douze-cycles-v2-800.png",
+    "bike_length_percent": 1,
+    "bike_length_cm": 263.5,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
+    "color": "000000",
+    "frame_made_in": "France",
+    "url": "https://www.douze-cycles.com/velos-cargos/v2"
   }
 ]
