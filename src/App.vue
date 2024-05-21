@@ -46,7 +46,11 @@ export default {
     sorted_bikes() {
       if (!this.supercharged_bikes) return []
       return this.supercharged_bikes.slice().sort((a, b) => {
-        return a.bike_length_cm - b.bike_length_cm
+        if (a.bike_length_cm && b.bike_length_cm) return a.bike_length_cm - b.bike_length_cm
+        else if (a.bike_length_cm && !b.bike_length_cm) return -1
+        else if (!a.bike_length_cm && b.bike_length_cm) return 1
+
+        return 0
       })
     },
     all_measures() {
