@@ -344,6 +344,7 @@ h1 {
   ._names {
     flex: 1 1 auto;
     padding: 0.25rem 0;
+    align-self: center;
   }
 
   input {
