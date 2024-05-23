@@ -182,7 +182,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 </template>
 <script>
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
-  query: { format: 'png', w: 100 }
+  query: { format: 'webp', w: 100 }
 })
 
 export default {

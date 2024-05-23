@@ -24,7 +24,7 @@
 <script>
 import { edge_detect, colorize } from '../helpers.js'
 const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
-  query: { format: 'png' }
+  query: { format: 'webp', w: 1600 }
 })
 
 export default {
