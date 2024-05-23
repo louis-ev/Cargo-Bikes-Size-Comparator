@@ -68,7 +68,7 @@
     "left_margin_percent": 0.093,
     "bottom_margin_percent": 0.023,
     "color": "CD884B",
-    "url": "https://www.r-m.de/en-en/bikes/load-75"
+    "url": "https://www.r-m.de/en-en/bikes/load-60"
   },
   {
     "id": "cargo-verso",
@@ -405,7 +405,7 @@
     "bike_length_cm": 193,
     "left_margin_percent": 0.042,
     "bottom_margin_percent": 0.183,
-    "url": "https://www.aventon.com/products/abound-ebike?variant=42319517515971"
+    "url": "https://www.radpowerbikes.com/products/radwagon-electric-cargo-bike"
   },
   {
     "id": "robertbikes-bob",
@@ -420,7 +420,7 @@
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
     "frame_made_in": "France",
-    "url": "https://www.robertbikes.fr/bob-velo-cargo-electrique/"
+    "url": "https://www.robertbikes.fr/bob-velo-cargo-electrique"
   },
   {
     "id": "specialized-haul-st",
@@ -448,7 +448,7 @@
     "bike_length_cm": "",
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://www.specialized.com/ca/fr/haul-lt/p/4276253?searchText=91025-9300&color=5437294-4276253"
   },
   {
     "id": "tern-hsd",
@@ -461,7 +461,7 @@
     "bike_length_cm": 170,
     "left_margin_percent": 0.123,
     "bottom_margin_percent": 0.119,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://www.ternbicycles.com/en/bikes/472/hsd"
   },
   {
     "id": "tern-quick-haul",
@@ -474,7 +474,7 @@
     "bike_length_cm": 172,
     "left_margin_percent": 0.11,
     "bottom_margin_percent": 0.083,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://www.ternbicycles.com/en/bikes/471/quick-haul"
   },
   {
     "id": "vello-suburban",
@@ -487,7 +487,7 @@
     "bike_length_cm": 180,
     "left_margin_percent": 0.128,
     "bottom_margin_percent": 0.102,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://fr.vello.bike/products/sub"
   },
   {
     "id": "yuba-kombi",
@@ -500,7 +500,7 @@
     "bike_length_cm": 192,
     "left_margin_percent": 0.102,
     "bottom_margin_percent": 0.133,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://yubabikes.com/cargobikestore/kombi-e5/"
   },
   {
     "id": "yuba-supercargo",
@@ -513,7 +513,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.187,
-    "url": "https://www.specialized.com/us/en/haul-st/p/200057"
+    "url": "https://yubabikes.fr/cargobikestore/supercargo/"
   },
   {
     "id": "cargo-lt",
