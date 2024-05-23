@@ -5,8 +5,11 @@
     </div>
     <template v-else>
       <div class="_canvasOptions">
-        <label class="_advanced _setImageStyle" for="canvas_image_style_outline">
-          Outline View
+        <label
+          class="u-button _setImageStyle"
+          :data-active="canvas_image_style_outline"
+          for="canvas_image_style_outline"
+        >
           <input
             type="checkbox"
             name="canvas_image_style_outline"
@@ -14,6 +17,7 @@
             :checked="canvas_image_style_outline"
             @change="$emit('update:canvas_image_style_outline', $event.target.checked)"
           />
+          &nbsp;Outline View
         </label>
       </div>
     </template>
@@ -55,7 +59,9 @@ export default {
   },
   watch: {
     canvas_image_style_outline() {
-      this.showBikes()
+      setTimeout(() => {
+        this.showBikes()
+      }, 30)
     },
     default_padding_percent() {
       this.showBikes()
@@ -278,12 +284,20 @@ canvas {
   flex-direction: row wrap;
   justify-content: flex-start;
   gap: 0.5rem;
+}
+._setImageStyle {
+  pointer-events: auto;
+  background-color: var(--color-text);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
 
-  > * {
-    pointer-events: auto;
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+  &:hover,
+  &:focus-visible,
+  &[data-active='true'] {
+    background-color: var(--color-accent);
+    color: black;
   }
 }
 </style>

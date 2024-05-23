@@ -19,7 +19,8 @@ a,
   transition: 0.4s;
 }
 
-button {
+button,
+.u-button {
   background: none;
   border: none;
   padding: 0;
@@ -30,9 +31,14 @@ button {
 
   cursor: pointer;
 
-  &:hover,
-  &:focus-visible {
-    color: var(--color-accent);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover {
+    background-color: var(--color-accent);
+  }
+
+  &[data-active='true'] {
+    background-color: var(--color-accent);
   }
 }
 
