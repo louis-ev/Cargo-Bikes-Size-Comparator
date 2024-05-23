@@ -1,20 +1,15 @@
 <template>
   <div class="">
-    <!-- <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-    </nav> -->
     <RouterView :bikes="sorted_bikes" />
   </div>
 </template>
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import bikes from '@/assets/bike_images.json'
 
 export default {
   props: {},
   components: {
-    RouterLink,
     RouterView
   },
   data() {
