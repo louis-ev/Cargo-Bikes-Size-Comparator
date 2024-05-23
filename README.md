@@ -3,8 +3,9 @@
 Source code for https://bikes.louiseveillard.com/
 Contributions welcome.
 
-UPDATE: adobe express is better at removing background = https://new.express.adobe.com/
-Remove BG : https://www.experte.com/background-remover
+UPDATE: adobe express is better at removing background: https://new.express.adobe.com/
+
+Otherwise, use this one: https://www.experte.com/background-remover
 
 Measure left margin between edge and left edge of rear wheel.
 Same for bottom margin.
