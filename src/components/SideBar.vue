@@ -81,6 +81,23 @@
             >.
           </div>
 
+          <div class="_adjust">
+            <label>Adjust position</label>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.1"
+              :list="'steplist-' + item.id"
+              :value="bikes_position_adjustments[item.id]"
+              @input="updateBikePosition(item.id, $event.target.value)"
+            />
+            <!-- // disabled because snapping prevents fine tuning -->
+            <!-- <datalist :id="'steplist-' + item.id">
+              <option>0</option>
+            </datalist> -->
+          </div>
+
           <div class="_measurements" v-if="item._measurements">
             <small v-html="getMeasurements(item)" />
             <br />
@@ -189,7 +206,8 @@ export default {
   props: {
     bikes: Array,
     enabled_bikes: Array,
-    canvas_image_style_outline: Boolean
+    canvas_image_style_outline: Boolean,
+    bikes_position_adjustments: Object
   },
   components: {},
   data() {
@@ -249,6 +267,11 @@ export default {
         })
       }
       return urls
+    },
+    updateBikePosition(id, value) {
+      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
+      bikes_position_adjustments[id] = +value
+      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
     },
     getMeasurements(bike) {
       return Object.entries(bike._measurements)
@@ -477,5 +500,16 @@ h1 {
 ._flag {
   font-size: 0.6rem;
   margin-left: 0.15rem;
+}
+
+._adjust {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  label {
+    flex: 0 0 auto;
+  }
 }
 </style>

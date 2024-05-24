@@ -5,12 +5,14 @@
       :enabled_bikes="enabled_bikes"
       v-model:default_padding_percent="default_padding_percent"
       v-model:grid_step="grid_step"
+      v-model:bikes_position_adjustments="bikes_position_adjustments"
       :canvas_image_style_outline="canvas_image_style_outline"
     />
     <CanvasView
       :enabled_bikes="enabled_bikes"
       :default_padding_percent="default_padding_percent"
       :grid_step="grid_step"
+      :bikes_position_adjustments="bikes_position_adjustments"
       v-model:canvas_image_style_outline="canvas_image_style_outline"
     />
   </div>
@@ -34,6 +36,8 @@ export default {
       default_padding_percent: 5,
       canvas_image_style_outline: false,
       grid_step: 20,
+
+      bikes_position_adjustments: {},
 
       bike_outline_colors: ['3333ff', 'ff0000', '11bb11', 'bbbb00', 'ff00ff', '00bbbb']
     }

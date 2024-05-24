@@ -36,6 +36,7 @@ export default {
     enabled_bikes: Array,
     default_padding_percent: Number,
     grid_step: Number,
+    bikes_position_adjustments: Object,
     canvas_image_style_outline: Boolean
   },
   components: {},
@@ -62,6 +63,12 @@ export default {
       setTimeout(() => {
         this.showBikes()
       }, 30)
+    },
+    bikes_position_adjustments: {
+      handler() {
+        this.showBikes()
+      },
+      deep: true
     },
     default_padding_percent() {
       this.showBikes()
@@ -192,8 +199,8 @@ export default {
         const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
         const draw_h = draw_w / img_ratio
 
-        const draw_x = -bike.left_margin_percent * draw_w + padding
-
+        let user_horizontal_adjustment = this.bikes_position_adjustments[bike.id] / 100 || 0
+        const draw_x = -(bike.left_margin_percent - user_horizontal_adjustment) * draw_w + padding
         const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
 
         if (this.canvas_image_style_outline) {
@@ -238,8 +245,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 canvas {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: left center;
 }
 
 ._canvasWrapper {
@@ -292,6 +301,7 @@ canvas {
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
+  font-weight: 500;
 
   &:hover,
   &:focus-visible,
