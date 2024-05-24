@@ -416,7 +416,7 @@
     "src": "robertbikes-bob.png",
     "bike_length_percent": 0.99,
     "comment": "I cant find the bike length anywhere online… I sent an email to the makers",
-    "bike_length_cm": "",
+    "bike_length_cm": 196,
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
     "frame_made_in": "France",
