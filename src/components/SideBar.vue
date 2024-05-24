@@ -27,7 +27,7 @@
             </template>
             <template v-else> {{ enabled_bikes.length }} bikes selected </template>
           </span>
-          <button class="_reset" @click="resetBikes">Reset</button>
+          <button class="_reset" type="button" @click="resetBikes">Reset</button>
         </template>
       </small>
     </template>
@@ -82,20 +82,33 @@
           </div>
 
           <div class="_adjust">
-            <label>Adjust position</label>
-            <input
-              type="range"
-              min="-10"
-              max="10"
-              step="0.1"
-              :list="'steplist-' + item.id"
-              :value="bikes_position_adjustments[item.id]"
-              @input="updateBikePosition(item.id, $event.target.value)"
-            />
-            <!-- // disabled because snapping prevents fine tuning -->
-            <!-- <datalist :id="'steplist-' + item.id">
+            <small>
+              <div class="_adjustInput">
+                <label>Position</label>
+                <input
+                  type="range"
+                  min="-20"
+                  max="20"
+                  step="0.1"
+                  :list="'steplist-' + item.id"
+                  :value="bikes_position_adjustments[item.id]"
+                  @input="updateBikePosition(item.id, $event.target.value)"
+                />
+                <!-- // disabled because snapping prevents fine tuning -->
+                <!-- <datalist :id="'steplist-' + item.id">
               <option>0</option>
             </datalist> -->
+
+                <div
+                  class="_resetPosition"
+                  v-if="bikes_position_adjustments.hasOwnProperty(item.id)"
+                >
+                  <button type="button" class="noStyle" @click="resetBikePosition(item.id)">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </small>
           </div>
 
           <div class="_measurements" v-if="item._measurements">
@@ -271,6 +284,11 @@ export default {
     updateBikePosition(id, value) {
       const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
       bikes_position_adjustments[id] = +value
+      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
+    },
+    resetBikePosition(id) {
+      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
+      delete bikes_position_adjustments[id]
       this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
     },
     getMeasurements(bike) {
@@ -502,7 +520,7 @@ h1 {
   margin-left: 0.15rem;
 }
 
-._adjust {
+._adjustInput {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
@@ -511,5 +529,9 @@ h1 {
   label {
     flex: 0 0 auto;
   }
+}
+
+._resetPosition {
+  text-align: center;
 }
 </style>
