@@ -94,6 +94,7 @@ export default {
   computed: {
     filtered_bikes() {
       return this.bikes.filter((bike) => {
+        if (!this.search_str) return true
         return (
           this.normalizeStringForSearch(bike.model).includes(
             this.normalizeStringForSearch(this.search_str)
@@ -107,6 +108,7 @@ export default {
   },
   methods: {
     normalizeStringForSearch(str) {
+      if (!str) return ''
       return str
         .toLowerCase()
         .normalize('NFD')

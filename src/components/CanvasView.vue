@@ -181,7 +181,7 @@ export default {
 
       const sorted_enabled_bikes = this.enabled_bikes
         .reduce((acc, bike) => {
-          if (!bike?.src) return
+          if (!bike?.src || !bike.bike_length_cm) return
           acc.push(bike)
           return acc
         }, [])
