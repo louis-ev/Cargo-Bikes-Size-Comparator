@@ -35,6 +35,7 @@
     <BikesList
       :bikes="filtered_bikes"
       :enabled_bikes="enabled_bikes"
+      :canvas_image_style_outline="canvas_image_style_outline"
       :bikes_position_adjustments="bikes_position_adjustments"
       @update:bikes_position_adjustments="$emit('update:bikes_position_adjustments', $event)"
     />
