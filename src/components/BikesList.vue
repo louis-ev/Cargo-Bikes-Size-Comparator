@@ -286,15 +286,6 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-._madeBy {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: var(--color-text-secondary);
-
-  > * {
-    margin-bottom: 0.5rem;
-  }
-}
 ._reset {
   padding: 0 0.25rem;
 
