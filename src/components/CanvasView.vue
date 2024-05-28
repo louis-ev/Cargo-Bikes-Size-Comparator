@@ -99,6 +99,7 @@ export default {
       return full_paths
     },
     getBikeFullImage(bike) {
+      if (bike.src?.startsWith('https')) return bike.src
       const full_path = this.bike_images_full_paths.find((i) => i.original_filename === bike.src)
       if (!full_path) return
       return full_path.url
@@ -140,8 +141,11 @@ export default {
       const each_px_measures_in_cm =
         (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
 
-      ctx.strokeStyle = '#ccc'
-      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
+      const line_0_color = '#999'
+      const line_color = '#cccccc'
+
+      const text_0_fill_color = '#999'
+      const text_fill_color = getComputedStyle(document.documentElement).getPropertyValue(
         '--color-text-secondary'
       )
 
@@ -149,6 +153,9 @@ export default {
       const step = this.grid_step
 
       for (let x = padding; x <= canvas.width; x += each_px_measures_in_cm * step) {
+        if (cm_count === 0) ctx.strokeStyle = line_0_color
+        else ctx.strokeStyle = line_color
+
         ctx.beginPath()
         ctx.moveTo(x, 0)
         ctx.lineTo(x, canvas.height)
@@ -157,16 +164,25 @@ export default {
         const font_size = (canvas.parentNode.clientHeight / 80) * window.devicePixelRatio * 1
         ctx.font = `${font_size}px Inter`
 
+        if (cm_count === 0) ctx.fillStyle = text_0_fill_color
+        else ctx.fillStyle = text_fill_color
+
         ctx.fillText(cm_count, x + 4, canvas.height - 4)
         cm_count += step
       }
 
       cm_count = 0
       for (let y = canvas.height - padding; y >= 0; y -= each_px_measures_in_cm * step) {
+        if (cm_count === 0) ctx.strokeStyle = line_0_color
+        else ctx.strokeStyle = line_color
+
         ctx.beginPath()
         ctx.moveTo(0, y)
         ctx.lineTo(canvas.width, y)
         ctx.stroke()
+
+        if (cm_count === 0) ctx.fillStyle = text_0_fill_color
+        else ctx.fillStyle = text_fill_color
 
         ctx.fillText(cm_count, 0 + 4, y - 4)
 

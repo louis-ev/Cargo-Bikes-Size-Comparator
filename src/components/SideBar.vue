@@ -44,17 +44,27 @@
     <details>
       <summary>Advanced options</summary>
       <div class="_advanced">
-        <label>Grid step (cm)</label>
+        <label>Grid step: {{ grid_step }}cm</label>
         <input
           type="range"
           step="1"
           min="1"
           max="100"
+          list="grid_step_datalist"
+          :value="grid_step"
           @input="$emit('update:grid_step', +$event.target.value)"
         />
+        <datalist id="grid_step_datalist">
+          <option value="1" label="1" />
+          <option value="10" label="10" />
+          <option value="20" label="20" />
+          <option value="50" label="50" />
+          <option value="75" label="75" />
+          <option value="100" label="100" />
+        </datalist>
       </div>
       <div class="_advanced">
-        <label>Padding (%)</label>
+        <label>Zoom</label>
         <input
           type="range"
           step="1"
@@ -77,7 +87,8 @@ export default {
     bikes: Array,
     enabled_bikes: Array,
     canvas_image_style_outline: Boolean,
-    bikes_position_adjustments: Object
+    bikes_position_adjustments: Object,
+    grid_step: Number
   },
   components: {
     BikesList,

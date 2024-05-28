@@ -3,6 +3,7 @@
     <SideBar
       :bikes="bikes"
       :enabled_bikes="enabled_bikes"
+      :grid_step="grid_step"
       v-model:default_padding_percent="default_padding_percent"
       v-model:grid_step="grid_step"
       v-model:bikes_position_adjustments="bikes_position_adjustments"
