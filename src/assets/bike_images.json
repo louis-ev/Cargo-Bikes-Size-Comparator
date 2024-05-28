@@ -526,5 +526,18 @@
     "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/v2"
+  },
+  {
+    "id": "galian-cycles-le-formidable",
+    "id_in_csv": "",
+
+    "manufacturer": "Galian Cycles",
+    "model": "Le Formidable",
+    "src": "galian-formidable.png",
+    "bike_length_percent": 0.8534,
+    "bike_length_cm": 250,
+    "left_margin_percent": 0.07,
+    "bottom_margin_percent": 0.19,
+    "url": "https://galiancycles.com/products/le-formidable"
   }
 ]
