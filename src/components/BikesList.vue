@@ -49,8 +49,8 @@
               <label>Position</label>
               <input
                 type="range"
-                min="-20"
-                max="20"
+                min="-50"
+                max="50"
                 step="0.1"
                 :list="'steplist-' + item.id"
                 :value="bikes_position_adjustments[item.id]"
