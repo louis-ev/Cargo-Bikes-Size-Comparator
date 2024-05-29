@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       bikes: bikes,
+      local_bikes: [],
       bakfiets_measures: [],
       longtails_measures: []
     }
@@ -28,15 +29,17 @@ export default {
   watch: {},
   computed: {
     supercharged_bikes() {
-      return this.bikes.map((item) => {
-        if (this.all_measures.length > 0) {
-          const found = this.all_measures.find(
-            (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
-          )
-          if (found) item._measurements = found
-        }
-        return item
-      })
+      return this.bikes
+        .map((item) => {
+          if (this.all_measures.length > 0) {
+            const found = this.all_measures.find(
+              (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
+            )
+            if (found) item._measurements = found
+          }
+          return item
+        })
+        .concat(this.local_bikes)
     },
     sorted_bikes() {
       if (!this.supercharged_bikes) return []
