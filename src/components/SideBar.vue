@@ -160,10 +160,10 @@ export default {
 ._banner {
   text-align: center;
   aspect-ratio: 3/1;
-  background-color: white;
+  // background-color: white;
   border-radius: 0.5rem;
   padding: 1rem;
-  gap: 0.25rem;
+  gap: 0.5rem;
 
   display: flex;
   flex-direction: column;

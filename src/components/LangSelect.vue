@@ -36,7 +36,7 @@ export default {
   // top: 10px;
   select {
     border: none;
-    // background: var(--color-primary);
+    background: white;
     // color: var(--color-text-secondary);
     border-radius: 10px;
     padding: 4px 0.5rem;
