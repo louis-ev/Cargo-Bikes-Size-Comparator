@@ -474,6 +474,19 @@
     "url": "https://yubabikes.com/cargobikestore/kombi-e5/"
   },
   {
+    "id": "yuba-mundo",
+    "id_in_csv": "Yuba/Lux",
+
+    "manufacturer": "Yuba",
+    "model": "Mundo Lux",
+    "src": "yuba-lux.png",
+    "bike_length_percent": 0.972,
+    "bike_length_cm": 212,
+    "left_margin_percent": 0.010,
+    "bottom_margin_percent": 0.254,
+    "url": "https://yubabikes.com/cargobikestore/yuba-mundo-lux/"
+  },
+  {
     "id": "yuba-supercargo",
     "id_in_csv": "",
 
