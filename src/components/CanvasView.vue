@@ -1,7 +1,7 @@
 <template>
   <div class="_canvasWrapper">
     <div class="_noBikes" v-if="enabled_bikes.length === 0">
-      <span>Click on two bikes or more in the sidebar to compare their size !</span>
+      <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
     </div>
     <template v-else>
       <div class="_canvasOptions">
@@ -17,7 +17,7 @@
             :checked="canvas_image_style_outline"
             @change="$emit('update:canvas_image_style_outline', $event.target.checked)"
           />
-          &nbsp;Outline View
+          &nbsp;{{ $t('message.outline_view') }}
         </label>
       </div>
     </template>
