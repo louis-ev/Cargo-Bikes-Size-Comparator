@@ -79,6 +79,7 @@
           step="1"
           min="0"
           max="30"
+          :value="default_padding_percent"
           @input="$emit('update:default_padding_percent', +$event.target.value)"
         />
       </div>
@@ -98,7 +99,8 @@ export default {
     enabled_bikes: Array,
     canvas_image_style_outline: Boolean,
     bikes_position_adjustments: Object,
-    grid_step: Number
+    grid_step: Number,
+    default_padding_percent: Number
   },
   components: {
     LangSelect,
