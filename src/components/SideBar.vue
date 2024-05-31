@@ -1,7 +1,9 @@
 <template>
   <div class="_sidebar">
-    <LangSelect />
-    <h1 v-html="$t('message.title')" />
+    <div class="_banner">
+      <h1 v-html="$t('message.title')" />
+      <LangSelect class="_lang_select" />
+    </div>
 
     <div class="_search">
       <input type="search" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
@@ -155,8 +157,28 @@ export default {
   overflow-y: auto;
 }
 
+._banner {
+  text-align: center;
+  aspect-ratio: 3/1;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 0.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+._lang_select {
+  // float: right;
+}
+
 h1 {
   font-weight: 800;
+  margin-bottom: 0;
 }
 
 ._advanced {

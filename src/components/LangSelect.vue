@@ -15,8 +15,8 @@ export default {
     return {
       locale: this.$i18n.locale,
       langs: [
-        { label: 'EN', value: 'en' },
-        { label: 'FR', value: 'fr' }
+        { label: 'english', value: 'en' },
+        { label: 'français', value: 'fr' }
       ]
     }
   },
@@ -30,15 +30,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .locale-changer {
-  text-align: right;
+  // text-align: right;
   // position: absolute;
   // right: 10px;
   // top: 10px;
   select {
     border: none;
-    background: white;
+    // background: var(--color-primary);
+    // color: var(--color-text-secondary);
     border-radius: 10px;
-    padding: 2px 10px;
+    padding: 4px 0.5rem;
   }
 }
 </style>

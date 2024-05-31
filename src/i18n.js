@@ -10,7 +10,7 @@ const i18n = createI18n({
   messages: {
     en: {
       message: {
-        title: 'Cargo Bikes<br />Size Comparator',
+        title: 'Cargo Bikes Size Comparator',
         search_placeholder: 'Search by model or manufacturer',
         no_bikes_matched_your_search: 'No bikes matched your search.',
         to_contribute_a_bike: 'To contribute a bike,',
@@ -44,10 +44,10 @@ const i18n = createI18n({
     },
     fr: {
       message: {
-        title: 'Comparateur de taille<br />de vélos cargo',
+        title: 'Comparateur de taille de vélos cargo',
         search_placeholder: 'Rechercher par modèle ou fabricant',
         no_bikes_matched_your_search: 'Aucun vélo ne correspond à votre recherche.',
-        to_contribute_a_bike: 'Pour ajouterd un vélo,',
+        to_contribute_a_bike: 'Pour ajouter un vélo,',
         read_the_guide: 'lire la documentation',
         or_ask_me: 'ou me demander',
         via_email: 'via email',
@@ -59,7 +59,7 @@ const i18n = createI18n({
         missing_length_information: 'Information de longueur manquante',
         website: 'site web',
         advanced_options: 'Options avancées',
-        grid_step: 'Pas de grille',
+        grid_step: 'Pas de la grille',
         zoom: 'Zoom',
         created_by: 'Créé par',
         in_Nantes: 'à Nantes, en France, avec des contributions du monde entier.',
