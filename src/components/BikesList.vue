@@ -91,7 +91,7 @@
 </template>
 <script>
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
-  query: { format: 'webp', w: 100 }
+  query: { format: 'webp', w: 80 }
 })
 
 export default {
@@ -275,6 +275,7 @@ export default {
       width: 100%;
       object-fit: scale-down;
       object-position: center;
+      border: none;
     }
   }
 
