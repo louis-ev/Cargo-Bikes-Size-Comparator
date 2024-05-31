@@ -39,7 +39,12 @@ const i18n = createI18n({
         available_on_Github: 'available on Github',
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
-        outline_view: 'Outline View'
+        outline_view: 'Outline View',
+        bike_mostly_manufactured_and_assembled: 'Bike mostly manufactured and assembled',
+        in_germany: 'in Germany',
+        in_france: 'in France',
+        in_united_states: 'in the United States',
+        in_united_kingdom: 'in the United Kingdom'
       }
     },
     fr: {
@@ -74,7 +79,12 @@ const i18n = createI18n({
         available_on_Github: 'disponible sur Github',
         code_design_foss: 'Code / Design is free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
-        outline_view: 'Vue contour'
+        outline_view: 'Vue contour',
+        bike_mostly_manufactured_and_assembled: 'Vélo principalement fabriqué et assemblé',
+        in_germany: 'en Allemagne',
+        in_france: 'en France',
+        in_united_states: 'aux États-Unis',
+        in_united_kingdom: 'au Royaume-Uni'
       }
     }
   }

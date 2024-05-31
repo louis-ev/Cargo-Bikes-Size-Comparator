@@ -44,8 +44,11 @@
 
       <div class="_itemBottom" v-if="bikeIsEnabled(item.id)">
         <div class="_madeIn" v-if="item.frame_made_in">
-          Bike mostly manufactured and assembled in <strong>{{ item.frame_made_in }}</strong
-          >.
+          {{
+            $t('message.bike_mostly_manufactured_and_assembled') +
+            ' ' +
+            $t('message.in_' + item.frame_made_in)
+          }}
         </div>
 
         <div class="_adjust">
@@ -165,9 +168,9 @@ export default {
       this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
     },
     unicodeFlag(country) {
-      if (country === 'USA') return '🇺🇸'
-      if (country === 'Germany') return '🇩🇪'
-      if (country === 'France') return '🇫🇷'
+      if (country === 'usa') return '🇺🇸'
+      if (country === 'germany') return '🇩🇪'
+      if (country === 'france') return '🇫🇷'
       return
     },
     getLengthInInches(length_cm) {
