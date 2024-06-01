@@ -1,39 +1,39 @@
 <template>
   <div class="_madeBy">
     <div>
-      Created by <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a> in Nantes
-      (FR), with contributions from around the world.
+      {{ $t('message.created_by') }}
+      <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a>
+      {{ $t('message.in_Nantes') }}
     </div>
     <div>
-      Report errors and bugs / send feedbacks / contribute bikes
-      <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank"
-        >on Github</a
-      >
-      or
-      <a href="mailto:hello@louiseveillard.com" target="_blank">via email</a>
+      {{ $t('message.report_errors_and_bugs') }}
+      <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank">{{
+        $t('message.on_Github')
+      }}</a>
+      {{ $t('message.or') }}
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a>
     </div>
-    <div>No cookies, no tracking, no ads, and fully RGPD-compliant. Website hosted in France.</div>
+    <div>{{ $t('message.no_cookies_no_tracking_no_ads_and_fully_rgpd_compliant') }}</div>
     <hr />
     <div>
-      Specific measures taken from
+      {{ $t('message.specific_measures_taken_from') }}
       <a
         href="https://docs.google.com/spreadsheets/d/1vPCfYStt8fXQQtYDFfNS70kR8B2V2dDwAs_r0VlUlWw/"
         target="_blank"
       >
-        this document
+        {{ $t('message.this_document') }}
       </a>
     </div>
     <div>
-      Source code
+      {{ $t('message.source_code') }}
       <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank">
-        available on Github
+        {{ $t('message.available_on_Github') }}
       </a>
     </div>
     <div>
-      Code/design
-      <button type="button" class="noStyle" @click="show_license = !show_license">
-        free, open-source under AGPLv3</button
-      >, bike images from the manufacturer's website.
+      {{ $t('message.code_design_foss') }}
+      <button type="button" class="noStyle" @click="show_license = !show_license">AGPLv3</button>,
+      {{ $t('message.bike_images_from_the_manufacturer_s_website') }}
     </div>
 
     <template v-if="show_license">

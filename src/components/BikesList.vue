@@ -22,8 +22,13 @@
           </template>
           <br />
           <small>
-            <template v-if="item.bike_length_cm">{{ item.bike_length_cm }} cm</template>
-            <template v-else>Missing length information</template>
+            <template v-if="item.bike_length_cm">
+              {{ item.bike_length_cm }}cm
+              <template v-if="$i18n.locale === 'en'">
+                {{ getLengthInInches(item.bike_length_cm) }} inches
+              </template>
+            </template>
+            <template v-else>{{ $t('message.missing_length_information') }}</template>
           </small>
         </div>
 
@@ -39,8 +44,11 @@
 
       <div class="_itemBottom" v-if="bikeIsEnabled(item.id)">
         <div class="_madeIn" v-if="item.frame_made_in">
-          Bike mostly manufactured and assembled in <strong>{{ item.frame_made_in }}</strong
-          >.
+          {{
+            $t('message.bike_mostly_manufactured_and_assembled') +
+            ' ' +
+            $t('message.in_' + item.frame_made_in)
+          }}
         </div>
 
         <div class="_adjust">
@@ -75,7 +83,7 @@
           <br />
         </div>
         <div class="_source">
-          <a :href="item.url" target="_blank"> <span>&#8594;</span>website</a>
+          <a :href="item.url" target="_blank"> <span>&#8594;</span> {{ $t('message.website') }}</a>
         </div>
       </div>
     </div>
@@ -83,13 +91,14 @@
 </template>
 <script>
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
-  query: { format: 'webp', w: 100 }
+  query: { format: 'webp', w: 80 }
 })
 
 export default {
   props: {
     bikes: Array,
     enabled_bikes: Array,
+    canvas_image_style_outline: Boolean,
     bikes_position_adjustments: Object
   },
   components: {},
@@ -159,10 +168,13 @@ export default {
       this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
     },
     unicodeFlag(country) {
-      if (country === 'USA') return '🇺🇸'
-      if (country === 'Germany') return '🇩🇪'
-      if (country === 'France') return '🇫🇷'
+      if (country === 'usa') return '🇺🇸'
+      if (country === 'germany') return '🇩🇪'
+      if (country === 'france') return '🇫🇷'
       return
+    },
+    getLengthInInches(length_cm) {
+      return (length_cm / 2.54).toFixed(1)
     }
   }
 }
@@ -181,7 +193,7 @@ export default {
   border-radius: 0.5rem;
   overflow: hidden;
 
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  // transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   &[data-active='true'] ._itemTop {
     background-color: var(--color-accent);
@@ -263,6 +275,7 @@ export default {
       width: 100%;
       object-fit: scale-down;
       object-position: center;
+      border: none;
     }
   }
 
