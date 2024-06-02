@@ -98,4 +98,13 @@ export default {
 input {
   font-size: inherit;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

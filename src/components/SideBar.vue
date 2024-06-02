@@ -90,7 +90,10 @@
     </div>
 
     <div class="_addMissingBike">
-      <button type="button" @click="add_bike_modal = true">add a bike</button>
+      <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+        ＋
+        {{ $t('message.add_a_bike') }}
+      </button>
     </div>
   </div>
 </template>
@@ -115,8 +118,7 @@ export default {
   },
   data() {
     return {
-      search_str: '',
-      add_bike_modal: false
+      search_str: ''
     }
   },
   created() {},
@@ -128,24 +130,17 @@ export default {
       return this.bikes.filter((bike) => {
         if (!this.search_str) return true
         return (
-          this.normalizeStringForSearch(bike.model).includes(
-            this.normalizeStringForSearch(this.search_str)
+          this.$normalizeStringForSearch(bike.model).includes(
+            this.$normalizeStringForSearch(this.search_str)
           ) ||
-          this.normalizeStringForSearch(bike.manufacturer).includes(
-            this.normalizeStringForSearch(this.search_str)
+          this.$normalizeStringForSearch(bike.manufacturer).includes(
+            this.$normalizeStringForSearch(this.search_str)
           )
         )
       })
     }
   },
   methods: {
-    normalizeStringForSearch(str) {
-      if (!str) return ''
-      return str
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-    },
     resetBikes() {
       this.$router.push({
         query: {}
@@ -169,14 +164,10 @@ export default {
   padding: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 4rem;
+  flex: 1 1 auto;
 }
 ._addMissingBike {
   flex: 0 0 auto;
-}
-._addMissingBike button {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: var(--color-accent);
 }
 
 ._banner {
@@ -257,11 +248,13 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  // background-color: var(--color-accent);
+  background-color: white;
+  border-top: 1px solid var(--color-text-secondary);
 
   button {
     // background-color: var(--color-accent);
-    padding: 0 4px 4px;
-    border-radius: 4px;
+    // padding: 2rem;
   }
 }
 </style>

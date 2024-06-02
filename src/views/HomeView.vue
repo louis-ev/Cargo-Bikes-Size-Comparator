@@ -8,6 +8,7 @@
       v-model:grid_step="grid_step"
       v-model:bikes_position_adjustments="bikes_position_adjustments"
       :canvas_image_style_outline="canvas_image_style_outline"
+      @showAddBikeModal="add_bike_modal = true"
     />
     <CanvasView
       :enabled_bikes="enabled_bikes"
@@ -16,11 +17,15 @@
       :bikes_position_adjustments="bikes_position_adjustments"
       v-model:canvas_image_style_outline="canvas_image_style_outline"
     />
+    <transition name="fade" mode="out-in">
+      <AddBikeModal v-if="add_bike_modal" :bikes="bikes" @close="add_bike_modal = false" />
+    </transition>
   </div>
 </template>
 <script>
 import SideBar from '@/components/SideBar.vue'
 import CanvasView from '@/components/CanvasView.vue'
+import AddBikeModal from '@/components/AddBikeModal.vue'
 
 export default {
   props: {
@@ -28,11 +33,14 @@ export default {
   },
   components: {
     SideBar,
-    CanvasView
+    CanvasView,
+    AddBikeModal
   },
   data() {
     return {
       ro: null,
+
+      add_bike_modal: false,
 
       default_padding_percent: 5,
       canvas_image_style_outline: false,
