@@ -43,7 +43,7 @@
             <label for="price">Total length</label>
             <small> Usually available on the manufacturer's website. </small>
             <div class="_totalLengthInput">
-              <input type="number" v-model="totalLength" id="totalLength" required />
+              <input type="number" v-model.number="totalLength" id="totalLength" required />
               <select v-model="totalLengthUnit">
                 <option value="cm">cm</option>
                 <option value="inches">inches</option>
@@ -109,10 +109,10 @@ export default {
 
       model: '',
       manufacturer: '',
-      totalLength: '',
+      totalLength: 12,
       totalLengthUnit: 'cm',
       productPageUrl: '',
-      imageUrl: ''
+      imageUrl: 'https://veloe.eu/wp-content/uploads/2024/04/multi-lungo-bosch-yellow.jpg'
     }
   },
   created() {},

@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="_sliderNumber">
+    local_value = {{ local_value }}
     <input type="number" v-model="local_value" />
-    <input type="range" v-model="local_value" />
+    <input type="range" step="0.1" min="0" max="100" v-model="local_value" />
   </div>
 </template>
 <script>
@@ -23,11 +24,13 @@ export default {
     }
   },
   computed: {},
-  methods: {
-    onChange(e) {
-      this.$emit('update:value', e.target.value)
-    }
-  }
+  methods: {}
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+._sliderNumber {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+</style>

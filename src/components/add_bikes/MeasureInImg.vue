@@ -1,11 +1,11 @@
 <template>
   <div class="_measureInImg">
     <div class="_topSliders">
-      <SliderNumber v-model="left" />
-      <SliderNumber v-model="right" />
-      <SliderNumber v-model="bottom" />
+      <SliderNumber v-model:value="left" />
+      <SliderNumber v-model:value="right" />
+      <SliderNumber v-model:value="bottom" />
     </div>
-    <canvas ref="canvas"></canvas>
+    <canvas ref="canvas" />
   </div>
 </template>
 <script>
@@ -89,6 +89,7 @@ export default {
 
 ._topSliders {
   display: flex;
+  flex-direction: column nowrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
