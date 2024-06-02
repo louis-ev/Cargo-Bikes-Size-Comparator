@@ -259,8 +259,6 @@ export default {
       visible_canvas.width = canvas.width
       visible_canvas.height = canvas.height
       visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
-
-      // repère
     }
   }
 }
