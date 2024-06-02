@@ -22,6 +22,7 @@
       </div>
     </template>
     <canvas ref="bikes" width="1920" height="1920" />
+    <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
   </div>
 </template>
@@ -105,7 +106,7 @@ export default {
       return full_path.url
     },
     async showBikes() {
-      const canvas = this.$refs.bikes
+      const canvas = this.$refs.offscreen_canvas
       if (!canvas) return
 
       canvas.width = Math.min(
@@ -254,7 +255,10 @@ export default {
         }
       }
 
-      // repère
+      const visible_canvas = this.$refs.bikes
+      visible_canvas.width = canvas.width
+      visible_canvas.height = canvas.height
+      visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
     }
   }
 }
