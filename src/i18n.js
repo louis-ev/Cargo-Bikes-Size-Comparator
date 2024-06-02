@@ -45,7 +45,10 @@ const i18n = createI18n({
         in_france: 'in France',
         in_united_states: 'in the United States',
         in_united_kingdom: 'in the United Kingdom',
-        add_a_bike: 'Add a bike'
+        add_a_bike: 'Add a bike',
+        left: 'Left',
+        right: 'Right',
+        bottom: 'Bottom'
       }
     },
     fr: {
@@ -86,7 +89,10 @@ const i18n = createI18n({
         in_france: 'en France',
         in_united_states: 'aux États-Unis',
         in_united_kingdom: 'au Royaume-Uni',
-        add_a_bike: 'Ajouter un vélo'
+        add_a_bike: 'Ajouter un vélo',
+        left: 'Gauche',
+        right: 'Droite',
+        bottom: 'Bas'
       }
     }
   }

@@ -73,6 +73,16 @@ h1 {
   line-height: 1.2;
   margin-bottom: 1rem;
 }
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
 small {
   font-size: 0.8rem;
@@ -86,6 +96,7 @@ small {
 
 input[type='text'],
 input[type='search'],
+input[type='number'],
 input[type='url'] {
   position: relative;
   border: none;
@@ -99,10 +110,15 @@ input[type='url'] {
   }
   &:required {
     /* border-color: var(--color-warning); */
-    &:focus {
-      border-color: var(--color-warning);
-    }
+    background-size: 12px 12px;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(var(--color-warning) 18%, transparent 30%);
   }
+}
+
+input[type='number'] {
+  text-align: center;
 }
 
 hr {

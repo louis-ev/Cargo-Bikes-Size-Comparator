@@ -1,14 +1,16 @@
 <template>
   <div class="_sliderNumber">
-    local_value = {{ local_value }}
+    <label :for="label">{{ label }}</label>
     <input type="number" v-model="local_value" />
-    <input type="range" step="0.1" min="0" max="100" v-model="local_value" />
+    <input type="range" :dir="direction" step="0.1" min="0" max="100" v-model="local_value" />
   </div>
 </template>
 <script>
 export default {
   props: {
-    value: Number
+    value: Number,
+    label: String,
+    direction: String
   },
   components: {},
   data() {
@@ -30,7 +32,15 @@ export default {
 <style lang="scss" scoped>
 ._sliderNumber {
   display: flex;
+  flex-flow: row nowrap;
   align-items: center;
   gap: 10px;
+}
+input[type='number'] {
+  flex: 0 0 10ch;
+  width: 10ch;
+}
+input[type='range'] {
+  flex: 1;
 }
 </style>

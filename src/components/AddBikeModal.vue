@@ -40,7 +40,7 @@
           </div>
 
           <div class="_addBikeModalInput">
-            <label for="price">Total length</label>
+            <label for="price">Total bike length</label>
             <small> Usually available on the manufacturer's website. </small>
             <div class="_totalLengthInput">
               <input type="number" v-model.number="totalLength" id="totalLength" required />
@@ -65,18 +65,55 @@
             <input type="url" placeholder="https://" v-model="imageUrl" required id="imageUrl" />
           </div>
 
-          <input type="submit" class="u-button" value="next &gt;" />
+          <div class="_addBikeModalInput">
+            <label for="frame_made_in">Bike mostly made in</label>
+            <input type="text" v-model="frame_made_in" id="frame_made_in" />
+            <small>
+              If that information is officially available, the name of the country the bike and its
+              frame is made in.</small
+            >
+          </div>
+
+          <div class="_nav">
+            <input type="submit" class="u-button" value="next &gt;" />
+          </div>
         </form>
 
         <section class="_step" v-else-if="step === 2">
           <h2>Step 2: profile image and size</h2>
-          <MeasureInImg :imageUrl="imageUrl" />
+          <p>
+            Use these controls to indicate the bike's size and position in the overall image.
+            <strong>Left and right sliders should match the bike length value</strong> (ie. if the
+            manufacturer indicates bike length starting from the back of the rear rack to the front
+            wheel, or from the back of the rear wheel to the front wheel, etc.).
+          </p>
+          <MeasureInImg
+            :imageUrl="imageUrl"
+            v-model:img_left="img_left"
+            v-model:img_right="img_right"
+            v-model:img_bottom="img_bottom"
+          />
+          <div class="_nav">
+            <button type="button" @click="step--">&lt; back</button>
+            <button type="button" @click="step++">next &gt;</button>
+          </div>
         </section>
 
         <section class="_step" v-else-if="step === 3">
           <h2>Step 3</h2>
+
+          <div>
+            <label>Recap</label>
+            <pre class="_recap" v-text="JSON.stringify(new_bike_recap, null, 2)"></pre>
+          </div>
+
           <div>Click this button to send an email with the correct informations.</div>
           <button type="button">Send</button>
+
+          <div class="_nav">
+            <button type="button" @click="step--">&lt; back</button>
+            <button type="button" @click="reloadComponent">add another bike</button>
+          </div>
         </section>
       </transition>
       <!-- 
@@ -112,7 +149,11 @@ export default {
       totalLength: 12,
       totalLengthUnit: 'cm',
       productPageUrl: '',
-      imageUrl: 'https://veloe.eu/wp-content/uploads/2024/04/multi-lungo-bosch-yellow.jpg'
+      imageUrl: 'https://veloe.eu/wp-content/uploads/2024/04/multi-lungo-bosch-yellow.jpg',
+
+      img_left: 10,
+      img_right: 10,
+      img_bottom: 10
     }
   },
   created() {},
@@ -125,13 +166,46 @@ export default {
         .map((bike) => bike.manufacturer)
         .filter((value, index, self) => self.indexOf(value) === index)
     },
+    sorted_manufacturers() {
+      return this.all_manufacturers.sort((a, b) => a.localeCompare(b))
+    },
     filtered_manufacturers() {
-      return this.all_manufacturers.filter(
+      return this.sorted_manufacturers.filter(
         (manufacturer) =>
           this.$normalizeStringForSearch(manufacturer).includes(
             this.$normalizeStringForSearch(this.manufacturer)
           ) && manufacturer !== this.manufacturer
       )
+    },
+    new_bike_recap() {
+      const id = (this.model + ' ' + this.manufacturer).toLowerCase().replace(/ /g, '-')
+      const manufacturer = this.manufacturer
+      const model = this.model
+      const src = this.imageUrl
+      const bike_length_percent = (100 - this.img_left - this.img_right) / 100
+
+      let bike_length_cm
+      if (this.totalLengthUnit === 'inches') {
+        bike_length_cm = this.totalLength * 2.54
+      } else {
+        bike_length_cm = this.totalLength
+      }
+
+      const left_margin_percent = this.img_left / 100
+      const bottom_margin_percent = this.img_bottom / 100
+      const url = this.productPageUrl
+
+      return {
+        id,
+        manufacturer,
+        model,
+        src,
+        bike_length_percent,
+        bike_length_cm,
+        left_margin_percent,
+        bottom_margin_percent,
+        url
+      }
     }
   },
   methods: {
@@ -164,6 +238,7 @@ export default {
   margin: 0 auto;
   border-radius: 0.5rem;
   background: var(--color-background);
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -212,15 +287,22 @@ h2 {
   gap: 0.25rem;
   input {
     // flex: 1 1 auto;
-    text-align: right;
+    text-align: center;
   }
 }
 
 ._nav {
+  // // position: sticky;
+  // bottom: 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  // margin-top: 2rem;
+  margin-top: 2rem;
+
+  button,
+  input[type='submit'] {
+    background-color: white;
+  }
 }
 
 ._manufacturerSelect {
@@ -241,5 +323,15 @@ h2 {
 
 ._warning {
   color: var(--color-warning);
+}
+
+pre {
+  font-size: 0.8rem;
+  font-family: 'Mono', 'Courier', sans-serif;
+  background-color: var(--color-text);
+  color: var(--color-background);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
 }
 </style>
