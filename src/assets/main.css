@@ -104,12 +104,18 @@ small {
 input[type='text'],
 input[type='search'],
 input[type='number'],
-input[type='url'] {
+input[type='url'],
+select {
   position: relative;
   border: none;
+  background: white;
   border-bottom: 1px solid var(--color-text-secondary);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   padding: 5px;
+
+  &:hover {
+    border-color: black;
+  }
 
   &:focus {
     outline: none;
@@ -122,6 +128,10 @@ input[type='url'] {
     background-repeat: no-repeat;
     background-image: radial-gradient(var(--color-warning) 28%, transparent 40%);
   }
+}
+select {
+  border: 1px solid var(--color-text-secondary);
+  border-color: transparent;
 }
 
 input[type='number'] {
@@ -139,5 +149,17 @@ ol,
 ul {
   li {
     margin: 1rem 0;
+  }
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0rem;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 800;
   }
 }

@@ -1,50 +1,47 @@
 <template>
   <div class="_measureInImg">
+    <!-- <div class="_addBikeModalInput">
+      <label for="imageUrl">URL to image</label>
+      <input
+        type="url"
+        placeholder="https://"
+        :value="imageUrl"
+        @change="$emit('update:imageUrl', $event.target.value)"
+        required
+        id="imageUrl"
+      />
+      <small>
+        It must be a profile image of the bike, with the front to the right, ideally on a white or
+        transparent background. Higher resolution is better (at least 1000px in each dimension).
+      </small>
+    </div> -->
+
     <div v-if="status === 'loading'">
-      <p>Loading…</p>
+      <p>{{ $t('add_bike.loading') }}</p>
     </div>
     <div class="_failed_to_load_image" v-else-if="status === 'failed_to_load_image'">
-      <p>Failed to load image</p>
-      <p>
-        This may be because the <b>URL to image</b> is not a valid image or the source server does
-        not allow loading on another website.
-      </p>
-      <p>
-        You can click back to correct the URL and try again, or download the image from your URL
-        yourself and upload it here manually.
-      </p>
+      <p>{{ $t('add_bike.failed_to_load_image') }}</p>
+      <p v-html="$t('add_bike.this_may_be_because')" />
+      <p v-html="$t('add_bike.you_can_click_back')" />
       <input type="file" accept="image/*" @change="onFileChange" />
     </div>
     <div v-show="status === 'loaded'">
-      <p>
-        Use these controls to indicate the bike's size and position in the overall image.
-        <strong>Left and right sliders should match the bike length value</strong> (ie. if the
-        manufacturer indicates bike length starting from the back of the rear rack to the front
-        wheel, or from the back of the rear wheel to the front wheel, etc.).
-      </p>
+      <p v-html="$t('add_bike.use_these_controls')" />
       <div class="_topSliders">
         <div class="_slider" :style="{ accentColor: left_color }">
           <label v-text="$t('message.left')" />
           <SliderNumber v-model:value="left" />
-          <small
-            >Align with the left edge (back of the rear wheel or the rack), depending on what the
-            <i>Total bike length</i> refers to.
-          </small>
+          <small v-html="$t('add_bike.align_with_the_left_edge')" />
         </div>
         <div class="_slider" :style="{ accentColor: right_color }">
           <label v-text="$t('message.right')" />
           <SliderNumber v-model:value="right" :direction="'rtl'" />
-          <small
-            >Align with the right edge (front of the front wheel or front rack), depending on what
-            the <i>Total bike length</i> refers to.
-          </small>
+          <small v-html="$t('add_bike.align_with_the_right_edge')" />
         </div>
         <div class="_slider" :style="{ accentColor: bottom_color }">
           <label v-text="$t('message.bottom')" />
           <SliderNumber v-model:value="bottom" />
-          <small
-            >Align with the ground, typically the contact point between the wheels and the floor.
-          </small>
+          <small v-html="$t('add_bike.align_with_the_ground')" />
         </div>
       </div>
       <canvas ref="canvas" />
@@ -100,11 +97,14 @@ export default {
   methods: {
     async drawCanvas() {
       const img = new Image()
-      img.crossOrigin = 'anonymous'
+      // actually works less than anonymous
+      // img.crossOrigin = 'anonymous'
       img.onerror = (err) => {
         console.error(err)
         this.status = 'failed_to_load_image'
       }
+
+      debugger
 
       if (this.local_bike_image) {
         img.src = URL.createObjectURL(this.local_bike_image)

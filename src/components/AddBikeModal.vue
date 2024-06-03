@@ -1,29 +1,26 @@
 <template>
   <dialog class="_addBikeModal" open @click.self="$emit('close')">
     <div class="_addBikeModalContent" :data-step="step">
-      <h1>Add a bike</h1>
+      <h1>{{ $t('add_bike.title') }}</h1>
 
       <transition name="fade" mode="out-in">
         <div class="_step" v-if="step === 0">
-          <h2>How to add a bike to this tool</h2>
+          <h2>{{ $t('add_bike.how_to_add') }}</h2>
           <p>
-            The following form will explain how to contribute a bike to this tool.
-            <strong
-              >There are 3 simple steps to follow and it should take you between 2 and 5
-              minutes.</strong
-            >
+            <strong>
+              {{ $t('add_bike.simple_steps') }}
+            </strong>
           </p>
           <p>
-            The data you'll provide will be added to the database with the same free and open-source
-            license (AGPL v3) as the rest of the tool.
+            {{ $t('add_bike.data_license') }}
           </p>
           <p>
-            You can see the collaborative bike database
+            {{ $t('add_bike.collaborative_bike_database') }}
             <a
               href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json"
               target="_blank"
-              >here</a
-            >. If you have any questions, send me an email at
+              >{{ $t('add_bike.here') }}</a
+            >. {{ $t('add_bike.if_you_have_questions') }}
             <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.
           </p>
 
@@ -32,17 +29,17 @@
           </div>
         </div>
         <form class="_step" v-else-if="step === 1" @submit.prevent="submitStep1">
-          <h2>Step 1: Basic informations</h2>
-          <div class="_addBikeModalInput">
-            <label for="model">Model</label>
+          <h2>{{ $t('add_bike.step_1_basic_informations') }}</h2>
+          <div class="inputField">
+            <label for="model">{{ $t('add_bike.model') }}</label>
             <input type="text" autofocus v-model="model" id="model" />
           </div>
 
-          <div class="_addBikeModalInput">
-            <label for="manufacturer">Manufacturer</label>
+          <div class="inputField">
+            <label for="manufacturer">{{ $t('add_bike.manufacturer') }}</label>
             <input type="text" v-model="manufacturer" id="manufacturer" />
             <small v-if="filtered_manufacturers.length > 0">
-              Suggestions
+              {{ $t('add_bike.suggestions') }}
               <div class="_manufacturerSelect">
                 <button
                   v-for="e_manufacturer in filtered_manufacturers"
@@ -60,55 +57,58 @@
               "
             >
               <small>
-                A bike with this model/manufacturer is already in the database, proceed only if
-                you’re sure you want to add it.
+                {{ $t('add_bike.a_bike_with_this_model_manufacturer_is_already_in_the_database') }}
               </small>
             </div>
           </div>
 
-          <div class="_addBikeModalInput">
-            <label for="price">Total bike length</label>
-            <small> Usually available on the manufacturer's website. </small>
+          <div class="inputField">
+            <label for="price">{{ $t('add_bike.total_bike_length') }}</label>
             <div class="_totalLengthInput">
               <input type="number" v-model.number="totalLength" id="totalLength" required />
               <select v-model="totalLengthUnit">
-                <option value="cm">cm</option>
-                <option value="inches">inches</option>
+                <option value="cm">{{ $t('add_bike.cm') }}</option>
+                <option value="inches">{{ $t('add_bike.inches') }}</option>
               </select>
             </div>
+            <small> {{ $t('add_bike.usually_available_on_the_manufacturer_s_website') }} </small>
           </div>
-          <div class="_addBikeModalInput">
-            <label for="price">Product page URL</label>
+          <div class="inputField">
+            <label for="price">{{ $t('add_bike.product_page_url') }}</label>
             <input type="url" placeholder="https://" v-model="productPageUrl" id="productPageUrl" />
           </div>
 
-          <div class="_addBikeModalInput">
-            <label for="imageUrl">URL to image</label>
-            <small>
-              It must be a profile image of the bike, with the front to the right, ideally on a
-              white or transparent background. Higher resolution is better (at least 1000px in each
-              dimension).
-            </small>
-            <input type="url" placeholder="https://" v-model="imageUrl" required id="imageUrl" />
-          </div>
-
-          <div class="_addBikeModalInput">
-            <label for="frame_made_in">Bike mostly made in</label>
+          <div class="inputField">
+            <label for="frame_made_in">{{ $t('add_bike.bike_mostly_made_in') }}</label>
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
             <small>
-              If that information is officially available, the name of the country the bike and its
-              frame is made in (and not just assembled). Optional.</small
-            >
+              {{ $t('add_bike.if_that_information_is_officially_available') }}
+            </small>
+          </div>
+
+          <hr />
+
+          <div class="inputField">
+            <label for="imageUrl">{{ $t('add_bike.bike_image') }}</label>
+            <input type="url" placeholder="https://" v-model="imageUrl" required id="imageUrl" />
+            <small>
+              {{ $t('add_bike.bike_image_explanation') }}
+            </small>
           </div>
 
           <div class="_nav">
-            <button type="button" @click="step--">&lt; back</button>
-            <input type="submit" data-color="important" class="u-button" value="next &gt;" />
+            <button type="button" @click="step--">&lt; {{ $t('add_bike.back') }}</button>
+            <input
+              type="submit"
+              data-color="important"
+              class="u-button"
+              :value="$t('add_bike.next') + ' &gt;'"
+            />
           </div>
         </form>
 
         <section class="_step" v-else-if="step === 2">
-          <h2>Step 2: profile image and size</h2>
+          <h2>{{ $t('add_bike.step_2_profile_image_and_size') }}</h2>
           <MeasureInImg
             :imageUrl="imageUrl"
             v-model:img_left="img_left"
@@ -116,72 +116,70 @@
             v-model:img_bottom="img_bottom"
           />
           <div class="_nav">
-            <button type="button" @click="step--">&lt; back</button>
-            <button type="button" data-color="important" @click="step++">next &gt;</button>
+            <button type="button" @click="step--">&lt; {{ $t('add_bike.back') }}</button>
+            <button type="button" data-color="important" @click="step++">
+              {{ $t('add_bike.next') }} &gt;
+            </button>
           </div>
         </section>
 
         <section class="_step" v-else-if="step === 3">
-          <h2>Step 3: share this information</h2>
-          <div>The following code contains all the informations you've provided:</div>
+          <h2>{{ $t('add_bike.step_3_share_this_information') }}</h2>
+          <div>{{ $t('add_bike.the_following_code_contains_all_the_informations') }}</div>
           <div class="_recap">
-            <pre v-text="JSON.stringify(new_bike_recap)" />
-            <button type="button" @click="copyToClipboard">Copy to clipboard 📋</button>
+            <pre v-text="JSON.stringify(new_bike_recap, null, 2)" />
+            <button type="button" @click="copyToClipboard">
+              {{ $t('add_bike.copy_to_clipboard') }} 📋
+            </button>
           </div>
 
-          <div><strong>To add this bike to the database, you can either:</strong></div>
+          <div>
+            <strong>{{ $t('add_bike.to_add_this_bike_to_the_database') }}</strong>
+          </div>
 
           <ul>
             <li>
               <a
                 :href="`mailto:${email}?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
-                >send me an email</a
+                >{{ $t('add_bike.send_me_an_email') }}</a
               >
-              with this information and I'll do it for you and let you know when it's done.
+              {{ $t('add_bike.with_this_information') }}
             </li>
+            <li v-html="$t('add_bike.or_copy_post')"></li>
             <li>
-              or copy this information and post it in a comment there and @ me (
-              <a href="https://piaille.fr/@louis_ev">@louis_ev on Mastodon</a>,
-              <a href="https://x.com/timetofirstfix">@timetofirstfix on X</a>, or
-              <a href="https://www.reddit.com/user/luddits/">@luddits on Reddit</a>
-              ).
-            </li>
-            <li>
-              or, if you know a bit of JavaScript, add it yourself:
+              {{ $t('add_bike.or_if_you_know_a_bit_of_javascript_add_it_yourself') }}
               <ol>
+                <li
+                  v-html="
+                    $t('add_bike.fork_the_repository', {
+                      link: `<a
+                    href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator'
+                    target='_blank'
+                    >Cargo-Bikes-Size-Comparator</a
+                  >`
+                    })
+                  "
+                ></li>
                 <li>
-                  Fork the repository
-                  <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator">
-                    Cargo-Bikes-Size-Comparator
-                  </a>
-                  on GitHub,
-                </li>
-                <li>
-                  If the image includes a white background, remove it and save it as a PNG with the
-                  highest possible resolution,
+                  {{ $t('add_bike.if_the_image_includes_a_white_background') }}
                 </li>
 
-                <li>
-                  Add the bike informations to the
-                  <a
-                    href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json"
-                  >
-                    bike_images.json
-                  </a>
-                  file
-                </li>
+                <li
+                  v-html="
+                    $t('add_bike.add_the_bike_informations_to_the', {
+                      link: `<a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>bike_images.json</a>`
+                    })
+                  "
+                ></li>
               </ol>
             </li>
           </ul>
           <hr />
 
-          <div>Click this button to send an email with the correct informations.</div>
-          <button type="button">Send</button>
-
           <div class="_nav">
-            <button type="button" @click="step--">&lt; back</button>
+            <button type="button" @click="step--">&lt; {{ $t('add_bike.back') }}</button>
             <button type="button" data-color="important" @click="reloadComponent">
-              add another bike
+              {{ $t('add_bike.add_another_bike') }}
             </button>
           </div>
         </section>
@@ -197,7 +195,7 @@
         </div>
       </transition> -->
     </div>
-    <button autofocus>Fermer</button>
+    <button autofocus>{{ $t('add_bike.close') }}</button>
   </dialog>
 </template>
 <script>
@@ -219,7 +217,8 @@ export default {
       totalLength: '',
       totalLengthUnit: 'cm',
       productPageUrl: '',
-      imageUrl: 'https://veloe.eu/wp-content/uploads/2024/04/multi-lungo-bosch-yellow.jpg',
+      imageUrl: '',
+      frame_made_in: '',
 
       img_left: 10,
       img_right: 10,
@@ -264,6 +263,7 @@ export default {
       const left_margin_percent = this.img_left / 100
       const bottom_margin_percent = this.img_bottom / 100
       const url = this.productPageUrl
+      const frame_made_in = this.frame_made_in
 
       return {
         id,
@@ -274,7 +274,8 @@ export default {
         bike_length_cm,
         left_margin_percent,
         bottom_margin_percent,
-        url
+        url,
+        frame_made_in
       }
     }
   },
@@ -285,6 +286,20 @@ export default {
     copyToClipboard() {
       const text = JSON.stringify(this.new_bike_recap)
       navigator.clipboard.writeText(text)
+    },
+    reloadComponent() {
+      this.step = 1
+
+      this.model = ''
+      this.manufacturer = ''
+      this.totalLength = ''
+      this.productPageUrl = ''
+      this.imageUrl = ''
+      this.frame_made_in = ''
+
+      this.img_left = 10
+      this.img_right = 10
+      this.img_bottom = 10
     }
   }
 }
@@ -349,19 +364,6 @@ export default {
 
 h2 {
   margin-bottom: 0.5rem;
-}
-._addBikeModalInput {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  gap: 0rem;
-  // border-bottom: 1px solid #000;
-
-  label {
-    font-size: 0.8rem;
-    font-weight: 800;
-  }
-  // gap: 0.5rem;
 }
 ._totalLengthInput {
   display: flex;

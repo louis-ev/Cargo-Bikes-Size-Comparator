@@ -49,6 +49,74 @@ const i18n = createI18n({
         left: 'Left',
         right: 'Right',
         bottom: 'Bottom'
+      },
+      add_bike: {
+        title: 'Add a bike',
+        how_to_add: 'How to add a bike to this tool',
+        simple_steps: 'There are 3 simple steps and it should take you between 2 and 5 minutes.',
+        data_license:
+          'The data you will provide will be added to the database with the same free and open-source license (AGPL v3) as the rest of the tool.',
+        collaborative_bike_database: 'You can see the collaborative bike database',
+        here: 'here',
+        if_you_have_questions: 'If you have any questions, send me an email at',
+        step_1_basic_informations: 'Step 1: basic informations',
+        step_2_profile_image_and_size: 'Step 2: profile image and size',
+        step_3_share_this_information: 'Step 3: share this information',
+        back: 'back',
+        next: 'next',
+        send: 'send',
+        add_another_bike: 'add another bike',
+        close: 'close',
+        bike_mostly_made_in: 'Bike mostly made in',
+        model: 'Model',
+        manufacturer: 'Manufacturer',
+        total_bike_length: 'Total bike length',
+        usually_available_on_the_manufacturer_s_website:
+          "Usually available on the manufacturer's website",
+        cm: 'cm',
+        inches: 'inches',
+        product_page_url: 'Official product page URL',
+
+        if_that_information_is_officially_available:
+          'If that information is officially available, the name of the country the bike and its frame is made in (and not just assembled). Optional.',
+        send_me_an_email: 'Send me an email',
+        with_this_information:
+          "with this information and I'll do it for you and let you know when it's done.",
+        suggestions: 'Suggestions',
+        if_you_know_a_bit_of_javascript_add_it_yourself:
+          'If you know a bit of JavaScript, add it yourself:',
+        fork_the_repository: 'Fork the repository {link} on Github',
+        on_github: 'on GitHub',
+        if_the_image_includes_a_white_background:
+          'If the image includes a white background, remove it with a software such as GIMP, https://new.express.adobe.com/ or https://www.experte.com/background-remover and save it as a PNG with the highest possible resolution,',
+        loading: 'Loading',
+        failed_to_load_image: 'Failed to load image',
+        this_may_be_because:
+          'This may be because the <b>URL to image</b> is not a valid image or the source server does not allow loading on another website.',
+        you_can_click_back:
+          'You can click back to correct the URL and try again, or download the image from the URL yourself and upload it here manually.',
+        use_these_controls: `Use these controls to indicate the bike's size and position in the overall image.
+          <strong>Left and right sliders should match the bike length value</strong> (ie. if the
+          manufacturer indicates bike length starting from the back of the rear rack to the front
+          wheel, or from the back of the rear wheel to the front wheel, etc.).`,
+        align_with_the_left_edge: `Align with the left edge (back of the rear wheel or the rack), depending on what the
+          <i>Total bike length</i> refers to.`,
+        align_with_the_right_edge: `Align with the right edge (front of the front wheel or front rack), depending on what
+        the <i>Total bike length</i> refers to.`,
+        align_with_the_ground: `Align with the ground, typically the contact point between the wheels and the floor.`,
+        to_add_this_bike_to_the_database: `Add this bike to the comparator database.`,
+        the_following_code_contains_all_the_informations: `The following code contains all the informations about this bike.`,
+        copy_to_clipboard: `Copy to clipboard`,
+        or_copy_post: `Or copy this information and post it in a comment and tag me: <a href="https://piaille.fr/@louis_ev" target="_blank">@louis_ev on Mastodon</a>,
+        <a href="https://x.com/timetofirstfix" target="_blank">@timetofirstfix on Twitter/X</a>, or <a href="https://www.reddit.com/user/luddits/" target="_blank">@luddits on Reddit</a>
+`,
+        on: 'on',
+        or_if_you_know_a_bit_of_javascript_add_it_yourself: `Or if you know a bit of JavaScript, add it yourself:`,
+        add_the_bike_informations_to_the:
+          'Add the bike informations to the {link} file and submit a pull request.',
+        bike_image: 'Bike image',
+        bike_image_explanation:
+          'It must be a profile image of the bike, with the front to the right, ideally on a white or transparent background. Higher resolution is better (at least 1000px in each dimension).'
       }
     },
     fr: {
