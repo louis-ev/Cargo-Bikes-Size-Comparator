@@ -68,7 +68,7 @@ button,
 .u-button {
   &:not(.noStyle) {
     text-transform: lowercase;
-    font-variant: small-caps;
+    /* font-variant: small-caps; */
   }
 }
 
