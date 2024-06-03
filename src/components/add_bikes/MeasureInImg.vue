@@ -6,13 +6,14 @@
     <div class="_failed_to_load_image" v-else-if="status === 'failed_to_load_image'">
       <p>Failed to load image</p>
       <p>
-        This may be because the <b>URL to image</b> is not a valid image or the original server does
-        not allow cross-origin requests.
+        This may be because the <b>URL to image</b> is not a valid image or the source server does
+        not allow loading on another website.
       </p>
       <p>
-        You can go back to correct the URL and try again, or click next anyway and send me the
-        information already entered, and I'll try to find the fitting image.
+        You can click back to correct the URL and try again, or download the image from your URL
+        yourself and upload it here manually.
       </p>
+      <input type="file" accept="image/*" @change="onFileChange" />
     </div>
     <div v-show="status === 'loaded'">
       <p>
@@ -71,7 +72,9 @@ export default {
       left_color: '#3333FF',
       right_color: '#ff0000',
       bottom_color: '#11bb11',
-      status: 'loading'
+      status: 'loading',
+
+      local_bike_image: null
     }
   },
   created() {},
@@ -99,10 +102,15 @@ export default {
       const img = new Image()
       img.crossOrigin = 'anonymous'
       img.onerror = (err) => {
+        console.error(err)
         this.status = 'failed_to_load_image'
-        debugger
       }
-      img.src = this.imageUrl
+
+      if (this.local_bike_image) {
+        img.src = URL.createObjectURL(this.local_bike_image)
+      } else {
+        img.src = this.imageUrl
+      }
 
       // try {
       await img.decode()
@@ -129,8 +137,12 @@ export default {
       const right = canvas_width - (this.right / 100) * canvas_width
       const bottom = canvas_height - (this.bottom / 100) * canvas_height
 
-      ctx.lineWidth = 2
+      const { width: visible_width, height: visible_height } = canvas.getBoundingClientRect()
+      const stroke_width = canvas.width / visible_width
+      const stroke_height = canvas.height / visible_height
+      const line_thickness = 1
 
+      ctx.lineWidth = stroke_width * line_thickness
       ctx.strokeStyle = this.left_color
       ctx.beginPath()
       ctx.moveTo(left, 0)
@@ -143,11 +155,17 @@ export default {
       ctx.lineTo(right, canvas_height)
       ctx.stroke()
 
+      ctx.lineWidth = stroke_height * line_thickness
       ctx.strokeStyle = this.bottom_color
       ctx.beginPath()
       ctx.moveTo(0, bottom)
       ctx.lineTo(canvas_width, bottom)
       ctx.stroke()
+    },
+    onFileChange(e) {
+      console.log(e)
+      this.local_bike_image = e.target?.files?.[0]
+      this.drawCanvas()
     }
   }
 }
@@ -179,5 +197,8 @@ canvas {
   width: 100%;
   height: 100%;
   border: 2px solid var(--color-text-secondary);
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: scale-down;
 }
 </style>

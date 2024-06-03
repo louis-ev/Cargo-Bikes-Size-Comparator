@@ -97,7 +97,7 @@
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
             <small>
               If that information is officially available, the name of the country the bike and its
-              frame is made in.</small
+              frame is made in (and not just assembled). Optional.</small
             >
           </div>
 
@@ -216,7 +216,7 @@ export default {
 
       model: '',
       manufacturer: '',
-      totalLength: 12,
+      totalLength: '',
       totalLengthUnit: 'cm',
       productPageUrl: '',
       imageUrl: 'https://veloe.eu/wp-content/uploads/2024/04/multi-lungo-bosch-yellow.jpg',

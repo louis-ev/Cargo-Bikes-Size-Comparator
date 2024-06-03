@@ -117,10 +117,10 @@ input[type='url'] {
   }
   &:required {
     /* border-color: var(--color-warning); */
-    background-size: 12px 12px;
-    background-position: 100% 0;
+    background-size: 8px 8px;
+    background-position: 0% 0;
     background-repeat: no-repeat;
-    background-image: radial-gradient(var(--color-warning) 18%, transparent 30%);
+    background-image: radial-gradient(var(--color-warning) 28%, transparent 40%);
   }
 }
 
