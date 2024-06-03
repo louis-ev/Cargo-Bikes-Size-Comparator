@@ -110,8 +110,8 @@ select {
   border: none;
   background: white;
   border-bottom: 1px solid var(--color-text-secondary);
-  border-radius: 0.5rem;
-  padding: 5px;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
 
   &:hover {
     border-color: black;

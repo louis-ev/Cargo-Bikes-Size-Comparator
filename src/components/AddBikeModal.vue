@@ -14,15 +14,7 @@
           <p>
             {{ $t('add_bike.data_license') }}
           </p>
-          <p>
-            {{ $t('add_bike.collaborative_bike_database') }}
-            <a
-              href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json"
-              target="_blank"
-              >{{ $t('add_bike.here') }}</a
-            >. {{ $t('add_bike.if_you_have_questions') }}
-            <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.
-          </p>
+          <p v-html="$t('add_bike.collaborative_bike_database_if_you_have_questions')" />
 
           <div class="_nav">
             <button type="button" data-color="important" @click="step++">start &gt;</button>
@@ -125,6 +117,11 @@
 
         <section class="_step" v-else-if="step === 3">
           <h2>{{ $t('add_bike.step_3_share_this_information') }}</h2>
+
+          <div>{{ $t('add_bike.thank_you') }}</div>
+
+          <hr />
+
           <div>{{ $t('add_bike.the_following_code_contains_all_the_informations') }}</div>
           <div class="_recap">
             <pre v-text="JSON.stringify(new_bike_recap, null, 2)" />

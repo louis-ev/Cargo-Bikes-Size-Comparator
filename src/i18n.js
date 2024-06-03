@@ -56,9 +56,9 @@ const i18n = createI18n({
         simple_steps: 'There are 3 simple steps and it should take you between 2 and 5 minutes.',
         data_license:
           'The data you will provide will be added to the database with the same free and open-source license (AGPL v3) as the rest of the tool.',
-        collaborative_bike_database: 'You can see the collaborative bike database',
-        here: 'here',
-        if_you_have_questions: 'If you have any questions, send me an email at',
+        collaborative_bike_database_if_you_have_questions: `
+        You can see the collaborative bike database 
+        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json" target="_blank">here</a>. And if you have any questions, send me an email at <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.`,
         step_1_basic_informations: 'Step 1: basic informations',
         step_2_profile_image_and_size: 'Step 2: profile image and size',
         step_3_share_this_information: 'Step 3: share this information',
@@ -105,12 +105,15 @@ const i18n = createI18n({
         the <i>Total bike length</i> refers to.`,
         align_with_the_ground: `Align with the ground, typically the contact point between the wheels and the floor.`,
         to_add_this_bike_to_the_database: `Add this bike to the comparator database.`,
-        the_following_code_contains_all_the_informations: `The following code contains all the informations about this bike.`,
+        the_following_code_contains_all_the_informations: `The following code contains all the informations you’ve provided.`,
         copy_to_clipboard: `Copy to clipboard`,
         or_copy_post: `Or copy this information and post it in a comment and tag me: <a href="https://piaille.fr/@louis_ev" target="_blank">@louis_ev on Mastodon</a>,
         <a href="https://x.com/timetofirstfix" target="_blank">@timetofirstfix on Twitter/X</a>, or <a href="https://www.reddit.com/user/luddits/" target="_blank">@luddits on Reddit</a>
 `,
         on: 'on',
+        thank_you: 'Thank you!',
+        a_bike_with_this_model_manufacturer_is_already_in_the_database:
+          'A bike with this name and manufacturer is already in the database.',
         or_if_you_know_a_bit_of_javascript_add_it_yourself: `Or if you know a bit of JavaScript, add it yourself:`,
         add_the_bike_informations_to_the:
           'Add the bike informations to the {link} file and submit a pull request.',
@@ -161,6 +164,72 @@ const i18n = createI18n({
         left: 'Gauche',
         right: 'Droite',
         bottom: 'Bas'
+      },
+      add_bike: {
+        title: 'Ajouter un vélo',
+        how_to_add: 'Comment ajouter un vélo à cet outil ?',
+        simple_steps: 'Il y a 3 étapes simples et cela devrait vous prendre entre 2 et 5 minutes.',
+        data_license:
+          'Les données que vous fournirez seront ajoutées à la base de données avec la même licence libre et open-source (AGPL v3) que le reste de l’outil.',
+        collaborative_bike_database_if_you_have_questions: `
+          Vous pouvez voir la base de données collaborative
+          <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json" target="_blank">ici</a>.
+          Si vous avez des questions, envoyez-moi un email à <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.`,
+        step_1_basic_informations: 'Étape 1: informations de base',
+        step_2_profile_image_and_size: 'Étape 2: image de profil et taille',
+        step_3_share_this_information: 'Étape 3: envoyer ces informations',
+        back: 'retour',
+        next: 'suivant',
+        send: 'envoyer',
+        add_another_bike: 'ajouter un autre vélo',
+        close: 'fermer',
+        bike_mostly_made_in: 'Vélo principalement fabriqué et assemblé en',
+        model: 'Modèle',
+        manufacturer: 'Fabricant',
+        total_bike_length: 'Longueur du vélo',
+        usually_available_on_the_manufacturer_s_website:
+          'Généralement disponible sur le site web du fabricant',
+        cm: 'cm',
+        inches: 'pouces',
+        product_page_url: 'URL de la page produit officielle',
+
+        if_that_information_is_officially_available:
+          'Si cette information est officiellement disponible, le nom du pays où le vélo et son cadre sont fabriqués (et non assemblés). Optionnel.',
+        send_me_an_email: 'Envoyer un email à',
+        with_this_information:
+          'avec ces informations et je vous indiquerai quand elles auront été ajoutées.',
+        suggestions: 'Suggestions',
+        if_you_know_a_bit_of_javascript_add_it_yourself:
+          'Si vous connaissez un peu JavaScript, ajoutez-en vous-même :',
+        fork_the_repository: 'Forkez le dépôt {link} sur Github',
+        if_the_image_includes_a_white_background:
+          'Si l’image inclut un fond blanc, supprimez le avec un logiciel comme GIMP, https://new.express.adobe.com/ ou https://www.experte.com/background-remover et enregistrez-la sous format PNG avec la meilleure résolution possible,',
+        loading: 'Chargement',
+        failed_to_load_image: 'Échec de chargement de l’image',
+        this_may_be_because:
+          "Ceci peut être d à l'<b>URL de l'image</b> n'étant pas une image valide ou du serveur source ne permettant pas de charger sur un autre site.",
+        you_can_click_back:
+          "Vous pouvez retourner en arrière et modifier l'URL, ou téléchargez l'image depuis l'URL et l'uploader manuellement ici.",
+        use_these_controls: `Utilisez ces contrôles pour indiquer la taille et la position du vélo dans l'ensemble de l'image.
+          <strong>Les curseurs de gauche et de droite doivent correspondrent à la valeur de la longueur du vélo</strong> (par exemple si le fabricant indique la longueur du vélo à partir de l’arrière du rack ou l’arrière de la roue arrière, etc.).`,
+        align_with_the_left_edge: `Alignez avec l’arrière de la roue arrière ou du porte-bagage, selon ce à quoi fait référence la <i>longueur totale</i> indiqué à l’étape précédente.`,
+        align_with_the_right_edge: `Alignez avec l’avant de la roue ou du porte-bagage avant, selon ce à quoi fait référence la <i>longueur totale</i> indiqué à l’étape précédente.`,
+        align_with_the_ground: `Alignez avec la ligne du sol, généralement le point de contact entre les roues et le sol.`,
+        to_add_this_bike_to_the_database: `Ajoutez ce vélo à la base de données du comparateur.`,
+        the_following_code_contains_all_the_informations: `Le code ci-dessous contient toutes les informations que vous avez fournies.`,
+        copy_to_clipboard: `Copier dans le presse-papiers`,
+        or_copy_post: `Ou copier ces informations et les poster dans un commentaire en me mentionnant : <a href="https://piaille.fr/@louis_ev" target="_blank">@louis_ev sur Mastodon</a>,
+        <a href="https://x.com/timetofirstfix" target="_blank">@timetofirstfix sur Twitter/X</a>, ou <a href="https://www.reddit.com/user/luddits/" target="_blank">@luddits sur Reddit</a>
+`,
+        a_bike_with_this_model_manufacturer_is_already_in_the_database: `Un vélo de ce modèle et par ce fabricant est déjà dans la base de données.`,
+        on: 'sur',
+        or_if_you_know_a_bit_of_javascript_add_it_yourself: `Ou si vous connaissez un peu de JavaScript, ajoutez le vous-même :`,
+        add_the_bike_informations_to_the:
+          'Ajoutez les informations du vélo dans le fichier {link} et soumettez une pull request.',
+        bike_image: 'Image du vélo',
+        thank_you: 'Merci !',
+        bike_image_explanation:
+          'Ce doit être une image de profil du vélo, tourné vers la droite, idéalement sur un fond blanc ou transparent. Une meilleure résolution est préférable (au moins 1000px dans chaque dimension).'
       }
     }
   }
