@@ -1,11 +1,38 @@
 <template>
   <dialog class="_addBikeModal" open @click.self="$emit('close')">
     <div class="_addBikeModalContent" :data-step="step">
-      <h1>Add Bike</h1>
+      <h1>Add a bike</h1>
 
       <transition name="fade" mode="out-in">
-        <form class="_step" v-if="step === 1" @submit.prevent="submitStep1">
-          <h2>Step 1: basic informations</h2>
+        <div class="_step" v-if="step === 0">
+          <h2>How to add a bike to this tool</h2>
+          <p>
+            The following form will explain how to contribute a bike to this tool.
+            <strong
+              >There are 3 simple steps to follow and it should take you between 2 and 5
+              minutes.</strong
+            >
+          </p>
+          <p>
+            The data you'll provide will be added to the database with the same free and open-source
+            license (AGPL v3) as the rest of the tool.
+          </p>
+          <p>
+            You can see the collaborative bike database
+            <a
+              href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json"
+              target="_blank"
+              >here</a
+            >. If you have any questions, send me an email at
+            <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.
+          </p>
+
+          <div class="_nav">
+            <button type="button" data-color="important" @click="step++">start &gt;</button>
+          </div>
+        </div>
+        <form class="_step" v-else-if="step === 1" @submit.prevent="submitStep1">
+          <h2>Step 1: Basic informations</h2>
           <div class="_addBikeModalInput">
             <label for="model">Model</label>
             <input type="text" autofocus v-model="model" id="model" />
@@ -75,6 +102,7 @@
           </div>
 
           <div class="_nav">
+            <button type="button" @click="step--">&lt; back</button>
             <input type="submit" data-color="important" class="u-button" value="next &gt;" />
           </div>
         </form>
@@ -112,14 +140,13 @@
           <ul>
             <li>
               <a
-                :href="`mailto:${email}?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2)}`"
+                :href="`mailto:${email}?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
                 >send me an email</a
               >
               with this information and I'll do it for you and let you know when it's done.
             </li>
             <li>
-              if coming from a social network where I posted a link to this page, paste it in a
-              comment there and @ me (
+              or copy this information and post it in a comment there and @ me (
               <a href="https://piaille.fr/@louis_ev">@louis_ev on Mastodon</a>,
               <a href="https://x.com/timetofirstfix">@timetofirstfix on X</a>, or
               <a href="https://www.reddit.com/user/luddits/">@luddits on Reddit</a>
@@ -143,7 +170,7 @@
                 <li>
                   Add the bike informations to the
                   <a
-                    href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/public/assets/bike_images.json"
+                    href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json"
                   >
                     bike_images.json
                   </a>
@@ -191,7 +218,7 @@ export default {
   },
   data() {
     return {
-      step: 1,
+      step: 0,
 
       model: '',
       manufacturer: '',
@@ -304,8 +331,19 @@ export default {
   }
 
   h1 {
+    position: sticky;
+    top: -1rem;
     flex: 0 0 auto;
     margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    padding: 0.5rem 1rem;
+    margin: -1rem;
+    margin-bottom: -1.5rem;
+    z-index: 10;
+    // border-radius: 0.5rem;
   }
   // ._step {
   //   flex: 1 1 auto;
