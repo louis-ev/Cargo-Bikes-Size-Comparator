@@ -1,9 +1,29 @@
 <template>
   <div class="_measureInImg">
     <div class="_topSliders">
-      <SliderNumber :label="$t('left')" v-model:value="left" />
-      <SliderNumber :label="$t('right')" v-model:value="right" :direction="'rtl'" />
-      <SliderNumber :label="$t('bottom')" v-model:value="bottom" />
+      <div class="_slider" :style="{ accentColor: left_color }">
+        <label v-text="$t('message.left')" />
+        <SliderNumber v-model:value="left" />
+        <small
+          >Align with the left edge (back of the rear wheel or the rack), depending on what the
+          <i>Total bike length</i> refers to.
+        </small>
+      </div>
+      <div class="_slider" :style="{ accentColor: right_color }">
+        <label v-text="$t('message.right')" />
+        <SliderNumber v-model:value="right" :direction="'rtl'" />
+        <small
+          >Align with the right edge (front of the front wheel or front rack), depending on what the
+          <i>Total bike length</i> refers to.
+        </small>
+      </div>
+      <div class="_slider" :style="{ accentColor: bottom_color }">
+        <label v-text="$t('message.bottom')" />
+        <SliderNumber v-model:value="bottom" />
+        <small
+          >Align with the ground, typically the contact point between the wheels and the floor.
+        </small>
+      </div>
     </div>
     <canvas ref="canvas" />
   </div>
@@ -25,7 +45,10 @@ export default {
     return {
       left: this.img_left,
       right: this.img_right,
-      bottom: this.img_bottom
+      bottom: this.img_bottom,
+      left_color: '#3333FF',
+      right_color: '#ff0000',
+      bottom_color: '#11bb11'
     }
   },
   created() {},
@@ -70,19 +93,19 @@ export default {
 
       ctx.lineWidth = 2
 
-      ctx.strokeStyle = 'red'
+      ctx.strokeStyle = this.left_color
       ctx.beginPath()
       ctx.moveTo(left, 0)
       ctx.lineTo(left, canvas_height)
       ctx.stroke()
 
-      ctx.strokeStyle = 'blue'
+      ctx.strokeStyle = this.right_color
       ctx.beginPath()
       ctx.moveTo(right, 0)
       ctx.lineTo(right, canvas_height)
       ctx.stroke()
 
-      ctx.strokeStyle = 'green'
+      ctx.strokeStyle = this.bottom_color
       ctx.beginPath()
       ctx.moveTo(0, bottom)
       ctx.lineTo(canvas_width, bottom)
@@ -108,15 +131,15 @@ export default {
   }
 }
 ._slider {
-  display: flex;
-  flex-direction: row nowrap;
-  gap: 0.5rem;
+  // display: flex;
+  // flex-direction: row nowrap;
+  // gap: 0.5rem;
 }
 
 canvas {
   display: block;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--color-text-secondary);
+  border: 2px solid var(--color-text-secondary);
 }
 </style>

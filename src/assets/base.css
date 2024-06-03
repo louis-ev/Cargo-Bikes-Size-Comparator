@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+html {
+  font-size: 90%;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -33,7 +37,6 @@ body {
     'Helvetica Neue',
     sans-serif;
 
-  font-size: 14px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

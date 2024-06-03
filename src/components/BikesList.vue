@@ -11,12 +11,10 @@
         />
 
         <div class="_names">
-          <strong
-            >{{ item.model || item.manufacturer }}
-            <span class="_flag" v-if="item.frame_made_in">
-              {{ unicodeFlag(item.frame_made_in) }}
-            </span>
-          </strong>
+          <strong>{{ item.model || item.manufacturer }}</strong>
+          <span class="_flag" v-if="item.frame_made_in">
+            {{ unicodeFlag(item.frame_made_in) }}
+          </span>
           <template v-if="item.manufacturer && item.model">
             <small> – {{ item.manufacturer }} </small>
           </template>
@@ -25,6 +23,7 @@
             <template v-if="item.bike_length_cm">
               {{ item.bike_length_cm }}cm
               <template v-if="$i18n.locale === 'en'">
+                –
                 {{ getLengthInInches(item.bike_length_cm) }} inches
               </template>
             </template>
@@ -212,6 +211,7 @@ export default {
 
 ._itemTop {
   padding: 0;
+  font-weight: inherit;
 
   border-radius: 0.5rem;
 

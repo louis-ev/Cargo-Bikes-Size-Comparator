@@ -1,6 +1,5 @@
 <template>
   <div class="_sliderNumber">
-    <label :for="label">{{ label }}</label>
     <input type="number" v-model="local_value" />
     <input type="range" :dir="direction" step="0.1" min="0" max="100" v-model="local_value" />
   </div>
@@ -9,7 +8,6 @@
 export default {
   props: {
     value: Number,
-    label: String,
     direction: String
   },
   components: {},

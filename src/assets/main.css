@@ -23,11 +23,12 @@ button,
 .u-button {
   background: none;
   border: none;
-  padding: 0;
+  padding: 0 0.25rem;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   font-weight: 600;
+  border-radius: 0.25rem;
 
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -46,7 +47,7 @@ button,
     }
   }
 
-  &[data-active='true'] {
+  &[data-color='important'] {
     background-color: var(--color-accent);
   }
 
@@ -63,9 +64,16 @@ button,
   }
 }
 
-button:not(.noStyle) {
-  text-transform: lowercase;
-  font-variant: small-caps;
+button,
+.u-button {
+  &:not(.noStyle) {
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
+}
+
+strong {
+  font-weight: 600;
 }
 
 h1 {
@@ -75,8 +83,7 @@ h1 {
 }
 label {
   display: block;
-  font-size: 0.8rem;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 p {
@@ -126,4 +133,11 @@ hr {
 
   border: none;
   border-top: 1px solid #ccc;
+}
+
+ol,
+ul {
+  li {
+    margin: 1rem 0;
+  }
 }

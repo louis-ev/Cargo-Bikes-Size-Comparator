@@ -75,7 +75,7 @@
           </div>
 
           <div class="_nav">
-            <input type="submit" class="u-button" value="next &gt;" />
+            <input type="submit" data-color="important" class="u-button" value="next &gt;" />
           </div>
         </form>
 
@@ -95,24 +95,73 @@
           />
           <div class="_nav">
             <button type="button" @click="step--">&lt; back</button>
-            <button type="button" @click="step++">next &gt;</button>
+            <button type="button" data-color="important" @click="step++">next &gt;</button>
           </div>
         </section>
 
         <section class="_step" v-else-if="step === 3">
-          <h2>Step 3</h2>
-
-          <div>
-            <label>Recap</label>
-            <pre class="_recap" v-text="JSON.stringify(new_bike_recap, null, 2)"></pre>
+          <h2>Step 3: share this information</h2>
+          <div>The following code contains all the informations you've provided:</div>
+          <div class="_recap">
+            <pre v-text="JSON.stringify(new_bike_recap)" />
+            <button type="button" @click="copyToClipboard">Copy to clipboard 📋</button>
           </div>
+
+          <div><strong>To add this bike to the database, you can either:</strong></div>
+
+          <ul>
+            <li>
+              <a
+                :href="`mailto:${email}?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2)}`"
+                >send me an email</a
+              >
+              with this information and I'll do it for you and let you know when it's done.
+            </li>
+            <li>
+              if coming from a social network where I posted a link to this page, paste it in a
+              comment there and @ me (
+              <a href="https://piaille.fr/@louis_ev">@louis_ev on Mastodon</a>,
+              <a href="https://x.com/timetofirstfix">@timetofirstfix on X</a>, or
+              <a href="https://www.reddit.com/user/luddits/">@luddits on Reddit</a>
+              ).
+            </li>
+            <li>
+              or, if you know a bit of JavaScript, add it yourself:
+              <ol>
+                <li>
+                  Fork the repository
+                  <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator">
+                    Cargo-Bikes-Size-Comparator
+                  </a>
+                  on GitHub,
+                </li>
+                <li>
+                  If the image includes a white background, remove it and save it as a PNG with the
+                  highest possible resolution,
+                </li>
+
+                <li>
+                  Add the bike informations to the
+                  <a
+                    href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/public/assets/bike_images.json"
+                  >
+                    bike_images.json
+                  </a>
+                  file
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <hr />
 
           <div>Click this button to send an email with the correct informations.</div>
           <button type="button">Send</button>
 
           <div class="_nav">
             <button type="button" @click="step--">&lt; back</button>
-            <button type="button" @click="reloadComponent">add another bike</button>
+            <button type="button" data-color="important" @click="reloadComponent">
+              add another bike
+            </button>
           </div>
         </section>
       </transition>
@@ -211,6 +260,10 @@ export default {
   methods: {
     submitStep1() {
       this.step++
+    },
+    copyToClipboard() {
+      const text = JSON.stringify(this.new_bike_recap)
+      navigator.clipboard.writeText(text)
     }
   }
 }
@@ -244,6 +297,8 @@ export default {
   flex-direction: column;
   gap: 2rem;
 
+  transition: all 0.5s ease-in-out;
+
   &[data-step='2'] {
     max-width: 900px;
   }
@@ -257,12 +312,6 @@ export default {
   // }
   ._nav {
     flex: 0 0 auto;
-  }
-}
-
-._steps {
-  li {
-    margin-bottom: 1rem;
   }
 }
 
@@ -298,10 +347,11 @@ h2 {
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  margin-bottom: 1rem;
 
   button,
   input[type='submit'] {
-    background-color: white;
+    // background-color: white;
   }
 }
 
@@ -333,5 +383,16 @@ pre {
   padding: 0.5rem;
   border-radius: 0.5rem;
   overflow-x: auto;
+}
+._recap {
+  margin-bottom: 1rem;
+  position: relative;
+  button {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // color: white;
+    // background-color: var(--color-text-secondary);
+  }
 }
 </style>
