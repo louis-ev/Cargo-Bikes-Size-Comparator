@@ -121,9 +121,6 @@
           <div>{{ $t('add_bike.the_following_code_contains_all_the_informations') }}</div>
           <div class="_recap">
             <pre v-text="JSON.stringify(new_bike_recap, null, 2)" />
-            <button type="button" @click="copyToClipboard">
-              {{ $t('add_bike.copy_to_clipboard') }} 📋
-            </button>
           </div>
 
           <div>
@@ -132,13 +129,20 @@
 
           <ul>
             <li>
+              {{ $t('add_bike.by_mail') }}
               <a
-                :href="`mailto:${email}?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
-                >{{ $t('add_bike.send_me_an_email') }}</a
+                :href="`mailto:hello@louiseveillard.com?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
               >
-              {{ $t('add_bike.with_this_information') }}
+                hello@louiseveillard.com
+              </a>
             </li>
-            <li v-html="$t('add_bike.or_copy_post')"></li>
+            <li>
+              {{ $t('add_bike.or') }}
+              <button type="button" @click="copyToClipboard">
+                {{ $t('add_bike.copy_this_code_to_clipboard') }} 📋
+              </button>
+              <span v-html="$t('add_bike.or_copy_post')" />
+            </li>
             <li>
               {{ $t('add_bike.or_if_you_know_a_bit_of_javascript_add_it_yourself') }}
               <ol>

@@ -56,9 +56,8 @@ const i18n = createI18n({
         simple_steps: 'There are 3 simple steps and it should take you between 2 and 5 minutes.',
         data_license:
           'The data you will provide will be added to the database with the same free and open-source license (AGPL v3) as the rest of the tool.',
-        collaborative_bike_database_if_you_have_questions: `
-        You can see the collaborative bike database 
-        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json" target="_blank">here</a>. And if you have any questions, send me an email at <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.`,
+        collaborative_bike_database_if_you_have_questions: `You can see the collaborative bike database <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>here</a>. 
+          And if you have any questions, send me an email at <a href='mailto:hello{'@'}louiseveillard.com'>hello{'@'}louiseveillard.com</a>.`,
         step_1_basic_informations: 'Step 1: basic informations',
         step_2_profile_image_and_size: 'Step 2: profile image and size',
         step_3_share_this_information: 'Step 3: share this information',
@@ -90,9 +89,9 @@ const i18n = createI18n({
         if_the_image_includes_a_white_background:
           'If the image includes a white background, remove it with a software such as GIMP, https://new.express.adobe.com/ or https://www.experte.com/background-remover and save it as a PNG with the highest possible resolution,',
         loading: 'Loading',
-        failed_to_load_image: 'Failed to load image',
+        failed_to_load_image: 'Failed to load image in field <b>Bike image</b>',
         this_may_be_because:
-          'This may be because the <b>URL to image</b> is not a valid image or the source server does not allow loading on another website.',
+          'This may be because the link is not a valid image or the source server does not allow loading on another website.',
         you_can_click_back:
           'You can click back to correct the URL and try again, or download the image from the URL yourself and upload it here manually.',
         use_these_controls: `Use these controls to indicate the bike's size and position in the overall image.
@@ -106,9 +105,11 @@ const i18n = createI18n({
         align_with_the_ground: `Align with the ground, typically the contact point between the wheels and the floor.`,
         to_add_this_bike_to_the_database: `Add this bike to the comparator database.`,
         the_following_code_contains_all_the_informations: `The following code contains all the informations you’ve provided.`,
-        copy_to_clipboard: `Copy to clipboard`,
-        or_copy_post: `Or copy this information and post it in a comment and tag me: <a href="https://piaille.fr/@louis_ev" target="_blank">@louis_ev on Mastodon</a>,
-        <a href="https://x.com/timetofirstfix" target="_blank">@timetofirstfix on Twitter/X</a>, or <a href="https://www.reddit.com/user/luddits/" target="_blank">@luddits on Reddit</a>
+        by_mail: `by email, click on the following address and validate the sending of a generated email containing the code above -> `,
+        or: 'or,',
+        copy_this_code_to_clipboard: `Click to copy this code to the clipboard`,
+        or_copy_post: `then post this information on social media platforms and tag me: <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev on Mastodon</a>,
+        <a href="https://x.com/timetofirstfix" target="_blank">{'@'}timetofirstfix on Twitter/X</a>, or <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits on Reddit</a>
 `,
         on: 'on',
         thank_you: 'Thank you!',
@@ -171,10 +172,7 @@ const i18n = createI18n({
         simple_steps: 'Il y a 3 étapes simples et cela devrait vous prendre entre 2 et 5 minutes.',
         data_license:
           'Les données que vous fournirez seront ajoutées à la base de données avec la même licence libre et open-source (AGPL v3) que le reste de l’outil.',
-        collaborative_bike_database_if_you_have_questions: `
-          Vous pouvez voir la base de données collaborative
-          <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json" target="_blank">ici</a>.
-          Si vous avez des questions, envoyez-moi un email à <a href="mailto:hello@louiseveillard.com">hello@louiseveillard.com</a>.`,
+        collaborative_bike_database_if_you_have_questions: `Vous pouvez voir la base de données collaborative <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>ici</a>. Si vous avez des questions, envoyez-moi un email à <a href='mailto:hello{'@'}louiseveillard.com'>hello{'@'}louiseveillard.com</a>.`,
         step_1_basic_informations: 'Étape 1: informations de base',
         step_2_profile_image_and_size: 'Étape 2: image de profil et taille',
         step_3_share_this_information: 'Étape 3: envoyer ces informations',
@@ -205,25 +203,29 @@ const i18n = createI18n({
         if_the_image_includes_a_white_background:
           'Si l’image inclut un fond blanc, supprimez le avec un logiciel comme GIMP, https://new.express.adobe.com/ ou https://www.experte.com/background-remover et enregistrez-la sous format PNG avec la meilleure résolution possible,',
         loading: 'Chargement',
-        failed_to_load_image: 'Échec de chargement de l’image',
+        failed_to_load_image: 'Échec de chargement de l’image du champ <b>Image du vélo</b>',
         this_may_be_because:
-          "Ceci peut être d à l'<b>URL de l'image</b> n'étant pas une image valide ou du serveur source ne permettant pas de charger sur un autre site.",
+          'L’url ne renvoie peut-être pas vers une image valide, ou le serveur source ne permet pas d’afficher l’image sur un autre site.',
         you_can_click_back:
-          "Vous pouvez retourner en arrière et modifier l'URL, ou téléchargez l'image depuis l'URL et l'uploader manuellement ici.",
+          "Vous pouvez retourner en arrière et modifier l'URL, ou télécharger l'image depuis l'URL et l'envoyer manuellement ici.",
         use_these_controls: `Utilisez ces contrôles pour indiquer la taille et la position du vélo dans l'ensemble de l'image.
-          <strong>Les curseurs de gauche et de droite doivent correspondrent à la valeur de la longueur du vélo</strong> (par exemple si le fabricant indique la longueur du vélo à partir de l’arrière du rack ou l’arrière de la roue arrière, etc.).`,
+          <strong>Les curseurs de gauche et de droite doivent correspondrent à la valeur de la longueur du vélo</strong> (par exemple si le fabricant indique la longueur du vélo à partir de l’arrière du porte-bagage ou l’arrière de la roue arrière, etc.).`,
         align_with_the_left_edge: `Alignez avec l’arrière de la roue arrière ou du porte-bagage, selon ce à quoi fait référence la <i>longueur totale</i> indiqué à l’étape précédente.`,
         align_with_the_right_edge: `Alignez avec l’avant de la roue ou du porte-bagage avant, selon ce à quoi fait référence la <i>longueur totale</i> indiqué à l’étape précédente.`,
         align_with_the_ground: `Alignez avec la ligne du sol, généralement le point de contact entre les roues et le sol.`,
-        to_add_this_bike_to_the_database: `Ajoutez ce vélo à la base de données du comparateur.`,
+        to_add_this_bike_to_the_database: `Ajouter ce vélo à la base de données du comparateur.`,
         the_following_code_contains_all_the_informations: `Le code ci-dessous contient toutes les informations que vous avez fournies.`,
-        copy_to_clipboard: `Copier dans le presse-papiers`,
-        or_copy_post: `Ou copier ces informations et les poster dans un commentaire en me mentionnant : <a href="https://piaille.fr/@louis_ev" target="_blank">@louis_ev sur Mastodon</a>,
-        <a href="https://x.com/timetofirstfix" target="_blank">@timetofirstfix sur Twitter/X</a>, ou <a href="https://www.reddit.com/user/luddits/" target="_blank">@luddits sur Reddit</a>
+        by_mail: `par mail, en cliquant sur l'adresse ci-dessous, vous n'aurez plus qu'à valider l'envoi
+        d'un mail généré contenant le code ci-dessus -> `,
+        or_copy_post: `et poster le code dans un commentaire en me mentionnant : <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev sur Mastodon</a>,
+        <a href="https://x.com/timetofirstfix" target="_blank">{'@'}timetofirstfix sur Twitter/X</a>, ou <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits sur Reddit</a>
 `,
+        or: 'ou alors ',
+        copy_this_code_to_clipboard: `cliquer pour copier vers le presse-papier`,
+
         a_bike_with_this_model_manufacturer_is_already_in_the_database: `Un vélo de ce modèle et par ce fabricant est déjà dans la base de données.`,
         on: 'sur',
-        or_if_you_know_a_bit_of_javascript_add_it_yourself: `Ou si vous connaissez un peu de JavaScript, ajoutez le vous-même :`,
+        or_if_you_know_a_bit_of_javascript_add_it_yourself: `enfin, si vous connaissez un peu de JavaScript, vous pouvez aussi l’ajouter vous-même :`,
         add_the_bike_informations_to_the:
           'Ajoutez les informations du vélo dans le fichier {link} et soumettez une pull request.',
         bike_image: 'Image du vélo',

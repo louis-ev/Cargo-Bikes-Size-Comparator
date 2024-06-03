@@ -20,7 +20,7 @@
       <p>{{ $t('add_bike.loading') }}</p>
     </div>
     <div class="_failed_to_load_image" v-else-if="status === 'failed_to_load_image'">
-      <p>{{ $t('add_bike.failed_to_load_image') }}</p>
+      <p v-html="$t('add_bike.failed_to_load_image')" />
       <p v-html="$t('add_bike.this_may_be_because')" />
       <p v-html="$t('add_bike.you_can_click_back')" />
       <input type="file" accept="image/*" @change="onFileChange" />
