@@ -109,12 +109,6 @@
 
         <section class="_step" v-else-if="step === 2">
           <h2>Step 2: profile image and size</h2>
-          <p>
-            Use these controls to indicate the bike's size and position in the overall image.
-            <strong>Left and right sliders should match the bike length value</strong> (ie. if the
-            manufacturer indicates bike length starting from the back of the rear rack to the front
-            wheel, or from the back of the rear wheel to the front wheel, etc.).
-          </p>
           <MeasureInImg
             :imageUrl="imageUrl"
             v-model:img_left="img_left"

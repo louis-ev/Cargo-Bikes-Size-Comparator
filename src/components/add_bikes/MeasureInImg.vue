@@ -1,31 +1,53 @@
 <template>
   <div class="_measureInImg">
-    <div class="_topSliders">
-      <div class="_slider" :style="{ accentColor: left_color }">
-        <label v-text="$t('message.left')" />
-        <SliderNumber v-model:value="left" />
-        <small
-          >Align with the left edge (back of the rear wheel or the rack), depending on what the
-          <i>Total bike length</i> refers to.
-        </small>
-      </div>
-      <div class="_slider" :style="{ accentColor: right_color }">
-        <label v-text="$t('message.right')" />
-        <SliderNumber v-model:value="right" :direction="'rtl'" />
-        <small
-          >Align with the right edge (front of the front wheel or front rack), depending on what the
-          <i>Total bike length</i> refers to.
-        </small>
-      </div>
-      <div class="_slider" :style="{ accentColor: bottom_color }">
-        <label v-text="$t('message.bottom')" />
-        <SliderNumber v-model:value="bottom" />
-        <small
-          >Align with the ground, typically the contact point between the wheels and the floor.
-        </small>
-      </div>
+    <div v-if="status === 'loading'">
+      <p>Loading…</p>
     </div>
-    <canvas ref="canvas" />
+    <div class="_failed_to_load_image" v-else-if="status === 'failed_to_load_image'">
+      <p>Failed to load image</p>
+      <p>
+        This may be because the <b>URL to image</b> is not a valid image or the original server does
+        not allow cross-origin requests.
+      </p>
+      <p>
+        You can go back to correct the URL and try again, or click next anyway and send me the
+        information already entered, and I'll try to find the fitting image.
+      </p>
+    </div>
+    <div v-show="status === 'loaded'">
+      <p>
+        Use these controls to indicate the bike's size and position in the overall image.
+        <strong>Left and right sliders should match the bike length value</strong> (ie. if the
+        manufacturer indicates bike length starting from the back of the rear rack to the front
+        wheel, or from the back of the rear wheel to the front wheel, etc.).
+      </p>
+      <div class="_topSliders">
+        <div class="_slider" :style="{ accentColor: left_color }">
+          <label v-text="$t('message.left')" />
+          <SliderNumber v-model:value="left" />
+          <small
+            >Align with the left edge (back of the rear wheel or the rack), depending on what the
+            <i>Total bike length</i> refers to.
+          </small>
+        </div>
+        <div class="_slider" :style="{ accentColor: right_color }">
+          <label v-text="$t('message.right')" />
+          <SliderNumber v-model:value="right" :direction="'rtl'" />
+          <small
+            >Align with the right edge (front of the front wheel or front rack), depending on what
+            the <i>Total bike length</i> refers to.
+          </small>
+        </div>
+        <div class="_slider" :style="{ accentColor: bottom_color }">
+          <label v-text="$t('message.bottom')" />
+          <SliderNumber v-model:value="bottom" />
+          <small
+            >Align with the ground, typically the contact point between the wheels and the floor.
+          </small>
+        </div>
+      </div>
+      <canvas ref="canvas" />
+    </div>
   </div>
 </template>
 <script>
@@ -48,7 +70,8 @@ export default {
       bottom: this.img_bottom,
       left_color: '#3333FF',
       right_color: '#ff0000',
-      bottom_color: '#11bb11'
+      bottom_color: '#11bb11',
+      status: 'loading'
     }
   },
   created() {},
@@ -74,8 +97,23 @@ export default {
   methods: {
     async drawCanvas() {
       const img = new Image()
+      img.crossOrigin = 'anonymous'
+      img.onerror = (err) => {
+        this.status = 'failed_to_load_image'
+        debugger
+      }
       img.src = this.imageUrl
+
+      // try {
       await img.decode()
+      // } catch (e) {
+      //   console.error(e)
+      //   this.status = 'failed_to_load_image'
+
+      //   return
+      // }
+
+      this.status = 'loaded'
 
       const ratio = img.width / img.height
       const canvas_width = 1800
