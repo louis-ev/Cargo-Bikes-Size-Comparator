@@ -13,7 +13,7 @@
       {{ $t('message.or') }}
       <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a>
     </div>
-    <div>{{ $t('message.no_cookies_no_tracking_no_ads_and_fully_rgpd_compliant') }}</div>
+    <div>{{ $t('message.no_tracking_cookies_no_ads_and_fully_rgpd_compliant') }}</div>
     <hr />
     <div>
       {{ $t('message.specific_measures_taken_from') }}
