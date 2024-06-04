@@ -20,7 +20,7 @@ app.config.globalProperties.$normalizeStringForSearch = (str) => {
 
 app.use(VueMatomo, {
   host: 'https://sv.louiseveillard.com',
-  siteId: '1',
+  siteId: 1,
   requireCookieConsent: true
 })
 app.use(router)
