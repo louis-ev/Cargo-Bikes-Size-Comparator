@@ -31,8 +31,8 @@ const i18n = createI18n({
         on_Github: 'on Github',
         or: 'or',
         via_email: 'via email',
-        no_cookies_no_tracking_no_ads_and_fully_rgpd_compliant:
-          'No cookies, no tracking, no ads, and fully RGPD-compliant. Website hosted in France.',
+        no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
+          'No tracking cookies, no ads, fully RGPD-compliant. Website hosted in France.',
         specific_measures_taken_from: 'Specific measures taken from',
         this_document: 'this document',
         source_code: 'Source code',
@@ -147,8 +147,8 @@ const i18n = createI18n({
         report_errors_and_bugs: "N'hésitez pas à m'indiquez les erreurs, retours et bugs ",
         on_Github: 'sur Github.',
         or: 'ou',
-        no_cookies_no_tracking_no_ads_and_fully_rgpd_compliant:
-          "Pas de cookies, pas de traceurs, pas d'annonces et compliant RGPD. Site web hébergé en France.",
+        no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
+          'Pas de cookies traceurs, pas de publicité et respecte le RGPD. Site web hébergé en France.',
         specific_measures_taken_from: 'Mesures avancées prises dans',
         this_document: 'ce document',
         source_code: 'Code source',
