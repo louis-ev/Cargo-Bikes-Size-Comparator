@@ -23,6 +23,7 @@ export default {
   watch: {
     locale(new_locale) {
       this.$i18n.locale = new_locale
+      document.documentElement.lang = new_locale
       localStorage.setItem('i18n.locale', new_locale)
     }
   }

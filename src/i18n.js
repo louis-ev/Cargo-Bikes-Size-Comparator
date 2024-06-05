@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n'
 let locale = 'en'
 if (localStorage.getItem('i18n.locale')) locale = localStorage.getItem('i18n.locale')
 else if (navigator.language && navigator.language.includes('fr')) locale = 'fr'
+document.documentElement.lang = locale
 
 const i18n = createI18n({
   locale: locale,
