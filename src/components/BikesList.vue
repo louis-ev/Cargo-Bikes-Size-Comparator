@@ -1,52 +1,52 @@
 <template>
   <transition-group tag="div" class="_bikeList" name="list">
-    <div class="_item" v-for="item in bikes" :key="item.id" :data-active="bikeIsEnabled(item.id)">
-      <label :for="item.id" class="_itemTop">
+    <div class="_item" v-for="bike in bikes" :key="bike.id" :data-active="bikeIsEnabled(bike.id)">
+      <label :for="bike.id" class="_itemTop">
         <input
           type="checkbox"
-          :checked="bikeIsEnabled(item.id)"
-          :id="item.id"
-          :disabled="!item.bike_length_cm"
-          @change="toggleBike(item.id)"
+          :checked="bikeIsEnabled(bike.id)"
+          :id="bike.id"
+          :disabled="!bike.bike_length_cm"
+          @change="toggleBike(bike.id)"
         />
 
         <div class="_names">
-          <strong>{{ item.model || item.manufacturer }}</strong>
-          <span class="_flag" v-if="item.frame_made_in">
-            {{ unicodeFlag(item.frame_made_in) }}
+          <strong>{{ bike.model || bike.manufacturer }}</strong>
+          <span class="_flag" v-if="bike.frame_made_in">
+            {{ unicodeFlag(bike.frame_made_in) }}
           </span>
-          <template v-if="item.manufacturer && item.model">
-            <small> – {{ item.manufacturer }} </small>
+          <template v-if="bike.manufacturer && bike.model">
+            <small> – {{ bike.manufacturer }} </small>
           </template>
           <br />
           <small>
-            <template v-if="item.bike_length_cm">
-              {{ item.bike_length_cm }}cm
+            <template v-if="bike.bike_length_cm">
+              {{ bike.bike_length_cm }}cm
               <template v-if="$i18n.locale === 'en'">
                 –
-                {{ getLengthInInches(item.bike_length_cm) }} inches
+                {{ getLengthInInches(bike.bike_length_cm) }} inches
               </template>
             </template>
             <template v-else>{{ $t('message.missing_length_information') }}</template>
           </small>
         </div>
 
-        <div v-if="item.id" class="_img">
+        <div v-if="bike.id" class="_img">
           <div
-            v-if="bikeIsEnabled(item.id) && canvas_image_style_outline"
+            v-if="bikeIsEnabled(bike.id) && canvas_image_style_outline"
             class="_color"
-            :style="{ '--outline-color': `#${item.color}` }"
+            :style="{ '--outline-color': `#${bike.color}` }"
           />
-          <img :src="getBikeThumbImage(item)" />
+          <img :src="getBikeThumbImage(bike)" />
         </div>
       </label>
 
-      <div class="_itemBottom" v-if="bikeIsEnabled(item.id)">
-        <div class="_madeIn" v-if="item.frame_made_in">
+      <div class="_itemBottom" v-if="bikeIsEnabled(bike.id)">
+        <div class="_madeIn" v-if="bike.frame_made_in">
           {{
             $t('message.bike_mostly_manufactured_and_assembled') +
             ' ' +
-            $t('message.in_' + item.frame_made_in)
+            $t('message.in_' + bike.frame_made_in)
           }}
         </div>
 
@@ -59,17 +59,17 @@
                 min="-50"
                 max="50"
                 step="0.1"
-                :list="'steplist-' + item.id"
-                :value="bikes_position_adjustments[item.id]"
-                @input="updateBikePosition(item.id, $event.target.value)"
+                :list="'steplist-' + bike.id"
+                :value="bikes_position_adjustments[bike.id]"
+                @input="updateBikePosition(bike.id, $event.target.value)"
               />
               <!-- // disabled because snapping prevents fine tuning -->
               <!-- <datalist :id="'steplist-' + item.id">
               <option>0</option>
             </datalist> -->
 
-              <div class="_resetPosition" v-if="bikes_position_adjustments.hasOwnProperty(item.id)">
-                <button type="button" class="noStyle" @click="resetBikePosition(item.id)">
+              <div class="_resetPosition" v-if="bikes_position_adjustments.hasOwnProperty(bike.id)">
+                <button type="button" class="noStyle" @click="resetBikePosition(bike.id)">
                   Reset
                 </button>
               </div>
@@ -77,12 +77,12 @@
           </small>
         </div>
 
-        <div class="_measurements" v-if="item._measurements">
-          <small v-html="getMeasurements(item)" />
+        <div class="_measurements" v-if="bike._measurements">
+          <small v-html="getMeasurements(bike)" />
           <br />
         </div>
         <div class="_source">
-          <a :href="item.url" target="_blank"> <span>&#8594;</span> {{ $t('message.website') }}</a>
+          <a :href="bike.url" target="_blank"> <span>&#8594;</span> {{ $t('message.website') }}</a>
         </div>
       </div>
     </div>

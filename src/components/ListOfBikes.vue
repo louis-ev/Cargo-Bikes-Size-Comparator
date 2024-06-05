@@ -16,7 +16,12 @@
             '--scale-factor': 1 / bike.bike_length_percent + ''
           }"
         />
-        <span class="_bikeName">{{ bike.manufacturer }} {{ bike.model }}</span>
+        <span class="_bikeName">
+          <strong>{{ bike.model || bike.manufacturer }}</strong>
+          <template v-if="bike.manufacturer && bike.model">
+            <small> – {{ bike.manufacturer }} </small>
+          </template>
+        </span>
       </button>
     </div>
   </div>
@@ -112,6 +117,7 @@ export default {
     right: var(--margin);
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
+    font-weight: initial;
 
     background-color: rgba(255, 2555, 255, 1);
 
