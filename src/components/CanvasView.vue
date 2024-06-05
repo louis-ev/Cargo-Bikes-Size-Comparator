@@ -277,7 +277,7 @@ canvas {
   overflow: hidden;
   min-width: 420px;
   margin: 1rem;
-  margin-left: 0;
+  // margin-left: 0;
   // border: 1px solid #ccc;
 }
 ._noBikes {
