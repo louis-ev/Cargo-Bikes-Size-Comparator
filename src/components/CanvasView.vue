@@ -15,7 +15,7 @@
             name="canvas_image_style_outline"
             id="canvas_image_style_outline"
             :checked="canvas_image_style_outline"
-            @change="$emit('update:canvas_image_style_outline', $event.target.checked)"
+            @change="toggleOutlineView"
           />
           &nbsp;{{ $t('message.outline_view') }}
         </label>
@@ -246,6 +246,16 @@ export default {
       visible_canvas.width = canvas.width
       visible_canvas.height = canvas.height
       visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
+    },
+    toggleOutlineView($event) {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+
+      if (!$event.target.checked) delete query.outline
+      else query.outline = '1'
+
+      this.$router.push({
+        query
+      })
     }
   }
 }

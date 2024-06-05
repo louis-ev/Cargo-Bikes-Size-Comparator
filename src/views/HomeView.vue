@@ -27,7 +27,7 @@
           :default_padding_percent="default_padding_percent"
           :grid_step="grid_step"
           :bikes_position_adjustments="bikes_position_adjustments"
-          v-model:canvas_image_style_outline="canvas_image_style_outline"
+          :canvas_image_style_outline="canvas_image_style_outline"
         />
       </transition>
     </div>
@@ -60,7 +60,6 @@ export default {
       show_sidebar: true,
 
       default_padding_percent: 5,
-      canvas_image_style_outline: false,
       grid_step: 20,
 
       bikes_position_adjustments: {},
@@ -82,6 +81,9 @@ export default {
         }
       }
       return []
+    },
+    canvas_image_style_outline() {
+      return this.$route.query.outline && this.$route.query.outline === '1'
     },
     enabled_bikes() {
       return this.enabled_bikes_ids.reduce((acc, id, index) => {

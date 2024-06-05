@@ -106,11 +106,14 @@ export default {
 
   ._bikeName {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    --margin: 0.25rem;
+    bottom: var(--margin);
+    left: var(--margin);
+    right: var(--margin);
     padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.25rem;
+
+    background-color: rgba(255, 2555, 255, 1);
 
     text-transform: initial;
   }
