@@ -551,5 +551,17 @@
     "bottom_margin_percent": 0.19,
     "frame_made_in": "france",
     "url": "https://galiancycles.com/products/le-formidable"
+  },
+  {
+    "id": "swoop-xtracycle",
+
+    "manufacturer": "Xtracycle",
+    "model": "Swoop",
+    "src": "xtracycle-swoop.png",
+    "bike_length_percent": 0.886,
+    "bike_length_cm": 211,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.141,
+    "url": "https://xtracycle.com/products/eswoop"
   }
 ]
