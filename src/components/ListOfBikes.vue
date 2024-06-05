@@ -10,6 +10,7 @@
         @click="onBikePreviewClick(bike.id)"
       >
         <img
+          loading="lazy"
           :src="getBikePreviewImage(bike)"
           :style="{
             '--scale-factor': 1 / bike.bike_length_percent + ''
