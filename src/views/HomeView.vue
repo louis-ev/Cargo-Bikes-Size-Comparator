@@ -1,22 +1,36 @@
 <template>
   <div class="_homeView">
-    <SideBar
-      :bikes="bikes"
-      :enabled_bikes="enabled_bikes"
-      :grid_step="grid_step"
-      v-model:default_padding_percent="default_padding_percent"
-      v-model:grid_step="grid_step"
-      v-model:bikes_position_adjustments="bikes_position_adjustments"
-      :canvas_image_style_outline="canvas_image_style_outline"
-      @showAddBikeModal="add_bike_modal = true"
-    />
-    <CanvasView
-      :enabled_bikes="enabled_bikes"
-      :default_padding_percent="default_padding_percent"
-      :grid_step="grid_step"
-      :bikes_position_adjustments="bikes_position_adjustments"
-      v-model:canvas_image_style_outline="canvas_image_style_outline"
-    />
+    <div class="_leftPane">
+      <button class="_toggleSidebar" :data-rotate="show_sidebar" @click="toggleSidebar">
+        &#x2190;
+      </button>
+      <transition name="slide" mode="out-in">
+        <SideBar
+          v-if="show_sidebar"
+          :bikes="bikes"
+          :enabled_bikes="enabled_bikes"
+          :grid_step="grid_step"
+          v-model:default_padding_percent="default_padding_percent"
+          v-model:grid_step="grid_step"
+          v-model:bikes_position_adjustments="bikes_position_adjustments"
+          :canvas_image_style_outline="canvas_image_style_outline"
+          @showAddBikeModal="add_bike_modal = true"
+        />
+      </transition>
+    </div>
+    <div class="_rightPane">
+      <transition name="fade" mode="out-in">
+        <ListOfBikes v-if="enabled_bikes.length === 0" :bikes="bikes" />
+        <CanvasView
+          v-else
+          :enabled_bikes="enabled_bikes"
+          :default_padding_percent="default_padding_percent"
+          :grid_step="grid_step"
+          :bikes_position_adjustments="bikes_position_adjustments"
+          v-model:canvas_image_style_outline="canvas_image_style_outline"
+        />
+      </transition>
+    </div>
     <transition name="fade" mode="out-in">
       <AddBikeModal v-if="add_bike_modal" :bikes="bikes" @close="add_bike_modal = false" />
     </transition>
@@ -26,6 +40,7 @@
 import SideBar from '@/components/SideBar.vue'
 import CanvasView from '@/components/CanvasView.vue'
 import AddBikeModal from '@/components/AddBikeModal.vue'
+import ListOfBikes from '@/components/ListOfBikes.vue'
 
 export default {
   props: {
@@ -34,13 +49,15 @@ export default {
   components: {
     SideBar,
     CanvasView,
-    AddBikeModal
+    AddBikeModal,
+    ListOfBikes
   },
   data() {
     return {
       ro: null,
 
       add_bike_modal: false,
+      show_sidebar: true,
 
       default_padding_percent: 5,
       canvas_image_style_outline: false,
@@ -81,6 +98,9 @@ export default {
   methods: {
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
+    },
+    toggleSidebar() {
+      this.show_sidebar = !this.show_sidebar
     }
   }
 }
@@ -90,5 +110,34 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   height: 100svh;
+}
+._leftPane {
+  position: relative;
+  flex: 0 0 auto;
+  height: 100%;
+  // overflow: auto;
+}
+._rightPane {
+  flex: 1 1 auto;
+  height: 100%;
+  overflow: auto;
+}
+._toggleSidebar {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(100% + 0.5rem);
+  z-index: 100;
+  padding: 0.5rem;
+  background-color: var(--color-text);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
+
+  border-radius: 1rem;
+
+  &[data-rotate='false'] {
+    transform: rotate(180deg);
+  }
 }
 </style>

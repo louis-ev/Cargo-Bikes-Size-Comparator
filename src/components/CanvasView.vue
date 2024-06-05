@@ -3,7 +3,7 @@
     <div class="_noBikes" v-if="enabled_bikes.length === 0">
       <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
     </div>
-    <template v-else>
+    <div class="_canvas">
       <div class="_canvasOptions">
         <label
           class="u-button _setImageStyle"
@@ -20,7 +20,7 @@
           &nbsp;{{ $t('message.outline_view') }}
         </label>
       </div>
-    </template>
+    </div>
     <canvas ref="bikes" width="1920" height="1920" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
@@ -48,7 +48,7 @@ export default {
   },
   created() {},
   async mounted() {
-    this.bike_images_full_paths = await this.loadAllFullPaths()
+    this.bike_images_full_paths = await this.$loadBikeImages(bike_images_full_paths)
 
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
@@ -86,19 +86,6 @@ export default {
   },
   computed: {},
   methods: {
-    async loadAllFullPaths() {
-      const full_paths = []
-      for (let [source, full_path] of Object.entries(bike_images_full_paths)) {
-        const import_statment = full_path()
-        const url = (await import_statment).default
-        const original_filename = source.split('/').pop()
-        full_paths.push({
-          url,
-          original_filename
-        })
-      }
-      return full_paths
-    },
     getBikeFullImage(bike) {
       if (bike.src?.startsWith('https')) return bike.src
       const full_path = this.bike_images_full_paths.find((i) => i.original_filename === bike.src)
@@ -270,15 +257,18 @@ canvas {
   object-fit: scale-down;
   object-position: left center;
 }
-
 ._canvasWrapper {
   position: relative;
-  flex: 1 1 auto;
   overflow: hidden;
   min-width: 420px;
-  margin: 1rem;
+  height: 100%;
+
+  padding: 1rem;
   // margin-left: 0;
   // border: 1px solid #ccc;
+}
+._canvas {
+  // margin: 2rem;
 }
 ._noBikes {
   position: absolute;
@@ -307,19 +297,22 @@ canvas {
   left: 0;
   width: 100%;
   pointer-events: none;
-  padding: 1rem;
+  padding: 0.5rem;
 
   display: flex;
   flex-direction: row wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.5rem;
 }
 ._setImageStyle {
   pointer-events: auto;
   background-color: var(--color-text);
+  // background-color: #fff;
+  // color: var(--color-text);
   color: white;
+  // border: 2px solid var(--color-text);
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   font-weight: 500;
 

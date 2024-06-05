@@ -103,8 +103,17 @@ input {
 .fade-leave-active {
   transition: opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.25s ease-in-out;
+}
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-100%);
 }
 </style>

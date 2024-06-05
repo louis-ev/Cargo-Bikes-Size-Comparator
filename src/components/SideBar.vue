@@ -152,8 +152,8 @@ export default {
 <style lang="scss" scoped>
 ._sidebar {
   position: relative;
-  flex: 0 0 auto;
   width: 320px;
+  height: 100%;
   background-color: var(--color-background);
 
   display: flex;
