@@ -37,7 +37,7 @@
             class="_color"
             :style="{ '--outline-color': `#${bike.color}` }"
           />
-          <img :src="getBikeThumbImage(bike)" />
+          <img v-if="getBikeThumbImage(bike)" :src="getBikeThumbImage(bike)" />
         </div>
       </label>
 
@@ -106,7 +106,7 @@ export default {
       bike_images_thumbs_urls: []
     }
   },
-  created() {},
+  async created() {},
   async mounted() {
     this.bike_images_thumbs_urls = await this.loadAllThumbs()
   },

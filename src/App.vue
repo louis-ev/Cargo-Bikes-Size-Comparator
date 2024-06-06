@@ -110,10 +110,19 @@ input {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .slide-enter-from,
 .slide-leave-to {
   transform: translateX(-100%);
+}
+
+.slideup-enter-active,
+.slideup-leave-active {
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.slideup-enter-from,
+.slideup-leave-to {
+  transform: translateY(100%);
 }
 </style>

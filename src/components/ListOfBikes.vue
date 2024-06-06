@@ -9,13 +9,17 @@
         :key="bike.id"
         @click="onBikePreviewClick(bike.id)"
       >
-        <img
-          loading="lazy"
-          :src="getBikePreviewImage(bike)"
-          :style="{
-            '--scale-factor': 1 / bike.bike_length_percent + ''
-          }"
-        />
+        <transition name="slideup">
+          <div v-if="getBikePreviewImage(bike)">
+            <img
+              loading="lazy"
+              :src="getBikePreviewImage(bike)"
+              :style="{
+                '--scale-factor': 1 / bike.bike_length_percent + ''
+              }"
+            />
+          </div>
+        </transition>
         <span class="_bikeName">
           <strong>{{ bike.model || bike.manufacturer }}</strong>
           <template v-if="bike.manufacturer && bike.model">
