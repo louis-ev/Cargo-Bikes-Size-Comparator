@@ -115,8 +115,11 @@ export default {
 }
 ._leftPane {
   position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   height: 100%;
+  box-shadow: 0 0 10px 0 var(--color-gray-light);
+  // border-right: 1px solid var(--color-gray-light);
   // overflow: auto;
 }
 ._rightPane {

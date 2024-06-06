@@ -251,8 +251,9 @@ h1 {
   align-items: center;
   padding: 1rem;
   // background-color: var(--color-accent);
-  background-color: white;
-  border-top: 1px solid var(--color-text-secondary);
+  // background-color: white
+  box-shadow: 0 0 10px 0 var(--color-gray-light);
+  // border-top: 1px solid var(--color-text-secondary);
 
   button {
     // background-color: var(--color-accent);

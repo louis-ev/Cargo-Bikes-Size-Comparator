@@ -154,13 +154,15 @@ export default {
       const each_px_measures_in_cm =
         (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
 
-      const line_0_color = '#999'
-      const line_color = '#cccccc'
-
-      const text_0_fill_color = '#999'
-      const text_fill_color = getComputedStyle(document.documentElement).getPropertyValue(
+      const line_0_color = getComputedStyle(document.documentElement).getPropertyValue(
         '--color-text-secondary'
       )
+      const line_color = getComputedStyle(document.documentElement).getPropertyValue(
+        '--color-gray-light'
+      )
+
+      const text_0_fill_color = line_0_color
+      const text_fill_color = line_0_color
 
       let cm_count = 0
       const step = this.grid_step
