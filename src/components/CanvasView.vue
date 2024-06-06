@@ -21,10 +21,16 @@
         </label>
 
         <!-- <div class="_activeBikes"> -->
-        <div class="_activeBike" v-for="bike in sorted_enabled_bikes.reverse()" :key="bike.id">
+        <button
+          type="button"
+          class="_activeBike"
+          v-for="bike in sorted_enabled_bikes.reverse()"
+          :key="bike.id"
+          :style="{ '--bike-color': `#${bike.color}` }"
+        >
           <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
           <BikeName :bike="bike" :show_length="false" />
-        </div>
+        </button>
         <!-- </div> -->
       </div>
     </div>
@@ -310,19 +316,26 @@ canvas {
   }
 }
 
-._canvasOptions,
-._activeBikes {
+._canvasOptions {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   pointer-events: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+  padding-left: 4rem;
+
+  overflow-x: auto;
 
   display: flex;
-  flex-direction: row wrap;
+  flex-direction: row nowrap;
   justify-content: center;
+
   gap: 0.5rem;
+
+  > * {
+    pointer-events: auto;
+  }
 }
 // ._activeBikes {
 //   top: auto;
@@ -338,13 +351,14 @@ canvas {
 // }
 
 ._activeBike {
-  width: 20ch;
+  flex: 0 0 25ch;
   height: auto;
   border-radius: 0.5rem;
 
   padding: 0.12rem 0.5rem 0.25rem;
   // background-color: var(--color-accent);
   background-color: white;
+  border-bottom: 2px solid var(--bike-color);
   // backdrop-filter: blur(5px);
   // text-align: center;
 
@@ -360,6 +374,12 @@ canvas {
 }
 
 ._setImageStyle {
+  // display: flex;
+  // flex-direction: row nowrap;
+  // align-items: center;
+  // justify-content: center;
+  white-space: nowrap;
+  gap: 0.5rem;
   pointer-events: auto;
   background-color: var(--color-text);
   // background-color: #fff;

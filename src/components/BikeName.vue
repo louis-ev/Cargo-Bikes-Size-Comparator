@@ -1,5 +1,5 @@
 <template>
-  <div v-if="bike">
+  <div v-if="bike" class="_bikeName">
     <strong>{{ bike.model || bike.manufacturer }}</strong>
     <span class="_flag" v-if="bike.frame_made_in">
       {{ unicodeFlag(bike.frame_made_in) }}
@@ -54,6 +54,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+._bikeName {
+  text-transform: initial;
+  font-weight: initial;
+}
 ._flag {
   font-size: 0.8rem;
   margin-left: 0.25rem;
