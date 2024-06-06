@@ -71,7 +71,9 @@
           </div>
 
           <div class="inputField">
-            <label for="frame_made_in">{{ $t('add_bike.bike_mostly_made_in') }}</label>
+            <label for="frame_made_in">{{
+              $t('message.bike_mostly_manufactured_and_assembled')
+            }}</label>
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
             <small>
               {{ $t('add_bike.if_that_information_is_officially_available') }}
