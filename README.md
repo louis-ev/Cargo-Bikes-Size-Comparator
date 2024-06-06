@@ -1,18 +1,12 @@
 # Cargo Bikes Size Comparator
 
 Source code for https://bikes.louiseveillard.com/
+
 Contributions welcome.
 
-UPDATE: adobe express is better at removing background: https://new.express.adobe.com/
+To contribute a bike, refer to https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9
 
-Otherwise, use this one: https://www.experte.com/background-remover
-
-Measure left margin between edge and left edge of rear wheel.
-Same for bottom margin.
-
----
-
-This template should help get you started developing with Vue 3 in Vite.
+To contribute with code, follow these instructions:
 
 ## Recommended IDE Setup
 
