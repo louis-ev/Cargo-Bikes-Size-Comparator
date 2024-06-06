@@ -99,7 +99,7 @@
 </template>
 <script>
 import LangSelect from './LangSelect.vue'
-import BikesList from './BikesList.vue'
+import BikesList from './BikesListInSidebar.vue'
 import Credits from './Credits.vue'
 
 export default {

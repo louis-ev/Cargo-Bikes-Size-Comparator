@@ -11,24 +11,7 @@
         />
 
         <div class="_names">
-          <strong>{{ bike.model || bike.manufacturer }}</strong>
-          <span class="_flag" v-if="bike.frame_made_in">
-            {{ unicodeFlag(bike.frame_made_in) }}
-          </span>
-          <template v-if="bike.manufacturer && bike.model">
-            <small> – {{ bike.manufacturer }} </small>
-          </template>
-          <br />
-          <small>
-            <template v-if="bike.bike_length_cm">
-              {{ bike.bike_length_cm }}cm
-              <template v-if="$i18n.locale === 'en'">
-                –
-                {{ getLengthInInches(bike.bike_length_cm) }} inches
-              </template>
-            </template>
-            <template v-else>{{ $t('message.missing_length_information') }}</template>
-          </small>
+          <BikeName :bike="bike" />
         </div>
 
         <div v-if="bike.id" class="_img">
@@ -166,15 +149,6 @@ export default {
       const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
       bikes_position_adjustments[id] = +value
       this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
-    },
-    unicodeFlag(country) {
-      if (country === 'usa') return '🇺🇸'
-      if (country === 'germany') return '🇩🇪'
-      if (country === 'france') return '🇫🇷'
-      return
-    },
-    getLengthInInches(length_cm) {
-      return (length_cm / 2.54).toFixed(1)
     }
   }
 }
@@ -304,10 +278,6 @@ export default {
   padding: 0 0.25rem;
 
   cursor: pointer;
-}
-._flag {
-  font-size: 0.6rem;
-  margin-left: 0.15rem;
 }
 ._adjustInput {
   display: flex;

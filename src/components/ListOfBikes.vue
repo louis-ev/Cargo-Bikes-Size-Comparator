@@ -21,10 +21,7 @@
           </div>
         </transition>
         <span class="_bikeName">
-          <strong>{{ bike.model || bike.manufacturer }}</strong>
-          <template v-if="bike.manufacturer && bike.model">
-            <small> – {{ bike.manufacturer }} </small>
-          </template>
+          <BikeName :bike="bike" />
         </span>
       </button>
     </div>
@@ -101,6 +98,7 @@ export default {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   // background-color: white;
+  cursor: pointer;
   border: 1px solid var(--color-border);
 
   padding: 2rem;

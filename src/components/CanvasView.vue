@@ -19,6 +19,13 @@
           />
           &nbsp;{{ $t('message.outline_view') }}
         </label>
+
+        <!-- <div class="_activeBikes"> -->
+        <div class="_activeBike" v-for="bike in sorted_enabled_bikes.reverse()" :key="bike.id">
+          <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
+          <BikeName :bike="bike" :show_length="false" />
+        </div>
+        <!-- </div> -->
       </div>
     </div>
     <canvas ref="bikes" width="1920" height="1920" />
@@ -84,7 +91,19 @@ export default {
       deep: true
     }
   },
-  computed: {},
+  computed: {
+    sorted_enabled_bikes() {
+      return this.enabled_bikes
+        .reduce((acc, bike) => {
+          if (!bike?.src || !bike.bike_length_cm) return
+          acc.push(bike)
+          return acc
+        }, [])
+        .sort((a, b) => {
+          return b?.bike_length_cm - a?.bike_length_cm
+        })
+    }
+  },
   methods: {
     getBikeFullImage(bike) {
       if (bike.src?.startsWith('https')) return bike.src
@@ -183,17 +202,7 @@ export default {
         ctx.globalCompositeOperation = 'source-over'
       }
 
-      const sorted_enabled_bikes = this.enabled_bikes
-        .reduce((acc, bike) => {
-          if (!bike?.src || !bike.bike_length_cm) return
-          acc.push(bike)
-          return acc
-        }, [])
-        .sort((a, b) => {
-          return b?.bike_length_cm - a?.bike_length_cm
-        })
-
-      for await (const bike of sorted_enabled_bikes) {
+      for await (const bike of this.sorted_enabled_bikes) {
         const img = new Image()
 
         img.src = this.getBikeFullImage(bike)
@@ -301,7 +310,8 @@ canvas {
   }
 }
 
-._canvasOptions {
+._canvasOptions,
+._activeBikes {
   position: absolute;
   top: 0;
   left: 0;
@@ -314,6 +324,41 @@ canvas {
   justify-content: center;
   gap: 0.5rem;
 }
+// ._activeBikes {
+//   top: auto;
+//   bottom: 0;
+//   // background-color: red;
+//   padding: 0.5rem;
+//   border-radius: 0.5rem;
+
+//   display: flex;
+//   flex-direction: row wrap;
+//   justify-content: center;
+//   gap: 0.5rem;
+// }
+
+._activeBike {
+  width: 20ch;
+  height: auto;
+  border-radius: 0.5rem;
+
+  padding: 0.12rem 0.5rem 0.25rem;
+  // background-color: var(--color-accent);
+  background-color: white;
+  // backdrop-filter: blur(5px);
+  // text-align: center;
+
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 ._setImageStyle {
   pointer-events: auto;
   background-color: var(--color-text);
