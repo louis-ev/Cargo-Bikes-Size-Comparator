@@ -20,7 +20,7 @@
             />
           </div>
         </transition>
-        <span class="_bikeName">
+        <span class="_bikeLabel">
           <BikeName :bike="bike" />
         </span>
       </button>
@@ -29,7 +29,7 @@
 </template>
 <script>
 const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
-  query: { format: 'webp', w: 800 }
+  query: { format: 'webp', w: 600 }
 })
 
 export default {
@@ -83,7 +83,7 @@ export default {
 }
 ._bikesPreview {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   padding: 1rem;
   width: 100%;
@@ -111,17 +111,17 @@ export default {
     transform: scale(var(--scale-factor));
   }
 
-  ._bikeName {
+  ._bikeLabel {
     position: absolute;
     --margin: 0.25rem;
     bottom: var(--margin);
     left: var(--margin);
     right: var(--margin);
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
     border-radius: 0.25rem;
     font-weight: initial;
 
-    background-color: rgba(255, 2555, 255, 1);
+    // background-color: rgba(255, 2555, 255, 1);
 
     text-transform: initial;
   }
