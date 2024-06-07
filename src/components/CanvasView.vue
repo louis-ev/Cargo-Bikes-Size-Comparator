@@ -24,7 +24,7 @@
         <button
           type="button"
           class="_activeBike"
-          v-for="bike in sorted_enabled_bikes.reverse()"
+          v-for="bike in sorted_enabled_bikes"
           :key="bike.id"
           :style="{ '--bike-color': `#${bike.color}` }"
         >
@@ -210,7 +210,8 @@ export default {
         ctx.globalCompositeOperation = 'source-over'
       }
 
-      for await (const bike of this.sorted_enabled_bikes) {
+      for (const bike of this.sorted_enabled_bikes) {
+        console.log('drawing bike', bike.id)
         const img = new Image()
 
         img.src = this.getBikeFullImage(bike)
