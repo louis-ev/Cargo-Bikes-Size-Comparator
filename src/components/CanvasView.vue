@@ -34,7 +34,10 @@
         <!-- </div> -->
       </div>
     </div>
-    <canvas ref="bikes" width="1920" height="1920" />
+    <div class="_loader">
+      <span class="loader" />
+    </div>
+    <canvas ref="bikes" width="1920" height="1920" class="_canvas" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
   </div>
@@ -400,5 +403,23 @@ canvas {
     background-color: var(--color-accent);
     color: black;
   }
+}
+
+._loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+._canvas {
+  position: relative;
+  z-index: 1;
 }
 </style>
