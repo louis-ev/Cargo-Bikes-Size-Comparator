@@ -26,6 +26,7 @@
           class="_activeBike"
           v-for="bike in sorted_enabled_bikes"
           :key="bike.id"
+          :data-showcolor="canvas_image_style_outline"
           :style="{ '--bike-color': `#${bike.color}` }"
         >
           <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
@@ -37,7 +38,7 @@
     <div class="_loader">
       <span class="loader" />
     </div>
-    <canvas ref="bikes" width="1920" height="1920" class="_canvas" />
+    <canvas ref="bikes" width="1920" height="1920" class="_previewCanvas" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
   </div>
@@ -326,6 +327,7 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 4;
   width: 100%;
   pointer-events: none;
   padding: 0.5rem 0;
@@ -364,10 +366,10 @@ canvas {
   padding: 0.12rem 0.5rem 0.25rem;
   // background-color: var(--color-accent);
   background-color: white;
-  border-bottom: 2px solid var(--bike-color);
   // backdrop-filter: blur(5px);
   // text-align: center;
 
+  border: 2px solid transparent;
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
@@ -377,6 +379,10 @@ canvas {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &[data-showcolor='true'] {
+    border-color: var(--bike-color);
+  }
 }
 
 ._setImageStyle {
@@ -393,7 +399,7 @@ canvas {
   color: white;
   // border: 2px solid var(--color-text);
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
   font-weight: 500;
 
@@ -416,9 +422,14 @@ canvas {
   flex-direction: row nowrap;
   justify-content: center;
   align-items: center;
+
+  transform: scale(0.5);
+
+  .loader {
+  }
 }
 
-._canvas {
+._previewCanvas {
   position: relative;
   z-index: 1;
 }

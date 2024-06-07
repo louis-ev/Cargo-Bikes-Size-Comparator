@@ -2,7 +2,18 @@
   <div class="_homeView">
     <div class="_leftPane">
       <button class="_toggleSidebar" :data-rotate="show_sidebar" @click="toggleSidebar">
-        &#x2190;
+        <!-- &#x2190; -->
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        </svg>
       </button>
       <transition name="slide" mode="out-in">
         <SideBar
@@ -132,9 +143,11 @@ export default {
   top: 0.5rem;
   left: calc(100% + 0.5rem);
   z-index: 100;
-  padding: 0.5rem;
-  background-color: var(--color-text);
-  color: white;
+  padding: 0rem;
+  // background-color: var(--color-text);
+  // color: white;
+  background-color: white;
+  color: var(--color-text);
   width: 2rem;
   height: 2rem;
   line-height: 0;
