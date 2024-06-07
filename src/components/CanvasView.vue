@@ -326,13 +326,13 @@ canvas {
   width: 100%;
   pointer-events: none;
   padding: 0.5rem 0;
-  padding-left: 4rem;
+  padding-left: 3rem;
 
   overflow-x: auto;
 
   display: flex;
   flex-direction: row nowrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   gap: 0.5rem;
 
