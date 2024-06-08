@@ -563,5 +563,31 @@
     "left_margin_percent": 0.06,
     "bottom_margin_percent": 0.141,
     "url": "https://xtracycle.com/products/eswoop"
+  },
+  {
+    "id": "justlong-sport-bicicapace",
+
+    "manufacturer": "Bicicapace",
+    "model": "Justlong Sport",
+    "src": "jl-sport-long.png",
+    "bike_length_percent": 0.873,
+    "bike_length_cm": 199,
+    "left_margin_percent": 0.057,
+    "bottom_margin_percent": 0.155,
+    "url": "https://www.bicicapace.com/bikes/justlong/",
+    "frame_made_in": "italy"
+  },
+  {
+    "id": "jean-achielle",
+
+    "manufacturer": "Achielle",
+    "model": "Jean",
+    "src": "achielle_PS.png",
+    "bike_length_percent": 0.635,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.155,
+    "bottom_margin_percent": 0.226,
+    "url": "https://www.achielle.be/fr/2023/jean/",
+    "frame_made_in": "belgium"
   }
 ]
