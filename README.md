@@ -1,5 +1,8 @@
 # Cargo Bikes Size Comparator
 
+![Screenshot](public/og_image2.png)
+
+
 Source code for https://bikes.louiseveillard.com/
 
 Contributions welcome.
