@@ -47,6 +47,7 @@ export default {
       else if (country === 'france') return '🇫🇷'
       else if (country === 'belgium') return '🇧🇪'
       else if (country === 'italy') return '🇮🇹'
+      else if (country === 'europe') return '🇪🇺'
       else alert('Missing unicode flag: ' + country)
       return
     },
