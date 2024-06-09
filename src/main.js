@@ -11,7 +11,7 @@ import BikeName from './components/BikeName.vue'
 import VueMatomo from 'vue-matomo'
 const app = createApp(App)
 app.config.globalProperties.$local_bikes = []
-;(app.config.globalProperties.$loadBikeImages = async (paths) => {
+app.config.globalProperties.$loadBikeImages = async (paths) => {
   const full_paths = []
   for (let [source, full_path] of Object.entries(paths)) {
     const import_statment = full_path()
@@ -23,14 +23,14 @@ app.config.globalProperties.$local_bikes = []
     })
   }
   return full_paths
-}),
-  (app.config.globalProperties.$normalizeStringForSearch = (str) => {
-    if (!str) return ''
-    return str
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-  })
+}
+app.config.globalProperties.$normalizeStringForSearch = (str) => {
+  if (!str) return ''
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
 
 app.use(VueMatomo, {
   host: 'https://sv.louiseveillard.com',

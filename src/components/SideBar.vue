@@ -166,7 +166,7 @@ export default {
   overflow-y: auto;
   padding: 1rem;
   padding-top: 0.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   flex: 1 1 auto;
 }
 ._addMissingBike {
