@@ -20,19 +20,19 @@
           &nbsp;{{ $t('message.outline_view') }}
         </label>
 
-        <!-- <div class="_activeBikes"> -->
-        <button
-          type="button"
-          class="_activeBike"
-          v-for="bike in sorted_enabled_bikes"
-          :key="bike.id"
-          :data-showcolor="canvas_image_style_outline"
-          :style="{ '--bike-color': `#${bike.color}` }"
-        >
-          <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
-          <BikeName :bike="bike" :show_length="false" />
-        </button>
-        <!-- </div> -->
+        <transition-group name="fade">
+          <button
+            type="button"
+            class="_activeBike"
+            v-for="bike in reversed_sorted_enabled_bikes"
+            :key="bike.id"
+            :data-showcolor="canvas_image_style_outline"
+            :style="{ '--bike-color': `#${bike.color}` }"
+          >
+            <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
+            <BikeName :bike="bike" :show_length="false" />
+          </button>
+        </transition-group>
       </div>
     </div>
     <div class="_loader">
@@ -112,6 +112,9 @@ export default {
         .sort((a, b) => {
           return b?.bike_length_cm - a?.bike_length_cm
         })
+    },
+    reversed_sorted_enabled_bikes() {
+      return this.sorted_enabled_bikes.slice().reverse()
     }
   },
   methods: {
