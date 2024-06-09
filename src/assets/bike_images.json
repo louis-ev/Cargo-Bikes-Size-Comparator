@@ -33,10 +33,11 @@
     "manufacturer": "Riese und Müller",
     "model": "Carrie",
     "src": "carrie.png",
-    "bike_length_percent": 0.7,
+    "bike_length_percent": 0.935,
     "bike_length_cm": 209,
-    "left_margin_percent": 0.15,
-    "bottom_margin_percent": 0.095,
+    "left_margin_percent": 0.033,
+    "bottom_margin_percent": 0.045,
+
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
   {
