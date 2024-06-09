@@ -43,8 +43,11 @@ export default {
   methods: {
     unicodeFlag(country) {
       if (country === 'usa') return '🇺🇸'
-      if (country === 'germany') return '🇩🇪'
-      if (country === 'france') return '🇫🇷'
+      else if (country === 'germany') return '🇩🇪'
+      else if (country === 'france') return '🇫🇷'
+      else if (country === 'belgium') return '🇧🇪'
+      else if (country === 'italy') return '🇮🇹'
+      else alert('Missing unicode flag: ' + country)
       return
     },
     getLengthInInches(length_cm) {
@@ -59,7 +62,7 @@ export default {
   font-weight: initial;
 }
 ._flag {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-left: 0.25rem;
 }
 </style>
