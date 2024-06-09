@@ -133,7 +133,7 @@
             <li>
               {{ $t('add_bike.by_mail') }}
               <a
-                :href="`mailto:hello@louiseveillard.com?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
+                :href="`mailto:hello@louiseveillard.com?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0A(you can write something here),%0D%0A%0D%0A'}`"
               >
                 hello@louiseveillard.com
               </a>

@@ -66,10 +66,11 @@
           />
           <datalist id="grid_step_datalist">
             <option value="1" label="1" />
+            <option value="5" label="5" />
             <option value="10" label="10" />
             <option value="20" label="20" />
             <option value="50" label="50" />
-            <option value="75" label="75" />
+            <!-- <option value="75" label="75" /> -->
             <option value="100" label="100" />
           </datalist>
         </div>

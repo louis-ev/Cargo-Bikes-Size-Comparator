@@ -29,7 +29,7 @@
           {{
             $t('message.bike_mostly_manufactured_and_assembled') +
             ' ' +
-            $t('message.in_' + bike.frame_made_in)
+            $t('message.in_' + bike.frame_made_in.toLowerCase())
           }}
         </div>
 

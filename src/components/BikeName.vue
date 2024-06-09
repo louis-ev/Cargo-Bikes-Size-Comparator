@@ -42,12 +42,14 @@ export default {
   computed: {},
   methods: {
     unicodeFlag(country) {
+      country = country.toLowerCase()
       if (country === 'usa') return '🇺🇸'
       else if (country === 'germany') return '🇩🇪'
       else if (country === 'france') return '🇫🇷'
       else if (country === 'belgium') return '🇧🇪'
       else if (country === 'italy') return '🇮🇹'
       else if (country === 'europe') return '🇪🇺'
+      else if (country === 'china') return '🇨🇳'
       else alert('Missing unicode flag: ' + country)
       return
     },

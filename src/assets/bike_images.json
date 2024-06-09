@@ -603,5 +603,43 @@
     "bottom_margin_percent": 0.016,
     "url": "https://bike43.com/the-bike/",
     "frame_made_in": "europe"
+  },
+  {
+    "id": "fetch+-4-trek",
+
+    "manufacturer": "Trek",
+    "model": "Fetch+ 4",
+    "src": "fetch4+.png",
+
+    "bike_length_percent": 0.978,
+    "bike_length_cm": 265,
+    "left_margin_percent": 0.014,
+    "bottom_margin_percent": 0.015,
+    "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-4/p/37114/"
+  },
+  {
+    "id": "u7-isinwheel",
+    "manufacturer": "Isinwheel",
+    "model": "U7",
+    "src": "isinwheel-u7.png",
+    "bike_length_percent": 0.934,
+    "bike_length_cm": 162,
+    "left_margin_percent": 0.03,
+    "bottom_margin_percent": 0.19699999999999998,
+    "url": "https://www.isinwheel.com/products/isinwheel-u7-cargo-bike",
+    "frame_made_in": "China"
+  },
+  {
+    "id": "longtail-hybrid-cube",
+
+    "manufacturer": "Cube",
+    "model": "Longtail Hybrid",
+    "src": "longtail-hybrid-cube.png",
+    "bike_length_percent": 0.89,
+    "bike_length_cm": 195,
+    "left_margin_percent": 0.057,
+    "bottom_margin_percent": 0.026000000000000002,
+    "url": "https://www.cube.eu/de-en/cube-longtail-hybrid-725-blue-n-reflex/2f5220656ae9b73d9ac951d7f646c384",
+    "frame_made_in": "Germany"
   }
 ]
