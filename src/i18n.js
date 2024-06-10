@@ -34,7 +34,7 @@ const i18n = createI18n({
         via_email: 'via email',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'No tracking cookies, no ads, fully RGPD-compliant. Website hosted in France.',
-        specific_measures_taken_from: 'Specific measures taken from',
+        specific_measures_taken_from: 'Some specific measures taken from',
         this_document: 'this document',
         source_code: 'Source code',
         available_on_Github: 'available on Github',
@@ -52,7 +52,8 @@ const i18n = createI18n({
         add_a_bike: 'Add a bike',
         left: 'Left',
         right: 'Right',
-        bottom: 'Bottom'
+        bottom: 'Bottom',
+        download_image: 'Download image'
       },
       add_bike: {
         title: 'Add a bike',
@@ -152,7 +153,7 @@ const i18n = createI18n({
         or: 'ou',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'Pas de cookies traceurs, pas de publicité et respecte le RGPD. Site web hébergé en France.',
-        specific_measures_taken_from: 'Mesures avancées prises dans',
+        specific_measures_taken_from: 'Certaines mesures avancées proviennent de',
         this_document: 'ce document',
         source_code: 'Code source',
         available_on_Github: 'disponible sur Github',
@@ -170,7 +171,8 @@ const i18n = createI18n({
         add_a_bike: 'Ajouter un vélo',
         left: 'Gauche',
         right: 'Droite',
-        bottom: 'Bas'
+        bottom: 'Bas',
+        download_image: 'Télécharger l’image'
       },
       add_bike: {
         title: 'Ajouter un vélo',

@@ -85,7 +85,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
-  padding: 1rem;
+  // padding: 1rem;
   width: 100%;
 }
 ._bikePreview {
@@ -97,7 +97,7 @@ export default {
   height: 100%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  // background-color: white;
+  background-color: white;
   cursor: pointer;
   border: 1px solid var(--color-border);
 

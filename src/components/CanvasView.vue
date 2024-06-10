@@ -3,38 +3,47 @@
     <div class="_noBikes" v-if="enabled_bikes.length === 0">
       <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
     </div>
-    <div class="_canvas">
-      <div class="_canvasOptions">
-        <label
-          class="u-button _setImageStyle"
-          :data-active="canvas_image_style_outline"
-          for="canvas_image_style_outline"
-        >
-          <input
-            type="checkbox"
-            name="canvas_image_style_outline"
-            id="canvas_image_style_outline"
-            :checked="canvas_image_style_outline"
-            @change="toggleOutlineView"
-          />
-          &nbsp;{{ $t('message.outline_view') }}
-        </label>
+    <div class="_canvasOptions">
+      <label
+        class="u-button _setImageStyle"
+        :data-active="canvas_image_style_outline"
+        for="canvas_image_style_outline"
+      >
+        <input
+          type="checkbox"
+          name="canvas_image_style_outline"
+          id="canvas_image_style_outline"
+          :checked="canvas_image_style_outline"
+          @change="toggleOutlineView"
+        />
+        &nbsp;{{ $t('message.outline_view') }}
+      </label>
 
-        <transition-group name="fade">
-          <button
-            type="button"
-            class="_activeBike"
-            v-for="bike in reversed_sorted_enabled_bikes"
-            :key="bike.id"
-            :data-showcolor="canvas_image_style_outline"
-            :style="{ '--bike-color': `#${bike.color}` }"
-          >
-            <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
-            <BikeName :bike="bike" :show_length="false" />
-          </button>
-        </transition-group>
-      </div>
+      <transition-group name="fade">
+        <button
+          type="button"
+          class="_activeBike"
+          v-for="bike in reversed_sorted_enabled_bikes"
+          :key="bike.id"
+          :data-showcolor="canvas_image_style_outline"
+          :style="{ '--bike-color': `#${bike.color}` }"
+        >
+          <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
+          <BikeName :bike="bike" :show_length="false" />
+        </button>
+      </transition-group>
     </div>
+    <small class="_downloadCanvas">
+      <button type="button" class="" @click="downloadCanvas">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
+          <path
+            d="m54.168 12.5c0-2.3008-1.8672-4.168-4.168-4.168s-4.168 1.8672-4.168 4.168v39.938l-13.715-13.719c-1.6289-1.6289-4.2656-1.6289-5.8945 0-1.625 1.6289-1.625 4.2656 0 5.8906l20.715 20.715c0.75781 0.82422 1.8516 1.3438 3.0625 1.3438 0.62891 0 1.2227-0.14062 1.7539-0.38672 0.43359-0.20312 0.83984-0.48047 1.1953-0.83594l20.832-20.836c1.6289-1.625 1.6289-4.2617 0-5.8906-1.625-1.6289-4.2656-1.6289-5.8906 0l-13.723 13.723zm-41.668 45.828c2.3008 0 4.168 1.8672 4.168 4.168v16.664c0 1.1055 0.4375 2.168 1.2188 2.9492s1.8398 1.2188 2.9453 1.2188h58.336c1.1055 0 2.1641-0.4375 2.9453-1.2188s1.2188-1.8438 1.2188-2.9492v-16.664c0-2.3008 1.8672-4.168 4.168-4.168s4.168 1.8672 4.168 4.168v16.664c0 3.3164-1.3164 6.4961-3.6641 8.8398-2.3438 2.3438-5.5234 3.6602-8.8359 3.6602h-58.336c-3.3125 0-6.4922-1.3164-8.8359-3.6602-2.3477-2.3438-3.6641-5.5234-3.6641-8.8398v-16.664c0-2.3008 1.8672-4.168 4.168-4.168z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        {{ $t('message.download_image') }}
+      </button>
+    </small>
     <div class="_loader">
       <span class="loader" />
     </div>
@@ -281,6 +290,14 @@ export default {
       this.$router.push({
         query
       })
+    },
+    downloadCanvas() {
+      const canvas = this.$refs.bikes
+      const img = canvas.toDataURL()
+      const a = document.createElement('a')
+      a.href = img
+      a.download = 'canvas.png'
+      a.click()
     }
   }
 }
@@ -301,9 +318,6 @@ canvas {
   padding: 1rem;
   // margin-left: 0;
   // border: 1px solid #ccc;
-}
-._canvas {
-  // margin: 2rem;
 }
 ._noBikes {
   position: absolute;
@@ -435,5 +449,19 @@ canvas {
 ._previewCanvas {
   position: relative;
   z-index: 1;
+}
+
+._downloadCanvas {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  padding: 2rem;
+
+  > * {
+    background-color: var(--color-background);
+    pointer-events: auto;
+  }
 }
 </style>

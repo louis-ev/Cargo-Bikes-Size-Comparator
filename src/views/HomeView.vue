@@ -71,7 +71,7 @@ export default {
       show_sidebar: true,
 
       default_padding_percent: 5,
-      grid_step: 5,
+      grid_step: 10,
 
       bikes_position_adjustments: {},
 
