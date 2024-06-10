@@ -641,5 +641,17 @@
     "bottom_margin_percent": 0.026000000000000002,
     "url": "https://www.cube.eu/de-en/cube-longtail-hybrid-725-blue-n-reflex/2f5220656ae9b73d9ac951d7f646c384",
     "frame_made_in": "Germany"
+  },
+  {
+    "id": "xpedition-lectric",
+
+    "manufacturer": "Lectric",
+    "model": "XPedition",
+    "src": "XPed-single-7.png",
+    "bike_length_percent": 0.932,
+    "bike_length_cm": 182.88,
+    "left_margin_percent": 0.036000000000000004,
+    "bottom_margin_percent": 0.21,
+    "url": "https://lectricebikes.com/products/xpedition-single-battery"
   }
 ]
