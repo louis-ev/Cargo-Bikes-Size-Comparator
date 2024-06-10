@@ -672,9 +672,9 @@
     "manufacturer": "Madsen",
     "model": "EVERYTHING E-Madsen",
     "src": "everything-madsen.png",
-    "bike_length_percent": 0.863,
+    "bike_length_percent": 0.865,
     "bike_length_cm": 231,
-    "left_margin_percent": 0.1,
+    "left_margin_percent": 0.095,
     "bottom_margin_percent": 0.187,
     "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen"
   },
@@ -763,5 +763,17 @@
     "left_margin_percent": 0.0935,
     "bottom_margin_percent": 0.11,
     "url": "https://bennobikes.com/e-bikes/remidemi/"
+  },
+  {
+    "id": "gravit-city-e-hase-bikes",
+    "manufacturer": "Hase Bikes",
+    "model": "Gravit City E",
+    "src": "gravit_city_e_01.png",
+    "bike_length_percent": 0.69,
+    "bike_length_cm": 224,
+    "left_margin_percent": 0.156,
+    "bottom_margin_percent": 0.068,
+    "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
+    "frame_made_in": "Germany"
   }
 ]
