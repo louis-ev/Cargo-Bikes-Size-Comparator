@@ -653,5 +653,17 @@
     "left_margin_percent": 0.036000000000000004,
     "bottom_margin_percent": 0.21,
     "url": "https://lectricebikes.com/products/xpedition-single-battery"
+  },
+  {
+    "id": "everything-e-madsen-madsen",
+
+    "manufacturer": "Madsen",
+    "model": "EVERYTHING E-Madsen",
+    "src": "everything-madsen.png",
+    "bike_length_percent": 0.863,
+    "bike_length_cm": 231,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.187,
+    "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen"
   }
 ]
