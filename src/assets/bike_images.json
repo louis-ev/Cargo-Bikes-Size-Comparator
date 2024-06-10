@@ -754,8 +754,9 @@
   },
   {
     "id": "benno-remidemi",
-    "manufacturer": "remidemi",
-    "model": "Benno",
+
+    "manufacturer": "Benno",
+    "model": "RemiDemi",
     "src": "benno_remidemi_9d_chai_latte_evo2.png",
     "bike_length_percent": 0.824,
     "bike_length_cm": 171,
