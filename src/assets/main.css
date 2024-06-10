@@ -173,7 +173,7 @@ ul {
 
 .loader {
   /* --color: var(--color-accent); */
-  --color: black;
+  --color: var(--color-text);
 
   width: 106px;
   height: 56px;
