@@ -35,6 +35,7 @@
         <CanvasView
           v-else
           :enabled_bikes="enabled_bikes"
+          :bikes="bikes"
           :default_padding_percent="default_padding_percent"
           :grid_step="grid_step"
           :bikes_position_adjustments="bikes_position_adjustments"

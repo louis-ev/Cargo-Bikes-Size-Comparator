@@ -1,7 +1,11 @@
 <template>
   <div class="_canvasWrapper">
     <div class="_noBikes" v-if="enabled_bikes.length === 0">
-      <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
+      <span>{{
+        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+          count: bikes.length
+        })
+      }}</span>
     </div>
     <div class="_canvasOptions">
       <label
@@ -61,6 +65,7 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
 export default {
   props: {
     enabled_bikes: Array,
+    bikes: Array,
     default_padding_percent: Number,
     grid_step: Number,
     bikes_position_adjustments: Object,

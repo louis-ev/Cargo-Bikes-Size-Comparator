@@ -17,7 +17,8 @@ const i18n = createI18n({
         to_contribute_a_bike: 'To contribute a bike,',
         read_the_guide: 'read the guide',
         or_ask_me: 'or ask me',
-        click_on_bikes_in_this_list_to_compare_their_size: 'Click on bikes to compare their size',
+        click_on_bikes_in_this_list_to_compare_their_size:
+          'Click amongst these {count} bikes to start',
         bike_selected: 'bike selected',
         bikes_selected: 'bikes selected',
         reset: 'Reset',
@@ -137,7 +138,7 @@ const i18n = createI18n({
         or_ask_me: 'ou me demander',
         via_email: 'via email',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Cliquez sur les vélos pour  comparer leur taille',
+          'Cliquez sur un de ces {count} vélos pour  comparer leur taille',
         bike_selected: 'vélo sélectionné',
         bikes_selected: 'vélos sélectionnés',
         reset: 'Réinitialiser',

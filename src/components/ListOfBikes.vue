@@ -1,6 +1,12 @@
 <template>
   <div class="_listOfBikes">
-    <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
+    <span>
+      {{
+        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+          count: bikes.length
+        })
+      }}</span
+    >
     <div class="_bikesPreview">
       <button
         type="button"
@@ -85,7 +91,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
-  // padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
 }
 ._bikePreview {

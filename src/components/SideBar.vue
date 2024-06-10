@@ -24,7 +24,11 @@
       <template v-else>
         <small class="_infos">
           <template v-if="enabled_bikes.length === 0">
-            {{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}
+            {{
+              $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+                count: bikes.length
+              })
+            }}
           </template>
           <template v-else>
             <span>
