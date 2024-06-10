@@ -1,17 +1,5 @@
 [
   {
-    "id": "benno-remidemi",
-    "manufacturer": "remidemi",
-    "model": "Benno",
-    "src": "benno_remidemi_9d_chai_latte_evo2.png",
-    "bike_length_percent": 0.929,
-    "bike_length_cm": 171,
-    "left_margin_percent": 0.038,
-    "bottom_margin_percent": 0.067,
-    "url": "https://bennobikes.com/e-bikes/remidemi/",
-    "frame_made_in": ""
-  }
-  {
     "id": "chike",
     "id_in_csv": "Chike/Cargo",
 
@@ -763,5 +751,16 @@
     "bottom_margin_percent": 0.196,
     "url": "https://www.dolly-bikes.com/de-dolly-bakfiets/",
     "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "benno-remidemi",
+    "manufacturer": "remidemi",
+    "model": "Benno",
+    "src": "benno_remidemi_9d_chai_latte_evo2.png",
+    "bike_length_percent": 0.824,
+    "bike_length_cm": 171,
+    "left_margin_percent": 0.0935,
+    "bottom_margin_percent": 0.11,
+    "url": "https://bennobikes.com/e-bikes/remidemi/"
   }
 ]
