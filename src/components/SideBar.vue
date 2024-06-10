@@ -174,6 +174,7 @@ export default {
   right: 0;
   margin: 0.5rem;
   background-color: var(--color-text);
+  z-index: 1000;
   // background-color: var(--color-text-secondary);
   color: white;
 
