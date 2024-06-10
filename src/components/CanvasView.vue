@@ -1,12 +1,12 @@
 <template>
   <div class="_canvasWrapper">
-    <div class="_noBikes" v-if="enabled_bikes.length === 0">
+    <!-- <div class="_noBikes" v-if="enabled_bikes.length === 0">
       <span>{{
         $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
           count: bikes.length
         })
       }}</span>
-    </div>
+    </div> -->
     <div class="_canvasOptions">
       <button class="_openSidebar" v-if="!show_sidebar" @click="$emit('openSidebar')">
         <svg
