@@ -775,5 +775,18 @@
     "bottom_margin_percent": 0.068,
     "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
     "frame_made_in": "Germany"
+  },
+  {
+    "id": "fr8-workcycles",
+
+    "manufacturer": "Workcycles",
+    "model": "FR8",
+    "src": "WorkCycles_Fr8.png",
+    "bike_length_percent": 0.911,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.115,
+    "url": "",
+    "frame_made_in": "Netherlands"
   }
 ]
