@@ -722,9 +722,9 @@
     "manufacturer": "Benno",
     "model": "Boost",
     "src": "benno_boost_10d_cx_speed_machine_blue_evo5.png",
-    "bike_length_percent": 0.916,
+    "bike_length_percent": 0.913,
     "bike_length_cm": 190,
-    "left_margin_percent": 0.046,
+    "left_margin_percent": 0.048,
     "bottom_margin_percent": 0.069,
     "url": "https://bennobikes.com/e-bikes/boost/"
   },
