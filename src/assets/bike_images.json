@@ -655,6 +655,18 @@
     "url": "https://lectricebikes.com/products/xpedition-single-battery"
   },
   {
+    "id": "the-one-lectric",
+
+    "manufacturer": "Lectric",
+    "model": "The One",
+    "src": "lectric-one.png",
+    "bike_length_percent": 0.899,
+    "bike_length_cm": 160,
+    "left_margin_percent": 0.054,
+    "bottom_margin_percent": 0.233,
+    "url": "https://lectricebikes.com/products/lectric-one-long-range-ebike"
+  },
+  {
     "id": "everything-e-madsen-madsen",
 
     "manufacturer": "Madsen",
@@ -715,5 +727,16 @@
     "left_margin_percent": 0.046,
     "bottom_margin_percent": 0.069,
     "url": "https://bennobikes.com/e-bikes/boost/"
+  },
+  {
+    "id": "shorty-urban-arrow",
+    "manufacturer": "Urban Arrow",
+    "model": "Shorty",
+    "src": "urban-arrow-shorty.png",
+    "bike_length_percent": 0.576,
+    "bike_length_cm": 203,
+    "left_margin_percent": 0.22,
+    "bottom_margin_percent": 0.321,
+    "url": "https://servicecenter.urbanarrow.com/en/urban-arrow-shorty-specifications"
   }
 ]
