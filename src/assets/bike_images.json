@@ -678,5 +678,42 @@
     "bottom_margin_percent": 0.247,
     "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
     "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w."
+  },
+  {
+    "id": "bike-classic-christiania-",
+
+    "manufacturer": "Christiania ",
+    "model": "Bike Classic",
+    "src": "ChristianiaBikes_StandardFrame.png",
+    "bike_length_percent": 0.5770000000000001,
+    "bike_length_cm": 208,
+    "left_margin_percent": 0.175,
+    "bottom_margin_percent": 0.192,
+    "url": "https://www.christianiabikes.com/en/"
+  },
+  {
+    "id": "classic-long-bakfiets.nl",
+
+    "manufacturer": "Bakfiets.nl",
+    "model": "Classic long",
+    "src": "petrol-blue_2.png",
+    "bike_length_percent": 0.9490000000000001,
+    "bike_length_cm": 253,
+    "left_margin_percent": 0.03,
+    "bottom_margin_percent": 0.122,
+    "url": "https://www.bakfiets.nl/en-en/models/cargobike/long/classic",
+    "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "boost-benno",
+
+    "manufacturer": "Benno",
+    "model": "Boost",
+    "src": "benno_boost_10d_cx_speed_machine_blue_evo5.png",
+    "bike_length_percent": 0.916,
+    "bike_length_cm": 190,
+    "left_margin_percent": 0.046,
+    "bottom_margin_percent": 0.069,
+    "url": "https://bennobikes.com/e-bikes/boost/"
   }
 ]
