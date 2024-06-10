@@ -33,6 +33,10 @@
           }}
         </div>
 
+        <div v-if="bike.comment_en">
+          {{ bike.comment_en }}
+        </div>
+
         <div class="_adjust">
           <small>
             <div class="_adjustInput">
