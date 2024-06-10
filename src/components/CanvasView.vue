@@ -8,6 +8,20 @@
       }}</span>
     </div>
     <div class="_canvasOptions">
+      <button class="_openSidebar" v-if="!show_sidebar" @click="$emit('openSidebar')">
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
       <label
         class="u-button _setImageStyle"
         :data-active="canvas_image_style_outline"
@@ -69,7 +83,8 @@ export default {
     default_padding_percent: Number,
     grid_step: Number,
     bikes_position_adjustments: Object,
-    canvas_image_style_outline: Boolean
+    canvas_image_style_outline: Boolean,
+    show_sidebar: Boolean
   },
   components: {},
   data() {
@@ -352,8 +367,8 @@ canvas {
   z-index: 4;
   width: 100%;
   pointer-events: none;
-  padding: 0.5rem 0;
-  padding-left: 3rem;
+  padding: 0.5rem;
+  // padding-left: 3rem;
 
   overflow-x: auto;
 
@@ -468,5 +483,14 @@ canvas {
     background-color: var(--color-background);
     pointer-events: auto;
   }
+}
+
+._openSidebar {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
+  border-radius: 0.5rem;
 }
 </style>

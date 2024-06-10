@@ -6,6 +6,8 @@
         <LangSelect class="_lang_select" />
       </div>
 
+      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
+
       <div class="_search">
         <input type="search" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
       </div>
@@ -166,6 +168,23 @@ export default {
   display: flex;
   flex-flow: column nowrap;
 }
+._closeSidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  background-color: var(--color-text);
+  // background-color: var(--color-text-secondary);
+  color: white;
+
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
 ._sidebar--content {
   overflow-y: auto;
   padding: 1rem;
