@@ -665,5 +665,18 @@
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.187,
     "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen"
+  },
+  {
+    "id": "stride-2-raleigh",
+
+    "manufacturer": "Raleigh",
+    "model": "Stride 2",
+    "src": "Raleigh-Stride-2.png",
+    "bike_length_percent": 0.9030000000000001,
+    "bike_length_cm": 258,
+    "left_margin_percent": 0.055999999999999994,
+    "bottom_margin_percent": 0.247,
+    "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
+    "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w."
   }
 ]
