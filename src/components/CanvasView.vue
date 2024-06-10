@@ -59,7 +59,7 @@
             fill-rule="evenodd"
           />
         </svg>
-        {{ $t('message.download_image') }}
+        {{ $t('message.download_comparison') }}
       </button>
     </small>
     <div class="_loader">

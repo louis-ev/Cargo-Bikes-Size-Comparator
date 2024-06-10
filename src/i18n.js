@@ -54,7 +54,7 @@ const i18n = createI18n({
         left: 'Left',
         right: 'Right',
         bottom: 'Bottom',
-        download_image: 'Download image'
+        download_comparison: 'Download comparison'
       },
       add_bike: {
         title: 'Add a bike',
@@ -173,7 +173,7 @@ const i18n = createI18n({
         left: 'Gauche',
         right: 'Droite',
         bottom: 'Bas',
-        download_image: 'Télécharger l’image'
+        download_comparison: 'Télécharger la comparaison'
       },
       add_bike: {
         title: 'Ajouter un vélo',
