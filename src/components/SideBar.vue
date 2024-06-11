@@ -9,7 +9,8 @@
       <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
 
       <div class="_search">
-        <input type="search" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+        <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+        <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
       </div>
 
       <div v-if="filtered_bikes.length === 0" class="_noMatch">
@@ -250,10 +251,22 @@ h1 {
 }
 
 ._search {
+  position: relative;
   margin-bottom: 1rem;
 
   input {
     width: 100%;
+    padding-right: 1.7em;
+  }
+
+  button {
+    position: absolute;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 0;
+    width: 1.7em;
+    height: 1.7em;
   }
 }
 
