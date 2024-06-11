@@ -30,6 +30,7 @@ export default {
   computed: {
     supercharged_bikes() {
       return this.bikes
+        .filter((item) => item.disabled !== true)
         .map((item) => {
           if (this.all_measures.length > 0) {
             const found = this.all_measures.find(

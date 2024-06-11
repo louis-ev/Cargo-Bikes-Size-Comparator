@@ -668,6 +668,7 @@
     "url": "https://lectricebikes.com/products/xpedition-single-battery"
   },
   {
+    "disabled": true,
     "id": "the-one-lectric",
 
     "manufacturer": "Lectric",
