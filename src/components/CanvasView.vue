@@ -343,7 +343,7 @@ export default {
       const silhouette_height = 185 * each_px_measures_in_cm
       const silhouette_width = silhouette_height * img_ratio
 
-      const draw_x = 50
+      const draw_x = padding + 5 * each_px_measures_in_cm
       let draw_y = canvas.height - padding + 2 * each_px_measures_in_cm
 
       // draw_y += 110
