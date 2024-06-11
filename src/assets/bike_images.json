@@ -256,12 +256,12 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multicharger2",
-    "src": "multicharger.png",
-    "bike_length_percent": 0.98,
+    "src": "multicharger2.png",
+    "bike_length_percent": 0.91,
     "bike_length_cm": 197,
-    "left_margin_percent": 0.012,
-    "bottom_margin_percent": 0.011,
-    "url": "https://www.r-m.de/fr/bikes/multicharger2-mixte/"
+    "left_margin_percent": 0.059,
+    "bottom_margin_percent": 0.046,
+    "url": "https://www.r-m.de/en-en/bikes/multicharger2-mixte/"
   },
   {
     "id": "multitinker",
@@ -788,5 +788,17 @@
     "bottom_margin_percent": 0.115,
     "url": "https://workcycles.com/product/workcycles-fr8-classic/",
     "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "momentum-pakyak-e-plus",
+
+    "manufacturer": "Momentum",
+    "model": "PakYak E+",
+    "src": "Pakyak-E_Color-B.png",
+    "bike_length_percent": 0.929,
+    "bike_length_cm": 202,
+    "left_margin_percent": 0.053,
+    "bottom_margin_percent": 0.055999999999999994,
+    "url": "https://www.momentum-biking.com/us/pakyak-eplus-2022"
   }
 ]
