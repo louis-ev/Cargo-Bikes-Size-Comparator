@@ -201,14 +201,27 @@
     "id": "lepetitporteur",
     "id_in_csv": "",
 
-    "manufacturer": "",
-    "model": "Le Petit Porteur OG",
+    "manufacturer": "Le Petit Porteur",
+    "model": "L’Original",
     "src": "lepetitporteur.png",
     "bike_length_percent": 0.908,
     "bike_length_cm": 167,
     "left_margin_percent": 0.041,
     "bottom_margin_percent": 0.015,
     "url": "https://www.lepetitporteur.com/"
+  },
+  {
+    "id": "lepetitporteur-longtail",
+    "id_in_csv": "",
+
+    "manufacturer": "Le Petit Porteur",
+    "model": "Longtail",
+    "src": "LPP-Longtail-Enhanced.png",
+    "bike_length_percent": 0.983,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.011,
+    "bottom_margin_percent": 0.003,
+    "url": "https://www.lepetitporteur.com/en/compact-and-affordable-cargo-bike/"
   },
   {
     "id": "nakamura",
