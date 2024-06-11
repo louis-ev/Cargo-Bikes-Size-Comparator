@@ -41,7 +41,7 @@ const i18n = createI18n({
         available_on_Github: 'available on Github',
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
-        outline_view: 'Outline View',
+        outline_view: 'Outline',
         bike_mostly_manufactured_and_assembled: 'Bike mostly manufactured and assembled',
         in_germany: 'in Germany',
         in_france: 'in France',
@@ -54,7 +54,8 @@ const i18n = createI18n({
         left: 'Left',
         right: 'Right',
         bottom: 'Bottom',
-        download_comparison: 'Download comparison'
+        download_comparison: 'Download comparison',
+        show_human_silhouette: 'Show human silhouette'
       },
       add_bike: {
         title: 'Add a bike',
@@ -160,7 +161,7 @@ const i18n = createI18n({
         available_on_Github: 'disponible sur Github',
         code_design_foss: 'Code / Design is free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
-        outline_view: 'Vue contour',
+        outline_view: 'Contours',
         bike_mostly_manufactured_and_assembled: 'Vélo principalement fabriqué et assemblé',
         in_germany: 'en Allemagne',
         in_france: 'en France',
@@ -173,7 +174,8 @@ const i18n = createI18n({
         left: 'Gauche',
         right: 'Droite',
         bottom: 'Bas',
-        download_comparison: 'Télécharger la comparaison'
+        download_comparison: 'Télécharger la comparaison',
+        show_human_silhouette: 'Afficher une silhouette humaine'
       },
       add_bike: {
         title: 'Ajouter un vélo',
