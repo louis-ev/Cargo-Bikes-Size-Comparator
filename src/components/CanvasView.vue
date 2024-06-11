@@ -230,14 +230,8 @@ export default {
           const processorCanvas = this.$refs.processor
           if (!processorCanvas) return
 
-          processorCanvas.width = Math.min(
-            processorCanvas.parentNode.clientWidth * window.devicePixelRatio,
-            processorCanvas.parentNode.clientHeight * window.devicePixelRatio * 1.5
-          )
-          processorCanvas.height = Math.min(
-            processorCanvas.parentNode.clientHeight * window.devicePixelRatio,
-            processorCanvas.width
-          )
+          processorCanvas.width = canvas.width
+          processorCanvas.height = canvas.height
 
           const processorCtx = processorCanvas.getContext('2d')
           processorCtx.globalCompositeOperation = 'source-over'
