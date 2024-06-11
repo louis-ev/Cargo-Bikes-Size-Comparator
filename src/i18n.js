@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n'
 let locale = 'en'
 if (localStorage.getItem('i18n.locale')) locale = localStorage.getItem('i18n.locale')
 else if (navigator.language && navigator.language.includes('fr')) locale = 'fr'
+document.documentElement.lang = locale
 
 const i18n = createI18n({
   locale: locale,
@@ -16,7 +17,8 @@ const i18n = createI18n({
         to_contribute_a_bike: 'To contribute a bike,',
         read_the_guide: 'read the guide',
         or_ask_me: 'or ask me',
-        click_on_bikes_in_this_list_to_compare_their_size: 'Click on bikes to compare their size',
+        click_on_bikes_in_this_list_to_compare_their_size:
+          'Click on one of these {count} bikes to start',
         bike_selected: 'bike selected',
         bikes_selected: 'bikes selected',
         reset: 'Reset',
@@ -33,7 +35,7 @@ const i18n = createI18n({
         via_email: 'via email',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'No tracking cookies, no ads, fully RGPD-compliant. Website hosted in France.',
-        specific_measures_taken_from: 'Specific measures taken from',
+        specific_measures_taken_from: 'Some specific measures taken from',
         this_document: 'this document',
         source_code: 'Source code',
         available_on_Github: 'available on Github',
@@ -43,12 +45,16 @@ const i18n = createI18n({
         bike_mostly_manufactured_and_assembled: 'Bike mostly manufactured and assembled',
         in_germany: 'in Germany',
         in_france: 'in France',
+        in_italy: 'in Italy',
+        in_belgium: 'in Belgium',
+        in_china: 'in China',
         in_united_states: 'in the United States',
         in_united_kingdom: 'in the United Kingdom',
         add_a_bike: 'Add a bike',
         left: 'Left',
         right: 'Right',
-        bottom: 'Bottom'
+        bottom: 'Bottom',
+        download_comparison: 'Download comparison'
       },
       add_bike: {
         title: 'Add a bike',
@@ -66,7 +72,6 @@ const i18n = createI18n({
         send: 'send',
         add_another_bike: 'add another bike',
         close: 'close',
-        bike_mostly_made_in: 'Bike mostly made in',
         model: 'Model',
         manufacturer: 'Manufacturer',
         total_bike_length: 'Total bike length',
@@ -133,7 +138,7 @@ const i18n = createI18n({
         or_ask_me: 'ou me demander',
         via_email: 'via email',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Cliquez sur les vélos pour  comparer leur taille',
+          'Cliquez sur un de ces {count} vélos pour commencer',
         bike_selected: 'vélo sélectionné',
         bikes_selected: 'vélos sélectionnés',
         reset: 'Réinitialiser',
@@ -149,7 +154,7 @@ const i18n = createI18n({
         or: 'ou',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'Pas de cookies traceurs, pas de publicité et respecte le RGPD. Site web hébergé en France.',
-        specific_measures_taken_from: 'Mesures avancées prises dans',
+        specific_measures_taken_from: 'Certaines mesures avancées proviennent de',
         this_document: 'ce document',
         source_code: 'Code source',
         available_on_Github: 'disponible sur Github',
@@ -159,12 +164,16 @@ const i18n = createI18n({
         bike_mostly_manufactured_and_assembled: 'Vélo principalement fabriqué et assemblé',
         in_germany: 'en Allemagne',
         in_france: 'en France',
+        in_italy: 'en Italie',
+        in_belgium: 'en Belgique',
+        in_china: 'en Chine',
         in_united_states: 'aux États-Unis',
         in_united_kingdom: 'au Royaume-Uni',
         add_a_bike: 'Ajouter un vélo',
         left: 'Gauche',
         right: 'Droite',
-        bottom: 'Bas'
+        bottom: 'Bas',
+        download_comparison: 'Télécharger la comparaison'
       },
       add_bike: {
         title: 'Ajouter un vélo',
@@ -181,7 +190,6 @@ const i18n = createI18n({
         send: 'envoyer',
         add_another_bike: 'ajouter un autre vélo',
         close: 'fermer',
-        bike_mostly_made_in: 'Vélo principalement fabriqué et assemblé en',
         model: 'Modèle',
         manufacturer: 'Fabricant',
         total_bike_length: 'Longueur du vélo',

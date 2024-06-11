@@ -1,5 +1,7 @@
 <template>
   <div class="_madeBy">
+    <div>App version {{ version }}</div>
+
     <div>
       {{ $t('message.created_by') }}
       <a href="https://louiseveillard.com/" target="_blank">Louis Eveillard</a>
@@ -60,12 +62,15 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
   </div>
 </template>
 <script>
+import { version } from '../../package.json'
+
 export default {
   props: {},
   components: {},
   data() {
     return {
-      show_license: false
+      show_license: false,
+      version: version
     }
   },
   created() {},

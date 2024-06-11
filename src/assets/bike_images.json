@@ -33,10 +33,11 @@
     "manufacturer": "Riese und Müller",
     "model": "Carrie",
     "src": "carrie.png",
-    "bike_length_percent": 0.7,
+    "bike_length_percent": 0.935,
     "bike_length_cm": 209,
-    "left_margin_percent": 0.15,
-    "bottom_margin_percent": 0.095,
+    "left_margin_percent": 0.033,
+    "bottom_margin_percent": 0.045,
+
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
   {
@@ -200,14 +201,27 @@
     "id": "lepetitporteur",
     "id_in_csv": "",
 
-    "manufacturer": "",
-    "model": "Le Petit Porteur OG",
+    "manufacturer": "Le Petit Porteur",
+    "model": "L’Original",
     "src": "lepetitporteur.png",
     "bike_length_percent": 0.908,
     "bike_length_cm": 167,
     "left_margin_percent": 0.041,
     "bottom_margin_percent": 0.015,
     "url": "https://www.lepetitporteur.com/"
+  },
+  {
+    "id": "lepetitporteur-longtail",
+    "id_in_csv": "",
+
+    "manufacturer": "Le Petit Porteur",
+    "model": "Longtail",
+    "src": "LPP-Longtail-Enhanced.png",
+    "bike_length_percent": 0.983,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.011,
+    "bottom_margin_percent": 0.003,
+    "url": "https://www.lepetitporteur.com/en/compact-and-affordable-cargo-bike/"
   },
   {
     "id": "nakamura",
@@ -255,12 +269,12 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multicharger2",
-    "src": "multicharger.png",
-    "bike_length_percent": 0.98,
+    "src": "multicharger2.png",
+    "bike_length_percent": 0.91,
     "bike_length_cm": 197,
-    "left_margin_percent": 0.012,
-    "bottom_margin_percent": 0.011,
-    "url": "https://www.r-m.de/fr/bikes/multicharger2-mixte/"
+    "left_margin_percent": 0.059,
+    "bottom_margin_percent": 0.046,
+    "url": "https://www.r-m.de/en-en/bikes/multicharger2-mixte/"
   },
   {
     "id": "multitinker",
@@ -551,5 +565,253 @@
     "bottom_margin_percent": 0.19,
     "frame_made_in": "france",
     "url": "https://galiancycles.com/products/le-formidable"
+  },
+  {
+    "id": "swoop-xtracycle",
+
+    "manufacturer": "Xtracycle",
+    "model": "Swoop",
+    "src": "xtracycle-swoop.png",
+    "bike_length_percent": 0.886,
+    "bike_length_cm": 211,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.141,
+    "url": "https://xtracycle.com/products/eswoop"
+  },
+  {
+    "id": "justlong-sport-bicicapace",
+
+    "manufacturer": "Bicicapace",
+    "model": "Justlong Sport",
+    "src": "jl-sport-long.png",
+    "bike_length_percent": 0.873,
+    "bike_length_cm": 199,
+    "left_margin_percent": 0.057,
+    "bottom_margin_percent": 0.155,
+    "url": "https://www.bicicapace.com/bikes/justlong/",
+    "frame_made_in": "italy"
+  },
+  {
+    "id": "jean-achielle",
+
+    "manufacturer": "Achielle",
+    "model": "Jean",
+    "src": "achielle_PS.png",
+    "bike_length_percent": 0.635,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.155,
+    "bottom_margin_percent": 0.226,
+    "url": "https://www.achielle.be/fr/2023/jean/",
+    "frame_made_in": "belgium"
+  },
+  {
+    "id": "family-longtail-bike43",
+
+    "manufacturer": "Bike43",
+    "model": "Family longtail",
+    "src": "bike43.png",
+    "bike_length_percent": 0.958,
+    "bike_length_cm": 200,
+    "left_margin_percent": 0.025,
+    "bottom_margin_percent": 0.016,
+    "url": "https://bike43.com/the-bike/",
+    "frame_made_in": "europe"
+  },
+  {
+    "id": "fetch+-4-trek",
+
+    "manufacturer": "Trek",
+    "model": "Fetch+ 4",
+    "src": "fetch4+.png",
+
+    "bike_length_percent": 0.978,
+    "bike_length_cm": 265,
+    "left_margin_percent": 0.014,
+    "bottom_margin_percent": 0.015,
+    "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-4/p/37114/"
+  },
+  {
+    "id": "u7-isinwheel",
+    "manufacturer": "Isinwheel",
+    "model": "U7",
+    "src": "isinwheel-u7.png",
+    "bike_length_percent": 0.934,
+    "bike_length_cm": 162,
+    "left_margin_percent": 0.03,
+    "bottom_margin_percent": 0.19699999999999998,
+    "url": "https://www.isinwheel.com/products/isinwheel-u7-cargo-bike",
+    "frame_made_in": "China"
+  },
+  {
+    "id": "longtail-hybrid-cube",
+
+    "manufacturer": "Cube",
+    "model": "Longtail Hybrid",
+    "src": "longtail-hybrid-cube.png",
+    "bike_length_percent": 0.89,
+    "bike_length_cm": 195,
+    "left_margin_percent": 0.057,
+    "bottom_margin_percent": 0.026000000000000002,
+    "url": "https://www.cube.eu/de-en/cube-longtail-hybrid-725-blue-n-reflex/2f5220656ae9b73d9ac951d7f646c384",
+    "frame_made_in": "Germany"
+  },
+  {
+    "id": "xpedition-lectric",
+
+    "manufacturer": "Lectric",
+    "model": "XPedition",
+    "src": "XPed-single-7.png",
+    "bike_length_percent": 0.932,
+    "bike_length_cm": 182.88,
+    "left_margin_percent": 0.036000000000000004,
+    "bottom_margin_percent": 0.21,
+    "url": "https://lectricebikes.com/products/xpedition-single-battery"
+  },
+  {
+    "id": "the-one-lectric",
+
+    "manufacturer": "Lectric",
+    "model": "The One",
+    "src": "lectric-one.png",
+    "bike_length_percent": 0.899,
+    "bike_length_cm": 160,
+    "left_margin_percent": 0.054,
+    "bottom_margin_percent": 0.233,
+    "url": "https://lectricebikes.com/products/lectric-one-long-range-ebike"
+  },
+  {
+    "id": "everything-e-madsen-madsen",
+
+    "manufacturer": "Madsen",
+    "model": "EVERYTHING E-Madsen",
+    "src": "everything-madsen.png",
+    "bike_length_percent": 0.865,
+    "bike_length_cm": 231,
+    "left_margin_percent": 0.095,
+    "bottom_margin_percent": 0.187,
+    "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen"
+  },
+  {
+    "id": "stride-2-raleigh",
+
+    "manufacturer": "Raleigh",
+    "model": "Stride 2",
+    "src": "Raleigh-Stride-2.png",
+    "bike_length_percent": 0.9030000000000001,
+    "bike_length_cm": 258,
+    "left_margin_percent": 0.055999999999999994,
+    "bottom_margin_percent": 0.247,
+    "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
+    "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w."
+  },
+  {
+    "id": "bike-classic-christiania-",
+
+    "manufacturer": "Christiania ",
+    "model": "Bike Classic",
+    "src": "ChristianiaBikes_StandardFrame.png",
+    "bike_length_percent": 0.5770000000000001,
+    "bike_length_cm": 208,
+    "left_margin_percent": 0.175,
+    "bottom_margin_percent": 0.192,
+    "url": "https://www.christianiabikes.com/en/"
+  },
+  {
+    "id": "classic-long-bakfiets.nl",
+
+    "manufacturer": "Bakfiets.nl",
+    "model": "Classic long",
+    "src": "petrol-blue_2.png",
+    "bike_length_percent": 0.9490000000000001,
+    "bike_length_cm": 253,
+    "left_margin_percent": 0.03,
+    "bottom_margin_percent": 0.122,
+    "url": "https://www.bakfiets.nl/en-en/models/cargobike/long/classic",
+    "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "boost-benno",
+
+    "manufacturer": "Benno",
+    "model": "Boost",
+    "src": "benno_boost_10d_cx_speed_machine_blue_evo5.png",
+    "bike_length_percent": 0.913,
+    "bike_length_cm": 190,
+    "left_margin_percent": 0.048,
+    "bottom_margin_percent": 0.069,
+    "url": "https://bennobikes.com/e-bikes/boost/"
+  },
+  {
+    "id": "shorty-urban-arrow",
+    "manufacturer": "Urban Arrow",
+    "model": "Shorty",
+    "src": "urban-arrow-shorty.png",
+    "bike_length_percent": 0.576,
+    "bike_length_cm": 203,
+    "left_margin_percent": 0.22,
+    "bottom_margin_percent": 0.321,
+    "url": "https://servicecenter.urbanarrow.com/en/urban-arrow-shorty-specifications"
+  },
+  {
+    "id": "e-dolly-maxdrive-600wh-dolly-bikes",
+
+    "manufacturer": "Dolly Bikes",
+    "model": "E-Dolly MaxDrive 600Wh",
+    "src": "E-Dolly_Azure-Blue_Light-Grey-19-scaled.png",
+    "bike_length_percent": 0.867,
+    "bike_length_cm": 263,
+    "left_margin_percent": 0.052000000000000005,
+    "bottom_margin_percent": 0.196,
+    "url": "https://www.dolly-bikes.com/de-dolly-bakfiets/",
+    "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "benno-remidemi",
+
+    "manufacturer": "Benno",
+    "model": "RemiDemi",
+    "src": "benno_remidemi_9d_chai_latte_evo2.png",
+    "bike_length_percent": 0.824,
+    "bike_length_cm": 171,
+    "left_margin_percent": 0.0935,
+    "bottom_margin_percent": 0.11,
+    "url": "https://bennobikes.com/e-bikes/remidemi/"
+  },
+  {
+    "id": "gravit-city-e-hase-bikes",
+    "manufacturer": "Hase Bikes",
+    "model": "Gravit City E",
+    "src": "gravit_city_e_01.png",
+    "bike_length_percent": 0.69,
+    "bike_length_cm": 224,
+    "left_margin_percent": 0.156,
+    "bottom_margin_percent": 0.068,
+    "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
+    "frame_made_in": "Germany"
+  },
+  {
+    "id": "fr8-workcycles",
+
+    "manufacturer": "Workcycles",
+    "model": "FR8",
+    "src": "WorkCycles_Fr8.png",
+    "bike_length_percent": 0.911,
+    "bike_length_cm": 185,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.115,
+    "url": "https://workcycles.com/product/workcycles-fr8-classic/",
+    "frame_made_in": "Netherlands"
+  },
+  {
+    "id": "momentum-pakyak-e-plus",
+
+    "manufacturer": "Momentum",
+    "model": "PakYak E+",
+    "src": "Pakyak-E_Color-B.png",
+    "bike_length_percent": 0.929,
+    "bike_length_cm": 202,
+    "left_margin_percent": 0.053,
+    "bottom_margin_percent": 0.055999999999999994,
+    "url": "https://www.momentum-biking.com/us/pakyak-eplus-2022"
   }
 ]

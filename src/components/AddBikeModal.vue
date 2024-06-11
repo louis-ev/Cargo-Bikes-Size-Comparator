@@ -71,7 +71,9 @@
           </div>
 
           <div class="inputField">
-            <label for="frame_made_in">{{ $t('add_bike.bike_mostly_made_in') }}</label>
+            <label for="frame_made_in">{{
+              $t('message.bike_mostly_manufactured_and_assembled')
+            }}</label>
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
             <small>
               {{ $t('add_bike.if_that_information_is_officially_available') }}
@@ -131,7 +133,7 @@
             <li>
               {{ $t('add_bike.by_mail') }}
               <a
-                :href="`mailto:hello@louiseveillard.com?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0AHello,%0D%0A%0D%0A'}`"
+                :href="`mailto:hello@louiseveillard.com?subject=bike comparator / new bike to add&body=${JSON.stringify(new_bike_recap, null, 2) + '%0D%0A%0D%0A---%0D%0A%0D%0A(you can write something here),%0D%0A%0D%0A'}`"
               >
                 hello@louiseveillard.com
               </a>
@@ -309,6 +311,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 10000;
   // top: 0;
   // left: 0;
   padding: 2rem;

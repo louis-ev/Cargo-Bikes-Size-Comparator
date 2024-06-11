@@ -6,6 +6,8 @@
         <LangSelect class="_lang_select" />
       </div>
 
+      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
+
       <div class="_search">
         <input type="search" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
       </div>
@@ -24,7 +26,11 @@
       <template v-else>
         <small class="_infos">
           <template v-if="enabled_bikes.length === 0">
-            {{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}
+            {{
+              $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+                count: bikes.length
+              })
+            }}
           </template>
           <template v-else>
             <span>
@@ -66,10 +72,11 @@
           />
           <datalist id="grid_step_datalist">
             <option value="1" label="1" />
+            <option value="5" label="5" />
             <option value="10" label="10" />
             <option value="20" label="20" />
             <option value="50" label="50" />
-            <option value="75" label="75" />
+            <!-- <option value="75" label="75" /> -->
             <option value="100" label="100" />
           </datalist>
         </div>
@@ -99,7 +106,7 @@
 </template>
 <script>
 import LangSelect from './LangSelect.vue'
-import BikesList from './BikesList.vue'
+import BikesList from './BikesListInSidebar.vue'
 import Credits from './Credits.vue'
 
 export default {
@@ -142,8 +149,10 @@ export default {
   },
   methods: {
     resetBikes() {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+      delete query.bikes
       this.$router.push({
-        query: {}
+        query
       })
     }
   }
@@ -152,18 +161,36 @@ export default {
 <style lang="scss" scoped>
 ._sidebar {
   position: relative;
-  flex: 0 0 auto;
   width: 320px;
+  height: 100%;
   background-color: var(--color-background);
 
   display: flex;
   flex-flow: column nowrap;
 }
+._closeSidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  background-color: var(--color-text);
+  z-index: 1000;
+  // background-color: var(--color-text-secondary);
+  color: white;
+
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
 ._sidebar--content {
   overflow-y: auto;
   padding: 1rem;
   padding-top: 0.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   flex: 1 1 auto;
 }
 ._addMissingBike {
@@ -249,8 +276,9 @@ h1 {
   align-items: center;
   padding: 1rem;
   // background-color: var(--color-accent);
-  background-color: white;
-  border-top: 1px solid var(--color-text-secondary);
+  // background-color: white
+  box-shadow: 0 0 10px 0 var(--color-gray-light);
+  // border-top: 1px solid var(--color-text-secondary);
 
   button {
     // background-color: var(--color-accent);
