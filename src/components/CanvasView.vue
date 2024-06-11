@@ -198,7 +198,7 @@ export default {
         (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
 
       if (this.show_human_silhouette)
-        canvas.height = Math.max(canvas.height, 220 * each_px_measures_in_cm)
+        canvas.height = Math.max(canvas.height, 200 * each_px_measures_in_cm)
 
       this.drawBackground(ctx, canvas)
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
@@ -340,17 +340,17 @@ export default {
       // silhouette_img.src = './Human_(silhouettes).svg'
       // await silhouette_img.decode()
       const img_ratio = silhouette_img.width / silhouette_img.height
-      const silhouette_height = 225 * each_px_measures_in_cm
+      const silhouette_height = 185 * each_px_measures_in_cm
       const silhouette_width = silhouette_height * img_ratio
 
-      const draw_x = -50
-      let draw_y = canvas.height - padding - silhouette_height
+      const draw_x = 50
+      let draw_y = canvas.height - padding + 2 * each_px_measures_in_cm
 
-      draw_y += 110
+      // draw_y += 110
 
       // ctx.globalCompositeOperation = 'soft-light'
-      ctx.globalAlpha = 0.5
-      ctx.drawImage(silhouette_img, draw_x, draw_y, silhouette_width, silhouette_height)
+      ctx.globalAlpha = 0.2
+      ctx.drawImage(silhouette_img, draw_x, draw_y, silhouette_width, -silhouette_height)
       ctx.globalAlpha = 1
       return
     },
