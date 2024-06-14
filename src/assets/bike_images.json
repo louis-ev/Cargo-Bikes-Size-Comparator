@@ -851,5 +851,16 @@
     "left_margin_percent": 0.13,
     "bottom_margin_percent": 0.14400000000000002,
     "url": "https://www.larryvsharry.com/da/bullitx-build"
+  },
+  {
+    "id": "46er-benno",
+    "manufacturer": "Benno",
+    "model": "46er",
+    "src": "46er.png",
+    "bike_length_percent": 0.959,
+    "bike_length_cm": 187,
+    "left_margin_percent": 0.027000000000000003,
+    "bottom_margin_percent": 0.205,
+    "url": "https://bennobikes.com/e-bikes/46er/"
   }
 ]
