@@ -812,7 +812,7 @@
     "bike_length_percent": 0.929,
     "bike_length_cm": 202,
     "left_margin_percent": 0.053,
-    "bottom_margin_percent": 0.055999999999999994,
+    "bottom_margin_percent": 0.056,
     "url": "https://www.momentum-biking.com/us/pakyak-eplus-2022"
   },
   {
@@ -821,7 +821,7 @@
     "manufacturer": "Yuba",
     "model": "Spicy Curry",
     "src": "spicycurry.png",
-    "bike_length_percent": 0.9060000000000001,
+    "bike_length_percent": 0.906,
     "bike_length_cm": 210,
     "left_margin_percent": 0.073,
     "bottom_margin_percent": 0.079,
@@ -833,7 +833,7 @@
     "manufacturer": "Hazay",
     "model": "Family",
     "src": "hazay-family.png",
-    "bike_length_percent": 0.9089999999999999,
+    "bike_length_percent": 0.909,
     "bike_length_cm": 250,
     "left_margin_percent": 0.047,
     "bottom_margin_percent": 0.228,
@@ -849,7 +849,7 @@
     "bike_length_percent": 0.79,
     "bike_length_cm": 265,
     "left_margin_percent": 0.13,
-    "bottom_margin_percent": 0.14400000000000002,
+    "bottom_margin_percent": 0.144,
     "url": "https://www.larryvsharry.com/da/bullitx-build"
   },
   {
@@ -859,8 +859,20 @@
     "src": "46er.png",
     "bike_length_percent": 0.959,
     "bike_length_cm": 187,
-    "left_margin_percent": 0.027000000000000003,
+    "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.205,
     "url": "https://bennobikes.com/e-bikes/46er/"
+  },
+  {
+    "id": "cargobike-elian-cycles",
+    "manufacturer": "Elian Cycles",
+    "model": "Cargobike",
+    "src": "eliancycles.png",
+    "bike_length_percent": 0.744,
+    "bike_length_cm": 235,
+    "left_margin_percent": 0.116,
+    "bottom_margin_percent": 0.177,
+    "url": "https://www.eliancycles.com/",
+    "frame_made_in": "Netherlands"
   }
 ]
