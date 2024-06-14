@@ -85,7 +85,7 @@
     "id_in_csv": "Bullitt/",
 
     "manufacturer": "Larry vs Harry",
-    "model": "Bullit",
+    "model": "Bullitt",
     "src": "bullitt_2020_0046.png",
     "bike_length_percent": 0.735,
     "bike_length_cm": 243,
@@ -839,5 +839,17 @@
     "bottom_margin_percent": 0.228,
     "url": "https://hazaybikes.com/en/product/hazay-family/",
     "frame_made_in": "Poland"
+  },
+  {
+    "id": "bullitt-x-larry-vs-harry",
+
+    "manufacturer": "Larry vs Harry",
+    "model": "Bullitt X",
+    "src": "majortom_x_sideview.png",
+    "bike_length_percent": 0.79,
+    "bike_length_cm": 265,
+    "left_margin_percent": 0.13,
+    "bottom_margin_percent": 0.14400000000000002,
+    "url": "https://www.larryvsharry.com/da/bullitx-build"
   }
 ]
