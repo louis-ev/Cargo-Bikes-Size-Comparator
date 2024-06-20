@@ -209,7 +209,7 @@
     "left_margin_percent": 0.041,
     "bottom_margin_percent": 0.015,
     "url": "https://www.lepetitporteur.com/",
-    "frame_material": "Acier CrMo 4130"
+    "frame_material": "CrMo"
   },
   {
     "id": "lepetitporteur-longtail",
@@ -223,7 +223,7 @@
     "left_margin_percent": 0.011,
     "bottom_margin_percent": 0.003,
     "url": "https://www.lepetitporteur.com/en/compact-and-affordable-cargo-bike/",
-    "frame_material": "Acier CrMo"
+    "frame_material": "CrMo"
   },
   {
     "id": "nakamura",
@@ -341,7 +341,9 @@
     "bike_length_cm": 210,
     "left_margin_percent": 0.08897,
     "bottom_margin_percent": 0.23061,
-    "url": "https://www.oklo.bike/produit/velo-evo-longtail/"
+    "url": "https://www.oklo.bike/produit/velo-evo-longtail/",
+    "frame_made_in": "europe",
+    "frame_material": "CrMo"
   },
   {
     "id": "etnicycles-oleron",
@@ -899,5 +901,18 @@
     "left_margin_percent": 0.129,
     "bottom_margin_percent": 0.212,
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-famille-f900e-taupe/_/R-p-329211"
+  },
+  {
+    "id": "g4e-douze-cycles",
+    "id_in_csv": "Douze/G4",
+
+    "manufacturer": "Douze Cycles",
+    "model": "G4e",
+    "src": "douze-g4e.png",
+    "bike_length_percent": 0.953,
+    "bike_length_cm": 271,
+    "left_margin_percent": 0.024,
+    "bottom_margin_percent": 0.121,
+    "url": "https://www.douze-cycles.com"
   }
 ]
