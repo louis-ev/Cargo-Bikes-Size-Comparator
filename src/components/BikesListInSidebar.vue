@@ -1,6 +1,13 @@
 <template>
   <transition-group tag="div" class="_bikeList" name="list">
-    <div class="_item" v-for="bike in bikes" :key="bike.id" :data-active="bikeIsEnabled(bike.id)">
+    <div
+      class="_item"
+      v-for="bike in bikes"
+      :key="bike.id"
+      :data-active="bikeIsEnabled(bike.id)"
+      @mouseenter="showBikePreview(bike.id)"
+      @mouseleave="hideBikePreview"
+    >
       <label :for="bike.id" class="_itemTop">
         <input
           type="checkbox"
@@ -90,7 +97,9 @@ export default {
   components: {},
   data() {
     return {
-      bike_images_thumbs_urls: []
+      bike_images_thumbs_urls: [],
+      bike_preview_id: null,
+      hideBikePreviewTimeout: null
     }
   },
   async created() {},
@@ -128,6 +137,15 @@ export default {
         query
       })
     },
+    showBikePreview(id) {
+      this.$preview_bike.id = id
+      clearTimeout(this.hideBikePreviewTimeout)
+    },
+    hideBikePreview() {
+      this.hideBikePreviewTimeout = setTimeout(() => {
+        this.$preview_bike.id = null
+      }, 100)
+    },
     bikeIsEnabled(id) {
       return this.enabled_bikes.some((i) => i.id === id)
     },
@@ -161,7 +179,7 @@ export default {
 ._bikeList {
   display: flex;
   flex-flow: column nowrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
   padding: 0.25rem 0;
 }
 

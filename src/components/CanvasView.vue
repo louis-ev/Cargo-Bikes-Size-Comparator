@@ -7,6 +7,14 @@
         })
       }}</span>
     </div> -->
+
+    <transition name="showPreview" mode="in-out">
+      <div v-if="preview_bike" :key="preview_bike" class="_previewBikeWrapper">
+        <div class="_previewBikeOverlay" />
+        <img :key="preview_bike" :src="preview_bike" />
+      </div>
+    </transition>
+
     <div class="_canvasOptions">
       <button class="_openSidebar" v-if="!show_sidebar" @click="$emit('openSidebar')">
         <svg
@@ -138,7 +146,7 @@ export default {
     grid_step() {
       this.showBikes()
     },
-    enabled_bikes: {
+    reversed_sorted_enabled_bikes: {
       handler() {
         this.showBikes()
       },
@@ -157,11 +165,19 @@ export default {
           return acc
         }, [])
         .sort((a, b) => {
+          if (this.$preview_bike.id === a.id) return 1
+          if (this.$preview_bike.id === b.id) return -1
           return b?.bike_length_cm - a?.bike_length_cm
         })
     },
     reversed_sorted_enabled_bikes() {
       return this.sorted_enabled_bikes.slice().reverse()
+    },
+    preview_bike() {
+      if (!this.$preview_bike.id) return
+      if (this.enabled_bikes.find((bike) => bike.id === this.$preview_bike.id)) return
+      const previewed_bike = this.bikes.find((bike) => bike.id === this.$preview_bike.id)
+      return this.getBikeFullImage(previewed_bike)
     }
   },
   methods: {
@@ -542,5 +558,30 @@ canvas {
   height: 2rem;
   line-height: 0;
   border-radius: 0.5rem;
+}
+
+._previewBikeWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  ._previewBikeOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(238, 238, 238, 0.95);
+    backdrop-filter: blur(2px);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: scale-down;
+  }
 }
 </style>

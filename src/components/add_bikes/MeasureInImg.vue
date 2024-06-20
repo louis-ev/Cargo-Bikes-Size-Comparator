@@ -104,8 +104,6 @@ export default {
         this.status = 'failed_to_load_image'
       }
 
-      debugger
-
       if (this.local_bike_image) {
         img.src = URL.createObjectURL(this.local_bike_image)
       } else {

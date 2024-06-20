@@ -126,4 +126,14 @@ input {
 .slideup-leave-to {
   transform: translateY(100%);
 }
+
+.showPreview-enter-active,
+.showPreview-leave-active {
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.showPreview-enter-from,
+.showPreview-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
 </style>
