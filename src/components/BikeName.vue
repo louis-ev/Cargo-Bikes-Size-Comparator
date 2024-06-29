@@ -1,7 +1,7 @@
 <template>
   <div v-if="bike" class="_bikeName">
     <strong>{{ bike.model || bike.manufacturer }}</strong>
-    <span class="_flag" v-if="bike.frame_made_in">
+    <span class="_flag" :title="bike.frame_made_in" v-if="bike.frame_made_in">
       {{ unicodeFlag(bike.frame_made_in) }}
     </span>
     <template v-if="bike.manufacturer && bike.model">
@@ -45,6 +45,7 @@ export default {
       country = country.toLowerCase()
       if (country === 'usa') return '🇺🇸'
       else if (country === 'germany') return '🇩🇪'
+      else if (country === 'hungary') return '🇭🇺'
       else if (country === 'france') return '🇫🇷'
       else if (country === 'belgium') return '🇧🇪'
       else if (country === 'italy') return '🇮🇹'

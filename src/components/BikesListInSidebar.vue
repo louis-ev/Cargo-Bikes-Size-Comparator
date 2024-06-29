@@ -37,12 +37,10 @@
             $t('message.bike_mostly_manufactured_and_assembled') +
             ' ' +
             $t('message.in_' + bike.frame_made_in.toLowerCase())
-          }}
+          }}.
         </div>
 
-        <div v-if="bike.comment_en">
-          {{ bike.comment_en }}
-        </div>
+        <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
         <div class="_adjust">
           <small>
