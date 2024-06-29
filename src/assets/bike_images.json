@@ -37,6 +37,7 @@
     "bike_length_cm": 209,
     "left_margin_percent": 0.033,
     "bottom_margin_percent": 0.045,
+    "frame_made_in": "portugal",
 
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
@@ -51,7 +52,8 @@
     "bike_length_cm": 264.5,
     "left_margin_percent": 0.045,
     "bottom_margin_percent": 0.02,
-    "url": "https://www.r-m.de/en-en/bikes/load-75"
+    "url": "https://www.r-m.de/en-en/bikes/load-75",
+    "frame_made_in": "portugal"
   },
   {
     "id": "load60-rm",
@@ -64,7 +66,8 @@
     "bike_length_cm": 248,
     "left_margin_percent": 0.093,
     "bottom_margin_percent": 0.023,
-    "url": "https://www.r-m.de/en-en/bikes/load-60"
+    "url": "https://www.r-m.de/en-en/bikes/load-60",
+    "frame_made_in": "portugal"
   },
   {
     "id": "cargo-verso",
