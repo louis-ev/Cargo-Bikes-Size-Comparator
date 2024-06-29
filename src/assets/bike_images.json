@@ -914,5 +914,18 @@
     "left_margin_percent": 0.024,
     "bottom_margin_percent": 0.121,
     "url": "https://www.douze-cycles.com"
+  },
+  {
+    "id": "fs200-life-family-plus-ca-go",
+
+    "manufacturer": "Ca Go",
+    "model": "FS200 Life Family Plus",
+    "src": "01_fs200life-family-plus_render_right.png",
+    "bike_length_percent": 0.813,
+    "bike_length_cm": 270,
+    "left_margin_percent": 0.097,
+    "bottom_margin_percent": 0.202,
+    "url": "https://www.cagobike.com/en/fs-life",
+    "frame_made_in": "Germany"
   }
 ]
