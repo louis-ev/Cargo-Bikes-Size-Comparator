@@ -941,5 +941,34 @@
     "url": "https://bikefriday.com/product/bike-friday-haul-a-day-elite-cargo-bike/",
     "frame_made_in": "usa",
     "comment_en": "This bike is also sold as a 72\" (183cm) version with a shorter frame."
+  },
+  {
+    "id": "cargo-convercycle",
+
+    "manufacturer": "Convercycle",
+    "model": "Electric - Cargo Mode",
+    "src": "freisteller_ausgeklappt_ebike.png",
+    "bike_length_percent": 0.924,
+    "bike_length_cm": 275,
+    "left_margin_percent": 0.036,
+    "bottom_margin_percent": 0.11,
+    "url": "https://www.convercycle.com/en/convercycle-electric.html",
+    "frame_made_in": "Hungary",
+    "comment_en": "See the bike in normal mode by searching for <i>Convercycle</i>."
+  },
+  {
+    "id": "convercycle",
+
+    "manufacturer": "Convercycle",
+    "model": "Electric - Normal Mode",
+    "src": "friesteller_ebike_shopseite.png",
+    "bike_length_percent": 0.848,
+    "bike_length_cm": 206,
+    "left_margin_percent": 0.057,
+    "bottom_margin_percent": 0.079,
+
+    "url": "https://www.convercycle.com/en/convercycle-electric.html",
+    "frame_made_in": "Hungary",
+    "comment_en": "See the bike in cargo mode by searching for <i>Convercycle</i>."
   }
 ]
