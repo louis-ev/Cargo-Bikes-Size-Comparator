@@ -973,5 +973,18 @@
     "url": "https://www.convercycle.com/en/convercycle-electric.html",
     "frame_made_in": "Hungary",
     "comment_en": "See the bike in cargo mode by searching for <i>Convercycle</i>."
+  },
+  {
+    "id": "familynext-urban-arrow",
+
+    "manufacturer": "Urban Arrow",
+    "model": "FamilyNext",
+    "src": "UA_FAMILYNEXT_CARGOLINE_GROEN.png",
+    "bike_length_percent": 0.92,
+    "bike_length_cm": 260,
+    "left_margin_percent": 0.05,
+    "bottom_margin_percent": 0.334,
+    "url": "https://urbanarrow.com/family-bikes/familynext/",
+    "frame_made_in": ""
   }
 ]
