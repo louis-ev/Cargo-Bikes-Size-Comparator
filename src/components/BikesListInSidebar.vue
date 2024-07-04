@@ -73,8 +73,22 @@
           <small v-html="getMeasurements(bike)" />
           <br />
         </div>
+
+        <div v-if="bike.additional_links" class="_additionalLinks">
+          <a
+            v-for="(link, index) in bike.additional_links"
+            :href="link.url"
+            target="_blank"
+            :key="index"
+          >
+            <span>&#8594;</span> {{ link.text }}
+          </a>
+        </div>
+
         <div class="_source">
-          <a :href="bike.url" target="_blank"> <span>&#8594;</span> {{ $t('message.website') }}</a>
+          <a :href="bike.url" target="_blank">
+            <span>&#8594;</span> {{ $t('message.open_product_page') }}</a
+          >
         </div>
       </div>
     </div>
