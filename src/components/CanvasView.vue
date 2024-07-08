@@ -70,8 +70,10 @@
           @click="unselectBike(bike.id)"
         >
           <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
-          <BikeName :bike="bike" :show_length="false" />
-          <span class="_removeBtn">–</span>
+          <span class="_activeBike--name">
+            <BikeName :bike="bike" :show_length="false" />
+          </span>
+          <span class="_activeBike--remove">–</span>
         </button>
       </transition-group>
     </div>
@@ -478,7 +480,7 @@ canvas {
 // }
 
 ._activeBike {
-  flex: 0 0 25ch;
+  flex: 0 0 20ch;
   height: auto;
   border-radius: 0.5rem;
 
@@ -601,11 +603,23 @@ canvas {
   }
 }
 
-._removeBtn {
+._activeBike--name {
+  flex: 1 1 0;
+  overflow: hidden;
+
+  :deep(> *) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+._activeBike--remove {
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
   padding-bottom: 0.05rem;
+  flex: 0 0 auto;
 
   display: flex;
   align-items: center;
