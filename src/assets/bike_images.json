@@ -995,6 +995,7 @@
   },
   {
     "id": "jean-fourche-jean-fourche",
+
     "manufacturer": "Jean Fourche",
     "model": "Jean Fourche",
     "src": "jean-fourche.png",
@@ -1005,5 +1006,18 @@
     "url": "https://jeanfourche.fr/",
     "frame_made_in": "portugal",
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France."
+  },
+  {
+    "id": "rfa-xtracycle",
+
+    "manufacturer": "Xtracycle",
+    "model": "RFA",
+    "src": "RFA-xtracycles.png",
+    "bike_length_percent": 0.789,
+    "bike_length_cm": 185.4,
+    "left_margin_percent": 0.118,
+    "bottom_margin_percent": 0.148,
+    "url": "https://xtracycle.com/products/rfa-2?variant=44062991319336",
+    "frame_made_in": ""
   }
 ]
