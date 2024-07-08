@@ -67,9 +67,11 @@
           :key="bike.id"
           :data-showcolor="canvas_image_style_outline"
           :style="{ '--bike-color': `#${bike.color}` }"
+          @click="unselectBike(bike.id)"
         >
           <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
           <BikeName :bike="bike" :show_length="false" />
+          <span class="_removeBtn">–</span>
         </button>
       </transition-group>
     </div>
@@ -377,6 +379,17 @@ export default {
         query
       })
     },
+    async unselectBike(bike_id) {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+
+      const bikes_ids = query.bikes ? JSON.parse(query.bikes) : []
+      const new_bikes_ids = bikes_ids.filter((id) => id !== bike_id)
+      query.bikes = JSON.stringify(new_bikes_ids)
+
+      this.$router.push({
+        query
+      })
+    },
     downloadCanvas() {
       const canvas = this.$refs.bikes
       const img = canvas.toDataURL()
@@ -446,6 +459,9 @@ canvas {
 
   > * {
     pointer-events: auto;
+
+    display: flex;
+    align-items: center;
   }
 }
 // ._activeBikes {
@@ -466,7 +482,7 @@ canvas {
   height: auto;
   border-radius: 0.5rem;
 
-  padding: 0.12rem 0.5rem 0.25rem;
+  padding: 0.12rem 0.75rem 0.25rem;
   // background-color: var(--color-accent);
   background-color: white;
   // backdrop-filter: blur(5px);
@@ -476,7 +492,7 @@ canvas {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.5rem;
 
   white-space: nowrap;
@@ -494,7 +510,7 @@ canvas {
   // align-items: center;
   // justify-content: center;
   white-space: nowrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
   pointer-events: auto;
   background-color: var(--color-text);
   // background-color: #fff;
@@ -502,7 +518,7 @@ canvas {
   color: white;
   // border: 2px solid var(--color-text);
   border-radius: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   cursor: pointer;
   font-weight: 500;
 
@@ -583,5 +599,21 @@ canvas {
     height: 100%;
     object-fit: scale-down;
   }
+}
+
+._removeBtn {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  padding-bottom: 0.05rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid var(--color-text);
+  // background-color: var(--color-text);
+  // color: var(--color-background);
 }
 </style>
