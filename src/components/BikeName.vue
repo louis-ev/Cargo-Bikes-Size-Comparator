@@ -60,7 +60,7 @@ export default {
       return
     },
     getLengthInInches(length_cm) {
-      return (length_cm / 2.54).toFixed(1)
+      return Number((length_cm / 2.54).toFixed(1))
     }
   }
 }
