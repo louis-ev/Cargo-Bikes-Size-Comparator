@@ -1032,5 +1032,18 @@
     "bottom_margin_percent": 0.318,
     "url": "https://www.cagobike.com/en/cs",
     "frame_made_in": "turkey"
+  },
+  {
+    "id": "t1-pro-tarran",
+
+    "manufacturer": "TARRAN",
+    "model": "T1 Pro",
+    "src": "tarran-t1.png",
+    "bike_length_percent": 0.809,
+    "bike_length_cm": 226,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.071,
+    "url": "https://tarranbikes.com/pages/t1-pro-e-cargo-bike",
+    "frame_made_in": ""
   }
 ]
