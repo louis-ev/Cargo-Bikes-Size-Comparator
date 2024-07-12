@@ -47,6 +47,7 @@ export default {
       if (country === 'usa') return '🇺🇸'
       else if (country === 'germany') return '🇩🇪'
       else if (country === 'hungary') return '🇭🇺'
+      else if (country === 'denmark') return '🇩🇰'
       else if (country === 'portugal') return '🇵🇹'
       else if (country === 'turkey') return '🇹🇷'
       else if (country === 'france') return '🇫🇷'
