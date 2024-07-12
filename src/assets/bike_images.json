@@ -1045,5 +1045,17 @@
     "bottom_margin_percent": 0.071,
     "url": "https://tarranbikes.com/pages/t1-pro-e-cargo-bike",
     "frame_made_in": ""
+  },
+  {
+    "id": "yuvy-2-elwing",
+
+    "manufacturer": "Elwing",
+    "model": "Yuvy 2",
+    "src": "elwing-yuvy-2.png",
+    "bike_length_percent": 0.92,
+    "bike_length_cm": 180,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.2,
+    "url": "https://elwing.co/products/yuvy-2-compact-cargo"
   }
 ]
