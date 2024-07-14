@@ -1074,5 +1074,17 @@
     "bottom_margin_percent": 0.075,
     "url": "https://www.laplandar.com/",
     "frame_made_in": "Denmark"
+  },
+  {
+    "id": "v.1-car.los",
+    "manufacturer": "CAR.LOS",
+    "model": "V.1",
+    "src": "CARLOS-V1-Lavendel-freigestellt-2048x1173.png",
+    "bike_length_percent": 0.996,
+    "bike_length_cm": 201,
+    "left_margin_percent": 0.004,
+    "bottom_margin_percent": 0.034,
+    "url": "https://carlosmobility.com/carlos-v/",
+    "frame_made_in": ""
   }
 ]
