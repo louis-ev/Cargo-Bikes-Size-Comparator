@@ -38,6 +38,7 @@
     "left_margin_percent": 0.033,
     "bottom_margin_percent": 0.045,
     "frame_made_in": "portugal",
+    "show_frame_origin": false,
 
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
@@ -53,7 +54,8 @@
     "left_margin_percent": 0.045,
     "bottom_margin_percent": 0.02,
     "url": "https://www.r-m.de/en-en/bikes/load-75",
-    "frame_made_in": "portugal"
+    "frame_made_in": "portugal",
+    "show_frame_origin": false
   },
   {
     "id": "load60-rm",
@@ -67,7 +69,8 @@
     "left_margin_percent": 0.093,
     "bottom_margin_percent": 0.023,
     "url": "https://www.r-m.de/en-en/bikes/load-60",
-    "frame_made_in": "portugal"
+    "frame_made_in": "portugal",
+    "show_frame_origin": false
   },
   {
     "id": "cargo-verso",
@@ -1005,6 +1008,7 @@
     "bottom_margin_percent": 0.11,
     "url": "https://jeanfourche.fr/",
     "frame_made_in": "portugal",
+    "show_frame_origin": false,
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France."
   },
   {

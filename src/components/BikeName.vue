@@ -1,10 +1,13 @@
 <template>
   <div v-if="bike" class="_bikeName">
     <strong>{{ bike.model || bike.manufacturer }}</strong>
-    <!-- disable flag for now, see https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/4#issuecomment-2210529797 -->
-    <!-- <span class="_flag" :title="bike.frame_made_in" v-if="bike.frame_made_in">
+    <span
+      class="_flag"
+      :title="bike.frame_made_in"
+      v-if="bike.frame_made_in && bike.show_frame_origin !== false"
+    >
       {{ unicodeFlag(bike.frame_made_in) }}
-    </span> -->
+    </span>
     <template v-if="bike.manufacturer && bike.model">
       <small> – {{ bike.manufacturer }} </small>
     </template>
