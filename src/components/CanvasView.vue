@@ -589,15 +589,15 @@ canvas {
   ._previewBikeOverlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(238, 238, 238, 0.95);
-    backdrop-filter: blur(2px);
+    background-color: rgba(238, 238, 238, 0.35);
+    // backdrop-filter: blur(2px);
   }
 
   img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 60%;
     height: 100%;
     object-fit: scale-down;
   }
