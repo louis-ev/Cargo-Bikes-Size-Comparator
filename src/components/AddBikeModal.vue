@@ -197,7 +197,7 @@
         </div>
       </transition> -->
     </div>
-    <button autofocus>{{ $t('add_bike.close') }}</button>
+    <button type="button" @click="$emit('close')">{{ $t('add_bike.close') }}</button>
   </dialog>
 </template>
 <script>
