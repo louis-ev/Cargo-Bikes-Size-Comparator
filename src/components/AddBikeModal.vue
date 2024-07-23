@@ -316,7 +316,7 @@ export default {
   // left: 0;
   padding: 2rem;
   // background-color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(155, 155, 155, 0.9);
+  background-color: rgba(210, 210, 210, 0.9);
   backdrop-filter: blur(10px);
 
   border: none;
