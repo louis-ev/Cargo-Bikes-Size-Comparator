@@ -31,70 +31,18 @@
         </div>
       </label>
 
-      <div class="_itemBottom" v-if="bikeIsEnabled(bike.id)">
-        <div class="_madeIn" v-if="bike.frame_made_in">
-          {{
-            $t('message.bike_mostly_manufactured_and_assembled') +
-            ' ' +
-            $t('message.in_' + bike.frame_made_in.toLowerCase())
-          }}.
-        </div>
-
-        <div v-if="bike.comment_en" v-html="bike.comment_en" />
-
-        <div class="_adjust">
-          <small>
-            <div class="_adjustInput">
-              <label>Position</label>
-              <input
-                type="range"
-                min="-50"
-                max="50"
-                step="0.1"
-                :list="'steplist-' + bike.id"
-                :value="bikes_position_adjustments[bike.id]"
-                @input="updateBikePosition(bike.id, $event.target.value)"
-              />
-              <!-- // disabled because snapping prevents fine tuning -->
-              <!-- <datalist :id="'steplist-' + item.id">
-              <option>0</option>
-            </datalist> -->
-
-              <div class="_resetPosition" v-if="bikes_position_adjustments.hasOwnProperty(bike.id)">
-                <button type="button" class="noStyle" @click="resetBikePosition(bike.id)">
-                  Reset
-                </button>
-              </div>
-            </div>
-          </small>
-        </div>
-
-        <div class="_measurements" v-if="bike._measurements">
-          <small v-html="getMeasurements(bike)" />
-          <br />
-        </div>
-
-        <div v-if="bike.additional_links" class="_additionalLinks">
-          <a
-            v-for="(link, index) in bike.additional_links"
-            :href="link.url"
-            target="_blank"
-            :key="index"
-          >
-            <span>&#8594;</span> {{ link.text }}
-          </a>
-        </div>
-
-        <div class="_source">
-          <a :href="bike.url" target="_blank">
-            <span>&#8594;</span> {{ $t('message.open_product_page') }}</a
-          >
-        </div>
-      </div>
+      <BikeDetails
+        v-if="bikeIsEnabled(bike.id)"
+        :bike="bike"
+        :bikes_position_adjustments="bikes_position_adjustments"
+        @update:bikes_position_adjustments="$emit('update:bikes_position_adjustments', $event)"
+      />
     </div>
   </transition-group>
 </template>
 <script>
+import BikeDetails from '@/components/BikeDetails.vue'
+
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
   query: { format: 'webp', w: 80 }
 })
@@ -106,7 +54,9 @@ export default {
     canvas_image_style_outline: Boolean,
     bikes_position_adjustments: Object
   },
-  components: {},
+  components: {
+    BikeDetails
+  },
   data() {
     return {
       bike_images_thumbs_urls: [],
@@ -165,24 +115,6 @@ export default {
       const thumb = this.bike_images_thumbs_urls.find((i) => i.original_filename === bike.src)
       if (!thumb) return
       return thumb.url
-    },
-    getMeasurements(bike) {
-      return Object.entries(bike._measurements)
-        .reduce((acc, [k, v]) => {
-          if (k && k !== '\r' && v && v !== '\r') acc.push(`${k}: ${v}`)
-          return acc
-        }, [])
-        .join('<br>')
-    },
-    resetBikePosition(id) {
-      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
-      delete bikes_position_adjustments[id]
-      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
-    },
-    updateBikePosition(id, value) {
-      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
-      bikes_position_adjustments[id] = +value
-      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
     }
   }
 }

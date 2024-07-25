@@ -301,7 +301,17 @@
     "bike_length_cm": 197,
     "left_margin_percent": 0.059,
     "bottom_margin_percent": 0.046,
-    "url": "https://www.r-m.de/en-en/bikes/multicharger2-mixte/"
+    "url": "https://www.r-m.de/en-en/bikes/multicharger2-mixte/",
+    "insitu": [
+      {
+        "from": "Stéphane",
+        "src": "rm-multicharger.jpeg"
+      },
+      {
+        "from": "Stéphane",
+        "src": "rm-multicharger-2.jpeg"
+      }
+    ]
   },
   {
     "id": "multitinker",

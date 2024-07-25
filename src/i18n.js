@@ -22,6 +22,8 @@ const i18n = createI18n({
         bike_selected: 'bike selected',
         bikes_selected: 'bikes selected',
         reset: 'Reset',
+        position: 'Position',
+        in_situ: 'In Situ',
         missing_length_information: 'Missing length information',
         advanced_options: 'Advanced options',
         grid_step: 'Grid step',
@@ -32,6 +34,7 @@ const i18n = createI18n({
         report_errors_and_bugs: 'Report errors and bugs / send feedbacks / contribute bikes',
         on_Github: 'on Github',
         or: 'or',
+        picture_from: 'Picture sent by',
         via_email: 'via email',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'No tracking cookies, no ads, fully RGPD-compliant. Website hosted in France.',
@@ -62,7 +65,8 @@ const i18n = createI18n({
         right: 'Right',
         bottom: 'Bottom',
         download_comparison: 'Download comparison',
-        show_human_silhouette: 'Show human silhouette'
+        show_human_silhouette: 'Show human silhouette',
+        close: 'close'
       },
       add_bike: {
         title: 'Add a bike',
@@ -79,7 +83,6 @@ const i18n = createI18n({
         next: 'next',
         send: 'send',
         add_another_bike: 'add another bike',
-        close: 'close',
         model: 'Model',
         manufacturer: 'Manufacturer',
         total_bike_length: 'Total bike length',
@@ -145,11 +148,14 @@ const i18n = createI18n({
         read_the_guide: 'lire la documentation',
         or_ask_me: 'ou me demander',
         via_email: 'via email',
+        picture_from: 'Image envoyée par',
         click_on_bikes_in_this_list_to_compare_their_size:
           'Cliquez sur un de ces {count} vélos pour commencer',
         bike_selected: 'vélo sélectionné',
         bikes_selected: 'vélos sélectionnés',
         reset: 'Réinitialiser',
+        position: 'Position',
+        in_situ: 'In Situ',
         missing_length_information: 'Information de longueur manquante',
 
         advanced_options: 'Options avancées',
@@ -190,7 +196,8 @@ const i18n = createI18n({
         right: 'Droite',
         bottom: 'Bas',
         download_comparison: 'Télécharger la comparaison',
-        show_human_silhouette: 'Afficher une silhouette humaine'
+        show_human_silhouette: 'Afficher une silhouette humaine',
+        close: 'fermer'
       },
       add_bike: {
         title: 'Ajouter un vélo',
@@ -206,7 +213,6 @@ const i18n = createI18n({
         next: 'suivant',
         send: 'envoyer',
         add_another_bike: 'ajouter un autre vélo',
-        close: 'fermer',
         model: 'Modèle',
         manufacturer: 'Fabricant',
         total_bike_length: 'Longueur du vélo',

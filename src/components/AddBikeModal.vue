@@ -1,8 +1,11 @@
 <template>
-  <dialog class="_addBikeModal" open @click.self="$emit('close')">
-    <div class="_addBikeModalContent" :data-step="step">
-      <h1>{{ $t('add_bike.title') }}</h1>
-
+  <BasicModal :size="modal_size">
+    <template v-slot:header>
+      <div>
+        {{ $t('add_bike.title') }}
+      </div>
+    </template>
+    <template v-slot:content>
       <transition name="fade" mode="out-in">
         <div class="_step" v-if="step === 0">
           <h2>{{ $t('add_bike.how_to_add') }}</h2>
@@ -196,11 +199,11 @@
           </button>
         </div>
       </transition> -->
-    </div>
-    <button type="button" @click="$emit('close')">{{ $t('add_bike.close') }}</button>
-  </dialog>
+    </template>
+  </BasicModal>
 </template>
 <script>
+import BasicModal from '@/components/BasicModal.vue'
 import MeasureInImg from './add_bikes/MeasureInImg.vue'
 
 export default {
@@ -208,7 +211,8 @@ export default {
     bikes: Array
   },
   components: {
-    MeasureInImg
+    MeasureInImg,
+    BasicModal
   },
   data() {
     return {
@@ -279,6 +283,9 @@ export default {
         url,
         frame_made_in
       }
+    },
+    modal_size() {
+      return this.step === 2 ? 'large' : 'medium'
     }
   },
   methods: {
@@ -307,59 +314,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-._addBikeModal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 10000;
-  // top: 0;
-  // left: 0;
-  padding: 2rem;
-  // background-color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(210, 210, 210, 0.9);
-  backdrop-filter: blur(10px);
-
-  border: none;
-}
 ._addBikeModalContent {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
-  border-radius: 0.5rem;
-  background: var(--color-background);
-  overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  transition: all 0.5s ease-in-out;
-
-  &[data-step='2'] {
-    max-width: 900px;
-  }
-
-  h1 {
-    position: sticky;
-    top: -1rem;
-    flex: 0 0 auto;
-    margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 800;
-    background-color: var(--color-text);
-    color: var(--color-background);
-    padding: 0.5rem 1rem;
-    margin: -1rem;
-    margin-bottom: -1.5rem;
-    z-index: 10;
-    // border-radius: 0.5rem;
-  }
-  // ._step {
-  //   flex: 1 1 auto;
-  // }
   ._nav {
     flex: 0 0 auto;
   }
@@ -375,6 +330,10 @@ h2 {
     // flex: 1 1 auto;
     text-align: center;
   }
+}
+
+._step {
+  padding: 0.5rem 1rem;
 }
 
 ._nav {
