@@ -1096,5 +1096,17 @@
     "bottom_margin_percent": 0.034,
     "url": "https://carlosmobility.com/carlos-v/",
     "frame_made_in": ""
+  },
+  {
+    "id": "city-2020-babboe",
+    "manufacturer": "Babboe",
+    "model": "City 2020",
+    "src": "babboe-city.png",
+    "bike_length_percent": 0.808,
+    "bike_length_cm": 255,
+    "left_margin_percent": 0.088,
+    "bottom_margin_percent": 0.291,
+    "url": "https://www.babboe.fr/city",
+    "frame_made_in": ""
   }
 ]
