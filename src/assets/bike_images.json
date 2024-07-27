@@ -1109,5 +1109,17 @@
     "url": "https://www.babboe.fr/city",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website."
+  },
+  {
+    "id": "nihola-cargo-xl-pro-assistance-pédalier-nihola-france",
+    "manufacturer": "NIHOLA",
+    "model": "CARGO XL Pro",
+    "src": "NIHOLA-CARGO-XL-Pro-Steps_vue_laterale.png",
+    "bike_length_percent": 0.908,
+    "bike_length_cm": 205,
+    "left_margin_percent": 0.036,
+    "bottom_margin_percent": 0.15,
+    "url": "https://www.nihola.fr/88387-triporteur-electrique-nihola-cargo-xl-pro-moteur-pedalier.html",
+    "frame_made_in": "France"
   }
 ]
