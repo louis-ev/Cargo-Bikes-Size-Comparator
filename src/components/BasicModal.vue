@@ -9,16 +9,46 @@
           <slot name="content"></slot>
         </div>
       </div>
-      <button type="button" class="_close" @click="$emit('close')">
-        {{ $t('message.close') }}
+      <button
+        type="button"
+        class="_close"
+        @click="$emit('close')"
+        :aria-label="$t('message.close')"
+      >
+        ✕
       </button>
+      <div v-if="has_nav" class="_nav">
+        <button
+          type="button"
+          class="_prevBtn"
+          @click="$emit('prev')"
+          :aria-label="$t('message.prev')"
+        >
+          ←
+        </button>
+        <button
+          type="button"
+          class="_nextBtn"
+          @click="$emit('next')"
+          :aria-label="$t('message.next')"
+        >
+          →
+        </button>
+      </div>
     </dialog>
   </Teleport>
 </template>
 <script>
 export default {
   props: {
-    size: String
+    size: {
+      type: String,
+      default: 'medium'
+    },
+    has_nav: {
+      type: Boolean,
+      default: false
+    }
   },
   components: {},
   data() {
@@ -96,11 +126,33 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  // margin: 0.5rem;
+  margin: 0.125rem;
   padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
   // background-color: var(--color-text);
   // color: var(--color-background);
   border: none;
   cursor: pointer;
+}
+
+._nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    pointer-events: auto;
+    width: 2rem;
+    height: 2rem;
+  }
 }
 </style>

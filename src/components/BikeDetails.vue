@@ -56,7 +56,7 @@
     <div class="_inSitu" v-if="bike.insitu">
       <label>{{ $t('message.in_situ') }}</label>
       <div class="_inSituImages">
-        <button v-for="img in bike.insitu" :key="img.src" @click="showFullImage(img)">
+        <button v-for="(img, index) in bike.insitu" :key="img.src" @click="showFullImage(index)">
           <img :src="getImgThumbUrl(img.src)" />
         </button>
       </div>
@@ -70,22 +70,21 @@
       >
     </div>
 
-    <FullImage
-      v-if="show_full_image !== false"
-      :from="show_full_image.from"
-      :src="show_full_image.src"
+    <InsituImageSlide
+      v-if="show_full_image_index !== null"
+      :bike="bike"
+      :index="show_full_image_index"
       @close="hideFullImage"
+      @prevImage="prevImage"
+      @nextImage="nextImage"
     />
   </div>
 </template>
 <script>
-import FullImage from '@/components/FullImage.vue'
+import InsituImageSlide from '@/components/InsituImageSlide.vue'
 
 const insitu_images_thumbs_paths = import.meta.glob('@/assets/insitu/*', {
   query: { format: 'webp', w: 100 }
-})
-const insitu_images_full_paths = import.meta.glob('@/assets/insitu/*', {
-  query: { format: 'webp', w: 1920 }
 })
 
 export default {
@@ -100,18 +99,16 @@ export default {
     }
   },
   components: {
-    FullImage
+    InsituImageSlide
   },
   data() {
     return {
       bike_images_thumbs_urls: [],
-      bike_images_full_urls: [],
-      show_full_image: false
+      show_full_image_index: null
     }
   },
   async created() {
     this.bike_images_thumbs_urls = await this.loadAllInsituThumbs()
-    this.bike_images_full_urls = await this.loadAllInsituFull()
   },
   mounted() {},
   beforeUnmount() {},
@@ -138,33 +135,21 @@ export default {
       }
       return urls
     },
-    async loadAllInsituFull() {
-      const urls = []
-      for (let [source, thumb] of Object.entries(insitu_images_full_paths)) {
-        const import_statment = thumb()
-        const url = (await import_statment).default
-        const original_filename = source.split('/').pop()
-        urls.push({
-          url,
-          original_filename
-        })
-      }
-      return urls
-    },
     getImgThumbUrl(src) {
       return this.bike_images_thumbs_urls.find((img) => img.original_filename === src)?.url
     },
-    getImgFullUrl(src) {
-      return this.bike_images_full_urls.find((img) => img.original_filename === src)?.url
+    showFullImage(index) {
+      this.show_full_image_index = index
     },
-    showFullImage(img) {
-      this.show_full_image = {
-        src: this.getImgFullUrl(img.src),
-        from: img.from
-      }
+    prevImage() {
+      this.show_full_image_index =
+        (this.show_full_image_index - 1 + this.bike.insitu.length) % this.bike.insitu.length
+    },
+    nextImage() {
+      this.show_full_image_index = (this.show_full_image_index + 1) % this.bike.insitu.length
     },
     hideFullImage() {
-      this.show_full_image = false
+      this.show_full_image_index = null
     },
     getMeasurements(bike) {
       return Object.entries(bike._measurements)
