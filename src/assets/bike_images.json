@@ -1121,5 +1121,16 @@
     "bottom_margin_percent": 0.15,
     "url": "https://www.nihola.fr/88387-triporteur-electrique-nihola-cargo-xl-pro-moteur-pedalier.html",
     "frame_made_in": "France"
+  },
+  {
+    "id": "equo-o2-feel",
+    "manufacturer": "O2 feel",
+    "model": "Equo",
+    "src": "o2feel-Equo-7.png",
+    "bike_length_percent": 0.927,
+    "bike_length_cm": 195,
+    "left_margin_percent": 0.071,
+    "bottom_margin_percent": 0.059,
+    "url": "https://www.o2feel.com/equo/"
   }
 ]
