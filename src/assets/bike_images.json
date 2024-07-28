@@ -1146,5 +1146,17 @@
     "url": "https://fr.fiido.com/products/fiido-t2-longtail-cargo-ebike-for-versatile-all-terrain",
     "frame_made_in": "China",
     "show_frame_origin": false
+  },
+  {
+    "id": "biporteur-unikle",
+    "manufacturer": "unikle",
+    "model": "Biporteur",
+    "src": "unikle.png",
+    "bike_length_percent": 0.991,
+    "bike_length_cm": 255,
+    "left_margin_percent": 0.003,
+    "bottom_margin_percent": 0.029,
+    "url": "https://unikle.fr/le-biporteur/",
+    "frame_made_in": "France"
   }
 ]
