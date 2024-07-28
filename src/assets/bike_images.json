@@ -1098,9 +1098,9 @@
     "frame_made_in": ""
   },
   {
-    "id": "city-2020-babboe",
+    "id": "city-babboe",
     "manufacturer": "Babboe",
-    "model": "City 2020",
+    "model": "City",
     "src": "babboe-city.png",
     "bike_length_percent": 0.808,
     "bike_length_cm": 255,
