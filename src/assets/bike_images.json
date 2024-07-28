@@ -1132,5 +1132,19 @@
     "left_margin_percent": 0.071,
     "bottom_margin_percent": 0.059,
     "url": "https://www.o2feel.com/equo/"
+  },
+
+  {
+    "id": "t2-fiido",
+    "manufacturer": "Fiido",
+    "model": "T2",
+    "src": "t2-main-1-green_1000x.png",
+    "bike_length_percent": 0.959,
+    "bike_length_cm": 186,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0.133,
+    "url": "https://fr.fiido.com/products/fiido-t2-longtail-cargo-ebike-for-versatile-all-terrain",
+    "frame_made_in": "China",
+    "show_frame_origin": false
   }
 ]
