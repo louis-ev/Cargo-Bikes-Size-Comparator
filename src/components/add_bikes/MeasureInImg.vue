@@ -196,7 +196,7 @@ canvas {
   height: 100%;
   border: 2px solid var(--color-text-secondary);
   max-width: 100%;
-  max-height: 80vh;
+  // max-height: 80vh;
   object-fit: scale-down;
 }
 </style>
