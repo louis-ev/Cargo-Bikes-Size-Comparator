@@ -8,6 +8,7 @@
           $t('message.in_' + bike.frame_made_in.toLowerCase())
         }}.
       </template>
+      <br v-if="bike.frame_made_in && bike.assembled_in" />
       <template v-if="bike.assembled_in">
         {{
           $t('message.bike_assembled_in') +

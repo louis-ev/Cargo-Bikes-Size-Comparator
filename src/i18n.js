@@ -47,7 +47,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Outline',
-        bike_frame_made_in: 'Bike frame made',
+        bike_frame_made_in: 'Frame made',
         bike_assembled_in: 'Assembled',
         in_germany: 'in Germany',
         in_hungary: 'in Hungary',
