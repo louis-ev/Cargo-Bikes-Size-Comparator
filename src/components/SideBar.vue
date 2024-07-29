@@ -298,4 +298,10 @@ h1 {
     // padding: 2rem;
   }
 }
+
+._reset {
+  padding: 0 0.25rem;
+
+  cursor: pointer;
+}
 </style>

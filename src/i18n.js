@@ -47,7 +47,8 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Outline',
-        bike_mostly_manufactured_and_assembled: 'Bike mostly manufactured and assembled',
+        bike_frame_made_in: 'Bike frame made',
+        bike_assembled_in: 'Assembled',
         in_germany: 'in Germany',
         in_hungary: 'in Hungary',
         in_denmark: 'in Denmark',
@@ -180,7 +181,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design is free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Contours',
-        bike_mostly_manufactured_and_assembled: 'Vélo principalement fabriqué et assemblé',
+        bike_frame_made_in: 'Cadre du vélo fabriqué',
         in_germany: 'en Allemagne',
         in_hungary: 'en Hongrie',
         in_denmark: 'au Danemark',
@@ -227,7 +228,7 @@ const i18n = createI18n({
         product_page_url: 'URL de la page produit officielle',
 
         if_that_information_is_officially_available:
-          'Si cette information est officiellement disponible, le nom du pays où le vélo et son cadre sont fabriqués (et non assemblés). Optionnel.',
+          'Si cette information est officiellement disponible, le nom du pays où le cadre du vélo est fabriqué. Optionnel.',
         send_me_an_email: 'Envoyer un email à',
         with_this_information:
           'avec ces informations et je vous indiquerai quand elles auront été ajoutées.',

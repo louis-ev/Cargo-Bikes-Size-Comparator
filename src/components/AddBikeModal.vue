@@ -74,9 +74,7 @@
           </div>
 
           <div class="inputField">
-            <label for="frame_made_in">{{
-              $t('message.bike_mostly_manufactured_and_assembled')
-            }}</label>
+            <label for="frame_made_in">{{ $t('message.bike_frame_made_in') }}</label>
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
             <small>
               {{ $t('add_bike.if_that_information_is_officially_available') }}
@@ -276,8 +274,8 @@ export default {
         manufacturer,
         model,
         src,
-        bike_length_percent,
         bike_length_cm,
+        bike_length_percent,
         left_margin_percent,
         bottom_margin_percent,
         url,

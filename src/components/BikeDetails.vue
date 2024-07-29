@@ -1,11 +1,20 @@
 <template>
   <div class="_itemBottom">
-    <div class="_madeIn" v-if="bike.frame_made_in">
-      {{
-        $t('message.bike_mostly_manufactured_and_assembled') +
-        ' ' +
-        $t('message.in_' + bike.frame_made_in.toLowerCase())
-      }}.
+    <div class="_madeIn" v-if="bike.frame_made_in || bike.assembled_in">
+      <template v-if="bike.frame_made_in">
+        {{
+          $t('message.bike_frame_made_in') +
+          ' ' +
+          $t('message.in_' + bike.frame_made_in.toLowerCase())
+        }}.
+      </template>
+      <template v-if="bike.assembled_in">
+        {{
+          $t('message.bike_assembled_in') +
+          ' ' +
+          $t('message.in_' + bike.assembled_in.toLowerCase())
+        }}
+      </template>
     </div>
 
     <div v-if="bike.comment_en" v-html="bike.comment_en" />
@@ -28,9 +37,15 @@
               <option>0</option>
             </datalist> -->
 
-          <div class="_resetPosition" v-if="bikes_position_adjustments.hasOwnProperty(bike.id)">
-            <button type="button" class="noStyle" @click="resetBikePosition(bike.id)">
-              {{ $t('message.reset') }}
+          <div class="_resetPosition">
+            <button
+              type="button"
+              class="noStyle"
+              @click="resetBikePosition(bike.id)"
+              :aria-label="$t('message.reset')"
+              :disabled="!bikes_position_adjustments.hasOwnProperty(bike.id)"
+            >
+              &#8630;
             </button>
           </div>
         </div>
@@ -208,5 +223,31 @@ hr {
 ._source {
   text-align: center;
   text-transform: lowercase;
+}
+
+._adjustInput {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  label {
+    flex: 0 0 auto;
+  }
+  input {
+    width: 100%;
+  }
+}
+._resetPosition {
+  text-align: center;
+}
+._itemBottom {
+  padding: 0.5rem 1rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+._measurements {
+  margin-bottom: 0.5rem;
 }
 </style>

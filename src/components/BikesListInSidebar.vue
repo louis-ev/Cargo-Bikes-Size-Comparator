@@ -229,34 +229,4 @@ export default {
     }
   }
 }
-
-._itemBottom {
-  padding: 0.5rem 1rem 1rem;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.5rem;
-}
-._measurements {
-  margin-bottom: 0.5rem;
-}
-
-._reset {
-  padding: 0 0.25rem;
-
-  cursor: pointer;
-}
-._adjustInput {
-  display: flex;
-  flex-direction: row nowrap;
-  align-items: center;
-  gap: 0.5rem;
-
-  label {
-    flex: 0 0 auto;
-  }
-}
-
-._resetPosition {
-  text-align: center;
-}
 </style>
