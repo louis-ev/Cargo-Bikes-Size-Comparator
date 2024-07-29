@@ -561,7 +561,7 @@
     "src": "douze-cycles-lt2.png",
     "bike_length_percent": 1,
     "bike_length_cm": 205,
-    "left_margin_percent": 0,
+    "left_margin_percent": 0.005,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/lt"
   },
@@ -1170,5 +1170,18 @@
     "bottom_margin_percent": 0.076,
     "url": "https://www.robertbikes.fr/zed-velo-cargo-electrique-tout-terrain/",
     "frame_made_in": "France"
+  },
+  {
+    "id": "peugeot-e-longtail",
+
+    "manufacturer": "Peugeot",
+    "model": "E-LONGTAIL",
+    "src": "peugeot-e-longtail-kaki-configuration-serie-scaled.png",
+    "bike_length_percent": 0.8059999999999999,
+    "bike_length_cm": 205,
+    "left_margin_percent": 0.07400000000000001,
+    "bottom_margin_percent": 0.175,
+    "url": "https://peugeot.e-longtail.com/",
+    "frame_made_in": ""
   }
 ]
