@@ -1183,5 +1183,16 @@
     "bottom_margin_percent": 0.175,
     "url": "https://peugeot.e-longtail.com/",
     "frame_made_in": ""
+  },
+  {
+    "id": "cruise-carqon",
+    "manufacturer": "Carqon",
+    "model": "Cruise",
+    "src": "Carqon_Cruise_Black_1_web_da13.png",
+    "bike_length_percent": 0.951,
+    "bike_length_cm": 260,
+    "left_margin_percent": 0.03,
+    "bottom_margin_percent": 0.076,
+    "url": "https://www.carqon.com/cruise"
   }
 ]
