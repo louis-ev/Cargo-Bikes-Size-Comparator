@@ -1206,5 +1206,31 @@
     "bottom_margin_percent": 0.226,
     "url": "https://www.bergamont.com/fr/fr/product/bergamont-e-cargoville-lt-expert?article=290945047",
     "frame_made_in": ""
+  },
+  {
+    "id": "veloe-multi",
+
+    "manufacturer": "Veloe",
+    "model": "multi",
+    "src": "veloe-multi-shimano_EP6.png",
+    "bike_length_percent": 0.6930000000000001,
+    "bike_length_cm": 180,
+    "left_margin_percent": 0.151,
+    "bottom_margin_percent": 0.126,
+    "url": "https://veloe.eu/model-overview/multi-bosch-cargoline/",
+    "assembled_in": "Italy"
+  },
+  {
+    "id": "veloe-multi-lungo",
+
+    "manufacturer": "Veloe",
+    "model": "multi lungo",
+    "src": "veloe-multi-lungo-bosch_cargoline.png",
+    "bike_length_percent": 0.734,
+    "bike_length_cm": 186,
+    "left_margin_percent": 0.122,
+    "bottom_margin_percent": 0.101,
+    "url": "https://veloe.eu/model-overview/multi-lungo-bosch-cargoline/",
+    "assembled_in": "Italy"
   }
 ]
