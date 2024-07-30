@@ -132,7 +132,7 @@ export default {
     return {
       bike_images_full_paths: [],
       show_human_silhouette: false,
-      show_regular_bike_silhouette: true
+      show_regular_bike_silhouette: false
     }
   },
   created() {},
