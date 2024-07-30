@@ -1,5 +1,17 @@
 [
   {
+  "id": "fectch+-2-trek",
+  "manufacturer": "Trek",
+  "model": "Fectch+ 2",
+  "src": "https://media.trekbikes.com/image/upload/f_auto,fl_progressive:semi,q_auto,w_1920,h_1440,c_pad/FetchPlus2-24-37640-A-Primary",
+  "bike_length_percent": 0.9719999999999999,
+  "bike_length_cm": 193,
+  "left_margin_percent": 0.013999999999999999,
+  "bottom_margin_percent": 0.131,
+  "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-2/p/37640/",
+  "frame_made_in": ""
+  }
+  {
     "id": "benno-remidemi",
     "manufacturer": "remidemi",
     "model": "Benno",
