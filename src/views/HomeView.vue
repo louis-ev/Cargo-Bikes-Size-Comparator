@@ -1,20 +1,6 @@
 <template>
   <div class="_homeView">
     <div class="_leftPane">
-      <button class="_toggleSidebar" :data-rotate="show_sidebar" @click="toggleSidebar">
-        <!-- &#x2190; -->
-        <svg
-          width="20px"
-          height="20px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
-          <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
-          <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
       <transition name="slide" mode="out-in">
         <SideBar
           v-if="show_sidebar"
@@ -26,6 +12,7 @@
           v-model:bikes_position_adjustments="bikes_position_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
           @showAddBikeModal="add_bike_modal = true"
+          @closeSidebar="show_sidebar = false"
         />
       </transition>
     </div>
@@ -35,10 +22,13 @@
         <CanvasView
           v-else
           :enabled_bikes="enabled_bikes"
+          :bikes="bikes"
           :default_padding_percent="default_padding_percent"
           :grid_step="grid_step"
           :bikes_position_adjustments="bikes_position_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
+          :show_sidebar="show_sidebar"
+          @openSidebar="show_sidebar = true"
         />
       </transition>
     </div>
@@ -71,7 +61,7 @@ export default {
       show_sidebar: true,
 
       default_padding_percent: 5,
-      grid_step: 5,
+      grid_step: 10,
 
       bikes_position_adjustments: {},
 
@@ -137,25 +127,5 @@ export default {
   flex: 1 1 auto;
   height: 100%;
   overflow: auto;
-}
-._toggleSidebar {
-  position: absolute;
-  top: 0.5rem;
-  left: calc(100% + 0.5rem);
-  z-index: 100;
-  padding: 0rem;
-  // background-color: var(--color-text);
-  // color: white;
-  background-color: white;
-  color: var(--color-text);
-  width: 2rem;
-  height: 2rem;
-  line-height: 0;
-
-  border-radius: 1rem;
-
-  &[data-rotate='false'] {
-    transform: rotate(180deg);
-  }
 }
 </style>

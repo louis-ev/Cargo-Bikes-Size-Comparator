@@ -1,40 +1,93 @@
 <template>
   <div class="_canvasWrapper">
-    <div class="_noBikes" v-if="enabled_bikes.length === 0">
-      <span>{{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}</span>
-    </div>
-    <div class="_canvas">
-      <div class="_canvasOptions">
-        <label
-          class="u-button _setImageStyle"
-          :data-active="canvas_image_style_outline"
-          for="canvas_image_style_outline"
-        >
-          <input
-            type="checkbox"
-            name="canvas_image_style_outline"
-            id="canvas_image_style_outline"
-            :checked="canvas_image_style_outline"
-            @change="toggleOutlineView"
-          />
-          &nbsp;{{ $t('message.outline_view') }}
-        </label>
+    <!-- <div class="_noBikes" v-if="enabled_bikes.length === 0">
+      <span>{{
+        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+          count: bikes.length
+        })
+      }}</span>
+    </div> -->
 
-        <transition-group name="fade">
-          <button
-            type="button"
-            class="_activeBike"
-            v-for="bike in reversed_sorted_enabled_bikes"
-            :key="bike.id"
-            :data-showcolor="canvas_image_style_outline"
-            :style="{ '--bike-color': `#${bike.color}` }"
-          >
-            <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
-            <BikeName :bike="bike" :show_length="false" />
-          </button>
-        </transition-group>
+    <transition name="showPreview" mode="in-out">
+      <div v-if="preview_bike" :key="preview_bike" class="_previewBikeWrapper">
+        <div class="_previewBikeOverlay" />
+        <img :key="preview_bike" :src="preview_bike" />
       </div>
+    </transition>
+
+    <div class="_canvasOptions">
+      <button class="_openSidebar" v-if="!show_sidebar" @click="$emit('openSidebar')">
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <label
+        class="u-button _setImageStyle"
+        :data-active="canvas_image_style_outline"
+        for="canvas_image_style_outline"
+      >
+        <input
+          type="checkbox"
+          name="canvas_image_style_outline"
+          id="canvas_image_style_outline"
+          :checked="canvas_image_style_outline"
+          @change="toggleOutlineView"
+        />
+        &nbsp;{{ $t('message.outline_view') }}
+      </label>
+      <label
+        class="u-button _setImageStyle"
+        :data-active="show_human_silhouette"
+        for="show_human_silhouette"
+      >
+        <input
+          type="checkbox"
+          name="show_human_silhouette"
+          id="show_human_silhouette"
+          :checked="show_human_silhouette"
+          @change="toggleHumanSilhouette"
+        />
+        &nbsp;{{ $t('message.show_human_silhouette') }}
+      </label>
+
+      <transition-group name="fade">
+        <button
+          type="button"
+          class="_activeBike"
+          v-for="bike in reversed_sorted_enabled_bikes"
+          :key="bike.id"
+          :data-showcolor="canvas_image_style_outline"
+          :style="{ '--bike-color': `#${bike.color}` }"
+          @click="unselectBike(bike.id)"
+        >
+          <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
+          <span class="_activeBike--name">
+            <BikeName :bike="bike" :show_length="false" />
+          </span>
+          <span class="_activeBike--remove">–</span>
+        </button>
+      </transition-group>
     </div>
+    <small class="_downloadCanvas">
+      <button type="button" class="" @click="downloadCanvas">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
+          <path
+            d="m54.168 12.5c0-2.3008-1.8672-4.168-4.168-4.168s-4.168 1.8672-4.168 4.168v39.938l-13.715-13.719c-1.6289-1.6289-4.2656-1.6289-5.8945 0-1.625 1.6289-1.625 4.2656 0 5.8906l20.715 20.715c0.75781 0.82422 1.8516 1.3438 3.0625 1.3438 0.62891 0 1.2227-0.14062 1.7539-0.38672 0.43359-0.20312 0.83984-0.48047 1.1953-0.83594l20.832-20.836c1.6289-1.625 1.6289-4.2617 0-5.8906-1.625-1.6289-4.2656-1.6289-5.8906 0l-13.723 13.723zm-41.668 45.828c2.3008 0 4.168 1.8672 4.168 4.168v16.664c0 1.1055 0.4375 2.168 1.2188 2.9492s1.8398 1.2188 2.9453 1.2188h58.336c1.1055 0 2.1641-0.4375 2.9453-1.2188s1.2188-1.8438 1.2188-2.9492v-16.664c0-2.3008 1.8672-4.168 4.168-4.168s4.168 1.8672 4.168 4.168v16.664c0 3.3164-1.3164 6.4961-3.6641 8.8398-2.3438 2.3438-5.5234 3.6602-8.8359 3.6602h-58.336c-3.3125 0-6.4922-1.3164-8.8359-3.6602-2.3477-2.3438-3.6641-5.5234-3.6641-8.8398v-16.664c0-2.3008 1.8672-4.168 4.168-4.168z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        {{ $t('message.download_comparison') }}
+      </button>
+    </small>
     <div class="_loader">
       <span class="loader" />
     </div>
@@ -52,15 +105,18 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
 export default {
   props: {
     enabled_bikes: Array,
+    bikes: Array,
     default_padding_percent: Number,
     grid_step: Number,
     bikes_position_adjustments: Object,
-    canvas_image_style_outline: Boolean
+    canvas_image_style_outline: Boolean,
+    show_sidebar: Boolean
   },
   components: {},
   data() {
     return {
-      bike_images_full_paths: []
+      bike_images_full_paths: [],
+      show_human_silhouette: false
     }
   },
   created() {},
@@ -94,11 +150,14 @@ export default {
     grid_step() {
       this.showBikes()
     },
-    enabled_bikes: {
+    reversed_sorted_enabled_bikes: {
       handler() {
         this.showBikes()
       },
       deep: true
+    },
+    show_human_silhouette() {
+      this.showBikes()
     }
   },
   computed: {
@@ -110,11 +169,19 @@ export default {
           return acc
         }, [])
         .sort((a, b) => {
+          if (this.$preview_bike.id === a.id) return 1
+          if (this.$preview_bike.id === b.id) return -1
           return b?.bike_length_cm - a?.bike_length_cm
         })
     },
     reversed_sorted_enabled_bikes() {
       return this.sorted_enabled_bikes.slice().reverse()
+    },
+    preview_bike() {
+      if (!this.$preview_bike.id) return
+      if (this.enabled_bikes.find((bike) => bike.id === this.$preview_bike.id)) return
+      const previewed_bike = this.bikes.find((bike) => bike.id === this.$preview_bike.id)
+      return this.getBikeFullImage(previewed_bike)
     }
   },
   methods: {
@@ -138,17 +205,6 @@ export default {
       )
 
       const ctx = canvas.getContext('2d')
-      ctx.globalCompositeOperation = 'source-over'
-
-      // bg
-      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
-        '--color-background'
-      )
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-      ctx.strokeStyle = '#ccc'
-      ctx.strokeWidth = 1
-      ctx.strokeRect(1, 1, canvas.width - 1, canvas.height - 1)
 
       // get largest bike image
       let largest_bike
@@ -161,15 +217,89 @@ export default {
       const each_px_measures_in_cm =
         (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
 
-      const line_0_color = getComputedStyle(document.documentElement).getPropertyValue(
+      if (this.show_human_silhouette)
+        canvas.height = Math.max(canvas.height, 200 * each_px_measures_in_cm)
+
+      this.drawBackground(ctx, canvas)
+      this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
+      if (this.show_human_silhouette)
+        await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
+
+      if (this.canvas_image_style_outline) {
+        ctx.globalCompositeOperation = 'multiply'
+      } else {
+        ctx.globalCompositeOperation = 'source-over'
+      }
+
+      for (const bike of this.sorted_enabled_bikes) {
+        console.log('drawing bike', bike.id)
+        const img = new Image()
+        img.src = this.getBikeFullImage(bike)
+        await img.decode()
+
+        const img_ratio = img.width / img.height
+        const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
+        const draw_h = draw_w / img_ratio
+
+        let user_horizontal_adjustment = this.bikes_position_adjustments[bike.id] / 100 || 0
+        const draw_x = -(bike.left_margin_percent - user_horizontal_adjustment) * draw_w + padding
+        const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
+
+        if (this.canvas_image_style_outline) {
+          // Offscreen canvas for edge detection on the image
+          const processorCanvas = this.$refs.processor
+          if (!processorCanvas) return
+
+          processorCanvas.width = canvas.width
+          processorCanvas.height = canvas.height
+
+          const processorCtx = processorCanvas.getContext('2d')
+          processorCtx.globalCompositeOperation = 'source-over'
+
+          // white BG for a clean edge detect result
+          processorCtx.fillStyle = 'white'
+          processorCtx.fillRect(0, 0, canvas.width, canvas.height)
+          processorCtx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+
+          // detect edges
+          edge_detect(processorCanvas)
+
+          // colorize
+          let color = bike.color
+          colorize(processorCanvas, color)
+
+          ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
+        } else {
+          ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+        }
+      }
+
+      const visible_canvas = this.$refs.bikes
+      visible_canvas.width = canvas.width
+      visible_canvas.height = canvas.height
+      visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
+    },
+    drawBackground(ctx, canvas) {
+      ctx.globalCompositeOperation = 'source-over'
+
+      // bg
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue(
+        '--color-background'
+      )
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      ctx.strokeStyle = '#ccc'
+      ctx.strokeWidth = 1
+      ctx.strokeRect(1, 1, canvas.width - 1, canvas.height - 1)
+    },
+    drawGrid(ctx, canvas, padding, each_px_measures_in_cm) {
+      const line_0_color = '#999'
+      const line_color = '#cccccc'
+
+      const text_0_fill_color = '#999'
+      const text_fill_color = getComputedStyle(document.documentElement).getPropertyValue(
         '--color-text-secondary'
       )
-      const line_color = getComputedStyle(document.documentElement).getPropertyValue(
-        '--color-gray-light'
-      )
-
-      const text_0_fill_color = line_0_color
-      const text_fill_color = line_0_color
 
       let cm_count = 0
       const step = this.grid_step
@@ -210,67 +340,36 @@ export default {
 
         cm_count += step
       }
+    },
+    async drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm) {
+      // ctx.fillStyle = 'white'
 
-      if (this.canvas_image_style_outline) {
-        ctx.globalCompositeOperation = 'multiply'
-      } else {
-        ctx.globalCompositeOperation = 'source-over'
-      }
+      // const silhouette_svg = new XMLSerializer().serializeToString(this.$refs.silhouette)
+      // silhouette_img.src = 'data:image/svg+xml;base64,' + btoa(silhouette_svg)
+      const silhouette_img = new Image()
+      silhouette_img.src = './Human-Silhouette-1.svg'
+      await silhouette_img.decode()
 
-      for (const bike of this.sorted_enabled_bikes) {
-        console.log('drawing bike', bike.id)
-        const img = new Image()
+      // const silhouette_img = new Image()
+      // silhouette_img.src = './Human_(silhouettes).svg'
+      // await silhouette_img.decode()
+      const img_ratio = silhouette_img.width / silhouette_img.height
+      const silhouette_height = 185 * each_px_measures_in_cm
+      const silhouette_width = silhouette_height * img_ratio
 
-        img.src = this.getBikeFullImage(bike)
-        await img.decode()
+      const draw_x = padding + 5 * each_px_measures_in_cm
+      let draw_y = canvas.height - padding + 2 * each_px_measures_in_cm
 
-        const img_ratio = img.width / img.height
-        const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
-        const draw_h = draw_w / img_ratio
+      // draw_y += 110
 
-        let user_horizontal_adjustment = this.bikes_position_adjustments[bike.id] / 100 || 0
-        const draw_x = -(bike.left_margin_percent - user_horizontal_adjustment) * draw_w + padding
-        const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
-
-        if (this.canvas_image_style_outline) {
-          // Offscreen canvas for edge detection on the image
-          const processorCanvas = this.$refs.processor
-          if (!processorCanvas) return
-
-          processorCanvas.width = Math.min(
-            processorCanvas.parentNode.clientWidth * window.devicePixelRatio,
-            processorCanvas.parentNode.clientHeight * window.devicePixelRatio * 1.5
-          )
-          processorCanvas.height = Math.min(
-            processorCanvas.parentNode.clientHeight * window.devicePixelRatio,
-            processorCanvas.width
-          )
-
-          const processorCtx = processorCanvas.getContext('2d')
-          processorCtx.globalCompositeOperation = 'source-over'
-
-          // white BG for a clean edge detect result
-          processorCtx.fillStyle = 'white'
-          processorCtx.fillRect(0, 0, canvas.width, canvas.height)
-          processorCtx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
-
-          // detect edges
-          edge_detect(processorCanvas)
-
-          // colorize
-          let color = bike.color
-          colorize(processorCanvas, color)
-
-          ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
-        } else {
-          ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
-        }
-      }
-
-      const visible_canvas = this.$refs.bikes
-      visible_canvas.width = canvas.width
-      visible_canvas.height = canvas.height
-      visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
+      // ctx.globalCompositeOperation = 'soft-light'
+      ctx.globalAlpha = 0.2
+      ctx.drawImage(silhouette_img, draw_x, draw_y, silhouette_width, -silhouette_height)
+      ctx.globalAlpha = 1
+      return
+    },
+    toggleHumanSilhouette($event) {
+      this.show_human_silhouette = $event.target.checked
     },
     toggleOutlineView($event) {
       let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
@@ -281,6 +380,25 @@ export default {
       this.$router.push({
         query
       })
+    },
+    async unselectBike(bike_id) {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+
+      const bikes_ids = query.bikes ? JSON.parse(query.bikes) : []
+      const new_bikes_ids = bikes_ids.filter((id) => id !== bike_id)
+      query.bikes = JSON.stringify(new_bikes_ids)
+
+      this.$router.push({
+        query
+      })
+    },
+    downloadCanvas() {
+      const canvas = this.$refs.bikes
+      const img = canvas.toDataURL()
+      const a = document.createElement('a')
+      a.href = img
+      a.download = 'canvas.png'
+      a.click()
     }
   }
 }
@@ -301,9 +419,6 @@ canvas {
   padding: 1rem;
   // margin-left: 0;
   // border: 1px solid #ccc;
-}
-._canvas {
-  // margin: 2rem;
 }
 ._noBikes {
   position: absolute;
@@ -333,8 +448,8 @@ canvas {
   z-index: 4;
   width: 100%;
   pointer-events: none;
-  padding: 0.5rem 0;
-  padding-left: 3rem;
+  padding: 0.5rem;
+  // padding-left: 3rem;
 
   overflow-x: auto;
 
@@ -346,6 +461,9 @@ canvas {
 
   > * {
     pointer-events: auto;
+
+    display: flex;
+    align-items: center;
   }
 }
 // ._activeBikes {
@@ -362,11 +480,11 @@ canvas {
 // }
 
 ._activeBike {
-  flex: 0 0 25ch;
+  flex: 0 0 20ch;
   height: auto;
   border-radius: 0.5rem;
 
-  padding: 0.12rem 0.5rem 0.25rem;
+  padding: 0.12rem 0.75rem 0.25rem;
   // background-color: var(--color-accent);
   background-color: white;
   // backdrop-filter: blur(5px);
@@ -376,7 +494,7 @@ canvas {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.5rem;
 
   white-space: nowrap;
@@ -394,7 +512,7 @@ canvas {
   // align-items: center;
   // justify-content: center;
   white-space: nowrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
   pointer-events: auto;
   background-color: var(--color-text);
   // background-color: #fff;
@@ -402,7 +520,7 @@ canvas {
   color: white;
   // border: 2px solid var(--color-text);
   border-radius: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   cursor: pointer;
   font-weight: 500;
 
@@ -435,5 +553,81 @@ canvas {
 ._previewCanvas {
   position: relative;
   z-index: 1;
+}
+
+._downloadCanvas {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  padding: 2rem;
+
+  > * {
+    background-color: var(--color-background);
+    pointer-events: auto;
+  }
+}
+
+._openSidebar {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
+  border-radius: 0.5rem;
+}
+
+._previewBikeWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  ._previewBikeOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(238, 238, 238, 0.35);
+    // backdrop-filter: blur(2px);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    object-fit: scale-down;
+  }
+}
+
+._activeBike--name {
+  flex: 1 1 0;
+  overflow: hidden;
+
+  :deep(> *) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+._activeBike--remove {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  padding-bottom: 0.05rem;
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid var(--color-text);
+  // background-color: var(--color-text);
+  // color: var(--color-background);
 }
 </style>

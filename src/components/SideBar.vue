@@ -6,8 +6,11 @@
         <LangSelect class="_lang_select" />
       </div>
 
+      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
+
       <div class="_search">
-        <input type="search" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+        <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+        <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
       </div>
 
       <div v-if="filtered_bikes.length === 0" class="_noMatch">
@@ -24,7 +27,11 @@
       <template v-else>
         <small class="_infos">
           <template v-if="enabled_bikes.length === 0">
-            {{ $t('message.click_on_bikes_in_this_list_to_compare_their_size') }}
+            {{
+              $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+                count: bikes.length
+              })
+            }}
           </template>
           <template v-else>
             <span>
@@ -162,6 +169,24 @@ export default {
   display: flex;
   flex-flow: column nowrap;
 }
+._closeSidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  background-color: var(--color-text);
+  z-index: 1000;
+  // background-color: var(--color-text-secondary);
+  color: white;
+
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
 ._sidebar--content {
   overflow-y: auto;
   padding: 1rem;
@@ -226,10 +251,22 @@ h1 {
 }
 
 ._search {
+  position: relative;
   margin-bottom: 1rem;
 
   input {
     width: 100%;
+    padding-right: 1.7em;
+  }
+
+  button {
+    position: absolute;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 0;
+    width: 1.7em;
+    height: 1.7em;
   }
 }
 

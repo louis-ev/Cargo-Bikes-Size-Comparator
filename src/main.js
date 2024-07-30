@@ -1,6 +1,6 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
+import { createApp, reactive } from 'vue'
 
 import App from './App.vue'
 import router from './router'
@@ -10,7 +10,7 @@ import BikeName from './components/BikeName.vue'
 
 import VueMatomo from 'vue-matomo'
 const app = createApp(App)
-app.config.globalProperties.$local_bikes = []
+app.config.globalProperties.$preview_bike = reactive({ id: null })
 app.config.globalProperties.$loadBikeImages = async (paths) => {
   const full_paths = []
   for (let [source, full_path] of Object.entries(paths)) {

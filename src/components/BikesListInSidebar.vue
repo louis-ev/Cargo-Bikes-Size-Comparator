@@ -1,6 +1,13 @@
 <template>
   <transition-group tag="div" class="_bikeList" name="list">
-    <div class="_item" v-for="bike in bikes" :key="bike.id" :data-active="bikeIsEnabled(bike.id)">
+    <div
+      class="_item"
+      v-for="bike in bikes"
+      :key="bike.id"
+      :data-active="bikeIsEnabled(bike.id)"
+      @mouseenter="showBikePreview(bike.id)"
+      @mouseleave="hideBikePreview"
+    >
       <label :for="bike.id" class="_itemTop">
         <input
           type="checkbox"
@@ -30,8 +37,10 @@
             $t('message.bike_mostly_manufactured_and_assembled') +
             ' ' +
             $t('message.in_' + bike.frame_made_in.toLowerCase())
-          }}
+          }}.
         </div>
+
+        <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
         <div class="_adjust">
           <small>
@@ -64,8 +73,22 @@
           <small v-html="getMeasurements(bike)" />
           <br />
         </div>
+
+        <div v-if="bike.additional_links" class="_additionalLinks">
+          <a
+            v-for="(link, index) in bike.additional_links"
+            :href="link.url"
+            target="_blank"
+            :key="index"
+          >
+            <span>&#8594;</span> {{ link.text }}
+          </a>
+        </div>
+
         <div class="_source">
-          <a :href="bike.url" target="_blank"> <span>&#8594;</span> {{ $t('message.website') }}</a>
+          <a :href="bike.url" target="_blank">
+            <span>&#8594;</span> {{ $t('message.open_product_page') }}</a
+          >
         </div>
       </div>
     </div>
@@ -86,7 +109,9 @@ export default {
   components: {},
   data() {
     return {
-      bike_images_thumbs_urls: []
+      bike_images_thumbs_urls: [],
+      bike_preview_id: null,
+      hideBikePreviewTimeout: null
     }
   },
   async created() {},
@@ -124,6 +149,15 @@ export default {
         query
       })
     },
+    showBikePreview(id) {
+      this.$preview_bike.id = id
+      clearTimeout(this.hideBikePreviewTimeout)
+    },
+    hideBikePreview() {
+      this.hideBikePreviewTimeout = setTimeout(() => {
+        this.$preview_bike.id = null
+      }, 100)
+    },
     bikeIsEnabled(id) {
       return this.enabled_bikes.some((i) => i.id === id)
     },
@@ -157,7 +191,7 @@ export default {
 ._bikeList {
   display: flex;
   flex-flow: column nowrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
   padding: 0.25rem 0;
 }
 
