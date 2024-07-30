@@ -245,6 +245,8 @@ export default {
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
       if (this.show_human_silhouette)
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
+      if (this.show_regular_bike_silhouette)
+        await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -293,11 +295,6 @@ export default {
         } else {
           ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
         }
-      }
-
-      if (this.show_regular_bike_silhouette) {
-        ctx.globalCompositeOperation = 'source-over'
-        await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
       }
 
       const visible_canvas = this.$refs.bikes
@@ -410,8 +407,11 @@ export default {
       let draw_y = canvas.height - padding + 103 * each_px_measures_in_cm
 
       ctx.globalAlpha = 1
+      ctx.filter = 'invert(.5)'
+      ctx.globalAlpha = 0.8
       ctx.drawImage(bike_img, draw_x, draw_y, silhouette_width, -silhouette_height)
       ctx.globalAlpha = 1
+      ctx.filter = 'none'
     },
     toggleHumanSilhouette($event) {
       this.show_human_silhouette = $event.target.checked
