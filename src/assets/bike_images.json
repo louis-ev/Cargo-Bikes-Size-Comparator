@@ -1151,7 +1151,8 @@
   },
   {
     "id": "biporteur-unikle",
-    "manufacturer": "unikle",
+
+    "manufacturer": "Unikle",
     "model": "Biporteur",
     "src": "unikle.png",
     "bike_length_percent": 0.991,
