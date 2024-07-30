@@ -254,6 +254,7 @@ export default {
         ctx.globalCompositeOperation = 'source-over'
       }
 
+      console.log('drawing bikes')
       for (const bike of this.sorted_enabled_bikes) {
         console.log('drawing bike', bike.id)
         const img = new Image()
@@ -399,12 +400,13 @@ export default {
       const bike_img_w = 1280
       const bike_img_h = 740
 
-      const img_ratio = bike_img_w / bike_img_h
+      const img_ratio = bike_img_h / bike_img_w
       const silhouette_width = 178 * each_px_measures_in_cm
       const silhouette_height = silhouette_width * img_ratio
 
       const draw_x = padding
-      let draw_y = canvas.height - padding + 103 * each_px_measures_in_cm
+      // let draw_y = canvas.height
+      let draw_y = canvas.height - padding
 
       ctx.globalAlpha = 1
       ctx.filter = 'invert(.5)'
