@@ -69,6 +69,7 @@ const i18n = createI18n({
         bottom: 'Bottom',
         download_comparison: 'Download comparison',
         show_human_silhouette: 'Show human silhouette',
+        show_regular_bike_silhouette: 'Reference bike',
         close: 'close'
       },
       add_bike: {
@@ -202,6 +203,7 @@ const i18n = createI18n({
         bottom: 'Bas',
         download_comparison: 'Télécharger la comparaison',
         show_human_silhouette: 'Afficher une silhouette humaine',
+        show_regular_bike_silhouette: 'Vélo classique',
         close: 'fermer'
       },
       add_bike: {
