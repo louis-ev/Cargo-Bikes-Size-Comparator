@@ -59,6 +59,21 @@
         &nbsp;{{ $t('message.show_human_silhouette') }}
       </label>
 
+      <label
+        class="u-button _setImageStyle"
+        :data-active="show_regular_bike_silhouette"
+        for="show_regular_bike_silhouette"
+      >
+        <input
+          type="checkbox"
+          name="show_regular_bike_silhouette"
+          id="show_regular_bike_silhouette"
+          :checked="show_regular_bike_silhouette"
+          @change="toggleRegularBikeSilhouette"
+        />
+        &nbsp;{{ $t('message.show_regular_bike_silhouette') }}
+      </label>
+
       <transition-group name="fade">
         <button
           type="button"
@@ -116,7 +131,8 @@ export default {
   data() {
     return {
       bike_images_full_paths: [],
-      show_human_silhouette: false
+      show_human_silhouette: false,
+      show_regular_bike_silhouette: true
     }
   },
   created() {},
@@ -157,6 +173,9 @@ export default {
       deep: true
     },
     show_human_silhouette() {
+      this.showBikes()
+    },
+    show_regular_bike_silhouette() {
       this.showBikes()
     }
   },
@@ -208,14 +227,16 @@ export default {
 
       // get largest bike image
       let largest_bike
+
+      if (this.show_regular_bike_silhouette) largest_bike = 178
+
       this.enabled_bikes.map((bike) => {
-        if (!largest_bike || largest_bike.bike_length_cm < bike.bike_length_cm) largest_bike = bike
+        if (!largest_bike || largest_bike < bike.bike_length_cm) largest_bike = bike.bike_length_cm
       })
       // if (!largest_bike) return
 
       const padding = canvas.width / (100 / this.default_padding_percent)
-      const each_px_measures_in_cm =
-        (canvas.width - padding * 2) / (largest_bike?.bike_length_cm || 200)
+      const each_px_measures_in_cm = (canvas.width - padding * 2) / (largest_bike || 200)
 
       if (this.show_human_silhouette)
         canvas.height = Math.max(canvas.height, 200 * each_px_measures_in_cm)
@@ -224,6 +245,8 @@ export default {
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
       if (this.show_human_silhouette)
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
+      if (this.show_regular_bike_silhouette)
+        await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -231,6 +254,7 @@ export default {
         ctx.globalCompositeOperation = 'source-over'
       }
 
+      console.log('drawing bikes')
       for (const bike of this.sorted_enabled_bikes) {
         console.log('drawing bike', bike.id)
         const img = new Image()
@@ -368,8 +392,34 @@ export default {
       ctx.globalAlpha = 1
       return
     },
+    async drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm) {
+      const bike_img = new Image()
+      bike_img.src = './mtb.svg'
+      await bike_img.decode()
+
+      const bike_img_w = 1280
+      const bike_img_h = 740
+
+      const img_ratio = bike_img_h / bike_img_w
+      const silhouette_width = 178 * each_px_measures_in_cm
+      const silhouette_height = silhouette_width * img_ratio
+
+      const draw_x = padding
+      // let draw_y = canvas.height
+      let draw_y = canvas.height - padding
+
+      ctx.globalAlpha = 1
+      ctx.filter = 'invert(.5)'
+      ctx.globalAlpha = 0.8
+      ctx.drawImage(bike_img, draw_x, draw_y, silhouette_width, -silhouette_height)
+      ctx.globalAlpha = 1
+      ctx.filter = 'none'
+    },
     toggleHumanSilhouette($event) {
       this.show_human_silhouette = $event.target.checked
+    },
+    toggleRegularBikeSilhouette($event) {
+      this.show_regular_bike_silhouette = $event.target.checked
     },
     toggleOutlineView($event) {
       let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
