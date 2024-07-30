@@ -1238,5 +1238,18 @@
     "frame_made_in": "Italy",
     "assembled_in": "Italy",
     "comment_en": "100% Italian, from design to production."
+  },
+  {
+    "id": "biporteur-cycles-la-barquette",
+
+    "manufacturer": "Cycles La Barquette",
+    "model": "Biporteur",
+    "src": "la-barquette.png",
+    "bike_length_percent": 0.806,
+    "bike_length_cm": 245,
+    "left_margin_percent": 0.097,
+    "bottom_margin_percent": 0.127,
+    "url": "https://cycleslabarquette.com/velo-cargo-biporteur-2/",
+    "frame_made_in": "France"
   }
 ]
