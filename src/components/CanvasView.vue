@@ -447,7 +447,11 @@ export default {
       const img = canvas.toDataURL()
       const a = document.createElement('a')
       a.href = img
-      a.download = 'canvas.png'
+
+      const bikes = this.sorted_enabled_bikes
+      const bikes_names = bikes.map((bike) => bike.id).join('+')
+
+      a.download = `bike-comparison-${bikes_names}.png`
       a.click()
     }
   }
