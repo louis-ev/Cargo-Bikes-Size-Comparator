@@ -183,11 +183,11 @@
 
     "manufacturer": "Tern",
     "model": "GSD",
-    "src": "tern-gsd.png",
-    "bike_length_percent": 0.811,
-    "bike_length_cm": 180,
-    "left_margin_percent": 0.115,
-    "bottom_margin_percent": 0.07,
+    "src": "tern-gsd-2.png",
+    "bike_length_cm": 186,
+    "bike_length_percent": 0.8719999999999999,
+    "left_margin_percent": 0.109,
+    "bottom_margin_percent": 0.096,
     "url": "https://www.ternbicycles.com/en/bikes/472/gsd"
   },
   {
