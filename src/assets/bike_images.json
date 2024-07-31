@@ -97,7 +97,14 @@
     "bike_length_cm": 243,
     "left_margin_percent": 0.1452,
     "bottom_margin_percent": 0.225,
-    "url": "https://www.larryvsharry.com/en/ebullitt"
+    "url": "https://www.larryvsharry.com/en/ebullitt",
+    "insitu": [
+      {
+        "from": "IchBinKoloss on Reddit",
+        "url": "https://www.reddit.com/r/CargoBike/comments/1eeey1c/comment/lfp65ez/?context=3",
+        "src": "bullit.jpeg"
+      }
+    ]
   },
   {
     "id": "urbanarrow-familynext",
