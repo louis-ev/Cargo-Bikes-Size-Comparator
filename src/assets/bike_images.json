@@ -501,11 +501,11 @@
 
     "manufacturer": "Tern",
     "model": "Quick Haul",
-    "src": "tern-quickhaul.png",
-    "bike_length_percent": 0.824,
+    "src": "tern-quickhaul-2.png",
     "bike_length_cm": 172,
-    "left_margin_percent": 0.11,
-    "bottom_margin_percent": 0.083,
+    "bike_length_percent": 0.964,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0.056,
     "url": "https://www.ternbicycles.com/en/bikes/471/quick-haul"
   },
   {
