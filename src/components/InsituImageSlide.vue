@@ -1,21 +1,32 @@
 <template>
   <BasicModal
     :size="'full'"
-    :has_nav="true"
+    :has_nav="insitu.length > 1"
     @prev="$emit('prevImage')"
     @next="$emit('nextImage')"
     @close="$emit('close')"
   >
     <template v-slot:header>
       <div class="_header">
-        <div>{{ $t('message.picture_from') }} {{ from }}</div>
-        <div>{{ index + 1 }}/{{ bike_images_full_urls.length }}</div>
+        <div>
+          <template v-if="current_insitu.url">
+            {{ $t('message.picture_from') }}
+            <a :href="current_insitu.url" target="_blank">{{ current_insitu.from }}</a>
+          </template>
+          <template v-else> {{ $t('message.picture_from') }} {{ current_insitu.from }} </template>
+        </div>
+        <div>{{ index + 1 }}/{{ insitu.length }}</div>
       </div>
     </template>
     <template v-slot:content>
       <div class="_img">
         <transition name="fade" mode="out-in">
-          <img v-if="current_img" :key="current_img.url" class="" :src="current_img.url" />
+          <img
+            v-if="current_insitu.src"
+            :key="current_insitu.src"
+            class=""
+            :src="current_insitu.src"
+          />
         </transition>
       </div>
     </template>
@@ -30,8 +41,8 @@ const insitu_images_full_paths = import.meta.glob('@/assets/insitu/*', {
 
 export default {
   props: {
-    bike: {
-      type: Object,
+    insitu: {
+      type: Array,
       required: true
     },
     index: {
@@ -52,11 +63,13 @@ export default {
   beforeUnmount() {},
   watch: {},
   computed: {
-    current_img() {
-      return this.bike_images_full_urls[this.index] || false
-    },
-    from() {
-      return this.bike.insitu[this.index].from || this.$t('message.unknown')
+    current_insitu() {
+      const _insitu = this.insitu[this.index]
+      return {
+        src: this.getImgFullUrl(_insitu.src),
+        from: _insitu.from || this.$t('message.unknown'),
+        url: _insitu.url
+      }
     }
   },
   methods: {
@@ -73,7 +86,6 @@ export default {
       }
       return urls
     },
-
     getImgFullUrl(src) {
       return this.bike_images_full_urls.find((img) => img.original_filename === src)?.url
     }

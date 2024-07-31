@@ -88,7 +88,7 @@
 
     <InsituImageSlide
       v-if="show_full_image_index !== null"
-      :bike="bike"
+      :insitu="bike.insitu"
       :index="show_full_image_index"
       @close="hideFullImage"
       @prevImage="prevImage"
