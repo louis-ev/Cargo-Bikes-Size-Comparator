@@ -1132,8 +1132,8 @@
     "frame_made_in": "France"
   },
   {
-    "id": "equo-o2-feel",
-    "manufacturer": "O2 feel",
+    "id": "equo-o2feel",
+    "manufacturer": "O2feel",
     "model": "Equo",
     "src": "o2feel-Equo-7.png",
     "bike_length_percent": 0.927,
