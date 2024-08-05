@@ -48,6 +48,7 @@ export default {
     unicodeFlag(country) {
       country = country.toLowerCase()
       if (country === 'usa') return '🇺🇸'
+      else if (country === 'taiwan') return '🇹🇼'
       else if (country === 'germany') return '🇩🇪'
       else if (country === 'hungary') return '🇭🇺'
       else if (country === 'denmark') return '🇩🇰'

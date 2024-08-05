@@ -1211,7 +1211,7 @@
     "model": "E-Cargoville LT Expert",
     "src": "bergamont-e-cargoville-lt.png",
     "bike_length_percent": 0.989,
-    "bike_length_cm": 207,
+    "bike_length_cm": 208,
     "left_margin_percent": 0.005,
     "bottom_margin_percent": 0.226,
     "url": "https://www.bergamont.com/fr/fr/product/bergamont-e-cargoville-lt-expert?article=290945047",
@@ -1297,5 +1297,30 @@
     "bottom_margin_percent": 0.072,
     "url": "https://www.ternbicycles.com/fr/bikes/471/quick-haul-long",
     "frame_made_in": ""
+  },
+  {
+    "id": "ever-e-day-bike-friday",
+
+    "manufacturer": "Bike Friday",
+    "model": "Ever-E-Day",
+    "src": "Ever-E-Day-Front-Rack-only-scaled.png",
+    "bike_length_cm": 162,
+    "bike_length_percent": 0.849,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.049,
+    "url": "https://bikefriday.com/product/ever-e-day-elite-cargo-bike-2023/",
+    "frame_made_in": "USA"
+  },
+  {
+    "id": "turbo-porto-specialized",
+    "manufacturer": "Specialized",
+    "model": "Turbo Porto",
+    "src": "90823-52_PORTO-40-NB-SMK-BLK_HERO.png",
+    "bike_length_cm": 207,
+    "bike_length_percent": 0.87,
+    "left_margin_percent": 0.07,
+    "bottom_margin_percent": 0.07,
+    "url": "https://www.specialized.com/ch/en/turbo-porto/p/4206097",
+    "frame_made_in": "Taiwan"
   }
 ]
