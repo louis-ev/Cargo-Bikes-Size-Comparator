@@ -49,7 +49,7 @@
         </small>
       </template>
 
-      <BikesList
+      <BikesListInSidebar
         :bikes="filtered_bikes"
         :enabled_bikes="enabled_bikes"
         :canvas_image_style_outline="canvas_image_style_outline"
@@ -107,7 +107,7 @@
 </template>
 <script>
 import LangSelect from './LangSelect.vue'
-import BikesList from './BikesListInSidebar.vue'
+import BikesListInSidebar from './BikesListInSidebar.vue'
 import Credits from './Credits.vue'
 
 export default {
@@ -121,7 +121,7 @@ export default {
   },
   components: {
     LangSelect,
-    BikesList,
+    BikesListInSidebar,
     Credits
   },
   data() {
