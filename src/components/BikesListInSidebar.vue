@@ -34,8 +34,8 @@
       <BikeDetails
         v-if="bikeIsEnabled(bike.id)"
         :bike="bike"
-        :bikes_position_adjustments="bikes_position_adjustments"
-        @update:bikes_position_adjustments="$emit('update:bikes_position_adjustments', $event)"
+        :bikes_adjustments="bikes_adjustments"
+        @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
       />
     </div>
   </transition-group>
@@ -52,7 +52,7 @@ export default {
     bikes: Array,
     enabled_bikes: Array,
     canvas_image_style_outline: Boolean,
-    bikes_position_adjustments: Object
+    bikes_adjustments: Object
   },
   components: {
     BikeDetails

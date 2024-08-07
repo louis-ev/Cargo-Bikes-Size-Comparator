@@ -9,7 +9,7 @@
           :grid_step="grid_step"
           v-model:default_padding_percent="default_padding_percent"
           v-model:grid_step="grid_step"
-          v-model:bikes_position_adjustments="bikes_position_adjustments"
+          v-model:bikes_adjustments="bikes_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
           @showAddBikeModal="add_bike_modal = true"
           @closeSidebar="show_sidebar = false"
@@ -25,7 +25,7 @@
           :bikes="bikes"
           :default_padding_percent="default_padding_percent"
           :grid_step="grid_step"
-          :bikes_position_adjustments="bikes_position_adjustments"
+          :bikes_adjustments="bikes_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
           :show_sidebar="show_sidebar"
           @openSidebar="show_sidebar = true"
@@ -63,7 +63,7 @@ export default {
       default_padding_percent: 5,
       grid_step: 10,
 
-      bikes_position_adjustments: {},
+      bikes_adjustments: {},
 
       bike_outline_colors: ['3333ff', 'ff0000', '11bb11', 'bbbb00', 'ff00ff', '00bbbb']
     }

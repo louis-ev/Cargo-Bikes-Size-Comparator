@@ -23,6 +23,7 @@ const i18n = createI18n({
         bikes_selected: 'bikes selected',
         reset: 'Reset',
         position: 'Position',
+        opacity: 'Opacity',
         in_situ: 'In Situ',
         missing_length_information: 'Missing length information',
         advanced_options: 'Advanced options',
@@ -160,6 +161,7 @@ const i18n = createI18n({
         bikes_selected: 'vélos sélectionnés',
         reset: 'Réinitialiser',
         position: 'Position',
+        opacity: 'Opacité',
         in_situ: 'In Situ',
         missing_length_information: 'Information de longueur manquante',
 

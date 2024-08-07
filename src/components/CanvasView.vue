@@ -123,7 +123,7 @@ export default {
     bikes: Array,
     default_padding_percent: Number,
     grid_step: Number,
-    bikes_position_adjustments: Object,
+    bikes_adjustments: Object,
     canvas_image_style_outline: Boolean,
     show_sidebar: Boolean
   },
@@ -154,7 +154,7 @@ export default {
         this.showBikes()
       }, 30)
     },
-    bikes_position_adjustments: {
+    bikes_adjustments: {
       handler() {
         this.showBikes()
       },
@@ -265,9 +265,11 @@ export default {
         const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
         const draw_h = draw_w / img_ratio
 
-        let user_horizontal_adjustment = this.bikes_position_adjustments[bike.id] / 100 || 0
+        let user_horizontal_adjustment = this.bikes_adjustments[bike.id]?.position / 100 || 0
         const draw_x = -(bike.left_margin_percent - user_horizontal_adjustment) * draw_w + padding
         const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
+
+        let user_opacity_adjustment = this.bikes_adjustments[bike.id]?.opacity / 100 || 1
 
         if (this.canvas_image_style_outline) {
           // Offscreen canvas for edge detection on the image
@@ -292,9 +294,13 @@ export default {
           let color = bike.color
           colorize(processorCanvas, color)
 
+          ctx.globalAlpha = user_opacity_adjustment
           ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
+          ctx.globalAlpha = 1
         } else {
+          ctx.globalAlpha = user_opacity_adjustment
           ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+          ctx.globalAlpha = 1
         }
       }
 

@@ -53,8 +53,8 @@
         :bikes="filtered_bikes"
         :enabled_bikes="enabled_bikes"
         :canvas_image_style_outline="canvas_image_style_outline"
-        :bikes_position_adjustments="bikes_position_adjustments"
-        @update:bikes_position_adjustments="$emit('update:bikes_position_adjustments', $event)"
+        :bikes_adjustments="bikes_adjustments"
+        @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
       />
 
       <hr />
@@ -115,7 +115,7 @@ export default {
     bikes: Array,
     enabled_bikes: Array,
     canvas_image_style_outline: Boolean,
-    bikes_position_adjustments: Object,
+    bikes_adjustments: Object,
     grid_step: Number,
     default_padding_percent: Number
   },

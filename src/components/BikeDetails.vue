@@ -30,7 +30,7 @@
             max="50"
             step="0.1"
             :list="'steplist-' + bike.id"
-            :value="bikes_position_adjustments[bike.id]"
+            :value="bikes_adjustments[bike.id]?.position || 0"
             @input="updateBikePosition(bike.id, $event.target.value)"
           />
           <!-- // disabled because snapping prevents fine tuning -->
@@ -44,7 +44,37 @@
               class="noStyle"
               @click="resetBikePosition(bike.id)"
               :aria-label="$t('message.reset')"
-              :disabled="!bikes_position_adjustments.hasOwnProperty(bike.id)"
+              :disabled="!bikes_adjustments[bike.id]?.position"
+            >
+              &#8630;
+            </button>
+          </div>
+        </div>
+        <div class="_adjustInput">
+          <label>{{ $t('message.opacity') }}</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="0.1"
+            :list="'steplist-' + bike.id"
+            :value="bikes_adjustments[bike.id]?.opacity || 100"
+            @input="updateBikeOpacity(bike.id, $event.target.value)"
+          />
+          <!-- // disabled because snapping prevents fine tuning -->
+          <!-- <datalist :id="'steplist-' + item.id">
+              <option>0</option>
+            </datalist> -->
+
+          <div class="_resetPosition">
+            <button
+              type="button"
+              class="noStyle"
+              @click="resetBikeOpacity(bike.id)"
+              :aria-label="$t('message.reset')"
+              :disabled="
+                !bikes_adjustments[bike.id]?.opacity || bikes_adjustments[bike.id]?.opacity === 100
+              "
             >
               &#8630;
             </button>
@@ -109,7 +139,7 @@ export default {
       type: Object,
       required: true
     },
-    bikes_position_adjustments: {
+    bikes_adjustments: {
       type: Object,
       required: true
     }
@@ -176,14 +206,26 @@ export default {
         .join('<br>')
     },
     resetBikePosition(id) {
-      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
-      delete bikes_position_adjustments[id]
-      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      bikes_adjustments[id].position = 0
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
     },
     updateBikePosition(id, value) {
-      const bikes_position_adjustments = JSON.parse(JSON.stringify(this.bikes_position_adjustments))
-      bikes_position_adjustments[id] = +value
-      this.$emit('update:bikes_position_adjustments', bikes_position_adjustments)
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
+      bikes_adjustments[id].position = +value
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
+    },
+    resetBikeOpacity(id) {
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      bikes_adjustments[id].opacity = 100
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
+    },
+    updateBikeOpacity(id, value) {
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
+      bikes_adjustments[id].opacity = +value
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
     }
   }
 }
