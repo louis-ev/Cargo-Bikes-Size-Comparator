@@ -1322,5 +1322,29 @@
     "bottom_margin_percent": 0.07,
     "url": "https://www.specialized.com/ch/en/turbo-porto/p/4206097",
     "frame_made_in": "Taiwan"
+  },
+  {
+    "id": "orox-tern",
+    "manufacturer": "Tern",
+    "model": "Orox",
+    "src": "tern-orox.png",
+    "bike_length_cm": 218,
+    "bike_length_percent": 0.947,
+    "left_margin_percent": 0.026,
+    "bottom_margin_percent": 0.103,
+    "url": "https://www.ternbicycles.com/en/bikes/471/orox",
+    "frame_made_in": ""
+  },
+  {
+    "id": "urban-arrow-xl--urban-arrox",
+    "manufacturer": " Urban arrox",
+    "model": "Urban arrow XL",
+    "src": "urban-arrow-cargo-xl.png",
+    "bike_length_cm": 294,
+    "bike_length_percent": 0.934,
+    "left_margin_percent": 0.034,
+    "bottom_margin_percent": 0.239,
+    "url": "https://urbanarrow.com/business-bikes/cargo/",
+    "frame_made_in": ""
   }
 ]
