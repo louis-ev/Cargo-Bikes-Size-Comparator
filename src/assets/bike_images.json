@@ -1346,5 +1346,16 @@
     "bottom_margin_percent": 0.239,
     "url": "https://urbanarrow.com/business-bikes/cargo/",
     "frame_made_in": ""
+  },
+  {
+    "id": "transporter2-65-riese-und-müller",
+    "manufacturer": "Riese und Müller",
+    "model": "Transporter2 65",
+    "src": "r-m-transporter65-titel-family.png",
+    "bike_length_cm": 244,
+    "bike_length_percent": 0.907,
+    "left_margin_percent": 0.05,
+    "bottom_margin_percent": 0.082,
+    "url": "https://www.r-m.de/en-gb/bikes/transporter2-65/"
   }
 ]
