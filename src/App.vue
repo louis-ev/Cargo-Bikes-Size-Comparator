@@ -44,13 +44,18 @@ export default {
     },
     sorted_bikes() {
       if (!this.supercharged_bikes) return []
-      return this.supercharged_bikes.slice().sort((a, b) => {
-        if (a.bike_length_cm && b.bike_length_cm) return a.bike_length_cm - b.bike_length_cm
-        else if (a.bike_length_cm && !b.bike_length_cm) return -1
-        else if (!a.bike_length_cm && b.bike_length_cm) return 1
+      return this.supercharged_bikes
+        .slice()
+        .sort((a, b) => {
+          return a.model.localeCompare(b.model)
+        })
+        .sort((a, b) => {
+          if (a.bike_length_cm && b.bike_length_cm) return a.bike_length_cm - b.bike_length_cm
+          else if (a.bike_length_cm && !b.bike_length_cm) return -1
+          else if (!a.bike_length_cm && b.bike_length_cm) return 1
 
-        return 0
-      })
+          return 0
+        })
     },
     all_measures() {
       return this.bakfiets_measures.concat(this.longtails_measures)
