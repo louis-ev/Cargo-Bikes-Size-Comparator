@@ -1328,7 +1328,7 @@
     "manufacturer": "Tern",
     "model": "Orox",
     "src": "tern-orox.png",
-    "bike_length_cm": 218,
+    "bike_length_cm": 216,
     "bike_length_percent": 0.947,
     "left_margin_percent": 0.026,
     "bottom_margin_percent": 0.103,
