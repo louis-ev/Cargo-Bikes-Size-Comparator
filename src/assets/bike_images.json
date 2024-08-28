@@ -1370,5 +1370,18 @@
     "bottom_margin_percent": 0.19,
     "url": "https://www.hovsco.com/products/hovcart-cargo-ebike",
     "frame_made_in": ""
+  },
+  {
+    "id": "nc-1-nicolai",
+
+    "manufacturer": "Nicolai",
+    "model": "NC-1",
+    "src": "nc1 cargo_2023_3000x2000_02.png",
+    "bike_length_cm": 266,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0.002,
+    "bottom_margin_percent": 0.154,
+    "url": "https://www.nicolai-bicycles.com/nc1",
+    "frame_made_in": "Germany"
   }
 ]
