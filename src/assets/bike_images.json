@@ -1383,5 +1383,19 @@
     "bottom_margin_percent": 0.154,
     "url": "https://www.nicolai-bicycles.com/nc1",
     "frame_made_in": "Germany"
+  },
+  {
+    "id": "curve-babboe",
+
+    "manufacturer": "Babboe",
+    "model": "Curve",
+    "src": "Babboe-Curve-Mountain-2-1.png",
+    "bike_length_cm": 215,
+    "bike_length_percent": 0.833,
+    "left_margin_percent": 0.087,
+    "bottom_margin_percent": 0.149,
+    "url": "https://www.babboecargobike.com/curve",
+    "frame_made_in": "",
+    "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website."
   }
 ]
