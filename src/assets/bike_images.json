@@ -1397,5 +1397,18 @@
     "url": "https://www.babboecargobike.com/curve",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website."
+  },
+  {
+    "id": "super-mighty-super-bicycles",
+
+    "manufacturer": "Super Bicycles",
+    "model": "Super Mighty",
+    "src": "Super_Mighty_Metallic_Purple.png",
+    "bike_length_cm": 205,
+    "bike_length_percent": 0.854,
+    "left_margin_percent": 0.07,
+    "bottom_margin_percent": 0.164,
+    "url": "https://super-bicycles.com/products/super-mighty",
+    "frame_made_in": ""
   }
 ]
