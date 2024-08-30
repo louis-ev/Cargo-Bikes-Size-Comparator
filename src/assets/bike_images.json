@@ -578,7 +578,7 @@
     "id_in_csv": "",
 
     "manufacturer": "Douze Cycles",
-    "model": "LT 600",
+    "model": "V2 (600)",
     "src": "douze-cycles-v2-600.png",
     "bike_length_percent": 1,
     "bike_length_cm": 243.5,
@@ -591,7 +591,7 @@
     "id_in_csv": "",
 
     "manufacturer": "Douze Cycles",
-    "model": "LT 800",
+    "model": "V2 (800)",
     "src": "douze-cycles-v2-800.png",
     "bike_length_percent": 1,
     "bike_length_cm": 263.5,
