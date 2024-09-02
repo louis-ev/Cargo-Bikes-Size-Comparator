@@ -24,6 +24,17 @@ app.config.globalProperties.$loadBikeImages = async (paths) => {
   }
   return full_paths
 }
+app.config.globalProperties.$loadBikeImages2 = async (paths) => {
+  const full_paths = []
+  for (let [source, url] of Object.entries(paths)) {
+    full_paths.push({
+      url,
+      original_filename: source.split('/').pop()
+    })
+  }
+  return full_paths
+}
+
 app.config.globalProperties.$normalizeStringForSearch = (str) => {
   if (!str) return ''
   return str

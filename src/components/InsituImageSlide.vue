@@ -36,6 +36,8 @@
 import BasicModal from '@/components/BasicModal.vue'
 
 const insitu_images_full_paths = import.meta.glob('@/assets/insitu/*', {
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 1920 }
 })
 
@@ -57,7 +59,7 @@ export default {
     }
   },
   async created() {
-    this.bike_images_full_urls = await this.loadAllInsituFull()
+    this.bike_images_full_urls = await this.$loadBikeImages2(insitu_images_full_paths)
   },
   mounted() {},
   beforeUnmount() {},
@@ -73,19 +75,6 @@ export default {
     }
   },
   methods: {
-    async loadAllInsituFull() {
-      const urls = []
-      for (let [source, thumb] of Object.entries(insitu_images_full_paths)) {
-        const import_statment = thumb()
-        const url = (await import_statment).default
-        const original_filename = source.split('/').pop()
-        urls.push({
-          url,
-          original_filename
-        })
-      }
-      return urls
-    },
     getImgFullUrl(src) {
       return this.bike_images_full_urls.find((img) => img.original_filename === src)?.url
     }
