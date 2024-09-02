@@ -154,7 +154,7 @@ export default {
     }
   },
   async created() {
-    this.bike_images_thumbs_urls = await this.loadAllInsituThumbs()
+    this.bike_images_thumbs_urls = await this.$loadBikeImages(insitu_images_thumbs_paths)
   },
   mounted() {},
   beforeUnmount() {},
@@ -168,19 +168,6 @@ export default {
   },
   computed: {},
   methods: {
-    async loadAllInsituThumbs() {
-      const urls = []
-      for (let [source, thumb] of Object.entries(insitu_images_thumbs_paths)) {
-        const import_statment = thumb()
-        const url = (await import_statment).default
-        const original_filename = source.split('/').pop()
-        urls.push({
-          url,
-          original_filename
-        })
-      }
-      return urls
-    },
     getImgThumbUrl(src) {
       return this.bike_images_thumbs_urls.find((img) => img.original_filename === src)?.url
     },

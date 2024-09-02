@@ -44,6 +44,8 @@
 import BikeDetails from '@/components/BikeDetails.vue'
 
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
+  // eager: true,
+  // import: 'default',
   query: { format: 'webp', w: 80 }
 })
 
@@ -66,25 +68,12 @@ export default {
   },
   async created() {},
   async mounted() {
-    this.bike_images_thumbs_urls = await this.loadAllThumbs()
+    this.bike_images_thumbs_urls = await this.$loadBikeImages(bike_images_thumbs_paths)
   },
   beforeUnmount() {},
   watch: {},
   computed: {},
   methods: {
-    async loadAllThumbs() {
-      const urls = []
-      for (let [source, thumb] of Object.entries(bike_images_thumbs_paths)) {
-        const import_statment = thumb()
-        const url = (await import_statment).default
-        const original_filename = source.split('/').pop()
-        urls.push({
-          url,
-          original_filename
-        })
-      }
-      return urls
-    },
     toggleBike(id) {
       let enabled_bikes_ids = this.enabled_bikes.map((b) => b.id)
       if (enabled_bikes_ids.includes(id)) {
