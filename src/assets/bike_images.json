@@ -1410,5 +1410,30 @@
     "bottom_margin_percent": 0.164,
     "url": "https://super-bicycles.com/products/super-mighty",
     "frame_made_in": ""
+  },
+  {
+    "id": "le-cargo-gaya",
+    "manufacturer": "Gaya",
+    "model": "Le Cargo",
+    "src": "gaya-cargo.png",
+    "bike_length_cm": 195,
+    "bike_length_percent": 0.634,
+    "left_margin_percent": 0.174,
+    "bottom_margin_percent": 0.247,
+    "url": "https://gaya.bike/products/velo-3-places",
+    "frame_made_in": ""
+  },
+  {
+    "id": "le-compact-gaya",
+
+    "manufacturer": "Gaya",
+    "model": "Le Compact",
+    "src": "gaya-compact.png",
+    "bike_length_cm": 175,
+    "bike_length_percent": 0.624,
+    "left_margin_percent": 0.2,
+    "bottom_margin_percent": 0.239,
+    "url": "https://gaya.bike/products/le-compact",
+    "frame_made_in": ""
   }
 ]
