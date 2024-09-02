@@ -5,6 +5,7 @@
 
     "manufacturer": "Chike",
     "model": "Cargo",
+    "bike_type": "tricycle",
     "src": "CHIKE_e-Kids_2022_taubenblau-scaled-transformed.png",
     "bike_length_percent": 0.86577181,
     "bike_length_cm": 192,
@@ -18,6 +19,7 @@
 
     "manufacturer": "Muli Cycles",
     "model": "Muli",
+    "bike_type": "longjohn",
     "src": "Muli2022_Mu_beige_frei.png",
     "bike_length_percent": 0.76510067,
     "bike_length_cm": 198,
@@ -32,6 +34,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Carrie",
+    "bike_type": "longjohn",
     "src": "carrie.png",
     "bike_length_percent": 0.935,
     "bike_length_cm": 209,
@@ -48,6 +51,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Load 75",
+    "bike_type": "longjohn",
     "src": "load475peanut-3000x.png",
     "bike_length_percent": 0.921,
     "bike_length_cm": 264.5,
@@ -63,6 +67,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Load 60",
+    "bike_type": "longjohn",
     "src": "rundm-Load-60-touring-Tundra-grey-matt.png",
     "bike_length_percent": 0.824,
     "bike_length_cm": 248,
@@ -78,6 +83,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "Cargo Verso",
+    "bike_type": "longjohn",
     "src": "toyotacycle120544.png",
     "bike_length_percent": 0.86,
     "bike_length_cm": 275,
@@ -92,6 +98,7 @@
 
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt",
+    "bike_type": "longjohn",
     "src": "bullitt_2020_0046.png",
     "bike_length_percent": 0.735,
     "bike_length_cm": 243,
@@ -111,6 +118,7 @@
 
     "manufacturer": "Urban Arrow",
     "model": "FamilyNext",
+    "bike_type": "longjohn",
     "src": "UA_FAMILYNEXT_CARGOLINE_GROEN.png",
     "bike_length_percent": 0.92,
     "bike_length_cm": 260,
@@ -125,6 +133,7 @@
 
     "manufacturer": "Urban Arrow",
     "model": "Family",
+    "bike_type": "longjohn",
     "src": "UA-family-performance-plus-white-F1_WEB.png",
     "bike_length_percent": 0.73,
     "bike_length_cm": 260,
@@ -144,6 +153,7 @@
 
     "manufacturer": "Decathlon",
     "model": "R500E",
+    "bike_type": "longtail",
     "src": "decathlon-r500e.png",
     "bike_length_percent": 0.911,
     "bike_length_cm": 220,
@@ -157,6 +167,7 @@
 
     "manufacturer": "Moustache",
     "model": "Lundi 20.3",
+    "bike_type": "longtail",
     "src": "moustache-lundi-203.png",
     "bike_length_percent": 0.93,
     "bike_length_cm": 200,
@@ -170,6 +181,7 @@
 
     "manufacturer": "Yuba",
     "model": "Fastrack",
+    "bike_type": "longtail",
     "src": "yuba-fastrack.png",
     "bike_length_percent": 0.843,
     "bike_length_cm": 191,
@@ -183,6 +195,7 @@
 
     "manufacturer": "Tern",
     "model": "GSD",
+    "bike_type": "longtail",
     "src": "tern-gsd-2.png",
     "bike_length_cm": 186,
     "bike_length_percent": 0.8719999999999999,
@@ -196,6 +209,7 @@
 
     "manufacturer": "Omnium",
     "model": "Mini Max V3 M",
+    "bike_type": "shortjohn",
     "src": "omnium-minimax.png",
     "bike_length_percent": 0.96,
     "bike_length_cm": 202,
@@ -209,6 +223,7 @@
 
     "manufacturer": "Omnium",
     "model": "Cargo V3 M",
+    "bike_type": "shortjohn",
     "src": "omnium-cargo-v3.png",
     "bike_length_percent": 0.95,
     "bike_length_cm": 224,
@@ -222,6 +237,7 @@
 
     "manufacturer": "Omnium",
     "model": "Mini V3 M",
+    "bike_type": "shortjohn",
     "src": "omnium-mini-v3.png",
     "bike_length_percent": 0.935,
     "bike_length_cm": 165,
@@ -235,6 +251,7 @@
 
     "manufacturer": "Le Petit Porteur",
     "model": "L’Original",
+    "bike_type": "midtail",
     "src": "lepetitporteur.png",
     "bike_length_percent": 0.908,
     "bike_length_cm": 167,
@@ -250,6 +267,7 @@
 
     "manufacturer": "Le Petit Porteur",
     "model": "Longtail",
+    "bike_type": "longtail",
     "src": "LPP-Longtail-Enhanced.png",
     "bike_length_percent": 0.983,
     "bike_length_cm": 185,
@@ -264,6 +282,7 @@
 
     "manufacturer": "Nakamura",
     "model": "Crossover",
+    "bike_type": "longtail",
     "src": "nakamura-co.png",
     "bike_length_percent": 0.98,
     "bike_length_cm": 220,
@@ -277,6 +296,7 @@
 
     "manufacturer": "Lovens",
     "model": "Explorer S75 ",
+    "bike_type": "longjohn",
     "src": "lovens-explorer75.png",
     "bike_length_percent": 0.947,
     "bike_length_cm": 260,
@@ -290,6 +310,7 @@
 
     "manufacturer": "Yoonit",
     "model": "",
+    "bike_type": "shortjohn",
     "src": "yoonit-classic.png",
     "bike_length_percent": 0.725,
     "bike_length_cm": 177,
@@ -304,6 +325,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multicharger2",
+    "bike_type": "longtail",
     "src": "multicharger2.png",
     "bike_length_percent": 0.91,
     "bike_length_cm": 197,
@@ -327,6 +349,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Multitinker",
+    "bike_type": "longtail",
     "src": "multitinker.png",
     "bike_length_percent": 0.833,
     "bike_length_cm": 189,
@@ -340,6 +363,7 @@
 
     "manufacturer": "Riese und Müller",
     "model": "Packster 70",
+    "bike_type": "longjohn",
     "src": "packster-70.png",
     "bike_length_percent": 0.875,
     "bike_length_cm": 249,
@@ -353,6 +377,7 @@
 
     "manufacturer": "Bunch Bike",
     "model": "The Original 4",
+    "bike_type": "tricycle",
     "src": "bunch-bike.png",
     "bike_length_percent": 0.963,
     "bike_length_cm": 211,
@@ -366,6 +391,7 @@
 
     "manufacturer": "Cannondale",
     "model": "Cargowagen Neo",
+    "bike_type": "longtail",
     "src": "cargowagen.png",
     "bike_length_percent": 1,
     "bike_length_cm": 185,
@@ -379,6 +405,7 @@
 
     "manufacturer": "Oklo",
     "model": "Evo Longtail",
+    "bike_type": "longtail",
     "src": "oklo-evo-fantilo-lt.png",
     "bike_length_percent": 0.86093,
     "bike_length_cm": 210,
@@ -394,6 +421,7 @@
 
     "manufacturer": "ETNI Cycles",
     "model": "Oléron",
+    "bike_type": "longtail",
     "src": "etnicycles-oleron.png",
     "bike_length_percent": 0.916,
     "bike_length_cm": 204,
@@ -408,6 +436,7 @@
 
     "manufacturer": "Kemper",
     "model": "Filibus",
+    "bike_type": "shortjohn",
     "src": "filibus.png",
     "bike_length_percent": 0.945,
     "bike_length_cm": 200,
@@ -422,6 +451,7 @@
 
     "manufacturer": "Aventon",
     "model": "Abound",
+    "bike_type": "longtail",
     "src": "aventon-abound.png",
     "bike_length_percent": 1,
     "bike_length_cm": 191,
@@ -435,6 +465,7 @@
 
     "manufacturer": "Radwagon",
     "model": "5",
+    "bike_type": "longtail",
     "src": "radwagon-5.png",
     "bike_length_percent": 0.92,
     "bike_length_cm": 193,
@@ -448,6 +479,7 @@
 
     "manufacturer": "RobertBikes",
     "model": "BOB",
+    "bike_type": "longtail",
     "src": "robertbikes-bob.png",
     "bike_length_percent": 0.925,
     "bike_length_cm": 196,
@@ -462,6 +494,7 @@
 
     "manufacturer": "Specialized",
     "model": "Haul ST",
+    "bike_type": "midtail",
     "src": "specialized-haul-st-439204-3330665-2.png",
     "bike_length_percent": 0.99,
     "bike_length_cm": "166",
@@ -475,6 +508,7 @@
 
     "manufacturer": "Specialized",
     "model": "Haul LT",
+    "bike_type": "longtail",
     "src": "specialized_HAUL-LT-WHTMTN_HERO-SQUARE.png",
     "bike_length_percent": 0.9,
     "bike_length_cm": 200,
@@ -488,6 +522,7 @@
 
     "manufacturer": "Tern",
     "model": "HSD",
+    "bike_type": "longtail",
     "src": "tern-hsd.png",
     "bike_length_percent": 0.76,
     "bike_length_cm": 170,
@@ -501,6 +536,7 @@
 
     "manufacturer": "Tern",
     "model": "Quick Haul",
+    "bike_type": "longtail",
     "src": "tern-quickhaul-2.png",
     "bike_length_cm": 172,
     "bike_length_percent": 0.964,
@@ -514,6 +550,7 @@
 
     "manufacturer": "Vello",
     "model": "SUB",
+    "bike_type": "longtail",
     "src": "vello-sub.png",
     "bike_length_percent": 0.755,
     "bike_length_cm": 180,
@@ -527,6 +564,7 @@
 
     "manufacturer": "Yuba",
     "model": "Kombi E5",
+    "bike_type": "longtail",
     "src": "yuba-ekombi.png",
     "bike_length_percent": 0.746,
     "bike_length_cm": 192,
@@ -540,6 +578,7 @@
 
     "manufacturer": "Yuba",
     "model": "Mundo Lux",
+    "bike_type": "longtail",
     "src": "yuba-lux.png",
     "bike_length_percent": 0.972,
     "bike_length_cm": 212,
@@ -553,6 +592,7 @@
 
     "manufacturer": "Yuba",
     "model": "SuperCargo",
+    "bike_type": "longjohn",
     "src": "yuba-supercargo.png",
     "bike_length_percent": 0.917,
     "bike_length_cm": 260,
@@ -566,6 +606,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "LT",
+    "bike_type": "longtail",
     "src": "douze-cycles-lt2.png",
     "bike_length_percent": 1,
     "bike_length_cm": 205,
@@ -579,6 +620,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "V2 (600)",
+    "bike_type": "longjohn",
     "src": "douze-cycles-v2-600.png",
     "bike_length_percent": 1,
     "bike_length_cm": 243.5,
@@ -592,6 +634,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "V2 (800)",
+    "bike_type": "longjohn",
     "src": "douze-cycles-v2-800.png",
     "bike_length_percent": 1,
     "bike_length_cm": 263.5,
@@ -605,6 +648,7 @@
 
     "manufacturer": "Galian Cycles",
     "model": "Le Formidable",
+    "bike_type": "longjohn",
     "src": "galian-formidable.png",
     "bike_length_percent": 0.8534,
     "bike_length_cm": 250,
@@ -618,6 +662,7 @@
 
     "manufacturer": "Xtracycle",
     "model": "Swoop",
+    "bike_type": "longtail",
     "src": "xtracycle-swoop.png",
     "bike_length_percent": 0.886,
     "bike_length_cm": 211,
@@ -630,6 +675,7 @@
 
     "manufacturer": "Bicicapace",
     "model": "Justlong Sport",
+    "bike_type": "longtail",
     "src": "jl-sport-long.png",
     "bike_length_percent": 0.873,
     "bike_length_cm": 199,
@@ -643,6 +689,7 @@
 
     "manufacturer": "Achielle",
     "model": "Jean",
+    "bike_type": "longtail",
     "src": "achielle_PS.png",
     "bike_length_percent": 0.635,
     "bike_length_cm": 185,
@@ -656,6 +703,7 @@
 
     "manufacturer": "Bike43",
     "model": "Family longtail",
+    "bike_type": "longtail",
     "src": "bike43.png",
     "bike_length_percent": 0.958,
     "bike_length_cm": 200,
@@ -669,8 +717,8 @@
 
     "manufacturer": "Trek",
     "model": "Fetch+ 4",
+    "bike_type": "longjohn",
     "src": "fetch4+.png",
-
     "bike_length_percent": 0.978,
     "bike_length_cm": 265,
     "left_margin_percent": 0.014,
@@ -679,8 +727,10 @@
   },
   {
     "id": "u7-isinwheel",
+
     "manufacturer": "Isinwheel",
     "model": "U7",
+    "bike_type": "midtail",
     "src": "isinwheel-u7.png",
     "bike_length_percent": 0.934,
     "bike_length_cm": 162,
@@ -694,6 +744,7 @@
 
     "manufacturer": "Cube",
     "model": "Longtail Hybrid",
+    "bike_type": "longtail",
     "src": "longtail-hybrid-cube.png",
     "bike_length_percent": 0.89,
     "bike_length_cm": 195,
@@ -707,6 +758,7 @@
 
     "manufacturer": "Lectric",
     "model": "XPedition",
+    "bike_type": "longtail",
     "src": "XPed-single-7.png",
     "bike_length_percent": 0.932,
     "bike_length_cm": 182.88,
@@ -716,6 +768,7 @@
   },
   {
     "disabled": true,
+    "note": "Disabled because it's not a cargo bike, too short and cannot carry much",
     "id": "the-one-lectric",
 
     "manufacturer": "Lectric",
@@ -732,6 +785,7 @@
 
     "manufacturer": "Madsen",
     "model": "EVERYTHING E-Madsen",
+    "bike_type": "lowtail",
     "src": "everything-madsen.png",
     "bike_length_percent": 0.865,
     "bike_length_cm": 231,
@@ -744,6 +798,7 @@
 
     "manufacturer": "Raleigh",
     "model": "Stride 2",
+    "bike_type": "longjohn",
     "src": "Raleigh-Stride-2.png",
     "bike_length_percent": 0.9030000000000001,
     "bike_length_cm": 258,
@@ -755,8 +810,9 @@
   {
     "id": "bike-classic-christiania-",
 
-    "manufacturer": "Christiania ",
+    "manufacturer": "Christiania",
     "model": "Bike Classic",
+    "bike_type": "tricycle",
     "src": "ChristianiaBikes_StandardFrame.png",
     "bike_length_percent": 0.5770000000000001,
     "bike_length_cm": 208,
@@ -769,6 +825,7 @@
 
     "manufacturer": "Bakfiets.nl",
     "model": "Classic long",
+    "bike_type": "longjohn",
     "src": "petrol-blue_2.png",
     "bike_length_percent": 0.9490000000000001,
     "bike_length_cm": 253,
@@ -782,6 +839,7 @@
 
     "manufacturer": "Benno",
     "model": "Boost",
+    "bike_type": "longtail",
     "src": "benno_boost_10d_cx_speed_machine_blue_evo5.png",
     "bike_length_percent": 0.913,
     "bike_length_cm": 190,
@@ -791,8 +849,10 @@
   },
   {
     "id": "shorty-urban-arrow",
+
     "manufacturer": "Urban Arrow",
     "model": "Shorty",
+    "bike_type": "longjohn",
     "src": "urban-arrow-shorty.png",
     "bike_length_percent": 0.576,
     "bike_length_cm": 203,
@@ -805,6 +865,7 @@
 
     "manufacturer": "Dolly Bikes",
     "model": "E-Dolly MaxDrive 600Wh",
+    "bike_type": "longjohn",
     "src": "E-Dolly_Azure-Blue_Light-Grey-19-scaled.png",
     "bike_length_percent": 0.867,
     "bike_length_cm": 263,
@@ -818,6 +879,7 @@
 
     "manufacturer": "Benno",
     "model": "RemiDemi",
+    "bike_type": "midtail",
     "src": "benno_remidemi_9d_chai_latte_evo2.png",
     "bike_length_percent": 0.824,
     "bike_length_cm": 171,
@@ -827,8 +889,10 @@
   },
   {
     "id": "gravit-city-e-hase-bikes",
+
     "manufacturer": "Hase Bikes",
     "model": "Gravit City E",
+    "bike_type": "shortjohn",
     "src": "gravit_city_e_01.png",
     "bike_length_percent": 0.69,
     "bike_length_cm": 224,
@@ -842,6 +906,7 @@
 
     "manufacturer": "Workcycles",
     "model": "FR8",
+    "bike_type": "midtail",
     "src": "WorkCycles_Fr8.png",
     "bike_length_percent": 0.911,
     "bike_length_cm": 185,
@@ -855,6 +920,7 @@
 
     "manufacturer": "Momentum",
     "model": "PakYak E+",
+    "bike_type": "longtail",
     "src": "Pakyak-E_Color-B.png",
     "bike_length_percent": 0.929,
     "bike_length_cm": 202,
@@ -867,6 +933,7 @@
 
     "manufacturer": "Yuba",
     "model": "Spicy Curry",
+    "bike_type": "longtail",
     "src": "spicycurry.png",
     "bike_length_percent": 0.906,
     "bike_length_cm": 210,
@@ -879,6 +946,7 @@
 
     "manufacturer": "Hazay",
     "model": "Family",
+    "bike_type": "longjohn",
     "src": "hazay-family.png",
     "bike_length_percent": 0.909,
     "bike_length_cm": 250,
@@ -892,6 +960,7 @@
 
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt X",
+    "bike_type": "longjohn",
     "src": "majortom_x_sideview.png",
     "bike_length_percent": 0.79,
     "bike_length_cm": 265,
@@ -901,8 +970,10 @@
   },
   {
     "id": "46er-benno",
+
     "manufacturer": "Benno",
     "model": "46er",
+    "bike_type": "longtail",
     "src": "46er.png",
     "bike_length_percent": 0.959,
     "bike_length_cm": 187,
@@ -912,8 +983,10 @@
   },
   {
     "id": "cargobike-elian-cycles",
+
     "manufacturer": "Elian Cycles",
     "model": "Cargobike",
+    "bike_type": "longjohn",
     "src": "eliancycles.png",
     "bike_length_percent": 0.744,
     "bike_length_cm": 235,
@@ -924,8 +997,10 @@
   },
   {
     "id": "unicorn-ten:07",
+
     "manufacturer": "Ten:07",
     "model": "Unicorn",
+    "bike_type": "shortjohn",
     "src": "ten07unicorn.png",
     "bike_length_percent": 0.906,
     "bike_length_cm": 204,
@@ -938,6 +1013,7 @@
 
     "manufacturer": "Decathlon",
     "model": "F900E",
+    "bike_type": "longjohn",
     "src": "f900e.png",
     "bike_length_percent": 0.746,
     "bike_length_cm": 260,
@@ -951,6 +1027,7 @@
 
     "manufacturer": "Douze Cycles",
     "model": "G4e",
+    "bike_type": "longjohn",
     "src": "douze-g4e.png",
     "bike_length_percent": 0.953,
     "bike_length_cm": 271,
@@ -963,6 +1040,7 @@
 
     "manufacturer": "Ca Go",
     "model": "FS200 Life Family Plus",
+    "bike_type": "longjohn",
     "src": "01_fs200life-family-plus_render_right.png",
     "bike_length_percent": 0.813,
     "bike_length_cm": 270,
@@ -976,6 +1054,7 @@
 
     "manufacturer": "Bike friday",
     "model": "Haul-a-day",
+    "bike_type": "longtail",
     "src": "HaD-1.png",
     "bike_length_percent": 0.905,
     "bike_length_cm": 193.04,
@@ -990,6 +1069,7 @@
 
     "manufacturer": "Convercycle",
     "model": "Electric - Cargo Mode",
+    "bike_type": "lowtail",
     "src": "freisteller_ausgeklappt_ebike.png",
     "bike_length_percent": 0.924,
     "bike_length_cm": 275,
@@ -1004,6 +1084,7 @@
 
     "manufacturer": "Convercycle",
     "model": "Electric - Normal Mode",
+    "bike_type": "lowtail",
     "src": "friesteller_ebike_shopseite.png",
     "bike_length_percent": 0.848,
     "bike_length_cm": 206,
@@ -1019,6 +1100,7 @@
 
     "manufacturer": "Jean Fourche",
     "model": "Jean Fourche",
+    "bike_type": "longtail",
     "src": "jean-fourche.png",
     "bike_length_percent": 0.775,
     "bike_length_cm": 165,
@@ -1035,6 +1117,7 @@
 
     "manufacturer": "Xtracycle",
     "model": "RFA",
+    "bike_type": "longtail",
     "src": "RFA-xtracycles.png",
     "bike_length_percent": 0.789,
     "bike_length_cm": 185.4,
@@ -1048,6 +1131,7 @@
 
     "manufacturer": "Ca Go",
     "model": "CS",
+    "bike_type": "longdiamond",
     "src": "cs200exclusive_right-side_95000030_m.png",
     "bike_length_percent": 0.6639999999999999,
     "bike_length_cm": 204,
@@ -1061,6 +1145,7 @@
 
     "manufacturer": "TARRAN",
     "model": "T1 Pro",
+    "bike_type": "longjohn",
     "src": "tarran-t1.png",
     "bike_length_percent": 0.809,
     "bike_length_cm": 226,
@@ -1074,6 +1159,7 @@
 
     "manufacturer": "Elwing",
     "model": "Yuvy 2",
+    "bike_type": "midtail",
     "src": "elwing-yuvy-2.png",
     "bike_length_percent": 0.92,
     "bike_length_cm": 180,
@@ -1086,6 +1172,7 @@
 
     "manufacturer": "Laplandar",
     "model": "Husky-E",
+    "bike_type": "tricycle",
     "src": "laplander-bike.png",
     "bike_length_percent": 0.881,
     "bike_length_cm": 269,
@@ -1096,8 +1183,10 @@
   },
   {
     "id": "v.1-car.los",
+
     "manufacturer": "CAR.LOS",
     "model": "V.1",
+    "bike_type": "longjohn",
     "src": "CARLOS-V1-Lavendel-freigestellt-2048x1173.png",
     "bike_length_percent": 0.996,
     "bike_length_cm": 201,
@@ -1108,8 +1197,10 @@
   },
   {
     "id": "city-babboe",
+
     "manufacturer": "Babboe",
     "model": "City",
+    "bike_type": "longjohn",
     "src": "babboe-city.png",
     "bike_length_percent": 0.808,
     "bike_length_cm": 255,
@@ -1121,8 +1212,10 @@
   },
   {
     "id": "nihola-cargo-xl-pro",
+
     "manufacturer": "NIHOLA",
     "model": "CARGO XL Pro",
+    "bike_type": "tricycle",
     "src": "NIHOLA-CARGO-XL-Pro-Steps_vue_laterale.png",
     "bike_length_percent": 0.908,
     "bike_length_cm": 205,
@@ -1133,8 +1226,10 @@
   },
   {
     "id": "equo-o2feel",
+
     "manufacturer": "O2feel",
     "model": "Equo",
+    "bike_type": "longtail",
     "src": "o2feel-Equo-7.png",
     "bike_length_percent": 0.927,
     "bike_length_cm": 195,
@@ -1145,8 +1240,10 @@
 
   {
     "id": "t2-fiido",
+
     "manufacturer": "Fiido",
     "model": "T2",
+    "bike_type": "longtail",
     "src": "t2-main-1-green_1000x.png",
     "bike_length_percent": 0.959,
     "bike_length_cm": 186,
@@ -1161,6 +1258,7 @@
 
     "manufacturer": "Unikle",
     "model": "Biporteur",
+    "bike_type": "longjohn",
     "src": "unikle.png",
     "bike_length_percent": 0.991,
     "bike_length_cm": 255,
@@ -1171,8 +1269,10 @@
   },
   {
     "id": "zed-robertbikes",
+
     "manufacturer": "RobertBikes",
     "model": "ZED",
+    "bike_type": "longtail",
     "src": "ZED-vert.png",
     "bike_length_percent": 0.909,
     "bike_length_cm": 198,
@@ -1186,6 +1286,7 @@
 
     "manufacturer": "Peugeot",
     "model": "E-LONGTAIL",
+    "bike_type": "longtail",
     "src": "peugeot-e-longtail-kaki-configuration-serie-scaled.png",
     "bike_length_percent": 0.8059999999999999,
     "bike_length_cm": 205,
@@ -1196,8 +1297,10 @@
   },
   {
     "id": "cruise-carqon",
+
     "manufacturer": "Carqon",
     "model": "Cruise",
+    "bike_type": "longjohn",
     "src": "Carqon_Cruise_Black_1_web_da13.png",
     "bike_length_percent": 0.951,
     "bike_length_cm": 260,
@@ -1207,8 +1310,10 @@
   },
   {
     "id": "e-cargoville-lt-expert-bergamont",
+
     "manufacturer": "Bergamont",
     "model": "E-Cargoville LT Expert",
+    "bike_type": "longtail",
     "src": "bergamont-e-cargoville-lt.png",
     "bike_length_percent": 0.989,
     "bike_length_cm": 208,
@@ -1222,6 +1327,7 @@
 
     "manufacturer": "Veloe",
     "model": "multi",
+    "bike_type": "longtail",
     "src": "veloe-multi-shimano_EP6.png",
     "bike_length_percent": 0.6930000000000001,
     "bike_length_cm": 180,
@@ -1237,6 +1343,7 @@
 
     "manufacturer": "Veloe",
     "model": "multi lungo",
+    "bike_type": "longtail",
     "src": "veloe-multi-lungo-bosch_cargoline.png",
     "bike_length_percent": 0.734,
     "bike_length_cm": 186,
@@ -1252,6 +1359,7 @@
 
     "manufacturer": "Cycles La Barquette",
     "model": "Biporteur",
+    "bike_type": "longjohn",
     "src": "la-barquette.png",
     "bike_length_percent": 0.806,
     "bike_length_cm": 245,
@@ -1265,6 +1373,7 @@
 
     "manufacturer": "Cannondale",
     "model": "Wonderwagen Neo",
+    "bike_type": "longjohn",
     "src": "C23_C68103U_Wonderwagen_Neo_1_GRY_PD.png",
     "bike_length_cm": 260,
     "bike_length_percent": 1,
@@ -1278,6 +1387,7 @@
 
     "manufacturer": "Trek",
     "model": "Fetch+ 2",
+    "bike_type": "longtail",
     "src": "trek_FetchPlus_2.png",
     "bike_length_percent": 0.972,
     "bike_length_cm": 193,
@@ -1288,8 +1398,10 @@
   },
   {
     "id": "quick-haul-long-tern",
+
     "manufacturer": "Tern",
     "model": "Quick Haul Long",
+    "bike_type": "longtail",
     "src": "tern-quick-haul-long.png",
     "bike_length_cm": 186,
     "bike_length_percent": 0.932,
@@ -1303,6 +1415,7 @@
 
     "manufacturer": "Bike Friday",
     "model": "Ever-E-Day",
+    "bike_type": "longtail",
     "src": "Ever-E-Day-Front-Rack-only-scaled.png",
     "bike_length_cm": 162,
     "bike_length_percent": 0.849,
@@ -1313,8 +1426,10 @@
   },
   {
     "id": "turbo-porto-specialized",
+
     "manufacturer": "Specialized",
     "model": "Turbo Porto",
+    "bike_type": "longtail",
     "src": "90823-52_PORTO-40-NB-SMK-BLK_HERO.png",
     "bike_length_cm": 207,
     "bike_length_percent": 0.87,
@@ -1325,8 +1440,10 @@
   },
   {
     "id": "orox-tern",
+
     "manufacturer": "Tern",
     "model": "Orox",
+    "bike_type": "longtail",
     "src": "tern-orox.png",
     "bike_length_cm": 216,
     "bike_length_percent": 0.947,
@@ -1337,8 +1454,10 @@
   },
   {
     "id": "urban-arrow-xl--urban-arrox",
-    "manufacturer": " Urban arrow",
+
+    "manufacturer": "Urban arrow",
     "model": "Urban arrow XL",
+    "bike_type": "longjohn",
     "src": "urban-arrow-cargo-xl.png",
     "bike_length_cm": 294,
     "bike_length_percent": 0.934,
@@ -1349,8 +1468,10 @@
   },
   {
     "id": "transporter2-65-riese-und-müller",
+
     "manufacturer": "Riese und Müller",
     "model": "Transporter2 65",
+    "bike_type": "longjohn",
     "src": "r-m-transporter65-titel-family.png",
     "bike_length_cm": 244,
     "bike_length_percent": 0.907,
@@ -1363,6 +1484,7 @@
 
     "manufacturer": "Hovsco",
     "model": "HovCart",
+    "bike_type": "longtail",
     "src": "HovCart-Orange__1_-removebg.png",
     "bike_length_cm": 187,
     "bike_length_percent": 0.962,
@@ -1376,6 +1498,7 @@
 
     "manufacturer": "Nicolai",
     "model": "NC-1",
+    "bike_type": "longjohn",
     "src": "nc1 cargo_2023_3000x2000_02.png",
     "bike_length_cm": 266,
     "bike_length_percent": 1,
@@ -1389,6 +1512,7 @@
 
     "manufacturer": "Babboe",
     "model": "Curve",
+    "bike_type": "tricycle",
     "src": "Babboe-Curve-Mountain-2-1.png",
     "bike_length_cm": 215,
     "bike_length_percent": 0.833,
@@ -1403,6 +1527,7 @@
 
     "manufacturer": "Super Bicycles",
     "model": "Super Mighty",
+    "bike_type": "longjohn",
     "src": "Super_Mighty_Metallic_Purple.png",
     "bike_length_cm": 205,
     "bike_length_percent": 0.854,
@@ -1413,8 +1538,10 @@
   },
   {
     "id": "le-cargo-gaya",
+
     "manufacturer": "Gaya",
     "model": "Le Cargo",
+    "bike_type": "longtail",
     "src": "gaya-cargo.png",
     "bike_length_cm": 195,
     "bike_length_percent": 0.634,
@@ -1428,6 +1555,7 @@
 
     "manufacturer": "Gaya",
     "model": "Le Compact",
+    "bike_type": "midtail",
     "src": "gaya-compact.png",
     "bike_length_cm": 175,
     "bike_length_percent": 0.624,
