@@ -35,6 +35,8 @@
 </template>
 <script>
 const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 600 }
 })
 
@@ -50,7 +52,7 @@ export default {
   },
   created() {},
   async mounted() {
-    this.bike_images_preview_urls = await this.$loadBikeImages(bike_images_preview_urls)
+    this.bike_images_preview_urls = await this.$loadBikeImages2(bike_images_preview_urls)
   },
   beforeUnmount() {},
   watch: {},

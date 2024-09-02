@@ -36,6 +36,8 @@
 import BasicModal from '@/components/BasicModal.vue'
 
 const insitu_images_full_paths = import.meta.glob('@/assets/insitu/*', {
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 1920 }
 })
 
@@ -57,7 +59,7 @@ export default {
     }
   },
   async created() {
-    this.bike_images_full_urls = await this.$loadBikeImages(insitu_images_full_paths)
+    this.bike_images_full_urls = await this.$loadBikeImages2(insitu_images_full_paths)
   },
   mounted() {},
   beforeUnmount() {},

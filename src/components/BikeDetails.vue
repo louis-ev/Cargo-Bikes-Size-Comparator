@@ -130,6 +130,8 @@
 import InsituImageSlide from '@/components/InsituImageSlide.vue'
 
 const insitu_images_thumbs_paths = import.meta.glob('@/assets/insitu/*', {
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 100 }
 })
 
@@ -154,7 +156,7 @@ export default {
     }
   },
   async created() {
-    this.bike_images_thumbs_urls = await this.$loadBikeImages(insitu_images_thumbs_paths)
+    this.bike_images_thumbs_urls = await this.$loadBikeImages2(insitu_images_thumbs_paths)
   },
   mounted() {},
   beforeUnmount() {},

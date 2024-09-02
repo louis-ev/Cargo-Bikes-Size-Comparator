@@ -44,8 +44,8 @@
 import BikeDetails from '@/components/BikeDetails.vue'
 
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
-  // eager: true,
-  // import: 'default',
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 80 }
 })
 
@@ -68,7 +68,7 @@ export default {
   },
   async created() {},
   async mounted() {
-    this.bike_images_thumbs_urls = await this.$loadBikeImages(bike_images_thumbs_paths)
+    this.bike_images_thumbs_urls = await this.$loadBikeImages2(bike_images_thumbs_paths)
   },
   beforeUnmount() {},
   watch: {},

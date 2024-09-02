@@ -114,6 +114,8 @@
 <script>
 import { edge_detect, colorize } from '../helpers.js'
 const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
+  eager: true,
+  import: 'default',
   query: { format: 'webp', w: 1600 }
 })
 
@@ -137,7 +139,7 @@ export default {
   },
   created() {},
   async mounted() {
-    this.bike_images_full_paths = await this.$loadBikeImages(bike_images_full_paths)
+    this.bike_images_full_paths = await this.$loadBikeImages2(bike_images_full_paths)
 
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
