@@ -1563,5 +1563,19 @@
     "bottom_margin_percent": 0.239,
     "url": "https://gaya.bike/products/le-compact",
     "frame_made_in": ""
+  },
+  {
+    "id": "cargo-hybrid-cube",
+
+    "manufacturer": "Cube",
+    "model": "Cargo Hybrid",
+    "bike_type": "longjohn",
+    "src": "cube-cargo-dual-hybrid-1000.png",
+    "bike_length_cm": 265,
+    "bike_length_percent": 0.847,
+    "left_margin_percent": 0.078,
+    "bottom_margin_percent": 0.043,
+    "url": "https://www.cubebikes.fr/48663-cargo-hybrid.html",
+    "frame_made_in": ""
   }
 ]
