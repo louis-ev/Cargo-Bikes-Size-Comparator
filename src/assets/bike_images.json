@@ -800,9 +800,9 @@
     "model": "Stride 2",
     "bike_type": "longjohn",
     "src": "Raleigh-Stride-2.png",
-    "bike_length_percent": 0.9030000000000001,
+    "bike_length_percent": 0.903,
     "bike_length_cm": 258,
-    "left_margin_percent": 0.055999999999999994,
+    "left_margin_percent": 0.056,
     "bottom_margin_percent": 0.247,
     "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
     "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w."
@@ -1576,6 +1576,19 @@
     "left_margin_percent": 0.078,
     "bottom_margin_percent": 0.043,
     "url": "https://www.cubebikes.fr/48663-cargo-hybrid.html",
+    "frame_made_in": ""
+  },
+
+  {
+    "id": "f.u.b.-2w-winora",
+    "manufacturer": "Winora",
+    "model": "F.U.B. 2W",
+    "src": "winora-fub2w.png",
+    "bike_length_cm": 258,
+    "bike_length_percent": 0.851,
+    "left_margin_percent": 0.076,
+    "bottom_margin_percent": 0.125,
+    "url": "https://www.winora.com/fr-fr/p/fub-2w-wwan1/",
     "frame_made_in": ""
   }
 ]
