@@ -232,24 +232,6 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
-.list-move, /* apply transition to moving elements */
-.list-enter-active,
-.list-leave-active {
-  position: relative;
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(0px);
-}
-
-.list-leave-active {
-  position: absolute;
-  z-index: -1;
-}
-
 ._search {
   position: relative;
   margin-bottom: 1rem;

@@ -74,6 +74,15 @@ const i18n = createI18n({
         show_regular_bike_silhouette: 'Reference bike',
         close: 'close'
       },
+      bike_types: {
+        longtail: 'Longtail',
+        midtail: 'Midtail',
+        lowtail: 'Lowtail',
+        longjohn: 'Longjohn',
+        shortjohn: 'Shortjohn',
+        tricycle: 'Tricycle',
+        longdiamond: 'Longdiamond'
+      },
       add_bike: {
         title: 'Add a bike',
         how_to_add: 'How to add a bike to this tool',
@@ -210,6 +219,15 @@ const i18n = createI18n({
         show_human_silhouette: 'Afficher une silhouette humaine',
         show_regular_bike_silhouette: 'Vélo classique',
         close: 'fermer'
+      },
+      bike_types: {
+        longtail: 'Longtail',
+        midtail: 'Midtail',
+        lowtail: 'Lowtail',
+        longjohn: 'Biporteur',
+        shortjohn: 'Biporteur court',
+        tricycle: 'Tricycle',
+        longdiamond: 'Longdiamond'
       },
       add_bike: {
         title: 'Ajouter un vélo',

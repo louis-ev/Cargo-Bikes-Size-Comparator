@@ -176,8 +176,8 @@ export default {
   ._img {
     position: relative;
     flex: 0 0 auto;
-    width: 52px;
-    padding: 0.25rem;
+    width: 44px;
+    height: 44px;
 
     ._color {
       position: absolute;
@@ -203,9 +203,9 @@ export default {
       position: relative;
       height: 100%;
       width: 100%;
+      padding: 0 0.25rem 0 0;
       object-fit: scale-down;
       object-position: center;
-      border: none;
     }
   }
 
