@@ -136,8 +136,7 @@ select {
     background-image: radial-gradient(var(--color-warning) 28%, transparent 40%);
   }
 }
-select {
-  border: 1px solid var(--color-text-secondary);
+input[type='range'] {
   border-color: transparent;
 }
 

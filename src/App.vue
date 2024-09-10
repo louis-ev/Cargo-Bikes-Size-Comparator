@@ -114,6 +114,24 @@ input {
   opacity: 0;
 }
 
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(0px);
+}
+
+.list-leave-active {
+  position: absolute;
+  z-index: -1;
+}
+
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
@@ -125,11 +143,12 @@ input {
 
 .slideup-enter-active,
 .slideup-leave-active {
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .slideup-enter-from,
 .slideup-leave-to {
   transform: translateY(100%);
+  opacity: 0;
 }
 
 .showPreview-enter-active,

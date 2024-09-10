@@ -35,6 +35,16 @@ app.config.globalProperties.$loadBikeImages2 = async (paths) => {
   return full_paths
 }
 
+app.config.globalProperties.$bikeTypesColors = {
+  longtail: '#C5998C',
+  midtail: '#118ab2',
+  lowtail: '#ffd166',
+  longjohn: '#9097C0',
+  shortjohn: '#14A6D7',
+  tricycle: '#ef476f',
+  longdiamond: '#06d6a0'
+}
+
 app.config.globalProperties.$normalizeStringForSearch = (str) => {
   if (!str) return ''
   return str

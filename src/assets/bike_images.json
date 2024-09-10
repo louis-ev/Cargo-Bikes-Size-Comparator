@@ -522,7 +522,7 @@
 
     "manufacturer": "Tern",
     "model": "HSD",
-    "bike_type": "longtail",
+    "bike_type": "midtail",
     "src": "tern-hsd.png",
     "bike_length_percent": 0.76,
     "bike_length_cm": 170,
@@ -536,7 +536,7 @@
 
     "manufacturer": "Tern",
     "model": "Quick Haul",
-    "bike_type": "longtail",
+    "bike_type": "midtail",
     "src": "tern-quickhaul-2.png",
     "bike_length_cm": 172,
     "bike_length_percent": 0.964,
@@ -1100,7 +1100,7 @@
 
     "manufacturer": "Jean Fourche",
     "model": "Jean Fourche",
-    "bike_type": "longtail",
+    "bike_type": "midtail",
     "src": "jean-fourche.png",
     "bike_length_percent": 0.775,
     "bike_length_cm": 165,
@@ -1285,7 +1285,7 @@
     "id": "peugeot-e-longtail",
 
     "manufacturer": "Peugeot",
-    "model": "E-LONGTAIL",
+    "model": "e-Longtail",
     "bike_type": "longtail",
     "src": "peugeot-e-longtail-kaki-configuration-serie-scaled.png",
     "bike_length_percent": 0.8059999999999999,
@@ -1415,7 +1415,7 @@
 
     "manufacturer": "Bike Friday",
     "model": "Ever-E-Day",
-    "bike_type": "longtail",
+    "bike_type": "midtail",
     "src": "Ever-E-Day-Front-Rack-only-scaled.png",
     "bike_length_cm": 162,
     "bike_length_percent": 0.849,
@@ -1581,8 +1581,10 @@
 
   {
     "id": "fub-2w-winora",
+
     "manufacturer": "Winora",
     "model": "F.U.B. 2W",
+    "bike_type": "longjohn",
     "src": "winora-fub2w.png",
     "bike_length_cm": 258,
     "bike_length_percent": 0.851,

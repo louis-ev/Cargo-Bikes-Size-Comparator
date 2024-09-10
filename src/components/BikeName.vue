@@ -1,6 +1,7 @@
 <template>
   <div v-if="bike" class="_bikeName">
     <strong>{{ bike.model || bike.manufacturer }}</strong>
+    <!-- <span class="_bikeType" :style="bikeStyleColor(bike.bike_type)" /> -->
     <span
       class="_flag"
       :title="bike.frame_made_in"
@@ -66,6 +67,11 @@ export default {
     },
     getLengthInInches(length_cm) {
       return Number((length_cm / 2.54).toFixed(1))
+    },
+    bikeStyleColor(bike_type) {
+      return {
+        backgroundColor: this.$root.$bikeTypesColors[bike_type]
+      }
     }
   }
 }
@@ -78,5 +84,12 @@ export default {
 ._flag {
   font-size: 1rem;
   margin-left: 0.25rem;
+}
+._bikeType {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  margin-left: 0.125rem;
 }
 </style>
