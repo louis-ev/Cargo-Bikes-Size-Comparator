@@ -36,7 +36,8 @@
                 loading="lazy"
                 :src="getBikePreviewImage(bike)"
                 :style="{
-                  '--scale-factor': 1 / bike.bike_length_percent + ''
+                  '--scale-factor': 1 / bike.bike_length_percent + '',
+                  '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
                 }"
               />
               <!-- <input
@@ -197,10 +198,13 @@ export default {
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 90%;
     object-fit: contain;
-    object-position: center;
+    object-position: center center;
     transform: scale(var(--scale-factor));
   }
 
