@@ -26,7 +26,29 @@
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.223,
     "frame_made_in": "germany",
-    "url": "https://muli-cycles.de/en"
+    "url": "https://muli-cycles.de/en",
+    "insitu": [
+      {
+        "from": "cargobikingdaddy on Instagrame",
+        "url": "https://www.instagram.com/cargobikingdaddy/",
+        "src": "muli-1.jpeg"
+      },
+      {
+        "from": "cargobikingdaddy on Instagrame",
+        "url": "https://www.instagram.com/cargobikingdaddy/",
+        "src": "muli-2.jpeg"
+      },
+      {
+        "from": "cargobikingdaddy on Instagrame",
+        "url": "https://www.instagram.com/cargobikingdaddy/",
+        "src": "muli-3.jpeg"
+      },
+      {
+        "from": "cargobikingdaddy on Instagrame",
+        "url": "https://www.instagram.com/cargobikingdaddy/",
+        "src": "muli-4.jpeg"
+      }
+    ]
   },
   {
     "id": "carrie-rm",
