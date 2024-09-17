@@ -1118,17 +1118,34 @@
     "comment_en": "See the bike in cargo mode by searching for <i>Convercycle</i>."
   },
   {
-    "id": "jean-fourche-jean-fourche",
+    "id": "jean-I-jean-fourche",
 
     "manufacturer": "Jean Fourche",
-    "model": "Jean Fourche",
+    "model": "Jean I",
     "bike_type": "midtail",
-    "src": "jean-fourche.png",
+    "src": "jean-1.png",
     "bike_length_percent": 0.775,
     "bike_length_cm": 165,
     "left_margin_percent": 0.122,
     "bottom_margin_percent": 0.11,
     "url": "https://jeanfourche.fr/",
+    "frame_made_in": "portugal",
+    "show_frame_origin": false,
+    "assembled_in": "France",
+    "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France."
+  },
+  {
+    "id": "jean-II-jean-fourche",
+
+    "manufacturer": "Jean Fourche",
+    "model": "Jean II",
+    "bike_type": "midtail",
+    "src": "jean-2.png",
+    "bike_length_percent": 0.775,
+    "bike_length_cm": 175,
+    "left_margin_percent": 0.115,
+    "bottom_margin_percent": 0.084,
+    "url": "https://jeanfourche.fr/products/velo-deux-places/",
     "frame_made_in": "portugal",
     "show_frame_origin": false,
     "assembled_in": "France",
