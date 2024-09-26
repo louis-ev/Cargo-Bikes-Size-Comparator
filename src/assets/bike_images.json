@@ -1631,5 +1631,47 @@
     "bottom_margin_percent": 0.125,
     "url": "https://www.winora.com/fr-fr/p/fub-2w-wwan1/",
     "frame_made_in": ""
+  },
+  {
+    "id": "larrun-ultima-mobility",
+
+    "manufacturer": "Ultima Mobility",
+    "model": "Larrun",
+    "bike_type": "longjohn",
+    "src": "larrun.png",
+    "bike_length_cm": 204,
+    "bike_length_percent": 0.95,
+    "left_margin_percent": 0.015,
+    "bottom_margin_percent": 0.026000000000000002,
+    "url": "https://ultima.dev/pages/larrun-longtail",
+    "frame_made_in": ""
+  },
+  {
+    "id": "multipath-cargo-compact-family-ultima-mobility",
+
+    "manufacturer": "Ultima Mobility",
+    "model": "Multipath Cargo Compact Family",
+    "bike_type": "shortjohn",
+    "src": "multipath-family-very-peri-1140x760.png",
+    "bike_length_cm": 165,
+    "bike_length_percent": 0.7319999999999999,
+    "left_margin_percent": 0.092,
+    "bottom_margin_percent": 0.132,
+    "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-family-cargo",
+    "frame_made_in": "France"
+  },
+  {
+    "id": "multipath-cargo-compact-ultima-mobility",
+
+    "manufacturer": "Ultima Mobility",
+    "model": "Multipath Cargo Compact",
+    "bike_type": "shortjohn",
+    "src": "multipath-cargo-compact.png",
+    "bike_length_cm": 165,
+    "bike_length_percent": 0.812,
+    "left_margin_percent": 0.082,
+    "bottom_margin_percent": 0.24,
+    "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-cargo",
+    "frame_made_in": "France"
   }
 ]
