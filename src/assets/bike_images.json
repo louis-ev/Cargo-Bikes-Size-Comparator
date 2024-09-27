@@ -64,7 +64,7 @@
     "bottom_margin_percent": 0.045,
     "frame_made_in": "portugal",
     "show_frame_origin": false,
-
+    "weight": 35.7,
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
   },
   {
@@ -81,7 +81,8 @@
     "bottom_margin_percent": 0.02,
     "url": "https://www.r-m.de/en-en/bikes/load-75",
     "frame_made_in": "portugal",
-    "show_frame_origin": false
+    "show_frame_origin": false,
+    "weight": 37.1
   },
   {
     "id": "load60-rm",
@@ -97,7 +98,8 @@
     "bottom_margin_percent": 0.023,
     "url": "https://www.r-m.de/en-en/bikes/load-60",
     "frame_made_in": "portugal",
-    "show_frame_origin": false
+    "show_frame_origin": false,
+    "weight": 35.5
   },
   {
     "id": "cargo-verso",
@@ -354,6 +356,7 @@
     "left_margin_percent": 0.059,
     "bottom_margin_percent": 0.046,
     "url": "https://www.r-m.de/en-en/bikes/multicharger2-mixte/",
+    "weight": 30,
     "insitu": [
       {
         "from": "Stéphane",
@@ -377,6 +380,7 @@
     "bike_length_cm": 189,
     "left_margin_percent": 0.09,
     "bottom_margin_percent": 0.045,
+    "weight": 35,
     "url": "https://www.r-m.de/fr/bikes/multitinker/"
   },
   {
@@ -391,7 +395,23 @@
     "bike_length_cm": 249,
     "left_margin_percent": 0.077,
     "bottom_margin_percent": 0.238,
-    "url": "https://www.r-m.de/fr/bikes/packster-70/"
+    "url": "https://www.r-m.de/fr/bikes/packster-70/",
+    "weight": 35.5
+  },
+  {
+    "id": "packster2-70-ct-riese-und-müller",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Packster2 70 CT",
+    "bike_type": "longtail",
+    "src": "packster-ct-70.png",
+    "bike_length_cm": 251,
+    "bike_length_percent": 0.942,
+    "left_margin_percent": 0.026,
+    "bottom_margin_percent": 0.007,
+    "url": "https://www.r-m.de/fr/bikes/packster2-70-ct/",
+    "frame_made_in": "",
+    "weight": 41.1
   },
   {
     "id": "bunch-bike",
@@ -1041,7 +1061,8 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.129,
     "bottom_margin_percent": 0.212,
-    "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-famille-f900e-taupe/_/R-p-329211"
+    "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-famille-f900e-taupe/_/R-p-329211",
+    "weight": 66
   },
   {
     "id": "g4e-douze-cycles",
@@ -1516,7 +1537,8 @@
     "bike_length_percent": 0.907,
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.082,
-    "url": "https://www.r-m.de/en-gb/bikes/transporter2-65/"
+    "url": "https://www.r-m.de/en-gb/bikes/transporter2-65/",
+    "weight": 45.2
   },
   {
     "id": "hovcart-hovsco",
