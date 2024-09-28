@@ -81,7 +81,8 @@ const i18n = createI18n({
         longjohn: 'Longjohn',
         shortjohn: 'Shortjohn',
         tricycle: 'Tricycle',
-        longdiamond: 'Longdiamond'
+        longdiamond: 'Longdiamond',
+        other: 'Other'
       },
       add_bike: {
         title: 'Add a bike',
@@ -100,11 +101,14 @@ const i18n = createI18n({
         add_another_bike: 'add another bike',
         model: 'Model',
         manufacturer: 'Manufacturer',
+        bike_type: 'Bike type',
         total_bike_length: 'Total bike length',
         usually_available_on_the_manufacturer_s_website:
           "Usually available on the manufacturer's website",
         cm: 'cm',
         inches: 'inches',
+        weight: 'Weight',
+        in_kilograms: 'in kilograms',
         product_page_url: 'Official product page URL',
 
         if_that_information_is_officially_available:
@@ -227,7 +231,8 @@ const i18n = createI18n({
         longjohn: 'Biporteur',
         shortjohn: 'Biporteur court',
         tricycle: 'Tricycle',
-        longdiamond: 'Longdiamond'
+        longdiamond: 'Longdiamond',
+        other: 'Autre'
       },
       add_bike: {
         title: 'Ajouter un vélo',
@@ -245,11 +250,14 @@ const i18n = createI18n({
         add_another_bike: 'ajouter un autre vélo',
         model: 'Modèle',
         manufacturer: 'Fabricant',
+        bike_type: 'Type de vélo',
         total_bike_length: 'Longueur du vélo',
         usually_available_on_the_manufacturer_s_website:
           'Généralement disponible sur le site web du fabricant',
         cm: 'cm',
         inches: 'pouces',
+        weight: 'Poids',
+        in_kilograms: 'en kilogrammes',
         product_page_url: 'URL de la page produit officielle',
 
         if_that_information_is_officially_available:

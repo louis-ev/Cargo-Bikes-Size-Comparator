@@ -58,6 +58,20 @@
           </div>
 
           <div class="inputField">
+            <label for="bikeType">{{ $t('add_bike.bike_type') }}</label>
+            <select v-model="bikeType">
+              <option value="">–</option>
+              <option
+                v-for="bikeType in Object.keys($bikeTypesColors)"
+                :key="bikeType"
+                :value="bikeType"
+              >
+                {{ $t('bike_types.' + bikeType) }}
+              </option>
+              <option value="other">{{ $t('bike_types.other') }}</option>
+            </select>
+          </div>
+          <div class="inputField">
             <label for="price">{{ $t('add_bike.total_bike_length') }}</label>
             <div class="_totalLengthInput">
               <input type="number" v-model.number="totalLength" id="totalLength" required />
@@ -67,6 +81,14 @@
               </select>
             </div>
             <small> {{ $t('add_bike.usually_available_on_the_manufacturer_s_website') }} </small>
+          </div>
+          <div class="inputField">
+            <label for="weight">{{ $t('add_bike.weight') }}</label>
+            <input type="number" v-model="baseWeight" id="baseWeight" />
+            <small>
+              {{ $t('add_bike.usually_available_on_the_manufacturer_s_website') }},
+              {{ $t('add_bike.in_kilograms') }}
+            </small>
           </div>
           <div class="inputField">
             <label for="price">{{ $t('add_bike.product_page_url') }}</label>
@@ -219,7 +241,8 @@ export default {
       model: '',
       manufacturer: '',
       totalLength: '',
-      totalLengthUnit: 'cm',
+      totalLengthUnit: this.$i18n.locale === 'en' ? 'inches' : 'cm',
+      baseWeight: '',
       productPageUrl: '',
       imageUrl: '',
       frame_made_in: '',
@@ -264,6 +287,8 @@ export default {
         bike_length_cm = this.totalLength
       }
 
+      const weight = this.baseWeight || ''
+
       const left_margin_percent = this.img_left / 100
       const bottom_margin_percent = this.img_bottom / 100
       const url = this.productPageUrl
@@ -275,6 +300,7 @@ export default {
         model,
         src,
         bike_length_cm,
+        weight,
         bike_length_percent,
         left_margin_percent,
         bottom_margin_percent,
@@ -326,7 +352,7 @@ h2 {
   gap: 0.25rem;
   input {
     // flex: 1 1 auto;
-    text-align: center;
+    // text-align: center;
   }
 }
 
