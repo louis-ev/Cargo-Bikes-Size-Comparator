@@ -240,6 +240,7 @@ export default {
 
       model: '',
       manufacturer: '',
+      bikeType: '',
       totalLength: '',
       totalLengthUnit: this.$i18n.locale === 'en' ? 'inches' : 'cm',
       baseWeight: '',
@@ -280,6 +281,8 @@ export default {
       const src = this.imageUrl
       const bike_length_percent = (100 - this.img_left - this.img_right) / 100
 
+      const bike_type = this.bikeType
+
       let bike_length_cm
       if (this.totalLengthUnit === 'inches') {
         bike_length_cm = this.totalLength * 2.54
@@ -298,6 +301,7 @@ export default {
         id,
         manufacturer,
         model,
+        bike_type,
         src,
         bike_length_cm,
         weight,
