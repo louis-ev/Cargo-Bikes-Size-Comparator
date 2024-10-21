@@ -1726,5 +1726,20 @@
     "bottom_margin_percent": 0.018,
     "url": "https://bennobikes.com/e-bikes/remidemi-xl/",
     "frame_made_in": ""
+  },
+  {
+    "id": "cargo-one-tenways",
+
+    "manufacturer": "Tenways",
+    "model": "Cargo One",
+    "bike_type": "longjohn",
+    "src": "tenways-cargoone.png",
+    "bike_length_cm": 266,
+    "weight": 56,
+    "bike_length_percent": 0.942,
+    "left_margin_percent": 0.028,
+    "bottom_margin_percent": 0.269,
+    "url": "https://www.tenways.com/fr/products/cargo-one",
+    "frame_made_in": ""
   }
 ]
