@@ -22,6 +22,7 @@
     "bike_type": "longjohn",
     "src": "muli-eu.png",
     "bike_length_cm": 198,
+    "weight": 35,
     "bike_length_percent": 0.989,
     "left_margin_percent": 0.011,
     "bottom_margin_percent": 0.042,
