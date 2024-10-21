@@ -7,7 +7,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "version": "npm run build && git add -f dist",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "vue": "^3.4.21",
