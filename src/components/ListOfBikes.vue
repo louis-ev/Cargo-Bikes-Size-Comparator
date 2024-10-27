@@ -46,11 +46,11 @@
                 :value="bike.id"
                 :style="bikeStyleColor(bike.bike_type)"
               /> -->
-              <div class="_bikeType" :style="bikeStyleColor(bike.bike_type)">
-                <!-- {{ bike.bike_type }} -->
-              </div>
             </div>
           </transition>
+          <div class="_bikeType" :style="bikeStyleColor(bike.bike_type)" :title="bike.bike_type">
+            <!-- {{ bike.bike_type }} -->
+          </div>
           <span class="_bikeLabel">
             <BikeName :bike="bike" />
           </span>
@@ -215,7 +215,7 @@ export default {
     width: 0.75rem;
     height: 0.75rem;
     // padding: 0.25rem 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
     border-radius: 0.5rem;
     font-size: 0.8rem;
     background-color: rgba(0, 0, 0, 0.8);
