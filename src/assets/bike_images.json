@@ -1746,5 +1746,52 @@
     "bottom_margin_percent": 0.269,
     "url": "https://www.tenways.com/fr/products/cargo-one",
     "frame_made_in": ""
+  },
+  {
+    "id": "via-flyer-by-radio-flyer",
+
+    "manufacturer": "Flyer by Radio Flyer",
+    "model": "Via",
+    "bike_type": "longtail",
+    "src": "radioflyer-via.png",
+    "bike_length_cm": 190.5,
+    "weight": 31,
+    "bike_length_percent": 0.84,
+    "left_margin_percent": 0.075,
+    "bottom_margin_percent": 0.07,
+    "url": "https://www.radioflyer.com/products/flyer-via",
+    "frame_made_in": ""
+  },
+
+  {
+    "id": "via-pro-flyer-by-radio-flyer",
+
+    "manufacturer": "Flyer by Radio Flyer",
+    "model": "Via Pro",
+    "bike_type": "longtail",
+    "src": "radioflyer-viapro.png",
+    "bike_length_cm": 193,
+    "weight": 33,
+    "bike_length_percent": 0.855,
+    "left_margin_percent": 0.077,
+    "bottom_margin_percent": 0.07,
+    "url": "https://www.radioflyer.com/products/flyer-via-pro",
+    "frame_made_in": ""
+  },
+
+  {
+    "id": "flex-flyer-by-radio-flyer",
+
+    "manufacturer": "Flyer by Radio Flyer",
+    "model": "Flex",
+    "bike_type": "midtail",
+    "src": "radioflyer-viaflex.png",
+    "bike_length_cm": 170,
+    "weight": 30,
+    "bike_length_percent": 0.729,
+    "left_margin_percent": 0.143,
+    "bottom_margin_percent": 0.075,
+    "url": "https://www.radioflyer.com/products/flyer-flex?variant=50130369708305",
+    "frame_made_in": ""
   }
 ]
