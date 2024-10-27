@@ -1807,5 +1807,20 @@
     "bottom_margin_percent": 0.164,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/34-triporteur-velo-cargo-kid-.html",
     "frame_made_in": ""
+  },
+  {
+    "id": "eco-kid-2-eco-triporteur",
+
+    "manufacturer": "Eco-triporteur",
+    "model": "Eco Kid 2",
+    "bike_type": "tricycle",
+    "src": "eco-triporteur-kid2.png",
+    "bike_length_cm": 218,
+    "weight": 64,
+    "bike_length_percent": 0.93,
+    "left_margin_percent": 0.018,
+    "bottom_margin_percent": 0.229,
+    "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/31-triporteur-velo-cargo-eco-kid-2.html",
+    "frame_made_in": ""
   }
 ]
