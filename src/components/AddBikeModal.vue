@@ -1,5 +1,5 @@
 <template>
-  <BasicModal :size="modal_size">
+  <BasicModal :size="modal_size" @close="$emit('close')">
     <template v-slot:header>
       <div>
         {{ $t('add_bike.title') }}
@@ -25,6 +25,9 @@
         </div>
         <form class="_step" v-else-if="step === 1" @submit.prevent="submitStep1">
           <h2>{{ $t('add_bike.step_1_basic_informations') }}</h2>
+          <p>
+            {{ $t('add_bike.fill_as_many_fields_as_possible') }}
+          </p>
           <div class="inputField">
             <label for="model">{{ $t('add_bike.model') }}</label>
             <input type="text" autofocus v-model="model" id="model" />
@@ -74,7 +77,7 @@
           <div class="inputField">
             <label for="price">{{ $t('add_bike.total_bike_length') }}</label>
             <div class="_totalLengthInput">
-              <input type="number" v-model.number="totalLength" id="totalLength" required />
+              <input type="number" v-model.number="totalLength" id="totalLength" />
               <select v-model="totalLengthUnit">
                 <option value="cm">{{ $t('add_bike.cm') }}</option>
                 <option value="inches">{{ $t('add_bike.inches') }}</option>
@@ -103,16 +106,6 @@
             </small>
           </div>
 
-          <hr />
-
-          <div class="inputField">
-            <label for="imageUrl">{{ $t('add_bike.bike_image') }}</label>
-            <input type="url" placeholder="https://" v-model="imageUrl" required id="imageUrl" />
-            <small>
-              {{ $t('add_bike.bike_image_explanation') }}
-            </small>
-          </div>
-
           <div class="_nav">
             <button type="button" @click="step--">&lt; {{ $t('add_bike.back') }}</button>
             <input
@@ -126,8 +119,9 @@
 
         <section class="_step" v-else-if="step === 2">
           <h2>{{ $t('add_bike.step_2_profile_image_and_size') }}</h2>
+
           <MeasureInImg
-            :imageUrl="imageUrl"
+            v-model:imageUrl="imageUrl"
             v-model:img_left="img_left"
             v-model:img_right="img_right"
             v-model:img_bottom="img_bottom"
@@ -236,7 +230,7 @@ export default {
   },
   data() {
     return {
-      step: 0,
+      step: 2,
 
       model: '',
       manufacturer: '',
@@ -256,7 +250,11 @@ export default {
   created() {},
   mounted() {},
   beforeUnmount() {},
-  watch: {},
+  watch: {
+    step() {
+      console.log('step', this.step)
+    }
+  },
   computed: {
     all_manufacturers() {
       return this.bikes
@@ -283,17 +281,21 @@ export default {
 
       const bike_type = this.bikeType
 
-      let bike_length_cm
-      if (this.totalLengthUnit === 'inches') {
-        bike_length_cm = this.totalLength * 2.54
-      } else {
-        bike_length_cm = this.totalLength
+      let bike_length_cm = ''
+      if (this.totalLength) {
+        if (this.totalLengthUnit === 'inches') {
+          bike_length_cm = (this.totalLength * 2.54).toFixed(1)
+        } else if (this.totalLengthUnit === 'cm') {
+          bike_length_cm = this.totalLength.toFixed(1)
+        }
       }
 
       const weight = this.baseWeight || ''
 
-      const left_margin_percent = this.img_left / 100
-      const bottom_margin_percent = this.img_bottom / 100
+      const left_margin_percent =
+        typeof this.img_left === 'number' ? (this.img_left / 100).toFixed(3) : ''
+      const bottom_margin_percent =
+        typeof this.img_bottom === 'number' ? (this.img_bottom / 100).toFixed(3) : ''
       const url = this.productPageUrl
       const frame_made_in = this.frame_made_in
 

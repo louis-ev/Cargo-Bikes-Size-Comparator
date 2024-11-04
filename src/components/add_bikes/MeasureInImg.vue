@@ -16,16 +16,68 @@
       </small>
     </div> -->
 
-    <div v-if="status === 'loading'">
+    <div class="inputField">
+      <label>{{ $t('add_bike.image_source') }}</label>
+      <div class="_radioGroup">
+        <label
+          v-for="source in [
+            { key: 'URL', label: $t('add_bike.add_by_url') },
+            { key: 'File', label: $t('add_bike.add_by_file') },
+            { key: 'none', label: $t('add_bike.couldnt_find_the_image_you_want') }
+          ]"
+          :key="source.key"
+          class="_radio"
+        >
+          <input type="radio" v-model="imageSource" :value="source.key" />
+          {{ source.label }}
+        </label>
+      </div>
+    </div>
+
+    <div v-if="imageSource === 'URL'">
+      <div class="inputField">
+        <label for="imageUrl">{{ $t('add_bike.url') }}</label>
+
+        <div class="_inputWithButton">
+          <input
+            type="url"
+            placeholder="https://"
+            :value="imageUrl"
+            @change="$emit('update:imageUrl', $event.target.value)"
+            id="imageUrl"
+          />
+          <button type="button" data-color="important" class="_button" @click="drawCanvas">
+            {{ $t('add_bike.load_image') }}
+          </button>
+        </div>
+        <small>
+          {{ $t('add_bike.bike_image_explanation') }}
+        </small>
+      </div>
+    </div>
+    <div v-else-if="imageSource === 'File'">
+      <div class="inputField">
+        <label for="imageUrl">{{ $t('add_bike.bike_image') }}</label>
+        <input type="file" accept="image/*" @change="onFileChange" />
+        <small>
+          {{ $t('add_bike.bike_image_explanation') }}
+        </small>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- <div v-if="status === 'loading'">
       <p>{{ $t('add_bike.loading') }}</p>
     </div>
     <div class="_failed_to_load_image" v-else-if="status === 'failed_to_load_image'">
       <p v-html="$t('add_bike.failed_to_load_image')" />
       <p v-html="$t('add_bike.this_may_be_because')" />
       <p v-html="$t('add_bike.you_can_click_back')" />
+
       <input type="file" accept="image/*" @change="onFileChange" />
-    </div>
-    <div v-show="status === 'loaded'">
+    </div> -->
+    <div v-show="status === 'loaded' && imageSource !== 'none'">
       <p v-html="$t('add_bike.use_these_controls')" />
       <div class="_topSliders">
         <div class="_slider" :style="{ accentColor: left_color }">
@@ -63,6 +115,8 @@ export default {
   },
   data() {
     return {
+      imageSource: '',
+
       left: this.img_left,
       right: this.img_right,
       bottom: this.img_bottom,
@@ -91,6 +145,9 @@ export default {
     bottom() {
       this.drawCanvas()
       this.$emit('update:img_bottom', this.bottom)
+    },
+    imageSource() {
+      this.status = 'loading'
     }
   },
   computed: {},
@@ -104,7 +161,7 @@ export default {
         this.status = 'failed_to_load_image'
       }
 
-      if (this.local_bike_image) {
+      if (this.imageSource === 'File') {
         img.src = URL.createObjectURL(this.local_bike_image)
       } else {
         img.src = this.imageUrl
@@ -198,5 +255,31 @@ canvas {
   max-width: 100%;
   // max-height: 80vh;
   object-fit: scale-down;
+}
+._radio {
+  font-weight: normal;
+}
+
+._radioGroup {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  // gap: 1rem;
+  // margin: 0.5rem;
+
+  label {
+    font-size: inherit;
+  }
+}
+
+._inputWithButton {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+
+  > input {
+    flex: 1;
+  }
 }
 </style>

@@ -1,42 +1,44 @@
 <template>
-  <Teleport to="body">
-    <dialog open class="_basicModal" @click.self="$emit('close')">
-      <div class="_basicModal--content" :data-size="size">
-        <div class="_header">
-          <slot name="header"></slot>
+  <div>
+    <Teleport to="body">
+      <dialog open class="_basicModal" @click.self="$emit('close')">
+        <div class="_basicModal--content" :data-size="size">
+          <div class="_header">
+            <slot name="header"></slot>
+          </div>
+          <div class="_content">
+            <slot name="content"></slot>
+          </div>
         </div>
-        <div class="_content">
-          <slot name="content"></slot>
-        </div>
-      </div>
-      <button
-        type="button"
-        class="_close"
-        @click="$emit('close')"
-        :aria-label="$t('message.close')"
-      >
-        ✕
-      </button>
-      <div v-if="has_nav" class="_nav">
         <button
           type="button"
-          class="_prevBtn"
-          @click="$emit('prev')"
-          :aria-label="$t('message.prev')"
+          class="_close"
+          @click="$emit('close')"
+          :aria-label="$t('message.close')"
         >
-          ←
+          ✕
         </button>
-        <button
-          type="button"
-          class="_nextBtn"
-          @click="$emit('next')"
-          :aria-label="$t('message.next')"
-        >
-          →
-        </button>
-      </div>
-    </dialog>
-  </Teleport>
+        <div v-if="has_nav" class="_nav">
+          <button
+            type="button"
+            class="_prevBtn"
+            @click="$emit('prev')"
+            :aria-label="$t('message.prev')"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            class="_nextBtn"
+            @click="$emit('next')"
+            :aria-label="$t('message.next')"
+          >
+            →
+          </button>
+        </div>
+      </dialog>
+    </Teleport>
+  </div>
 </template>
 <script>
 export default {

@@ -48,7 +48,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Outline',
-        bike_frame_made_in: 'Frame made',
+        bike_frame_made_in: 'Country where the bike frame is made',
         bike_assembled_in: 'Assembled',
         in_germany: 'in Germany',
         in_hungary: 'in Hungary',
@@ -95,10 +95,19 @@ const i18n = createI18n({
         step_1_basic_informations: 'Step 1: basic informations',
         step_2_profile_image_and_size: 'Step 2: profile image and size',
         step_3_share_this_information: 'Step 3: share this information',
+        fill_as_many_fields_as_possible:
+          'Fill in the following fields with the informations you can find online.',
         back: 'back',
         next: 'next',
         send: 'send',
         add_another_bike: 'add another bike',
+        image_source: 'Indicate the profile image of the bike you want to add',
+        add_by_url: 'Paste the URL to the image of the bike online',
+        couldnt_find_the_image_you_want:
+          'I couldn’t find an image that matches what you want / I don’t know which image to take',
+        url: 'URL',
+        load_image: 'Load image',
+        add_by_file: 'Import image file from your device',
         model: 'Model',
         manufacturer: 'Manufacturer',
         bike_type: 'Bike type',
@@ -112,7 +121,7 @@ const i18n = createI18n({
         product_page_url: 'Official product page URL',
 
         if_that_information_is_officially_available:
-          'If that information is officially available, the name of the country the bike and its frame is made in (and not just assembled). Optional.',
+          'Where the bike frame is made (and not just assembled). Optional.',
         send_me_an_email: 'Send me an email',
         with_this_information:
           "with this information and I'll do it for you and let you know when it's done.",
@@ -198,7 +207,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design is free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Contours',
-        bike_frame_made_in: 'Cadre du vélo fabriqué',
+        bike_frame_made_in: 'Nom du pays où le cadre du vélo est fabriqué',
         bike_assembled_in: 'Assemblé',
         in_germany: 'en Allemagne',
         in_hungary: 'en Hongrie',
@@ -244,10 +253,18 @@ const i18n = createI18n({
         step_1_basic_informations: 'Étape 1: informations de base',
         step_2_profile_image_and_size: 'Étape 2: image de profil et taille',
         step_3_share_this_information: 'Étape 3: envoyer ces informations',
+        fill_as_many_fields_as_possible:
+          'Renseignez les champs suivants avec les informations que vous connaissez ou que vous pouvez trouver en ligne.',
         back: 'retour',
         next: 'suivant',
         send: 'envoyer',
         add_another_bike: 'ajouter un autre vélo',
+        image_source: 'Indiquer l’image de profil du vélo que vous souhaitez ajouter',
+        add_by_url: 'Coller l’URL vers l’image du vélo en ligne',
+        couldnt_find_the_image_you_want:
+          'Je n’ai pas trouvé d’image adaptée / je ne sais pas quelle image prendre',
+        url: 'URL',
+        add_by_file: 'Importer l’image depuis votre appareil',
         model: 'Modèle',
         manufacturer: 'Fabricant',
         bike_type: 'Type de vélo',
@@ -261,7 +278,7 @@ const i18n = createI18n({
         product_page_url: 'URL de la page produit officielle',
 
         if_that_information_is_officially_available:
-          'Si cette information est officiellement disponible, le nom du pays où le cadre du vélo est fabriqué. Optionnel.',
+          'Si cette information est officiellement disponible, le nom du pays où le cadre du vélo est fabriqué et pas seulement assemblé. Optionnel.',
         send_me_an_email: 'Envoyer un email à',
         with_this_information:
           'avec ces informations et je vous indiquerai quand elles auront été ajoutées.',
