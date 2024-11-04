@@ -1822,5 +1822,20 @@
     "bottom_margin_percent": 0.229,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/31-triporteur-velo-cargo-eco-kid-2.html",
     "frame_made_in": ""
+  },
+  {
+    "id": "bakfiets-lang-cykelfabriken",
+
+    "manufacturer": "Cykelfabriken",
+    "model": "Bakfiets Lång",
+    "bike_type": "longjohn",
+    "src": "bakfiets-lang.png",
+    "bike_length_cm": 260,
+    "weight": 35,
+    "bike_length_percent": 0.949,
+    "left_margin_percent": 0.031,
+    "bottom_margin_percent": 0.158,
+    "url": "https://cykelfabriken.se/en/bakfiets-long-short-description/",
+    "frame_made_in": "Sweden"
   }
 ]
