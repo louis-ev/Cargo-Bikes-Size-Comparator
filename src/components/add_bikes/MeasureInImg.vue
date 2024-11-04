@@ -136,6 +136,7 @@ export default {
   watch: {
     left() {
       this.drawCanvas()
+      debugger
       this.$emit('update:img_left', this.left)
     },
     right() {

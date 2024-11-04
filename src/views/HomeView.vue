@@ -57,7 +57,7 @@ export default {
     return {
       ro: null,
 
-      add_bike_modal: true,
+      add_bike_modal: false,
       show_sidebar: true,
 
       default_padding_percent: 5,

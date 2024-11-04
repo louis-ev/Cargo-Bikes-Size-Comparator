@@ -1,7 +1,14 @@
 <template>
   <div class="_sliderNumber">
-    <input type="number" v-model="local_value" />
-    <input type="range" :dir="direction" step="0.1" min="0" max="100" v-model="local_value" />
+    <input type="number" v-model.number="local_value" />
+    <input
+      type="range"
+      :dir="direction"
+      step="0.1"
+      min="0"
+      max="100"
+      v-model.number="local_value"
+    />
   </div>
 </template>
 <script>

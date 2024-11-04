@@ -47,6 +47,13 @@
                   {{ e_manufacturer }}
                 </button>
               </div>
+              <button
+                type="button"
+                v-if="!show_all_manufacturers"
+                @click="show_all_manufacturers = true"
+              >
+                {{ $t('add_bike.show_all_manufacturers') }}
+              </button>
             </small>
             <div
               class="_warning"
@@ -119,6 +126,7 @@
 
         <section class="_step" v-else-if="step === 2">
           <h2>{{ $t('add_bike.step_2_profile_image_and_size') }}</h2>
+          {{ img_left }}
 
           <MeasureInImg
             v-model:imageUrl="imageUrl"
@@ -230,7 +238,8 @@ export default {
   },
   data() {
     return {
-      step: 2,
+      step: 0,
+      show_all_manufacturers: false,
 
       model: '',
       manufacturer: '',
@@ -256,21 +265,29 @@ export default {
     }
   },
   computed: {
-    all_manufacturers() {
-      return this.bikes
-        .map((bike) => bike.manufacturer)
-        .filter((value, index, self) => self.indexOf(value) === index)
-    },
     sorted_manufacturers() {
-      return this.all_manufacturers.sort((a, b) => a.localeCompare(b))
+      // Count occurrences of each manufacturer
+      const manufacturerCounts = this.bikes
+        .map((bike) => bike.manufacturer)
+        .reduce((acc, manufacturer) => {
+          acc[manufacturer] = (acc[manufacturer] || 0) + 1
+          return acc
+        }, {})
+
+      // Convert to array of [manufacturer, count] pairs, sort by count, and extract unique manufacturers
+      return Object.entries(manufacturerCounts)
+        .sort((a, b) => b[1] - a[1]) // Sort by count descending
+        .map(([manufacturer]) => manufacturer) // Extract just the manufacturer names
     },
     filtered_manufacturers() {
-      return this.sorted_manufacturers.filter(
+      const manufacturers = this.sorted_manufacturers.filter(
         (manufacturer) =>
           this.$normalizeStringForSearch(manufacturer).includes(
             this.$normalizeStringForSearch(this.manufacturer)
           ) && manufacturer !== this.manufacturer
       )
+      if (this.show_all_manufacturers) return manufacturers
+      return manufacturers.slice(0, 10)
     },
     new_bike_recap() {
       const id = (this.model + ' ' + this.manufacturer).toLowerCase().replace(/ /g, '-')

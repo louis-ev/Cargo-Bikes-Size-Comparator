@@ -164,7 +164,8 @@ const i18n = createI18n({
           'Add the bike informations to the {link} file and submit a pull request.',
         bike_image: 'Bike image',
         bike_image_explanation:
-          'It must be a profile image of the bike, with the front to the right, ideally on a white or transparent background. Higher resolution is better (at least 1000px in each dimension).'
+          'It must be a profile image of the bike, with the front to the right, ideally on a white or transparent background. Higher resolution is better (at least 1000px in each dimension).',
+        show_all_manufacturers: 'Show all suggestions'
       }
     },
     fr: {
@@ -317,7 +318,8 @@ const i18n = createI18n({
         bike_image: 'Image du vélo',
         thank_you: 'Merci !',
         bike_image_explanation:
-          'Ce doit être une image de profil du vélo, tourné vers la droite, idéalement sur un fond blanc ou transparent. Une meilleure résolution est préférable (au moins 1000px dans chaque dimension).'
+          'Ce doit être une image de profil du vélo, tourné vers la droite, idéalement sur un fond blanc ou transparent. Une meilleure résolution est préférable (au moins 1000px dans chaque dimension).',
+        show_all_manufacturers: 'Afficher toutes les suggestions'
       }
     }
   }
