@@ -126,7 +126,6 @@
 
         <section class="_step" v-else-if="step === 2">
           <h2>{{ $t('add_bike.step_2_profile_image_and_size') }}</h2>
-          {{ img_left }}
 
           <MeasureInImg
             v-model:imageUrl="imageUrl"
