@@ -144,7 +144,7 @@ export default {
   data() {
     return {
       bike_images_full_paths: [],
-      show_human_silhouette: true,
+      show_human_silhouette: false,
       human_silhouette_height: 180,
       show_regular_bike_silhouette: false
     }
