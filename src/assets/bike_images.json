@@ -1860,7 +1860,7 @@
     "model": "KADe",
     "bike_type": "longtail",
     "src": "KADe_17.png",
-    "bike_length_cm": 198,
+    "bike_length_cm": 197,
     "weight": 29,
     "bike_length_percent": 0.93,
     "left_margin_percent": 0.028,
