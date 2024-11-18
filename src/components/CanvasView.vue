@@ -57,6 +57,17 @@
           @change="toggleHumanSilhouette"
         />
         &nbsp;{{ $t('message.show_human_silhouette') }}
+        <template v-if="show_human_silhouette">
+          <input
+            type="number"
+            class="_humanSilhouetteHeightInput"
+            ref="human_silhouette_height_input"
+            :value="human_silhouette_height"
+          />
+          <button type="button" class="_updateHumanSilhouetteHeight" @click="updateHeight">
+            ✓
+          </button>
+        </template>
       </label>
 
       <label
@@ -133,7 +144,8 @@ export default {
   data() {
     return {
       bike_images_full_paths: [],
-      show_human_silhouette: false,
+      show_human_silhouette: true,
+      human_silhouette_height: 180,
       show_regular_bike_silhouette: false
     }
   },
@@ -166,6 +178,9 @@ export default {
       this.showBikes()
     },
     grid_step() {
+      this.showBikes()
+    },
+    human_silhouette_height() {
       this.showBikes()
     },
     reversed_sorted_enabled_bikes: {
@@ -241,7 +256,10 @@ export default {
       const each_px_measures_in_cm = (canvas.width - padding * 2) / (largest_bike || 200)
 
       if (this.show_human_silhouette)
-        canvas.height = Math.max(canvas.height, 200 * each_px_measures_in_cm)
+        canvas.height = Math.max(
+          canvas.height,
+          (this.human_silhouette_height + 20) * each_px_measures_in_cm
+        )
 
       this.drawBackground(ctx, canvas)
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
@@ -373,6 +391,9 @@ export default {
         cm_count += step
       }
     },
+    updateHeight() {
+      this.human_silhouette_height = Number(this.$refs.human_silhouette_height_input.value)
+    },
     async drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm) {
       // ctx.fillStyle = 'white'
 
@@ -386,11 +407,11 @@ export default {
       // silhouette_img.src = './Human_(silhouettes).svg'
       // await silhouette_img.decode()
       const img_ratio = silhouette_img.width / silhouette_img.height
-      const silhouette_height = 185 * each_px_measures_in_cm
+      const silhouette_height = (this.human_silhouette_height + 7) * each_px_measures_in_cm
       const silhouette_width = silhouette_height * img_ratio
 
       const draw_x = padding + 5 * each_px_measures_in_cm
-      let draw_y = canvas.height - padding + 2 * each_px_measures_in_cm
+      let draw_y = canvas.height - padding + 3 * each_px_measures_in_cm
 
       // draw_y += 110
 
@@ -615,6 +636,7 @@ canvas {
 ._previewCanvas {
   position: relative;
   z-index: 1;
+  background: var(--color-background);
 }
 
 ._downloadCanvas {
@@ -691,5 +713,11 @@ canvas {
   border: 1px solid var(--color-text);
   // background-color: var(--color-text);
   // color: var(--color-background);
+}
+._humanSilhouetteHeightInput {
+  width: 7ch;
+}
+._updateHumanSilhouetteHeight {
+  background-color: white;
 }
 </style>
