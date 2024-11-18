@@ -1866,5 +1866,20 @@
     "left_margin_percent": 0.028,
     "bottom_margin_percent": 0.088,
     "url": "https://reidbikes.com/products/kade-orange"
+  },
+  {
+    "id": "no-o1-monopole",
+
+    "manufacturer": "MONoPOLE",
+    "model": "No O1",
+    "bike_type": "shortjohn",
+    "src": "monopole.png",
+    "bike_length_cm": 191,
+    "weight": 22,
+    "bike_length_percent": 0.681,
+    "left_margin_percent": 0.171,
+    "bottom_margin_percent": 0.204,
+    "url": "https://monopole.cc/en/product/cargo-e-bike",
+    "frame_made_in": "France"
   }
 ]
