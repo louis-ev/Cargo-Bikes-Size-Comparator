@@ -1852,5 +1852,19 @@
     "bottom_margin_percent": 0.158,
     "url": "https://cykelfabriken.se/en/bakfiets-long-short-description/",
     "frame_made_in": "Sweden"
+  },
+  {
+    "id": "kade-reid",
+
+    "manufacturer": "Reid Bikes",
+    "model": "KADe",
+    "bike_type": "longtail",
+    "src": "KADe_17.png",
+    "bike_length_cm": 198,
+    "weight": 29,
+    "bike_length_percent": 0.93,
+    "left_margin_percent": 0.028,
+    "bottom_margin_percent": 0.088,
+    "url": "https://reidbikes.com/products/kade-orange"
   }
 ]
