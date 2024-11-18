@@ -32,8 +32,9 @@ button,
 
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
-  &:disabled {
+  &[disabled] {
     cursor: not-allowed;
+    color: var(--color-text-secondary);
   }
 
   svg {

@@ -57,17 +57,23 @@
           @change="toggleHumanSilhouette"
         />
         &nbsp;{{ $t('message.show_human_silhouette') }}
-        <template v-if="show_human_silhouette">
+        <fieldset v-if="show_human_silhouette" class="_humanSilhouetteHeight" @click.stop="">
           <input
             type="number"
-            class="_humanSilhouetteHeightInput"
+            class=""
             ref="human_silhouette_height_input"
-            :value="human_silhouette_height"
+            v-model.number="new_human_silhouette_height"
           />
-          <button type="button" class="_updateHumanSilhouetteHeight" @click="updateHeight">
+          cm
+          <button
+            type="button"
+            class=""
+            :disabled="new_human_silhouette_height === human_silhouette_height"
+            @click="updateHeight"
+          >
             ✓
           </button>
-        </template>
+        </fieldset>
       </label>
 
       <label
@@ -144,8 +150,10 @@ export default {
   data() {
     return {
       bike_images_full_paths: [],
-      show_human_silhouette: false,
+      show_human_silhouette: true,
       human_silhouette_height: 180,
+      new_human_silhouette_height: 180,
+
       show_regular_bike_silhouette: false
     }
   },
@@ -392,7 +400,7 @@ export default {
       }
     },
     updateHeight() {
-      this.human_silhouette_height = Number(this.$refs.human_silhouette_height_input.value)
+      this.human_silhouette_height = this.new_human_silhouette_height
     },
     async drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm) {
       // ctx.fillStyle = 'white'
@@ -714,10 +722,19 @@ canvas {
   // background-color: var(--color-text);
   // color: var(--color-background);
 }
-._humanSilhouetteHeightInput {
-  width: 7ch;
-}
-._updateHumanSilhouetteHeight {
-  background-color: white;
+._humanSilhouetteHeight {
+  padding: 2px;
+  border: none;
+  margin-left: 0.5rem;
+
+  input {
+    width: 7ch;
+    padding: 1px;
+    border: none;
+    // height: 1.5rem;
+  }
+  button {
+    background-color: white;
+  }
 }
 </style>
