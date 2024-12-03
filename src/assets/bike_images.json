@@ -1881,5 +1881,21 @@
     "bottom_margin_percent": 0.204,
     "url": "https://monopole.cc/en/product/cargo-e-bike",
     "frame_made_in": "France"
+  },
+  {
+    "id": "monkeytail-bike-monkey-bike",
+
+    "manufacturer": "Monkey Bike",
+    "model": "Monkeytail Bike",
+    "bike_type": "longtail",
+    "src": "monkeytail-jungle_green.png",
+    "bike_length_cm": 205,
+    "weight": "",
+    "bike_length_percent": 0.65,
+    "left_margin_percent": 0.168,
+    "bottom_margin_percent": 0.233,
+    "url": "https://www.monkeybike.be/modellen-monkeytail",
+    "show_frame_origin": false,
+    "frame_made_in": "Hungary"
   }
 ]
