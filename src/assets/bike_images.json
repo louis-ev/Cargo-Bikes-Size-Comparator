@@ -1912,5 +1912,20 @@
     "bottom_margin_percent": 0.25,
     "url": "https://www.gazelle.nl/elektrische-fietsen/makki-travel",
     "frame_made_in": ""
+  },
+  {
+    "id": "ecargo-longtail-estarli",
+
+    "manufacturer": "estarli",
+    "model": "eCargo Longtail",
+    "bike_type": "longtail",
+    "src": "estarli.png",
+    "bike_length_cm": "183.0",
+    "weight": 28,
+    "bike_length_percent": 0.889,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.241,
+    "url": "https://www.estarli.co.uk/products/longtail-cargo?variant=44016872194275",
+    "frame_made_in": "uk"
   }
 ]
