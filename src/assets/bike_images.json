@@ -1897,5 +1897,20 @@
     "url": "https://www.monkeybike.be/modellen-monkeytail",
     "show_frame_origin": false,
     "frame_made_in": "Hungary"
+  },
+  {
+    "id": "makki-travel-gazelle",
+
+    "manufacturer": "Gazelle",
+    "model": "Makki Travel",
+    "bike_type": "longjohn",
+    "src": "gazelle-makki-travel.png",
+    "bike_length_cm": 265,
+    "weight": 55,
+    "bike_length_percent": 0.79,
+    "left_margin_percent": 0.102,
+    "bottom_margin_percent": 0.25,
+    "url": "https://www.gazelle.nl/elektrische-fietsen/makki-travel",
+    "frame_made_in": ""
   }
 ]
