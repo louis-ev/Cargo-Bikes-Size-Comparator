@@ -1920,12 +1920,27 @@
     "model": "eCargo Longtail",
     "bike_type": "longtail",
     "src": "estarli.png",
-    "bike_length_cm": "183.0",
+    "bike_length_cm": 183,
     "weight": 28,
     "bike_length_percent": 0.889,
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.241,
     "url": "https://www.estarli.co.uk/products/longtail-cargo?variant=44016872194275",
     "frame_made_in": "uk"
+  },
+  {
+    "id": "compact-ecargo-portus",
+
+    "manufacturer": "Portus",
+    "model": "Compact eCargo",
+    "bike_type": "midtail",
+    "src": "portus-cargo.png",
+    "bike_length_cm": 175,
+    "weight": 34,
+    "bike_length_percent": 0.819,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.065,
+    "url": "https://portus-cycles.de/bikes/compact-ecargo-bosch-ebike-system-2/",
+    "frame_made_in": "Germany"
   }
 ]
