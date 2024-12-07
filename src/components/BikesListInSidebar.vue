@@ -81,12 +81,7 @@ export default {
       } else {
         enabled_bikes_ids.push(id)
       }
-      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
-      query.bikes = JSON.stringify(enabled_bikes_ids)
-
-      this.$router.push({
-        query
-      })
+      this.$root.updateBikesQuery(enabled_bikes_ids)
     },
     showBikePreview(id) {
       this.$preview_bike.id = id

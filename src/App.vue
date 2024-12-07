@@ -65,7 +65,8 @@ export default {
       if (this.$route.query.bikes) {
         try {
           const bikes = this.$route.query.bikes
-          return JSON.parse(bikes)
+          if (bikes.includes('[')) return JSON.parse(bikes)
+          else return bikes.split(',')
         } catch (e) {
           return []
         }
@@ -111,7 +112,7 @@ export default {
     },
     updateBikesQuery(enabled_bikes_ids) {
       let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
-      query.bikes = JSON.stringify(enabled_bikes_ids)
+      query.bikes = enabled_bikes_ids.join(',')
       this.$router.push({
         query
       })

@@ -471,15 +471,9 @@ export default {
       })
     },
     async unselectBike(bike_id) {
-      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
-
-      const bikes_ids = query.bikes ? JSON.parse(query.bikes) : []
+      const bikes_ids = this.$root.enabled_bikes_ids
       const new_bikes_ids = bikes_ids.filter((id) => id !== bike_id)
-      query.bikes = JSON.stringify(new_bikes_ids)
-
-      this.$router.push({
-        query
-      })
+      this.$root.updateBikesQuery(new_bikes_ids)
     },
     downloadCanvas() {
       const canvas = this.$refs.bikes

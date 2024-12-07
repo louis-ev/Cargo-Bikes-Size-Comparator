@@ -73,21 +73,11 @@ export default {
   beforeUnmount() {},
   watch: {},
   computed: {
-    enabled_bikes_ids() {
-      if (this.$route.query.bikes) {
-        try {
-          return JSON.parse(this.$route.query.bikes)
-        } catch (e) {
-          return []
-        }
-      }
-      return []
-    },
     canvas_image_style_outline() {
       return this.$route.query.outline && this.$route.query.outline === '1'
     },
     enabled_bikes() {
-      return this.enabled_bikes_ids.reduce((acc, id, index) => {
+      return this.$root.enabled_bikes_ids.reduce((acc, id, index) => {
         const bike = this.findMatchingBike(id)
         if (bike) {
           const color_options = this.bike_outline_colors
