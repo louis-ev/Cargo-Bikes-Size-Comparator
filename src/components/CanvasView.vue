@@ -68,7 +68,7 @@
           <button
             type="button"
             class=""
-            :disabled="new_human_silhouette_height === human_silhouette_height"
+            v-if="new_human_silhouette_height !== human_silhouette_height"
             @click="updateHeight"
           >
             ✓
