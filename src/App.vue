@@ -59,6 +59,18 @@ export default {
     },
     all_measures() {
       return this.bakfiets_measures.concat(this.longtails_measures)
+    },
+
+    enabled_bikes_ids() {
+      if (this.$route.query.bikes) {
+        try {
+          const bikes = this.$route.query.bikes
+          return JSON.parse(bikes)
+        } catch (e) {
+          return []
+        }
+      }
+      return []
     }
   },
   methods: {
@@ -96,6 +108,13 @@ export default {
         result.push(obj)
       }
       return result
+    },
+    updateBikesQuery(enabled_bikes_ids) {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+      query.bikes = JSON.stringify(enabled_bikes_ids)
+      this.$router.push({
+        query
+      })
     }
   }
 }
