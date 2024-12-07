@@ -106,11 +106,12 @@
           </div>
 
           <div class="inputField">
-            <label for="frame_made_in">{{ $t('message.bike_frame_made_in') }}</label>
+            <label for="frame_made_in">{{ $t('add_bike.bike_frame_country') }}</label>
             <input type="text" v-model="frame_made_in" id="frame_made_in" />
-            <small>
-              {{ $t('add_bike.if_that_information_is_officially_available') }}
-            </small>
+          </div>
+          <div class="inputField">
+            <label for="assembled_in">{{ $t('add_bike.bike_assembled_in') }}</label>
+            <input type="text" v-model="assembled_in" id="assembled_in" />
           </div>
 
           <div class="_nav">
@@ -249,6 +250,7 @@ export default {
       productPageUrl: '',
       imageUrl: '',
       frame_made_in: '',
+      assembled_in: '',
 
       img_left: 10,
       img_right: 10,
@@ -314,6 +316,7 @@ export default {
         typeof this.img_bottom === 'number' ? (this.img_bottom / 100).toFixed(3) : ''
       const url = this.productPageUrl
       const frame_made_in = this.frame_made_in
+      const assembled_in = this.assembled_in
 
       return {
         id,
@@ -327,7 +330,8 @@ export default {
         left_margin_percent,
         bottom_margin_percent,
         url,
-        frame_made_in
+        frame_made_in,
+        assembled_in
       }
     },
     modal_size() {

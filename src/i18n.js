@@ -48,7 +48,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Outline',
-        bike_frame_made_in: 'Country where the bike frame is made',
+        bike_frame_made_in: 'Bike frame made',
         bike_assembled_in: 'Assembled',
         in_germany: 'in Germany',
         in_hungary: 'in Hungary',
@@ -97,7 +97,7 @@ const i18n = createI18n({
         step_2_profile_image_and_size: 'Step 2: profile image and size',
         step_3_share_this_information: 'Step 3: share this information',
         fill_as_many_fields_as_possible:
-          'Fill in the following fields with the informations you can find online.',
+          'Fill in the following fields with the informations you can find. All fields are optional.',
         back: 'back',
         next: 'next',
         send: 'send',
@@ -120,9 +120,9 @@ const i18n = createI18n({
         weight: 'Weight',
         in_kilograms: 'in kilograms',
         product_page_url: 'Official product page URL',
+        bike_frame_country: 'Country where the bike frame is made (and not just assembled).',
+        bike_assembled_in: 'Country where the bike is assembled',
 
-        if_that_information_is_officially_available:
-          'Where the bike frame is made (and not just assembled). Optional.',
         send_me_an_email: 'Send me an email',
         with_this_information:
           "with this information and I'll do it for you and let you know when it's done.",
@@ -209,7 +209,7 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design is free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Contours',
-        bike_frame_made_in: 'Nom du pays où le cadre du vélo est fabriqué',
+        bike_frame_made_in: 'Cadre du vélo fabriqué',
         bike_assembled_in: 'Assemblé',
         in_germany: 'en Allemagne',
         in_hungary: 'en Hongrie',
@@ -279,9 +279,9 @@ const i18n = createI18n({
         weight: 'Poids',
         in_kilograms: 'en kilogrammes',
         product_page_url: 'URL de la page produit officielle',
+        bike_frame_country: 'Pays où le cadre du vélo est fabriqué',
+        bike_assembled_in: 'Pays où le vélo est assemblé',
 
-        if_that_information_is_officially_available:
-          'Si cette information est officiellement disponible, le nom du pays où le cadre du vélo est fabriqué et pas seulement assemblé. Optionnel.',
         send_me_an_email: 'Envoyer un email à',
         with_this_information:
           'avec ces informations et je vous indiquerai quand elles auront été ajoutées.',

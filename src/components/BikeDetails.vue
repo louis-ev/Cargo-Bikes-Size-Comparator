@@ -14,7 +14,7 @@
           $t('message.bike_assembled_in') +
           ' ' +
           $t('message.in_' + bike.assembled_in.toLowerCase())
-        }}
+        }}.
       </template>
     </div>
 
