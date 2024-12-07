@@ -276,16 +276,18 @@
     "id_in_csv": "",
 
     "manufacturer": "Le Petit Porteur",
-    "model": "L’Original",
+    "model": "OG",
     "bike_type": "midtail",
-    "src": "lepetitporteur.png",
-    "bike_length_percent": 0.908,
-    "bike_length_cm": 167,
-    "left_margin_percent": 0.041,
-    "bottom_margin_percent": 0.015,
-    "url": "https://www.lepetitporteur.com/",
+    "src": "lpp-og.png",
+    "bike_length_cm": 168,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0.0,
+    "bottom_margin_percent": 0.0,
+    "url": "https://www.lepetitporteur.com/fr/content/27-le-petit-porteur-og",
     "frame_material": "CrMo",
-    "assembled_in": "France"
+    "assembled_in": "France",
+    "show_frame_origin": false,
+    "frame_made_in": "china"
   },
   {
     "id": "lepetitporteur-longtail",
@@ -300,7 +302,10 @@
     "left_margin_percent": 0.011,
     "bottom_margin_percent": 0.003,
     "url": "https://www.lepetitporteur.com/en/compact-and-affordable-cargo-bike/",
-    "frame_material": "CrMo"
+    "frame_material": "CrMo",
+    "assembled_in": "France",
+    "show_frame_origin": false,
+    "frame_made_in": "china"
   },
   {
     "id": "nakamura",
@@ -1942,5 +1947,22 @@
     "bottom_margin_percent": 0.065,
     "url": "https://portus-cycles.de/bikes/compact-ecargo-bosch-ebike-system-2/",
     "frame_made_in": "Germany"
+  },
+  {
+    "id": "lepetitporteur-shorty",
+
+    "manufacturer": "Le Petit Porteur",
+    "model": "Shorty",
+    "bike_type": "midtail",
+    "src": "lpp-shorty.png",
+    "bike_length_cm": 162,
+    "weight": "",
+    "bike_length_percent": 1,
+    "left_margin_percent": 0.0,
+    "bottom_margin_percent": 0.0,
+    "url": "https://www.lepetitporteur.com/fr/content/28-le-petit-porteur-shorty",
+    "assembled_in": "France",
+    "show_frame_origin": false,
+    "frame_made_in": "China"
   }
 ]
