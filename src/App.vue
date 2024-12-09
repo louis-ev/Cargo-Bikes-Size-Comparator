@@ -32,6 +32,8 @@ export default {
       return this.bikes
         .filter((item) => item.disabled !== true)
         .map((item) => {
+          if (item.id.includes(','))
+            alert('id includes comma (forbidden because of URL sharing) for ' + item.id)
           if (this.all_measures.length > 0) {
             const found = this.all_measures.find(
               (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
