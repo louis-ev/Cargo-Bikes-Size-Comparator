@@ -1964,5 +1964,19 @@
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "China"
+  },
+  {
+    "id": "cargoline-ht800-kettler",
+
+    "manufacturer": "Kettler",
+    "model": "Cargoline ht800",
+    "bike_type": "longjohn",
+    "src": "kettler-ht800.png",
+    "bike_length_cm": 262,
+    "weight": 45,
+    "bike_length_percent": 0.995,
+    "left_margin_percent": 0.006,
+    "bottom_margin_percent": 0.008,
+    "url": "https://www.kettler-alu-rad.de/be-nl/produkt/kettler-alu-rad-kettler-cargoline-ht-800-2022-trapez?AKLW"
   }
 ]
