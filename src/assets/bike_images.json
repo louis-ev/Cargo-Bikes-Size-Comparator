@@ -11,6 +11,7 @@
     "bike_length_cm": 192,
     "left_margin_percent": 0.075,
     "bottom_margin_percent": 0.088,
+    "frame_material": "aluminium 7005",
     "url": "https://chike.de/en/"
   },
   {
@@ -27,6 +28,7 @@
     "left_margin_percent": 0.011,
     "bottom_margin_percent": 0.042,
     "frame_made_in": "germany",
+    "frame_material": "25CrMo4",
     "url": "https://muli-cycles.de/en",
     "comment_en": "The Muli Muskel and Pendix versions are 195cm long, the Shimano Steps and Bosch versions are 198cm long.",
     "insitu": [
@@ -65,6 +67,7 @@
     "left_margin_percent": 0.033,
     "bottom_margin_percent": 0.045,
     "frame_made_in": "portugal",
+    "frame_material": "aluminium",
     "show_frame_origin": false,
     "weight": 35.7,
     "url": "https://www.r-m.de/en-en/bikes/carrie/"
@@ -83,6 +86,7 @@
     "bottom_margin_percent": 0.02,
     "url": "https://www.r-m.de/en-en/bikes/load-75",
     "frame_made_in": "portugal",
+    "frame_material": "aluminium",
     "show_frame_origin": false,
     "weight": 37.1
   },
@@ -100,6 +104,7 @@
     "bottom_margin_percent": 0.023,
     "url": "https://www.r-m.de/en-en/bikes/load-60",
     "frame_made_in": "portugal",
+    "frame_material": "aluminium",
     "show_frame_origin": false,
     "weight": 35.5
   },
@@ -116,6 +121,7 @@
     "left_margin_percent": 0.077,
     "bottom_margin_percent": 0.105,
     "frame_made_in": "france",
+    "frame_material": "aluminium",
     "url": "https://www.douze-cycles.com/velos-cargos/heta"
   },
   {
@@ -130,6 +136,7 @@
     "bike_length_cm": 243,
     "left_margin_percent": 0.1452,
     "bottom_margin_percent": 0.225,
+    "frame_material": "aluminium 7005",
     "url": "https://www.larryvsharry.com/en/ebullitt",
     "insitu": [
       {
@@ -165,6 +172,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.135,
     "bottom_margin_percent": 0.259,
+    "frame_material": "aluminium",
     "url": "https://urbanarrow.com/",
     "additional_links": [
       {
@@ -1337,6 +1345,7 @@
     "bottom_margin_percent": 0.133,
     "url": "https://fr.fiido.com/products/fiido-t2-longtail-cargo-ebike-for-versatile-all-terrain",
     "frame_made_in": "China",
+    "frame_material": "al",
     "show_frame_origin": false
   },
   {
