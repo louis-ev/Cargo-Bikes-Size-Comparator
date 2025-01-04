@@ -1987,5 +1987,21 @@
     "left_margin_percent": 0.006,
     "bottom_margin_percent": 0.008,
     "url": "https://www.kettler-alu-rad.de/be-nl/produkt/kettler-alu-rad-kettler-cargoline-ht-800-2022-trapez?AKLW"
+  },
+  {
+    "id": "bolide-kino-bikes",
+
+    "manufacturer": "Kino Bikes",
+    "model": "Le Bolide",
+    "bike_type": "midtail",
+    "src": "Bolide-V2-kino-bikes-profil-droit.png",
+    "bike_length_cm": 171,
+    "weight": 37,
+    "bike_length_percent": 0.882,
+    "left_margin_percent": 0.052,
+    "bottom_margin_percent": 0.187,
+    "url": "https://kino.bike/velo-cargo-electrique/bolide/",
+    "frame_made_in": "France",
+    "assembled_in": "France"
   }
 ]
