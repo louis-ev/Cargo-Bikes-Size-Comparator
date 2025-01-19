@@ -174,6 +174,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.334,
+    "frame_material": "6061-T6 aluminum",
     "url": "https://urbanarrow.com/family-bikes/familynext/",
     "frame_made_in": ""
   },
@@ -189,7 +190,7 @@
     "bike_length_cm": 260,
     "left_margin_percent": 0.135,
     "bottom_margin_percent": 0.259,
-    "frame_material": "aluminium",
+    "frame_material": "6061-T6 aluminum",
     "url": "https://urbanarrow.com/",
     "additional_links": [
       {
@@ -948,7 +949,8 @@
     "bike_length_cm": 203,
     "left_margin_percent": 0.22,
     "bottom_margin_percent": 0.321,
-    "url": "https://servicecenter.urbanarrow.com/en/urban-arrow-shorty-specifications"
+    "url": "https://servicecenter.urbanarrow.com/en/urban-arrow-shorty-specifications",
+    "frame_material": "6061-T6 aluminum"
   },
   {
     "id": "e-dolly-maxdrive-600wh-dolly-bikes",
@@ -1565,10 +1567,10 @@
     "frame_made_in": ""
   },
   {
-    "id": "urban-arrow-xl--urban-arrox",
+    "id": "urban-arrow-cargo-xl",
 
     "manufacturer": "Urban Arrow",
-    "model": "Urban Arrow XL",
+    "model": "Cargo XL",
     "bike_type": "longjohn",
     "src": "urban-arrow-cargo-xl.png",
     "bike_length_cm": 294,
@@ -1576,7 +1578,7 @@
     "left_margin_percent": 0.034,
     "bottom_margin_percent": 0.239,
     "url": "https://urbanarrow.com/business-bikes/cargo/",
-    "frame_made_in": ""
+    "frame_material": "6061-T6 aluminum"
   },
   {
     "id": "transporter2-65-riese-und-müller",
@@ -2020,5 +2022,21 @@
     "url": "https://kino.bike/velo-cargo-electrique/bolide/",
     "frame_made_in": "France",
     "assembled_in": "France"
+  },
+  {
+    "id": "cargo-l-urban-arrow",
+
+    "manufacturer": "Urban Arrow",
+    "model": "Cargo L",
+    "bike_type": "longjohn",
+    "src": "ua-cargo-l.png",
+    "bike_length_cm": 274,
+    "weight": 50,
+
+    "bike_length_percent": 0.858,
+    "left_margin_percent": 0.089,
+    "bottom_margin_percent": 0.227,
+    "url": "https://urbanarrow.com/business-bikes/cargo",
+    "frame_material": "6061-T6 aluminum"
   }
 ]
