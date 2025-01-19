@@ -2040,10 +2040,10 @@
     "frame_material": "6061-T6 aluminum"
   },
   {
-    "id": "tender-urban-arrow",
+    "id": "tender-1000-urban-arrow",
 
     "manufacturer": "Urban Arrow",
-    "model": "Tender",
+    "model": "Tender 1000",
     "bike_type": "tricycle",
     "src": "ua-tender.png",
     "bike_length_cm": 271,
