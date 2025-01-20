@@ -153,8 +153,8 @@ export default {
   button {
     position: relative;
     padding: 0.25rem 0.5rem;
-    color: white;
-    font-weight: normal;
+    color: black;
+    // font-weight: normal;
     font-size: 0.8rem;
 
     &:hover,

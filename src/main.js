@@ -36,13 +36,13 @@ app.config.globalProperties.$loadBikeImages2 = async (paths) => {
 }
 
 app.config.globalProperties.$bikeTypesColors = {
-  longtail: '#C5998C',
-  midtail: '#118ab2',
-  lowtail: '#ffd166',
-  longjohn: '#9097C0',
-  shortjohn: '#14A6D7',
-  tricycle: '#ef476f',
-  longdiamond: '#06d6a0'
+  longtail: 'hsl(14, 83%, 76%)',
+  longjohn: 'hsl(221, 80%, 80%)',
+  midtail: 'hsl(270, 80%, 80%)',
+  lowtail: 'hsl(42, 100%, 70%)',
+  shortjohn: 'hsl(185, 83%, 70%)',
+  tricycle: 'hsl(346, 84%, 66%)',
+  longdiamond: 'hsl(164, 65%, 63%)'
 }
 
 app.config.globalProperties.$normalizeStringForSearch = (str) => {
