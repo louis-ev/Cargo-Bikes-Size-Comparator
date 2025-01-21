@@ -2,7 +2,7 @@
   <transition-group tag="div" class="_bikeList" name="list">
     <div
       class="_item"
-      v-for="bike in bikes"
+      v-for="bike in ordered_bikes"
       :key="bike.id"
       :data-active="bikeIsEnabled(bike.id)"
       @mouseenter="showBikePreview(bike.id)"
@@ -72,7 +72,15 @@ export default {
   },
   beforeUnmount() {},
   watch: {},
-  computed: {},
+  computed: {
+    ordered_bikes() {
+      return this.bikes.slice().sort((a, b) => {
+        const a_enabled = this.enabled_bikes.some((i) => i.id === a.id)
+        const b_enabled = this.enabled_bikes.some((i) => i.id === b.id)
+        return b_enabled - a_enabled
+      })
+    }
+  },
   methods: {
     toggleBike(id) {
       let enabled_bikes_ids = this.enabled_bikes.map((b) => b.id)
@@ -144,6 +152,8 @@ export default {
   flex-direction: row nowrap;
   align-items: stretch;
   justify-content: space-between;
+
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   &:not(:has(input[disabled])) {
     cursor: pointer;

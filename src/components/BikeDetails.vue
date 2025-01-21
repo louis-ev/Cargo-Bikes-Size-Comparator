@@ -20,7 +20,37 @@
 
     <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
-    <div class="_adjust">
+    <div class="_measurements" v-if="bike._measurements">
+      <small v-html="getMeasurements(bike)" />
+      <br />
+    </div>
+
+    <div v-if="bike.additional_links" class="_additionalLinks">
+      <a
+        v-for="(link, index) in bike.additional_links"
+        :href="link.url"
+        target="_blank"
+        :key="index"
+      >
+        <span>&#8594;</span> {{ link.text }}
+      </a>
+    </div>
+
+    <div class="_inSitu" v-if="bike.insitu">
+      <label>{{ $t('message.in_situ') }}</label>
+      <div class="_inSituImages">
+        <button v-for="(img, index) in bike.insitu" :key="img.src" @click="showFullImage(index)">
+          <img :src="getImgThumbUrl(img.src)" />
+        </button>
+      </div>
+    </div>
+
+    <div class="_source">
+      <a :href="bike.url" target="_blank"> {{ $t('message.open_product_page') }} &#x2197; </a>
+    </div>
+
+    <details class="_adjust">
+      <summary>{{ $t('message.adjust') }}</summary>
       <small>
         <div class="_adjustInput">
           <label>{{ $t('message.position') }}</label>
@@ -81,40 +111,7 @@
           </div>
         </div>
       </small>
-    </div>
-
-    <div class="_measurements" v-if="bike._measurements">
-      <small v-html="getMeasurements(bike)" />
-      <br />
-    </div>
-
-    <div v-if="bike.additional_links" class="_additionalLinks">
-      <a
-        v-for="(link, index) in bike.additional_links"
-        :href="link.url"
-        target="_blank"
-        :key="index"
-      >
-        <span>&#8594;</span> {{ link.text }}
-      </a>
-    </div>
-
-    <div class="_inSitu" v-if="bike.insitu">
-      <label>{{ $t('message.in_situ') }}</label>
-      <div class="_inSituImages">
-        <button v-for="(img, index) in bike.insitu" :key="img.src" @click="showFullImage(index)">
-          <img :src="getImgThumbUrl(img.src)" />
-        </button>
-      </div>
-    </div>
-
-    <hr />
-
-    <div class="_source">
-      <a :href="bike.url" target="_blank">
-        <span>&#8594;</span> {{ $t('message.open_product_page') }}</a
-      >
-    </div>
+    </details>
 
     <InsituImageSlide
       v-if="show_full_image_index !== null"
@@ -253,8 +250,8 @@ hr {
 }
 
 ._source {
-  text-align: center;
-  text-transform: lowercase;
+  // text-align: center;
+  // text-transform: lowercase;
 }
 
 ._adjustInput {
@@ -274,12 +271,13 @@ hr {
   text-align: center;
 }
 ._itemBottom {
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.5rem 1rem 0.5rem;
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5rem;
+  font-size: 0.8rem;
 }
 ._measurements {
-  margin-bottom: 0.5rem;
+  // margin-bottom: 0.5rem;
 }
 </style>

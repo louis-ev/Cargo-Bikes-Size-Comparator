@@ -91,7 +91,7 @@ h1 {
 }
 label {
   display: block;
-  font-size: 1rem;
+  font-size: inherit;
   font-weight: 600;
 }
 p {
