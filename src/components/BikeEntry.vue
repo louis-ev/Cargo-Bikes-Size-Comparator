@@ -96,7 +96,7 @@ export default {
   border-radius: 0.5rem;
   display: flex;
   flex-direction: row nowrap;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   overflow: hidden;
