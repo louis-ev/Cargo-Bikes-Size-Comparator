@@ -58,11 +58,14 @@ export default {
       this.$emit('positionInEnabledBikes', this.position, e.target.value)
     },
     onMouseEnter() {
+      // not very effective, triggers an hover on next bike when enabling a bike
       this.$preview_bike.id = this.bike.id
     },
     onMouseLeave() {
       setTimeout(() => {
-        this.$preview_bike.id = null
+        if (this.$preview_bike.id === this.bike.id) {
+          this.$preview_bike.id = null
+        }
       }, 100)
     }
   }

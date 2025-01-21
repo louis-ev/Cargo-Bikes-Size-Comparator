@@ -91,7 +91,7 @@
         &nbsp;{{ $t('message.show_regular_bike_silhouette') }}
       </label>
 
-      <transition-group name="fade">
+      <transition-group name="fade_fast">
         <button
           type="button"
           class="_activeBike"
@@ -120,7 +120,7 @@
         {{ $t('message.download_comparison') }}
       </button>
     </small>
-    <transition name="fade">
+    <transition name="loader">
       <div class="_loader" v-if="is_loading">
         <span class="_loaderAnimation">
           <span class="loader" />
@@ -246,7 +246,7 @@ export default {
     async showBikes() {
       this.is_loading = true
 
-      await new Promise((resolve) => setTimeout(resolve, 200))
+      await new Promise((resolve) => setTimeout(resolve, 100))
 
       const canvas = this.$refs.offscreen_canvas
       if (!canvas) return
@@ -644,7 +644,7 @@ canvas {
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(238, 238, 238, 0.5);
+  background-color: rgba(238, 238, 238, 0.2);
 
   ._loaderAnimation {
     transform: scale(0.5);

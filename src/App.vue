@@ -143,6 +143,26 @@ input {
   opacity: 0;
 }
 
+.fade_fast-enter-active,
+.fade_fast-leave-active {
+  transition: opacity 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.fade_fast-enter-from,
+.fade_fast-leave-to {
+  opacity: 0;
+}
+
+.loader {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.25s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
