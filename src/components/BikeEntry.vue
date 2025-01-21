@@ -2,12 +2,18 @@
   <div class="_item" :data-active="isEnabled" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <label :for="bike.id" class="_itemTop">
       <input
+        v-show="!isEnabled"
         type="checkbox"
         :checked="isEnabled"
         :id="bike.id"
         :disabled="!bike.bike_length_cm"
         @change="$emit('toggle')"
       />
+      <select v-if="isEnabled" :value="position" @change="onChangePosition">
+        <option v-for="i in total_enabled_bikes" :value="i - 1" :key="i">
+          {{ i }}
+        </option>
+      </select>
 
       <div class="_names">
         <BikeName :bike="bike" />
@@ -39,13 +45,18 @@ export default {
   components: { BikeDetails },
   props: {
     bike: Object,
+    position: Number,
+    total_enabled_bikes: Number,
     isEnabled: Boolean,
     canvas_image_style_outline: Boolean,
     bikes_adjustments: Object,
     thumbImage: String
   },
-  emits: ['toggle', 'update:bikes_adjustments'],
+  emits: ['toggle', 'update:bikes_adjustments', 'update:position'],
   methods: {
+    onChangePosition(e) {
+      this.$emit('positionInEnabledBikes', this.position, e.target.value)
+    },
     onMouseEnter() {
       this.$preview_bike.id = this.bike.id
     },
@@ -94,10 +105,21 @@ export default {
     cursor: not-allowed;
   }
 
-  input {
+  input,
+  select {
     cursor: pointer;
     margin: 1rem;
     flex: 0 0 auto;
+  }
+
+  select {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--color-accent);
+    font-weight: bold;
+    border: none;
   }
 
   ._names {

@@ -17,17 +17,24 @@
       <BikeEntry
         v-for="bike in enabled_bikes"
         :key="bike.id"
+        :position="enabled_bikes.indexOf(bike)"
+        :total_enabled_bikes="enabled_bikes.length"
         :bike="bike"
         :is-enabled="bikeIsEnabled(bike.id)"
         :canvas_image_style_outline="canvas_image_style_outline"
         :bikes_adjustments="bikes_adjustments"
         :thumb-image="getBikeThumbImage(bike)"
         @toggle="toggleBike(bike.id)"
+        @positionInEnabledBikes="positionInEnabledBikes"
         @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
       />
 
+      <hr />
+
       <div class="_itemTitle" :key="'not_enabled_bikes'">
-        {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
+        <label>
+          {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
+        </label>
       </div>
     </template>
 
@@ -98,6 +105,11 @@ export default {
       const thumb = this.bike_images_thumbs_urls.find((i) => i.original_filename === bike.src)
       if (!thumb) return
       return thumb.url
+    },
+    positionInEnabledBikes(old_position, new_position) {
+      const bike = this.enabled_bikes.splice(old_position, 1)[0]
+      this.enabled_bikes.splice(new_position, 0, bike)
+      this.$root.updateBikesQuery(this.enabled_bikes.map((b) => b.id))
     }
   }
 }
