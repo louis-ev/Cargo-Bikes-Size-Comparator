@@ -1,13 +1,6 @@
 <template>
   <transition-group tag="div" class="_bikeList" name="list">
-    <template v-if="enabled_bikes.length === 0">
-      {{
-        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-          count: bikes.length
-        })
-      }}
-    </template>
-    <template v-else>
+    <template v-if="enabled_bikes.length > 0">
       <div class="_itemTitle" :key="'enabled_bikes'">
         <span>{{ $t('message.bikes_selected', { count: enabled_bikes.length }) }}</span>
         <button type="button" @click="$root.resetBikes">
@@ -30,14 +23,34 @@
       />
 
       <hr />
-
-      <div class="_itemTitle" :key="'not_enabled_bikes'">
-        {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
-      </div>
     </template>
 
+    <div class="_search">
+      <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+      <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
+    </div>
+
+    <div class="_itemTitle" :key="'not_enabled_bikes'" v-if="filtered_not_enabled_bikes.length > 0">
+      {{
+        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+          count: filtered_not_enabled_bikes.length
+        })
+      }}
+    </div>
+
+    <div v-if="filtered_bikes.length === 0" class="_noMatch">
+      {{ $t('message.no_bikes_matched_your_search') }}<br />
+      {{ $t('message.to_contribute_a_bike') }}
+      <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
+        {{ $t('message.read_the_guide') }}
+      </a>
+      {{ $t('message.or_ask_me') }}
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
+      >.
+    </div>
+
     <BikeEntry
-      v-for="bike in not_enabled_bikes"
+      v-for="bike in filtered_not_enabled_bikes"
       :key="bike.id"
       :bike="bike"
       :is-enabled="bikeIsEnabled(bike.id)"
@@ -70,6 +83,7 @@ export default {
   },
   data() {
     return {
+      search_str: '',
       bike_images_thumbs_urls: [],
       bike_preview_id: null,
       hideBikePreviewTimeout: null
@@ -82,8 +96,21 @@ export default {
   beforeUnmount() {},
   watch: {},
   computed: {
-    not_enabled_bikes() {
-      return this.bikes.slice().filter((i) => !this.enabled_bikes.includes(i))
+    filtered_bikes() {
+      return this.bikes.filter((bike) => {
+        if (!this.search_str) return true
+        return (
+          this.$normalizeStringForSearch(bike.model).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          ) ||
+          this.$normalizeStringForSearch(bike.manufacturer).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          )
+        )
+      })
+    },
+    filtered_not_enabled_bikes() {
+      return this.filtered_bikes.slice().filter((i) => !this.enabled_bikes.includes(i))
     }
   },
   methods: {
@@ -230,5 +257,25 @@ export default {
   flex-direction: row wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+._search {
+  position: relative;
+  // margin-bottom: 1rem;
+
+  input {
+    width: 100%;
+    padding-right: 1.7em;
+  }
+
+  button {
+    position: absolute;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 0;
+    width: 1.7em;
+    height: 1.7em;
+  }
 }
 </style>

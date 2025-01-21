@@ -8,24 +8,8 @@
 
       <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
 
-      <div class="_search">
-        <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
-        <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
-      </div>
-
-      <div v-if="filtered_bikes.length === 0" class="_noMatch">
-        {{ $t('message.no_bikes_matched_your_search') }}<br />
-        {{ $t('message.to_contribute_a_bike') }}
-        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
-          {{ $t('message.read_the_guide') }}
-        </a>
-        {{ $t('message.or_ask_me') }}
-        <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
-        >.
-      </div>
-
       <BikesListInSidebar
-        :bikes="filtered_bikes"
+        :bikes="bikes"
         :enabled_bikes="enabled_bikes"
         :canvas_image_style_outline="canvas_image_style_outline"
         :bikes_adjustments="bikes_adjustments"
@@ -100,29 +84,13 @@ export default {
     Credits
   },
   data() {
-    return {
-      search_str: ''
-    }
+    return {}
   },
   created() {},
   async mounted() {},
   beforeUnmount() {},
   watch: {},
-  computed: {
-    filtered_bikes() {
-      return this.bikes.filter((bike) => {
-        if (!this.search_str) return true
-        return (
-          this.$normalizeStringForSearch(bike.model).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          ) ||
-          this.$normalizeStringForSearch(bike.manufacturer).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          )
-        )
-      })
-    }
-  },
+  computed: {},
   methods: {}
 }
 </script>
@@ -197,26 +165,6 @@ h1 {
   gap: 0.5rem;
 
   margin-bottom: 0.25rem;
-}
-
-._search {
-  position: relative;
-  margin-bottom: 1rem;
-
-  input {
-    width: 100%;
-    padding-right: 1.7em;
-  }
-
-  button {
-    position: absolute;
-    position: absolute;
-    right: 0;
-    top: 0;
-    line-height: 0;
-    width: 1.7em;
-    height: 1.7em;
-  }
 }
 
 ._infos {

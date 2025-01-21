@@ -122,7 +122,10 @@ export default {
     background-color: rgba(255, 255, 255, 0.95);
     background-color: var(--color-accent);
     font-weight: bold;
-    border: none;
+    // border: 1px solid var(--color-text);
+    // border: 1px solid white;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   ._names {

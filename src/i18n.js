@@ -18,7 +18,7 @@ const i18n = createI18n({
         read_the_guide: 'read the guide',
         or_ask_me: 'or ask me',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Click on one of these {count} bikes to start',
+          'or click on one of these {count} bikes:',
         bikes_selected: '{count} bike selected | {count} bikes selected',
         bikes_not_selected: '{count} bike to compare | {count} bikes to compare',
         reset: 'Reset',
@@ -173,7 +173,7 @@ const i18n = createI18n({
     fr: {
       message: {
         title: 'Comparateur de taille de vélos cargo',
-        search_placeholder: 'Rechercher par modèle ou fabricant',
+        search_placeholder: 'Recherchez par modèle ou fabricant',
         no_bikes_matched_your_search: 'Aucun vélo ne correspond à votre recherche.',
         to_contribute_a_bike: 'Pour ajouter un vélo,',
         read_the_guide: 'lire la documentation',
@@ -181,7 +181,7 @@ const i18n = createI18n({
         via_email: 'via email',
         picture_from: 'Image envoyée par',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Cliquez sur un de ces {count} vélos pour commencer',
+          'ou cliquez sur un de ces {count} vélos :',
         bikes_selected: '{count} vélo sélectionné | {count} vélos sélectionnés',
         bikes_not_selected: '{count} vélo disponible | {count} vélos disponibles',
         reset: 'Réinitialiser',
