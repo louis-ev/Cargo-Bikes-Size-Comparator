@@ -2053,5 +2053,19 @@
     "bottom_margin_percent": 0.292,
     "url": "https://urbanarrow.com/business-bikes/tender/",
     "frame_material": "6061-T6 aluminum"
+  },
+  {
+    "id": "tender-1500-urban-arrow",
+    "manufacturer": "Urban Arrow",
+    "model": "Tender 1500",
+    "bike_type": "tricycle",
+    "src": "ua-tender-1500.png",
+    "bike_length_cm": 291,
+    "weight": 100,
+    "bike_length_percent": 0.781,
+    "left_margin_percent": 0.0459,
+    "bottom_margin_percent": 0.12,
+    "url": "https://urbanarrow.com/business-bikes/tender/",
+    "frame_material": "6061-T6 aluminum"
   }
 ]
