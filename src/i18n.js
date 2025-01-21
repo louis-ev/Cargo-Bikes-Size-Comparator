@@ -19,8 +19,8 @@ const i18n = createI18n({
         or_ask_me: 'or ask me',
         click_on_bikes_in_this_list_to_compare_their_size:
           'Click on one of these {count} bikes to start',
-        bike_selected: 'bike selected',
-        bikes_selected: 'bikes selected',
+        bikes_selected: '{count} bike selected | {count} bikes selected',
+        bikes_not_selected: '{count} bike to compare | {count} bikes to compare',
         reset: 'Reset',
         position: 'Position',
         adjust: 'Adjust',
@@ -182,8 +182,8 @@ const i18n = createI18n({
         picture_from: 'Image envoyée par',
         click_on_bikes_in_this_list_to_compare_their_size:
           'Cliquez sur un de ces {count} vélos pour commencer',
-        bike_selected: 'vélo sélectionné',
-        bikes_selected: 'vélos sélectionnés',
+        bikes_selected: '{count} vélo sélectionné | {count} vélos sélectionnés',
+        bikes_not_selected: '{count} vélo à comparer | {count} vélos à comparer',
         reset: 'Réinitialiser',
         position: 'Position',
         adjust: 'Ajuster',

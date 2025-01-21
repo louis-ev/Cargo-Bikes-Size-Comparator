@@ -24,31 +24,6 @@
         >.
       </div>
 
-      <template v-else>
-        <small class="_infos">
-          <template v-if="enabled_bikes.length === 0">
-            {{
-              $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-                count: bikes.length
-              })
-            }}
-          </template>
-          <template v-else>
-            <span>
-              <template v-if="enabled_bikes.length === 1">
-                {{ enabled_bikes.length }} {{ $t('message.bike_selected') }}
-              </template>
-              <template v-else>
-                {{ enabled_bikes.length }} {{ $t('message.bikes_selected') }}
-              </template>
-            </span>
-            <button class="_reset" type="button" @click="resetBikes">
-              {{ $t('message.reset') }}
-            </button>
-          </template>
-        </small>
-      </template>
-
       <BikesListInSidebar
         :bikes="filtered_bikes"
         :enabled_bikes="enabled_bikes"
@@ -148,15 +123,7 @@ export default {
       })
     }
   },
-  methods: {
-    resetBikes() {
-      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
-      delete query.bikes
-      this.$router.push({
-        query
-      })
-    }
-  }
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>
@@ -279,11 +246,5 @@ h1 {
     // background-color: var(--color-accent);
     // padding: 2rem;
   }
-}
-
-._reset {
-  padding: 0 0.25rem;
-
-  cursor: pointer;
 }
 </style>

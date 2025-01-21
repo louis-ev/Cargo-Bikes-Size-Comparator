@@ -212,13 +212,14 @@ export default {
           acc.push(bike)
           return acc
         }, [])
-        .sort((a, b) => {
-          if (!this.canvas_image_style_outline) {
-            if (this.$preview_bike.id === a.id) return 1
-            if (this.$preview_bike.id === b.id) return -1
-          }
-          return b?.bike_length_cm - a?.bike_length_cm
-        })
+        .reverse()
+      // .sort((a, b) => {
+      //   if (!this.canvas_image_style_outline) {
+      //     if (this.$preview_bike.id === a.id) return 1
+      //     if (this.$preview_bike.id === b.id) return -1
+      //   }
+      //   return b?.bike_length_cm - a?.bike_length_cm
+      // })
     },
     reversed_sorted_enabled_bikes() {
       return this.sorted_enabled_bikes.slice().reverse()

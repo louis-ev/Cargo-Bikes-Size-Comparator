@@ -118,6 +118,13 @@ export default {
       this.$router.push({
         query
       })
+    },
+    resetBikes() {
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+      delete query.bikes
+      this.$router.push({
+        query
+      })
     }
   }
 }

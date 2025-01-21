@@ -1,47 +1,51 @@
 <template>
   <transition-group tag="div" class="_bikeList" name="list">
-    <div
-      class="_item"
-      v-for="bike in ordered_bikes"
-      :key="bike.id"
-      :data-active="bikeIsEnabled(bike.id)"
-      @mouseenter="showBikePreview(bike.id)"
-      @mouseleave="hideBikePreview"
-    >
-      <label :for="bike.id" class="_itemTop">
-        <input
-          type="checkbox"
-          :checked="bikeIsEnabled(bike.id)"
-          :id="bike.id"
-          :disabled="!bike.bike_length_cm"
-          @change="toggleBike(bike.id)"
-        />
-
-        <div class="_names">
-          <BikeName :bike="bike" />
-        </div>
-
-        <div v-if="bike.id" class="_img">
-          <div
-            v-if="bikeIsEnabled(bike.id) && canvas_image_style_outline"
-            class="_color"
-            :style="{ '--outline-color': `#${bike.color}` }"
-          />
-          <img v-if="getBikeThumbImage(bike)" :src="getBikeThumbImage(bike)" />
-        </div>
-      </label>
-
-      <BikeDetails
-        v-if="bikeIsEnabled(bike.id)"
+    <template v-if="enabled_bikes.length === 0">
+      {{
+        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+          count: bikes.length
+        })
+      }}
+    </template>
+    <template v-else>
+      <div class="_itemTitle" :key="'enabled_bikes'">
+        <span>{{ $t('message.bikes_selected', { count: enabled_bikes.length }) }}</span>
+        <button type="button" @click="$root.resetBikes">
+          {{ $t('message.reset') }}
+        </button>
+      </div>
+      <BikeEntry
+        v-for="bike in enabled_bikes"
+        :key="bike.id"
         :bike="bike"
+        :is-enabled="bikeIsEnabled(bike.id)"
+        :canvas_image_style_outline="canvas_image_style_outline"
         :bikes_adjustments="bikes_adjustments"
+        :thumb-image="getBikeThumbImage(bike)"
+        @toggle="toggleBike(bike.id)"
         @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
       />
-    </div>
+
+      <div class="_itemTitle" :key="'not_enabled_bikes'">
+        {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
+      </div>
+    </template>
+
+    <BikeEntry
+      v-for="bike in not_enabled_bikes"
+      :key="bike.id"
+      :bike="bike"
+      :is-enabled="bikeIsEnabled(bike.id)"
+      :canvas_image_style_outline="canvas_image_style_outline"
+      :bikes_adjustments="bikes_adjustments"
+      :thumb-image="getBikeThumbImage(bike)"
+      @toggle="toggleBike(bike.id)"
+      @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
+    />
   </transition-group>
 </template>
 <script>
-import BikeDetails from '@/components/BikeDetails.vue'
+import BikeEntry from './BikeEntry.vue'
 
 const bike_images_thumbs_paths = import.meta.glob('@/assets/bikes/*.png', {
   eager: true,
@@ -57,7 +61,7 @@ export default {
     bikes_adjustments: Object
   },
   components: {
-    BikeDetails
+    BikeEntry
   },
   data() {
     return {
@@ -73,12 +77,8 @@ export default {
   beforeUnmount() {},
   watch: {},
   computed: {
-    ordered_bikes() {
-      return this.bikes.slice().sort((a, b) => {
-        const a_enabled = this.enabled_bikes.some((i) => i.id === a.id)
-        const b_enabled = this.enabled_bikes.some((i) => i.id === b.id)
-        return b_enabled - a_enabled
-      })
+    not_enabled_bikes() {
+      return this.bikes.slice().filter((i) => !this.enabled_bikes.includes(i))
     }
   },
   methods: {
@@ -90,15 +90,6 @@ export default {
         enabled_bikes_ids.push(id)
       }
       this.$root.updateBikesQuery(enabled_bikes_ids)
-    },
-    showBikePreview(id) {
-      this.$preview_bike.id = id
-      clearTimeout(this.hideBikePreviewTimeout)
-    },
-    hideBikePreview() {
-      this.hideBikePreviewTimeout = setTimeout(() => {
-        this.$preview_bike.id = null
-      }, 100)
     },
     bikeIsEnabled(id) {
       return this.enabled_bikes.some((i) => i.id === id)
@@ -128,6 +119,7 @@ export default {
   // transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   &[data-active='true'] ._itemTop {
+    top: 0;
     background-color: var(--color-accent);
 
     img {
@@ -222,5 +214,11 @@ export default {
       }
     }
   }
+}
+._itemTitle {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
