@@ -183,7 +183,7 @@ const i18n = createI18n({
         click_on_bikes_in_this_list_to_compare_their_size:
           'Cliquez sur un de ces {count} vélos pour commencer',
         bikes_selected: '{count} vélo sélectionné | {count} vélos sélectionnés',
-        bikes_not_selected: '{count} vélo à comparer | {count} vélos à comparer',
+        bikes_not_selected: '{count} vélo disponible | {count} vélos disponibles',
         reset: 'Réinitialiser',
         position: 'Position',
         adjust: 'Ajuster',

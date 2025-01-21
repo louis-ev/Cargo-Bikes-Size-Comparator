@@ -120,9 +120,13 @@
         {{ $t('message.download_comparison') }}
       </button>
     </small>
-    <div class="_loader">
-      <span class="loader" />
-    </div>
+    <transition name="fade">
+      <div class="_loader" v-if="is_loading">
+        <span class="_loaderAnimation">
+          <span class="loader" />
+        </span>
+      </div>
+    </transition>
     <canvas ref="bikes" width="1920" height="1920" class="_previewCanvas" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
@@ -149,6 +153,7 @@ export default {
   components: {},
   data() {
     return {
+      is_loading: true,
       bike_images_full_paths: [],
       show_human_silhouette: false,
       human_silhouette_height: 180,
@@ -239,6 +244,10 @@ export default {
       return full_path.url
     },
     async showBikes() {
+      this.is_loading = true
+
+      await new Promise((resolve) => setTimeout(resolve, 200))
+
       const canvas = this.$refs.offscreen_canvas
       if (!canvas) return
 
@@ -339,6 +348,8 @@ export default {
       visible_canvas.width = canvas.width
       visible_canvas.height = canvas.height
       visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
+
+      this.is_loading = false
     },
     drawBackground(ctx, canvas) {
       ctx.globalCompositeOperation = 'source-over'
@@ -626,15 +637,18 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1000;
 
   display: flex;
   flex-direction: row nowrap;
   justify-content: center;
   align-items: center;
 
-  transform: scale(0.5);
+  background-color: rgba(238, 238, 238, 0.5);
 
-  .loader {
+  ._loaderAnimation {
+    transform: scale(0.5);
+    // --color: var(--color-accent);
   }
 }
 

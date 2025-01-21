@@ -32,9 +32,7 @@
       <hr />
 
       <div class="_itemTitle" :key="'not_enabled_bikes'">
-        <label>
-          {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
-        </label>
+        {{ $t('message.bikes_not_selected', { count: not_enabled_bikes.length }) }}
       </div>
     </template>
 
