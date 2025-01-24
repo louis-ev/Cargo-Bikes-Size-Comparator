@@ -1,12 +1,12 @@
 <template>
   <div class="_listOfBikes">
-    <span>
+    <!-- <span>
       {{
         $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
           count: bikes.length
         })
       }}</span
-    >
+    > -->
     <div class="_bikeTypeFilter">
       <button
         v-for="[bike_type, count] in all_bike_types"
@@ -154,7 +154,7 @@ export default {
     position: relative;
     padding: 0.25rem 0.5rem;
     color: black;
-    // font-weight: normal;
+    font-weight: normal;
     font-size: 0.8rem;
 
     &:hover,
@@ -166,6 +166,7 @@ export default {
 
     &.is--active {
       z-index: 10;
+      font-weight: bold;
       transform: rotate(-10deg) scale(1.4);
     }
   }
