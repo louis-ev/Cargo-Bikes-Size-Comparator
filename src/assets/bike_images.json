@@ -2100,5 +2100,21 @@
     "url": "https://ilicycles.com/nos-velos-cargo-pendulaires/ili-classic-triporteur-electrique-familial/",
     "frame_made_in": "France",
     "assembled_in": "France"
+  },
+  {
+    "id": "xpedition-2.0-lectric",
+
+    "manufacturer": "Lectric",
+    "model": "XPedition 2.0",
+    "bike_type": "longtail",
+    "src": "xpedition-lectric-2.png",
+    "bike_length_cm": 196.0,
+    "weight": "",
+    "bike_length_percent": 0.865,
+    "left_margin_percent": 0.088,
+    "bottom_margin_percent": 0.238,
+    "url": "https://lectricebikes.com/products/xpedition-dual-battery-blue?_pos=11&_sid=8dbcbb85c&_ss=r",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
