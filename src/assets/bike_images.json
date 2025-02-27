@@ -1550,7 +1550,8 @@
     "left_margin_percent": 0.07,
     "bottom_margin_percent": 0.07,
     "url": "https://www.specialized.com/ch/en/turbo-porto/p/4206097",
-    "frame_made_in": "Taiwan"
+    "frame_made_in": "Taiwan",
+    "show_frame_origin": false
   },
   {
     "id": "orox-tern",
@@ -2082,7 +2083,7 @@
     "bottom_margin_percent": 0.006,
     "url": "https://surlybikes.com/bikes/big_dummy",
     "frame_made_in": "Taiwan",
-    "assembled_in": ""
+    "show_frame_origin": false
   },
   {
     "id": "ili-classic-ili-cycles",
@@ -2116,5 +2117,21 @@
     "url": "https://lectricebikes.com/products/xpedition-dual-battery-blue?_pos=11&_sid=8dbcbb85c&_ss=r",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "engwe-le20-engwe",
+
+    "manufacturer": "Engwe",
+    "model": "LE20",
+    "bike_type": "longtail",
+    "src": "engwe-le20.png",
+    "bike_length_cm": 190.0,
+    "weight": 37,
+    "bike_length_percent": 0.96,
+    "left_margin_percent": 0.019,
+    "bottom_margin_percent": 0.305,
+    "url": "https://engwe-bikes.com/collections/cargo/products/le20",
+    "frame_made_in": "China",
+    "assembled_in": "China"
   }
 ]
