@@ -2067,5 +2067,21 @@
     "bottom_margin_percent": 0.12,
     "url": "https://urbanarrow.com/business-bikes/tender/",
     "frame_material": "6061-T6 aluminum"
+  },
+  {
+    "id": "big-dummy-surly",
+
+    "manufacturer": "Surly",
+    "model": "Big Dummy",
+    "bike_type": "longtail",
+    "src": "surly-big-dummy.png",
+    "bike_length_cm": 215,
+    "weight": "",
+    "bike_length_percent": 0.944,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.006,
+    "url": "https://surlybikes.com/bikes/big_dummy",
+    "frame_made_in": "Taiwan",
+    "assembled_in": ""
   }
 ]
