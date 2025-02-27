@@ -2165,5 +2165,21 @@
     "url": "https://brompton.com/g-line",
     "frame_made_in": "uk",
     "assembled_in": "uk"
+  },
+  {
+    "id": "vektron-tern",
+
+    "manufacturer": "Tern",
+    "model": "Vektron",
+    "bike_type": "foldable",
+    "src": "tern-vektron-s10.png",
+    "bike_length_cm": 156,
+    "weight": 22,
+    "bike_length_percent": 0.917,
+    "left_margin_percent": 0.042,
+    "bottom_margin_percent": 0.041,
+    "url": "https://www.ternbicycles.com/en/bikes/472/vektron",
+    "frame_made_in": "Taiwan",
+    "assembled_in": "Taiwan"
   }
 ]
