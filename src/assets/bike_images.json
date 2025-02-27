@@ -2133,5 +2133,21 @@
     "url": "https://engwe-bikes.com/collections/cargo/products/le20",
     "frame_made_in": "China",
     "assembled_in": "China"
+  },
+  {
+    "id": "hopper-xtracycle",
+
+    "manufacturer": "Xtracycle",
+    "model": "Hopper",
+    "bike_type": "longtail",
+    "src": "xtracycle-hopper.png",
+    "bike_length_cm": 203,
+    "weight": 39,
+    "bike_length_percent": 0.809,
+    "left_margin_percent": 0.065,
+    "bottom_margin_percent": 0.12,
+    "url": "https://xtracycle.com/products/hopper-compact-cargo?variant=47648147865896",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
