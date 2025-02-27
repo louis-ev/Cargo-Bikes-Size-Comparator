@@ -2083,5 +2083,22 @@
     "url": "https://surlybikes.com/bikes/big_dummy",
     "frame_made_in": "Taiwan",
     "assembled_in": ""
+  },
+  {
+    "id": "ili-classic-ili-cycles",
+
+    "manufacturer": "Ili Cycles",
+    "model": "Ili Classic",
+    "bike_type": "tricycle",
+    "src": "ili-classic-900.png",
+    "bike_length_cm": 230,
+    "weight": "",
+
+    "bike_length_percent": 0.86,
+    "left_margin_percent": 0.069,
+    "bottom_margin_percent": 0.14,
+    "url": "https://ilicycles.com/nos-velos-cargo-pendulaires/ili-classic-triporteur-electrique-familial/",
+    "frame_made_in": "France",
+    "assembled_in": "France"
   }
 ]
