@@ -2214,5 +2214,21 @@
     "url": "https://www.emog-bikes.com/produit/velo-cargo-electrique-e-city-2/",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "f900e-box-decathlon",
+
+    "manufacturer": "Decathlon",
+    "model": "F900E Box",
+    "bike_type": "longtail",
+    "src": "decathlon-f900ebox.png",
+    "bike_length_cm": 260,
+    "weight": 50,
+    "bike_length_percent": 0.743,
+    "left_margin_percent": 0.13,
+    "bottom_margin_percent": 0.213,
+    "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-f900e-box-jaune/_/R-p-338408",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
