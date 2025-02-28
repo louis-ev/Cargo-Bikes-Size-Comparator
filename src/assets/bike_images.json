@@ -1151,7 +1151,7 @@
     "bike_type": "longtail",
     "src": "HaD-1.png",
     "bike_length_percent": 0.905,
-    "bike_length_cm": 193.04,
+    "bike_length_cm": 193,
     "left_margin_percent": 0.051,
     "bottom_margin_percent": 0.12,
     "url": "https://bikefriday.com/product/bike-friday-haul-a-day-elite-cargo-bike/",
@@ -2198,5 +2198,21 @@
     "frame_made_in": "Portugal",
     "assembled_in": "Portugal",
     "show_frame_origin": false
+  },
+  {
+    "id": "e-city+-emog",
+
+    "manufacturer": "Emog",
+    "model": "E-city+",
+    "bike_type": "longtail",
+    "src": "emog-ecityplus.png",
+    "bike_length_cm": 195,
+    "weight": 33,
+    "bike_length_percent": 0.847,
+    "left_margin_percent": 0.113,
+    "bottom_margin_percent": 0.226,
+    "url": "https://www.emog-bikes.com/produit/velo-cargo-electrique-e-city-2/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
