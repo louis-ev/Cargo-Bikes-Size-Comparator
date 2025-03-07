@@ -2230,5 +2230,22 @@
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-f900e-box-jaune/_/R-p-338408",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "nebula-1-brumaire",
+
+    "manufacturer": "Brumaire",
+    "model": "Nebula 1",
+    "bike_type": "longtail",
+    "src": "nebula-1-brumaire.png",
+    "bike_length_cm": 217,
+    "weight": 40,
+    "bike_length_percent": 0.876,
+    "left_margin_percent": 0.05,
+    "bottom_margin_percent": 0.11,
+    "url": "https://cycles.brumaire.co/pages/long-tail-bike",
+    "frame_made_in": "Portugal",
+    "assembled_in": "France",
+    "show_frame_origin": false
   }
 ]
