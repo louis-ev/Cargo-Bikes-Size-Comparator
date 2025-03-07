@@ -2247,5 +2247,21 @@
     "frame_made_in": "Portugal",
     "assembled_in": "France",
     "show_frame_origin": false
+  },
+  {
+    "id": "afternoon-pro-eovolt",
+
+    "manufacturer": "Eovolt",
+    "model": "Afternoon Pro",
+    "bike_type": "foldable",
+    "src": "euvolt-afternoon-pro.png",
+    "bike_length_cm": "156.0",
+    "weight": 22,
+    "bike_length_percent": 0.7190000000000001,
+    "left_margin_percent": 0.131,
+    "bottom_margin_percent": 0.125,
+    "url": "https://eovolt.com/products/afternoon-pro",
+    "frame_made_in": "China",
+    "assembled_in": "France"
   }
 ]
