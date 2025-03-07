@@ -305,9 +305,15 @@ export default {
         const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
         const draw_h = draw_w / img_ratio
 
-        let user_horizontal_adjustment = this.bikes_adjustments[bike.id]?.position / 100 || 0
+        let user_horizontal_adjustment = this.bikes_adjustments[bike.id]?.position_h / 100 || 0
         const draw_x = -(bike.left_margin_percent - user_horizontal_adjustment) * draw_w + padding
-        const draw_y = canvas.height - padding - draw_h + bike.bottom_margin_percent * draw_h
+
+        let user_vertical_adjustment = this.bikes_adjustments[bike.id]?.position_v / 100 || 0
+        const draw_y =
+          canvas.height -
+          padding -
+          draw_h +
+          (bike.bottom_margin_percent + user_vertical_adjustment) * draw_h
 
         let user_opacity_adjustment = this.bikes_adjustments[bike.id]?.opacity / 100 || 1
 
