@@ -94,7 +94,7 @@
           </div>
           <div class="inputField">
             <label for="weight">{{ $t('add_bike.weight') }}</label>
-            <input type="number" v-model="baseWeight" id="baseWeight" />
+            <input type="number" v-model.number="baseWeight" id="baseWeight" />
             <small>
               {{ $t('add_bike.usually_available_on_the_manufacturer_s_website') }},
               {{ $t('add_bike.in_kilograms') }}
@@ -244,7 +244,7 @@ export default {
       model: '',
       manufacturer: '',
       bikeType: '',
-      totalLength: '',
+      totalLength: undefined,
       totalLengthUnit: this.$i18n.locale === 'en' ? 'inches' : 'cm',
       baseWeight: '',
       productPageUrl: '',
@@ -302,18 +302,18 @@ export default {
       let bike_length_cm = ''
       if (this.totalLength) {
         if (this.totalLengthUnit === 'inches') {
-          bike_length_cm = (this.totalLength * 2.54).toFixed(1)
+          bike_length_cm = +(this.totalLength * 2.54).toFixed(1)
         } else if (this.totalLengthUnit === 'cm') {
-          bike_length_cm = this.totalLength.toFixed(1)
+          bike_length_cm = +this.totalLength.toFixed(1)
         }
       }
 
       const weight = this.baseWeight || ''
 
       const left_margin_percent =
-        typeof this.img_left === 'number' ? (this.img_left / 100).toFixed(3) : ''
+        typeof this.img_left === 'number' ? +(this.img_left / 100).toFixed(3) : ''
       const bottom_margin_percent =
-        typeof this.img_bottom === 'number' ? (this.img_bottom / 100).toFixed(3) : ''
+        typeof this.img_bottom === 'number' ? +(this.img_bottom / 100).toFixed(3) : ''
       const url = this.productPageUrl
       const frame_made_in = this.frame_made_in
       const assembled_in = this.assembled_in
