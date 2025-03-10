@@ -988,10 +988,24 @@
     "bike_type": "shortjohn",
     "src": "gravit_city_e_01.png",
     "bike_length_percent": 0.69,
-    "bike_length_cm": 224,
+    "bike_length_cm": 216,
     "left_margin_percent": 0.156,
     "bottom_margin_percent": 0.068,
     "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
+    "frame_made_in": "Germany"
+  },
+  {
+    "id": "hase-bikes-pino-cargo",
+
+    "manufacturer": "Hase Bikes",
+    "model": "Pino Cargo",
+    "bike_type": "shortjohn",
+    "src": "hase-pino-cargo.png",
+    "bike_length_cm": 216,
+    "bike_length_percent": 0.93,
+    "left_margin_percent": 0.036,
+    "bottom_margin_percent": 0.069,
+    "url": "https://konfigurator.hasebikes.com/en/bike/pino-cargo/",
     "frame_made_in": "Germany"
   },
   {
