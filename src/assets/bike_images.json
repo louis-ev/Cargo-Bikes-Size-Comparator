@@ -992,7 +992,8 @@
     "left_margin_percent": 0.156,
     "bottom_margin_percent": 0.068,
     "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
-    "frame_made_in": "Germany"
+    "frame_made_in": "Germany",
+    "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm."
   },
   {
     "id": "hase-bikes-pino-cargo",
@@ -1006,7 +1007,8 @@
     "left_margin_percent": 0.036,
     "bottom_margin_percent": 0.069,
     "url": "https://konfigurator.hasebikes.com/en/bike/pino-cargo/",
-    "frame_made_in": "Germany"
+    "frame_made_in": "Germany",
+    "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm."
   },
   {
     "id": "fr8-workcycles",
