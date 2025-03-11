@@ -2285,7 +2285,7 @@
 
     "manufacturer": "Yuba",
     "model": "Boda Boda v4 (2024)",
-    "bike_type": "midtail",
+    "bike_type": "longtail",
     "src": "yuba-boda-boda.png",
     "bike_length_cm": 200,
     "weight": 32,
