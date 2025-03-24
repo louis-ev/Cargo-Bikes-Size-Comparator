@@ -776,6 +776,22 @@
     "frame_made_in": "italy"
   },
   {
+    "id": "justlong-bicicapace",
+
+    "manufacturer": "Bicicapace",
+    "model": "Justlong",
+    "bike_type": "longtail",
+    "src": "bicicapace-justlong.png",
+    "bike_length_cm": 199,
+    "weight": "",
+    "bike_length_percent": 0.871,
+    "left_margin_percent": 0.076,
+    "bottom_margin_percent": 0.134,
+    "url": "https://www.bicicapace.com/bikes/justlong/",
+    "frame_made_in": "italy",
+    "assembled_in": "italy"
+  },
+  {
     "id": "jean-achielle",
 
     "manufacturer": "Achielle",
