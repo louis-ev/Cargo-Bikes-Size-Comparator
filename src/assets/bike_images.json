@@ -2329,5 +2329,21 @@
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
     "assembled_in": "italy"
+  },
+  {
+    "id": "classic-bicicapace",
+
+    "manufacturer": "Bicicapace",
+    "model": "Classic",
+    "bike_type": "shortjohn",
+    "src": "bicicapace-classic.png",
+    "bike_length_cm": 170,
+    "weight": "",
+    "bike_length_percent": 0.894,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.116,
+    "url": "https://www.bicicapace.com/de/bikes/classic/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
