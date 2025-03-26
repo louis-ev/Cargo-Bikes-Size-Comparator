@@ -2288,7 +2288,7 @@
     "model": "Afternoon Pro",
     "bike_type": "foldable",
     "src": "euvolt-afternoon-pro.png",
-    "bike_length_cm": "156.0",
+    "bike_length_cm": 156,
     "weight": 22,
     "bike_length_percent": 0.7190000000000001,
     "left_margin_percent": 0.131,
