@@ -34,6 +34,7 @@
       :bike="bike"
       :bikes_adjustments="bikes_adjustments"
       @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
+      @unselect="$emit('toggle')"
     />
   </div>
 </template>

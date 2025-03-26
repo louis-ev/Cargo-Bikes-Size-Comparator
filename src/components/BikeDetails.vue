@@ -146,6 +146,10 @@
       @prevImage="prevImage"
       @nextImage="nextImage"
     />
+
+    <button type="button" aria-label="Unselect bike" @click="$emit('unselect')">
+      × {{ $t('message.unselect') }}
+    </button>
   </div>
 </template>
 <script>
