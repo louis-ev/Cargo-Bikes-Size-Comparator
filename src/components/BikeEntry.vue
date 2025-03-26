@@ -119,7 +119,7 @@ export default {
   select {
     font-size: 0.8rem;
     margin: 0.5rem;
-    padding: 0.25rem 0.25rem;
+    padding: 0.25rem 0rem 0.25rem 0.25rem;
     background-color: rgba(255, 255, 255, 0.95);
     background-color: var(--color-accent);
     font-weight: bold;
