@@ -71,11 +71,15 @@ const i18n = createI18n({
         add_a_bike: 'Add a bike',
         left: 'Left',
         right: 'Right',
+        top: 'Top',
         bottom: 'Bottom',
+        width: 'Width',
+        height: 'Height',
         download_comparison: 'Download comparison',
         show_human_silhouette: 'Show human silhouette',
         show_regular_bike_silhouette: 'Reference bike',
-        close: 'close'
+        close: 'close',
+        measure: 'Measure'
       },
       bike_types: {
         longtail: 'Longtail',
@@ -235,11 +239,15 @@ const i18n = createI18n({
         add_a_bike: 'Ajouter un vélo',
         left: 'Gauche',
         right: 'Droite',
+        top: 'Haut',
         bottom: 'Bas',
+        width: 'Largeur',
+        height: 'Hauteur',
         download_comparison: 'Télécharger la comparaison',
         show_human_silhouette: 'Afficher une silhouette humaine',
         show_regular_bike_silhouette: 'Vélo classique',
-        close: 'fermer'
+        close: 'fermer',
+        measure: 'Mesurer'
       },
       bike_types: {
         longtail: 'Longtail',

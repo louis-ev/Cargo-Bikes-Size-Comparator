@@ -207,6 +207,12 @@ export default {
     },
     show_regular_bike_silhouette() {
       this.showBikes()
+    },
+    '$root.draw_rect_in_canvas': {
+      handler() {
+        this.showBikes()
+      },
+      deep: true
     }
   },
   computed: {
@@ -348,6 +354,22 @@ export default {
           ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
           ctx.globalAlpha = 1
         }
+      }
+
+      // Draw a rectangle
+      const { active, l, b, w, h } = this.$root.draw_rect_in_canvas
+      if (active) {
+        ctx.beginPath()
+        ctx.strokeStyle = '#00ff00'
+        ctx.lineWidth = 3
+        ctx.rect(
+          padding + l * each_px_measures_in_cm,
+          canvas.height - padding - b * each_px_measures_in_cm,
+          w * each_px_measures_in_cm,
+          -h * each_px_measures_in_cm
+        )
+        ctx.stroke()
+        debugger
       }
 
       const visible_canvas = this.$refs.bikes

@@ -17,11 +17,12 @@
       />
 
       <hr />
-      <details>
+      <details class="_advancedOptions">
         <summary>{{ $t('message.advanced_options') }}</summary>
         <div class="_advanced">
-          <label>{{ $t('message.grid_step') }}: {{ grid_step }}cm</label>
+          <label>{{ $t('message.grid_step') }}</label>
           <input
+            class="_rangeSlider"
             type="range"
             step="1"
             min="1"
@@ -43,6 +44,7 @@
         <div class="_advanced">
           <label>{{ $t('message.zoom') }}</label>
           <input
+            class="_rangeSlider"
             type="range"
             step="1"
             min="0"
@@ -50,6 +52,37 @@
             :value="default_padding_percent"
             @input="$emit('update:default_padding_percent', +$event.target.value)"
           />
+        </div>
+        <div class="">
+          <div class="_advanced">
+            <label for="draw_rect_in_canvas"
+              >{{ $t('message.measure') }}
+              <input
+                type="checkbox"
+                name="draw_rect_in_canvas"
+                id="draw_rect_in_canvas"
+                v-model="$root.draw_rect_in_canvas.active"
+              />
+            </label>
+          </div>
+          <template v-if="$root.draw_rect_in_canvas.active">
+            <div class="_advanced" v-for="slider in draw_rect_sliders" :key="slider.key">
+              <label :title="$root.draw_rect_in_canvas[slider.key]">{{ slider.label }}</label>
+              <input
+                type="number"
+                class="_numberInputs"
+                v-model.number="$root.draw_rect_in_canvas[slider.key]"
+              />
+              <input
+                class="_rangeSlider"
+                type="range"
+                step="1"
+                min="-0"
+                max="300"
+                v-model.number="$root.draw_rect_in_canvas[slider.key]"
+              />
+            </div>
+          </template>
         </div>
       </details>
 
@@ -84,7 +117,26 @@ export default {
     Credits
   },
   data() {
-    return {}
+    return {
+      draw_rect_sliders: [
+        {
+          key: 'l',
+          label: this.$t('message.left')
+        },
+        {
+          key: 'b',
+          label: this.$t('message.bottom')
+        },
+        {
+          key: 'w',
+          label: this.$t('message.width')
+        },
+        {
+          key: 'h',
+          label: this.$t('message.height')
+        }
+      ]
+    }
   },
   created() {},
   async mounted() {},
@@ -157,14 +209,33 @@ h1 {
   margin-bottom: 0;
 }
 
+._advancedOptions {
+  font-size: 0.8rem;
+}
+
 ._advanced {
   display: flex;
   flex-direction: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
 
-  margin-bottom: 0.25rem;
+  // margin-bottom: 0.25rem;
+
+  label {
+    font-weight: normal;
+  }
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  ._numberInputs {
+    width: 7ch;
+  }
+  ._rangeSlider {
+    flex: 1 1 auto;
+  }
 }
 
 ._infos {

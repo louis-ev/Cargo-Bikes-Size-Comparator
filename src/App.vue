@@ -17,16 +17,38 @@ export default {
       bikes: bikes,
       local_bikes: [],
       bakfiets_measures: [],
-      longtails_measures: []
+      longtails_measures: [],
+
+      draw_rect_in_canvas: {
+        active: false,
+        l: 0,
+        b: 0,
+        w: 20,
+        h: 20
+      }
     }
   },
   created() {
     this.loadBakfiets()
     this.loadLongtails()
+    if (localStorage.getItem('draw_rect_in_canvas')) {
+      try {
+        this.draw_rect_in_canvas = JSON.parse(
+          localStorage.getItem('draw_rect_in_canvas', JSON.stringify())
+        )
+      } catch (e) {}
+    }
   },
   mounted() {},
   beforeUnmount() {},
-  watch: {},
+  watch: {
+    draw_rect_in_canvas: {
+      handler() {
+        localStorage.setItem('draw_rect_in_canvas', JSON.stringify(this.draw_rect_in_canvas))
+      },
+      deep: true
+    }
+  },
   computed: {
     supercharged_bikes() {
       return this.bikes
