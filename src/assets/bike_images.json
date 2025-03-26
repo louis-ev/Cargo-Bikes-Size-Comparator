@@ -246,7 +246,7 @@
     "id_in_csv": "Tern/GSD Gen. 2",
 
     "manufacturer": "Tern",
-    "model": "GSD",
+    "model": "GSD (gen. 2)",
     "bike_type": "longtail",
     "src": "tern-gsd-2.png",
     "bike_length_cm": 186,
@@ -587,7 +587,7 @@
     "bike_type": "midtail",
     "src": "specialized-haul-st-439204-3330665-2.png",
     "bike_length_percent": 0.99,
-    "bike_length_cm": "166",
+    "bike_length_cm": 166,
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
     "url": "https://www.specialized.com/us/en/haul-st/p/200057"
@@ -2343,6 +2343,22 @@
     "left_margin_percent": 0.06,
     "bottom_margin_percent": 0.116,
     "url": "https://www.bicicapace.com/de/bikes/classic/",
+    "frame_made_in": "",
+    "assembled_in": ""
+  },
+  {
+    "id": "gsd-p10-tern",
+
+    "manufacturer": "Tern",
+    "model": "GSD P10 (gen. 3)",
+    "bike_type": "longtail",
+    "src": "tern-gsd-gen3.png",
+    "bike_length_cm": 192,
+    "weight": 35,
+    "bike_length_percent": 0.906,
+    "left_margin_percent": 0.044,
+    "bottom_margin_percent": 0.0987,
+    "url": "https://www.ternbicycles.com/en/bikes/473/gsd-p10#tech_specs",
     "frame_made_in": "",
     "assembled_in": ""
   }
