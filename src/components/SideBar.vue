@@ -1,10 +1,10 @@
 <template>
   <div class="_sidebar">
     <div class="_sidebar--content">
-      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
-      <LangSelect class="_lang_select" />
-
-      <hr />
+      <div class="_banner">
+        <h1 v-html="$t('message.title')" />
+        <LangSelect class="_lang_select" />
+      </div>
 
       <BikesListInSidebar
         :bikes="bikes"
@@ -155,6 +155,22 @@ export default {
   display: flex;
   flex-flow: column nowrap;
 }
+
+._banner {
+  text-align: center;
+  aspect-ratio: 3/1;
+  // background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 ._closeSidebar {
   position: absolute;
   top: 0;

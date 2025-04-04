@@ -1,9 +1,13 @@
 <template>
   <div class="_listOfBikes">
-    <LangSelect class="_lang_select" />
     <div class="_banner">
-      <h1 v-html="$t('message.title')" />
-      <Credits />
+      <div class="_title">
+        <h1 v-html="$t('message.title')" />
+        <LangSelect class="_lang_select" />
+      </div>
+      <div class="_credits">
+        <Credits />
+      </div>
     </div>
     <div class="_topBar">
       <div>
@@ -54,42 +58,40 @@
       }}
     </div>
 
-    <transition name="fade" mode="out-in">
-      <div class="_bikesPreview" :key="bike_type_filter">
-        <button
-          type="button"
-          class="_bikePreview"
-          v-for="bike in filtered_bikes"
-          :key="bike.id"
-          @click="onBikePreviewClick(bike.id)"
-        >
-          <transition name="slideup">
-            <div v-if="getBikePreviewImage(bike)">
-              <img
-                loading="lazy"
-                :src="getBikePreviewImage(bike)"
-                :style="{
-                  '--scale-factor': 1 / bike.bike_length_percent + '',
-                  '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
-                }"
-              />
-              <!-- <input
+    <transition-group name="list" tag="div" class="_bikesPreview">
+      <button
+        type="button"
+        class="_bikePreview"
+        v-for="bike in filtered_bikes"
+        :key="bike.id"
+        @click="onBikePreviewClick(bike.id)"
+      >
+        <transition name="slideup">
+          <div v-if="getBikePreviewImage(bike)">
+            <img
+              loading="lazy"
+              :src="getBikePreviewImage(bike)"
+              :style="{
+                '--scale-factor': 1 / bike.bike_length_percent + '',
+                '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
+              }"
+            />
+            <!-- <input
                 type="checkbox"
                 class="_bikeType"
                 :value="bike.id"
                 :style="bikeStyleColor(bike.bike_type)"
               /> -->
-            </div>
-          </transition>
-          <div class="_bikeType" :style="bikeStyleColor(bike.bike_type)" :title="bike.bike_type">
-            <!-- {{ bike.bike_type }} -->
           </div>
-          <span class="_bikeLabel">
-            <BikeName :bike="bike" />
-          </span>
-        </button>
-      </div>
-    </transition>
+        </transition>
+        <div class="_bikeType" :style="bikeStyleColor(bike.bike_type)" :title="bike.bike_type">
+          <!-- {{ bike.bike_type }} -->
+        </div>
+        <span class="_bikeLabel">
+          <BikeName :bike="bike" />
+        </span>
+      </button>
+    </transition-group>
   </div>
 </template>
 <script>
@@ -198,37 +200,48 @@ export default {
 }
 
 ._banner {
-  text-align: center;
+  // text-align: center;
   // aspect-ratio: 3/1;
   // background-color: white;
   border-radius: 0.5rem;
-  margin: 0.5rem auto;
+  margin: 2rem auto;
   gap: 0.5rem;
+  width: 100%;
+
+  display: flex;
+  flex-flow: row wrap;
+  // justify-content: center;
+  // align-items: center;
   // width: 100%;
 
-  padding: 0.5rem;
+  // padding: 0.5rem;
+
+  > * {
+    flex: 1 1 0;
+  }
 
   h1 {
     font-size: 2rem;
     font-weight: bold;
     max-width: 17ch;
-    margin: 0 auto 1rem;
+    // margin: 0 1rem;
+  }
+
+  ._credits {
   }
 
   :deep {
     ._madeBy {
       hr {
-        max-width: 10ch;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 2ch;
       }
     }
   }
 }
 ._lang_select {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  // position: absolute;
+  // top: 1rem;
+  // right: 1rem;
 }
 
 ._topBar {
@@ -261,7 +274,7 @@ export default {
 
     &:hover,
     &:focus-visible {
-      transform: rotate(-10deg);
+      transform: rotate(-5deg) scale(1.2);
       z-index: 10;
       // background-color: white !important;
     }

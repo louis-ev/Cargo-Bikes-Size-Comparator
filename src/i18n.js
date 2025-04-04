@@ -217,7 +217,7 @@ const i18n = createI18n({
         or: 'ou',
         no_tracking_cookies_no_ads_and_fully_rgpd_compliant:
           'Pas de cookies traceurs, pas de publicité et respecte le RGPD. Site web hébergé en France.',
-        specific_measures_taken_from: 'Certaines mesures avancées proviennent de',
+        specific_measures_taken_from: 'Certaines mesures proviennent de',
         this_document: 'ce document',
         source_code: 'Code source',
         available_on_Github: 'disponible sur Github',

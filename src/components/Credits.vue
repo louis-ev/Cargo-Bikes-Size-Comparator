@@ -1,6 +1,6 @@
 <template>
   <div class="_madeBy">
-    <div>App version {{ version }}</div>
+    <div>Version {{ version }}</div>
 
     <div>
       {{ $t('message.created_by') }}
@@ -13,7 +13,8 @@
         $t('message.on_Github')
       }}</a>
       {{ $t('message.or') }}
-      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}.</a>
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
+      >.
     </div>
     <div>{{ $t('message.no_tracking_cookies_no_ads_and_fully_rgpd_compliant') }}</div>
     <hr />
@@ -23,14 +24,14 @@
         href="https://docs.google.com/spreadsheets/d/1vPCfYStt8fXQQtYDFfNS70kR8B2V2dDwAs_r0VlUlWw/"
         target="_blank"
       >
-        {{ $t('message.this_document') }}
-      </a>
+        {{ $t('message.this_document') }} </a
+      >.
     </div>
     <div>
       {{ $t('message.source_code') }}
       <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator" target="_blank">
-        {{ $t('message.available_on_Github') }}
-      </a>
+        {{ $t('message.available_on_Github') }} </a
+      >.
     </div>
     <div>
       {{ $t('message.code_design_foss') }}
