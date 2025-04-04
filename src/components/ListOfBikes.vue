@@ -1,24 +1,57 @@
 <template>
   <div class="_listOfBikes">
-    <!-- <span>
+    <LangSelect class="_lang_select" />
+    <div class="_banner">
+      <h1 v-html="$t('message.title')" />
+      <Credits />
+    </div>
+    <div class="_topBar">
+      <div>
+        <div class="_search">
+          <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
+          <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
+        </div>
+      </div>
+
+      <div class="_bikeTypeFilter">
+        <span v-html="$t('bike_types.by_category')" />
+        <button
+          v-for="[bike_type, count] in all_bike_types"
+          :key="bike_type"
+          type="button"
+          :class="{ 'is--active': bike_type_filter === bike_type }"
+          :style="bikeStyleColor(bike_type)"
+          @click="onBikeTypeFilterClick(bike_type)"
+        >
+          {{ $t(`bike_types.${bike_type}`) }}
+          ({{ count }})
+        </button>
+      </div>
+    </div>
+
+    <div v-if="filtered_bikes.length === 0" class="_noMatch">
+      {{ $t('message.no_bikes_matched_your_search') }}<br /><br />
+      <div class="_addMissingBike">
+        <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+          ＋
+          {{ $t('message.add_a_bike') }}
+        </button>
+      </div>
+      <!-- {{ $t('message.to_contribute_a_bike') }}
+      <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
+        {{ $t('message.read_the_guide') }}
+      </a>
+      {{ $t('message.or_ask_me') }}
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
+      >. -->
+    </div>
+
+    <div class="_itemTitle" :key="'not_enabled_bikes'" v-else>
       {{
         $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-          count: bikes.length
+          count: filtered_bikes.length
         })
-      }}</span
-    > -->
-    <div class="_bikeTypeFilter">
-      <button
-        v-for="[bike_type, count] in all_bike_types"
-        :key="bike_type"
-        type="button"
-        :class="{ 'is--active': bike_type_filter === bike_type }"
-        :style="bikeStyleColor(bike_type)"
-        @click="onBikeTypeFilterClick(bike_type)"
-      >
-        {{ $t(`bike_types.${bike_type}`) }}
-        ({{ count }})
-      </button>
+      }}
     </div>
 
     <transition name="fade" mode="out-in">
@@ -66,13 +99,20 @@ const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
   query: { format: 'webp', w: 600 }
 })
 
+import Credits from './Credits.vue'
+import LangSelect from '@/components/LangSelect.vue'
+
 export default {
   props: {
     bikes: Array
   },
-  components: {},
+  components: {
+    Credits,
+    LangSelect
+  },
   data() {
     return {
+      search_str: '',
       bike_images_preview_urls: [],
       bike_type_filter: null
     }
@@ -96,8 +136,22 @@ export default {
       return Object.entries(bike_types).sort((a, b) => b[1] - a[1])
     },
     filtered_bikes() {
-      if (!this.bike_type_filter) return this.bikes
-      return this.bikes.filter((bike) => bike.bike_type === this.bike_type_filter)
+      return this.filtered_bikes_with_search.filter(
+        (bike) => !this.bike_type_filter || bike.bike_type === this.bike_type_filter
+      )
+    },
+    filtered_bikes_with_search() {
+      return this.bikes.filter((bike) => {
+        if (!this.search_str) return true
+        return (
+          this.$normalizeStringForSearch(bike.model).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          ) ||
+          this.$normalizeStringForSearch(bike.manufacturer).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          )
+        )
+      })
     }
   },
   methods: {
@@ -132,17 +186,65 @@ export default {
 ._listOfBikes {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   // gap: 10px;
   z-index: 10;
   background-color: var(--color-background);
-}
-._listOfBikes {
   overflow-y: auto;
   height: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
+}
+
+._banner {
+  text-align: center;
+  // aspect-ratio: 3/1;
+  // background-color: white;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto;
+  gap: 0.5rem;
+  // width: 100%;
+
+  padding: 0.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 17ch;
+    margin: 0 auto 1rem;
+  }
+
+  :deep {
+    ._madeBy {
+      hr {
+        max-width: 10ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+._lang_select {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+._topBar {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+._search {
+  input {
+    width: 35ch;
+  }
 }
 ._bikeTypeFilter {
   display: flex;

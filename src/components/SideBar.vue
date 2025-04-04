@@ -1,12 +1,10 @@
 <template>
   <div class="_sidebar">
     <div class="_sidebar--content">
-      <div class="_banner">
-        <h1 v-html="$t('message.title')" />
-        <LangSelect class="_lang_select" />
-      </div>
-
       <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
+      <LangSelect class="_lang_select" />
+
+      <hr />
 
       <BikesListInSidebar
         :bikes="bikes"
@@ -14,6 +12,7 @@
         :canvas_image_style_outline="canvas_image_style_outline"
         :bikes_adjustments="bikes_adjustments"
         @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
+        @showAddBikeModal="$emit('showAddBikeModal')"
       />
 
       <hr />
@@ -183,25 +182,6 @@ export default {
 }
 ._addMissingBike {
   flex: 0 0 auto;
-}
-
-._banner {
-  text-align: center;
-  aspect-ratio: 3/1;
-  // background-color: white;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  gap: 0.5rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-._lang_select {
-  // float: right;
 }
 
 h1 {
