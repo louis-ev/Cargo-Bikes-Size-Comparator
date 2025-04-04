@@ -34,6 +34,7 @@ const i18n = createI18n({
         next: 'Next',
         prev: 'Previous',
         open_product_page: 'Open product page',
+        request_test_url: 'Tester le vélo',
         created_by: 'Created by',
         in_Nantes: 'in Nantes, France, with contributions from around the world.',
         report_errors_and_bugs: 'Report errors and bugs / send feedbacks / contribute bikes',
@@ -79,7 +80,8 @@ const i18n = createI18n({
         show_human_silhouette: 'Show human silhouette',
         show_regular_bike_silhouette: 'Reference bike',
         close: 'close',
-        measure: 'Measure'
+        measure: 'Measure',
+        technical_infos: 'Technical infos'
       },
       bike_types: {
         longtail: 'Longtail',
@@ -247,7 +249,8 @@ const i18n = createI18n({
         show_human_silhouette: 'Afficher une silhouette humaine',
         show_regular_bike_silhouette: 'Vélo classique',
         close: 'fermer',
-        measure: 'Mesurer'
+        measure: 'Mesurer',
+        technical_infos: 'Informations techniques'
       },
       bike_types: {
         longtail: 'Longtail',

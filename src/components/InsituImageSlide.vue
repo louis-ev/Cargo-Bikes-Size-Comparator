@@ -20,7 +20,7 @@
     </template>
     <template v-slot:content>
       <div class="_img">
-        <transition name="fade" mode="out-in">
+        <transition name="fade_fast" mode="out-in">
           <img
             v-if="current_insitu.src"
             :key="current_insitu.src"

@@ -35,8 +35,8 @@
     "id": "muli",
     "id_in_csv": "Muli Cycles/Muli",
 
-    "manufacturer": "Muli Cycles",
-    "model": "Muli",
+    "manufacturer": "muli Cycles",
+    "model": "muli",
     "bike_type": "longjohn",
     "src": "muli-eu.png",
     "bike_length_cm": 198,

@@ -21,9 +21,12 @@
     <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
     <div class="_measurements" v-if="bike._measurements">
+    <details class="_measurements" v-if="bike._measurements">
+      <summary>{{ $t('message.technical_infos') }}</summary>
       <small v-html="getMeasurements(bike)" />
       <br />
     </div>
+    </details>
 
     <div v-if="bike.additional_links" class="_additionalLinks">
       <a
