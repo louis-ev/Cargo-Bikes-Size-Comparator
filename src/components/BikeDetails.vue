@@ -20,12 +20,20 @@
 
     <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
-    <div class="_measurements" v-if="bike._measurements">
+    <div v-if="bike.request_test_url" class="_source">
+      <a :href="bike.request_test_url" target="_blank">
+        {{ $t('message.request_test_url') }} &#x2197;
+      </a>
+    </div>
+
+    <div class="_source">
+      <a :href="bike.url" target="_blank"> {{ $t('message.open_product_page') }} &#x2197; </a>
+    </div>
+
     <details class="_measurements" v-if="bike._measurements">
       <summary>{{ $t('message.technical_infos') }}</summary>
       <small v-html="getMeasurements(bike)" />
       <br />
-    </div>
     </details>
 
     <div v-if="bike.additional_links" class="_additionalLinks">
@@ -46,10 +54,6 @@
           <img :src="getImgThumbUrl(img.src)" />
         </button>
       </div>
-    </div>
-
-    <div class="_source">
-      <a :href="bike.url" target="_blank"> {{ $t('message.open_product_page') }} &#x2197; </a>
     </div>
 
     <details class="_adjust">
