@@ -17,10 +17,8 @@ const i18n = createI18n({
         to_contribute_a_bike: 'To contribute a bike,',
         read_the_guide: 'read the guide',
         or_ask_me: 'or ask me',
-
-        or_click_on_bikes: 'or click on one of these {count} bikes:',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Click on one of these {count} bikes to compare their size:',
+          'or click on one of these {count} bikes:',
         bikes_selected: '{count} bike selected | {count} bikes selected',
         bikes_not_selected: '{count} bike to compare | {count} bikes to compare',
         unselect: 'Unselect this bike',
@@ -39,7 +37,7 @@ const i18n = createI18n({
         request_test_url: 'Tester le vélo',
         created_by: 'Created by',
         in_Nantes: 'in Nantes, France, with contributions from around the world.',
-        report_errors_and_bugs: 'Get in touch, report errors and bugs, send feedbacks ',
+        report_errors_and_bugs: 'Report errors and bugs / send feedbacks / contribute bikes',
         on_Github: 'on Github',
         or: 'or',
         picture_from: 'Picture sent by',
@@ -86,7 +84,6 @@ const i18n = createI18n({
         technical_infos: 'Technical infos'
       },
       bike_types: {
-        by_category: 'By category:',
         longtail: 'Longtail',
         midtail: 'Midtail',
         lowtail: 'Lowtail',
@@ -191,9 +188,8 @@ const i18n = createI18n({
         or_ask_me: 'ou me demander',
         via_email: 'via email',
         picture_from: 'Image envoyée par',
-        or_click_on_bikes: 'ou cliquez sur un de ces {count} vélos :',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Cliquez sur un de ces {count} vélos pour comparer leur taille :',
+          'ou cliquez sur un de ces {count} vélos :',
         bikes_selected: '{count} vélo sélectionné | {count} vélos sélectionnés',
         bikes_not_selected: '{count} vélo disponible | {count} vélos disponibles',
         unselect: 'Déselectionner ce vélo',
@@ -221,9 +217,8 @@ const i18n = createI18n({
         this_document: 'ce document',
         source_code: 'Code source',
         available_on_Github: 'disponible sur Github',
-        code_design_foss: 'Code / Design libre et open-source sous licence',
-        bike_images_from_the_manufacturer_s_website:
-          'image des vélos provenant des sites des fabricants.',
+        code_design_foss: 'Code / Design is free Open Source under',
+        bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Contours',
         bike_frame_made_in: 'Cadre du vélo fabriqué',
         bike_assembled_in: 'Assemblé',
@@ -258,7 +253,6 @@ const i18n = createI18n({
         technical_infos: 'Informations techniques'
       },
       bike_types: {
-        by_category: 'Par catégorie&nbsp;:',
         longtail: 'Longtail',
         midtail: 'Midtail',
         lowtail: 'Lowtail',

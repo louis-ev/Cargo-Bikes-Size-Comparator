@@ -3,7 +3,7 @@
     <div class="_leftPane">
       <transition name="slide" mode="out-in">
         <SideBar
-          v-if="show_sidebar && enabled_bikes.length > 0"
+          v-if="show_sidebar"
           :bikes="bikes"
           :enabled_bikes="enabled_bikes"
           :grid_step="grid_step"
@@ -18,11 +18,7 @@
     </div>
     <div class="_rightPane">
       <transition name="fade" mode="out-in">
-        <ListOfBikes
-          v-if="enabled_bikes.length === 0"
-          :bikes="bikes"
-          @showAddBikeModal="add_bike_modal = true"
-        />
+        <ListOfBikes v-if="enabled_bikes.length === 0" :bikes="bikes" />
         <CanvasView
           v-else
           :enabled_bikes="enabled_bikes"
