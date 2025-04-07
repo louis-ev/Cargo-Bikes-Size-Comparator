@@ -2362,5 +2362,21 @@
     "url": "https://www.ternbicycles.com/en/bikes/473/gsd-p10#tech_specs",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "bergamont-ebike-lj70-bergamont",
+
+    "manufacturer": "Bergamont",
+    "model": "E-Cargoville LJ 70",
+    "bike_type": "longjohn",
+    "src": "bergamont-lj70.png",
+    "bike_length_cm": 268,
+    "weight": 220,
+    "bike_length_percent": 0.896,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.08,
+    "url": "https://www.bergamont.com/it/it/heavy_load_easy_riding",
+    "frame_made_in": "Germany",
+    "assembled_in": ""
   }
 ]
