@@ -2378,5 +2378,21 @@
     "url": "https://www.bergamont.com/it/it/heavy_load_easy_riding",
     "frame_made_in": "Germany",
     "assembled_in": ""
+  },
+  {
+    "id": "rally-wombat",
+
+    "manufacturer": "Wombat",
+    "model": "Rally",
+    "bike_type": "longtail",
+    "src": "wombat-rally.png",
+    "bike_length_cm": 185,
+    "weight": 29,
+    "bike_length_percent": 0.812,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.131,
+    "url": "https://wombatbikes.com/products/rally-easyshift",
+    "frame_made_in": "China",
+    "assembled_in": "Australia"
   }
 ]
