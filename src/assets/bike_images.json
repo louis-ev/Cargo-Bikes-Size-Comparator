@@ -2392,6 +2392,7 @@
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.131,
     "url": "https://wombatbikes.com/products/rally-easyshift",
+    "show_frame_origin": false,
     "frame_made_in": "China",
     "assembled_in": "Australia"
   }
