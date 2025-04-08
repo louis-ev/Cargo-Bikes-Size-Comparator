@@ -71,7 +71,7 @@ const i18n = createI18n({
         in_netherlands: 'in the Netherlands',
         in_uk: 'in the United Kingdom',
         in_sweden: 'in Sweden',
-        in_australia: 'en Australie',
+        in_australia: 'in Australia',
         add_a_bike: 'Add a bike',
         left: 'Left',
         right: 'Right',
@@ -87,7 +87,6 @@ const i18n = createI18n({
         technical_infos: 'Technical infos'
       },
       bike_types: {
-        by_category: 'By category:',
         longtail: 'Longtail',
         midtail: 'Midtail',
         lowtail: 'Lowtail',
@@ -244,6 +243,7 @@ const i18n = createI18n({
         in_netherlands: 'aux Pays-Bas',
         in_uk: 'au Royaume-Uni',
         in_sweden: 'en Suède',
+        in_australia: 'en Australie',
         add_a_bike: 'Ajouter un vélo',
         left: 'Gauche',
         right: 'Droite',
