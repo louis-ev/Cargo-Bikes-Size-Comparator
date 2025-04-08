@@ -1748,7 +1748,7 @@
 
     "manufacturer": "Ultima Mobility",
     "model": "Larrun",
-    "bike_type": "longjohn",
+    "bike_type": "longtail",
     "src": "larrun.png",
     "bike_length_cm": 204,
     "bike_length_percent": 0.95,
@@ -2254,7 +2254,7 @@
 
     "manufacturer": "Decathlon",
     "model": "F900E Box",
-    "bike_type": "longtail",
+    "bike_type": "longjohn",
     "src": "decathlon-f900ebox.png",
     "bike_length_cm": 260,
     "weight": 50,
@@ -2360,6 +2360,55 @@
     "left_margin_percent": 0.044,
     "bottom_margin_percent": 0.0987,
     "url": "https://www.ternbicycles.com/en/bikes/473/gsd-p10#tech_specs",
+    "frame_made_in": "",
+    "assembled_in": ""
+  },
+  {
+    "id": "bergamont-ebike-lj70-bergamont",
+
+    "manufacturer": "Bergamont",
+    "model": "E-Cargoville LJ 70",
+    "bike_type": "longjohn",
+    "src": "bergamont-lj70.png",
+    "bike_length_cm": 268,
+    "weight": 220,
+    "bike_length_percent": 0.896,
+    "left_margin_percent": 0.055,
+    "bottom_margin_percent": 0.08,
+    "url": "https://www.bergamont.com/it/it/heavy_load_easy_riding",
+    "frame_made_in": "Germany",
+    "assembled_in": ""
+  },
+  {
+    "id": "rally-wombat",
+
+    "manufacturer": "Wombat",
+    "model": "Rally",
+    "bike_type": "longtail",
+    "src": "wombat-rally.png",
+    "bike_length_cm": 185,
+    "weight": 29,
+    "bike_length_percent": 0.812,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.131,
+    "url": "https://wombatbikes.com/products/rally-easyshift",
+    "show_frame_origin": false,
+    "frame_made_in": "China",
+    "assembled_in": "Australia"
+  },
+  {
+    "id": "duo-tenways",
+
+    "manufacturer": "Tenways",
+    "model": "duo",
+    "bike_type": "longtail",
+    "src": "tenways-duo.png",
+    "bike_length_cm": 185,
+    "weight": "",
+    "bike_length_percent": 0.83,
+    "left_margin_percent": 0.065,
+    "bottom_margin_percent": 0.265,
+    "url": "https://www.tenways.com/fr/products/longtail",
     "frame_made_in": "",
     "assembled_in": ""
   }
