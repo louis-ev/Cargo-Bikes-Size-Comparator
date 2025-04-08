@@ -13,7 +13,8 @@
         $t('message.on_Github')
       }}</a>
       {{ $t('message.or') }}
-      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a>
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
+      >.
     </div>
     <div>{{ $t('message.no_tracking_cookies_no_ads_and_fully_rgpd_compliant') }}</div>
     <hr />
@@ -87,8 +88,8 @@ export default {
   font-size: 0.8rem;
   color: var(--color-text-secondary);
 
-  > * {
-    margin-bottom: 0.5rem;
+  > *:not(hr) {
+    margin-bottom: 0.25rem;
   }
 }
 </style>

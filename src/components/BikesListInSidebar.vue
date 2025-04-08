@@ -32,7 +32,7 @@
 
     <div class="_itemTitle" :key="'not_enabled_bikes'" v-if="filtered_not_enabled_bikes.length > 0">
       {{
-        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+        $t('message.or_click_on_bikes', {
           count: filtered_not_enabled_bikes.length
         })
       }}
@@ -40,13 +40,20 @@
 
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br />
-      {{ $t('message.to_contribute_a_bike') }}
+
+      <div class="_addMissingBike">
+        <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+          ＋
+          {{ $t('message.add_a_bike') }}
+        </button>
+      </div>
+
+      <!-- {{ $t('message.to_contribute_a_bike') }}
       <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
         {{ $t('message.read_the_guide') }}
       </a>
       {{ $t('message.or_ask_me') }}
-      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
-      >.
+      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}.</a>. -->
     </div>
 
     <BikeEntry

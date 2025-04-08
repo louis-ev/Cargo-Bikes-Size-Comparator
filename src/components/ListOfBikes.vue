@@ -53,22 +53,9 @@
     <div class="_itemTitle" :key="'not_enabled_bikes'" v-else>
       {{
         $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-          count: bikes.length
+          count: filtered_bikes.length
         })
       }}
-    </div>
-    <div class="_bikeTypeFilter">
-      <button
-        v-for="[bike_type, count] in all_bike_types"
-        :key="bike_type"
-        type="button"
-        :class="{ 'is--active': bike_type_filter === bike_type }"
-        :style="bikeStyleColor(bike_type)"
-        @click="onBikeTypeFilterClick(bike_type)"
-      >
-        {{ $t(`bike_types.${bike_type}`) }}
-        ({{ count }})
-      </button>
     </div>
 
     <transition-group name="list" tag="div" class="_bikesPreview">
@@ -114,13 +101,20 @@ const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
   query: { format: 'webp', w: 600 }
 })
 
+import Credits from './Credits.vue'
+import LangSelect from '@/components/LangSelect.vue'
+
 export default {
   props: {
     bikes: Array
   },
-  components: {},
+  components: {
+    Credits,
+    LangSelect
+  },
   data() {
     return {
+      search_str: '',
       bike_images_preview_urls: [],
       bike_type_filter: null
     }
@@ -144,8 +138,22 @@ export default {
       return Object.entries(bike_types).sort((a, b) => b[1] - a[1])
     },
     filtered_bikes() {
-      if (!this.bike_type_filter) return this.bikes
-      return this.bikes.filter((bike) => bike.bike_type === this.bike_type_filter)
+      return this.filtered_bikes_with_search.filter(
+        (bike) => !this.bike_type_filter || bike.bike_type === this.bike_type_filter
+      )
+    },
+    filtered_bikes_with_search() {
+      return this.bikes.filter((bike) => {
+        if (!this.search_str) return true
+        return (
+          this.$normalizeStringForSearch(bike.model).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          ) ||
+          this.$normalizeStringForSearch(bike.manufacturer).includes(
+            this.$normalizeStringForSearch(this.search_str)
+          )
+        )
+      })
     }
   },
   methods: {
@@ -180,17 +188,14 @@ export default {
 ._listOfBikes {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   // gap: 10px;
   z-index: 10;
   background-color: var(--color-background);
-}
-._listOfBikes {
   overflow-y: auto;
   height: 100%;
-
   padding: 0 1rem;
 }
 
