@@ -1748,7 +1748,7 @@
 
     "manufacturer": "Ultima Mobility",
     "model": "Larrun",
-    "bike_type": "longjohn",
+    "bike_type": "longtail",
     "src": "larrun.png",
     "bike_length_cm": 204,
     "bike_length_percent": 0.95,
@@ -2254,7 +2254,7 @@
 
     "manufacturer": "Decathlon",
     "model": "F900E Box",
-    "bike_type": "longtail",
+    "bike_type": "longjohn",
     "src": "decathlon-f900ebox.png",
     "bike_length_cm": 260,
     "weight": 50,
