@@ -197,8 +197,9 @@ input {
 
 .list-enter-from,
 .list-leave-to {
+  position: absolute;
   opacity: 0;
-  transform: translateX(0px);
+  transform: scale(0.2);
 }
 
 .list-leave-active {

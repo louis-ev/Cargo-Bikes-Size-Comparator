@@ -71,6 +71,7 @@ const i18n = createI18n({
         in_netherlands: 'in the Netherlands',
         in_uk: 'in the United Kingdom',
         in_sweden: 'in Sweden',
+        in_australia: 'en Australie',
         add_a_bike: 'Add a bike',
         left: 'Left',
         right: 'Right',
