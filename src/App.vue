@@ -177,6 +177,16 @@ input {
   opacity: 0;
 }
 
+.scale {
+  &-enter-active,
+  &-leave-active {
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &-enter-from,
+  &-leave-to {
+    transform: scale(0);
+  }
+}
 .loader {
   &-enter-active,
   &-leave-active {

@@ -55,6 +55,11 @@ button,
     }
   }
 
+  &[data-size='big'] {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+  }
+
   &[data-color='important'] {
     background-color: var(--color-accent);
   }
@@ -62,8 +67,6 @@ button,
   &[data-color='black'] {
     background-color: var(--color-text);
     color: var(--color-background);
-    padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
 
     &:hover {
       color: var(--color-text);

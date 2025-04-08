@@ -84,9 +84,11 @@ const i18n = createI18n({
         show_regular_bike_silhouette: 'Reference bike',
         close: 'close',
         measure: 'Measure',
-        technical_infos: 'Technical infos'
+        technical_infos: 'Technical infos',
+        compare_bikes: 'Compare {count} bike | Compare {count} bikes'
       },
       bike_types: {
+        by_category: 'By category:',
         longtail: 'Longtail',
         midtail: 'Midtail',
         lowtail: 'Lowtail',
@@ -117,7 +119,7 @@ const i18n = createI18n({
         image_source: 'Indicate the profile image of the bike you want to add',
         add_by_url: 'Paste the URL to the image of the bike online',
         couldnt_find_the_image_you_want:
-          'I couldn’t find an image that matches what you want / I don’t know which image to take',
+          "I couldn't find an image that matches what you want / I don't know which image to take",
         url: 'URL',
         load_image: 'Load image',
         add_by_file: 'Import image file from your device',
@@ -161,7 +163,7 @@ const i18n = createI18n({
         the <i>Total bike length</i> refers to.`,
         align_with_the_ground: `Align with the ground, typically the contact point between the wheels and the floor.`,
         to_add_this_bike_to_the_database: `Add this bike to the comparator database.`,
-        the_following_code_contains_all_the_informations: `The following code contains all the informations you’ve provided.`,
+        the_following_code_contains_all_the_informations: `The following code contains all the informations you've provided.`,
         by_mail: `by email, click on the following address and validate the sending of a generated email containing the code above -> `,
         or: 'or,',
         copy_this_code_to_clipboard: `Click to copy this code to the clipboard`,
@@ -256,7 +258,8 @@ const i18n = createI18n({
         show_regular_bike_silhouette: 'Vélo classique',
         close: 'fermer',
         measure: 'Mesurer',
-        technical_infos: 'Informations techniques'
+        technical_infos: 'Informations techniques',
+        compare_bikes: 'Comparer {count} vélo | Comparer {count} vélos'
       },
       bike_types: {
         by_category: 'Par catégorie&nbsp;:',

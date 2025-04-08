@@ -36,7 +36,7 @@
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br /><br />
       <div class="_addMissingBike">
-        <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+        <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
           ＋
           {{ $t('message.add_a_bike') }}
         </button>
@@ -65,6 +65,7 @@
         v-for="bike in filtered_bikes"
         :key="bike.id"
         @click="onBikePreviewClick(bike.id)"
+        :class="{ 'is--selected': selected_bikes.includes(bike.id) }"
       >
         <transition name="slideup">
           <div v-if="getBikePreviewImage(bike)">
@@ -76,22 +77,38 @@
                 '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
               }"
             />
-            <!-- <input
-                type="checkbox"
-                class="_bikeType"
-                :value="bike.id"
-                :style="bikeStyleColor(bike.bike_type)"
-              /> -->
           </div>
         </transition>
-        <div class="_bikeType" :style="bikeStyleColor(bike.bike_type)" :title="bike.bike_type">
-          <!-- {{ bike.bike_type }} -->
-        </div>
+        <div
+          class="_bikeType"
+          :style="bikeStyleColor(bike.bike_type)"
+          :title="bike.bike_type"
+        ></div>
         <span class="_bikeLabel">
           <BikeName :bike="bike" />
         </span>
+        <Transition name="scale">
+          <div class="_checkmark" v-if="selected_bikes.includes(bike.id)">✓</div>
+        </Transition>
       </button>
     </transition-group>
+
+    <div class="_floatingCompareButton">
+      <transition name="slideup" mode="out-in">
+        <button
+          v-if="selected_bikes.length > 0"
+          data-color="important"
+          data-size="big"
+          @click="startComparison"
+        >
+          <transition name="fade_fast" mode="out-in">
+            <span :key="'s-' + selected_bikes.length">
+              {{ $t('message.compare_bikes', { count: selected_bikes.length }) }}
+            </span>
+          </transition>
+        </button>
+      </transition>
+    </div>
   </div>
 </template>
 <script>
@@ -115,6 +132,7 @@ export default {
   data() {
     return {
       search_str: '',
+      selected_bikes: [],
       bike_images_preview_urls: [],
       bike_type_filter: null
     }
@@ -163,12 +181,18 @@ export default {
       return thumb.url
     },
     onBikePreviewClick(bike_id) {
+      this.selected_bikes = this.selected_bikes.includes(bike_id)
+        ? this.selected_bikes.filter((id) => id !== bike_id)
+        : [...this.selected_bikes, bike_id]
+    },
+    startComparison() {
       this.$router.push({
         query: {
-          bikes: JSON.stringify([bike_id])
+          bikes: JSON.stringify(this.selected_bikes)
         }
       })
     },
+
     onBikeTypeFilterClick(bike_type) {
       if (this.bike_type_filter === bike_type) {
         this.bike_type_filter = null
@@ -303,13 +327,20 @@ export default {
   // box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   cursor: pointer;
-  border: 1px solid var(--color-border);
+  border: 2px solid transparent;
   background-color: rgba(255, 255, 255, 0.4);
-
   padding: 2rem;
+  // outline: 2px solid transparent;
+
+  transition: all 0.3s ease;
 
   &:hover,
   &:focus-visible {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.is--selected {
+    border-color: var(--color-accent);
     background-color: rgba(255, 255, 255, 0.8);
   }
 
@@ -346,10 +377,48 @@ export default {
     padding: 0.25rem 1rem;
     border-radius: 0.25rem;
     font-weight: initial;
-
-    // background-color: rgba(255, 2555, 255, 1);
-
     text-transform: initial;
+  }
+
+  ._checkmark {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+._floatingCompareButton {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+  margin: 3rem 1rem;
+  text-align: center;
+
+  > button {
+    // background-color: var(--color-accent);
+    position: relative;
+    pointer-events: all;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      // transform: translateX(-50%) scale(1.05);
+      // box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
   }
 }
 </style>
