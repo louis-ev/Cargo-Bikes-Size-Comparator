@@ -1,6 +1,6 @@
 {
   "name": "cargo-bikes-size-comparator",
-  "version": "2.23.10",
+  "version": "3.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
