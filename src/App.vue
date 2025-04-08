@@ -197,6 +197,19 @@ input {
     opacity: 0;
   }
 }
+.comparebtn {
+  &-enter-active,
+  &-leave-active {
+    // position: absolute;
+    transition: opacity 0.25s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &-enter-from,
+  &-leave-to {
+    // position: absolute;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
 
 .list-move, /* apply transition to moving elements */
 .list-enter-active,

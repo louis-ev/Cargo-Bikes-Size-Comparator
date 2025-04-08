@@ -94,18 +94,15 @@
     </transition-group>
 
     <div class="_floatingCompareButton">
-      <transition name="slideup" mode="out-in">
+      <transition name="comparebtn" mode="out-in">
         <button
           v-if="selected_bikes.length > 0"
+          :key="'s-' + selected_bikes.length"
           data-color="important"
           data-size="big"
           @click="startComparison"
         >
-          <transition name="fade_fast" mode="out-in">
-            <span :key="'s-' + selected_bikes.length">
-              {{ $t('message.compare_bikes', { count: selected_bikes.length }) }}
-            </span>
-          </transition>
+          {{ $t('message.compare_bikes', { count: selected_bikes.length }) }}
         </button>
       </transition>
     </div>
@@ -401,23 +398,24 @@ export default {
 ._floatingCompareButton {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   pointer-events: none;
-  margin: 3rem 1rem;
+  padding: 3rem 1rem;
   text-align: center;
 
   > button {
+    // position: fixed;
     // background-color: var(--color-accent);
-    position: relative;
+    // position: relative;
     pointer-events: all;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    z-index: 100;
 
     transition: all 0.3s ease;
 
     &:hover {
-      // transform: translateX(-50%) scale(1.05);
-      // box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
   }
 }
