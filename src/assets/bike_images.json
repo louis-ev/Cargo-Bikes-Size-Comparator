@@ -2397,6 +2397,22 @@
     "assembled_in": "Australia"
   },
   {
+    "id": "wagon-wombaat",
+
+    "manufacturer": "Wombat",
+    "model": "Wagon",
+    "bike_type": "longtail",
+    "src": "wombat-wagon.png",
+    "bike_length_cm": 190,
+    "weight": 29,
+    "bike_length_percent": 0.78,
+    "left_margin_percent": 0.117,
+    "bottom_margin_percent": 0.152,
+    "url": "https://wombatbikes.com/products/wagon2-sport",
+    "frame_made_in": "",
+    "assembled_in": "Australia"
+  },
+  {
     "id": "duo-tenways",
 
     "manufacturer": "Tenways",
