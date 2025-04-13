@@ -2427,5 +2427,21 @@
     "url": "https://www.tenways.com/fr/products/longtail",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "all-packa-bike-friday",
+
+    "manufacturer": "Bike friday",
+    "model": "All-Packa",
+    "bike_type": "foldable",
+    "src": "bike-friday-all-packa.png",
+    "bike_length_cm": 157,
+    "weight": "",
+    "bike_length_percent": 0.862,
+    "left_margin_percent": 0.077,
+    "bottom_margin_percent": 0.041,
+    "url": "https://bikefriday.com/product/all-packa-bikepacking-bike/",
+    "frame_made_in": "USA",
+    "assembled_in": "USA"
   }
 ]
