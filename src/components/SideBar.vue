@@ -6,6 +6,8 @@
         <LangSelect class="_lang_select" />
       </div>
 
+      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
+
       <BikesListInSidebar
         :bikes="bikes"
         :enabled_bikes="enabled_bikes"
