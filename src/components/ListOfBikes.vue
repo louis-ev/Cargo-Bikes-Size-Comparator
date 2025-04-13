@@ -35,19 +35,6 @@
 
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br /><br />
-      <div class="_addMissingBike">
-        <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
-          ＋
-          {{ $t('message.add_a_bike') }}
-        </button>
-      </div>
-      <!-- {{ $t('message.to_contribute_a_bike') }}
-      <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
-        {{ $t('message.read_the_guide') }}
-      </a>
-      {{ $t('message.or_ask_me') }}
-      <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}</a
-      >. -->
     </div>
 
     <div class="_itemTitle" :key="'not_enabled_bikes'" v-else>
@@ -91,6 +78,13 @@
           <div class="_checkmark" v-if="selected_bikes.includes(bike.id)">✓</div>
         </Transition>
       </button>
+      <div class="_addMissingBike">
+        {{ $t('message.cant_find_a_bike') }}
+        <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
+          ＋
+          {{ $t('message.add_a_bike') }}
+        </button>
+      </div>
     </transition-group>
 
     <div class="_floatingCompareButton">
@@ -418,5 +412,13 @@ export default {
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
   }
+}
+
+._addMissingBike {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 </style>
