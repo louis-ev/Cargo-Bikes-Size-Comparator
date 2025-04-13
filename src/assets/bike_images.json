@@ -2443,5 +2443,21 @@
     "url": "https://bikefriday.com/product/all-packa-bikepacking-bike/",
     "frame_made_in": "USA",
     "assembled_in": "USA"
+  },
+  {
+    "id": "bike+-vello",
+
+    "manufacturer": "Vello",
+    "model": "Bike+",
+    "bike_type": "foldable",
+    "src": "vello-bike-plus.png",
+    "bike_length_cm": 155,
+    "weight": "",
+    "bike_length_percent": 0.814,
+    "left_margin_percent": 0.094,
+    "bottom_margin_percent": 0.058,
+    "url": "https://vello.bike/en/collections/folding-bikes",
+    "frame_made_in": "Austria",
+    "assembled_in": "Austria"
   }
 ]
