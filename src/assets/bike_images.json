@@ -647,7 +647,9 @@
     "bike_length_cm": 180,
     "left_margin_percent": 0.128,
     "bottom_margin_percent": 0.102,
-    "url": "https://fr.vello.bike/products/sub"
+    "url": "https://fr.vello.bike/products/sub",
+    "frame_material": ["CrMo", "Titanium"],
+    "assembled_in": "Austria"
   },
   {
     "id": "yuba-kombi",
@@ -2457,7 +2459,7 @@
     "left_margin_percent": 0.094,
     "bottom_margin_percent": 0.058,
     "url": "https://vello.bike/en/collections/folding-bikes",
-    "frame_made_in": "Austria",
+    "frame_material": ["CrMo", "Titanium"],
     "assembled_in": "Austria"
   }
 ]
