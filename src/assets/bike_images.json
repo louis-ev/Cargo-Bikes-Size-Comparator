@@ -1800,7 +1800,7 @@
     "bottom_margin_percent": 0,
     "weight": 25,
     "url": "",
-    "frame_made_in": ""
+    "frame_made_in": "Germany"
   },
   {
     "id": "loady-900-velo-de-ville",
@@ -1813,10 +1813,10 @@
     "weight": 31,
     "bike_length_percent": 1,
     "left_margin_percent": 0,
-    "bottom_margin_percent": 0,
+    "bottom_margin_percent": -0.005,
     "url": "https://www.velo-de-ville.com/fr/2025-loady-longtail",
-    "frame_made_in": "Allemagne",
-    "assembled_in": "Allemagne"
+    "frame_made_in": "",
+    "assembled_in": "Germany"
   },
   {
     "id": "remidemi-xl-benno",
