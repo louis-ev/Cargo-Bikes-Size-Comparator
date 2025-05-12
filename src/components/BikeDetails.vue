@@ -67,7 +67,7 @@
           max="50"
           step="0.1"
           :value="bikes_adjustments[bike.id]?.position_h || 0"
-          @input="updateBikePosition('position_h', bike.id, $event.target.value)"
+          @input="updateBikeAdjustment(bike.id, 'position_h', $event.target.value)"
         />
         <!-- // disabled because snapping prevents fine tuning -->
         <!-- <datalist :id="'steplist-' + item.id">
@@ -78,7 +78,7 @@
           <button
             type="button"
             class="noStyle"
-            @click="resetBikePosition('position_h', bike.id)"
+            @click="resetBikeAdjustment(bike.id, 'position_h')"
             :aria-label="$t('message.reset')"
             :disabled="!bikes_adjustments[bike.id]?.position_h"
           >
@@ -95,7 +95,7 @@
           max="50"
           step="0.1"
           :value="bikes_adjustments[bike.id]?.position_v || 0"
-          @input="updateBikePosition('position_v', bike.id, $event.target.value)"
+          @input="updateBikeAdjustment(bike.id, 'position_v', $event.target.value)"
         />
         <!-- // disabled because snapping prevents fine tuning -->
         <!-- <datalist :id="'steplist-' + item.id">
@@ -106,7 +106,7 @@
           <button
             type="button"
             class="noStyle"
-            @click="resetBikePosition('position_v', bike.id)"
+            @click="resetBikeAdjustment(bike.id, 'position_v')"
             :aria-label="$t('message.reset')"
             :disabled="!bikes_adjustments[bike.id]?.position_v"
           >
@@ -122,7 +122,7 @@
           max="100"
           step="0.1"
           :value="bikes_adjustments[bike.id]?.opacity || 100"
-          @input="updateBikeOpacity(bike.id, $event.target.value)"
+          @input="updateBikeAdjustment(bike.id, 'opacity', $event.target.value)"
         />
         <!-- // disabled because snapping prevents fine tuning -->
         <!-- <datalist :id="'steplist-' + item.id">
@@ -133,7 +133,7 @@
           <button
             type="button"
             class="noStyle"
-            @click="resetBikeOpacity(bike.id)"
+            @click="resetBikeAdjustment(bike.id, 'opacity')"
             :aria-label="$t('message.reset')"
             :disabled="
               !bikes_adjustments[bike.id]?.opacity || bikes_adjustments[bike.id]?.opacity === 100
@@ -152,14 +152,14 @@
           max="180"
           step="0.1"
           :value="bikes_adjustments[bike.id]?.rotation || 0"
-          @input="updateBikeRotation(bike.id, $event.target.value)"
+          @input="updateBikeAdjustment(bike.id, 'rotation', $event.target.value)"
         />
 
         <div class="_resetPosition">
           <button
             type="button"
             class="noStyle"
-            @click="resetBikeRotation(bike.id)"
+            @click="resetBikeAdjustment(bike.id, 'rotation')"
             :aria-label="$t('message.reset')"
             :disabled="!bikes_adjustments[bike.id]?.rotation"
           >
@@ -251,37 +251,16 @@ export default {
         }, [])
         .join('<br>')
     },
-    updateBikePosition(type, id, value) {
+    updateBikeAdjustment(id, type, value) {
       const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
       if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
       bikes_adjustments[id][type] = +value
       this.$emit('update:bikes_adjustments', bikes_adjustments)
     },
-    updateBikeOpacity(id, value) {
+    resetBikeAdjustment(id, type, defaultValue = 0) {
       const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
       if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
-      bikes_adjustments[id].opacity = +value
-      this.$emit('update:bikes_adjustments', bikes_adjustments)
-    },
-    resetBikePosition(type, id) {
-      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
-      bikes_adjustments[id][type] = 0
-      this.$emit('update:bikes_adjustments', bikes_adjustments)
-    },
-    resetBikeOpacity(id) {
-      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
-      bikes_adjustments[id].opacity = 100
-      this.$emit('update:bikes_adjustments', bikes_adjustments)
-    },
-    updateBikeRotation(id, value) {
-      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
-      if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
-      bikes_adjustments[id].rotation = +value
-      this.$emit('update:bikes_adjustments', bikes_adjustments)
-    },
-    resetBikeRotation(id) {
-      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
-      bikes_adjustments[id].rotation = 0
+      bikes_adjustments[id][type] = defaultValue
       this.$emit('update:bikes_adjustments', bikes_adjustments)
     }
   }
