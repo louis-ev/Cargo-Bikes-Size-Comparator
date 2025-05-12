@@ -31,6 +31,7 @@ const i18n = createI18n({
         rotation: 'Rotation',
         in_situ: 'In Situ',
         missing_length_information: 'Missing length information',
+        current_adjustments: 'Current adjustments',
         advanced_options: 'Advanced options',
         grid_step: 'Grid step',
         zoom: 'Zoom',
@@ -209,7 +210,7 @@ const i18n = createI18n({
         rotation: 'Rotation',
         in_situ: 'In Situ',
         missing_length_information: 'Information de longueur manquante',
-
+        current_adjustments: 'Ajustements actuels',
         advanced_options: 'Options avancées',
         grid_step: 'Pas de la grille',
         zoom: 'Zoom',

@@ -94,12 +94,35 @@
       <RangeInput
         :label="$t('message.rotation')"
         :model-value="bikes_adjustments[bike.id]?.rotation || 0"
-        :min="-180"
-        :max="180"
+        :min="-90"
+        :max="90"
         :is-reset-disabled="!bikes_adjustments[bike.id]?.rotation"
         @update:model-value="(value) => updateBikeAdjustment(bike.id, 'rotation', value)"
         @reset="() => resetBikeAdjustment(bike.id, 'rotation')"
       />
+
+      <div v-if="hasAdjustments" class="_adjustments-recap">
+        <h4>{{ $t('message.current_adjustments') }}</h4>
+        <ul>
+          <li v-if="bikes_adjustments[bike.id]?.position_h">
+            {{ $t('message.position') }} ↔: {{ bikes_adjustments[bike.id].position_h }}
+          </li>
+          <li v-if="bikes_adjustments[bike.id]?.position_v">
+            {{ $t('message.position') }} ↕: {{ bikes_adjustments[bike.id].position_v }}
+          </li>
+          <li
+            v-if="
+              bikes_adjustments[bike.id]?.opacity !== undefined &&
+              bikes_adjustments[bike.id]?.opacity !== 100
+            "
+          >
+            {{ $t('message.opacity') }}: {{ bikes_adjustments[bike.id].opacity }}%
+          </li>
+          <li v-if="bikes_adjustments[bike.id]?.rotation">
+            {{ $t('message.rotation') }}: {{ bikes_adjustments[bike.id].rotation }}°
+          </li>
+        </ul>
+      </div>
     </details>
 
     <InsituImageSlide
@@ -160,7 +183,12 @@ export default {
       deep: true
     }
   },
-  computed: {},
+  computed: {
+    hasAdjustments() {
+      const adjustments = this.bikes_adjustments[this.bike.id] || {}
+      return Object.keys(adjustments).length > 0
+    }
+  },
   methods: {
     getImgThumbUrl(src) {
       return this.bike_images_thumbs_urls.find((img) => img.original_filename === src)?.url
@@ -248,5 +276,29 @@ hr {
 }
 ._measurements {
   // margin-bottom: 0.5rem;
+}
+
+._adjustments-recap {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+
+  h4 {
+    margin: 0 0 0rem 0;
+    font-size: 0.85rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      font-size: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 0.1rem;
+      line-height: 1.2;
+    }
+  }
 }
 </style>
