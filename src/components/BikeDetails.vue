@@ -59,114 +59,47 @@
     <details class="_adjust">
       <summary>{{ $t('message.adjust') }}</summary>
 
-      <div class="_adjustInput">
-        <label>{{ $t('message.position') }} ↔</label>
-        <input
-          type="range"
-          min="-50"
-          max="50"
-          step="0.1"
-          :value="bikes_adjustments[bike.id]?.position_h || 0"
-          @input="updateBikeAdjustment(bike.id, 'position_h', $event.target.value)"
-        />
-        <!-- // disabled because snapping prevents fine tuning -->
-        <!-- <datalist :id="'steplist-' + item.id">
-              <option>0</option>
-            </datalist> -->
+      <RangeInput
+        :label="$t('message.position') + ' ↔'"
+        :model-value="bikes_adjustments[bike.id]?.position_h || 0"
+        :min="-50"
+        :max="50"
+        :is-reset-disabled="!bikes_adjustments[bike.id]?.position_h"
+        @update:model-value="(value) => updateBikeAdjustment(bike.id, 'position_h', value)"
+        @reset="() => resetBikeAdjustment(bike.id, 'position_h')"
+      />
 
-        <div class="_resetPosition">
-          <button
-            type="button"
-            class="noStyle"
-            @click="resetBikeAdjustment(bike.id, 'position_h')"
-            :aria-label="$t('message.reset')"
-            :disabled="!bikes_adjustments[bike.id]?.position_h"
-          >
-            &#8630;
-          </button>
-        </div>
-      </div>
+      <RangeInput
+        :label="$t('message.position') + ' ↕'"
+        :model-value="bikes_adjustments[bike.id]?.position_v || 0"
+        :min="-50"
+        :max="50"
+        :is-reset-disabled="!bikes_adjustments[bike.id]?.position_v"
+        @update:model-value="(value) => updateBikeAdjustment(bike.id, 'position_v', value)"
+        @reset="() => resetBikeAdjustment(bike.id, 'position_v')"
+      />
 
-      <div class="_adjustInput">
-        <label>{{ $t('message.position') }} ↕</label>
-        <input
-          type="range"
-          min="-50"
-          max="50"
-          step="0.1"
-          :value="bikes_adjustments[bike.id]?.position_v || 0"
-          @input="updateBikeAdjustment(bike.id, 'position_v', $event.target.value)"
-        />
-        <!-- // disabled because snapping prevents fine tuning -->
-        <!-- <datalist :id="'steplist-' + item.id">
-              <option>0</option>
-            </datalist> -->
+      <RangeInput
+        :label="$t('message.opacity')"
+        :model-value="bikes_adjustments[bike.id]?.opacity || 100"
+        :min="0"
+        :max="100"
+        :is-reset-disabled="
+          !bikes_adjustments[bike.id]?.opacity || bikes_adjustments[bike.id]?.opacity === 100
+        "
+        @update:model-value="(value) => updateBikeAdjustment(bike.id, 'opacity', value)"
+        @reset="() => resetBikeAdjustment(bike.id, 'opacity')"
+      />
 
-        <div class="_resetPosition">
-          <button
-            type="button"
-            class="noStyle"
-            @click="resetBikeAdjustment(bike.id, 'position_v')"
-            :aria-label="$t('message.reset')"
-            :disabled="!bikes_adjustments[bike.id]?.position_v"
-          >
-            &#8630;
-          </button>
-        </div>
-      </div>
-      <div class="_adjustInput">
-        <label>{{ $t('message.opacity') }}</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          step="0.1"
-          :value="bikes_adjustments[bike.id]?.opacity || 100"
-          @input="updateBikeAdjustment(bike.id, 'opacity', $event.target.value)"
-        />
-        <!-- // disabled because snapping prevents fine tuning -->
-        <!-- <datalist :id="'steplist-' + item.id">
-              <option>0</option>
-            </datalist> -->
-
-        <div class="_resetPosition">
-          <button
-            type="button"
-            class="noStyle"
-            @click="resetBikeAdjustment(bike.id, 'opacity')"
-            :aria-label="$t('message.reset')"
-            :disabled="
-              !bikes_adjustments[bike.id]?.opacity || bikes_adjustments[bike.id]?.opacity === 100
-            "
-          >
-            &#8630;
-          </button>
-        </div>
-      </div>
-
-      <div class="_adjustInput">
-        <label>{{ $t('message.rotation') }}</label>
-        <input
-          type="range"
-          min="-180"
-          max="180"
-          step="0.1"
-          :value="bikes_adjustments[bike.id]?.rotation || 0"
-          @input="updateBikeAdjustment(bike.id, 'rotation', $event.target.value)"
-        />
-
-        <div class="_resetPosition">
-          <button
-            type="button"
-            class="noStyle"
-            @click="resetBikeAdjustment(bike.id, 'rotation')"
-            :aria-label="$t('message.reset')"
-            :disabled="!bikes_adjustments[bike.id]?.rotation"
-          >
-            &#8630;
-          </button>
-        </div>
-      </div>
+      <RangeInput
+        :label="$t('message.rotation')"
+        :model-value="bikes_adjustments[bike.id]?.rotation || 0"
+        :min="-180"
+        :max="180"
+        :is-reset-disabled="!bikes_adjustments[bike.id]?.rotation"
+        @update:model-value="(value) => updateBikeAdjustment(bike.id, 'rotation', value)"
+        @reset="() => resetBikeAdjustment(bike.id, 'rotation')"
+      />
     </details>
 
     <InsituImageSlide
@@ -185,6 +118,7 @@
 </template>
 <script>
 import InsituImageSlide from '@/components/InsituImageSlide.vue'
+import RangeInput from '@/components/RangeInput.vue'
 
 const insitu_images_thumbs_paths = import.meta.glob('@/assets/insitu/*', {
   eager: true,
@@ -204,7 +138,8 @@ export default {
     }
   },
   components: {
-    InsituImageSlide
+    InsituImageSlide,
+    RangeInput
   },
   data() {
     return {
@@ -304,22 +239,6 @@ hr {
   // text-transform: lowercase;
 }
 
-._adjustInput {
-  display: flex;
-  flex-direction: row nowrap;
-  align-items: center;
-  gap: 0.5rem;
-
-  label {
-    flex: 0 0 auto;
-  }
-  input {
-    width: 100%;
-  }
-}
-._resetPosition {
-  text-align: center;
-}
 ._itemBottom {
   padding: 0.5rem 1rem 0.5rem;
   display: flex;
