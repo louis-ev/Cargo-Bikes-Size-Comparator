@@ -28,6 +28,7 @@ const i18n = createI18n({
         position: 'Position',
         adjust: 'Adjust',
         opacity: 'Opacity',
+        rotation: 'Rotation',
         in_situ: 'In Situ',
         missing_length_information: 'Missing length information',
         advanced_options: 'Advanced options',
@@ -205,6 +206,7 @@ const i18n = createI18n({
         position: 'Position',
         adjust: 'Ajuster',
         opacity: 'Opacité',
+        rotation: 'Rotation',
         in_situ: 'In Situ',
         missing_length_information: 'Information de longueur manquante',
 

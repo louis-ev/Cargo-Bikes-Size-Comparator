@@ -322,6 +322,7 @@ export default {
           (bike.bottom_margin_percent + user_vertical_adjustment) * draw_h
 
         let user_opacity_adjustment = this.bikes_adjustments[bike.id]?.opacity / 100 || 1
+        let user_rotation = this.bikes_adjustments[bike.id]?.rotation || 0
 
         if (this.canvas_image_style_outline) {
           // Offscreen canvas for edge detection on the image
@@ -337,7 +338,17 @@ export default {
           // white BG for a clean edge detect result
           processorCtx.fillStyle = 'white'
           processorCtx.fillRect(0, 0, canvas.width, canvas.height)
-          processorCtx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+
+          // Save context state
+          processorCtx.save()
+          // Translate to center of image
+          processorCtx.translate(draw_x + draw_w / 2, draw_y + draw_h / 2)
+          // Rotate
+          processorCtx.rotate((user_rotation * Math.PI) / 180)
+          // Draw image centered
+          processorCtx.drawImage(img, -draw_w / 2, -draw_h / 2, draw_w, draw_h)
+          // Restore context state
+          processorCtx.restore()
 
           // detect edges
           edge_detect(processorCanvas)
@@ -350,8 +361,17 @@ export default {
           ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
           ctx.globalAlpha = 1
         } else {
+          // Save context state
+          ctx.save()
+          // Translate to center of image
+          ctx.translate(draw_x + draw_w / 2, draw_y + draw_h / 2)
+          // Rotate
+          ctx.rotate((user_rotation * Math.PI) / 180)
+          // Draw image centered
           ctx.globalAlpha = user_opacity_adjustment
-          ctx.drawImage(img, draw_x, draw_y, draw_w, draw_h)
+          ctx.drawImage(img, -draw_w / 2, -draw_h / 2, draw_w, draw_h)
+          // Restore context state
+          ctx.restore()
           ctx.globalAlpha = 1
         }
       }

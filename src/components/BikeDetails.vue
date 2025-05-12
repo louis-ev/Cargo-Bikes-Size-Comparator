@@ -143,6 +143,30 @@
           </button>
         </div>
       </div>
+
+      <div class="_adjustInput">
+        <label>{{ $t('message.rotation') }}</label>
+        <input
+          type="range"
+          min="-180"
+          max="180"
+          step="0.1"
+          :value="bikes_adjustments[bike.id]?.rotation || 0"
+          @input="updateBikeRotation(bike.id, $event.target.value)"
+        />
+
+        <div class="_resetPosition">
+          <button
+            type="button"
+            class="noStyle"
+            @click="resetBikeRotation(bike.id)"
+            :aria-label="$t('message.reset')"
+            :disabled="!bikes_adjustments[bike.id]?.rotation"
+          >
+            &#8630;
+          </button>
+        </div>
+      </div>
     </details>
 
     <InsituImageSlide
@@ -247,6 +271,17 @@ export default {
     resetBikeOpacity(id) {
       const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
       bikes_adjustments[id].opacity = 100
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
+    },
+    updateBikeRotation(id, value) {
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
+      bikes_adjustments[id].rotation = +value
+      this.$emit('update:bikes_adjustments', bikes_adjustments)
+    },
+    resetBikeRotation(id) {
+      const bikes_adjustments = JSON.parse(JSON.stringify(this.bikes_adjustments))
+      bikes_adjustments[id].rotation = 0
       this.$emit('update:bikes_adjustments', bikes_adjustments)
     }
   }
