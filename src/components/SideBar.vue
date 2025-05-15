@@ -135,6 +135,10 @@ export default {
         {
           key: 'h',
           label: this.$t('message.height')
+        },
+        {
+          key: 'r',
+          label: this.$t('message.rotation')
         }
       ]
     }

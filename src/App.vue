@@ -24,7 +24,8 @@ export default {
         l: 0,
         b: 0,
         w: 20,
-        h: 20
+        h: 20,
+        r: 0
       }
     }
   },

@@ -377,19 +377,24 @@ export default {
       }
 
       // Draw a rectangle
-      const { active, l, b, w, h } = this.$root.draw_rect_in_canvas
+      const { active, l, b, w, h, r } = this.$root.draw_rect_in_canvas
       if (active) {
+        ctx.save()
+        // Translate to center of rectangle
+        const rect_x = padding + l * each_px_measures_in_cm
+        const rect_y = canvas.height - padding - b * each_px_measures_in_cm
+        const rect_w = w * each_px_measures_in_cm
+        const rect_h = -h * each_px_measures_in_cm
+        ctx.translate(rect_x + rect_w / 2, rect_y + rect_h / 2)
+        // Rotate
+        ctx.rotate((r * Math.PI) / 180)
+        // Draw rectangle centered
         ctx.beginPath()
         ctx.strokeStyle = '#00ff00'
         ctx.lineWidth = 3
-        ctx.rect(
-          padding + l * each_px_measures_in_cm,
-          canvas.height - padding - b * each_px_measures_in_cm,
-          w * each_px_measures_in_cm,
-          -h * each_px_measures_in_cm
-        )
+        ctx.rect(-rect_w / 2, -rect_h / 2, rect_w, rect_h)
         ctx.stroke()
-        debugger
+        ctx.restore()
       }
 
       const visible_canvas = this.$refs.bikes
