@@ -2477,5 +2477,21 @@
     "url": "https://vello.bike/en/collections/folding-bikes",
     "frame_material": ["CrMo", "Titanium"],
     "assembled_in": "Austria"
+  },
+  {
+    "id": "cargo-triobike",
+
+    "manufacturer": "Triobike",
+    "model": "cargo",
+    "bike_type": "longjohn",
+    "src": "triobike-cargo-silver-enviolo-lights-flat-cover-2560.png",
+    "bike_length_cm": 250,
+    "weight": 31,
+    "bike_length_percent": 0.875,
+    "left_margin_percent": 0.066,
+    "bottom_margin_percent": 0.132,
+    "url": "https://triobike.com/en/models/cargo/cargo/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
