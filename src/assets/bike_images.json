@@ -2437,7 +2437,7 @@
     "model": "duo",
     "bike_type": "longtail",
     "src": "tenways-duo.png",
-    "bike_length_cm": 185,
+    "bike_length_cm": 205,
     "weight": "",
     "bike_length_percent": 0.83,
     "left_margin_percent": 0.065,
