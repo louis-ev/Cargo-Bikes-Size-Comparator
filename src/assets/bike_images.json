@@ -536,6 +536,21 @@
     "url": "https://www.aventon.com/products/abound-ebike?variant=42319517515971"
   },
   {
+  "id": "abound-lr-aventon",
+  "manufacturer": "Aventon",
+  "model": "Abound LR",
+  "bike_type": "longtail",
+  "src": "aventon_abound_lr.png",
+  "bike_length_cm": 183,
+  "weight": 40,
+  "bike_length_percent": 0.916,
+  "left_margin_percent": 0.041,
+  "bottom_margin_percent": 0.067,
+  "url": "https://www.aventon.com/products/abound-lr-ebike?variant=44189242818755",
+  "frame_made_in": "Tiawan",
+  "assembled_in": "China"
+},
+  {
     "id": "radwagon-5",
     "id_in_csv": "",
 
