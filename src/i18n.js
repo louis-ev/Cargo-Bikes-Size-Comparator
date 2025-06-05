@@ -168,7 +168,7 @@ const i18n = createI18n({
         align_with_the_ground: `Align with the ground, typically the contact point between the wheels and the floor.`,
         to_add_this_bike_to_the_database: `Add this bike to the comparator database.`,
         the_following_code_contains_all_the_informations: `The following code contains all the informations you've provided.`,
-        by_mail: `by email, click on the following address and validate the sending of a generated email containing the code above -> `,
+        by_mail: `by email, click on the following address and validate the sending of a generated email containing the code above (and add the image as an attachment if it's stored on your computer) -> `,
         or: 'or,',
         copy_this_code_to_clipboard: `Click to copy this code to the clipboard`,
         or_copy_post: `then post this information on social media platforms and tag me: <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev on Mastodon</a>,
@@ -340,7 +340,7 @@ const i18n = createI18n({
         to_add_this_bike_to_the_database: `Ajouter ce vélo à la base de données du comparateur.`,
         the_following_code_contains_all_the_informations: `Le code ci-dessous contient toutes les informations que vous avez fournies.`,
         by_mail: `par mail, en cliquant sur l'adresse ci-dessous, vous n'aurez plus qu'à valider l'envoi
-        d'un mail généré contenant le code ci-dessus -> `,
+        d'un mail généré contenant le code ci-dessus (et ajoutez l’image en pièce jointe si elle est stockée sur votre ordinateur) -> `,
         or_copy_post: `et poster le code dans un commentaire en me mentionnant : <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev sur Mastodon</a>,
         <a href="https://x.com/timetofirstfix" target="_blank">{'@'}timetofirstfix sur Twitter/X</a>, ou <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits sur Reddit</a>
 `,
