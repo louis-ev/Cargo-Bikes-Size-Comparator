@@ -2508,5 +2508,21 @@
     "url": "https://triobike.com/en/models/cargo/cargo/",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "entice-c+-excite-kalkhoff",
+
+    "manufacturer": "Kalkhoff",
+    "model": "ENTICE C+ EXCITE",
+    "bike_type": "midtail",
+    "src": "kalkhoff-entice.png",
+    "bike_length_cm": 160,
+    "weight": 26,
+    "bike_length_percent": 0.746,
+    "left_margin_percent": 0.129,
+    "bottom_margin_percent": 0.02,
+    "url": "https://www.kalkhoff-bikes.com/fr_fr/entice-c-excite",
+    "frame_made_in": "",
+    "assembled_in": "Germany"
   }
 ]
