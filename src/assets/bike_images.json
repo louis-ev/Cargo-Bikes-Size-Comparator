@@ -2524,5 +2524,21 @@
     "url": "https://www.kalkhoff-bikes.com/fr_fr/entice-c-excite",
     "frame_made_in": "",
     "assembled_in": "Germany"
+  },
+  {
+    "id": "lundi-20-cargo-5-moustache",
+
+    "manufacturer": "Moustache",
+    "model": "Lundi 20 Cargo 5",
+    "bike_type": "longtail",
+    "src": "moustache-lundi20cargo5.png",
+    "bike_length_cm": 195,
+    "weight": 32,
+    "bike_length_percent": 0.878,
+    "left_margin_percent": 0.083,
+    "bottom_margin_percent": 0.164,
+    "url": "https://moustachebikes.com/fr/velos-electriques/lundi-20-cargo/lundi-20-cargo-5/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
