@@ -2556,5 +2556,21 @@
     "url": "https://www.velotricbike.com/products/velotric-packer-1-e-bike",
     "frame_made_in": "China",
     "assembled_in": ""
+  },
+  {
+    "id": "u-cargo-family-addbike",
+
+    "manufacturer": "AddBike",
+    "model": "U-Cargo Family",
+    "bike_type": "longtail",
+    "src": "addbike-u-cargo.png",
+    "bike_length_cm": 205,
+    "weight": 44,
+    "bike_length_percent": 0.789,
+    "left_margin_percent": 0.08,
+    "bottom_margin_percent": 0.207,
+    "url": "https://add-bike.com/velo-cargo-electrique-u-cargo/",
+    "frame_made_in": "Poland",
+    "assembled_in": "France"
   }
 ]
