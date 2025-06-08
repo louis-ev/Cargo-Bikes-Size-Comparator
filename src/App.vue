@@ -26,6 +26,13 @@ export default {
         w: 20,
         h: 20,
         r: 0
+      },
+      accessories_in_canvas: {
+        active: false,
+        type: 'bakkie',
+        l: 0, // left position in cm
+        b: 0, // bottom position in cm
+        w: 30 // width in cm (fixed for bakkie)
       }
     }
   },
@@ -39,6 +46,13 @@ export default {
         )
       } catch (e) {}
     }
+    if (localStorage.getItem('accessories_in_canvas')) {
+      try {
+        this.accessories_in_canvas = JSON.parse(
+          localStorage.getItem('accessories_in_canvas', JSON.stringify())
+        )
+      } catch (e) {}
+    }
   },
   mounted() {},
   beforeUnmount() {},
@@ -46,6 +60,12 @@ export default {
     draw_rect_in_canvas: {
       handler() {
         localStorage.setItem('draw_rect_in_canvas', JSON.stringify(this.draw_rect_in_canvas))
+      },
+      deep: true
+    },
+    accessories_in_canvas: {
+      handler() {
+        localStorage.setItem('accessories_in_canvas', JSON.stringify(this.accessories_in_canvas))
       },
       deep: true
     }

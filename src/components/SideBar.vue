@@ -85,6 +85,58 @@
             </div>
           </template>
         </div>
+        <!-- Accessories Toggle and Controls -->
+        <div class="_advanced">
+          <label for="accessories_in_canvas">
+            Accessories
+            <input
+              type="checkbox"
+              name="accessories_in_canvas"
+              id="accessories_in_canvas"
+              v-model="$root.accessories_in_canvas.active"
+            />
+          </label>
+        </div>
+        <template v-if="$root.accessories_in_canvas.active">
+          <div class="_advanced">
+            <label for="accessory_type">Type</label>
+            <select id="accessory_type" v-model="$root.accessories_in_canvas.type">
+              <option value="bakkie">Bakkie</option>
+            </select>
+          </div>
+          <div class="_advanced">
+            <label :title="$root.accessories_in_canvas.l">Left (cm)</label>
+            <input
+              type="number"
+              class="_numberInputs"
+              v-model.number="$root.accessories_in_canvas.l"
+            />
+            <input
+              class="_rangeSlider"
+              type="range"
+              step="1"
+              min="0"
+              max="300"
+              v-model.number="$root.accessories_in_canvas.l"
+            />
+          </div>
+          <div class="_advanced">
+            <label :title="$root.accessories_in_canvas.b">Bottom (cm)</label>
+            <input
+              type="number"
+              class="_numberInputs"
+              v-model.number="$root.accessories_in_canvas.b"
+            />
+            <input
+              class="_rangeSlider"
+              type="range"
+              step="1"
+              min="0"
+              max="300"
+              v-model.number="$root.accessories_in_canvas.b"
+            />
+          </div>
+        </template>
       </details>
 
       <Credits />

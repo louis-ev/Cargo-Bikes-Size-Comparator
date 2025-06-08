@@ -139,6 +139,7 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
   import: 'default',
   query: { format: 'webp', w: 1600 }
 })
+import bakkieUrl from '@/assets/accessories/bakkie.png?w=800;webp&as=src'
 
 export default {
   props: {
@@ -209,6 +210,12 @@ export default {
       this.showBikes()
     },
     '$root.draw_rect_in_canvas': {
+      handler() {
+        this.showBikes()
+      },
+      deep: true
+    },
+    '$root.accessories_in_canvas': {
       handler() {
         this.showBikes()
       },
@@ -394,6 +401,27 @@ export default {
         ctx.lineWidth = 3
         ctx.rect(-rect_w / 2, -rect_h / 2, rect_w, rect_h)
         ctx.stroke()
+        ctx.restore()
+      }
+
+      // Draw accessories (bakkie)
+      const accessories = this.$root.accessories_in_canvas
+      if (accessories && accessories.active && accessories.type === 'bakkie') {
+        const bakkieImg = new Image()
+        bakkieImg.src = bakkieUrl
+        await new Promise((resolve) => {
+          bakkieImg.onload = resolve
+          bakkieImg.onerror = resolve
+        })
+        const bakkie_width_cm = accessories.w || 30
+        const bakkie_x = padding + (accessories.l || 0) * each_px_measures_in_cm
+        const bakkie_y = canvas.height - padding - (accessories.b || 0) * each_px_measures_in_cm
+        const draw_w = bakkie_width_cm * each_px_measures_in_cm
+        const img_ratio = bakkieImg.width / bakkieImg.height
+        const draw_h = draw_w / img_ratio
+        ctx.save()
+        ctx.globalAlpha = 1
+        ctx.drawImage(bakkieImg, bakkie_x, bakkie_y - draw_h, draw_w, draw_h)
         ctx.restore()
       }
 
