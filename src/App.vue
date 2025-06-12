@@ -31,8 +31,7 @@ export default {
         active: false,
         type: 'bakkie',
         l: 0, // left position in cm
-        b: 0, // bottom position in cm
-        w: 34.8 // width in cm (fixed for bakkie)
+        b: 0 // bottom position in cm
       }
     }
   },

@@ -413,7 +413,7 @@ export default {
           bakkieImg.onload = resolve
           bakkieImg.onerror = resolve
         })
-        const bakkie_width_cm = accessories.w || 30
+        const bakkie_width_cm = 34.8
         const bakkie_x = padding + (accessories.l || 0) * each_px_measures_in_cm
         const bakkie_y = canvas.height - padding - (accessories.b || 0) * each_px_measures_in_cm
         const draw_w = bakkie_width_cm * each_px_measures_in_cm
