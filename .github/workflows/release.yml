@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - '*'
+    branches:
+      - main
 
 concurrency:
   group: 'production'
