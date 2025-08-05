@@ -2588,5 +2588,21 @@
     "url": "https://norta.be/nl/ebikes/cargo/c-7050-my25",
     "frame_made_in": "Belgium",
     "assembled_in": "Belgium"
+  },
+  {
+    "id": "swift-origami",
+
+    "manufacturer": "Origami",
+    "model": "Swift",
+    "bike_type": "foldable",
+    "src": "origami-swift.png",
+    "bike_length_cm": 152,
+    "weight": 13,
+    "bike_length_percent": 0.914,
+    "left_margin_percent": 0.047,
+    "bottom_margin_percent": 0.048,
+    "url": "https://www.origamibicycles.com/shop/p/origami-swift",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
