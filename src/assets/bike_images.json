@@ -541,7 +541,7 @@
     "model": "Abound LR",
     "bike_type": "longtail",
     "src": "aventon_abound_lr.png",
-    "bike_length_cm": 183,
+    "bike_length_cm": 190,
     "weight": 40,
     "bike_length_percent": 0.916,
     "left_margin_percent": 0.041,
@@ -2620,5 +2620,22 @@
     "url": "https://www.brompton.com/p/1601/c-line-12-speed-uk",
     "frame_made_in": "uk",
     "assembled_in": "uk"
+  },
+
+  {
+    "id": "abound-sr-aventon",
+
+    "manufacturer": "Aventon",
+    "model": "Abound SR",
+    "bike_type": "midtail",
+    "src": "abound-sr.png",
+    "bike_length_cm": 175,
+    "weight": 36,
+    "bike_length_percent": 0.836,
+    "left_margin_percent": 0.082,
+    "bottom_margin_percent": 0.064,
+    "url": "https://www.aventon.com/products/abound-sr-ebike?variant=43919137538243",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
