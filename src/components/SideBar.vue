@@ -6,8 +6,6 @@
         <LangSelect class="_lang_select" />
       </div>
 
-      <button class="_closeSidebar" @click="$emit('closeSidebar')">&#x2190;</button>
-
       <BikesListInSidebar
         :bikes="bikes"
         :enabled_bikes="enabled_bikes"
@@ -142,12 +140,12 @@
       <Credits />
     </div>
 
-    <div class="_addMissingBike">
+    <!-- <div class="_addMissingBike">
       <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
         ＋
         {{ $t('message.add_a_bike') }}
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>

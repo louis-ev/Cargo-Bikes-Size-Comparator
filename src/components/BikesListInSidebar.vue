@@ -40,7 +40,6 @@
 
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br />
-
       <div class="_addMissingBike">
         <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
           ＋

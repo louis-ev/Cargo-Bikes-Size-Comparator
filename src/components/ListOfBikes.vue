@@ -497,6 +497,9 @@ export default {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  min-height: 20ch;
 }
 </style>

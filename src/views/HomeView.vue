@@ -32,7 +32,7 @@
           :bikes_adjustments="bikes_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
           :show_sidebar="show_sidebar"
-          @openSidebar="show_sidebar = true"
+          @toggleSidebar="toggleSidebar"
         />
       </transition>
     </div>

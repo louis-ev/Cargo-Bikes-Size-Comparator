@@ -16,7 +16,7 @@
     </transition>
 
     <div class="_canvasOptions">
-      <button class="_openSidebar" v-if="!show_sidebar" @click="$emit('openSidebar')">
+      <button class="_openSidebar" @click="$emit('toggleSidebar')">
         <svg
           width="20px"
           height="20px"
