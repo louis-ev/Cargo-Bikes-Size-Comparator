@@ -179,28 +179,6 @@ input {
   font-size: inherit;
 }
 
-._search {
-  position: relative;
-  // margin-bottom: 1rem;
-
-  input {
-    width: 100%;
-    padding-right: 1.7em;
-  }
-
-  button {
-    position: absolute;
-    right: 0.1rem;
-    top: 0.1rem;
-    line-height: 0;
-    width: 1.5em;
-    height: 1.5em;
-    padding: 0;
-
-    background-color: var(--color-accent);
-  }
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1);

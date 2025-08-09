@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="_topBar">
-      <div>
+      <div class="_search">
         <SearchField v-model="search_str" />
       </div>
 
@@ -322,11 +322,6 @@ export default {
   padding: 1rem 0;
 }
 
-._search {
-  input {
-    width: 35ch;
-  }
-}
 ._bikeTypeFilter {
   display: flex;
   flex-flow: row wrap;
@@ -500,5 +495,10 @@ export default {
   padding: 1rem;
   text-align: center;
   min-height: 20ch;
+}
+
+._search {
+  flex: 0 1 30ch;
+  // min-width: 30ch;
 }
 </style>
