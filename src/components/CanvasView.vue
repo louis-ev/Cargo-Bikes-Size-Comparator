@@ -16,7 +16,11 @@
     </transition>
 
     <div class="_canvasOptions">
-      <button class="_openSidebar" @click="$emit('toggleSidebar')">
+      <button
+        class="_openSidebar"
+        :class="{ 'is--active': show_sidebar }"
+        @click="$emit('toggleSidebar')"
+      >
         <svg
           width="20px"
           height="20px"
@@ -24,9 +28,9 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
-          <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
-          <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 18L20 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
 
@@ -754,12 +758,18 @@ canvas {
 }
 
 ._openSidebar {
-  background-color: var(--color-accent);
-  color: var(--color-text);
   width: 2rem;
   height: 2rem;
   line-height: 0;
   border-radius: 0.5rem;
+
+  background-color: var(--color-text);
+  color: white;
+
+  &.is--active {
+    background-color: var(--color-accent);
+    color: black;
+  }
 }
 
 ._previewBikeWrapper {

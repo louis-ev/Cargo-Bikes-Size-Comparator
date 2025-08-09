@@ -11,10 +11,7 @@
     </div>
     <div class="_topBar">
       <div>
-        <div class="_search">
-          <input type="text" v-model="search_str" :placeholder="$t('message.search_placeholder')" />
-          <button type="button" v-if="search_str.length > 0" @click="search_str = ''">×</button>
-        </div>
+        <SearchField v-model="search_str" />
       </div>
 
       <div class="_bikeTypeFilter">
@@ -117,6 +114,7 @@ const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
 
 import Credits from './Credits.vue'
 import LangSelect from '@/components/LangSelect.vue'
+import SearchField from '@/components/SearchField.vue'
 
 export default {
   props: {
@@ -124,7 +122,8 @@ export default {
   },
   components: {
     Credits,
-    LangSelect
+    LangSelect,
+    SearchField
   },
   data() {
     return {
