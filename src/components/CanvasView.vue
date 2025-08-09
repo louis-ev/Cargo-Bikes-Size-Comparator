@@ -95,7 +95,7 @@
         &nbsp;{{ $t('message.show_regular_bike_silhouette') }}
       </label>
 
-      <transition-group name="fade_fast">
+      <transition-group name="scale">
         <button
           type="button"
           class="_activeBike"
@@ -109,7 +109,7 @@
           <span class="_activeBike--name">
             <BikeName :bike="bike" :show_length="false" />
           </span>
-          <span class="_activeBike--remove">–</span>
+          <span class="_activeBike--remove">×</span>
         </button>
       </transition-group>
     </div>
@@ -812,14 +812,16 @@ canvas {
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
-  padding-bottom: 0.05rem;
+  padding-bottom: 0.2rem;
   flex: 0 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-weight: 600;
+
+  // line-height: 0.7;
+  font-weight: 400;
   border: 1px solid var(--color-text);
   // background-color: var(--color-text);
   // color: var(--color-background);
