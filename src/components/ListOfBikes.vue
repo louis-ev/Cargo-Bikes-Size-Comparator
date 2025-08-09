@@ -91,12 +91,18 @@
       <transition name="comparebtn" mode="out-in">
         <button
           v-if="selected_bikes.length > 0"
-          :key="'s-' + selected_bikes.length"
+          :key="'compare-button'"
           data-color="important"
           data-size="big"
           @click="startComparison"
         >
-          {{ $t('message.compare_bikes', { count: selected_bikes.length }) }}
+          {{ compareBikesText.prefix }}
+          <transition name="count" mode="out-in">
+            <span :key="selected_bikes.length" class="_count">
+              {{ selected_bikes.length }}
+            </span>
+          </transition>
+          {{ compareBikesText.suffix }}
         </button>
       </transition>
     </div>
@@ -163,6 +169,54 @@ export default {
           )
         )
       })
+    },
+    compareBikesText() {
+      const count = this.selected_bikes.length
+      const fullText = this.$t('message.compare_bikes', { count })
+
+      // The translation format is "Compare {count} bike | Compare {count} bikes"
+      // We need to split around the count number
+      const countStr = count.toString()
+
+      // Try to find the count in the text
+      const countIndex = fullText.indexOf(countStr)
+
+      if (countIndex !== -1) {
+        const beforeCount = fullText.substring(0, countIndex).trim()
+        const afterCount = fullText.substring(countIndex + countStr.length).trim()
+
+        return {
+          prefix: beforeCount,
+          suffix: afterCount
+        }
+      }
+
+      // Fallback: if we can't find the exact count, try to split by common patterns
+      const patterns = [
+        /(\d+)\s+bike/, // number followed by "bike"
+        /(\d+)\s+vélos/, // number followed by "vélos"
+        /(\d+)/ // any number
+      ]
+
+      for (const pattern of patterns) {
+        const match = fullText.match(pattern)
+        if (match) {
+          const matchedNumber = match[1]
+          const parts = fullText.split(matchedNumber)
+          if (parts.length === 2) {
+            return {
+              prefix: parts[0].trim(),
+              suffix: parts[1].trim()
+            }
+          }
+        }
+      }
+
+      // Final fallback: return the full text as prefix
+      return {
+        prefix: fullText,
+        suffix: ''
+      }
     }
   },
   methods: {
@@ -344,6 +398,7 @@ export default {
     object-fit: contain;
     object-position: center center;
     transform: scale(var(--scale-factor));
+    pointer-events: none;
   }
 
   ._bikeType {
@@ -411,7 +466,30 @@ export default {
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
+
+    ._count {
+      display: inline-block;
+      font-weight: bold;
+    }
   }
+}
+
+/* Count transition styles */
+.count-enter-active,
+.count-leave-active {
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.count-enter-from,
+.count-leave-to {
+  opacity: 0;
+  transform: scale(0.8) translateY(-10px);
+}
+
+.count-enter-to,
+.count-leave-from {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 ._addMissingBike {
