@@ -364,18 +364,19 @@
   },
   {
     "id": "yoonit",
-    "id_in_csv": "",
 
-    "manufacturer": "Yoonit",
-    "model": "",
+    "manufacturer": "YOONIT",
+    "model": "Mini",
     "bike_type": "shortjohn",
     "src": "yoonit-classic.png",
     "bike_length_percent": 0.725,
     "bike_length_cm": 177,
     "left_margin_percent": 0.138,
     "bottom_margin_percent": 0.137,
-    "frame_made_in": "germany",
-    "url": "https://www.yoonitbikes.com/"
+    "frame_made_in": "Netherlands",
+    "assembled_in": "Germany",
+    "frame_material": "CrMo",
+    "url": "https://minicargobike.com/en/yoonit-mini-cargobike/"
   },
   {
     "id": "multicharger2",
@@ -2657,7 +2658,7 @@
   {
     "id": "micro-yoonit",
 
-    "manufacturer": "Yoonit",
+    "manufacturer": "YOONIT",
     "model": "Micro",
     "bike_type": "shortjohn",
     "src": "yoonit-micro.png",
@@ -2668,7 +2669,7 @@
     "bottom_margin_percent": 0.164,
     "url": "https://minicargobike.com/en/shop/yoonit-micro/",
     "frame_made_in": "Netherlands",
-    "assembled_in": "",
+    "assembled_in": "Germany",
     "frame_material": "CrMo"
   }
 ]
