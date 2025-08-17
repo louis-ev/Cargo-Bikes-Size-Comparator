@@ -2688,5 +2688,19 @@
     "frame_made_in": "China",
     "assembled_in": "China",
     "show_frame_origin": false
+  },
+
+  {
+    "id": "go-1-velotric",
+    "manufacturer": "Velotric",
+    "model": "Go 1",
+    "bike_type": "midtail",
+    "src": "velotric-go-1.png",
+    "bike_length_cm": 170,
+    "weight": 29,
+    "bike_length_percent": 0.77,
+    "left_margin_percent": 0.12,
+    "bottom_margin_percent": 0.11,
+    "url": "https://www.velotricbike.com/products/velotric-go-1-e-bike"
   }
 ]
