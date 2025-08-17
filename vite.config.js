@@ -13,5 +13,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: ''
+  base: '',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Ensure we're using the modern Sass API
+        api: 'modern-compiler'
+      }
+    }
+  }
 })

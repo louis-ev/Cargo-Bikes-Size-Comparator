@@ -298,12 +298,8 @@ export default {
   ._credits {
   }
 
-  :deep {
-    ._madeBy {
-      hr {
-        max-width: 2ch;
-      }
-    }
+  :deep(._madeBy hr) {
+    max-width: 2ch;
   }
 }
 ._lang_select {
