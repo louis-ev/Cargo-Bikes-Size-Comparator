@@ -2671,5 +2671,22 @@
     "frame_made_in": "Netherlands",
     "assembled_in": "Germany",
     "frame_material": "CrMo"
+  },
+  {
+    "id": "elast-20-crescent",
+
+    "manufacturer": "Crescent",
+    "model": "Elast 20",
+    "bike_type": "longtail",
+    "src": "crescent-elast-20.png",
+    "bike_length_cm": 195,
+    "weight": 44,
+    "bike_length_percent": 0.964,
+    "left_margin_percent": 0.017,
+    "bottom_margin_percent": 0.132,
+    "url": "https://www.crescent.se/elast-5-vxl.html",
+    "frame_made_in": "China",
+    "assembled_in": "China",
+    "show_frame_origin": false
   }
 ]
