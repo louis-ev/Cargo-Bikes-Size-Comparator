@@ -171,8 +171,7 @@ const i18n = createI18n({
         by_mail: `by email, click on the following address and validate the sending of a generated email containing the code above (and add the image as an attachment if it's stored on your computer) -> `,
         or: 'or,',
         copy_this_code_to_clipboard: `Click to copy this code to the clipboard`,
-        or_copy_post: `then post this information on social media platforms and tag me: <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev on Mastodon</a>,
-        <a href="https://x.com/timetofirstfix" target="_blank">{'@'}timetofirstfix on Twitter/X</a>, or <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits on Reddit</a>
+        or_copy_post: `then post this information on social media platforms and tag me: <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev on Mastodon</a> or <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits on Reddit</a>
 `,
         on: 'on',
         thank_you: 'Thank you!',
@@ -341,8 +340,7 @@ const i18n = createI18n({
         the_following_code_contains_all_the_informations: `Le code ci-dessous contient toutes les informations que vous avez fournies.`,
         by_mail: `par mail, en cliquant sur l'adresse ci-dessous, vous n'aurez plus qu'à valider l'envoi
         d'un mail généré contenant le code ci-dessus (et ajoutez l’image en pièce jointe si elle est stockée sur votre ordinateur) -> `,
-        or_copy_post: `et poster le code dans un commentaire en me mentionnant : <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev sur Mastodon</a>,
-        <a href="https://x.com/timetofirstfix" target="_blank">{'@'}timetofirstfix sur Twitter/X</a>, ou <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits sur Reddit</a>
+        or_copy_post: `et poster le code dans un commentaire en me mentionnant : <a href="https://piaille.fr/{'@'}louis_ev" target="_blank">{'@'}louis_ev sur Mastodon</a> ou <a href="https://www.reddit.com/user/luddits/" target="_blank">{'@'}luddits sur Reddit</a>
 `,
         or: 'ou alors ',
         copy_this_code_to_clipboard: `cliquer pour copier vers le presse-papier`,
