@@ -505,6 +505,7 @@
     "left_margin_percent": 0.072,
     "bottom_margin_percent": 0.26661,
     "frame_made_in": "france",
+    "assembled_in": "France",
     "url": "https://www.etnicycles.com/"
   },
   {
@@ -2702,5 +2703,21 @@
     "left_margin_percent": 0.12,
     "bottom_margin_percent": 0.11,
     "url": "https://www.velotricbike.com/products/velotric-go-1-e-bike"
+  },
+  {
+    "id": "belle-île-etni-cycles",
+
+    "manufacturer": "ETNI Cycles",
+    "model": "Belle-Île",
+    "bike_type": "longtail",
+    "src": "etni-belle-ile.png",
+    "bike_length_cm": 185,
+    "weight": 36,
+    "bike_length_percent": 0.913,
+    "left_margin_percent": 0.042,
+    "bottom_margin_percent": 0.069,
+    "url": "https://www.etnicycles.com/product-page/compact-longtail-etni-belle-ile/",
+    "frame_made_in": "France",
+    "assembled_in": "France"
   }
 ]
