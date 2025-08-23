@@ -2719,5 +2719,21 @@
     "url": "https://www.etnicycles.com/product-page/compact-longtail-etni-belle-ile/",
     "frame_made_in": "France",
     "assembled_in": "France"
+  },
+  {
+    "id": "ritmic-jumbo-elwing",
+
+    "manufacturer": "Elwing",
+    "model": "Ritmic Jumbo",
+    "bike_type": "longtail",
+    "src": "elwing-ritmic-jumbo.png",
+    "bike_length_cm": 191,
+    "weight": 32,
+    "bike_length_percent": 0.906,
+    "left_margin_percent": 0.075,
+    "bottom_margin_percent": 0.142,
+    "url": "https://elwing.co/products/ritmic-jumbo-velo-electrique-cargo-longtail",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
