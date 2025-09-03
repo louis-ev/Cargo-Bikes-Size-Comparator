@@ -73,7 +73,12 @@ export default {
     }
   },
   created() {},
-  async mounted() {},
+  async mounted() {
+    // check if URL has a ?addbike=true query to open the add bike modal right away on loading
+    if (Object.prototype.hasOwnProperty.call(this.$route.query, 'addbike')) {
+      this.add_bike_modal = true
+    }
+  },
   beforeUnmount() {},
   watch: {},
   computed: {
