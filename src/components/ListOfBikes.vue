@@ -6,7 +6,7 @@
         <LangSelect class="_lang_select" />
       </div>
       <div class="_credits">
-        <Credits />
+        <Credits @showAddBikeModal="$emit('showAddBikeModal')" />
       </div>
     </div>
     <div class="_topBar">
