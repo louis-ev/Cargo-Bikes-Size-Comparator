@@ -2767,5 +2767,21 @@
     "url": "https://metz-fahrradfabrik.de/products/e-packr",
     "frame_made_in": "Germany",
     "assembled_in": "Germany"
+  },
+  {
+    "id": "air-20-a-dece-oasis",
+
+    "manufacturer": "A Dece Oasis",
+    "model": "Air 20",
+    "bike_type": "foldable",
+    "src": "a-dece-oasis-air-20-pro-2.png",
+    "bike_length_cm": 156,
+    "weight": 17,
+    "bike_length_percent": 0.835,
+    "left_margin_percent": 0.071,
+    "bottom_margin_percent": 0.246,
+    "url": "https://www.adoebike.com/products/ado-air-20",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
