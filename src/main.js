@@ -58,7 +58,13 @@ app.config.globalProperties.$bikeMatchesSearch = (bike, searchStr) => {
   if (!searchStr) return true
   const normalize = app.config.globalProperties.$normalizeStringForSearch
   const needle = normalize(searchStr)
-  return normalize(bike.model).includes(needle) || normalize(bike.manufacturer).includes(needle)
+  const haystacks = [
+    normalize(bike.model),
+    normalize(bike.manufacturer),
+    normalize(`${bike.manufacturer} ${bike.model}`),
+    normalize(`${bike.model} ${bike.manufacturer}`)
+  ]
+  return haystacks.some((h) => h.includes(needle))
 }
 
 app.config.globalProperties.$filterBikesBySearch = (bikes, searchStr) => {
