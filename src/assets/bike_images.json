@@ -2798,5 +2798,21 @@
     "url": "https://yubabikes.eu/product/mini-boda-boda/",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "verge-x11-tern",
+
+    "manufacturer": "Tern",
+    "model": "Verge X11",
+    "bike_type": "foldable",
+    "src": "tern-verge-x11.png",
+    "bike_length_cm": 154,
+    "weight": 11,
+    "bike_length_percent": 0.879,
+    "left_margin_percent": 0.059,
+    "bottom_margin_percent": 0.05,
+    "url": "https://www.ternbicycles.com/us/bikes/472/verge-x11",
+    "frame_made_in": "Taiwan",
+    "assembled_in": "Taiwan"
   }
 ]
