@@ -25,7 +25,7 @@
           @click="onBikeTypeFilterClick(bike_type)"
         >
           {{ $t(`bike_types.${bike_type}`) }}
-          ({{ count }})
+          <span class="_count">{{ count }}</span>
         </button>
       </div>
     </div>
@@ -340,8 +340,17 @@ export default {
 
     &.is--active {
       z-index: 10;
-      font-weight: bold;
+      // font-weight: bold;
       transform: rotate(-10deg) scale(1.4);
+    }
+
+    ._count {
+      font-size: 0.6rem;
+      font-weight: normal;
+      border-radius: 0.5rem;
+      padding: 0;
+      font-weight: bold;
+      // background-color: rgba(50, 50, 50, 0.2);
     }
   }
 }
