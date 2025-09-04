@@ -2783,5 +2783,20 @@
     "url": "https://www.adoebike.com/products/ado-air-20",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "mini-boda-boda-yuba",
+    "manufacturer": "Yuba",
+    "model": "mini Boda Boda",
+    "bike_type": "other",
+    "src": "yuba-mini-boda-boda.png",
+    "bike_length_cm": 174,
+    "weight": 29,
+    "bike_length_percent": 0.702,
+    "left_margin_percent": 0.133,
+    "bottom_margin_percent": 0.292,
+    "url": "https://yubabikes.eu/product/mini-boda-boda/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
