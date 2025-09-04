@@ -2814,5 +2814,21 @@
     "url": "https://www.ternbicycles.com/us/bikes/472/verge-x11",
     "frame_made_in": "Taiwan",
     "assembled_in": "Taiwan"
+  },
+  {
+    "id": "cabby-c380-gazelle",
+
+    "manufacturer": "Gazelle",
+    "model": "Cabby C380",
+    "bike_type": "longtail",
+    "src": "gazelle-cabby-c380.png",
+    "bike_length_cm": 196,
+    "weight": 33,
+    "bike_length_percent": 0.8369999999999999,
+    "left_margin_percent": 0.074,
+    "bottom_margin_percent": 0.174,
+    "url": "https://www.gazelle.de/ebikes/cabby-c380",
+    "frame_made_in": "",
+    "assembled_in": "Niederlande"
   }
 ]
