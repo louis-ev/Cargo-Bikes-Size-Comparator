@@ -20,7 +20,7 @@ const i18n = createI18n({
 
         or_click_on_bikes: 'or click on one of these {count} bikes:',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Click on one of these {count} bikes to compare their size:',
+          'Click on this bike to compare its size: | Click on one of these {count} bikes to compare their size:',
         bikes_selected: '{count} bike selected | {count} bikes selected',
         bikes_not_selected: '{count} bike to compare | {count} bikes to compare',
         unselect: 'Unselect this bike',
@@ -198,7 +198,7 @@ const i18n = createI18n({
         picture_from: 'Image envoyée par',
         or_click_on_bikes: 'ou cliquez sur un de ces {count} vélos :',
         click_on_bikes_in_this_list_to_compare_their_size:
-          'Cliquez sur un de ces {count} vélos pour comparer leur taille :',
+          'Cliquez sur ce vélo pour comparer sa taille : | Cliquez sur un de ces {count} vélos pour comparer leur taille :',
         bikes_selected: '{count} vélo sélectionné | {count} vélos sélectionnés',
         bikes_not_selected: '{count} vélo disponible | {count} vélos disponibles',
         unselect: 'Déselectionner ce vélo',
