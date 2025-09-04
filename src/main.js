@@ -54,6 +54,17 @@ app.config.globalProperties.$normalizeStringForSearch = (str) => {
     .replace(/[\u0300-\u036f]/g, '')
 }
 
+app.config.globalProperties.$bikeMatchesSearch = (bike, searchStr) => {
+  if (!searchStr) return true
+  const normalize = app.config.globalProperties.$normalizeStringForSearch
+  const needle = normalize(searchStr)
+  return normalize(bike.model).includes(needle) || normalize(bike.manufacturer).includes(needle)
+}
+
+app.config.globalProperties.$filterBikesBySearch = (bikes, searchStr) => {
+  return bikes.filter((bike) => app.config.globalProperties.$bikeMatchesSearch(bike, searchStr))
+}
+
 app.use(VueMatomo, {
   host: 'https://sv.louiseveillard.com',
   siteId: 1,

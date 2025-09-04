@@ -112,17 +112,7 @@ export default {
   watch: {},
   computed: {
     filtered_bikes() {
-      return this.bikes.filter((bike) => {
-        if (!this.search_str) return true
-        return (
-          this.$normalizeStringForSearch(bike.model).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          ) ||
-          this.$normalizeStringForSearch(bike.manufacturer).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          )
-        )
-      })
+      return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
     filtered_not_enabled_bikes() {
       return this.filtered_bikes.slice().filter((i) => !this.enabled_bikes.includes(i))

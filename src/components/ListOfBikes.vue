@@ -157,17 +157,7 @@ export default {
       )
     },
     filtered_bikes_with_search() {
-      return this.bikes.filter((bike) => {
-        if (!this.search_str) return true
-        return (
-          this.$normalizeStringForSearch(bike.model).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          ) ||
-          this.$normalizeStringForSearch(bike.manufacturer).includes(
-            this.$normalizeStringForSearch(this.search_str)
-          )
-        )
-      })
+      return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
     compareBikesText() {
       const count = this.selected_bikes.length
