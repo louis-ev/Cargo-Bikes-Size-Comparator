@@ -673,14 +673,14 @@
     "id_in_csv": "Yuba/Kombi",
 
     "manufacturer": "Yuba",
-    "model": "Kombi E5",
+    "model": "Kombi",
     "bike_type": "longtail",
     "src": "yuba-ekombi.png",
     "bike_length_percent": 0.746,
     "bike_length_cm": 192,
     "left_margin_percent": 0.102,
     "bottom_margin_percent": 0.133,
-    "url": "https://yubabikes.com/cargobikestore/kombi-e5/"
+    "url": "https://yubabikes.com/product/kombi/"
   },
   {
     "id": "yuba-mundo",
