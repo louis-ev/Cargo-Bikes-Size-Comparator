@@ -292,7 +292,7 @@ export default {
       return manufacturers.slice(0, 10)
     },
     new_bike_recap() {
-      const id = (this.model + ' ' + this.manufacturer).toLowerCase().replace(/ /g, '-')
+      const id = (this.manufacturer + ' ' + this.model).toLowerCase().replace(/ /g, '-')
       const manufacturer = this.manufacturer
       const model = this.model
       const src = this.imageUrl
