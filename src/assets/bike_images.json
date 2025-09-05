@@ -2830,5 +2830,21 @@
     "url": "https://www.gazelle.de/ebikes/cabby-c380",
     "frame_made_in": "",
     "assembled_in": "Niederlande"
+  },
+  {
+    "id": "tern-nbd",
+
+    "manufacturer": "Tern",
+    "model": "NBD",
+    "bike_type": "midtail",
+    "src": "tern-nbd.png",
+    "bike_length_cm": 163,
+    "weight": 23,
+    "bike_length_percent": 0.842,
+    "left_margin_percent": 0.088,
+    "bottom_margin_percent": 0.051,
+    "url": "https://www.ternbicycles.com/en/bikes/471/nbd",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
