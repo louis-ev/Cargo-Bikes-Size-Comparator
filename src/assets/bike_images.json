@@ -2788,7 +2788,7 @@
     "id": "mini-boda-boda-yuba",
     "manufacturer": "Yuba",
     "model": "mini Boda Boda",
-    "bike_type": "other",
+    "bike_type": "midtail",
     "src": "yuba-mini-boda-boda.png",
     "bike_length_cm": 174,
     "weight": 29,
