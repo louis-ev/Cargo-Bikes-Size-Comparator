@@ -1747,7 +1747,22 @@
     "url": "https://www.cubebikes.fr/48663-cargo-hybrid.html",
     "frame_made_in": ""
   },
-
+  {
+    "id": "cube-cargo-hybrid-comfort-pro-family",
+    
+    "manufacturer": "Cube",
+    "model": "Cargo Hybrid Comfort Pro Family 800 (2026)",
+    "bike_type": "longjohn",
+    "src": "cube-cargo-comfort-pro-family-800.png",
+    "bike_length_cm": 261,
+    "weight": 49,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
+    "url": "https://www.cube.eu/de-de/cube-cargo-hybrid-comfort-pro-family-800-oatgrey-n-reflex",
+    "frame_made_in": "",
+    "assembled_in": ""
+  },
   {
     "id": "fub-2w-winora",
 
