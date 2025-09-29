@@ -1749,7 +1749,7 @@
   },
   {
     "id": "cube-cargo-hybrid-comfort-pro-family",
-    
+
     "manufacturer": "Cube",
     "model": "Cargo Hybrid Comfort Pro Family 800 (2026)",
     "bike_type": "longjohn",
@@ -2861,5 +2861,37 @@
     "url": "https://www.ternbicycles.com/en/bikes/471/nbd",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "avnson-e-fold",
+
+    "manufacturer": "Avnson",
+    "model": "e-FOLD",
+    "bike_type": "longjohn/foldable",
+    "src": "avnson-efold.png",
+    "bike_length_cm": 236,
+    "weight": 31,
+    "bike_length_percent": 0.98,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0.206,
+    "url": "https://foldride.com/e-fold",
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
+  },
+  {
+    "id": "avnson-e-fold-mini",
+
+    "manufacturer": "Avnson",
+    "model": "e-FOLD Mini",
+    "bike_type": "longjohn/foldable",
+    "src": "avnson-efold-mini.png",
+    "bike_length_cm": 221,
+    "weight": 30,
+    "bike_length_percent": 0.949,
+    "left_margin_percent": 0.036,
+    "bottom_margin_percent": 0.174,
+    "url": "https://foldride.com/e-fold-mini",
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
   }
 ]
