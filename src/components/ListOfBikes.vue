@@ -344,10 +344,14 @@ export default {
 }
 ._bikesPreview {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
   padding: 1rem 0;
   width: 100%;
+
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }
 ._bikePreview {
   position: relative;
@@ -403,11 +407,11 @@ export default {
 
   ._bikeLabel {
     position: absolute;
-    --margin: 0.25rem;
+    --margin: 0rem;
     bottom: var(--margin);
     left: var(--margin);
     right: var(--margin);
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     font-weight: initial;
     text-transform: initial;
