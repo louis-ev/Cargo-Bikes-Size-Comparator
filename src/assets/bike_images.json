@@ -2893,5 +2893,21 @@
     "url": "https://foldride.com/e-fold-mini",
     "frame_made_in": "Germany",
     "assembled_in": "Germany"
+  },
+  {
+    "id": "bigtetu-cargo-bikes-bigtetu-v1",
+
+    "manufacturer": "BigTetu Cargo Bikes",
+    "model": "BigTetu V1",
+    "bike_type": "longjohn",
+    "src": "bigtetu-profildroit.png",
+    "bike_length_cm": 275,
+    "weight": 40,
+    "bike_length_percent": 0.824,
+    "left_margin_percent": 0.104,
+    "bottom_margin_percent": 0.2215,
+    "url": "https://www.bigtetu-cargo.com",
+    "frame_made_in": "France",
+    "assembled_in": "France"
   }
 ]
