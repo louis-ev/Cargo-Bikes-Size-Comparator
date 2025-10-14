@@ -2,7 +2,9 @@
   <div class="_sidebar">
     <div class="_sidebar--content">
       <div class="_banner">
-        <h1 v-html="$t('message.title')" />
+        <router-link to="/" @click="goHome" class="clickable-title">
+          <h1 v-html="$t('message.title')" />
+        </router-link>
         <LangSelect class="_lang_select" />
       </div>
 
@@ -198,7 +200,14 @@ export default {
   beforeUnmount() {},
   watch: {},
   computed: {},
-  methods: {}
+  methods: {
+    goHome() {
+      // Reset the application state by clearing bikes query parameter
+      this.$root.resetBikes()
+      // Navigate to home route
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -256,9 +265,21 @@ export default {
   flex: 0 0 auto;
 }
 
-h1 {
-  font-weight: 800;
-  margin-bottom: 0;
+.clickable-title {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-text-secondary);
+    background-color: transparent;
+  }
+
+  h1 {
+    font-weight: 800;
+    margin-bottom: 0;
+  }
 }
 
 ._advancedOptions {
