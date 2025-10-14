@@ -2909,5 +2909,23 @@
     "url": "https://www.bigtetu-cargo.com",
     "frame_made_in": "France",
     "assembled_in": "France"
+  },
+  {
+    "id": "super-mini-super-bicycles",
+
+    "manufacturer": "Super Bicycles",
+    "model": "Super Mini",
+    "bike_type": "shortjohn",
+    "src": "super-mini.png",
+    "bike_length_cm": 150,
+    "weight": "",
+    "bike_length_percent": 0.849,
+    "left_margin_percent": 0.061,
+    "bottom_margin_percent": 0.204,
+    "url": "https://super-bicycles.com/en-eu/products/super-mini?variant=50825772171606",
+    "frame_material": "6061 aluminium",
+    "frame_made_in": "",
+    "assembled_in": "",
+    "comment_en": "Super compact cargo bike with front and rear racks. Max cargo capacity: 72kg. Total weight capacity: 175kg."
   }
 ]
