@@ -66,13 +66,14 @@
             type="number"
             class=""
             ref="human_silhouette_height_input"
-            v-model.number="new_human_silhouette_height"
+            v-model.number="display_new_human_silhouette_height"
+            @input="updateNewHeightFromDisplay"
           />
-          cm
+          {{ use_inches ? 'in' : 'cm' }}
           <button
             type="button"
             class=""
-            v-if="new_human_silhouette_height !== human_silhouette_height"
+            v-if="display_new_human_silhouette_height !== display_human_silhouette_height"
             @click="updateHeight"
           >
             ✓
@@ -153,7 +154,8 @@ export default {
     grid_step: Number,
     bikes_adjustments: Object,
     canvas_image_style_outline: Boolean,
-    show_sidebar: Boolean
+    show_sidebar: Boolean,
+    use_inches: Boolean
   },
   components: {},
   data() {
@@ -224,6 +226,9 @@ export default {
         this.showBikes()
       },
       deep: true
+    },
+    use_inches() {
+      this.showBikes()
     }
   },
   computed: {
@@ -251,6 +256,18 @@ export default {
       if (this.enabled_bikes.find((bike) => bike.id === this.$preview_bike.id)) return
       const previewed_bike = this.bikes.find((bike) => bike.id === this.$preview_bike.id)
       return this.getBikeFullImage(previewed_bike)
+    },
+    display_human_silhouette_height() {
+      if (this.use_inches) {
+        return Math.round((this.human_silhouette_height / 2.54) * 10) / 10 // Convert cm to inches, round to 1 decimal
+      }
+      return this.human_silhouette_height
+    },
+    display_new_human_silhouette_height() {
+      if (this.use_inches) {
+        return Math.round((this.new_human_silhouette_height / 2.54) * 10) / 10 // Convert cm to inches, round to 1 decimal
+      }
+      return this.new_human_silhouette_height
     }
   },
   methods: {
@@ -452,54 +469,80 @@ export default {
     drawGrid(ctx, canvas, padding, each_px_measures_in_cm) {
       const line_0_color = '#999'
       const line_color = '#cccccc'
-
       const text_0_fill_color = '#999'
       const text_fill_color = getComputedStyle(document.documentElement).getPropertyValue(
         '--color-text-secondary'
       )
 
-      let cm_count = 0
-      const step = this.grid_step
+      // Determine grid configuration
+      const config = this.use_inches
+        ? { step: 4, unit_label: 'in', step_px: each_px_measures_in_cm * 2.54 * 4 }
+        : {
+            step: this.grid_step,
+            unit_label: 'cm',
+            step_px: each_px_measures_in_cm * this.grid_step
+          }
 
-      for (let x = padding; x <= canvas.width; x += each_px_measures_in_cm * step) {
-        if (cm_count === 0) ctx.strokeStyle = line_0_color
-        else ctx.strokeStyle = line_color
+      // Helper function to draw grid lines and labels
+      const drawGridLines = (start, end, step_px, isVertical) => {
+        let unit_count = 0
+        const isDescending = start > end
 
-        ctx.beginPath()
-        ctx.moveTo(x, 0)
-        ctx.lineTo(x, canvas.height)
-        ctx.stroke()
+        for (
+          let pos = start;
+          isDescending ? pos >= end : pos <= end;
+          pos += isDescending ? -step_px : step_px
+        ) {
+          const isZero = unit_count === 0
+          ctx.strokeStyle = isZero ? line_0_color : line_color
+          ctx.fillStyle = isZero ? text_0_fill_color : text_fill_color
 
-        const font_size = (canvas.parentNode.clientHeight / 80) * window.devicePixelRatio * 1
-        ctx.font = `${font_size}px Inter`
+          // Draw line
+          ctx.beginPath()
+          if (isVertical) {
+            ctx.moveTo(pos, 0)
+            ctx.lineTo(pos, canvas.height)
+          } else {
+            ctx.moveTo(0, pos)
+            ctx.lineTo(canvas.width, pos)
+          }
+          ctx.stroke()
 
-        if (cm_count === 0) ctx.fillStyle = text_0_fill_color
-        else ctx.fillStyle = text_fill_color
+          // Draw label
+          const font_size = (canvas.parentNode.clientHeight / 80) * window.devicePixelRatio
+          ctx.font = `${font_size}px Inter`
 
-        ctx.fillText(cm_count, x + 4, canvas.height - 4)
-        cm_count += step
+          if (isVertical) {
+            const labelText =
+              unit_count === 0 ? `${unit_count} ${config.unit_label}` : `${unit_count}`
+            ctx.fillText(labelText, pos + 4, canvas.height - 4)
+          } else {
+            const labelText =
+              unit_count === 0 ? `${unit_count} ${config.unit_label}` : `${unit_count}`
+            ctx.fillText(labelText, 4, pos - 4)
+          }
+
+          unit_count += config.step
+        }
       }
 
-      cm_count = 0
-      for (let y = canvas.height - padding; y >= 0; y -= each_px_measures_in_cm * step) {
-        if (cm_count === 0) ctx.strokeStyle = line_0_color
-        else ctx.strokeStyle = line_color
+      // Draw vertical lines
+      drawGridLines(padding, canvas.width, config.step_px, true)
 
-        ctx.beginPath()
-        ctx.moveTo(0, y)
-        ctx.lineTo(canvas.width, y)
-        ctx.stroke()
-
-        if (cm_count === 0) ctx.fillStyle = text_0_fill_color
-        else ctx.fillStyle = text_fill_color
-
-        ctx.fillText(cm_count, 0 + 4, y - 4)
-
-        cm_count += step
-      }
+      // Draw horizontal lines
+      drawGridLines(canvas.height - padding, 0, config.step_px, false)
     },
     updateHeight() {
       this.human_silhouette_height = this.new_human_silhouette_height
+    },
+    updateNewHeightFromDisplay(event) {
+      const displayValue = parseFloat(event.target.value)
+      if (this.use_inches) {
+        // Convert inches to cm
+        this.new_human_silhouette_height = Math.round(displayValue * 2.54 * 10) / 10
+      } else {
+        this.new_human_silhouette_height = displayValue
+      }
     },
     async drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm) {
       // ctx.fillStyle = 'white'

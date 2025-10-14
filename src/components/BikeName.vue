@@ -16,11 +16,10 @@
       <br />
       <small>
         <template v-if="bike.bike_length_cm">
-          {{ bike.bike_length_cm }}cm
-          <template v-if="$i18n.locale === 'en'">
-            –
+          <template v-if="useInches">
             {{ getLengthInInches(bike.bike_length_cm) }} inches
           </template>
+          <template v-else> {{ bike.bike_length_cm }}cm </template>
         </template>
         <template v-else>{{ $t('message.missing_length_information') }}</template>
       </small>
@@ -44,7 +43,11 @@ export default {
   mounted() {},
   beforeUnmount() {},
   watch: {},
-  computed: {},
+  computed: {
+    useInches() {
+      return this.$root.useInches
+    }
+  },
   methods: {
     unicodeFlag(country) {
       country = country.toLowerCase()

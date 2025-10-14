@@ -18,6 +18,7 @@ export default {
       local_bikes: [],
       bakfiets_measures: [],
       longtails_measures: [],
+      useInches: localStorage.getItem('useInches') === 'true',
 
       draw_rect_in_canvas: {
         active: false,
@@ -67,6 +68,9 @@ export default {
         localStorage.setItem('accessories_in_canvas', JSON.stringify(this.accessories_in_canvas))
       },
       deep: true
+    },
+    useInches() {
+      localStorage.setItem('useInches', this.useInches)
     }
   },
   computed: {

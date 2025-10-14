@@ -187,6 +187,9 @@ export default {
     hasAdjustments() {
       const adjustments = this.bikes_adjustments[this.bike.id] || {}
       return Object.keys(adjustments).length > 0
+    },
+    useInches() {
+      return this.$root.useInches
     }
   },
   methods: {
@@ -209,7 +212,24 @@ export default {
     getMeasurements(bike) {
       return Object.entries(bike._measurements)
         .reduce((acc, [k, v]) => {
-          if (k && k !== '\r' && v && v !== '\r') acc.push(`${k}: ${v}`)
+          if (k && k !== '\r' && v && v !== '\r') {
+            // Check if this measurement is likely in cm and should be converted
+            const isLengthMeasurement =
+              k.toLowerCase().includes('length') ||
+              k.toLowerCase().includes('width') ||
+              k.toLowerCase().includes('height') ||
+              k.toLowerCase().includes('wheelbase') ||
+              k.toLowerCase().includes('reach') ||
+              k.toLowerCase().includes('stack')
+
+            if (isLengthMeasurement && this.useInches && !isNaN(parseFloat(v))) {
+              const valueInCm = parseFloat(v)
+              const valueInInches = (valueInCm / 2.54).toFixed(1)
+              acc.push(`${k}: ${valueInInches} in`)
+            } else {
+              acc.push(`${k}: ${v}`)
+            }
+          }
           return acc
         }, [])
         .join('<br>')

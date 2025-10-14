@@ -89,7 +89,10 @@ const i18n = createI18n({
         close: 'close',
         measure: 'Measure',
         technical_infos: 'Technical infos',
-        compare_bikes: 'Compare {count} bike | Compare {count} bikes'
+        compare_bikes: 'Compare {count} bike | Compare {count} bikes',
+        unit: 'Unit',
+        centimeters: 'centimeters',
+        inches: 'inches'
       },
       bike_types: {
         by_category: 'By category:',
@@ -266,7 +269,10 @@ const i18n = createI18n({
         close: 'fermer',
         measure: 'Mesurer',
         technical_infos: 'Informations techniques',
-        compare_bikes: 'Comparer {count} vélo | Comparer {count} vélos'
+        compare_bikes: 'Comparer {count} vélo | Comparer {count} vélos',
+        unit: 'Unité',
+        centimeters: 'centimètres',
+        inches: 'pouces'
       },
       bike_types: {
         by_category: 'Par catégorie&nbsp;:',

@@ -32,6 +32,7 @@
           :bikes_adjustments="bikes_adjustments"
           :canvas_image_style_outline="canvas_image_style_outline"
           :show_sidebar="show_sidebar"
+          :use_inches="$root.useInches"
           @toggleSidebar="toggleSidebar"
         />
       </transition>
