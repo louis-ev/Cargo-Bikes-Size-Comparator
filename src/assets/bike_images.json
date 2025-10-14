@@ -2927,5 +2927,22 @@
     "frame_made_in": "",
     "assembled_in": "",
     "comment_en": "Super compact cargo bike with front and rear racks. Max cargo capacity: 72kg. Total weight capacity: 175kg."
+  },
+  {
+    "id": "urban-arrow-breeze",
+
+    "manufacturer": "Urban Arrow",
+    "model": "Breeze",
+    "bike_type": "longjohn",
+    "src": "urbanarrow-breeze.png",
+    "bike_length_cm": 196,
+    "weight": 35,
+    "bike_length_percent": 0.742,
+    "left_margin_percent": 0.135,
+    "bottom_margin_percent": 0.26,
+    "url": "https://www.urbanarrow.com/family-bikes/breeze",
+    "frame_material": "aluminium",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
