@@ -75,8 +75,11 @@ export default {
       return Number((length_cm / 2.54).toFixed(1))
     },
     bikeStyleColor(bike_type) {
+      // Handle bike_type with slash-separated values
+      const types = bike_type ? bike_type.split('/') : []
+      const firstType = types[0]
       return {
-        backgroundColor: this.$root.$bikeTypesColors[bike_type]
+        backgroundColor: this.$root.$bikeTypesColors[firstType]
       }
     }
   }

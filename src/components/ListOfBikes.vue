@@ -63,11 +63,15 @@
             />
           </div>
         </transition>
-        <div
-          class="_bikeType"
-          :style="bikeStyleColor(bike.bike_type)"
-          :title="bike.bike_type"
-        ></div>
+        <div class="_bikeTypes">
+          <div
+            v-for="bike_type in getBikeTypes(bike)"
+            :key="bike_type"
+            class="_bikeType"
+            :style="bikeStyleColor(bike_type)"
+            :title="bike_type"
+          ></div>
+        </div>
         <span class="_bikeLabel">
           <BikeName :bike="bike" />
         </span>
@@ -142,19 +146,26 @@ export default {
   computed: {
     all_bike_types() {
       const bike_types = this.bikes.reduce((acc, bike) => {
-        if (!acc[bike.bike_type]) {
-          acc[bike.bike_type] = 1
-        } else {
-          acc[bike.bike_type]++
-        }
+        // Handle both old single bike_type and new bike_types array
+        let types = bike.bike_type ? bike.bike_type.split('/') : []
+        types.forEach((type) => {
+          if (!acc[type]) {
+            acc[type] = 1
+          } else {
+            acc[type]++
+          }
+        })
         return acc
       }, {})
       return Object.entries(bike_types).sort((a, b) => b[1] - a[1])
     },
     filtered_bikes() {
-      return this.filtered_bikes_with_search.filter(
-        (bike) => !this.bike_type_filter || bike.bike_type === this.bike_type_filter
-      )
+      return this.filtered_bikes_with_search.filter((bike) => {
+        if (!this.bike_type_filter) return true
+        // Handle bike_type with slash-separated values
+        const types = bike.bike_type ? bike.bike_type.split('/') : []
+        return types.includes(this.bike_type_filter)
+      })
     },
     filtered_bikes_with_search() {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
@@ -233,6 +244,10 @@ export default {
       } else {
         this.bike_type_filter = bike_type
       }
+    },
+    getBikeTypes(bike) {
+      // Handle bike_type with slash-separated values
+      return bike.bike_type ? bike.bike_type.split('/') : []
     },
     bikeStyleColor(bike_type) {
       return {
@@ -392,14 +407,19 @@ export default {
     pointer-events: none;
   }
 
-  ._bikeType {
+  ._bikeTypes {
     position: absolute;
     top: 0;
     right: 0;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  ._bikeType {
     width: 0.75rem;
     height: 0.75rem;
-    // padding: 0.25rem 0.5rem;
-    margin: 1rem;
     border-radius: 0.5rem;
     font-size: 0.8rem;
     background-color: rgba(0, 0, 0, 0.8);
