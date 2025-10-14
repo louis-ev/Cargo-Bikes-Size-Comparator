@@ -277,7 +277,6 @@ export default {
   }
 
   h1 {
-    font-weight: 800;
     margin-bottom: 0;
   }
 }

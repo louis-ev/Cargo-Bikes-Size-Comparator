@@ -279,9 +279,7 @@ export default {
   }
 
   h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    max-width: 17ch;
+    max-width: 16ch;
     // margin: 0 1rem;
   }
 
