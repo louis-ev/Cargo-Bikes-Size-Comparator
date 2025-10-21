@@ -233,7 +233,7 @@ export default {
     startComparison() {
       this.$router.push({
         query: {
-          bikes: JSON.stringify(this.selected_bikes)
+          bikes: this.selected_bikes.join(',')
         }
       })
     },
