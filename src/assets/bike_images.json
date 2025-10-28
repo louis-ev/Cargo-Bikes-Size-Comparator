@@ -3010,5 +3010,22 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU"
+  },
+  {
+    "id": "cicli-adriatica-longtail-24",
+
+    "manufacturer": "Cicli adriatica",
+    "model": "Longtail 24",
+    "bike_type": "longtail",
+    "src": "cicli-adriatica-longtail.png",
+    "bike_length_cm": 203,
+    "weight": 32,
+    "bike_length_percent": 0.91,
+    "left_margin_percent": 0.05,
+    "bottom_margin_percent": 0.04,
+    "url": "https://www.cicliadriatica.it/en/e-bike/",
+    "frame_made_in": "China",
+    "show_frame_origin": false,
+    "assembled_in": "Italy"
   }
 ]
