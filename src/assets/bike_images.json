@@ -3027,5 +3027,21 @@
     "frame_made_in": "China",
     "show_frame_origin": false,
     "assembled_in": "Italy"
+  },
+  {
+    "id": "mylulubike-lulu-bike-sport",
+
+    "manufacturer": "MyLuluBike",
+    "model": "Lulu Bike Sport",
+    "bike_type": "foldable",
+    "src": "my-lulu-bike-sport.png",
+    "bike_length_cm": 155,
+    "weight": 14,
+    "bike_length_percent": 0.974,
+    "left_margin_percent": 0.018,
+    "bottom_margin_percent": 0.129,
+    "url": "https://mylulubike.com/",
+    "frame_made_in": "France",
+    "assembled_in": "France"
   }
 ]
