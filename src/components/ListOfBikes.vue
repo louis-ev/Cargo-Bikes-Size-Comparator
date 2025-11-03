@@ -69,7 +69,7 @@
             :key="bike_type"
             class="_bikeType"
             :style="bikeStyleColor(bike_type)"
-            :title="bike_type"
+            :title="$t(`bike_types.${bike_type}`)"
           ></div>
         </div>
         <span class="_bikeLabel">
