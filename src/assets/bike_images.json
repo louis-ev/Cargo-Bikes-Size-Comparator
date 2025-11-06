@@ -3059,5 +3059,21 @@
     "url": "https://www.oklo.bike/produit/mini-velo-cargo-simplix/",
     "frame_made_in": "",
     "assembled_in": "France"
+  },
+  {
+    "id": "cube-compact-hybrid",
+
+    "manufacturer": "Cube",
+    "model": "Compact Hybrid",
+    "bike_type": "other",
+    "src": "cube-compact-hybrid.png",
+    "bike_length_cm": 160,
+    "weight": 24,
+    "bike_length_percent": 0.982,
+    "left_margin_percent": 0.018,
+    "bottom_margin_percent": 0.029,
+    "url": "https://www.cube.eu/fr-fr/cube-compact-hybrid-comfort-545-skylightblue-n-blue/118200",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
