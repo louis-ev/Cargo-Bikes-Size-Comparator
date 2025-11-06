@@ -253,7 +253,7 @@
     "left_margin_percent": 0.079,
     "bottom_margin_percent": 0.113,
     "url": "https://www.yubaeurope.com/en/bikes-add-ons/fastrack/fastrack",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "tern-gsd",
@@ -725,7 +725,7 @@
     "left_margin_percent": 0.102,
     "bottom_margin_percent": 0.133,
     "url": "https://yubabikes.com/product/kombi/",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "yuba-mundo",
@@ -741,7 +741,7 @@
     "left_margin_percent": 0.078,
     "bottom_margin_percent": 0.182,
     "url": "https://yubabikes.com/cargobikestore/yuba-mundo/",
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "yuba-supercargo",
@@ -756,7 +756,7 @@
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.187,
     "url": "https://yubabikes.fr/cargobikestore/supercargo/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-lt",
@@ -1159,7 +1159,7 @@
     "left_margin_percent": 0.073,
     "bottom_margin_percent": 0.079,
     "url": "https://www.yubaeurope.com/bikes-add-ons/spicy-curry/spicy-curry",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "hazay-family",
@@ -2515,7 +2515,7 @@
     "url": "https://yubabikes.eu/product/boda-boda/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "pelican-bicicapace",
@@ -2993,7 +2993,7 @@
     "url": "https://yubabikes.eu/product/mini-boda-boda/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "verge-x11-tern",
