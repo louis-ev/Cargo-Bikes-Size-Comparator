@@ -3075,5 +3075,21 @@
     "url": "https://www.cube.eu/fr-fr/cube-compact-hybrid-comfort-545-skylightblue-n-blue/118200",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "velo-de-ville-foldy",
+
+    "manufacturer": "VELO DE VILLE",
+    "model": "Foldy",
+    "bike_type": "foldable",
+    "src": "velo-de-ville-foldy.png",
+    "bike_length_cm": 147,
+    "weight": "",
+    "bike_length_percent": 0.963,
+    "left_margin_percent": 0.026,
+    "bottom_margin_percent": 0.018,
+    "url": "https://www.velo-de-ville.com/fr/FOLDY/026-F",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
