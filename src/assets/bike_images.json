@@ -1512,7 +1512,7 @@
     "frame_made_in": "China",
     "frame_material": "al",
     "show_frame_origin": false,
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "biporteur-unikle",
@@ -2020,7 +2020,7 @@
     "bottom_margin_percent": 0.07,
     "url": "https://www.radioflyer.com/products/flyer-via",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["24", "20"]
   },
   {
     "id": "via-pro-flyer-by-radio-flyer",
@@ -2035,7 +2035,7 @@
     "bottom_margin_percent": 0.07,
     "url": "https://www.radioflyer.com/products/flyer-via-pro",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["24", "20"]
   },
   {
     "id": "flex-flyer-by-radio-flyer",
@@ -2050,7 +2050,7 @@
     "bottom_margin_percent": 0.075,
     "url": "https://www.radioflyer.com/products/flyer-flex?variant=50130369708305",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["24", "20"]
   },
   {
     "id": "kid-plus-eco-triporteur",
@@ -3165,7 +3165,7 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "freeporteur-st",
@@ -3182,7 +3182,7 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "freeporteur-cargo",
@@ -3198,7 +3198,7 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "cicli-adriatica-longtail-24",
