@@ -398,7 +398,7 @@
     "assembled_in": "Germany",
     "frame_material": "CrMo",
     "url": "https://minicargobike.com/en/yoonit-mini-cargobike/",
-    "wheel_size": []
+    "wheel_size": [ "16", "18" ]
   },
   {
     "id": "multicharger2",
@@ -2860,7 +2860,7 @@
     "frame_made_in": "Netherlands",
     "assembled_in": "Germany",
     "frame_material": "CrMo",
-    "wheel_size": []
+    "wheel_size": [ "18" ]
   },
   {
     "id": "elast-20-crescent",
@@ -3149,7 +3149,7 @@
     "url": "https://www.zagbikes.com/le-velo",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": [ "20", "24" ]
   },
   {
     "id": "freeporteur-lt",
