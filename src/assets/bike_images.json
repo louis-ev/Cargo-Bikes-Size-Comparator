@@ -847,7 +847,7 @@
     "url": "https://www.bicicapace.com/bikes/justlong/",
     "frame_made_in": "italy",
     "assembled_in": "italy",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "justlong-bicicapace",
@@ -864,7 +864,7 @@
     "url": "https://www.bicicapace.com/bikes/justlong/",
     "frame_made_in": "italy",
     "assembled_in": "italy",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "jean-achielle",
@@ -1039,7 +1039,7 @@
     "left_margin_percent": 0.048,
     "bottom_margin_percent": 0.069,
     "url": "https://bennobikes.com/e-bikes/boost/",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "shorty-urban-arrow",
@@ -1084,7 +1084,7 @@
     "left_margin_percent": 0.0935,
     "bottom_margin_percent": 0.11,
     "url": "https://bennobikes.com/e-bikes/remidemi/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "gravit-city-e-hase-bikes",
@@ -1202,7 +1202,7 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.205,
     "url": "https://bennobikes.com/e-bikes/46er/",
-    "wheel_size": []
+    "wheel_size": ["26", "24"]
   },
   {
     "id": "cargobike-elian-cycles",
@@ -1988,7 +1988,7 @@
     "bottom_margin_percent": 0.018,
     "url": "https://bennobikes.com/e-bikes/remidemi-xl/",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-one-tenways",
@@ -2533,7 +2533,7 @@
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
     "assembled_in": "italy",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "classic-bicicapace",
@@ -2550,7 +2550,7 @@
     "url": "https://www.bicicapace.com/de/bikes/classic/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "gsd-p10-tern",
