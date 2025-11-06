@@ -1467,7 +1467,7 @@
     "url": "https://www.babboe.fr/city",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website.",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "nihola-cargo-xl-pro",
@@ -1586,7 +1586,7 @@
     "bottom_margin_percent": 0.226,
     "url": "https://www.bergamont.com/fr/fr/product/bergamont-e-cargoville-lt-expert?article=290945047",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "veloe-multi",
@@ -1802,7 +1802,7 @@
     "url": "https://www.babboecargobike.com/curve",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website.",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "super-mighty-super-bicycles",
@@ -2394,7 +2394,7 @@
     "url": "https://brompton.com/g-line",
     "frame_made_in": "uk",
     "assembled_in": "uk",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "vektron-tern",
@@ -2584,7 +2584,7 @@
     "url": "https://www.bergamont.com/it/it/heavy_load_easy_riding",
     "frame_made_in": "Germany",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "rally-wombat",
@@ -2809,7 +2809,7 @@
     "url": "https://www.brompton.com/p/1601/c-line-12-speed-uk",
     "frame_made_in": "uk",
     "assembled_in": "uk",
-    "wheel_size": []
+    "wheel_size": ["16"]
   },
   {
     "id": "abound-sr-aventon",
