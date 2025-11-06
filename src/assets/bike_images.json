@@ -147,7 +147,7 @@
     "frame_made_in": "france",
     "frame_material": "aluminium",
     "url": "https://www.douze-cycles.com/velos-cargos/heta",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "bullit",
@@ -771,7 +771,7 @@
     "left_margin_percent": 0.005,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/lt",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "cargo-v2-600",
@@ -786,7 +786,7 @@
     "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/v2",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "cargo-v2-800",
@@ -801,7 +801,7 @@
     "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/v2",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "galian-cycles-le-formidable",
@@ -1261,7 +1261,7 @@
     "left_margin_percent": 0.024,
     "bottom_margin_percent": 0.121,
     "url": "https://www.douze-cycles.com",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "fs200-life-family-plus-ca-go",
