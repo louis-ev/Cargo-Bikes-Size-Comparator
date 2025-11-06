@@ -186,7 +186,7 @@
     "frame_material": "6061-T6 aluminum",
     "url": "https://urbanarrow.com/family-bikes/familynext/",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "urbanarrow",
@@ -208,7 +208,7 @@
         "url": "https://servicecenter.urbanarrow.com/en/what-are-the-dimensions-and-use-specifications-of-the-urban-arrow-family-cargo-bike"
       }
     ],
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "decathlon-r500e",
@@ -1054,7 +1054,7 @@
     "bottom_margin_percent": 0.321,
     "url": "https://servicecenter.urbanarrow.com/en/urban-arrow-shorty-specifications",
     "frame_material": "6061-T6 aluminum",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "e-dolly-maxdrive-600wh-dolly-bikes",
@@ -1741,7 +1741,7 @@
     "bottom_margin_percent": 0.239,
     "url": "https://urbanarrow.com/business-bikes/cargo/",
     "frame_material": "6061-T6 aluminum",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "transporter2-65-riese-und-müller",
@@ -2260,7 +2260,7 @@
     "bottom_margin_percent": 0.227,
     "url": "https://urbanarrow.com/business-bikes/cargo",
     "frame_material": "6061-T6 aluminum",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "tender-1000-urban-arrow",
@@ -2276,7 +2276,7 @@
     "bottom_margin_percent": 0.292,
     "url": "https://urbanarrow.com/business-bikes/tender/",
     "frame_material": "6061-T6 aluminum",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "tender-1500-urban-arrow",
@@ -2291,7 +2291,7 @@
     "bottom_margin_percent": 0.12,
     "url": "https://urbanarrow.com/business-bikes/tender/",
     "frame_material": "6061-T6 aluminum",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "big-dummy-surly",
@@ -3132,7 +3132,7 @@
     "frame_material": "aluminium",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "zag",
