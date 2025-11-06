@@ -536,7 +536,7 @@
     "frame_made_in": "france",
     "assembled_in": "France",
     "url": "https://www.etnicycles.com/",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "filibus",
@@ -1217,7 +1217,7 @@
     "bottom_margin_percent": 0.177,
     "url": "https://www.eliancycles.com/",
     "frame_made_in": "Netherlands",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "unicorn-ten:07",
@@ -1421,7 +1421,7 @@
     "left_margin_percent": 0.055,
     "bottom_margin_percent": 0.2,
     "url": "https://elwing.co/products/yuvy-2-compact-cargo",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "husky-e-laplandar",
@@ -2065,7 +2065,7 @@
     "bottom_margin_percent": 0.061,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/34-triporteur-velo-cargo-kid-.html",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "eco-kid-2-eco-triporteur",
@@ -2081,7 +2081,7 @@
     "bottom_margin_percent": 0.229,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/31-triporteur-velo-cargo-eco-kid-2.html",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "bakfiets-lang-cykelfabriken",
@@ -2177,7 +2177,7 @@
     "bottom_margin_percent": 0.241,
     "url": "https://www.estarli.co.uk/products/longtail-cargo?variant=44016872194275",
     "frame_made_in": "uk",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "compact-ecargo-portus",
@@ -2360,7 +2360,7 @@
     "url": "https://engwe-bikes.com/collections/cargo/products/le20",
     "frame_made_in": "China",
     "assembled_in": "China",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "hopper-xtracycle",
@@ -2446,7 +2446,7 @@
     "url": "https://www.emog-bikes.com/produit/velo-cargo-electrique-e-city-2/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "f900e-box-decathlon",
@@ -2498,7 +2498,7 @@
     "url": "https://eovolt.com/products/afternoon-pro",
     "frame_made_in": "China",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "boda-boda-v4-yuba",
@@ -2909,7 +2909,7 @@
     "url": "https://www.etnicycles.com/product-page/compact-longtail-etni-belle-ile/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "ritmic-jumbo-elwing",
@@ -2926,7 +2926,7 @@
     "url": "https://elwing.co/products/ritmic-jumbo-velo-electrique-cargo-longtail",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "e-packr-xl-metz",
