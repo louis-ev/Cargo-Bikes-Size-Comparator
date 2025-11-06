@@ -268,7 +268,7 @@
     "left_margin_percent": 0.109,
     "bottom_margin_percent": 0.096,
     "url": "https://www.ternbicycles.com/en/bikes/472/gsd",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "omnium-minimax",
@@ -675,7 +675,7 @@
     "left_margin_percent": 0.123,
     "bottom_margin_percent": 0.119,
     "url": "https://www.ternbicycles.com/en/bikes/472/hsd",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "tern-quick-haul",
@@ -690,7 +690,7 @@
     "left_margin_percent": 0.02,
     "bottom_margin_percent": 0.056,
     "url": "https://www.ternbicycles.com/en/bikes/471/quick-haul",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "vello-suburban",
@@ -1680,7 +1680,7 @@
     "bottom_margin_percent": 0.072,
     "url": "https://www.ternbicycles.com/fr/bikes/471/quick-haul-long",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "ever-e-day-bike-friday",
@@ -1726,7 +1726,7 @@
     "bottom_margin_percent": 0.103,
     "url": "https://www.ternbicycles.com/en/bikes/471/orox",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["27.5", "29"]
   },
   {
     "id": "urban-arrow-cargo-xl",
@@ -2004,7 +2004,7 @@
     "bottom_margin_percent": 0.269,
     "url": "https://www.tenways.com/fr/products/cargo-one",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "via-flyer-by-radio-flyer",
@@ -2411,7 +2411,7 @@
     "url": "https://www.ternbicycles.com/en/bikes/472/vektron",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "baggy-shwette",
@@ -2567,7 +2567,7 @@
     "url": "https://www.ternbicycles.com/en/bikes/473/gsd-p10#tech_specs",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "bergamont-ebike-lj70-bergamont",
@@ -2636,7 +2636,7 @@
     "url": "https://www.tenways.com/fr/products/longtail",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "all-packa-bike-friday",
@@ -3010,7 +3010,7 @@
     "url": "https://www.ternbicycles.com/us/bikes/472/verge-x11",
     "frame_made_in": "Taiwan",
     "assembled_in": "Taiwan",
-    "wheel_size": []
+    "wheel_size": ["22"]
   },
   {
     "id": "cabby-c380-gazelle",
@@ -3044,7 +3044,7 @@
     "url": "https://www.ternbicycles.com/en/bikes/471/nbd",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "avnson-e-fold",
