@@ -1100,7 +1100,7 @@
     "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
     "frame_made_in": "Germany",
     "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm.",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "hase-bikes-pino-cargo",
@@ -1116,7 +1116,7 @@
     "url": "https://konfigurator.hasebikes.com/en/bike/pino-cargo/",
     "frame_made_in": "Germany",
     "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm.",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "fr8-workcycles",
@@ -1174,7 +1174,7 @@
     "bottom_margin_percent": 0.228,
     "url": "https://hazaybikes.com/en/product/hazay-family/",
     "frame_made_in": "Poland",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "bullitt-x-larry-vs-harry",
@@ -1771,7 +1771,7 @@
     "bottom_margin_percent": 0.19,
     "url": "https://www.hovsco.com/products/hovcart-cargo-ebike",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "nc-1-nicolai",
@@ -1832,7 +1832,7 @@
     "bottom_margin_percent": 0.247,
     "url": "https://gaya.bike/products/velo-3-places",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "le-compact-gaya",
@@ -1847,7 +1847,7 @@
     "bottom_margin_percent": 0.239,
     "url": "https://gaya.bike/products/le-compact",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-hybrid-cube",
@@ -2161,7 +2161,7 @@
     "bottom_margin_percent": 0.25,
     "url": "https://www.gazelle.nl/elektrische-fietsen/makki-travel",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "ecargo-longtail-estarli",
@@ -3027,7 +3027,7 @@
     "url": "https://www.gazelle.de/ebikes/cabby-c380",
     "frame_made_in": "",
     "assembled_in": "Niederlande",
-    "wheel_size": []
+    "wheel_size": ["26", "24"]
   },
   {
     "id": "tern-nbd",
