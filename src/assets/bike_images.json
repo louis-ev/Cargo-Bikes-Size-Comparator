@@ -567,7 +567,7 @@
     "left_margin_percent": 0.0,
     "bottom_margin_percent": 0.234,
     "url": "https://www.aventon.com/products/abound-ebike?variant=42319517515971",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "abound-lr-aventon",
@@ -583,7 +583,7 @@
     "url": "https://www.aventon.com/products/abound-lr-ebike?variant=44189242818755",
     "frame_made_in": "Taiwan",
     "assembled_in": "China",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "radwagon-5",
@@ -879,7 +879,7 @@
     "bottom_margin_percent": 0.226,
     "url": "https://www.achielle.be/fr/2023/jean/",
     "frame_made_in": "belgium",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "family-longtail-bike43",
@@ -2758,7 +2758,7 @@
     "url": "https://add-bike.com/velo-cargo-electrique-u-cargo/",
     "frame_made_in": "Poland",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "c-7050-norta",
@@ -2825,7 +2825,7 @@
     "url": "https://www.aventon.com/products/abound-sr-ebike?variant=43919137538243",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "macine-multi-ktm",
@@ -2977,7 +2977,7 @@
     "url": "https://www.adoebike.com/products/ado-air-20",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "mini-boda-boda-yuba",
@@ -3061,7 +3061,7 @@
     "url": "https://foldride.com/e-fold",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "avnson-e-fold-mini",
@@ -3078,7 +3078,7 @@
     "url": "https://foldride.com/e-fold-mini",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "bigtetu-cargo-bikes-bigtetu-v1",
