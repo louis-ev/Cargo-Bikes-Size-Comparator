@@ -487,7 +487,7 @@
     "left_margin_percent": 0.021,
     "bottom_margin_percent": 0.283,
     "url": "https://bunchbike.com/products/the-original-4-upgraded-electric-cargo-bike-for-families",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "cargo-classic",
@@ -894,7 +894,7 @@
     "bottom_margin_percent": 0.016,
     "url": "https://bike43.com/the-bike/",
     "frame_made_in": "europe",
-    "wheel_size": []
+    "wheel_size": ["24", "20"]
   },
   {
     "id": "fetch+-4-trek",
@@ -1025,7 +1025,7 @@
     "bottom_margin_percent": 0.122,
     "url": "https://www.bakfiets.nl/en-en/models/cargobike/long/classic",
     "frame_made_in": "Netherlands",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "boost-benno",
@@ -1292,7 +1292,7 @@
     "url": "https://bikefriday.com/product/bike-friday-haul-a-day-elite-cargo-bike/",
     "frame_made_in": "usa",
     "comment_en": "This bike is also sold as a 72\" (183cm) version with a shorter frame.",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-convercycle",
@@ -1695,7 +1695,7 @@
     "bottom_margin_percent": 0.049,
     "url": "https://bikefriday.com/product/ever-e-day-elite-cargo-bike-2023/",
     "frame_made_in": "USA",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "turbo-porto-specialized",
@@ -2481,7 +2481,7 @@
     "frame_made_in": "Portugal",
     "assembled_in": "France",
     "show_frame_origin": false,
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "afternoon-pro-eovolt",
@@ -2653,7 +2653,7 @@
     "url": "https://bikefriday.com/product/all-packa-bikepacking-bike/",
     "frame_made_in": "USA",
     "assembled_in": "USA",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "bike+-vello",
