@@ -223,7 +223,7 @@
     "left_margin_percent": 0.0375,
     "bottom_margin_percent": 0.072,
     "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "moustache-lundi-20-3",
@@ -1069,7 +1069,7 @@
     "bottom_margin_percent": 0.196,
     "url": "https://www.dolly-bikes.com/de-dolly-bakfiets/",
     "frame_made_in": "Netherlands",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "benno-remidemi",
@@ -1246,7 +1246,7 @@
     "bottom_margin_percent": 0.212,
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-famille-f900e-taupe/_/R-p-329211",
     "weight": 66,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "g4e-douze-cycles",
@@ -2463,7 +2463,7 @@
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-f900e-box-jaune/_/R-p-338408",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "nebula-1-brumaire",
