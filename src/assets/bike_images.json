@@ -283,7 +283,7 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.086,
     "url": "https://omniumcargo.com/mini-max/",
-    "wheel_size": []
+    "wheel_size": [ "700c", "29", "20" ]
   },
   {
     "id": "omnium-cargo",
@@ -298,7 +298,7 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.175,
     "url": "https://omniumcargo.com",
-    "wheel_size": []
+    "wheel_size": [ "700c", "29", "20" ]
   },
   {
     "id": "omnium-mini",
@@ -313,7 +313,7 @@
     "left_margin_percent": 0.037,
     "bottom_margin_percent": 0.066,
     "url": "https://omniumcargo.com/mini/",
-    "wheel_size": []
+    "wheel_size": [ "700c", "29", "20" ]
   },
   {
     "id": "lepetitporteur",
@@ -332,7 +332,7 @@
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "china",
-    "wheel_size": []
+    "wheel_size": [ "20" ]
   },
   {
     "id": "lepetitporteur-longtail",
@@ -351,7 +351,7 @@
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "china",
-    "wheel_size": []
+    "wheel_size": [ "20" ]
   },
   {
     "id": "nakamura",
@@ -1343,7 +1343,7 @@
     "show_frame_origin": false,
     "assembled_in": "France",
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France.",
-    "wheel_size": []
+    "wheel_size": [ "24" ]
   },
   {
     "id": "jean-II-jean-fourche",
@@ -1362,7 +1362,7 @@
     "show_frame_origin": false,
     "assembled_in": "France",
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France.",
-    "wheel_size": []
+    "wheel_size": [ "24" ]
   },
   {
     "id": "rfa-xtracycle",
@@ -2211,7 +2211,7 @@
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "China",
-    "wheel_size": []
+    "wheel_size": [ "20" ]
   },
   {
     "id": "cargoline-ht800-kettler",
