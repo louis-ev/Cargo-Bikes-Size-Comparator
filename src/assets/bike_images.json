@@ -92,7 +92,7 @@
     "show_frame_origin": false,
     "weight": 35.7,
     "url": "https://www.r-m.de/en-en/bikes/carrie/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "load75-rm",
@@ -111,7 +111,7 @@
     "frame_material": "aluminium",
     "show_frame_origin": false,
     "weight": 37.1,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "load60-rm",
@@ -130,7 +130,7 @@
     "frame_material": "aluminium",
     "show_frame_origin": false,
     "weight": 35.5,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "cargo-verso",
@@ -424,7 +424,7 @@
         "src": "rm-multicharger-2.jpeg"
       }
     ],
-    "wheel_size": []
+    "wheel_size": ["27.5"]
   },
   {
     "id": "multitinker",
@@ -440,7 +440,7 @@
     "bottom_margin_percent": 0.045,
     "weight": 35,
     "url": "https://www.r-m.de/fr/bikes/multitinker/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "packster70",
@@ -456,7 +456,7 @@
     "bottom_margin_percent": 0.238,
     "url": "https://www.r-m.de/fr/bikes/packster-70/",
     "weight": 35.5,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "packster2-70-ct-riese-und-müller",
@@ -472,7 +472,7 @@
     "url": "https://www.r-m.de/fr/bikes/packster2-70-ct/",
     "frame_made_in": "",
     "weight": 41.1,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "bunch-bike",
@@ -1756,7 +1756,7 @@
     "bottom_margin_percent": 0.082,
     "url": "https://www.r-m.de/en-gb/bikes/transporter2-65/",
     "weight": 45.2,
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "hovcart-hovsco",
