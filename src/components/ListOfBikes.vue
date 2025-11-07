@@ -20,8 +20,12 @@
           v-for="[bike_type, count] in all_bike_types"
           :key="bike_type"
           type="button"
-          :class="{ 'is--active': bike_type_filter === bike_type }"
+          :class="{
+            'is--active': bike_type_filter === bike_type,
+            'is--disabled': count === 0
+          }"
           :style="bikeStyleColor(bike_type)"
+          :disabled="count === 0"
           @click="onBikeTypeFilterClick(bike_type)"
         >
           {{ $t(`bike_types.${bike_type}`) }}
@@ -35,7 +39,11 @@
           v-for="[wheel_size, count] in all_wheel_sizes"
           :key="wheel_size"
           type="button"
-          :class="{ 'is--active': wheel_size_filter === wheel_size }"
+          :class="{
+            'is--active': wheel_size_filter === wheel_size,
+            'is--disabled': count === 0
+          }"
+          :disabled="count === 0"
           @click="onWheelSizeFilterClick(wheel_size)"
         >
           {{ wheel_size }}"
@@ -160,35 +168,71 @@ export default {
   watch: {},
   computed: {
     all_bike_types() {
-      const bike_types = this.bikes.reduce((acc, bike) => {
-        // Handle both old single bike_type and new bike_types array
+      // First, get all possible bike types from the entire dataset
+      const all_types = {}
+      this.bikes.forEach((bike) => {
         let types = bike.bike_type ? bike.bike_type.split('/') : []
         types.forEach((type) => {
-          if (!acc[type]) {
-            acc[type] = 1
-          } else {
-            acc[type]++
+          all_types[type] = 0
+        })
+      })
+
+      // Filter bikes based on wheel_size_filter and search
+      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+        // Apply wheel size filter if active
+        if (this.wheel_size_filter) {
+          if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+          if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+        }
+        return true
+      })
+
+      // Count bikes for each type
+      bikes_to_count.forEach((bike) => {
+        let types = bike.bike_type ? bike.bike_type.split('/') : []
+        types.forEach((type) => {
+          if (all_types[type] !== undefined) {
+            all_types[type]++
           }
         })
-        return acc
-      }, {})
-      return Object.entries(bike_types).sort((a, b) => b[1] - a[1])
+      })
+
+      return Object.entries(all_types).sort((a, b) => b[1] - a[1])
     },
     all_wheel_sizes() {
-      const wheel_sizes = this.bikes.reduce((acc, bike) => {
+      // First, get all possible wheel sizes from the entire dataset
+      const all_sizes = {}
+      this.bikes.forEach((bike) => {
         if (bike.wheel_size && bike.wheel_size.length > 0) {
           bike.wheel_size.forEach((size) => {
-            if (!acc[size]) {
-              acc[size] = 1
-            } else {
-              acc[size]++
+            all_sizes[size] = 0
+          })
+        }
+      })
+
+      // Filter bikes based on bike_type_filter and search
+      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+        // Apply bike type filter if active
+        if (this.bike_type_filter) {
+          const types = bike.bike_type ? bike.bike_type.split('/') : []
+          if (!types.includes(this.bike_type_filter)) return false
+        }
+        return true
+      })
+
+      // Count bikes for each wheel size
+      bikes_to_count.forEach((bike) => {
+        if (bike.wheel_size && bike.wheel_size.length > 0) {
+          bike.wheel_size.forEach((size) => {
+            if (all_sizes[size] !== undefined) {
+              all_sizes[size]++
             }
           })
         }
-        return acc
-      }, {})
+      })
+
       // Sort numerically for proper ordering
-      return Object.entries(wheel_sizes).sort((a, b) => {
+      return Object.entries(all_sizes).sort((a, b) => {
         const numA = parseFloat(a[0])
         const numB = parseFloat(b[0])
         if (!isNaN(numA) && !isNaN(numB)) {
@@ -388,8 +432,8 @@ export default {
     font-weight: normal;
     font-size: 0.8rem;
 
-    &:hover,
-    &:focus-visible {
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
       transform: rotate(-5deg) scale(1.2);
       z-index: 10;
       // background-color: white !important;
@@ -399,6 +443,12 @@ export default {
       z-index: 10;
       // font-weight: bold;
       transform: rotate(-10deg) scale(1.4);
+    }
+
+    &.is--disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      filter: grayscale(0.8);
     }
 
     ._count {
@@ -434,8 +484,8 @@ export default {
     border-radius: 0.25rem;
     transition: all 0.2s ease;
 
-    &:hover,
-    &:focus-visible {
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
       transform: scale(1.1);
       z-index: 10;
       background-color: rgba(200, 200, 200, 0.7);
@@ -446,6 +496,12 @@ export default {
       background-color: var(--color-accent);
       font-weight: bold;
       transform: scale(1.15);
+    }
+
+    &.is--disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      background-color: rgba(200, 200, 200, 0.2);
     }
 
     ._count {
