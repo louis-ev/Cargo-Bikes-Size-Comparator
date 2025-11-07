@@ -94,7 +94,8 @@ const i18n = createI18n({
         unit: 'Unit',
         centimeters: 'centimeters',
         inches: 'inches',
-        by_wheel_size: 'By wheel size:'
+        by_wheel_size: 'By wheel size:',
+        unknown_wheel_size: 'Unknown'
       },
       bike_types: {
         by_category: 'By category:',
@@ -276,7 +277,8 @@ const i18n = createI18n({
         unit: 'Unité',
         centimeters: 'centimètres',
         inches: 'pouces',
-        by_wheel_size: 'Par taille de roues :'
+        by_wheel_size: 'Par taille de roues :',
+        unknown_wheel_size: 'Inconnue'
       },
       bike_types: {
         by_category: 'Par catégorie&nbsp;:',

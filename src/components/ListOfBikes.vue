@@ -50,6 +50,18 @@
             {{ wheel_size }}"
             <span class="_count">{{ count }}</span>
           </button>
+          <button
+            v-if="unknown_wheel_size_count > 0"
+            type="button"
+            class="_unknownWheelSize"
+            :class="{
+              'is--active': wheel_size_filter === 'unknown'
+            }"
+            @click="onWheelSizeFilterClick('unknown')"
+          >
+            {{ $t('message.unknown_wheel_size') }}
+            <span class="_count">{{ unknown_wheel_size_count }}</span>
+          </button>
         </div>
       </div>
     </div>
@@ -183,8 +195,14 @@ export default {
       const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
         // Apply wheel size filter if active
         if (this.wheel_size_filter) {
-          if (!bike.wheel_size || bike.wheel_size.length === 0) return false
-          if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          if (this.wheel_size_filter === 'unknown') {
+            // Show only bikes without wheel size information
+            if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else {
+            // Show only bikes with the selected wheel size
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          }
         }
         return true
       })
@@ -243,6 +261,22 @@ export default {
         return a[0].localeCompare(b[0])
       })
     },
+    unknown_wheel_size_count() {
+      // Filter bikes based on bike_type_filter and search
+      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+        // Apply bike type filter if active
+        if (this.bike_type_filter) {
+          const types = bike.bike_type ? bike.bike_type.split('/') : []
+          if (!types.includes(this.bike_type_filter)) return false
+        }
+        return true
+      })
+
+      // Count bikes without wheel size information
+      return bikes_to_count.filter((bike) => {
+        return !bike.wheel_size || bike.wheel_size.length === 0
+      }).length
+    },
     filtered_bikes() {
       return this.filtered_bikes_with_search.filter((bike) => {
         // Bike type filter
@@ -253,8 +287,14 @@ export default {
 
         // Wheel size filter
         if (this.wheel_size_filter) {
-          if (!bike.wheel_size || bike.wheel_size.length === 0) return false
-          if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          if (this.wheel_size_filter === 'unknown') {
+            // Show only bikes without wheel size information
+            if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else {
+            // Show only bikes with the selected wheel size
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          }
         }
 
         return true
@@ -520,6 +560,21 @@ export default {
       font-size: 0.6rem;
       font-weight: bold;
       margin-left: 0.25rem;
+    }
+
+    &._unknownWheelSize {
+      background-color: rgba(150, 150, 150, 0.3);
+      font-style: italic;
+
+      &:hover:not(:disabled),
+      &:focus-visible:not(:disabled) {
+        background-color: rgba(150, 150, 150, 0.5);
+      }
+
+      &.is--active {
+        background-color: rgba(100, 100, 100, 0.7);
+        color: white;
+      }
     }
   }
 }
