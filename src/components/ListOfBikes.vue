@@ -47,7 +47,7 @@
             :disabled="count === 0"
             @click="onWheelSizeFilterClick(wheel_size)"
           >
-            {{ wheel_size }}"
+            {{ wheel_size }}{{ isInchesSize(wheel_size) ? '"' : '' }}
             <span class="_count">{{ count }}</span>
           </button>
           <button
@@ -384,6 +384,10 @@ export default {
       } else {
         this.wheel_size_filter = wheel_size
       }
+    },
+    isInchesSize(wheel_size) {
+      const num = parseFloat(wheel_size)
+      return !isNaN(num) && num >= 16 && num <= 29
     },
     getBikeTypes(bike) {
       // Handle bike_type with slash-separated values
