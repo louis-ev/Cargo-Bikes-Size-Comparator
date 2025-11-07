@@ -73,7 +73,7 @@
         "src": "muli-4.jpeg"
       }
     ],
-    "wheel_size": []
+    "wheel_size": ["16", "20"]
   },
   {
     "id": "carrie-rm",
@@ -170,7 +170,7 @@
         "src": "bullit.jpeg"
       }
     ],
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "urbanarrow-familynext",
@@ -238,7 +238,7 @@
     "left_margin_percent": 0.036,
     "bottom_margin_percent": 0.152,
     "url": "https://moustachebikes.com/fr/en/electric-bikes/lundi-20-cargo/lundi-20-cargo-3/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "yuba-fastrack",
@@ -366,7 +366,7 @@
     "left_margin_percent": 0.008,
     "bottom_margin_percent": 0.216,
     "url": "https://www.intersport.fr/vtc_electrique_adulte_crossover_longtail-nakamura-p-YF60WT~ANM/",
-    "wheel_size": []
+    "wheel_size": ["27.5", "24"]
   },
   {
     "id": "lovens",
@@ -381,7 +381,7 @@
     "left_margin_percent": 0.032,
     "bottom_margin_percent": 0.06,
     "url": "https://lovensbikes.com/fr/lovens-explorer-s75/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "yoonit",
@@ -952,7 +952,7 @@
     "left_margin_percent": 0.036000000000000004,
     "bottom_margin_percent": 0.21,
     "url": "https://lectricebikes.com/products/xpedition-single-battery",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "disabled": true,
@@ -967,7 +967,7 @@
     "left_margin_percent": 0.054,
     "bottom_margin_percent": 0.233,
     "url": "https://lectricebikes.com/products/lectric-one-long-range-ebike",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "everything-e-madsen-madsen",
@@ -981,7 +981,7 @@
     "left_margin_percent": 0.095,
     "bottom_margin_percent": 0.187,
     "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "stride-2-raleigh",
@@ -1145,7 +1145,7 @@
     "left_margin_percent": 0.053,
     "bottom_margin_percent": 0.056,
     "url": "https://www.momentum-biking.com/us/pakyak-eplus-2022",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "spicy-curry-yuba",
@@ -1188,7 +1188,7 @@
     "left_margin_percent": 0.13,
     "bottom_margin_percent": 0.144,
     "url": "https://www.larryvsharry.com/da/bullitx-build",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "46er-benno",
@@ -1482,7 +1482,7 @@
     "bottom_margin_percent": 0.15,
     "url": "https://www.nihola.fr/88387-triporteur-electrique-nihola-cargo-xl-pro-moteur-pedalier.html",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "equo-o2feel",
@@ -1496,7 +1496,7 @@
     "left_margin_percent": 0.071,
     "bottom_margin_percent": 0.059,
     "url": "https://www.o2feel.com/equo/",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "t2-fiido",
@@ -2128,7 +2128,7 @@
     "bottom_margin_percent": 0.204,
     "url": "https://monopole.cc/",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "monkeytail-bike-monkey-bike",
@@ -2343,7 +2343,7 @@
     "url": "https://lectricebikes.com/products/xpedition-dual-battery-blue?_pos=11&_sid=8dbcbb85c&_ss=r",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "engwe-le20-engwe",
@@ -2724,7 +2724,7 @@
     "url": "https://moustachebikes.com/fr/velos-electriques/lundi-20-cargo/lundi-20-cargo-5/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "packer-1-velotric",
@@ -2775,7 +2775,7 @@
     "url": "https://norta.be/nl/ebikes/cargo/c-7050-my25",
     "frame_made_in": "Belgium",
     "assembled_in": "Belgium",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "swift-origami",
@@ -2792,7 +2792,7 @@
     "url": "https://www.origamibicycles.com/shop/p/origami-swift",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "c-line-brompton",
@@ -2943,7 +2943,7 @@
     "url": "https://metz-fahrradfabrik.de/products/e-packr-xl-family-kit",
     "frame_made_in": "Germany",
     "assembled_in": "Germany ",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "e-packr-metz",
@@ -2960,7 +2960,7 @@
     "url": "https://metz-fahrradfabrik.de/products/e-packr",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "air-20-a-dece-oasis",
@@ -3233,7 +3233,7 @@
     "url": "https://mylulubike.com/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "oklo-simplix",
