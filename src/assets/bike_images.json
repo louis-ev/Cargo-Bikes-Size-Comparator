@@ -519,7 +519,7 @@
     "url": "https://www.oklo.bike/produit/velo-evo-longtail/",
     "frame_made_in": "europe",
     "frame_material": "CrMo",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "etnicycles-oleron",
@@ -630,7 +630,7 @@
     "bottom_margin_percent": 0.05,
     "frame_made_in": "france",
     "url": "https://www.robertbikes.fr/bob-velo-cargo-electrique",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "specialized-haul-st",
@@ -710,7 +710,7 @@
       "Titanium"
     ],
     "assembled_in": "Austria",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "yuba-kombi",
@@ -817,7 +817,7 @@
     "bottom_margin_percent": 0.19,
     "frame_made_in": "france",
     "url": "https://galiancycles.com/products/le-formidable",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "swoop-xtracycle",
@@ -1131,7 +1131,7 @@
     "bottom_margin_percent": 0.115,
     "url": "https://workcycles.com/product/workcycles-fr8-classic/",
     "frame_made_in": "Netherlands",
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "momentum-pakyak-e-plus",
@@ -1231,7 +1231,7 @@
     "left_margin_percent": 0.033,
     "bottom_margin_percent": 0.259,
     "url": "https://ten07.cc/products/unicorn-cargo-bike",
-    "wheel_size": []
+    "wheel_size": ["28", "20"]
   },
   {
     "id": "f900e-decathlon",
@@ -1407,7 +1407,7 @@
     "bottom_margin_percent": 0.071,
     "url": "https://tarranbikes.com/pages/t1-pro-e-cargo-bike",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "yuvy-2-elwing",
@@ -1436,7 +1436,8 @@
     "bottom_margin_percent": 0.075,
     "url": "https://www.laplandar.com/",
     "frame_made_in": "Denmark",
-    "wheel_size": []
+    "comment_en": "scooter tyre : 110/70 - 12 47S",
+    "wheel_size": ["scooter"]
   },
   {
     "id": "v.1-car.los",
@@ -1527,7 +1528,7 @@
     "bottom_margin_percent": 0.029,
     "url": "https://unikle.fr/le-biporteur/",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20", "27.5"]
   },
   {
     "id": "zed-robertbikes",
@@ -1542,7 +1543,7 @@
     "bottom_margin_percent": 0.076,
     "url": "https://www.robertbikes.fr/zed-velo-cargo-electrique-tout-terrain/",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "peugeot-e-longtail",
@@ -1603,7 +1604,7 @@
     "frame_made_in": "Italy",
     "assembled_in": "Italy",
     "comment_en": "100% Italian, from design to production.",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "veloe-multi-lungo",
@@ -1620,7 +1621,7 @@
     "frame_made_in": "Italy",
     "assembled_in": "Italy",
     "comment_en": "100% Italian, from design to production.",
-    "wheel_size": []
+    "wheel_size": ["24", "20"]
   },
   {
     "id": "biporteur-cycles-la-barquette",
@@ -1635,7 +1636,7 @@
     "bottom_margin_percent": 0.127,
     "url": "https://cycleslabarquette.com/velo-cargo-biporteur-2/",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "wonderwagen-neo-cannondale",
@@ -1817,7 +1818,7 @@
     "bottom_margin_percent": 0.164,
     "url": "https://super-bicycles.com/products/super-mighty",
     "frame_made_in": "",
-    "wheel_size": []
+      "wheel_size": ["16", "18"]
   },
   {
     "id": "le-cargo-gaya",
@@ -1894,7 +1895,7 @@
     "bottom_margin_percent": 0.125,
     "url": "https://www.winora.com/fr-fr/p/fub-2w-wwan1/",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "larrun-ultima-mobility",
@@ -1909,7 +1910,7 @@
     "bottom_margin_percent": 0.026000000000000002,
     "url": "https://ultima.dev/pages/larrun-longtail",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["28", "20"]
   },
   {
     "id": "multipath-cargo-compact-family-ultima-mobility",
@@ -1924,7 +1925,7 @@
     "bottom_margin_percent": 0.132,
     "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-family-cargo",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["28", "20"]
   },
   {
     "id": "multipath-cargo-compact-ultima-mobility",
@@ -1939,7 +1940,7 @@
     "bottom_margin_percent": 0.24,
     "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-cargo",
     "frame_made_in": "France",
-    "wheel_size": []
+    "wheel_size": ["28", "20"]
   },
   {
     "id": "loady-500-velo-de-ville",
@@ -1955,7 +1956,7 @@
     "weight": 25,
     "url": "",
     "frame_made_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "loady-900-velo-de-ville",
@@ -1972,7 +1973,7 @@
     "url": "https://www.velo-de-ville.com/fr/2025-loady-longtail",
     "frame_made_in": "",
     "assembled_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "remidemi-xl-benno",
@@ -2145,7 +2146,7 @@
     "url": "https://www.monkeybike.be/modellen-monkeytail",
     "show_frame_origin": false,
     "frame_made_in": "Hungary",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "makki-travel-gazelle",
@@ -2193,7 +2194,7 @@
     "bottom_margin_percent": 0.065,
     "url": "https://portus-cycles.de/bikes/compact-ecargo-bosch-ebike-system-2/",
     "frame_made_in": "Germany",
-    "wheel_size": []
+      "wheel_size": ["20", "27.5"]
   },
   {
     "id": "lepetitporteur-shorty",
@@ -2429,7 +2430,7 @@
     "frame_made_in": "Portugal",
     "assembled_in": "Portugal",
     "show_frame_origin": false,
-    "wheel_size": []
+    "wheel_size": ["20", "24"]
   },
   {
     "id": "e-city+-emog",
@@ -2602,7 +2603,7 @@
     "show_frame_origin": false,
     "frame_made_in": "China",
     "assembled_in": "Australia",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "wagon-wombaat",
@@ -2619,7 +2620,7 @@
     "url": "https://wombatbikes.com/products/wagon2-sport",
     "frame_made_in": "",
     "assembled_in": "Australia",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "duo-tenways",
@@ -2673,7 +2674,7 @@
       "Titanium"
     ],
     "assembled_in": "Austria",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-triobike",
@@ -3114,7 +3115,7 @@
     "frame_made_in": "",
     "assembled_in": "",
     "comment_en": "Super compact cargo bike with front and rear racks. Max cargo capacity: 72kg. Total weight capacity: 175kg.",
-    "wheel_size": []
+    "wheel_size": ["18"]
   },
   {
     "id": "urban-arrow-breeze",
@@ -3284,7 +3285,7 @@
     "url": "https://www.velo-de-ville.com/fr/FOLDY/026-F",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["16"]
   },
   {
     "id": "rad-power-bikes-radrunner-plus",
@@ -3301,6 +3302,6 @@
     "url": "https://www.radpowerbikes.com/products/radrunner-plus-electric-cargo-utility-bike",
     "frame_made_in": "China",
     "assembled_in": "China",
-    "wheel_size": []
+    "wheel_size": ["20"]
   }
 ]
