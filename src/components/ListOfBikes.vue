@@ -28,6 +28,20 @@
           <span class="_count">{{ count }}</span>
         </button>
       </div>
+
+      <div class="_wheelSizeFilter">
+        <span>{{ $t('message.by_wheel_size') }}</span>
+        <button
+          v-for="[wheel_size, count] in all_wheel_sizes"
+          :key="wheel_size"
+          type="button"
+          :class="{ 'is--active': wheel_size_filter === wheel_size }"
+          @click="onWheelSizeFilterClick(wheel_size)"
+        >
+          {{ wheel_size }}"
+          <span class="_count">{{ count }}</span>
+        </button>
+      </div>
     </div>
 
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
@@ -134,7 +148,8 @@ export default {
       search_str: '',
       selected_bikes: [],
       bike_images_preview_urls: [],
-      bike_type_filter: null
+      bike_type_filter: null,
+      wheel_size_filter: null
     }
   },
   created() {},
@@ -159,12 +174,44 @@ export default {
       }, {})
       return Object.entries(bike_types).sort((a, b) => b[1] - a[1])
     },
+    all_wheel_sizes() {
+      const wheel_sizes = this.bikes.reduce((acc, bike) => {
+        if (bike.wheel_size && bike.wheel_size.length > 0) {
+          bike.wheel_size.forEach((size) => {
+            if (!acc[size]) {
+              acc[size] = 1
+            } else {
+              acc[size]++
+            }
+          })
+        }
+        return acc
+      }, {})
+      // Sort numerically for proper ordering
+      return Object.entries(wheel_sizes).sort((a, b) => {
+        const numA = parseFloat(a[0])
+        const numB = parseFloat(b[0])
+        if (!isNaN(numA) && !isNaN(numB)) {
+          return numA - numB
+        }
+        return a[0].localeCompare(b[0])
+      })
+    },
     filtered_bikes() {
       return this.filtered_bikes_with_search.filter((bike) => {
-        if (!this.bike_type_filter) return true
-        // Handle bike_type with slash-separated values
-        const types = bike.bike_type ? bike.bike_type.split('/') : []
-        return types.includes(this.bike_type_filter)
+        // Bike type filter
+        if (this.bike_type_filter) {
+          const types = bike.bike_type ? bike.bike_type.split('/') : []
+          if (!types.includes(this.bike_type_filter)) return false
+        }
+
+        // Wheel size filter
+        if (this.wheel_size_filter) {
+          if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+          if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+        }
+
+        return true
       })
     },
     filtered_bikes_with_search() {
@@ -243,6 +290,13 @@ export default {
         this.bike_type_filter = null
       } else {
         this.bike_type_filter = bike_type
+      }
+    },
+    onWheelSizeFilterClick(wheel_size) {
+      if (this.wheel_size_filter === wheel_size) {
+        this.wheel_size_filter = null
+      } else {
+        this.wheel_size_filter = wheel_size
       }
     },
     getBikeTypes(bike) {
@@ -357,6 +411,51 @@ export default {
     }
   }
 }
+
+._wheelSizeFilter {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  align-items: center;
+
+  > span {
+    font-weight: normal;
+    margin-right: 0.5rem;
+  }
+
+  button {
+    position: relative;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(200, 200, 200, 0.4);
+    color: black;
+    font-weight: normal;
+    font-size: 0.8rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(1.1);
+      z-index: 10;
+      background-color: rgba(200, 200, 200, 0.7);
+    }
+
+    &.is--active {
+      z-index: 10;
+      background-color: var(--color-accent);
+      font-weight: bold;
+      transform: scale(1.15);
+    }
+
+    ._count {
+      font-size: 0.6rem;
+      font-weight: bold;
+      margin-left: 0.25rem;
+    }
+  }
+}
+
 ._bikesPreview {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
