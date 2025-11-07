@@ -14,41 +14,43 @@
         <SearchField v-model="search_str" />
       </div>
 
-      <div class="_bikeTypeFilter">
-        <span v-html="$t('bike_types.by_category')" />
-        <button
-          v-for="[bike_type, count] in all_bike_types"
-          :key="bike_type"
-          type="button"
-          :class="{
-            'is--active': bike_type_filter === bike_type,
-            'is--disabled': count === 0
-          }"
-          :style="bikeStyleColor(bike_type)"
-          :disabled="count === 0"
-          @click="onBikeTypeFilterClick(bike_type)"
-        >
-          {{ $t(`bike_types.${bike_type}`) }}
-          <span class="_count">{{ count }}</span>
-        </button>
-      </div>
+      <div class="_filters">
+        <div class="_bikeTypeFilter">
+          <span v-html="$t('bike_types.by_category')" />
+          <button
+            v-for="[bike_type, count] in all_bike_types"
+            :key="bike_type"
+            type="button"
+            :class="{
+              'is--active': bike_type_filter === bike_type,
+              'is--disabled': count === 0
+            }"
+            :style="bikeStyleColor(bike_type)"
+            :disabled="count === 0"
+            @click="onBikeTypeFilterClick(bike_type)"
+          >
+            {{ $t(`bike_types.${bike_type}`) }}
+            <span class="_count">{{ count }}</span>
+          </button>
+        </div>
 
-      <div class="_wheelSizeFilter">
-        <span>{{ $t('message.by_wheel_size') }}</span>
-        <button
-          v-for="[wheel_size, count] in all_wheel_sizes"
-          :key="wheel_size"
-          type="button"
-          :class="{
-            'is--active': wheel_size_filter === wheel_size,
-            'is--disabled': count === 0
-          }"
-          :disabled="count === 0"
-          @click="onWheelSizeFilterClick(wheel_size)"
-        >
-          {{ wheel_size }}"
-          <span class="_count">{{ count }}</span>
-        </button>
+        <div class="_wheelSizeFilter">
+          <span>{{ $t('message.by_wheel_size') }}</span>
+          <button
+            v-for="[wheel_size, count] in all_wheel_sizes"
+            :key="wheel_size"
+            type="button"
+            :class="{
+              'is--active': wheel_size_filter === wheel_size,
+              'is--disabled': count === 0
+            }"
+            :disabled="count === 0"
+            @click="onWheelSizeFilterClick(wheel_size)"
+          >
+            {{ wheel_size }}"
+            <span class="_count">{{ count }}</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -415,15 +417,24 @@ export default {
   gap: 1rem;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem 0;
+}
+
+._filters {
+  display: flex;
+  flex-flow: column;
+  gap: 0;
+  flex: 1;
+  align-items: flex-end;
 }
 
 ._bikeTypeFilter {
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  justify-content: flex-end;
 
   button {
     position: relative;
@@ -466,8 +477,9 @@ export default {
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   align-items: center;
+  justify-content: flex-end;
 
   > span {
     font-weight: normal;
