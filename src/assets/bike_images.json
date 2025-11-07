@@ -598,7 +598,7 @@
     "left_margin_percent": 0.042,
     "bottom_margin_percent": 0.183,
     "url": "https://www.radpowerbikes.com/products/radwagon-electric-cargo-bike",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "radwagon-4-radpower-bikes",
@@ -614,7 +614,7 @@
     "left_margin_percent": 0.049,
     "bottom_margin_percent": 0.142,
     "url": "https://www.radpowerbikes.com/products/radwagon-4-electric-cargo-bike",
-    "wheel_size": []
+    "wheel_size": ["22"]
   },
   {
     "id": "robertbikes-bob",
@@ -645,7 +645,7 @@
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
     "url": "https://www.specialized.com/us/en/haul-st/p/200057",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "specialized-haul-lt",
@@ -660,7 +660,7 @@
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.255,
     "url": "https://www.specialized.com/ca/fr/haul-lt/p/4276253?searchText=91025-9300&color=5437294-4276253",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "tern-hsd",
@@ -831,7 +831,7 @@
     "left_margin_percent": 0.06,
     "bottom_margin_percent": 0.141,
     "url": "https://xtracycle.com/products/eswoop",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "justlong-sport-bicicapace",
@@ -908,7 +908,7 @@
     "left_margin_percent": 0.014,
     "bottom_margin_percent": 0.015,
     "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-4/p/37114/",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "u7-isinwheel",
@@ -996,7 +996,7 @@
     "bottom_margin_percent": 0.247,
     "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
     "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w.",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "bike-classic-christiania-",
@@ -1377,7 +1377,7 @@
     "bottom_margin_percent": 0.148,
     "url": "https://xtracycle.com/products/rfa-2?variant=44062991319336",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "cs-ca-go",
@@ -1557,7 +1557,7 @@
     "bottom_margin_percent": 0.175,
     "url": "https://peugeot.e-longtail.com/",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "cruise-carqon",
@@ -1665,7 +1665,7 @@
     "bottom_margin_percent": 0.131,
     "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-2/p/37640/",
     "frame_made_in": "",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "quick-haul-long-tern",
@@ -1711,7 +1711,7 @@
     "url": "https://www.specialized.com/ch/en/turbo-porto/p/4206097",
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "orox-tern",
@@ -1786,7 +1786,7 @@
     "bottom_margin_percent": 0.154,
     "url": "https://www.nicolai-bicycles.com/nc1",
     "frame_made_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["27.5", "20"]
   },
   {
     "id": "curve-babboe",
@@ -2112,7 +2112,7 @@
     "left_margin_percent": 0.028,
     "bottom_margin_percent": 0.088,
     "url": "https://reidbikes.com/products/kade-orange",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "no-o1-monopole",
@@ -2308,7 +2308,7 @@
     "url": "https://surlybikes.com/bikes/big_dummy",
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
-    "wheel_size": []
+    "wheel_size": ["26"]
   },
   {
     "id": "ili-classic-ili-cycles",
@@ -2377,7 +2377,7 @@
     "url": "https://xtracycle.com/products/hopper-compact-cargo?variant=47648147865896",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "g-line-brompton",
@@ -2690,7 +2690,7 @@
     "url": "https://triobike.com/en/models/cargo/cargo/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "entice-c+-excite-kalkhoff",
@@ -2741,7 +2741,7 @@
     "url": "https://www.velotricbike.com/products/velotric-packer-1-e-bike",
     "frame_made_in": "China",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["26", "20"]
   },
   {
     "id": "u-cargo-family-addbike",
@@ -2892,7 +2892,7 @@
     "left_margin_percent": 0.12,
     "bottom_margin_percent": 0.11,
     "url": "https://www.velotricbike.com/products/velotric-go-1-e-bike",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "etnicycles-belle-ile",
@@ -3250,7 +3250,7 @@
     "url": "https://www.oklo.bike/produit/mini-velo-cargo-simplix/",
     "frame_made_in": "",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cube-compact-hybrid",
