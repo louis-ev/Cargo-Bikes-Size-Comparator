@@ -552,7 +552,7 @@
     "bottom_margin_percent": 0.163,
     "frame_made_in": "germany",
     "url": "https://www.kemper-velo.de/filibus",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "aventon-abound",
@@ -923,7 +923,7 @@
     "bottom_margin_percent": 0.19699999999999998,
     "url": "https://www.isinwheel.com/products/isinwheel-u7-cargo-bike",
     "frame_made_in": "China",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "longtail-hybrid-cube",
@@ -2226,7 +2226,7 @@
     "left_margin_percent": 0.006,
     "bottom_margin_percent": 0.008,
     "url": "https://www.kettler-alu-rad.de/be-nl/produkt/kettler-alu-rad-kettler-cargoline-ht-800-2022-trapez?AKLW",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "bolide-kino-bikes",
@@ -2243,7 +2243,7 @@
     "url": "https://kino.bike/velo-cargo-electrique/bolide/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "cargo-l-urban-arrow",
@@ -2326,7 +2326,7 @@
     "url": "https://ilicycles.com/nos-velos-cargo-pendulaires/ili-classic-triporteur-electrique-familial/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": []
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "xpedition-2.0-lectric",
@@ -2707,7 +2707,7 @@
     "url": "https://www.kalkhoff-bikes.com/fr_fr/entice-c-excite",
     "frame_made_in": "",
     "assembled_in": "Germany",
-    "wheel_size": []
+    "wheel_size": ["20"]
   },
   {
     "id": "lundi-20-cargo-5-moustache",
@@ -2842,7 +2842,7 @@
     "url": "https://www.ktm-bikes.at/e-bikes/detail/macina-multi-metallic-vapor-black-orange-10-g-shimano-deore-lg-2025",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": []
+    "wheel_size": ["24"]
   },
   {
     "id": "micro-yoonit",
