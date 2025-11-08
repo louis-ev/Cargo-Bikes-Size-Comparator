@@ -3091,5 +3091,21 @@
     "url": "https://www.velo-de-ville.com/fr/FOLDY/026-F",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "rad-power-bikes-radrunner-plus",
+
+    "manufacturer": "Rad Power Bikes",
+    "model": "RadRunner Plus",
+    "bike_type": "other",
+    "src": "RadRunner_Plus_2025_Matte_Black_Right_Side.png",
+    "bike_length_cm": 182,
+    "weight": 35,
+    "bike_length_percent": 0.899,
+    "left_margin_percent": 0.065,
+    "bottom_margin_percent": 0.182,
+    "url": "https://www.radpowerbikes.com/products/radrunner-plus-electric-cargo-utility-bike",
+    "frame_made_in": "China",
+    "assembled_in": "China"
   }
 ]
