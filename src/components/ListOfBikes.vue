@@ -182,6 +182,10 @@ export default {
   watch: {},
   computed: {
     all_bike_types() {
+      // Sizes to merge into one button (ETRTO 622mm rim standard)
+      const etrto_622_sizes = ['28', '29', '700c']
+      const etrto_622_label = '28/29/700c'
+
       // First, get all possible bike types from the entire dataset
       const all_types = {}
       this.bikes.forEach((bike) => {
@@ -198,6 +202,10 @@ export default {
           if (this.wheel_size_filter === 'unknown') {
             // Show only bikes without wheel size information
             if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else if (this.wheel_size_filter === etrto_622_label) {
+            // Show bikes with any of the merged wheel sizes
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.some((size) => etrto_622_sizes.includes(size))) return false
           } else {
             // Show only bikes with the selected wheel size
             if (!bike.wheel_size || bike.wheel_size.length === 0) return false
@@ -220,12 +228,21 @@ export default {
       return Object.entries(all_types).sort((a, b) => b[1] - a[1])
     },
     all_wheel_sizes() {
+      // Sizes to merge into one button (ETRTO 622mm rim standard)
+      const etrto_622_sizes = ['28', '29', '700c']
+      const etrto_622_label = '28/29/700c'
+
       // First, get all possible wheel sizes from the entire dataset
       const all_sizes = {}
       this.bikes.forEach((bike) => {
         if (bike.wheel_size && bike.wheel_size.length > 0) {
           bike.wheel_size.forEach((size) => {
-            all_sizes[size] = 0
+            // Group merged sizes together
+            if (etrto_622_sizes.includes(size)) {
+              all_sizes[etrto_622_label] = 0
+            } else {
+              all_sizes[size] = 0
+            }
           })
         }
       })
@@ -244,8 +261,15 @@ export default {
       bikes_to_count.forEach((bike) => {
         if (bike.wheel_size && bike.wheel_size.length > 0) {
           bike.wheel_size.forEach((size) => {
-            if (all_sizes[size] !== undefined) {
-              all_sizes[size]++
+            // Count merged sizes toward the merged label
+            if (etrto_622_sizes.includes(size)) {
+              if (all_sizes[etrto_622_label] !== undefined) {
+                all_sizes[etrto_622_label]++
+              }
+            } else {
+              if (all_sizes[size] !== undefined) {
+                all_sizes[size]++
+              }
             }
           })
         }
@@ -278,6 +302,10 @@ export default {
       }).length
     },
     filtered_bikes() {
+      // Sizes to merge into one button (ETRTO 622mm rim standard)
+      const etrto_622_sizes = ['28', '29', '700c']
+      const etrto_622_label = '28/29/700c'
+
       return this.filtered_bikes_with_search.filter((bike) => {
         // Bike type filter
         if (this.bike_type_filter) {
@@ -290,6 +318,10 @@ export default {
           if (this.wheel_size_filter === 'unknown') {
             // Show only bikes without wheel size information
             if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else if (this.wheel_size_filter === etrto_622_label) {
+            // Show bikes with any of the merged wheel sizes
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.some((size) => etrto_622_sizes.includes(size))) return false
           } else {
             // Show only bikes with the selected wheel size
             if (!bike.wheel_size || bike.wheel_size.length === 0) return false
