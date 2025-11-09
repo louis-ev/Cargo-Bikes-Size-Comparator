@@ -3107,5 +3107,21 @@
     "url": "https://www.radpowerbikes.com/products/radrunner-plus-electric-cargo-utility-bike",
     "frame_made_in": "China",
     "assembled_in": "China"
+  },
+  {
+    "id": "decathlon-btwin-fold-500",
+
+    "manufacturer": "Decathlon",
+    "model": "Btwin Fold 500",
+    "bike_type": "foldable",
+    "src": "btwin-fold-500.png",
+    "bike_length_cm": 143,
+    "weight": 13,
+    "bike_length_percent": 0.826,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.2,
+    "url": "https://www.decathlon.fr/p/velo-pliant-fold-500-bleu-fonce/_/R-p-343354",
+    "frame_made_in": "",
+    "assembled_in": "Portugal"
   }
 ]
