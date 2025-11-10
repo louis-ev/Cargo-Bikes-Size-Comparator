@@ -93,7 +93,9 @@ const i18n = createI18n({
         compare_bikes: 'Compare {count} bike | Compare {count} bikes',
         unit: 'Unit',
         centimeters: 'centimeters',
-        inches: 'inches'
+        inches: 'inches',
+        by_wheel_size: 'By wheel size:',
+        unknown_wheel_size: 'Unknown'
       },
       bike_types: {
         by_category: 'By category:',
@@ -274,7 +276,9 @@ const i18n = createI18n({
         compare_bikes: 'Comparer {count} vélo | Comparer {count} vélos',
         unit: 'Unité',
         centimeters: 'centimètres',
-        inches: 'pouces'
+        inches: 'pouces',
+        by_wheel_size: 'Par taille de roues :',
+        unknown_wheel_size: 'Inconnue'
       },
       bike_types: {
         by_category: 'Par catégorie&nbsp;:',
