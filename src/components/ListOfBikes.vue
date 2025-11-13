@@ -59,6 +59,7 @@
             }"
             @click="onWheelSizeFilterClick('unknown')"
           >
+            HAHAAA
             {{ $t('message.unknown_wheel_size') }}
             <span class="_count">{{ unknown_wheel_size_count }}</span>
           </button>
@@ -522,14 +523,14 @@ export default {
     &:hover:not(:disabled),
     &:focus-visible:not(:disabled) {
       transform: rotate(-5deg) scale(1.2);
-      z-index: 10;
+      z-index: 11;
       // background-color: white !important;
     }
 
     &.is--active {
       z-index: 10;
-      // font-weight: bold;
-      transform: rotate(-10deg) scale(1.4);
+      font-weight: bold;
+      transform: rotate(-10deg) scale(1.4) !important;
     }
 
     &.is--disabled {
@@ -576,7 +577,7 @@ export default {
     &:focus-visible:not(:disabled) {
       transform: scale(1.1);
       z-index: 10;
-      background-color: rgba(200, 200, 200, 0.7);
+      // background-color: rgba(200, 200, 200, 0.7);
     }
 
     &.is--active {
@@ -608,7 +609,7 @@ export default {
       }
 
       &.is--active {
-        background-color: rgba(100, 100, 100, 0.7);
+        // background-color: rgba(100, 100, 100, 0.7);
         color: white;
       }
     }
