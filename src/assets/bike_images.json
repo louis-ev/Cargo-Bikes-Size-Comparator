@@ -3314,5 +3314,38 @@
     "frame_made_in": "",
     "assembled_in": "Portugal",
     "wheel_size": ["20"]
+  },
+  {
+    "id": "cluuv-e-cargo",
+
+    "manufacturer": "Cluuv",
+    "model": "E-cargo",
+    "bike_type": "longjohn",
+    "src": "cluuv_e-cargocabin.png",
+    "bike_length_cm": 269,
+    "weight": 40,
+    "bike_length_percent": 0.8,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.182,
+    "url": "https://cluuv.com/products/cluuv®-e-cargo",
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany",
+    "wheel_size": ["20", "27.5"]
+  },
+  {
+    "id": "benno-ejoy",
+
+    "manufacturer": "Benno",
+    "model": "Ejoy",
+    "bike_type": "midtail",
+    "src": "benno-ejoy.png",
+    "bike_length_cm": 190,
+    "weight": 25,
+    "bike_length_percent": 0.87,
+    "left_margin_percent": 0.07,
+    "bottom_margin_percent": 0.04,
+    "url": "https://bennobikes.com/e-bikes/ejoy/",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
