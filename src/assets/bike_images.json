@@ -3434,5 +3434,23 @@
     "frame_made_in": "Sweden",
     "assembled_in": "Sweden",
     "wheel_size": ["27.5"]
+  },
+  {
+    "id": "flinc-model-1",
+
+    "manufacturer": "FLINC",
+    "model": "Model 1",
+    "bike_type": "shortjohn",
+    "src": "flinc-freisteller.png",
+    "bike_length_cm": 144,
+    "weight": 16,
+    "bike_length_percent": 0.91,
+    "left_margin_percent": 0.041,
+    "bottom_margin_percent": 0.106,
+    "url": "https://flinccycles.com/de/shop ",
+    "frame_made_in": "China",
+    "show_frame_origin": false,
+    "assembled_in": "Czech Republic",
+    "wheel_size": ["20"]
   }
 ]
