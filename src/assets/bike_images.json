@@ -3414,5 +3414,21 @@
     "frame_made_in": "China",
     "assembled_in": "France",
     "wheel_size": ["20"]
+  },
+  {
+    "id": "gingko",
+
+    "manufacturer": "Gingko",
+    "model": "Gingko",
+    "bike_type": "longdiamond",
+    "src": "gingko.png",
+    "bike_length_cm": 244,
+    "bike_length_percent": 0.952,
+    "left_margin_percent": 0.024,
+    "bottom_margin_percent": 0.101,
+    "url": "https://www.ginkgo.bike/",
+    "frame_made_in": "Sweden",
+    "assembled_in": "Sweden",
+    "wheel_size": ["27.5"]
   }
 ]
