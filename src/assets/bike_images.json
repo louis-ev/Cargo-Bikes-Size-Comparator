@@ -3416,12 +3416,12 @@
     "wheel_size": ["20"]
   },
   {
-    "id": "gingko",
+    "id": "ginkgo",
 
-    "manufacturer": "Gingko",
-    "model": "Gingko",
+    "manufacturer": "Ginkgo",
+    "model": "Ginkgo",
     "bike_type": "longdiamond",
-    "src": "gingko.png",
+    "src": "ginkgo.png",
     "bike_length_cm": 244,
     "bike_length_percent": 0.952,
     "left_margin_percent": 0.024,
