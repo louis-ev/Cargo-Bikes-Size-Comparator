@@ -59,7 +59,6 @@
             }"
             @click="onWheelSizeFilterClick('unknown')"
           >
-            HAHAAA
             {{ $t('message.unknown_wheel_size') }}
             <span class="_count">{{ unknown_wheel_size_count }}</span>
           </button>

@@ -3347,8 +3347,10 @@
     "left_margin_percent": 0.07,
     "bottom_margin_percent": 0.04,
     "url": "https://bennobikes.com/e-bikes/ejoy/",
+    "frame_material": "aluminium",
     "frame_made_in": "",
-    "assembled_in": ""
+    "assembled_in": "",
+    "wheel_size": ["26"]
   },
   {
     "id": "foldee-cargo",
@@ -3381,7 +3383,8 @@
     "bottom_margin_percent": 0.046,
     "url": "",
     "frame_made_in": "",
-    "assembled_in": ""
+    "assembled_in": "",
+    "wheel_size": ["20", "26"]
   },
   {
     "id": "gaya-lincroyable-long",
@@ -3397,7 +3400,8 @@
     "bottom_margin_percent": 0.318,
     "url": "https://gaya.bike/velo-cargo/incroyable-le-long",
     "frame_made_in": "",
-    "assembled_in": "France"
+    "assembled_in": "France",
+    "wheel_size": ["20"]
   },
   {
     "id": "gitane-g-life-longtail",
