@@ -466,7 +466,7 @@ export default {
   // padding: 0.5rem;
 
   > * {
-    flex: 1 1 0;
+    flex: 1 1 30ch;
   }
 
   h1 {
@@ -501,7 +501,7 @@ export default {
   display: flex;
   flex-flow: column;
   gap: 0;
-  flex: 1;
+  flex: 1 1 30ch;
   align-items: flex-end;
 }
 
