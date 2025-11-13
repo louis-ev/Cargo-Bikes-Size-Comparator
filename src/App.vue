@@ -238,20 +238,27 @@ input {
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
-  position: relative;
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.list-enter-from,
-.list-leave-to {
-  position: absolute;
+.list-enter-active {
+  transition-delay: 0.05s;
+}
+
+.list-enter-from {
   opacity: 0;
-  transform: scale(0.2);
+  transform: translateX(-30px) scale(0.9);
 }
 
 .list-leave-active {
   position: absolute;
-  z-index: -1;
+  width: 100%;
+  z-index: 0;
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px) scale(0.9);
 }
 
 .slide-enter-active,
