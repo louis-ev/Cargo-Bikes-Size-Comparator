@@ -3347,5 +3347,22 @@
     "url": "https://bennobikes.com/e-bikes/ejoy/",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "foldee-cargo",
+
+    "manufacturer": "FOLDEE",
+    "model": "Foldee Cargo",
+    "bike_type": "foldable/shortjohn",
+    "src": "foldee-cargo.png",
+    "bike_length_cm": 210,
+    "weight": 20,
+    "bike_length_percent": 0.907,
+    "left_margin_percent": 0.045,
+    "bottom_margin_percent": 0.077,
+    "url": "https://foldee.com.au/",
+    "frame_made_in": "Australia",
+    "assembled_in": "Australia",
+    "wheel_size": ["20", "26"]
   }
 ]
