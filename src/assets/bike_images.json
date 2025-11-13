@@ -1269,10 +1269,12 @@
     "src": "01_fs200life-family-plus_render_right.png",
     "bike_length_percent": 0.813,
     "bike_length_cm": 270,
+    "weight": 54,
     "left_margin_percent": 0.097,
     "bottom_margin_percent": 0.202,
     "url": "https://www.cagobike.com/en/fs-life",
     "frame_made_in": "Germany",
+    "assembled_in": "Germany",
     "wheel_size": ["20", "27.5"]
   },
   {
@@ -3364,5 +3366,21 @@
     "frame_made_in": "Australia",
     "assembled_in": "Australia",
     "wheel_size": ["20", "26"]
+  },
+  {
+    "id": "riese-und-müller-packster-40",
+
+    "manufacturer": "Riese und Müller",
+    "model": "Packster 40",
+    "bike_type": "longjohn",
+    "src": "riesemuller-packster40.png",
+    "bike_length_cm": 223,
+    "weight": 32,
+    "bike_length_percent": 0.988,
+    "left_margin_percent": 0.006,
+    "bottom_margin_percent": 0.046,
+    "url": "",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
