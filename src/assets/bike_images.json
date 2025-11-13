@@ -3398,5 +3398,21 @@
     "url": "https://gaya.bike/velo-cargo/incroyable-le-long",
     "frame_made_in": "",
     "assembled_in": "France"
+  },
+  {
+    "id": "gitane-g-life-longtail",
+    "manufacturer": "Gitane",
+    "model": "G-Life LONGTAIL",
+    "bike_type": "longtail",
+    "src": "gitane-g-life.png",
+    "bike_length_cm": 200,
+    "weight": 38,
+    "bike_length_percent": 0.868,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.074,
+    "url": "https://www.cyclesgitane.fr/velos/glife-longtail",
+    "frame_made_in": "China",
+    "assembled_in": "France",
+    "wheel_size": ["20"]
   }
 ]
