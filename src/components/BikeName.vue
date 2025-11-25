@@ -5,7 +5,7 @@
     <span
       class="_flag"
       :title="bike.frame_made_in"
-      v-if="bike.frame_made_in && bike.show_frame_origin !== false"
+      v-if="shouldShowFrameMadeIn && bike.show_frame_origin !== false"
     >
       {{ unicodeFlag(bike.frame_made_in) }}
     </span>
@@ -27,6 +27,8 @@
   </div>
 </template>
 <script>
+import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper } from '@/helpers.js'
+
 export default {
   props: {
     bike: Object,
@@ -46,6 +48,9 @@ export default {
   computed: {
     useInches() {
       return this.$root.useInches
+    },
+    shouldShowFrameMadeIn() {
+      return shouldShowFrameMadeInHelper(this.bike.frame_made_in)
     }
   },
   methods: {

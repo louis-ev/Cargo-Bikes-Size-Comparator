@@ -77,3 +77,12 @@ export const colorize = function (canvas, colorHex) {
   }
   context.putImageData(pixels, 0, 0)
 }
+
+/**
+ * Check if frame_made_in should be displayed (hides China to avoid discrimination)
+ * @param {string} frameMadeIn - The frame_made_in value
+ * @returns {boolean} - Whether to show the frame origin
+ */
+export const shouldShowFrameMadeIn = function (frameMadeIn) {
+  return frameMadeIn && frameMadeIn.toLowerCase() !== 'china'
+}

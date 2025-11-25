@@ -1,14 +1,14 @@
 <template>
   <div class="_itemBottom">
-    <div class="_madeIn" v-if="bike.frame_made_in || bike.assembled_in">
-      <template v-if="bike.frame_made_in">
+    <div class="_madeIn" v-if="shouldShowFrameMadeIn || bike.assembled_in">
+      <template v-if="shouldShowFrameMadeIn">
         {{
           $t('message.bike_frame_made_in') +
           ' ' +
           $t('message.in_' + bike.frame_made_in.toLowerCase())
         }}.
       </template>
-      <br v-if="bike.frame_made_in && bike.assembled_in" />
+      <br v-if="shouldShowFrameMadeIn && bike.assembled_in" />
       <template v-if="bike.assembled_in">
         {{
           $t('message.bike_assembled_in') +
@@ -154,6 +154,7 @@
 <script>
 import InsituImageSlide from '@/components/InsituImageSlide.vue'
 import RangeInput from '@/components/RangeInput.vue'
+import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper } from '@/helpers.js'
 
 const insitu_images_thumbs_paths = import.meta.glob('@/assets/insitu/*', {
   eager: true,
@@ -202,6 +203,9 @@ export default {
     },
     useInches() {
       return this.$root.useInches
+    },
+    shouldShowFrameMadeIn() {
+      return shouldShowFrameMadeInHelper(this.bike.frame_made_in)
     }
   },
   methods: {
