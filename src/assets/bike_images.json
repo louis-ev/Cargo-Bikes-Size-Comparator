@@ -3469,5 +3469,21 @@
     "url": "https://www.cannondale.com/en/bikes/electric/e-urban/compact-neo/compact-neo",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "rad-power-bikes-radrunner",
+
+    "manufacturer": "Rad Power Bikes",
+    "model": "RadRunner",
+    "bike_type": "midtail",
+    "src": "radrunner-classic-2025.png",
+    "bike_length_cm": 173,
+    "weight": 30,
+    "bike_length_percent": 0.923,
+    "left_margin_percent": 0.039,
+    "bottom_margin_percent": 0.185,
+    "url": "https://www.radpowerbikes.com/collections/radrunner-electric-cargo-utility-bikes/products/radrunner-electric-cargo-utility-bike",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
