@@ -115,21 +115,30 @@ export default {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
     filtered_not_enabled_bikes() {
-      return this.filtered_bikes.slice().filter((i) => !this.enabled_bikes.includes(i))
+      return this.filtered_bikes.filter((bike) => !this.bikeIsEnabled(bike.id))
     }
   },
   methods: {
+    getBaseBikeId(id) {
+      if (!id) return id
+      return id.endsWith('_folded') ? id.replace(/_folded$/, '') : id
+    },
     toggleBike(id) {
-      let enabled_bikes_ids = this.enabled_bikes.map((b) => b.id)
-      if (enabled_bikes_ids.includes(id)) {
-        enabled_bikes_ids = enabled_bikes_ids.filter((i) => i !== id)
+      const baseId = this.getBaseBikeId(id)
+      const enabled_bikes_ids = this.enabled_bikes.map((b) => b.id)
+      const existingIndex = enabled_bikes_ids.findIndex(
+        (bikeId) => this.getBaseBikeId(bikeId) === baseId
+      )
+      if (existingIndex !== -1) {
+        enabled_bikes_ids.splice(existingIndex, 1)
       } else {
-        enabled_bikes_ids.push(id)
+        enabled_bikes_ids.push(baseId)
       }
       this.$root.updateBikesQuery(enabled_bikes_ids)
     },
     bikeIsEnabled(id) {
-      return this.enabled_bikes.some((i) => i.id === id)
+      const baseId = this.getBaseBikeId(id)
+      return this.enabled_bikes.some((i) => this.getBaseBikeId(i.id) === baseId)
     },
     getBikeThumbImage(bike) {
       const thumb = this.bike_images_thumbs_urls.find((i) => i.original_filename === bike.src)

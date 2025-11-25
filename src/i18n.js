@@ -55,6 +55,8 @@ const i18n = createI18n({
         code_design_foss: 'Code / Design / free Open Source under',
         bike_images_from_the_manufacturer_s_website: "bike images from the manufacturer's website.",
         outline_view: 'Outline',
+        show_folded_view: 'FOLD',
+        show_unfolded_view: 'UNFOLD',
         bike_frame_made_in: 'Bike frame made',
         bike_assembled_in: 'Assembled',
         in_germany: 'in Germany',
@@ -239,6 +241,8 @@ const i18n = createI18n({
         bike_images_from_the_manufacturer_s_website:
           'image des vélos provenant des sites des fabricants.',
         outline_view: 'Contours',
+        show_folded_view: 'PLIER',
+        show_unfolded_view: 'DÉPLIER',
         bike_frame_made_in: 'Cadre du vélo fabriqué',
         bike_assembled_in: 'Assemblé',
         in_germany: 'en Allemagne',

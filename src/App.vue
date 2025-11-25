@@ -174,6 +174,14 @@ export default {
       this.$router.push({
         query
       })
+    },
+    setBikeFoldState(base_id, shouldFold) {
+      if (!base_id) return
+      const ids = this.enabled_bikes_ids.slice()
+      const targetIndex = ids.findIndex((id) => id === base_id || id === `${base_id}_folded`)
+      if (targetIndex === -1) return
+      ids[targetIndex] = shouldFold ? `${base_id}_folded` : base_id
+      this.updateBikesQuery(ids)
     }
   }
 }

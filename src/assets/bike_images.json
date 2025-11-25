@@ -3368,7 +3368,15 @@
     "frame_made_in": "Australia",
     "assembled_in": "Australia",
     "frame_material": "chromoly",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+
+    "folded_view": {
+      "src": "foldee-cargo-folded.png",
+      "bike_length_cm": 130,
+      "bike_length_percent": 0.826,
+      "left_margin_percent": 0.032,
+      "bottom_margin_percent": 0.1
+    }
   },
   {
     "id": "riese-und-müller-packster-40",

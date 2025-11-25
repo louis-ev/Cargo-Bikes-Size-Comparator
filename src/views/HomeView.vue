@@ -87,18 +87,46 @@ export default {
       return this.$route.query.outline && this.$route.query.outline === '1'
     },
     enabled_bikes() {
-      return this.$root.enabled_bikes_ids.reduce((acc, id, index) => {
-        const bike = this.findMatchingBike(id)
-        if (bike) {
-          const color_options = this.bike_outline_colors
-          bike.color = color_options[index % color_options.length]
-          acc.push(bike)
+      return this.$root.enabled_bikes_ids.reduce((acc, rawId, index) => {
+        const { baseId, isFolded } = this.normalizeBikeId(rawId)
+        const bike = this.findMatchingBike(baseId)
+        if (!bike) return acc
+
+        const color_options = this.bike_outline_colors
+        const displayBike = {
+          ...bike,
+          id: rawId,
+          base_id: baseId,
+          is_folded: isFolded,
+          color: color_options[index % color_options.length]
         }
+
+        if (isFolded && bike.folded_view) {
+          const view = bike.folded_view
+          displayBike.src = view.src || bike.src
+          displayBike.bike_length_cm = view.bike_length_cm ?? bike.bike_length_cm
+          displayBike.weight = view.weight ?? bike.weight
+          displayBike.bike_length_percent = view.bike_length_percent ?? bike.bike_length_percent
+          displayBike.left_margin_percent = view.left_margin_percent ?? bike.left_margin_percent
+          displayBike.bottom_margin_percent =
+            view.bottom_margin_percent ?? bike.bottom_margin_percent
+          displayBike.model = `${bike.model} (folded)`
+        }
+
+        acc.push(displayBike)
         return acc
       }, [])
     }
   },
   methods: {
+    normalizeBikeId(id) {
+      if (!id) return { baseId: id, isFolded: false }
+      const isFolded = id.endsWith('_folded')
+      return {
+        baseId: isFolded ? id.replace(/_folded$/, '') : id,
+        isFolded
+      }
+    },
     findMatchingBike(id) {
       return this.bikes.find((i) => i.id === id)
     },

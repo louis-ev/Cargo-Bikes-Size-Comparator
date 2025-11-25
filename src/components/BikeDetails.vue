@@ -20,6 +20,18 @@
 
     <div v-if="bike.comment_en" v-html="bike.comment_en" />
 
+    <div v-if="bike.folded_view" class="_foldToggle">
+      <button
+        type="button"
+        class="u-button"
+        data-color="black"
+        data-size="big"
+        @click="toggleFoldedView"
+      >
+        {{ bike.is_folded ? $t('message.show_unfolded_view') : $t('message.show_folded_view') }}
+      </button>
+    </div>
+
     <div v-if="bike.request_test_url" class="_source">
       <a :href="bike.request_test_url" target="_blank">
         {{ $t('message.request_test_url') }} &#x2197;
@@ -245,11 +257,26 @@ export default {
       if (!bikes_adjustments[id]) bikes_adjustments[id] = {}
       bikes_adjustments[id][type] = defaultValue
       this.$emit('update:bikes_adjustments', bikes_adjustments)
+    },
+    toggleFoldedView() {
+      if (!this.bike.folded_view) return
+      const baseId = this.getBaseBikeId(this.bike.id)
+      const shouldFold = !this.bike.is_folded
+      this.$root.setBikeFoldState(baseId, shouldFold)
+    },
+    getBaseBikeId(id) {
+      if (!id) return id
+      return id.endsWith('_folded') ? id.replace(/_folded$/, '') : id
     }
   }
 }
 </script>
 <style lang="scss" scoped>
+._foldToggle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 ._inSituImages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
