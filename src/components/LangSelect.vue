@@ -62,8 +62,9 @@ export default {
 }
 
 .unit-toggle {
-  // display: flex;
+  display: flex;
   // justify-content: center;
+  gap: 0.5rem;
   padding: 0.5rem 0 0;
 }
 

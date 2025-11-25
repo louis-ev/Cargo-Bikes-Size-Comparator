@@ -17,6 +17,7 @@
 
     <div class="_canvasOptions">
       <button
+        v-if="!show_sidebar"
         class="_openSidebar"
         :class="{ 'is--active': show_sidebar }"
         @click="$emit('toggleSidebar')"

@@ -1,5 +1,13 @@
 <template>
   <div class="_sidebar">
+    <button
+      type="button"
+      class="_closeSidebar"
+      aria-label="Close sidebar"
+      @click="$emit('closeSidebar')"
+    >
+      <span>×</span>
+    </button>
     <div class="_sidebar--content">
       <div class="_banner">
         <router-link to="/" @click="goHome" class="clickable-title">
@@ -213,7 +221,7 @@ export default {
 <style lang="scss" scoped>
 ._sidebar {
   position: relative;
-  width: 320px;
+  width: 340px;
   height: 100%;
   background-color: var(--color-background);
 
@@ -222,17 +230,18 @@ export default {
 }
 
 ._banner {
-  text-align: center;
+  // text-align: center;
   aspect-ratio: 3/1;
   // background-color: white;
   border-radius: 0.5rem;
-  padding: 1rem;
+  // padding: 0.5rem;
+  // padding-right: 1rem;
   gap: 0.5rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -246,12 +255,24 @@ export default {
   // background-color: var(--color-text-secondary);
   color: white;
 
+  font-size: 2rem;
+  font-weight: 400;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: none;
   width: 2rem;
   height: 2rem;
-  line-height: 1;
-  border-radius: 50%;
-  padding: 0.5rem;
+  line-height: 0;
+  // border-radius: 50%;
+  padding: 0rem;
+
+  span {
+    display: block;
+    margin-top: -0.25rem;
+  }
 }
 
 ._sidebar--content {
