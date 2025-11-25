@@ -3467,7 +3467,8 @@
     "bottom_margin_percent": 0,
     "url": "https://www.cannondale.com/en/bikes/electric/e-urban/compact-neo/compact-neo",
     "frame_made_in": "",
-    "assembled_in": ""
+    "assembled_in": "",
+    "wheel_size": ["20"]
   },
   {
     "id": "rad-power-bikes-radrunner",
@@ -3483,7 +3484,8 @@
     "bottom_margin_percent": 0.185,
     "url": "https://www.radpowerbikes.com/collections/radrunner-electric-cargo-utility-bikes/products/radrunner-electric-cargo-utility-bike",
     "frame_made_in": "",
-    "assembled_in": ""
+    "assembled_in": "",
+    "wheel_size": ["20"]
   },
   {
     "id": "rad-power-bikes-radrunner-max",
@@ -3515,6 +3517,7 @@
     "bottom_margin_percent": 0.14,
     "url": "https://www.ridgeback.co.uk/ridgeback-butcher-varrb21830",
     "frame_made_in": "China",
-    "assembled_in": "China"
+    "assembled_in": "China",
+    "wheel_size": ["20", "26"]
   }
 ]
