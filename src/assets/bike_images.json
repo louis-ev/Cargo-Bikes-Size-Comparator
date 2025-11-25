@@ -3254,7 +3254,7 @@
 
     "manufacturer": "Cube",
     "model": "Compact Hybrid",
-    "bike_type": "other",
+    "bike_type": "compact",
     "src": "cube-compact-hybrid.png",
     "bike_length_cm": 160,
     "weight": 24,
@@ -3288,7 +3288,7 @@
 
     "manufacturer": "Rad Power Bikes",
     "model": "RadRunner Plus",
-    "bike_type": "other",
+    "bike_type": "midtail",
     "src": "RadRunner_Plus_2025_Matte_Black_Right_Side.png",
     "bike_length_cm": 182,
     "weight": 35,
