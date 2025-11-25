@@ -3500,5 +3500,21 @@
     "url": "https://www.radpowerbikes.com/collections/electric-cargo-utility-bikes/products/radrunner-max-electric-cargo-utility-bike",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "ridgeback-butcher",
+
+    "manufacturer": "Ridgeback",
+    "model": "Butcher",
+    "bike_type": "shortjohn",
+    "src": "ridgeback-butcher.png",
+    "bike_length_cm": 200,
+    "weight": 34,
+    "bike_length_percent": 0.8730000000000001,
+    "left_margin_percent": 0.071,
+    "bottom_margin_percent": 0.14,
+    "url": "https://www.ridgeback.co.uk/ridgeback-butcher-varrb21830",
+    "frame_made_in": "China",
+    "assembled_in": "China"
   }
 ]
