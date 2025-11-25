@@ -1297,8 +1297,8 @@
     "id": "convercycle",
 
     "manufacturer": "Convercycle",
-    "model": "Electric - Normal Mode",
-    "bike_type": "lowtail",
+    "model": "Electric",
+    "bike_type": "lowtail/foldable",
     "src": "friesteller_ebike_shopseite.png",
     "bike_length_percent": 0.848,
     "bike_length_cm": 206,
