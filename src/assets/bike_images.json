@@ -3501,7 +3501,8 @@
     "bottom_margin_percent": 0.184,
     "url": "https://www.radpowerbikes.com/collections/electric-cargo-utility-bikes/products/radrunner-max-electric-cargo-utility-bike",
     "frame_made_in": "",
-    "assembled_in": ""
+    "assembled_in": "",
+    "wheel_size": ["20"]
   },
   {
     "id": "ridgeback-butcher",
