@@ -3453,5 +3453,21 @@
     "show_frame_origin": false,
     "assembled_in": "Czech Republic",
     "wheel_size": ["20"]
+  },
+  {
+    "id": "cannondale-compact-neo",
+
+    "manufacturer": "Cannondale",
+    "model": "Compact Neo",
+    "bike_type": "compact",
+    "src": "cannondale-compact-neo.png",
+    "bike_length_cm": 160,
+    "weight": 18,
+    "bike_length_percent": 0.98,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0,
+    "url": "https://www.cannondale.com/en/bikes/electric/e-urban/compact-neo/compact-neo",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]

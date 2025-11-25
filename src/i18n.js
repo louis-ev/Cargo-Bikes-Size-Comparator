@@ -107,6 +107,7 @@ const i18n = createI18n({
         shortjohn: 'Shortjohn',
         tricycle: 'Tricycle',
         longdiamond: 'Longdiamond',
+        compact: 'Compact',
         other: 'Other'
       },
       add_bike: {
@@ -290,6 +291,7 @@ const i18n = createI18n({
         shortjohn: 'Biporteur court',
         tricycle: 'Tricycle',
         longdiamond: 'Longdiamond',
+        compact: 'Compact',
         other: 'Autre'
       },
       add_bike: {
