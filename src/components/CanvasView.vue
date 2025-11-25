@@ -146,6 +146,8 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
 })
 import bakkieUrl from '@/assets/accessories/bakkie.png?w=800;webp&as=src'
 
+const MIN_CANVAS_HEIGHT_CM = 120
+
 export default {
   props: {
     enabled_bikes: Array,
@@ -308,6 +310,9 @@ export default {
 
       const padding = canvas.width / (100 / this.default_padding_percent)
       const each_px_measures_in_cm = (canvas.width - padding * 2) / (largest_bike || 200)
+
+      const min_canvas_height_px = MIN_CANVAS_HEIGHT_CM * each_px_measures_in_cm + padding * 2
+      canvas.height = Math.max(canvas.height, min_canvas_height_px)
 
       if (this.show_human_silhouette)
         canvas.height = Math.max(
