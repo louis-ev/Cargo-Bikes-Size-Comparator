@@ -3520,5 +3520,21 @@
     "frame_made_in": "China",
     "assembled_in": "China",
     "wheel_size": ["20", "26"]
+  },
+  {
+    "id": "tokyobike-porter",
+    "manufacturer": "TOKYOBIKE",
+    "model": "PORTER",
+    "bike_type": "shortjohn",
+    "src": "tokyobike-porter.png",
+    "bike_length_cm": 183,
+    "weight": 23,
+    "bike_length_percent": 0.853,
+    "left_margin_percent": 0.069,
+    "bottom_margin_percent": 0.075,
+    "url": "https://tokyobike.com/product/tokyobike-porter/",
+    "frame_made_in": "Japan",
+    "assembled_in": "China",
+    "wheel_size": ["20"]
   }
 ]

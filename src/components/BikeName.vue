@@ -69,6 +69,7 @@ export default {
       else if (country === 'italy') return '🇮🇹'
       else if (country === 'europe') return '🇪🇺'
       else if (country === 'china') return '🇨🇳'
+      else if (country === 'japan') return '🇯🇵'
       else if (country === 'netherlands') return '🇳🇱'
       else if (country === 'uk') return '🇬🇧'
       else if (country === 'poland') return '🇵🇱'
