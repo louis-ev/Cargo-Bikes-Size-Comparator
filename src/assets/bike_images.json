@@ -3350,11 +3350,11 @@
     "model": "Foldee Cargo",
     "bike_type": "foldable/shortjohn",
     "src": "foldee-cargo.png",
-    "bike_length_cm": 210,
+    "bike_length_cm": 220,
     "weight": 20,
     "bike_length_percent": 0.907,
     "left_margin_percent": 0.045,
-    "bottom_margin_percent": 0.077,
+    "bottom_margin_percent": 0.07,
     "url": "https://foldee.com.au/",
     "frame_made_in": "Australia",
     "assembled_in": "Australia",
@@ -3363,7 +3363,7 @@
 
     "folded_view": {
       "src": "foldee-cargo-folded.png",
-      "bike_length_cm": 130,
+      "bike_length_cm": 143,
       "bike_length_percent": 0.826,
       "left_margin_percent": 0.032,
       "bottom_margin_percent": 0.1
@@ -3523,6 +3523,7 @@
   },
   {
     "id": "tokyobike-porter",
+
     "manufacturer": "TOKYOBIKE",
     "model": "PORTER",
     "bike_type": "shortjohn",
