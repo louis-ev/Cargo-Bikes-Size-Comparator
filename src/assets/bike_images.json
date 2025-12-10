@@ -3609,5 +3609,21 @@
     "url": "https://cetmacargo.com/products/cargo-bikes",
     "frame_made_in": "USA",
     "assembled_in": "USA"
+  },
+  {
+    "id": "gepida-cargo-city",
+
+    "manufacturer": "Gepida",
+    "model": "Cargo City",
+    "bike_type": "longtail",
+    "src": "gepida-cargo.png",
+    "bike_length_cm": 170,
+    "weight": 29,
+    "bike_length_percent": 0.8859999999999999,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.12,
+    "url": "https://gepida.com/cargo-city-11150",
+    "frame_made_in": "",
+    "assembled_in": "Hungary"
   }
 ]
