@@ -2797,7 +2797,15 @@
     "url": "https://www.brompton.com/p/1601/c-line-12-speed-uk",
     "frame_made_in": "uk",
     "assembled_in": "uk",
-    "wheel_size": ["16"]
+    "wheel_size": ["16"],
+
+    "folded_view": {
+      "src": "brompton-c-line-folded.png",
+      "bike_length_cm": 58,
+      "bike_length_percent": 0.496,
+      "left_margin_percent": 0.233,
+      "bottom_margin_percent": 0.058
+    }
   },
   {
     "id": "abound-sr-aventon",
