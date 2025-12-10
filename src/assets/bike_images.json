@@ -3577,7 +3577,7 @@
     "model": "CETMA",
     "bike_type": "longjohn",
     "src": "cetma.png",
-    "bike_length_cm": 208,
+    "bike_length_cm": 260,
     "weight": 17,
     "bike_length_percent": 0.845,
     "left_margin_percent": 0.067,
