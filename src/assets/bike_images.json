@@ -3593,5 +3593,21 @@
       "left_margin_percent": 0.19,
       "bottom_margin_percent": 0.186
     }
+  },
+  {
+    "id": "cetma-cetma",
+
+    "manufacturer": "CETMA",
+    "model": "CETMA",
+    "bike_type": "longjohn",
+    "src": "cetma.png",
+    "bike_length_cm": 260,
+    "weight": 17,
+    "bike_length_percent": 0.845,
+    "left_margin_percent": 0.067,
+    "bottom_margin_percent": 0.143,
+    "url": "https://cetmacargo.com/products/cargo-bikes",
+    "frame_made_in": "USA",
+    "assembled_in": "USA"
   }
 ]
