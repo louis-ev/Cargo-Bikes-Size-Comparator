@@ -3537,5 +3537,21 @@
     "frame_made_in": "Japan",
     "assembled_in": "China",
     "wheel_size": ["20"]
+  },
+  {
+    "id": "butchers-&-bicycles-mk1-e",
+
+    "manufacturer": "Butchers & bicycles",
+    "model": "Mk1-E",
+    "bike_type": "tricycle",
+    "src": "butchers-mk1.png",
+    "bike_length_cm": 217,
+    "weight": 50,
+    "bike_length_percent": 0.926,
+    "left_margin_percent": 0.04,
+    "bottom_margin_percent": 0.12,
+    "url": "https://www.butchersandbicycles.com/de/mk1-e-vario/",
+    "frame_made_in": "Denmark",
+    "assembled_in": "Denmark"
   }
 ]
