@@ -3569,5 +3569,29 @@
     "url": "https://www.bluemooov.com/e-shop/",
     "frame_made_in": "France",
     "assembled_in": "France"
+  },
+  {
+    "id": "bastille-bastille-e",
+
+    "manufacturer": "BASTILLE",
+    "model": "Bastille E",
+    "bike_type": "foldable",
+    "src": "bastille-e.png",
+    "bike_length_cm": 172,
+    "weight": 17,
+    "bike_length_percent": 0.858,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.094,
+    "url": "https://bastillecycles.com/products/le-bastille-e",
+
+    "frame_made_in": "France",
+    "assembled_in": "France",
+    "folded_view": {
+      "src": "bastille-e-folded.png",
+      "bike_length_cm": 88,
+      "bike_length_percent": 0.687,
+      "left_margin_percent": 0.19,
+      "bottom_margin_percent": 0.186
+    }
   }
 ]

@@ -147,7 +147,7 @@ const bike_images_full_paths = import.meta.glob('@/assets/bikes/*.png', {
 })
 import bakkieUrl from '@/assets/accessories/bakkie.png?w=800;webp&as=src'
 
-const MIN_CANVAS_HEIGHT_CM = 120
+const MIN_CANVAS_HEIGHT_CM = 100
 
 export default {
   props: {
