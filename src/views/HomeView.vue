@@ -110,7 +110,7 @@ export default {
           displayBike.left_margin_percent = view.left_margin_percent ?? bike.left_margin_percent
           displayBike.bottom_margin_percent =
             view.bottom_margin_percent ?? bike.bottom_margin_percent
-          displayBike.model = `${bike.model} (folded)`
+          displayBike.model = `${bike.model} ${this.$t('message.folded')}`
         }
 
         acc.push(displayBike)
