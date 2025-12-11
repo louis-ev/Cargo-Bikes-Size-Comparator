@@ -116,6 +116,58 @@
       </transition-group>
     </div>
     <small class="_downloadCanvas">
+      <button
+        type="button"
+        class=""
+        :class="{ 'is--active': is_measuring }"
+        @click="toggleMeasure"
+        style="margin-right: 0.5rem"
+      >
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 12H22"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 12V8"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10 12V8"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 12V8"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 12V8"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        {{ is_measuring ? $t('message.stop_measuring') : $t('message.measure') }}
+      </button>
       <button type="button" class="" @click="downloadCanvas">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
           <path
@@ -133,7 +185,15 @@
         </span>
       </div>
     </transition>
-    <canvas ref="bikes" width="1920" height="1920" class="_previewCanvas" />
+    <canvas
+      ref="bikes"
+      width="1920"
+      height="1920"
+      class="_previewCanvas"
+      :style="{ cursor: is_measuring ? 'crosshair' : 'default' }"
+      @click="handleCanvasClick"
+      @mousemove="handleCanvasMouseMove"
+    />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="processor" width="1920" height="1920" style="display: none" />
   </div>
@@ -169,7 +229,13 @@ export default {
       human_silhouette_height: 180,
       new_human_silhouette_height: 180,
 
-      show_regular_bike_silhouette: false
+      show_regular_bike_silhouette: false,
+
+      is_measuring: false,
+      measure_start_point: null,
+      measure_current_point: null,
+      scale_factor_px_per_cm: 1,
+      canvas_padding: 0
     }
   },
   created() {},
@@ -181,9 +247,11 @@ export default {
     if (this.$el) {
       this.ro.observe(this.$el)
     }
+    window.addEventListener('keydown', this.handleKeyDown)
   },
   beforeUnmount() {
     this.ro.unobserve(this.$el)
+    window.removeEventListener('keydown', this.handleKeyDown)
   },
   watch: {
     canvas_image_style_outline() {
@@ -311,6 +379,9 @@ export default {
 
       const padding = canvas.width / (100 / this.default_padding_percent)
       const each_px_measures_in_cm = (canvas.width - padding * 2) / (largest_bike || 200)
+
+      this.scale_factor_px_per_cm = each_px_measures_in_cm
+      this.canvas_padding = padding
 
       const min_canvas_height_px = MIN_CANVAS_HEIGHT_CM * each_px_measures_in_cm + padding * 2
       canvas.height = Math.max(canvas.height, min_canvas_height_px)
@@ -456,6 +527,10 @@ export default {
       visible_canvas.width = canvas.width
       visible_canvas.height = canvas.height
       visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
+
+      if (this.is_measuring) {
+        this.drawMeasurement()
+      }
 
       this.is_loading = false
     },
@@ -632,6 +707,127 @@ export default {
 
       a.download = `bike-comparison-${bikes_names}.png`
       a.click()
+    },
+    toggleMeasure() {
+      this.is_measuring = !this.is_measuring
+      this.measure_start_point = null
+      this.measure_current_point = null
+      this.showBikes()
+    },
+    getCanvasCoordinates(event) {
+      const canvas = this.$refs.bikes
+      const rect = canvas.getBoundingClientRect()
+
+      const contentRatio = canvas.width / canvas.height
+      const containerRatio = rect.width / rect.height
+
+      let renderedWidth, renderedHeight
+
+      // Calculate 'contain' dimensions
+      if (containerRatio > contentRatio) {
+        renderedHeight = rect.height
+        renderedWidth = rect.height * contentRatio
+      } else {
+        renderedWidth = rect.width
+        renderedHeight = rect.width / contentRatio
+      }
+
+      // Handle 'scale-down': if 'contain' would scale up (rendered > actual), clamp to actual
+      if (renderedWidth > canvas.width) {
+        renderedWidth = canvas.width
+        renderedHeight = canvas.height
+      }
+
+      // Offsets for 'object-position: left center'
+      const offsetX = 0
+      const offsetY = (rect.height - renderedHeight) / 2
+
+      const mouseX = event.clientX - rect.left
+      const mouseY = event.clientY - rect.top
+
+      // Map to buffer coordinates
+      const x = ((mouseX - offsetX) / renderedWidth) * canvas.width
+      const y = ((mouseY - offsetY) / renderedHeight) * canvas.height
+
+      return { x, y }
+    },
+    handleCanvasClick(event) {
+      if (!this.is_measuring) return
+
+      const { x, y } = this.getCanvasCoordinates(event)
+
+      this.measure_start_point = { x, y }
+      this.drawMeasurement()
+    },
+    handleCanvasMouseMove(event) {
+      if (!this.is_measuring) return
+
+      const { x, y } = this.getCanvasCoordinates(event)
+
+      this.measure_current_point = { x, y }
+      this.drawMeasurement()
+    },
+    handleKeyDown(e) {
+      if (e.key === 'Escape' && this.is_measuring) {
+        this.toggleMeasure()
+      }
+    },
+    drawMeasurement() {
+      const canvas = this.$refs.bikes
+      const ctx = canvas.getContext('2d')
+      const offscreen = this.$refs.offscreen_canvas
+      ctx.drawImage(offscreen, 0, 0)
+
+      if (!this.is_measuring) return
+
+      const current = this.measure_current_point
+      if (!current) return
+
+      const start = this.measure_start_point
+
+      ctx.save()
+      ctx.font = 'bold 24px Inter, sans-serif'
+      ctx.textBaseline = 'bottom'
+      ctx.shadowColor = 'white'
+      ctx.shadowBlur = 4
+
+      if (!start) {
+        ctx.fillStyle = '#333'
+        ctx.fillText('Click on starting point', current.x + 15, current.y)
+      } else {
+        // Draw line
+        ctx.beginPath()
+        ctx.moveTo(start.x, start.y)
+        ctx.lineTo(current.x, current.y)
+        ctx.strokeStyle = '#00FF00'
+        ctx.lineWidth = 3
+        ctx.stroke()
+
+        // Draw dot at start
+        ctx.beginPath()
+        ctx.arc(start.x, start.y, 5, 0, 2 * Math.PI)
+        ctx.fillStyle = '#00FF00'
+        ctx.fill()
+
+        // Calculate distance
+        const dx = current.x - start.x
+        const dy = current.y - start.y
+        const dist_px = Math.sqrt(dx * dx + dy * dy)
+        const dist_cm = dist_px / this.scale_factor_px_per_cm
+
+        let label = ''
+        if (this.use_inches) {
+          const inches = dist_cm / 2.54
+          label = `${inches.toFixed(1)} in`
+        } else {
+          label = `${dist_cm.toFixed(0)} cm`
+        }
+
+        ctx.fillStyle = '#00FF00'
+        ctx.font = 'bold 32px Inter, sans-serif'
+        ctx.fillText(label, current.x + 15, current.y)
+      }
+      ctx.restore()
     }
   }
 }
@@ -800,9 +996,28 @@ canvas {
   pointer-events: none;
   padding: 2rem;
 
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
   > * {
     background-color: var(--color-background);
     pointer-events: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    // border-radius: 0.5rem;
+    // border: 1px solid var(--color-text);
+  }
+
+  button.is--active {
+    background-color: var(--color-accent);
+    color: black;
+    border-color: var(--color-accent);
   }
 }
 
