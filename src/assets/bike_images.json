@@ -3221,7 +3221,7 @@
     "model": "Lulu Bike Sport",
     "bike_type": "foldable",
     "src": "my-lulu-bike-sport.png",
-    "bike_length_cm": 155,
+    "bike_length_cm": 156,
     "weight": 14,
     "bike_length_percent": 0.719,
     "left_margin_percent": 0.128,
