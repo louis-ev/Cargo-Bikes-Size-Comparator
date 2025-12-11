@@ -3233,9 +3233,9 @@
 
     "folded_view": {
       "src": "my-lulu-bike-sport-plie.png",
-      "bike_length_cm": 56,
-      "bike_length_percent": 0.687,
-      "left_margin_percent": 0.196,
+      "bike_length_cm": 57,
+      "bike_length_percent": 0.67,
+      "left_margin_percent": 0.21,
       "bottom_margin_percent": 0.038
     }
   },
