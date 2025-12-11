@@ -232,6 +232,7 @@ export default {
       show_regular_bike_silhouette: false,
 
       is_measuring: false,
+      measure_lines: [], // Array of {start: {x,y}, end: {x,y}}
       measure_start_point: null,
       measure_current_point: null,
       scale_factor_px_per_cm: 1,
@@ -712,6 +713,7 @@ export default {
       this.is_measuring = !this.is_measuring
       this.measure_start_point = null
       this.measure_current_point = null
+      this.measure_lines = []
       this.showBikes()
     },
     getCanvasCoordinates(event) {
@@ -756,7 +758,16 @@ export default {
 
       const { x, y } = this.getCanvasCoordinates(event)
 
-      this.measure_start_point = { x, y }
+      if (!this.measure_start_point) {
+        this.measure_start_point = { x, y }
+      } else {
+        // Second click: finish line and store it
+        this.measure_lines.push({
+          start: this.measure_start_point,
+          end: { x, y }
+        })
+        this.measure_start_point = null
+      }
       this.drawMeasurement()
     },
     handleCanvasMouseMove(event) {
@@ -780,25 +791,18 @@ export default {
 
       if (!this.is_measuring) return
 
-      const current = this.measure_current_point
-      if (!current) return
-
-      const start = this.measure_start_point
-
       ctx.save()
       ctx.font = 'bold 24px Inter, sans-serif'
       ctx.textBaseline = 'bottom'
       ctx.shadowColor = 'white'
       ctx.shadowBlur = 4
 
-      if (!start) {
-        ctx.fillStyle = '#333'
-        ctx.fillText('Click on starting point', current.x + 15, current.y)
-      } else {
+      // Helper function to draw a line with label
+      const drawLine = (start, end) => {
         // Draw line
         ctx.beginPath()
         ctx.moveTo(start.x, start.y)
-        ctx.lineTo(current.x, current.y)
+        ctx.lineTo(end.x, end.y)
         ctx.strokeStyle = '#00FF00'
         ctx.lineWidth = 3
         ctx.stroke()
@@ -810,8 +814,8 @@ export default {
         ctx.fill()
 
         // Calculate distance
-        const dx = current.x - start.x
-        const dy = current.y - start.y
+        const dx = end.x - start.x
+        const dy = end.y - start.y
         const dist_px = Math.sqrt(dx * dx + dy * dy)
         const dist_cm = dist_px / this.scale_factor_px_per_cm
 
@@ -824,8 +828,29 @@ export default {
         }
 
         ctx.fillStyle = '#00FF00'
-        ctx.font = 'bold 32px Inter, sans-serif'
-        ctx.fillText(label, current.x + 15, current.y)
+        ctx.font = 'bold 24px Inter, sans-serif'
+        ctx.fillText(label, end.x + 15, end.y)
+      }
+
+      // Draw all stored lines
+      this.measure_lines.forEach((line) => {
+        drawLine(line.start, line.end)
+      })
+
+      const current = this.measure_current_point
+      if (!current) {
+        ctx.restore()
+        return
+      }
+
+      const start = this.measure_start_point
+
+      if (!start) {
+        ctx.fillStyle = '#333'
+        ctx.font = 'bold 24px Inter, sans-serif'
+        ctx.fillText('Click on starting point', current.x + 15, current.y)
+      } else {
+        drawLine(start, current)
       }
       ctx.restore()
     }
