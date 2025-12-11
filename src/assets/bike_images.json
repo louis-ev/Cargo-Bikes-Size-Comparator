@@ -3223,13 +3223,21 @@
     "src": "my-lulu-bike-sport.png",
     "bike_length_cm": 155,
     "weight": 14,
-    "bike_length_percent": 0.974,
-    "left_margin_percent": 0.018,
-    "bottom_margin_percent": 0.129,
+    "bike_length_percent": 0.719,
+    "left_margin_percent": 0.128,
+    "bottom_margin_percent": 0.105,
     "url": "https://mylulubike.com/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+
+    "folded_view": {
+      "src": "my-lulu-bike-sport-plie.png",
+      "bike_length_cm": 56,
+      "bike_length_percent": 0.687,
+      "left_margin_percent": 0.196,
+      "bottom_margin_percent": 0.038
+    }
   },
   {
     "id": "oklo-simplix",
