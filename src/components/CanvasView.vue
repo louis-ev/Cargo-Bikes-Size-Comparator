@@ -232,11 +232,12 @@ export default {
       show_regular_bike_silhouette: false,
 
       is_measuring: false,
-      measure_lines: [], // Array of {start: {x,y}, end: {x,y}}
-      measure_start_point: null,
-      measure_current_point: null,
+      measure_lines: [], // Array of {start: {x,y}, end: {x,y}} in CM
+      measure_start_point: null, // {x, y} in CM
+      measure_current_point: null, // {x, y} in PX
       scale_factor_px_per_cm: 1,
-      canvas_padding: 0
+      canvas_padding: 0,
+      canvas_height: 0
     }
   },
   created() {},
@@ -399,6 +400,8 @@ export default {
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
       if (this.show_regular_bike_silhouette)
         await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
+
+      this.canvas_height = canvas.height
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -757,14 +760,15 @@ export default {
       if (!this.is_measuring) return
 
       const { x, y } = this.getCanvasCoordinates(event)
+      const pointCm = this.pixelsToCm({ x, y })
 
       if (!this.measure_start_point) {
-        this.measure_start_point = { x, y }
+        this.measure_start_point = pointCm
       } else {
         // Second click: finish line and store it
         this.measure_lines.push({
           start: this.measure_start_point,
-          end: { x, y }
+          end: pointCm
         })
         this.measure_start_point = null
       }
@@ -781,6 +785,18 @@ export default {
     handleKeyDown(e) {
       if (e.key === 'Escape' && this.is_measuring) {
         this.toggleMeasure()
+      }
+    },
+    pixelsToCm({ x, y }) {
+      return {
+        x: (x - this.canvas_padding) / this.scale_factor_px_per_cm,
+        y: (this.canvas_height - this.canvas_padding - y) / this.scale_factor_px_per_cm
+      }
+    },
+    cmToPixels({ x, y }) {
+      return {
+        x: x * this.scale_factor_px_per_cm + this.canvas_padding,
+        y: this.canvas_height - this.canvas_padding - y * this.scale_factor_px_per_cm
       }
     },
     drawMeasurement() {
@@ -807,11 +823,31 @@ export default {
         ctx.lineWidth = 3
         ctx.stroke()
 
-        // Draw dot at start
+        // Draw perpendicular ticks at ends
+        const angle = Math.atan2(end.y - start.y, end.x - start.x)
+        const tickLength = 5
+
         ctx.beginPath()
-        ctx.arc(start.x, start.y, 5, 0, 2 * Math.PI)
-        ctx.fillStyle = '#00FF00'
-        ctx.fill()
+        ctx.moveTo(
+          start.x + tickLength * Math.cos(angle + Math.PI / 2),
+          start.y + tickLength * Math.sin(angle + Math.PI / 2)
+        )
+        ctx.lineTo(
+          start.x + tickLength * Math.cos(angle - Math.PI / 2),
+          start.y + tickLength * Math.sin(angle - Math.PI / 2)
+        )
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.moveTo(
+          end.x + tickLength * Math.cos(angle + Math.PI / 2),
+          end.y + tickLength * Math.sin(angle + Math.PI / 2)
+        )
+        ctx.lineTo(
+          end.x + tickLength * Math.cos(angle - Math.PI / 2),
+          end.y + tickLength * Math.sin(angle - Math.PI / 2)
+        )
+        ctx.stroke()
 
         // Calculate distance
         const dx = end.x - start.x
@@ -828,13 +864,19 @@ export default {
         }
 
         ctx.fillStyle = '#00FF00'
-        ctx.font = 'bold 24px Inter, sans-serif'
+        ctx.font = 'bold 18px Inter, sans-serif'
+        ctx.strokeStyle = 'white'
+        ctx.lineWidth = 3
+        ctx.lineJoin = 'round'
+        ctx.strokeText(label, end.x + 15, end.y)
         ctx.fillText(label, end.x + 15, end.y)
       }
 
       // Draw all stored lines
       this.measure_lines.forEach((line) => {
-        drawLine(line.start, line.end)
+        const startPx = this.cmToPixels(line.start)
+        const endPx = this.cmToPixels(line.end)
+        drawLine(startPx, endPx)
       })
 
       const current = this.measure_current_point
@@ -843,14 +885,19 @@ export default {
         return
       }
 
-      const start = this.measure_start_point
+      const startCm = this.measure_start_point
 
-      if (!start) {
+      if (!startCm) {
         ctx.fillStyle = '#333'
-        ctx.font = 'bold 24px Inter, sans-serif'
+        ctx.font = 'bold 18px Inter, sans-serif'
+        ctx.strokeStyle = 'white'
+        ctx.lineWidth = 3
+        ctx.lineJoin = 'round'
+        ctx.strokeText('Click on starting point', current.x + 15, current.y)
         ctx.fillText('Click on starting point', current.x + 15, current.y)
       } else {
-        drawLine(start, current)
+        const startPx = this.cmToPixels(startCm)
+        drawLine(startPx, current)
       }
       ctx.restore()
     }
