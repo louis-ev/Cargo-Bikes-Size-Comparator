@@ -168,6 +168,30 @@
         </svg>
         {{ is_measuring ? $t('message.stop_measuring') : $t('message.measure') }}
       </button>
+      <button
+        v-if="measure_lines.length > 0"
+        type="button"
+        class=""
+        @click="clearMeasures"
+        style="margin-right: 0.5rem"
+      >
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        {{ $t('message.clear_measures') }}
+      </button>
       <button type="button" class="" @click="downloadCanvas">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
           <path
@@ -243,6 +267,15 @@ export default {
   created() {},
   async mounted() {
     this.bike_images_full_paths = await this.$loadBikeImages2(bike_images_full_paths)
+
+    const stored_lines = localStorage.getItem('measure_lines')
+    if (stored_lines) {
+      try {
+        this.measure_lines = JSON.parse(stored_lines)
+      } catch (e) {
+        console.error('Failed to parse measure_lines', e)
+      }
+    }
 
     this.showBikes()
     this.ro = new ResizeObserver(this.showBikes)
@@ -532,7 +565,7 @@ export default {
       visible_canvas.height = canvas.height
       visible_canvas.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height)
 
-      if (this.is_measuring) {
+      if (this.is_measuring || this.measure_lines.length > 0) {
         this.drawMeasurement()
       }
 
@@ -716,7 +749,10 @@ export default {
       this.is_measuring = !this.is_measuring
       this.measure_start_point = null
       this.measure_current_point = null
+    },
+    clearMeasures() {
       this.measure_lines = []
+      localStorage.removeItem('measure_lines')
       this.showBikes()
     },
     getCanvasCoordinates(event) {
@@ -770,6 +806,7 @@ export default {
           start: this.measure_start_point,
           end: pointCm
         })
+        localStorage.setItem('measure_lines', JSON.stringify(this.measure_lines))
         this.measure_start_point = null
       }
       this.drawMeasurement()
@@ -805,7 +842,7 @@ export default {
       const offscreen = this.$refs.offscreen_canvas
       ctx.drawImage(offscreen, 0, 0)
 
-      if (!this.is_measuring) return
+      // if (!this.is_measuring) return // removed this line to allow drawing stored lines even when not measuring
 
       ctx.save()
       ctx.font = 'bold 24px Inter, sans-serif'
@@ -863,13 +900,19 @@ export default {
           label = `${dist_cm.toFixed(0)} cm`
         }
 
-        ctx.fillStyle = '#00FF00'
-        ctx.font = 'bold 18px Inter, sans-serif'
-        ctx.strokeStyle = 'white'
+        ctx.fillStyle = '#000'
+        ctx.font = 'bold 14px Inter, sans-serif'
+        ctx.strokeStyle = '#00FF00'
         ctx.lineWidth = 3
         ctx.lineJoin = 'round'
-        ctx.strokeText(label, end.x + 15, end.y)
-        ctx.fillText(label, end.x + 15, end.y)
+        ctx.textAlign = 'center'
+
+        const midX = (start.x + end.x) / 2
+        const midY = (start.y + end.y) / 2
+
+        ctx.strokeText(label, midX, midY - 10)
+        ctx.fillText(label, midX, midY - 10)
+        ctx.textAlign = 'start'
       }
 
       // Draw all stored lines
