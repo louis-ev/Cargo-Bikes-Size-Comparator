@@ -3322,7 +3322,14 @@
     "url": "https://www.decathlon.fr/p/velo-pliant-fold-500-bleu-fonce/_/R-p-343354",
     "frame_made_in": "",
     "assembled_in": "Portugal",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "folded_view": {
+      "src": "btwin-fold-500-folded.png",
+      "bike_length_cm": 78,
+      "bike_length_percent": 0.87,
+      "left_margin_percent": 0.032,
+      "bottom_margin_percent": 0.055
+    }
   },
   {
     "id": "cluuv-e-cargo",
