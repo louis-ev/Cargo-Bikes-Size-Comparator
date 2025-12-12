@@ -116,13 +116,7 @@
       </transition-group>
     </div>
     <small class="_downloadCanvas">
-      <button
-        type="button"
-        class=""
-        :class="{ 'is--active': is_measuring }"
-        @click="toggleMeasure"
-        style="margin-right: 0.5rem"
-      >
+      <button type="button" class="" :class="{ 'is--active': is_measuring }" @click="toggleMeasure">
         <svg
           width="20px"
           height="20px"
@@ -168,13 +162,7 @@
         </svg>
         {{ is_measuring ? $t('message.stop_measuring') : $t('message.measure') }}
       </button>
-      <button
-        v-if="measure_lines.length > 0"
-        type="button"
-        class=""
-        @click="clearMeasures"
-        style="margin-right: 0.5rem"
-      >
+      <button v-if="measure_lines.length > 0" type="button" class="" @click="clearMeasures">
         <svg
           width="20px"
           height="20px"
@@ -1112,21 +1100,20 @@ canvas {
   padding: 2rem;
 
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
 
   > * {
     background-color: var(--color-background);
     pointer-events: auto;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: row nowrap;
     align-items: center;
     gap: 0.5rem;
     padding: 0.25rem 0.5rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    // border-radius: 0.5rem;
-    // border: 1px solid var(--color-text);
   }
 
   button.is--active {
