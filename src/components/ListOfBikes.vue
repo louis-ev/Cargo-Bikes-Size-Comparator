@@ -7,6 +7,14 @@
       </div>
       <div class="_credits">
         <Credits @showAddBikeModal="$emit('showAddBikeModal')" />
+
+        <hr />
+        <div>
+          <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+            ＋
+            {{ $t('message.add_a_bike') }}
+          </button>
+        </div>
       </div>
     </div>
     <div class="_topBar">

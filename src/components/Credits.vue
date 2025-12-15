@@ -39,13 +39,6 @@
       {{ $t('message.bike_images_from_the_manufacturer_s_website') }}
     </div>
 
-    <div>
-      <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
-        ＋
-        {{ $t('message.add_a_bike') }}
-      </button>
-    </div>
-
     <template v-if="show_license">
       <div class="_license">
         <pre>
