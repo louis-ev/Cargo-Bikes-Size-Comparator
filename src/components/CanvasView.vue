@@ -888,7 +888,7 @@ export default {
       ctx.shadowBlur = 4
 
       // Helper function to draw a line with label
-      const drawLine = (start, end) => {
+      const drawLine = (start, end, is_interactive = false) => {
         // Draw line
         ctx.beginPath()
         ctx.moveTo(start.x, start.y)
@@ -929,6 +929,29 @@ export default {
         const dist_px = Math.sqrt(dx * dx + dy * dy)
         const dist_cm = dist_px / this.scale_factor_px_per_cm
 
+        const midX = (start.x + end.x) / 2
+        const midY = (start.y + end.y) / 2
+
+        if (dist_cm < 0.5) {
+          if (is_interactive) {
+            ctx.fillStyle = '#333'
+            ctx.font = 'bold 24px Inter, sans-serif'
+            ctx.strokeStyle = 'white'
+            ctx.lineWidth = 3
+            ctx.lineJoin = 'round'
+            ctx.textAlign = 'left'
+
+            ctx.strokeText('Move to the second point to add measure', midX + 15, midY)
+            ctx.fillText('Move to the second point to add measure', midX + 15, midY)
+          } else {
+            ctx.beginPath()
+            ctx.arc(midX, midY, 5, 0, 2 * Math.PI)
+            ctx.fillStyle = '#00FF00'
+            ctx.fill()
+          }
+          return
+        }
+
         let label = ''
         if (this.use_inches) {
           const inches = dist_cm / 2.54
@@ -943,9 +966,6 @@ export default {
         ctx.lineWidth = 6
         ctx.lineJoin = 'round'
         ctx.textAlign = 'center'
-
-        const midX = (start.x + end.x) / 2
-        const midY = (start.y + end.y) / 2
 
         ctx.strokeText(label, midX, midY - 20)
         ctx.fillText(label, midX, midY - 20)
@@ -977,7 +997,7 @@ export default {
         ctx.fillText('Click on starting point', current.x + 15, current.y)
       } else {
         const startPx = this.cmToPixels(startCm)
-        drawLine(startPx, current)
+        drawLine(startPx, current, true)
       }
       ctx.restore()
     }
