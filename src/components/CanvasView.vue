@@ -383,14 +383,10 @@ export default {
       const canvas = this.$refs.offscreen_canvas
       if (!canvas) return
 
-      canvas.width = Math.min(
-        canvas.parentNode.clientWidth * window.devicePixelRatio,
-        canvas.parentNode.clientHeight * window.devicePixelRatio * 1.5
-      )
-      canvas.height = Math.min(
-        canvas.parentNode.clientHeight * window.devicePixelRatio,
-        canvas.width
-      )
+      // Match canvas buffer size to display size (times dPR) to prevent stretching
+      const dPR = window.devicePixelRatio || 1
+      canvas.width = canvas.parentNode.clientWidth * dPR
+      canvas.height = canvas.parentNode.clientHeight * dPR
 
       const ctx = canvas.getContext('2d')
 
@@ -404,20 +400,28 @@ export default {
       })
       // if (!largest_bike) return
 
+      // Calculate scale to fit width, but constrain width for calculation to avoid huge bikes on wide screens
       const padding = canvas.width / (100 / this.default_padding_percent)
-      const each_px_measures_in_cm = (canvas.width - padding * 2) / (largest_bike || 200)
+      const max_width_for_calc = Math.min(canvas.width, canvas.height * 1.5)
+
+      let each_px_measures_in_cm = (max_width_for_calc - padding * 2) / (largest_bike || 200)
+
+      // Check height constraints and scale down if necessary to fit vertical content
+      let required_height_cm = MIN_CANVAS_HEIGHT_CM
+      if (this.show_human_silhouette) {
+        required_height_cm = Math.max(required_height_cm, this.human_silhouette_height + 20)
+      }
+
+      const available_height_px = canvas.height - padding * 2
+      const max_px_per_cm_by_height = available_height_px / required_height_cm
+
+      if (max_px_per_cm_by_height < each_px_measures_in_cm) {
+        each_px_measures_in_cm = max_px_per_cm_by_height
+      }
 
       this.scale_factor_px_per_cm = each_px_measures_in_cm
       this.canvas_padding = padding
-
-      const min_canvas_height_px = MIN_CANVAS_HEIGHT_CM * each_px_measures_in_cm + padding * 2
-      canvas.height = Math.max(canvas.height, min_canvas_height_px)
-
-      if (this.show_human_silhouette)
-        canvas.height = Math.max(
-          canvas.height,
-          (this.human_silhouette_height + 20) * each_px_measures_in_cm
-        )
+      this.canvas_height = canvas.height
 
       this.drawBackground(ctx, canvas)
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
@@ -425,8 +429,6 @@ export default {
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
       if (this.show_regular_bike_silhouette)
         await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
-
-      this.canvas_height = canvas.height
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -1008,8 +1010,6 @@ export default {
 canvas {
   width: 100%;
   height: 100%;
-  object-fit: scale-down;
-  object-position: left center;
 }
 ._canvasWrapper {
   position: relative;
