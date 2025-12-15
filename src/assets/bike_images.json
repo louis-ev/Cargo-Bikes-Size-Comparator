@@ -2,7 +2,6 @@
   {
     "id": "chike",
     "id_in_csv": "",
-
     "manufacturer": "Chike",
     "model": "e-kids",
     "bike_type": "tricycle",
@@ -19,7 +18,6 @@
   {
     "id": "chike-cargo",
     "id_in_csv": "Chike/Cargo",
-
     "manufacturer": "Chike",
     "model": "e-cargo",
     "bike_type": "tricycle",
@@ -36,7 +34,6 @@
   {
     "id": "muli",
     "id_in_csv": "Muli Cycles/Muli",
-
     "manufacturer": "muli Cycles",
     "model": "muli",
     "bike_type": "longjohn",
@@ -78,7 +75,6 @@
   {
     "id": "carrie-rm",
     "id_in_csv": "Riese and Muller/Carrie",
-
     "manufacturer": "Riese und Müller",
     "model": "Carrie",
     "bike_type": "longjohn",
@@ -97,7 +93,6 @@
   {
     "id": "load75-rm",
     "id_in_csv": "Riese and Muller/Load 75",
-
     "manufacturer": "Riese und Müller",
     "model": "Load 75",
     "bike_type": "longjohn",
@@ -116,7 +111,6 @@
   {
     "id": "load60-rm",
     "id_in_csv": "Riese and Muller/Load 60",
-
     "manufacturer": "Riese und Müller",
     "model": "Load 60",
     "bike_type": "longjohn",
@@ -135,7 +129,6 @@
   {
     "id": "cargo-verso",
     "id_in_csv": "Douze Cycles/Cargo Verso",
-
     "manufacturer": "Douze Cycles",
     "model": "Cargo Verso",
     "bike_type": "longjohn",
@@ -152,7 +145,6 @@
   {
     "id": "bullit",
     "id_in_csv": "Bullitt/",
-
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt",
     "bike_type": "longjohn",
@@ -174,7 +166,6 @@
   },
   {
     "id": "urbanarrow-familynext",
-
     "manufacturer": "Urban Arrow",
     "model": "FamilyNext",
     "bike_type": "longjohn",
@@ -191,7 +182,6 @@
   {
     "id": "urbanarrow",
     "id_in_csv": "Urban Arrow/Family",
-
     "manufacturer": "Urban Arrow",
     "model": "Family",
     "bike_type": "longjohn",
@@ -213,7 +203,6 @@
   {
     "id": "decathlon-r500e",
     "id_in_csv": "",
-
     "manufacturer": "Decathlon",
     "model": "R500E",
     "bike_type": "longtail",
@@ -223,12 +212,12 @@
     "left_margin_percent": 0.0375,
     "bottom_margin_percent": 0.072,
     "url": "https://www.decathlon.fr/p/velocargo-electrique-longtail-chargement-arriere-r500e/_/R-p-349924",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "moustache-lundi-20-3",
     "id_in_csv": "",
-
     "manufacturer": "Moustache",
     "model": "Lundi 20.3",
     "bike_type": "longtail",
@@ -238,12 +227,12 @@
     "left_margin_percent": 0.036,
     "bottom_margin_percent": 0.152,
     "url": "https://moustachebikes.com/fr/en/electric-bikes/lundi-20-cargo/lundi-20-cargo-3/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061 T4/T6"
   },
   {
     "id": "yuba-fastrack",
     "id_in_csv": "",
-
     "manufacturer": "Yuba",
     "model": "Fastrack",
     "bike_type": "longtail",
@@ -253,12 +242,12 @@
     "left_margin_percent": 0.079,
     "bottom_margin_percent": 0.113,
     "url": "https://www.yubaeurope.com/en/bikes-add-ons/fastrack/fastrack",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "tern-gsd",
     "id_in_csv": "Tern/GSD Gen. 2",
-
     "manufacturer": "Tern",
     "model": "GSD (gen. 2)",
     "bike_type": "longtail",
@@ -268,12 +257,12 @@
     "left_margin_percent": 0.109,
     "bottom_margin_percent": 0.096,
     "url": "https://www.ternbicycles.com/en/bikes/472/gsd",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "omnium-minimax",
     "id_in_csv": "",
-
     "manufacturer": "Omnium",
     "model": "Mini Max V3 M",
     "bike_type": "shortjohn",
@@ -283,12 +272,12 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.086,
     "url": "https://omniumcargo.com/mini-max/",
-    "wheel_size": ["700c", "29", "20"]
+    "wheel_size": ["700c", "29", "20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "omnium-cargo",
     "id_in_csv": "",
-
     "manufacturer": "Omnium",
     "model": "Cargo V3 M",
     "bike_type": "shortjohn",
@@ -298,12 +287,12 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.175,
     "url": "https://omniumcargo.com",
-    "wheel_size": ["700c", "29", "20"]
+    "wheel_size": ["700c", "29", "20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "omnium-mini",
     "id_in_csv": "",
-
     "manufacturer": "Omnium",
     "model": "Mini V3 M",
     "bike_type": "shortjohn",
@@ -313,22 +302,22 @@
     "left_margin_percent": 0.037,
     "bottom_margin_percent": 0.066,
     "url": "https://omniumcargo.com/mini/",
-    "wheel_size": ["700c", "29", "20"]
+    "wheel_size": ["700c", "29", "20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "lepetitporteur",
     "id_in_csv": "",
-
     "manufacturer": "Le Petit Porteur",
     "model": "OG",
     "bike_type": "midtail",
     "src": "lpp-og.png",
     "bike_length_cm": 168,
     "bike_length_percent": 1,
-    "left_margin_percent": 0.0,
-    "bottom_margin_percent": 0.0,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
     "url": "https://www.lepetitporteur.com/fr/content/27-le-petit-porteur-og",
-    "frame_material": "CrMo",
+    "frame_material": "CrMo 4130",
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "china",
@@ -337,7 +326,6 @@
   {
     "id": "lepetitporteur-longtail",
     "id_in_csv": "",
-
     "manufacturer": "Le Petit Porteur",
     "model": "Longtail",
     "bike_type": "longtail",
@@ -347,7 +335,7 @@
     "left_margin_percent": 0.011,
     "bottom_margin_percent": 0.003,
     "url": "https://www.lepetitporteur.com/en/compact-and-affordable-cargo-bike/",
-    "frame_material": "CrMo",
+    "frame_material": "CrMo 4130",
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "china",
@@ -356,7 +344,6 @@
   {
     "id": "nakamura",
     "id_in_csv": "",
-
     "manufacturer": "Nakamura",
     "model": "Crossover",
     "bike_type": "longtail",
@@ -366,14 +353,14 @@
     "left_margin_percent": 0.008,
     "bottom_margin_percent": 0.216,
     "url": "https://www.intersport.fr/vtc_electrique_adulte_crossover_longtail-nakamura-p-YF60WT~ANM/",
-    "wheel_size": ["27.5", "24"]
+    "wheel_size": ["27.5", "24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "lovens",
     "id_in_csv": "",
-
     "manufacturer": "Lovens",
-    "model": "Explorer S75 ",
+    "model": "Explorer S75",
     "bike_type": "longjohn",
     "src": "lovens-explorer75.png",
     "bike_length_percent": 0.947,
@@ -381,11 +368,11 @@
     "left_margin_percent": 0.032,
     "bottom_margin_percent": 0.06,
     "url": "https://lovensbikes.com/fr/lovens-explorer-s75/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "yoonit",
-
     "manufacturer": "YOONIT",
     "model": "Mini",
     "bike_type": "shortjohn",
@@ -403,7 +390,6 @@
   {
     "id": "multicharger2",
     "id_in_csv": "R&M/Multicharger",
-
     "manufacturer": "Riese und Müller",
     "model": "Multicharger2",
     "bike_type": "longtail",
@@ -424,12 +410,12 @@
         "src": "rm-multicharger-2.jpeg"
       }
     ],
-    "wheel_size": ["27.5"]
+    "wheel_size": ["27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "multitinker",
     "id_in_csv": "R&M/Multitinker",
-
     "manufacturer": "Riese und Müller",
     "model": "Multitinker",
     "bike_type": "longtail",
@@ -440,12 +426,12 @@
     "bottom_margin_percent": 0.045,
     "weight": 35,
     "url": "https://www.r-m.de/fr/bikes/multitinker/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "packster70",
     "id_in_csv": "R&M/Packster 70",
-
     "manufacturer": "Riese und Müller",
     "model": "Packster 70",
     "bike_type": "longjohn",
@@ -456,11 +442,11 @@
     "bottom_margin_percent": 0.238,
     "url": "https://www.r-m.de/fr/bikes/packster-70/",
     "weight": 35.5,
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "packster2-70-ct-riese-und-müller",
-
     "manufacturer": "Riese und Müller",
     "model": "Packster2 70 CT",
     "bike_type": "longjohn",
@@ -471,13 +457,13 @@
     "bottom_margin_percent": 0.007,
     "url": "https://www.r-m.de/fr/bikes/packster2-70-ct/",
     "frame_made_in": "",
+    "frame_material": "Aluminium",
     "weight": 41.1,
     "wheel_size": ["20", "26"]
   },
   {
     "id": "bunch-bike",
     "id_in_csv": "",
-
     "manufacturer": "Bunch Bike",
     "model": "The Original 4",
     "bike_type": "tricycle",
@@ -487,28 +473,28 @@
     "left_margin_percent": 0.021,
     "bottom_margin_percent": 0.283,
     "url": "https://bunchbike.com/products/the-original-4-upgraded-electric-cargo-bike-for-families",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "cargo-classic",
     "id_in_csv": "",
-
     "manufacturer": "Cannondale",
     "model": "Cargowagen Neo",
     "bike_type": "longtail",
     "src": "cargowagen.png",
     "bike_length_percent": 1,
     "bike_length_cm": 185,
-    "left_margin_percent": 0.0,
+    "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.cannondale.com/fr-fr/bikes/electric/e-cargo/cargowagen-neo/cargowagen-neo-1",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium SmartForm C2 Alloy"
   },
   {
     "id": "evo-longtail",
     "id_in_csv": "",
-
-    "manufacturer": "Oklo",
+    "manufacturer": "Oklö",
     "model": "Evo Longtail",
     "bike_type": "longtail",
     "src": "oklo-evo-fantilo-lt.png",
@@ -524,7 +510,6 @@
   {
     "id": "etnicycles-oleron",
     "id_in_csv": "",
-
     "manufacturer": "ETNI Cycles",
     "model": "Oléron",
     "bike_type": "longtail",
@@ -536,12 +521,12 @@
     "frame_made_in": "france",
     "assembled_in": "France",
     "url": "https://www.etnicycles.com/",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "25CD4S Steel"
   },
   {
     "id": "filibus",
     "id_in_csv": "",
-
     "manufacturer": "Kemper",
     "model": "Filibus",
     "bike_type": "shortjohn",
@@ -552,22 +537,23 @@
     "bottom_margin_percent": 0.163,
     "frame_made_in": "germany",
     "url": "https://www.kemper-velo.de/filibus",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel (CrMo)"
   },
   {
     "id": "aventon-abound",
     "id_in_csv": "",
-
     "manufacturer": "Aventon",
     "model": "Abound",
     "bike_type": "longtail",
     "src": "aventon-abound.png",
     "bike_length_percent": 1,
     "bike_length_cm": 191,
-    "left_margin_percent": 0.0,
+    "left_margin_percent": 0,
     "bottom_margin_percent": 0.234,
     "url": "https://www.aventon.com/products/abound-ebike?variant=42319517515971",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "abound-lr-aventon",
@@ -583,12 +569,12 @@
     "url": "https://www.aventon.com/products/abound-lr-ebike?variant=44189242818755",
     "frame_made_in": "Taiwan",
     "assembled_in": "China",
+    "frame_material": "6061 Aluminium",
     "wheel_size": ["20"]
   },
   {
     "id": "radwagon-5",
     "id_in_csv": "",
-
     "manufacturer": "Rad Power Bikes",
     "model": "RadWagon 5",
     "bike_type": "longtail",
@@ -598,12 +584,12 @@
     "left_margin_percent": 0.042,
     "bottom_margin_percent": 0.183,
     "url": "https://www.radpowerbikes.com/products/radwagon-electric-cargo-bike",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "6061 Aluminium"
   },
   {
     "id": "radwagon-4-radpower-bikes",
     "id_in_csv": "RadPower/Radwagon",
-
     "manufacturer": "Rad Power Bikes",
     "model": "RadWagon 4",
     "bike_type": "longtail",
@@ -614,12 +600,12 @@
     "left_margin_percent": 0.049,
     "bottom_margin_percent": 0.142,
     "url": "https://www.radpowerbikes.com/products/radwagon-4-electric-cargo-bike",
-    "wheel_size": ["22"]
+    "wheel_size": ["22"],
+    "frame_material": "6061 Aluminium"
   },
   {
     "id": "robertbikes-bob",
     "id_in_csv": "",
-
     "manufacturer": "RobertBikes",
     "model": "BOB",
     "bike_type": "longtail",
@@ -630,12 +616,12 @@
     "bottom_margin_percent": 0.05,
     "frame_made_in": "france",
     "url": "https://www.robertbikes.fr/bob-velo-cargo-electrique",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "AC-E235 steel"
   },
   {
     "id": "specialized-haul-st",
     "id_in_csv": "Specialized/Haul ST",
-
     "manufacturer": "Specialized",
     "model": "Haul ST",
     "bike_type": "midtail",
@@ -645,12 +631,12 @@
     "left_margin_percent": 0.002,
     "bottom_margin_percent": 0.023,
     "url": "https://www.specialized.com/us/en/haul-st/p/200057",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Premium E5 Aluminium"
   },
   {
     "id": "specialized-haul-lt",
     "id_in_csv": "Specialized/Haul LT",
-
     "manufacturer": "Specialized",
     "model": "Haul LT",
     "bike_type": "longtail",
@@ -660,12 +646,12 @@
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.255,
     "url": "https://www.specialized.com/ca/fr/haul-lt/p/4276253?searchText=91025-9300&color=5437294-4276253",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Premium E5 Aluminium"
   },
   {
     "id": "tern-hsd",
     "id_in_csv": "Tern/HSD Gen. 2",
-
     "manufacturer": "Tern",
     "model": "HSD",
     "bike_type": "midtail",
@@ -675,12 +661,12 @@
     "left_margin_percent": 0.123,
     "bottom_margin_percent": 0.119,
     "url": "https://www.ternbicycles.com/en/bikes/472/hsd",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "tern-quick-haul",
     "id_in_csv": "Tern/Quick Haul",
-
     "manufacturer": "Tern",
     "model": "Quick Haul",
     "bike_type": "midtail",
@@ -690,12 +676,12 @@
     "left_margin_percent": 0.02,
     "bottom_margin_percent": 0.056,
     "url": "https://www.ternbicycles.com/en/bikes/471/quick-haul",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "vello-suburban",
     "id_in_csv": "Vello/SUB",
-
     "manufacturer": "Vello",
     "model": "SUB",
     "bike_type": "longtail",
@@ -712,7 +698,6 @@
   {
     "id": "yuba-kombi",
     "id_in_csv": "Yuba/Kombi",
-
     "manufacturer": "Yuba",
     "model": "Kombi",
     "bike_type": "longtail",
@@ -722,12 +707,12 @@
     "left_margin_percent": 0.102,
     "bottom_margin_percent": 0.133,
     "url": "https://yubabikes.com/product/kombi/",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Steel"
   },
   {
     "id": "yuba-mundo",
     "id_in_csv": "Yuba/Mundo",
-
     "manufacturer": "Yuba",
     "model": "Mundo",
     "bike_type": "longtail",
@@ -738,12 +723,12 @@
     "left_margin_percent": 0.078,
     "bottom_margin_percent": 0.182,
     "url": "https://yubabikes.com/cargobikestore/yuba-mundo/",
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Steel"
   },
   {
     "id": "yuba-supercargo",
     "id_in_csv": "",
-
     "manufacturer": "Yuba",
     "model": "SuperCargo",
     "bike_type": "longjohn",
@@ -753,12 +738,12 @@
     "left_margin_percent": 0.05,
     "bottom_margin_percent": 0.187,
     "url": "https://yubabikes.fr/cargobikestore/supercargo/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cargo-lt",
     "id_in_csv": "",
-
     "manufacturer": "Douze Cycles",
     "model": "LT",
     "bike_type": "longtail",
@@ -768,12 +753,12 @@
     "left_margin_percent": 0.005,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/lt",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cargo-v2-600",
     "id_in_csv": "",
-
     "manufacturer": "Douze Cycles",
     "model": "V2 (600)",
     "bike_type": "longjohn",
@@ -783,12 +768,12 @@
     "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/v2",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 7005"
   },
   {
     "id": "cargo-v2-800",
     "id_in_csv": "",
-
     "manufacturer": "Douze Cycles",
     "model": "V2 (800)",
     "bike_type": "longjohn",
@@ -798,12 +783,12 @@
     "left_margin_percent": 0,
     "bottom_margin_percent": 0,
     "url": "https://www.douze-cycles.com/velos-cargos/v2",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 7005"
   },
   {
     "id": "galian-cycles-le-formidable",
     "id_in_csv": "",
-
     "manufacturer": "Galian Cycles",
     "model": "Le Formidable",
     "bike_type": "longjohn",
@@ -814,11 +799,11 @@
     "bottom_margin_percent": 0.19,
     "frame_made_in": "france",
     "url": "https://galiancycles.com/products/le-formidable",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "swoop-xtracycle",
-
     "manufacturer": "Xtracycle",
     "model": "Swoop",
     "bike_type": "longtail",
@@ -828,11 +813,11 @@
     "left_margin_percent": 0.06,
     "bottom_margin_percent": 0.141,
     "url": "https://xtracycle.com/products/eswoop",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Steel (Chromoly)"
   },
   {
     "id": "justlong-sport-bicicapace",
-
     "manufacturer": "Bicicapace",
     "model": "Justlong Sport",
     "bike_type": "longtail",
@@ -844,11 +829,11 @@
     "url": "https://www.bicicapace.com/bikes/justlong/",
     "frame_made_in": "italy",
     "assembled_in": "italy",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "justlong-bicicapace",
-
     "manufacturer": "Bicicapace",
     "model": "Justlong",
     "bike_type": "longtail",
@@ -861,11 +846,11 @@
     "url": "https://www.bicicapace.com/bikes/justlong/",
     "frame_made_in": "italy",
     "assembled_in": "italy",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "jean-achielle",
-
     "manufacturer": "Achielle",
     "model": "Jean",
     "bike_type": "longtail",
@@ -876,11 +861,11 @@
     "bottom_margin_percent": 0.226,
     "url": "https://www.achielle.be/fr/2023/jean/",
     "frame_made_in": "belgium",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Steel"
   },
   {
     "id": "family-longtail-bike43",
-
     "manufacturer": "Bike43",
     "model": "Family longtail",
     "bike_type": "longtail",
@@ -891,11 +876,11 @@
     "bottom_margin_percent": 0.016,
     "url": "https://bike43.com/the-bike/",
     "frame_made_in": "europe",
-    "wheel_size": ["24", "20"]
+    "wheel_size": ["24", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "fetch+-4-trek",
-
     "manufacturer": "Trek",
     "model": "Fetch+ 4",
     "bike_type": "longjohn",
@@ -905,11 +890,11 @@
     "left_margin_percent": 0.014,
     "bottom_margin_percent": 0.015,
     "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-4/p/37114/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "u7-isinwheel",
-
     "manufacturer": "Isinwheel",
     "model": "U7",
     "bike_type": "midtail",
@@ -920,11 +905,11 @@
     "bottom_margin_percent": 0.19699999999999998,
     "url": "https://www.isinwheel.com/products/isinwheel-u7-cargo-bike",
     "frame_made_in": "China",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "longtail-hybrid-cube",
-
     "manufacturer": "Cube",
     "model": "Longtail Hybrid",
     "bike_type": "longtail",
@@ -935,11 +920,11 @@
     "bottom_margin_percent": 0.026000000000000002,
     "url": "https://www.cube.eu/de-en/cube-longtail-hybrid-725-blue-n-reflex/2f5220656ae9b73d9ac951d7f646c384",
     "frame_made_in": "Germany",
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Aluminium Superlite"
   },
   {
     "id": "xpedition-lectric",
-
     "manufacturer": "Lectric",
     "model": "XPedition",
     "bike_type": "longtail",
@@ -949,13 +934,13 @@
     "left_margin_percent": 0.036000000000000004,
     "bottom_margin_percent": 0.21,
     "url": "https://lectricebikes.com/products/xpedition-single-battery",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "disabled": true,
     "note": "Disabled because it's not a cargo bike, too short and cannot carry much",
     "id": "the-one-lectric",
-
     "manufacturer": "Lectric",
     "model": "The One",
     "src": "lectric-one.png",
@@ -964,11 +949,11 @@
     "left_margin_percent": 0.054,
     "bottom_margin_percent": 0.233,
     "url": "https://lectricebikes.com/products/lectric-one-long-range-ebike",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "everything-e-madsen-madsen",
-
     "manufacturer": "Madsen",
     "model": "EVERYTHING E-Madsen",
     "bike_type": "lowtail",
@@ -978,11 +963,11 @@
     "left_margin_percent": 0.095,
     "bottom_margin_percent": 0.187,
     "url": "https://www.madsencycles.com/en-ca/products/the-everything-madsen",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "stride-2-raleigh",
-
     "manufacturer": "Raleigh",
     "model": "Stride 2",
     "bike_type": "longjohn",
@@ -993,11 +978,11 @@
     "bottom_margin_percent": 0.247,
     "url": "https://www.raleigh.co.uk/gb/en/stride-2-family-cargo-bike/",
     "comment_en": "This same bike is also sold in the Netherlands as the Batavus Fier 2, and in Germany as the Winora F.U.B. 2w.",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "bike-classic-christiania-",
-
     "manufacturer": "Christiania",
     "model": "Bike Classic",
     "bike_type": "tricycle",
@@ -1007,11 +992,11 @@
     "left_margin_percent": 0.175,
     "bottom_margin_percent": 0.192,
     "url": "https://www.christianiabikes.com/en/",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Steel (matte black) or Aluminium"
   },
   {
     "id": "classic-long-bakfiets.nl",
-
     "manufacturer": "Bakfiets.nl",
     "model": "Classic long",
     "bike_type": "longjohn",
@@ -1022,11 +1007,11 @@
     "bottom_margin_percent": 0.122,
     "url": "https://www.bakfiets.nl/en-en/models/cargobike/long/classic",
     "frame_made_in": "Netherlands",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "boost-benno",
-
     "manufacturer": "Benno",
     "model": "Boost",
     "bike_type": "longtail",
@@ -1036,11 +1021,11 @@
     "left_margin_percent": 0.048,
     "bottom_margin_percent": 0.069,
     "url": "https://bennobikes.com/e-bikes/boost/",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "6061 Aluminium"
   },
   {
     "id": "shorty-urban-arrow",
-
     "manufacturer": "Urban Arrow",
     "model": "Shorty",
     "bike_type": "longjohn",
@@ -1055,7 +1040,6 @@
   },
   {
     "id": "e-dolly-maxdrive-600wh-dolly-bikes",
-
     "manufacturer": "Dolly Bikes",
     "model": "E-Dolly MaxDrive 600Wh",
     "bike_type": "longjohn",
@@ -1066,11 +1050,11 @@
     "bottom_margin_percent": 0.196,
     "url": "https://www.dolly-bikes.com/de-dolly-bakfiets/",
     "frame_made_in": "Netherlands",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "benno-remidemi",
-
     "manufacturer": "Benno",
     "model": "RemiDemi",
     "bike_type": "midtail",
@@ -1081,11 +1065,11 @@
     "left_margin_percent": 0.0935,
     "bottom_margin_percent": 0.11,
     "url": "https://bennobikes.com/e-bikes/remidemi/",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "gravit-city-e-hase-bikes",
-
     "manufacturer": "Hase Bikes",
     "model": "Gravit City E",
     "bike_type": "shortjohn",
@@ -1097,11 +1081,11 @@
     "url": "https://hasebikes.com/de/deine-raeder/lastenraeder/gravit-city-e/",
     "frame_made_in": "Germany",
     "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm.",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "hase-bikes-pino-cargo",
-
     "manufacturer": "Hase Bikes",
     "model": "Pino Cargo",
     "bike_type": "shortjohn",
@@ -1113,11 +1097,11 @@
     "url": "https://konfigurator.hasebikes.com/en/bike/pino-cargo/",
     "frame_made_in": "Germany",
     "comment_en": "The total length can vary thanks to a telescoping mechanism, from 184 to 245cm.",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "fr8-workcycles",
-
     "manufacturer": "Workcycles",
     "model": "FR8",
     "bike_type": "midtail",
@@ -1128,11 +1112,11 @@
     "bottom_margin_percent": 0.115,
     "url": "https://workcycles.com/product/workcycles-fr8-classic/",
     "frame_made_in": "Netherlands",
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Chromoly Steel"
   },
   {
     "id": "momentum-pakyak-e-plus",
-
     "manufacturer": "Momentum",
     "model": "PakYak E+",
     "bike_type": "longtail",
@@ -1142,11 +1126,11 @@
     "left_margin_percent": 0.053,
     "bottom_margin_percent": 0.056,
     "url": "https://www.momentum-biking.com/us/pakyak-eplus-2022",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "ALUXX Aluminium"
   },
   {
     "id": "spicy-curry-yuba",
-
     "manufacturer": "Yuba",
     "model": "Spicy Curry",
     "bike_type": "longtail",
@@ -1156,11 +1140,11 @@
     "left_margin_percent": 0.073,
     "bottom_margin_percent": 0.079,
     "url": "https://www.yubaeurope.com/bikes-add-ons/spicy-curry/spicy-curry",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Aluminium 6061-T6"
   },
   {
     "id": "hazay-family",
-
     "manufacturer": "Hazay",
     "model": "Family",
     "bike_type": "longjohn",
@@ -1171,11 +1155,11 @@
     "bottom_margin_percent": 0.228,
     "url": "https://hazaybikes.com/en/product/hazay-family/",
     "frame_made_in": "Poland",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "bullitt-x-larry-vs-harry",
-
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt X",
     "bike_type": "longjohn",
@@ -1185,11 +1169,11 @@
     "left_margin_percent": 0.13,
     "bottom_margin_percent": 0.144,
     "url": "https://www.larryvsharry.com/da/bullitx-build",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 7005 T6"
   },
   {
     "id": "46er-benno",
-
     "manufacturer": "Benno",
     "model": "46er",
     "bike_type": "longtail",
@@ -1199,11 +1183,11 @@
     "left_margin_percent": 0.027,
     "bottom_margin_percent": 0.205,
     "url": "https://bennobikes.com/e-bikes/46er/",
-    "wheel_size": ["26", "24"]
+    "wheel_size": ["26", "24"],
+    "frame_material": "6061 Aluminium"
   },
   {
     "id": "cargobike-elian-cycles",
-
     "manufacturer": "Elian Cycles",
     "model": "Cargobike",
     "bike_type": "longjohn",
@@ -1214,11 +1198,11 @@
     "bottom_margin_percent": 0.177,
     "url": "https://www.eliancycles.com/",
     "frame_made_in": "Netherlands",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "unicorn-ten:07",
-
     "manufacturer": "Ten:07",
     "model": "Unicorn",
     "bike_type": "shortjohn",
@@ -1228,11 +1212,11 @@
     "left_margin_percent": 0.033,
     "bottom_margin_percent": 0.259,
     "url": "https://ten07.cc/products/unicorn-cargo-bike",
-    "wheel_size": ["28", "20"]
+    "wheel_size": ["28", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "f900e-decathlon",
-
     "manufacturer": "Decathlon",
     "model": "F900E",
     "bike_type": "longjohn",
@@ -1243,12 +1227,12 @@
     "bottom_margin_percent": 0.212,
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-famille-f900e-taupe/_/R-p-329211",
     "weight": 66,
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "g4e-douze-cycles",
     "id_in_csv": "Douze/G4",
-
     "manufacturer": "Douze Cycles",
     "model": "G4e",
     "bike_type": "longjohn",
@@ -1258,11 +1242,11 @@
     "left_margin_percent": 0.024,
     "bottom_margin_percent": 0.121,
     "url": "https://www.douze-cycles.com",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "fs200-life-family-plus-ca-go",
-
     "manufacturer": "Ca Go",
     "model": "FS200 Life Family Plus",
     "bike_type": "longjohn",
@@ -1275,12 +1259,12 @@
     "url": "https://www.cagobike.com/en/fs-life",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "haul-a-day-bike-friday",
-
-    "manufacturer": "Bike friday",
+    "manufacturer": "Bike Friday",
     "model": "Haul-a-day",
     "bike_type": "longtail",
     "src": "HaD-1.png",
@@ -1291,11 +1275,11 @@
     "url": "https://bikefriday.com/product/bike-friday-haul-a-day-elite-cargo-bike/",
     "frame_made_in": "usa",
     "comment_en": "This bike is also sold as a 72\" (183cm) version with a shorter frame.",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "convercycle",
-
     "manufacturer": "Convercycle",
     "model": "Electric",
     "bike_type": "lowtail/foldable",
@@ -1314,11 +1298,11 @@
       "bike_length_percent": 0.924,
       "left_margin_percent": 0.036,
       "bottom_margin_percent": 0.11
-    }
+    },
+    "frame_material": "Steel"
   },
   {
     "id": "jean-I-jean-fourche",
-
     "manufacturer": "Jean Fourche",
     "model": "Jean I",
     "bike_type": "midtail",
@@ -1333,11 +1317,11 @@
     "show_frame_origin": false,
     "assembled_in": "France",
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France.",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium 6063 T6"
   },
   {
     "id": "jean-II-jean-fourche",
-
     "manufacturer": "Jean Fourche",
     "model": "Jean II",
     "bike_type": "midtail",
@@ -1352,11 +1336,11 @@
     "show_frame_origin": false,
     "assembled_in": "France",
     "comment_en": "80% of the parts are made in Europe. Bike assembled in Bordeaux, France.",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium 6063 T6"
   },
   {
     "id": "rfa-xtracycle",
-
     "manufacturer": "Xtracycle",
     "model": "RFA",
     "bike_type": "longtail",
@@ -1367,11 +1351,11 @@
     "bottom_margin_percent": 0.148,
     "url": "https://xtracycle.com/products/rfa-2?variant=44062991319336",
     "frame_made_in": "",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Chromoly Steel"
   },
   {
     "id": "cs-ca-go",
-
     "manufacturer": "Ca Go",
     "model": "CS",
     "bike_type": "longdiamond",
@@ -1382,11 +1366,11 @@
     "bottom_margin_percent": 0.318,
     "url": "https://www.cagobike.com/en/cs",
     "frame_made_in": "turkey",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "t1-pro-tarran",
-
     "manufacturer": "TARRAN",
     "model": "T1 Pro",
     "bike_type": "longjohn",
@@ -1397,11 +1381,11 @@
     "bottom_margin_percent": 0.071,
     "url": "https://tarranbikes.com/pages/t1-pro-e-cargo-bike",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "yuvy-2-elwing",
-
     "manufacturer": "Elwing",
     "model": "Yuvy 2",
     "bike_type": "midtail",
@@ -1411,11 +1395,11 @@
     "left_margin_percent": 0.055,
     "bottom_margin_percent": 0.2,
     "url": "https://elwing.co/products/yuvy-2-compact-cargo",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "husky-e-laplandar",
-
     "manufacturer": "Laplandar",
     "model": "Husky-E",
     "bike_type": "tricycle",
@@ -1427,11 +1411,11 @@
     "url": "https://www.laplandar.com/",
     "frame_made_in": "Denmark",
     "comment_en": "scooter tyre : 110/70 - 12 47S",
-    "wheel_size": ["scooter"]
+    "wheel_size": ["scooter"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "v.1-car.los",
-
     "manufacturer": "CAR.LOS",
     "model": "V.1",
     "bike_type": "longjohn",
@@ -1442,11 +1426,11 @@
     "bottom_margin_percent": 0.034,
     "url": "https://carlosmobility.com/carlos-v/",
     "frame_made_in": "",
-    "wheel_size": ["16", "20"]
+    "wheel_size": ["16", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "city-babboe",
-
     "manufacturer": "Babboe",
     "model": "City",
     "bike_type": "longjohn",
@@ -1458,11 +1442,11 @@
     "url": "https://www.babboe.fr/city",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website.",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "nihola-cargo-xl-pro",
-
     "manufacturer": "NIHOLA",
     "model": "CARGO XL Pro",
     "bike_type": "tricycle",
@@ -1473,11 +1457,11 @@
     "bottom_margin_percent": 0.15,
     "url": "https://www.nihola.fr/88387-triporteur-electrique-nihola-cargo-xl-pro-moteur-pedalier.html",
     "frame_made_in": "France",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "equo-o2feel",
-
     "manufacturer": "O2feel",
     "model": "Equo",
     "bike_type": "longtail",
@@ -1487,7 +1471,8 @@
     "left_margin_percent": 0.071,
     "bottom_margin_percent": 0.059,
     "url": "https://www.o2feel.com/equo/",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "t2-fiido",
@@ -1507,7 +1492,6 @@
   },
   {
     "id": "biporteur-unikle",
-
     "manufacturer": "Unikle",
     "model": "Biporteur",
     "bike_type": "longjohn",
@@ -1518,11 +1502,11 @@
     "bottom_margin_percent": 0.029,
     "url": "https://unikle.fr/le-biporteur/",
     "frame_made_in": "France",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Steel"
   },
   {
     "id": "zed-robertbikes",
-
     "manufacturer": "RobertBikes",
     "model": "ZED",
     "bike_type": "longtail",
@@ -1533,11 +1517,11 @@
     "bottom_margin_percent": 0.076,
     "url": "https://www.robertbikes.fr/zed-velo-cargo-electrique-tout-terrain/",
     "frame_made_in": "France",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "AC-E235 steel"
   },
   {
     "id": "peugeot-e-longtail",
-
     "manufacturer": "Peugeot",
     "model": "e-Longtail",
     "bike_type": "longtail",
@@ -1548,11 +1532,11 @@
     "bottom_margin_percent": 0.175,
     "url": "https://peugeot.e-longtail.com/",
     "frame_made_in": "",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cruise-carqon",
-
     "manufacturer": "Carqon",
     "model": "Cruise",
     "bike_type": "longjohn",
@@ -1562,11 +1546,11 @@
     "left_margin_percent": 0.03,
     "bottom_margin_percent": 0.076,
     "url": "https://www.carqon.com/cruise",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "e-cargoville-lt-expert-bergamont",
-
     "manufacturer": "Bergamont",
     "model": "E-Cargoville LT Expert",
     "bike_type": "longtail",
@@ -1577,11 +1561,11 @@
     "bottom_margin_percent": 0.226,
     "url": "https://www.bergamont.com/fr/fr/product/bergamont-e-cargoville-lt-expert?article=290945047",
     "frame_made_in": "",
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "veloe-multi",
-
     "manufacturer": "Veloe",
     "model": "multi",
     "bike_type": "longtail",
@@ -1594,11 +1578,11 @@
     "frame_made_in": "Italy",
     "assembled_in": "Italy",
     "comment_en": "100% Italian, from design to production.",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Steel (CrMo)"
   },
   {
     "id": "veloe-multi-lungo",
-
     "manufacturer": "Veloe",
     "model": "multi lungo",
     "bike_type": "longtail",
@@ -1611,11 +1595,11 @@
     "frame_made_in": "Italy",
     "assembled_in": "Italy",
     "comment_en": "100% Italian, from design to production.",
-    "wheel_size": ["24", "20"]
+    "wheel_size": ["24", "20"],
+    "frame_material": "Steel (CrMo)"
   },
   {
     "id": "biporteur-cycles-la-barquette",
-
     "manufacturer": "Cycles La Barquette",
     "model": "Biporteur",
     "bike_type": "longjohn",
@@ -1626,11 +1610,11 @@
     "bottom_margin_percent": 0.127,
     "url": "https://cycleslabarquette.com/velo-cargo-biporteur-2/",
     "frame_made_in": "France",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "wonderwagen-neo-cannondale",
-
     "manufacturer": "Cannondale",
     "model": "Wonderwagen Neo",
     "bike_type": "longjohn",
@@ -1641,11 +1625,11 @@
     "bottom_margin_percent": 0,
     "url": "https://www.cannondale.com/en-eu/bikes/electric/e-cargo/wonderwagen-neo",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium SmartForm C2 Alloy"
   },
   {
     "id": "fetch2-trek",
-
     "manufacturer": "Trek",
     "model": "Fetch+ 2",
     "bike_type": "longtail",
@@ -1656,11 +1640,11 @@
     "bottom_margin_percent": 0.131,
     "url": "https://www.trekbikes.com/us/en_US/bikes/hybrid-bikes/electric-hybrid-bikes/fetch/fetch-2/p/37640/",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "quick-haul-long-tern",
-
     "manufacturer": "Tern",
     "model": "Quick Haul Long",
     "bike_type": "longtail",
@@ -1671,11 +1655,11 @@
     "bottom_margin_percent": 0.072,
     "url": "https://www.ternbicycles.com/fr/bikes/471/quick-haul-long",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "ever-e-day-bike-friday",
-
     "manufacturer": "Bike Friday",
     "model": "Ever-E-Day",
     "bike_type": "midtail",
@@ -1686,11 +1670,11 @@
     "bottom_margin_percent": 0.049,
     "url": "https://bikefriday.com/product/ever-e-day-elite-cargo-bike-2023/",
     "frame_made_in": "USA",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "turbo-porto-specialized",
-
     "manufacturer": "Specialized",
     "model": "Turbo Porto",
     "bike_type": "longtail",
@@ -1702,11 +1686,11 @@
     "url": "https://www.specialized.com/ch/en/turbo-porto/p/4206097",
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "E5 Aluminium"
   },
   {
     "id": "orox-tern",
-
     "manufacturer": "Tern",
     "model": "Orox",
     "bike_type": "longtail",
@@ -1717,11 +1701,11 @@
     "bottom_margin_percent": 0.103,
     "url": "https://www.ternbicycles.com/en/bikes/471/orox",
     "frame_made_in": "",
-    "wheel_size": ["27.5"]
+    "wheel_size": ["27.5"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "urban-arrow-cargo-xl",
-
     "manufacturer": "Urban Arrow",
     "model": "Cargo XL",
     "bike_type": "longjohn",
@@ -1736,7 +1720,6 @@
   },
   {
     "id": "transporter2-65-riese-und-müller",
-
     "manufacturer": "Riese und Müller",
     "model": "Transporter2 65",
     "bike_type": "longjohn",
@@ -1747,11 +1730,11 @@
     "bottom_margin_percent": 0.082,
     "url": "https://www.r-m.de/en-gb/bikes/transporter2-65/",
     "weight": 45.2,
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "hovcart-hovsco",
-
     "manufacturer": "Hovsco",
     "model": "HovCart",
     "bike_type": "longtail",
@@ -1762,11 +1745,11 @@
     "bottom_margin_percent": 0.19,
     "url": "https://www.hovsco.com/products/hovcart-cargo-ebike",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "nc-1-nicolai",
-
     "manufacturer": "Nicolai",
     "model": "NC-1",
     "bike_type": "longjohn",
@@ -1777,11 +1760,11 @@
     "bottom_margin_percent": 0.154,
     "url": "https://www.nicolai-bicycles.com/nc1",
     "frame_made_in": "Germany",
-    "wheel_size": ["27.5", "20"]
+    "wheel_size": ["27.5", "20"],
+    "frame_material": "Aluminium 7020"
   },
   {
     "id": "curve-babboe",
-
     "manufacturer": "Babboe",
     "model": "Curve",
     "bike_type": "tricycle",
@@ -1793,11 +1776,11 @@
     "url": "https://www.babboecargobike.com/curve",
     "frame_made_in": "",
     "comment_en": "This bike is undergoing a recall. More informations can be found on the manufacturer's website.",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "super-mighty-super-bicycles",
-
     "manufacturer": "Super Bicycles",
     "model": "Super Mighty",
     "bike_type": "longjohn",
@@ -1808,11 +1791,11 @@
     "bottom_margin_percent": 0.164,
     "url": "https://super-bicycles.com/products/super-mighty",
     "frame_made_in": "",
-    "wheel_size": ["16", "18"]
+    "wheel_size": ["16", "18"],
+    "frame_material": "aluminium 6061"
   },
   {
     "id": "le-cargo-gaya",
-
     "manufacturer": "Gaya",
     "model": "Le Cargo",
     "bike_type": "longtail",
@@ -1823,11 +1806,11 @@
     "bottom_margin_percent": 0.247,
     "url": "https://gaya.bike/products/velo-3-places",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "le-compact-gaya",
-
     "manufacturer": "Gaya",
     "model": "Le Compact",
     "bike_type": "midtail",
@@ -1838,11 +1821,11 @@
     "bottom_margin_percent": 0.239,
     "url": "https://gaya.bike/products/le-compact",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cargo-hybrid-cube",
-
     "manufacturer": "Cube",
     "model": "Cargo Hybrid",
     "bike_type": "longjohn",
@@ -1853,11 +1836,11 @@
     "bottom_margin_percent": 0.043,
     "url": "https://www.cubebikes.fr/48663-cargo-hybrid.html",
     "frame_made_in": "",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cube-cargo-hybrid-comfort-pro-family",
-
     "manufacturer": "Cube",
     "model": "Cargo Hybrid Comfort Pro Family 800 (2026)",
     "bike_type": "longjohn",
@@ -1870,11 +1853,11 @@
     "url": "https://www.cube.eu/de/cube-cargo-hybrid-comfort-pro-family-800-oatgrey-n-reflex/124200",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "fub-2w-winora",
-
     "manufacturer": "Winora",
     "model": "F.U.B. 2W",
     "bike_type": "longjohn",
@@ -1885,11 +1868,11 @@
     "bottom_margin_percent": 0.125,
     "url": "https://www.winora.com/fr-fr/p/fub-2w-wwan1/",
     "frame_made_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "larrun-ultima-mobility",
-
     "manufacturer": "Ultima Mobility",
     "model": "Larrun",
     "bike_type": "longtail",
@@ -1900,11 +1883,11 @@
     "bottom_margin_percent": 0.026000000000000002,
     "url": "https://ultima.dev/pages/larrun-longtail",
     "frame_made_in": "",
-    "wheel_size": ["28", "20"]
+    "wheel_size": ["28", "20"],
+    "frame_material": "Carbon / Plastic composite"
   },
   {
     "id": "multipath-cargo-compact-family-ultima-mobility",
-
     "manufacturer": "Ultima Mobility",
     "model": "Multipath Cargo Compact Family",
     "bike_type": "shortjohn",
@@ -1915,11 +1898,11 @@
     "bottom_margin_percent": 0.132,
     "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-family-cargo",
     "frame_made_in": "France",
-    "wheel_size": ["28", "20"]
+    "wheel_size": ["28", "20"],
+    "frame_material": "Carbon / Plastic composite"
   },
   {
     "id": "multipath-cargo-compact-ultima-mobility",
-
     "manufacturer": "Ultima Mobility",
     "model": "Multipath Cargo Compact",
     "bike_type": "shortjohn",
@@ -1930,11 +1913,11 @@
     "bottom_margin_percent": 0.24,
     "url": "https://ultima.dev/collections/cargo-line/products/multipath-long-range-cargo",
     "frame_made_in": "France",
-    "wheel_size": ["28", "20"]
+    "wheel_size": ["28", "20"],
+    "frame_material": "Carbon / Plastic composite"
   },
   {
     "id": "loady-500-velo-de-ville",
-
     "manufacturer": "VELO DE VILLE",
     "model": "LOADY 500",
     "bike_type": "longtail",
@@ -1946,11 +1929,11 @@
     "weight": 25,
     "url": "",
     "frame_made_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "loady-900-velo-de-ville",
-
     "manufacturer": "VELO DE VILLE",
     "model": "LOADY 900",
     "bike_type": "longtail",
@@ -1963,11 +1946,11 @@
     "url": "https://www.velo-de-ville.com/fr/2025-loady-longtail",
     "frame_made_in": "",
     "assembled_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "remidemi-xl-benno",
-
     "manufacturer": "Benno",
     "model": "RemiDemi XL",
     "bike_type": "longtail",
@@ -1979,11 +1962,11 @@
     "bottom_margin_percent": 0.018,
     "url": "https://bennobikes.com/e-bikes/remidemi-xl/",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "cargo-one-tenways",
-
     "manufacturer": "Tenways",
     "model": "Cargo One",
     "bike_type": "longjohn",
@@ -1995,11 +1978,11 @@
     "bottom_margin_percent": 0.269,
     "url": "https://www.tenways.com/fr/products/cargo-one",
     "frame_made_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "via-flyer-by-radio-flyer",
-
     "manufacturer": "Flyer by Radio Flyer",
     "model": "Via",
     "bike_type": "longtail",
@@ -2011,7 +1994,8 @@
     "bottom_margin_percent": 0.07,
     "url": "https://www.radioflyer.com/products/flyer-via",
     "frame_made_in": "",
-    "wheel_size": ["24", "20"]
+    "wheel_size": ["24", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "via-pro-flyer-by-radio-flyer",
@@ -2026,7 +2010,8 @@
     "bottom_margin_percent": 0.07,
     "url": "https://www.radioflyer.com/products/flyer-via-pro",
     "frame_made_in": "",
-    "wheel_size": ["24", "20"]
+    "wheel_size": ["24", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "flex-flyer-by-radio-flyer",
@@ -2041,7 +2026,8 @@
     "bottom_margin_percent": 0.075,
     "url": "https://www.radioflyer.com/products/flyer-flex?variant=50130369708305",
     "frame_made_in": "",
-    "wheel_size": ["24", "20"]
+    "wheel_size": ["24", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "kid-plus-eco-triporteur",
@@ -2056,11 +2042,11 @@
     "bottom_margin_percent": 0.061,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/34-triporteur-velo-cargo-kid-.html",
     "frame_made_in": "",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "eco-kid-2-eco-triporteur",
-
     "manufacturer": "Eco-triporteur",
     "model": "Eco Kid 2",
     "bike_type": "tricycle",
@@ -2072,11 +2058,11 @@
     "bottom_margin_percent": 0.229,
     "url": "https://www.eco-triporteur.com/triporteurs-particuliers-velo-cargo-triporteur-electrique/31-triporteur-velo-cargo-eco-kid-2.html",
     "frame_made_in": "",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "bakfiets-lang-cykelfabriken",
-
     "manufacturer": "Cykelfabriken",
     "model": "Bakfiets Lång",
     "bike_type": "longjohn",
@@ -2088,11 +2074,11 @@
     "bottom_margin_percent": 0.158,
     "url": "https://cykelfabriken.se/en/bakfiets-long-short-description/",
     "frame_made_in": "Sweden",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "kade-reid",
-
     "manufacturer": "Reid Bikes",
     "model": "KADe",
     "bike_type": "longtail",
@@ -2103,11 +2089,11 @@
     "left_margin_percent": 0.028,
     "bottom_margin_percent": 0.088,
     "url": "https://reidbikes.com/products/kade-orange",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "no-o1-monopole",
-
     "manufacturer": "MONoPOLE",
     "model": "No O1",
     "bike_type": "shortjohn",
@@ -2119,11 +2105,11 @@
     "bottom_margin_percent": 0.204,
     "url": "https://monopole.cc/",
     "frame_made_in": "France",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel (CrMo)"
   },
   {
     "id": "monkeytail-bike-monkey-bike",
-
     "manufacturer": "Monkey Bike",
     "model": "Monkeytail Bike",
     "bike_type": "longtail",
@@ -2136,11 +2122,11 @@
     "url": "https://www.monkeybike.be/modellen-monkeytail",
     "show_frame_origin": false,
     "frame_made_in": "Hungary",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "makki-travel-gazelle",
-
     "manufacturer": "Gazelle",
     "model": "Makki Travel",
     "bike_type": "longjohn",
@@ -2152,11 +2138,11 @@
     "bottom_margin_percent": 0.25,
     "url": "https://www.gazelle.nl/elektrische-fietsen/makki-travel",
     "frame_made_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "ecargo-longtail-estarli",
-
     "manufacturer": "estarli",
     "model": "eCargo Longtail",
     "bike_type": "longtail",
@@ -2168,11 +2154,11 @@
     "bottom_margin_percent": 0.241,
     "url": "https://www.estarli.co.uk/products/longtail-cargo?variant=44016872194275",
     "frame_made_in": "uk",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "compact-ecargo-portus",
-
     "manufacturer": "Portus",
     "model": "Compact eCargo",
     "bike_type": "midtail",
@@ -2184,11 +2170,11 @@
     "bottom_margin_percent": 0.065,
     "url": "https://portus-cycles.de/bikes/compact-ecargo-bosch-ebike-system-2/",
     "frame_made_in": "Germany",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Steel"
   },
   {
     "id": "lepetitporteur-shorty",
-
     "manufacturer": "Le Petit Porteur",
     "model": "Shorty",
     "bike_type": "midtail",
@@ -2196,17 +2182,17 @@
     "bike_length_cm": 162,
     "weight": "",
     "bike_length_percent": 1,
-    "left_margin_percent": 0.0,
-    "bottom_margin_percent": 0.0,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0,
     "url": "https://www.lepetitporteur.com/fr/content/28-le-petit-porteur-shorty",
     "assembled_in": "France",
     "show_frame_origin": false,
     "frame_made_in": "China",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "CrMo 4130"
   },
   {
     "id": "cargoline-ht800-kettler",
-
     "manufacturer": "Kettler",
     "model": "Cargoline ht800",
     "bike_type": "longjohn",
@@ -2217,11 +2203,11 @@
     "left_margin_percent": 0.006,
     "bottom_margin_percent": 0.008,
     "url": "https://www.kettler-alu-rad.de/be-nl/produkt/kettler-alu-rad-kettler-cargoline-ht-800-2022-trapez?AKLW",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "bolide-kino-bikes",
-
     "manufacturer": "Kino Bikes",
     "model": "Le Bolide",
     "bike_type": "midtail",
@@ -2234,18 +2220,17 @@
     "url": "https://kino.bike/velo-cargo-electrique/bolide/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "cargo-l-urban-arrow",
-
     "manufacturer": "Urban Arrow",
     "model": "Cargo L",
     "bike_type": "longjohn",
     "src": "ua-cargo-l.png",
     "bike_length_cm": 274,
     "weight": 50,
-
     "bike_length_percent": 0.858,
     "left_margin_percent": 0.089,
     "bottom_margin_percent": 0.227,
@@ -2255,7 +2240,6 @@
   },
   {
     "id": "tender-1000-urban-arrow",
-
     "manufacturer": "Urban Arrow",
     "model": "Tender 1000",
     "bike_type": "tricycle",
@@ -2286,7 +2270,6 @@
   },
   {
     "id": "big-dummy-surly",
-
     "manufacturer": "Surly",
     "model": "Big Dummy",
     "bike_type": "longtail",
@@ -2299,34 +2282,33 @@
     "url": "https://surlybikes.com/bikes/big_dummy",
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "ili-classic-ili-cycles",
-
     "manufacturer": "Ili Cycles",
     "model": "Ili Classic",
     "bike_type": "tricycle",
     "src": "ili-classic-900.png",
     "bike_length_cm": 230,
     "weight": "",
-
     "bike_length_percent": 0.86,
     "left_margin_percent": 0.069,
     "bottom_margin_percent": 0.14,
     "url": "https://ilicycles.com/nos-velos-cargo-pendulaires/ili-classic-triporteur-electrique-familial/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "xpedition-2.0-lectric",
-
     "manufacturer": "Lectric",
     "model": "XPedition 2.0",
     "bike_type": "longtail",
     "src": "xpedition-lectric-2.png",
-    "bike_length_cm": 196.0,
+    "bike_length_cm": 196,
     "weight": "",
     "bike_length_percent": 0.865,
     "left_margin_percent": 0.088,
@@ -2334,16 +2316,16 @@
     "url": "https://lectricebikes.com/products/xpedition-dual-battery-blue?_pos=11&_sid=8dbcbb85c&_ss=r",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "engwe-le20-engwe",
-
     "manufacturer": "Engwe",
     "model": "LE20",
     "bike_type": "longtail",
     "src": "engwe-le20.png",
-    "bike_length_cm": 190.0,
+    "bike_length_cm": 190,
     "weight": 37,
     "bike_length_percent": 0.96,
     "left_margin_percent": 0.019,
@@ -2351,11 +2333,11 @@
     "url": "https://engwe-bikes.com/collections/cargo/products/le20",
     "frame_made_in": "China",
     "assembled_in": "China",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "hopper-xtracycle",
-
     "manufacturer": "Xtracycle",
     "model": "Hopper",
     "bike_type": "longtail",
@@ -2368,11 +2350,11 @@
     "url": "https://xtracycle.com/products/hopper-compact-cargo?variant=47648147865896",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Steel"
   },
   {
     "id": "g-line-brompton",
-
     "manufacturer": "Brompton",
     "model": "G Line",
     "bike_type": "foldable",
@@ -2385,11 +2367,11 @@
     "url": "https://brompton.com/g-line",
     "frame_made_in": "uk",
     "assembled_in": "uk",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "vektron-tern",
-
     "manufacturer": "Tern",
     "model": "Vektron",
     "bike_type": "foldable",
@@ -2402,11 +2384,11 @@
     "url": "https://www.ternbicycles.com/en/bikes/472/vektron",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 7005"
   },
   {
     "id": "baggy-shwette",
-
     "manufacturer": "Shwette",
     "model": "Baggy",
     "bike_type": "longjohn",
@@ -2420,11 +2402,11 @@
     "frame_made_in": "Portugal",
     "assembled_in": "Portugal",
     "show_frame_origin": false,
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "e-city+-emog",
-
     "manufacturer": "Emog",
     "model": "E-city+",
     "bike_type": "longtail",
@@ -2437,11 +2419,11 @@
     "url": "https://www.emog-bikes.com/produit/velo-cargo-electrique-e-city-2/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "f900e-box-decathlon",
-
     "manufacturer": "Decathlon",
     "model": "F900E Box",
     "bike_type": "longjohn",
@@ -2454,11 +2436,11 @@
     "url": "https://www.decathlon.fr/p/velo-cargo-electrique-biporteur-f900e-box-jaune/_/R-p-338408",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "nebula-1-brumaire",
-
     "manufacturer": "Brumaire",
     "model": "Nebula 1",
     "bike_type": "longtail",
@@ -2472,11 +2454,11 @@
     "frame_made_in": "Portugal",
     "assembled_in": "France",
     "show_frame_origin": false,
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "afternoon-pro-eovolt",
-
     "manufacturer": "Eovolt",
     "model": "Afternoon Pro",
     "bike_type": "foldable",
@@ -2489,11 +2471,11 @@
     "url": "https://eovolt.com/products/afternoon-pro",
     "frame_made_in": "China",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "boda-boda-v4-yuba",
-
     "manufacturer": "Yuba",
     "model": "Boda Boda v4 (2024)",
     "bike_type": "longtail",
@@ -2506,11 +2488,11 @@
     "url": "https://yubabikes.eu/product/boda-boda/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["26"]
+    "wheel_size": ["26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "pelican-bicicapace",
-
     "manufacturer": "Bicicapace",
     "model": "Pelican",
     "bike_type": "shortjohn",
@@ -2524,11 +2506,11 @@
     "frame_made_in": "Taiwan",
     "show_frame_origin": false,
     "assembled_in": "italy",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "classic-bicicapace",
-
     "manufacturer": "Bicicapace",
     "model": "Classic",
     "bike_type": "shortjohn",
@@ -2541,11 +2523,11 @@
     "url": "https://www.bicicapace.com/de/bikes/classic/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "gsd-p10-tern",
-
     "manufacturer": "Tern",
     "model": "GSD P10 (gen. 3)",
     "bike_type": "longtail",
@@ -2558,11 +2540,11 @@
     "url": "https://www.ternbicycles.com/en/bikes/473/gsd-p10#tech_specs",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "bergamont-ebike-lj70-bergamont",
-
     "manufacturer": "Bergamont",
     "model": "E-Cargoville LJ 70",
     "bike_type": "longjohn",
@@ -2575,11 +2557,11 @@
     "url": "https://www.bergamont.com/it/it/heavy_load_easy_riding",
     "frame_made_in": "Germany",
     "assembled_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "rally-wombat",
-
     "manufacturer": "Wombat",
     "model": "Rally",
     "bike_type": "longtail",
@@ -2593,11 +2575,11 @@
     "show_frame_origin": false,
     "frame_made_in": "China",
     "assembled_in": "Australia",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "wagon-wombaat",
-
     "manufacturer": "Wombat",
     "model": "Wagon",
     "bike_type": "longtail",
@@ -2610,11 +2592,11 @@
     "url": "https://wombatbikes.com/products/wagon2-sport",
     "frame_made_in": "",
     "assembled_in": "Australia",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "duo-tenways",
-
     "manufacturer": "Tenways",
     "model": "duo",
     "bike_type": "longtail",
@@ -2627,12 +2609,12 @@
     "url": "https://www.tenways.com/fr/products/longtail",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "all-packa-bike-friday",
-
-    "manufacturer": "Bike friday",
+    "manufacturer": "Bike Friday",
     "model": "All-Packa",
     "bike_type": "foldable",
     "src": "bike-friday-all-packa.png",
@@ -2644,11 +2626,11 @@
     "url": "https://bikefriday.com/product/all-packa-bikepacking-bike/",
     "frame_made_in": "USA",
     "assembled_in": "USA",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel"
   },
   {
     "id": "bike+-vello",
-
     "manufacturer": "Vello",
     "model": "Bike+",
     "bike_type": "foldable",
@@ -2665,7 +2647,6 @@
   },
   {
     "id": "cargo-triobike",
-
     "manufacturer": "Triobike",
     "model": "cargo",
     "bike_type": "longjohn",
@@ -2678,11 +2659,11 @@
     "url": "https://triobike.com/en/models/cargo/cargo/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 7005"
   },
   {
     "id": "entice-c+-excite-kalkhoff",
-
     "manufacturer": "Kalkhoff",
     "model": "ENTICE C+ EXCITE",
     "bike_type": "midtail",
@@ -2695,11 +2676,11 @@
     "url": "https://www.kalkhoff-bikes.com/fr_fr/entice-c-excite",
     "frame_made_in": "",
     "assembled_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "lundi-20-cargo-5-moustache",
-
     "manufacturer": "Moustache",
     "model": "Lundi 20 Cargo 5",
     "bike_type": "longtail",
@@ -2712,11 +2693,11 @@
     "url": "https://moustachebikes.com/fr/velos-electriques/lundi-20-cargo/lundi-20-cargo-5/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "packer-1-velotric",
-
     "manufacturer": "Velotric",
     "model": "Packer 1",
     "bike_type": "longtail",
@@ -2729,11 +2710,11 @@
     "url": "https://www.velotricbike.com/products/velotric-packer-1-e-bike",
     "frame_made_in": "China",
     "assembled_in": "",
-    "wheel_size": ["26", "20"]
+    "wheel_size": ["26", "20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "u-cargo-family-addbike",
-
     "manufacturer": "AddBike",
     "model": "U-Cargo Family",
     "bike_type": "longtail",
@@ -2746,11 +2727,11 @@
     "url": "https://add-bike.com/velo-cargo-electrique-u-cargo/",
     "frame_made_in": "Poland",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "c-7050-norta",
-
     "manufacturer": "Norta",
     "model": "C-7050",
     "bike_type": "longtail",
@@ -2763,11 +2744,11 @@
     "url": "https://norta.be/nl/ebikes/cargo/c-7050-my25",
     "frame_made_in": "Belgium",
     "assembled_in": "Belgium",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "swift-origami",
-
     "manufacturer": "Origami",
     "model": "Swift",
     "bike_type": "foldable",
@@ -2780,11 +2761,11 @@
     "url": "https://www.origamibicycles.com/shop/p/origami-swift",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "c-line-brompton",
-
     "manufacturer": "Brompton",
     "model": "C Line",
     "bike_type": "foldable",
@@ -2798,14 +2779,14 @@
     "frame_made_in": "uk",
     "assembled_in": "uk",
     "wheel_size": ["16"],
-
     "folded_view": {
       "src": "brompton-c-line-folded.png",
       "bike_length_cm": 58,
       "bike_length_percent": 0.496,
       "left_margin_percent": 0.233,
       "bottom_margin_percent": 0.058
-    }
+    },
+    "frame_material": "Steel"
   },
   {
     "id": "abound-sr-aventon",
@@ -2821,11 +2802,11 @@
     "url": "https://www.aventon.com/products/abound-sr-ebike?variant=43919137538243",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "macine-multi-ktm",
-
     "manufacturer": "KTM",
     "model": "Macina multi",
     "bike_type": "longtail",
@@ -2838,11 +2819,11 @@
     "url": "https://www.ktm-bikes.at/e-bikes/detail/macina-multi-metallic-vapor-black-orange-10-g-shimano-deore-lg-2025",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "micro-yoonit",
-
     "manufacturer": "YOONIT",
     "model": "Micro",
     "bike_type": "shortjohn",
@@ -2860,7 +2841,6 @@
   },
   {
     "id": "elast-20-crescent",
-
     "manufacturer": "Crescent",
     "model": "Elast 20",
     "bike_type": "longtail",
@@ -2874,7 +2854,8 @@
     "frame_made_in": "China",
     "assembled_in": "China",
     "show_frame_origin": false,
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "go-1-velotric",
@@ -2888,11 +2869,11 @@
     "left_margin_percent": 0.12,
     "bottom_margin_percent": 0.11,
     "url": "https://www.velotricbike.com/products/velotric-go-1-e-bike",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "etnicycles-belle-ile",
-
     "manufacturer": "ETNI Cycles",
     "model": "Belle-Île",
     "bike_type": "longtail",
@@ -2905,11 +2886,11 @@
     "url": "https://www.etnicycles.com/product-page/compact-longtail-etni-belle-ile/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "ritmic-jumbo-elwing",
-
     "manufacturer": "Elwing",
     "model": "Ritmic Jumbo",
     "bike_type": "longtail",
@@ -2922,11 +2903,11 @@
     "url": "https://elwing.co/products/ritmic-jumbo-velo-electrique-cargo-longtail",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "e-packr-xl-metz",
-
     "manufacturer": "Metz",
     "model": "E-Packr XL",
     "bike_type": "longtail",
@@ -2939,11 +2920,11 @@
     "url": "https://metz-fahrradfabrik.de/products/e-packr-xl-family-kit",
     "frame_made_in": "Germany",
     "assembled_in": "Germany ",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "e-packr-metz",
-
     "manufacturer": "Metz",
     "model": "E-Packr",
     "bike_type": "midtail",
@@ -2956,11 +2937,11 @@
     "url": "https://metz-fahrradfabrik.de/products/e-packr",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "air-20-a-dece-oasis",
-
     "manufacturer": "A Dece Oasis",
     "model": "Air 20",
     "bike_type": "foldable",
@@ -2973,7 +2954,8 @@
     "url": "https://www.adoebike.com/products/ado-air-20",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "mini-boda-boda-yuba",
@@ -2989,11 +2971,11 @@
     "url": "https://yubabikes.eu/product/mini-boda-boda/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "verge-x11-tern",
-
     "manufacturer": "Tern",
     "model": "Verge X11",
     "bike_type": "foldable",
@@ -3006,11 +2988,11 @@
     "url": "https://www.ternbicycles.com/us/bikes/472/verge-x11",
     "frame_made_in": "Taiwan",
     "assembled_in": "Taiwan",
-    "wheel_size": ["22"]
+    "wheel_size": ["22"],
+    "frame_material": "Aluminium 7005"
   },
   {
     "id": "cabby-c380-gazelle",
-
     "manufacturer": "Gazelle",
     "model": "Cabby C380",
     "bike_type": "longtail",
@@ -3023,11 +3005,11 @@
     "url": "https://www.gazelle.de/ebikes/cabby-c380",
     "frame_made_in": "",
     "assembled_in": "Netherlands",
-    "wheel_size": ["26", "24"]
+    "wheel_size": ["26", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "tern-nbd",
-
     "manufacturer": "Tern",
     "model": "NBD",
     "bike_type": "midtail",
@@ -3040,11 +3022,11 @@
     "url": "https://www.ternbicycles.com/en/bikes/471/nbd",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "avnson-e-fold",
-
     "manufacturer": "Avnson",
     "model": "e-FOLD",
     "bike_type": "longjohn/foldable",
@@ -3057,11 +3039,11 @@
     "url": "https://foldride.com/e-fold",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "avnson-e-fold-mini",
-
     "manufacturer": "Avnson",
     "model": "e-FOLD Mini",
     "bike_type": "longjohn/foldable",
@@ -3074,11 +3056,11 @@
     "url": "https://foldride.com/e-fold-mini",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "bigtetu-cargo-bikes-bigtetu-v1",
-
     "manufacturer": "BigTetu Cargo Bikes",
     "model": "BigTetu V1",
     "bike_type": "longjohn",
@@ -3091,11 +3073,11 @@
     "url": "https://www.bigtetu-cargo.com",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "super-mini-super-bicycles",
-
     "manufacturer": "Super Bicycles",
     "model": "Super Mini",
     "bike_type": "shortjohn",
@@ -3114,7 +3096,6 @@
   },
   {
     "id": "urban-arrow-breeze",
-
     "manufacturer": "Urban Arrow",
     "model": "Breeze",
     "bike_type": "longtail",
@@ -3132,7 +3113,6 @@
   },
   {
     "id": "zag",
-
     "manufacturer": "Zag Bikes",
     "model": "ZAG",
     "bike_type": "shortjohn",
@@ -3145,7 +3125,8 @@
     "url": "https://www.zagbikes.com/le-velo",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "freeporteur-lt",
@@ -3161,11 +3142,11 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "freeporteur-st",
-
     "manufacturer": "FREEPORTEUR",
     "model": "ST",
     "bike_type": "midtail",
@@ -3178,7 +3159,8 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "freeporteur-cargo",
@@ -3194,11 +3176,11 @@
     "url": "https://www.freeporteur.com/",
     "frame_made_in": "FRANCE",
     "assembled_in": "EU",
-    "wheel_size": ["20", "24"]
+    "wheel_size": ["20", "24"],
+    "frame_material": "Steel"
   },
   {
     "id": "cicli-adriatica-longtail-24",
-
     "manufacturer": "Cicli adriatica",
     "model": "Longtail 24",
     "bike_type": "longtail",
@@ -3212,11 +3194,11 @@
     "frame_made_in": "China",
     "show_frame_origin": false,
     "assembled_in": "Italy",
-    "wheel_size": ["24"]
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "mylulubike-lulu-bike-sport",
-
     "manufacturer": "MyLuluBike",
     "model": "Lulu Bike Sport",
     "bike_type": "foldable",
@@ -3230,18 +3212,17 @@
     "frame_made_in": "France",
     "assembled_in": "France",
     "wheel_size": ["20"],
-
     "folded_view": {
       "src": "my-lulu-bike-sport-plie.png",
       "bike_length_cm": 57,
       "bike_length_percent": 0.67,
       "left_margin_percent": 0.21,
       "bottom_margin_percent": 0.038
-    }
+    },
+    "frame_material": "Aluminium"
   },
   {
     "id": "oklo-simplix",
-
     "manufacturer": "Oklö",
     "model": "Simplix",
     "bike_type": "midtail",
@@ -3254,11 +3235,11 @@
     "url": "https://www.oklo.bike/produit/mini-velo-cargo-simplix/",
     "frame_made_in": "",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "cube-compact-hybrid",
-
     "manufacturer": "Cube",
     "model": "Compact Hybrid",
     "bike_type": "compact",
@@ -3271,11 +3252,11 @@
     "url": "https://www.cube.eu/fr-fr/cube-compact-hybrid-comfort-545-skylightblue-n-blue/118200",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "velo-de-ville-foldy",
-
     "manufacturer": "VELO DE VILLE",
     "model": "FOLDY",
     "bike_type": "foldable",
@@ -3288,11 +3269,11 @@
     "url": "https://www.velo-de-ville.com/fr/FOLDY/026-F",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["16"]
+    "wheel_size": ["16"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "rad-power-bikes-radrunner-plus",
-
     "manufacturer": "Rad Power Bikes",
     "model": "RadRunner Plus",
     "bike_type": "midtail",
@@ -3305,11 +3286,11 @@
     "url": "https://www.radpowerbikes.com/products/radrunner-plus-electric-cargo-utility-bike",
     "frame_made_in": "China",
     "assembled_in": "China",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "decathlon-btwin-fold-500",
-
     "manufacturer": "Decathlon",
     "model": "Btwin Fold 500",
     "bike_type": "foldable",
@@ -3329,11 +3310,11 @@
       "bike_length_percent": 0.87,
       "left_margin_percent": 0.032,
       "bottom_margin_percent": 0.055
-    }
+    },
+    "frame_material": "Aluminium"
   },
   {
     "id": "cluuv-e-cargo",
-
     "manufacturer": "Cluuv",
     "model": "E-cargo",
     "bike_type": "longjohn",
@@ -3346,11 +3327,11 @@
     "url": "https://cluuv.com/products/cluuv®-e-cargo",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "benno-ejoy",
-
     "manufacturer": "Benno",
     "model": "Ejoy",
     "bike_type": "midtail",
@@ -3368,7 +3349,6 @@
   },
   {
     "id": "foldee-cargo",
-
     "manufacturer": "FOLDEE",
     "model": "Foldee Cargo",
     "bike_type": "foldable/shortjohn",
@@ -3383,7 +3363,6 @@
     "assembled_in": "Australia",
     "frame_material": "chromoly",
     "wheel_size": ["20", "26"],
-
     "folded_view": {
       "src": "foldee-cargo-folded.png",
       "bike_length_cm": 143,
@@ -3394,7 +3373,6 @@
   },
   {
     "id": "riese-und-müller-packster-40",
-
     "manufacturer": "Riese und Müller",
     "model": "Packster 40",
     "bike_type": "longjohn",
@@ -3407,11 +3385,11 @@
     "url": "",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "gaya-lincroyable-long",
-
     "manufacturer": "Gaya",
     "model": "L’Incroyable, Le Long",
     "bike_type": "longtail",
@@ -3424,7 +3402,8 @@
     "url": "https://gaya.bike/velo-cargo/incroyable-le-long",
     "frame_made_in": "",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "gitane-g-life-longtail",
@@ -3440,11 +3419,11 @@
     "url": "https://www.cyclesgitane.fr/velos/glife-longtail",
     "frame_made_in": "China",
     "assembled_in": "France",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "ginkgo",
-
     "manufacturer": "Ginkgo",
     "model": "Ginkgo",
     "bike_type": "longdiamond",
@@ -3456,11 +3435,11 @@
     "url": "https://www.ginkgo.bike/",
     "frame_made_in": "Sweden",
     "assembled_in": "Sweden",
-    "wheel_size": ["27.5"]
+    "wheel_size": ["27.5"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "flinc-model-1",
-
     "manufacturer": "FLINC",
     "model": "Model 1",
     "bike_type": "shortjohn",
@@ -3474,11 +3453,11 @@
     "frame_made_in": "China",
     "show_frame_origin": false,
     "assembled_in": "Czech Republic",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Steel"
   },
   {
     "id": "cannondale-compact-neo",
-
     "manufacturer": "Cannondale",
     "model": "Compact Neo",
     "bike_type": "compact",
@@ -3491,11 +3470,11 @@
     "url": "https://www.cannondale.com/en/bikes/electric/e-urban/compact-neo/compact-neo",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium SmartForm C2 Alloy"
   },
   {
     "id": "rad-power-bikes-radrunner",
-
     "manufacturer": "Rad Power Bikes",
     "model": "RadRunner",
     "bike_type": "midtail",
@@ -3508,11 +3487,11 @@
     "url": "https://www.radpowerbikes.com/collections/radrunner-electric-cargo-utility-bikes/products/radrunner-electric-cargo-utility-bike",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "rad-power-bikes-radrunner-max",
-
     "manufacturer": "Rad Power Bikes",
     "model": "RadRunner Max",
     "bike_type": "midtail",
@@ -3525,11 +3504,11 @@
     "url": "https://www.radpowerbikes.com/collections/electric-cargo-utility-bikes/products/radrunner-max-electric-cargo-utility-bike",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "ridgeback-butcher",
-
     "manufacturer": "Ridgeback",
     "model": "Butcher",
     "bike_type": "shortjohn",
@@ -3542,11 +3521,11 @@
     "url": "https://www.ridgeback.co.uk/ridgeback-butcher-varrb21830",
     "frame_made_in": "China",
     "assembled_in": "China",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "tokyobike-porter",
-
     "manufacturer": "TOKYOBIKE",
     "model": "PORTER",
     "bike_type": "shortjohn",
@@ -3559,11 +3538,11 @@
     "url": "https://tokyobike.com/product/tokyobike-porter/",
     "frame_made_in": "Japan",
     "assembled_in": "China",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Chromoly Steel"
   },
   {
     "id": "butchers-&-bicycles-mk1-e",
-
     "manufacturer": "Butchers & bicycles",
     "model": "Mk1-E",
     "bike_type": "tricycle",
@@ -3576,11 +3555,11 @@
     "url": "https://www.butchersandbicycles.com/de/mk1-e-vario/",
     "frame_made_in": "",
     "assembled_in": "Denmark",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Aluminium 7005 T6"
   },
   {
     "id": "bluemooov-ketch-cleen",
-
     "manufacturer": "Bluemooov",
     "model": "Ketch Cleen",
     "bike_type": "tricycle",
@@ -3593,11 +3572,11 @@
     "url": "https://www.bluemooov.com/e-shop/",
     "frame_made_in": "France",
     "assembled_in": "France",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "bastille-bastille-e",
-
     "manufacturer": "BASTILLE",
     "model": "Bastille E",
     "bike_type": "foldable",
@@ -3608,7 +3587,6 @@
     "left_margin_percent": 0.1,
     "bottom_margin_percent": 0.094,
     "url": "https://bastillecycles.com/products/le-bastille-e",
-
     "frame_made_in": "France",
     "assembled_in": "France",
     "wheel_size": ["27.5"],
@@ -3618,11 +3596,11 @@
       "bike_length_percent": 0.687,
       "left_margin_percent": 0.19,
       "bottom_margin_percent": 0.186
-    }
+    },
+    "frame_material": "Aluminium"
   },
   {
     "id": "cetma-cetma",
-
     "manufacturer": "CETMA",
     "model": "CETMA",
     "bike_type": "longjohn",
@@ -3635,11 +3613,11 @@
     "url": "https://cetmacargo.com/products/cargo-bikes",
     "frame_made_in": "USA",
     "assembled_in": "USA",
-    "wheel_size": ["20", "26"]
+    "wheel_size": ["20", "26"],
+    "frame_material": "Steel"
   },
   {
     "id": "gepida-cargo-city",
-
     "manufacturer": "Gepida",
     "model": "Cargo City",
     "bike_type": "longtail",
@@ -3652,11 +3630,11 @@
     "url": "https://gepida.com/cargo-city-11150",
     "frame_made_in": "",
     "assembled_in": "Hungary",
-    "wheel_size": ["20"]
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   },
   {
     "id": "bombtrack-munroe-cargo",
-
     "manufacturer": "Bombtrack",
     "model": "Munroe Cargo",
     "bike_type": "shortjohn",
@@ -3669,6 +3647,7 @@
     "url": "https://www.bombtrack.com/my25/complete-bikes/munroe-cargo",
     "frame_made_in": "Taiwan",
     "assembled_in": "",
-    "wheel_size": ["20", "27.5"]
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "6061 Aluminium"
   }
 ]
