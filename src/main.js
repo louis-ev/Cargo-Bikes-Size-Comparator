@@ -43,7 +43,8 @@ app.config.globalProperties.$bikeTypesColors = {
   foldable: 'hsl(102, 100%, 70%)',
   shortjohn: 'hsl(185, 83%, 70%)',
   tricycle: 'hsl(346, 84%, 66%)',
-  longdiamond: 'hsl(164, 65%, 63%)'
+  longdiamond: 'hsl(164, 65%, 63%)',
+  compact: 'hsl(30, 30%, 70%)'
 }
 
 app.config.globalProperties.$normalizeStringForSearch = (str) => {
