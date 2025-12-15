@@ -1880,11 +1880,11 @@
     "bike_length_cm": 204,
     "bike_length_percent": 0.95,
     "left_margin_percent": 0.015,
-    "bottom_margin_percent": 0.026000000000000002,
+    "bottom_margin_percent": 0.026,
     "url": "https://ultima.dev/pages/larrun-longtail",
     "frame_made_in": "",
-    "wheel_size": ["28", "20"],
-    "frame_material": "Carbon / Plastic composite"
+    "wheel_size": ["24", "20"],
+    "frame_material": "Aluminium"
   },
   {
     "id": "multipath-cargo-compact-family-ultima-mobility",

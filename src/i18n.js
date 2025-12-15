@@ -100,8 +100,15 @@ const i18n = createI18n({
         centimeters: 'centimeters',
         inches: 'inches',
         by_wheel_size: 'By wheel size:',
+        by_frame_material: 'By frame material:',
         unknown_wheel_size: 'Unknown',
-        folded: '(folded)'
+        folded: '(folded)',
+        frame_material_aluminium: 'Aluminium',
+        frame_material_steel: 'Steel',
+        frame_material_carbon: 'Carbon',
+        frame_material_titanium: 'Titanium',
+        frame_material_bamboo: 'Bamboo',
+        frame_material_other: 'Other'
       },
       bike_types: {
         by_category: 'By category:',
@@ -290,8 +297,15 @@ const i18n = createI18n({
         centimeters: 'centimètres',
         inches: 'pouces',
         by_wheel_size: 'Par taille de roues :',
+        by_frame_material: 'Par matériau de cadre :',
         unknown_wheel_size: 'Inconnue',
-        folded: '(plié)'
+        folded: '(plié)',
+        frame_material_aluminium: 'Aluminium',
+        frame_material_steel: 'Acier',
+        frame_material_carbon: 'Carbone',
+        frame_material_titanium: 'Titane',
+        frame_material_bamboo: 'Bambou',
+        frame_material_other: 'Autre'
       },
       bike_types: {
         by_category: 'Par catégorie&nbsp;:',

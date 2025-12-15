@@ -71,6 +71,24 @@
             <span class="_count">{{ unknown_wheel_size_count }}</span>
           </button>
         </div>
+
+        <div class="_wheelSizeFilter">
+          <span>{{ $t('message.by_frame_material') }}</span>
+          <button
+            v-for="[material, count] in all_frame_materials"
+            :key="material"
+            type="button"
+            :class="{
+              'is--active': frame_material_filter === material,
+              'is--disabled': count === 0
+            }"
+            :disabled="count === 0"
+            @click="onFrameMaterialFilterClick(material)"
+          >
+            {{ $t(`message.frame_material_${material.toLowerCase()}`) }}
+            <span class="_count">{{ count }}</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -179,7 +197,8 @@ export default {
       selected_bikes: [],
       bike_images_preview_urls: [],
       bike_type_filter: null,
-      wheel_size_filter: null
+      wheel_size_filter: null,
+      frame_material_filter: null
     }
   },
   created() {},
@@ -255,12 +274,16 @@ export default {
         }
       })
 
-      // Filter bikes based on bike_type_filter and search
+      // Filter bikes based on bike_type_filter, frame_material_filter and search
       const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
         // Apply bike type filter if active
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
           if (!types.includes(this.bike_type_filter)) return false
+        }
+        // Apply frame material filter if active
+        if (this.frame_material_filter) {
+          if (!this.bikeHasMaterial(bike, this.frame_material_filter)) return false
         }
         return true
       })
@@ -293,6 +316,73 @@ export default {
         return a[0].localeCompare(b[0])
       })
     },
+    all_frame_materials() {
+      const all_materials = {}
+
+      // Normalize material names
+      const normalize = (mat) => {
+        if (!mat) return 'Unknown'
+        const m = mat.toLowerCase()
+        if (m.includes('aluminum') || m.includes('aluminium') || m.includes('alloy'))
+          return 'Aluminium'
+        if (m.includes('steel') || m.includes('crmo') || m.includes('chromoly')) return 'Steel'
+        if (m.includes('carbon')) return 'Carbon'
+        if (m.includes('titanium')) return 'Titanium'
+        if (m.includes('bamboo')) return 'Bamboo'
+        return 'Other'
+      }
+
+      // Initialize counts
+      const categories = ['Aluminium', 'Steel', 'Carbon', 'Titanium', 'Bamboo', 'Other']
+      categories.forEach((c) => (all_materials[c] = 0))
+
+      // Filter bikes based on other filters
+      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+        if (this.bike_type_filter) {
+          const types = bike.bike_type ? bike.bike_type.split('/') : []
+          if (!types.includes(this.bike_type_filter)) return false
+        }
+        // Wheel size filter logic...
+        const etrto_622_sizes = ['28', '29', '700c']
+        const etrto_622_label = '28/29/700c'
+        if (this.wheel_size_filter) {
+          if (this.wheel_size_filter === 'unknown') {
+            if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else if (this.wheel_size_filter === etrto_622_label) {
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.some((size) => etrto_622_sizes.includes(size))) return false
+          } else {
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          }
+        }
+        return true
+      })
+
+      bikes_to_count.forEach((bike) => {
+        const materials = Array.isArray(bike.frame_material)
+          ? bike.frame_material
+          : [bike.frame_material]
+
+        // Use a Set to avoid double counting if a bike has multiple variants of the same material category (unlikely but safe)
+        // Or if you WANT to count it for multiple categories (e.g. Aluminum + Carbon mix), this handles it.
+        const counted_categories = new Set()
+
+        materials.forEach((rawMat) => {
+          const mat = normalize(rawMat)
+          if (!counted_categories.has(mat)) {
+            if (all_materials[mat] !== undefined) {
+              all_materials[mat]++
+            }
+            counted_categories.add(mat)
+          }
+        })
+      })
+
+      return Object.entries(all_materials)
+        .filter(([, count]) => count > 0)
+        .sort((a, b) => b[1] - a[1])
+    },
     unknown_wheel_size_count() {
       // Filter bikes based on bike_type_filter and search
       const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
@@ -300,6 +390,9 @@ export default {
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
           if (!types.includes(this.bike_type_filter)) return false
+        }
+        if (this.frame_material_filter) {
+          if (!this.bikeHasMaterial(bike, this.frame_material_filter)) return false
         }
         return true
       })
@@ -335,6 +428,11 @@ export default {
             if (!bike.wheel_size || bike.wheel_size.length === 0) return false
             if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
           }
+        }
+
+        // Frame material filter
+        if (this.frame_material_filter) {
+          if (!this.bikeHasMaterial(bike, this.frame_material_filter)) return false
         }
 
         return true
@@ -424,6 +522,44 @@ export default {
       } else {
         this.wheel_size_filter = wheel_size
       }
+    },
+    onFrameMaterialFilterClick(material) {
+      if (this.frame_material_filter === material) {
+        this.frame_material_filter = null
+      } else {
+        this.frame_material_filter = material
+      }
+    },
+    bikeHasMaterial(bike, targetMaterial) {
+      if (!bike.frame_material) return targetMaterial === 'Unknown'
+
+      const materials = Array.isArray(bike.frame_material)
+        ? bike.frame_material
+        : [bike.frame_material]
+
+      return materials.some((mat) => {
+        const m = mat.toLowerCase()
+        const t = targetMaterial.toLowerCase()
+
+        if (t === 'aluminium')
+          return m.includes('aluminum') || m.includes('aluminium') || m.includes('alloy')
+        if (t === 'steel')
+          return m.includes('steel') || m.includes('crmo') || m.includes('chromoly')
+        if (t === 'carbon') return m.includes('carbon')
+        if (t === 'titanium') return m.includes('titanium')
+        if (t === 'bamboo') return m.includes('bamboo')
+
+        // For 'Other', match anything that doesn't match the main categories
+        if (t === 'other') {
+          if (m.includes('aluminum') || m.includes('aluminium') || m.includes('alloy')) return false
+          if (m.includes('steel') || m.includes('crmo') || m.includes('chromoly')) return false
+          if (m.includes('carbon')) return false
+          if (m.includes('titanium')) return false
+          if (m.includes('bamboo')) return false
+          return true
+        }
+        return false
+      })
     },
     isInchesSize(wheel_size) {
       const num = parseFloat(wheel_size)
