@@ -889,17 +889,17 @@ export default {
         }
 
         ctx.fillStyle = '#000'
-        ctx.font = 'bold 14px Inter, sans-serif'
+        ctx.font = 'bold 28px Inter, sans-serif'
         ctx.strokeStyle = '#00FF00'
-        ctx.lineWidth = 3
+        ctx.lineWidth = 6
         ctx.lineJoin = 'round'
         ctx.textAlign = 'center'
 
         const midX = (start.x + end.x) / 2
         const midY = (start.y + end.y) / 2
 
-        ctx.strokeText(label, midX, midY - 10)
-        ctx.fillText(label, midX, midY - 10)
+        ctx.strokeText(label, midX, midY - 20)
+        ctx.fillText(label, midX, midY - 20)
         ctx.textAlign = 'start'
       }
 
