@@ -247,6 +247,8 @@ export default {
       measure_lines: [], // Array of {start: {x,y}, end: {x,y}} in CM
       measure_start_point: null, // {x, y} in CM
       measure_current_point: null, // {x, y} in PX
+      measure_mouse_point_px: null, // {x, y} in PX (raw)
+      is_shift_held: false,
       scale_factor_px_per_cm: 1,
       canvas_padding: 0,
       canvas_height: 0
@@ -271,10 +273,12 @@ export default {
       this.ro.observe(this.$el)
     }
     window.addEventListener('keydown', this.handleKeyDown)
+    window.addEventListener('keyup', this.handleKeyUp)
   },
   beforeUnmount() {
     this.ro.unobserve(this.$el)
     window.removeEventListener('keydown', this.handleKeyDown)
+    window.removeEventListener('keyup', this.handleKeyUp)
   },
   watch: {
     canvas_image_style_outline() {
@@ -784,12 +788,13 @@ export default {
       if (!this.is_measuring) return
 
       const { x, y } = this.getCanvasCoordinates(event)
-      const pointCm = this.pixelsToCm({ x, y })
+      let pointCm = this.pixelsToCm({ x, y })
 
       if (!this.measure_start_point) {
         this.measure_start_point = pointCm
       } else {
         // Second click: finish line and store it
+        pointCm = this.getSnappedPoint(this.measure_start_point, pointCm, event.shiftKey)
         this.measure_lines.push({
           start: this.measure_start_point,
           end: pointCm
@@ -803,13 +808,59 @@ export default {
       if (!this.is_measuring) return
 
       const { x, y } = this.getCanvasCoordinates(event)
+      this.measure_mouse_point_px = { x, y }
+      this.is_shift_held = event.shiftKey
+      this.updateMeasurementPoint()
+    },
+    updateMeasurementPoint() {
+      if (!this.measure_mouse_point_px) return
 
-      this.measure_current_point = { x, y }
+      let current_point_px = { ...this.measure_mouse_point_px }
+
+      if (this.measure_start_point) {
+        const current_cm = this.pixelsToCm(current_point_px)
+        const snapped_cm = this.getSnappedPoint(
+          this.measure_start_point,
+          current_cm,
+          this.is_shift_held
+        )
+        current_point_px = this.cmToPixels(snapped_cm)
+      }
+
+      this.measure_current_point = current_point_px
       this.drawMeasurement()
+    },
+    getSnappedPoint(start, end, should_snap) {
+      if (!should_snap) return end
+
+      const dx = end.x - start.x
+      const dy = end.y - start.y
+      const dist = Math.sqrt(dx * dx + dy * dy)
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI)
+
+      const snap_step = 45
+
+      const nearest_multiple = Math.round(angle / snap_step) * snap_step
+      const snapped_rad = nearest_multiple * (Math.PI / 180)
+
+      return {
+        x: start.x + dist * Math.cos(snapped_rad),
+        y: start.y + dist * Math.sin(snapped_rad)
+      }
     },
     handleKeyDown(e) {
       if (e.key === 'Escape' && this.is_measuring) {
         this.toggleMeasure()
+      }
+      if (e.key === 'Shift') {
+        this.is_shift_held = true
+        this.updateMeasurementPoint()
+      }
+    },
+    handleKeyUp(e) {
+      if (e.key === 'Shift') {
+        this.is_shift_held = false
+        this.updateMeasurementPoint()
       }
     },
     pixelsToCm({ x, y }) {
@@ -829,8 +880,6 @@ export default {
       const ctx = canvas.getContext('2d')
       const offscreen = this.$refs.offscreen_canvas
       ctx.drawImage(offscreen, 0, 0)
-
-      // if (!this.is_measuring) return // removed this line to allow drawing stored lines even when not measuring
 
       ctx.save()
       ctx.font = 'bold 24px Inter, sans-serif'
@@ -920,7 +969,7 @@ export default {
 
       if (!startCm) {
         ctx.fillStyle = '#333'
-        ctx.font = 'bold 18px Inter, sans-serif'
+        ctx.font = 'bold 24px Inter, sans-serif'
         ctx.strokeStyle = 'white'
         ctx.lineWidth = 3
         ctx.lineJoin = 'round'
