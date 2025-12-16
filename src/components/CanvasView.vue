@@ -753,36 +753,14 @@ export default {
       const canvas = this.$refs.bikes
       const rect = canvas.getBoundingClientRect()
 
-      const contentRatio = canvas.width / canvas.height
-      const containerRatio = rect.width / rect.height
-
-      let renderedWidth, renderedHeight
-
-      // Calculate 'contain' dimensions
-      if (containerRatio > contentRatio) {
-        renderedHeight = rect.height
-        renderedWidth = rect.height * contentRatio
-      } else {
-        renderedWidth = rect.width
-        renderedHeight = rect.width / contentRatio
-      }
-
-      // Handle 'scale-down': if 'contain' would scale up (rendered > actual), clamp to actual
-      if (renderedWidth > canvas.width) {
-        renderedWidth = canvas.width
-        renderedHeight = canvas.height
-      }
-
-      // Offsets for 'object-position: left center'
-      const offsetX = 0
-      const offsetY = (rect.height - renderedHeight) / 2
-
+      // Canvas CSS is set to 100% width/height, so it fills the container
+      // Map mouse coordinates directly to canvas buffer coordinates
       const mouseX = event.clientX - rect.left
       const mouseY = event.clientY - rect.top
 
-      // Map to buffer coordinates
-      const x = ((mouseX - offsetX) / renderedWidth) * canvas.width
-      const y = ((mouseY - offsetY) / renderedHeight) * canvas.height
+      // Map to buffer coordinates (canvas.width/height are the actual buffer dimensions)
+      const x = (mouseX / rect.width) * canvas.width
+      const y = (mouseY / rect.height) * canvas.height
 
       return { x, y }
     },
