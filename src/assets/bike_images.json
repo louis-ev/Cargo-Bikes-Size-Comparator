@@ -3670,5 +3670,20 @@
     "frame_made_in": "Taiwan",
     "assembled_in": "",
     "wheel_size": ["20", "27.5"]
+  },
+  {
+    "id": "ecoride-loader-421",
+    "manufacturer": "Ecoride",
+    "model": "Loader 421",
+    "bike_type": "longjohn",
+    "src": "ecoride-loader-421.png",
+    "bike_length_cm": 260,
+    "weight": 50,
+    "bike_length_percent": 0.867,
+    "left_margin_percent": 0.065,
+    "bottom_margin_percent": 0.285,
+    "url": "https://www.ecoride.com/en-se/loader-421-midmotor-black",
+    "frame_made_in": "",
+    "assembled_in": "Sweden"
   }
 ]
