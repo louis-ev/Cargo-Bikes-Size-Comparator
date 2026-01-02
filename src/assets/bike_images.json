@@ -3682,10 +3682,11 @@
     "weight": 50,
     "bike_length_percent": 0.865,
     "left_margin_percent": 0.065,
-    "bottom_margin_percent": 0.21,
+    "bottom_margin_percent": 0.29,
     "url": "https://www.ecoride.com/en-se/loader-421-midmotor-black",
     "frame_made_in": "",
     "assembled_in": "Sweden",
+    "frame_material": "aluminium",
     "wheel_size": ["20", "24"]
-  },
+  }
 ]
