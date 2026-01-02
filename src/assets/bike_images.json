@@ -2367,6 +2367,13 @@
     "frame_made_in": "uk",
     "assembled_in": "uk",
     "wheel_size": ["20"],
+    "folded_view": {
+      "src": "brompton-g-line-folded.png",
+      "bike_length_cm": 72,
+      "bike_length_percent": 0.576,
+      "left_margin_percent": 0.221,
+      "bottom_margin_percent": 0.092
+    },
     "frame_material": "Steel"
   },
   {

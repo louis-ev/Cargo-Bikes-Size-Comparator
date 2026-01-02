@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure Folded Brompton G Line</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .image-container {
+            flex: 1;
+            position: relative;
+        }
+        canvas {
+            border: 2px solid #333;
+            max-width: 100%;
+            display: block;
+        }
+        .controls {
+            width: 300px;
+        }
+        .control-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        .value {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .result {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .result code {
+            background: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Measure Folded Brompton G Line Image</h1>
+    <p>Load a transparent PNG of the folded G Line and adjust the sliders to align with the bike edges.</p>
+    
+    <input type="file" id="fileInput" accept="image/*">
+    
+    <div class="container">
+        <div class="image-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <label>
+                    Left margin (%): 
+                    <span class="value" id="leftValue">10.0</span>%
+                </label>
+                <input type="range" id="leftSlider" min="0" max="50" value="10" step="0.1">
+                <small>Align blue line with left edge of bike</small>
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    Right margin (%): 
+                    <span class="value" id="rightValue">10.0</span>%
+                </label>
+                <input type="range" id="rightSlider" min="0" max="50" value="10" step="0.1">
+                <small>Align red line with right edge of bike</small>
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    Bottom margin (%): 
+                    <span class="value" id="bottomValue">10.0</span>%
+                </label>
+                <input type="range" id="bottomSlider" min="0" max="50" value="10" step="0.1">
+                <small>Align green line with ground/bottom of bike</small>
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    Folded length (cm): 
+                    <input type="number" id="lengthInput" value="58" step="0.1" style="width: 80px;">
+                </label>
+                <small>Actual folded length in centimeters</small>
+            </div>
+            
+            <div class="result">
+                <h3>JSON Values:</h3>
+                <pre id="jsonOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const fileInput = document.getElementById('fileInput');
+        const leftSlider = document.getElementById('leftSlider');
+        const rightSlider = document.getElementById('rightSlider');
+        const bottomSlider = document.getElementById('bottomSlider');
+        const lengthInput = document.getElementById('lengthInput');
+        
+        const leftValue = document.getElementById('leftValue');
+        const rightValue = document.getElementById('rightValue');
+        const bottomValue = document.getElementById('bottomValue');
+        const jsonOutput = document.getElementById('jsonOutput');
+        
+        let img = null;
+        
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    img = new Image();
+                    img.onload = () => {
+                        drawCanvas();
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        function drawCanvas() {
+            if (!img) return;
+            
+            const ratio = img.width / img.height;
+            const canvas_width = 1800;
+            const canvas_height = canvas_width / ratio;
+            
+            canvas.width = canvas_width;
+            canvas.height = canvas_height;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            
+            const left = (parseFloat(leftSlider.value) / 100) * canvas_width;
+            const right = canvas_width - (parseFloat(rightSlider.value) / 100) * canvas_width;
+            const bottom = canvas_height - (parseFloat(bottomSlider.value) / 100) * canvas_height;
+            
+            // Draw left line (blue)
+            ctx.strokeStyle = '#3333FF';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(left, 0);
+            ctx.lineTo(left, canvas_height);
+            ctx.stroke();
+            
+            // Draw right line (red)
+            ctx.strokeStyle = '#ff0000';
+            ctx.beginPath();
+            ctx.moveTo(right, 0);
+            ctx.lineTo(right, canvas_height);
+            ctx.stroke();
+            
+            // Draw bottom line (green)
+            ctx.strokeStyle = '#11bb11';
+            ctx.beginPath();
+            ctx.moveTo(0, bottom);
+            ctx.lineTo(canvas_width, bottom);
+            ctx.stroke();
+            
+            updateOutput();
+        }
+        
+        function updateOutput() {
+            const left = parseFloat(leftSlider.value);
+            const right = parseFloat(rightSlider.value);
+            const bottom = parseFloat(bottomSlider.value);
+            const length = parseFloat(lengthInput.value);
+            
+            leftValue.textContent = left.toFixed(1);
+            rightValue.textContent = right.toFixed(1);
+            bottomValue.textContent = bottom.toFixed(1);
+            
+            const bike_length_percent = (100 - left - right) / 100;
+            const left_margin_percent = (left / 100).toFixed(3);
+            const bottom_margin_percent = (bottom / 100).toFixed(3);
+            
+            const json = {
+                "src": "brompton-g-line-folded.png",
+                "bike_length_cm": length,
+                "bike_length_percent": bike_length_percent.toFixed(5),
+                "left_margin_percent": left_margin_percent,
+                "bottom_margin_percent": bottom_margin_percent
+            };
+            
+            jsonOutput.textContent = JSON.stringify(json, null, 2);
+        }
+        
+        leftSlider.addEventListener('input', () => {
+            drawCanvas();
+        });
+        
+        rightSlider.addEventListener('input', () => {
+            drawCanvas();
+        });
+        
+        bottomSlider.addEventListener('input', () => {
+            drawCanvas();
+        });
+        
+        lengthInput.addEventListener('input', () => {
+            updateOutput();
+        });
+    </script>
+</body>
+</html>
+
