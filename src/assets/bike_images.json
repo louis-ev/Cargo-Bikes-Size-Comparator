@@ -3673,5 +3673,20 @@
     "assembled_in": "Sweden",
     "frame_material": "aluminium",
     "wheel_size": ["20", "24"]
+  },
+  {
+    "id": "rawbike-rawbike-4x",
+    "manufacturer": "RAWBIKE",
+    "model": "Rawbike 4X",
+    "bike_type": "foldable",
+    "src": "rawbike-classic-electric-moped.png",
+    "bike_length_cm": 170,
+    "weight": 33,
+    "bike_length_percent": 0.73,
+    "left_margin_percent": 0.133,
+    "bottom_margin_percent": 0.1,
+    "url": "https://rawbike.com/en/articles/2.3.313/rawbike-rawbike-classic-electric-moped",
+    "frame_made_in": "",
+    "assembled_in": "Sweden"
   }
 ]
