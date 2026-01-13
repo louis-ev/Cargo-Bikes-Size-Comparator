@@ -75,7 +75,8 @@ app.config.globalProperties.$filterBikesBySearch = (bikes, searchStr) => {
 app.use(VueMatomo, {
   host: 'https://sv.louiseveillard.com',
   siteId: 1,
-  requireCookieConsent: true
+  disableCookies: true,
+  router
 })
 app.component('BikeName', BikeName)
 app.use(router)
