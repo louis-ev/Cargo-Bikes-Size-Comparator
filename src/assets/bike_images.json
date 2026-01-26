@@ -3688,5 +3688,24 @@
     "url": "https://rawbike.com/en/articles/2.3.313/rawbike-rawbike-classic-electric-moped",
     "frame_made_in": "",
     "assembled_in": "Sweden"
+  },
+  {
+    "disabled": true,
+    "note": "Disabled because missing total length, waiting for mail reply",
+
+    "id": "centurion-vario-r960i",
+
+    "manufacturer": "Centurion",
+    "model": "Vario R960i",
+    "bike_type": "longtail",
+    "src": "centurion-vario.png",
+    "bike_length_cm": "",
+    "weight": 33,
+    "bike_length_percent": 0.8,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.1,
+    "url": "https://www.centurion.de/de-de/bike/934-973/vario-r960i",
+    "frame_made_in": "Taiwan",
+    "assembled_in": "Germany"
   }
 ]
