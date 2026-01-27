@@ -3707,5 +3707,21 @@
     "url": "https://www.centurion.de/de-de/bike/934-973/vario-r960i",
     "frame_made_in": "Taiwan",
     "assembled_in": "Germany"
+  },
+  {
+    "id": "radkutsche-solid",
+
+    "manufacturer": "Radkutsche",
+    "model": "Solid",
+    "bike_type": "longtail",
+    "src": "radkutsche-solid-cargobrett.png",
+    "bike_length_cm": 209,
+    "weight": 29,
+    "bike_length_percent": 0.641,
+    "left_margin_percent": 0.194,
+    "bottom_margin_percent": 0.075,
+    "url": "https://www.radkutsche.de/solid",
+    "frame_made_in": "Taiwan",
+    "assembled_in": "Germany"
   }
 ]
