@@ -3740,5 +3740,23 @@
     "assembled_in": "France",
     "wheel_size": ["20", "26"],
     "frame_material": "Chromoly Steel"
+  },
+  {
+    "id": "bike-43-mid",
+
+    "manufacturer": "Bike43",
+    "model": "MID",
+    "bike_type": "midtail",
+    "src": "bike43-mid.png",
+    "bike_length_cm": 186,
+    "weight": 30,
+    "bike_length_percent": 0.82,
+    "left_margin_percent": 0.106,
+    "bottom_margin_percent": 0.12,
+    "url": "https://bike43.com/mid-tail-cargo-family-bike/",
+    "frame_made_in": "",
+    "assembled_in": "",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]
