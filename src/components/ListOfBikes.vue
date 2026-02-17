@@ -617,6 +617,9 @@ export default {
     max-width: 16ch;
     // margin: 0 1rem;
   }
+  ._lang_select {
+    max-width: 35ch;
+  }
 
   ._credits {
   }

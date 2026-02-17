@@ -7,7 +7,7 @@
     </select>
 
     <div class="unit-toggle">
-      <span>{{ $t('message.unit') }}:</span>
+      <!-- <span>{{ $t('message.unit') }}:</span> -->
       <div class="unit-radio-group">
         <label class="unit-radio-label">
           <input type="radio" name="unit" value="cm" v-model="unit" @change="toggleUnit" />
@@ -52,9 +52,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .locale-changer {
-  // display: flex;
-  // flex-flow: row wrap;
-  // justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
   // text-align: right;
   // position: absolute;
   // right: 10px;
@@ -65,7 +67,7 @@ export default {
   display: flex;
   // justify-content: center;
   gap: 0.5rem;
-  padding: 0.5rem 0 0;
+  // padding: 0.5rem 0 0;
 }
 
 .unit-radio-group {
