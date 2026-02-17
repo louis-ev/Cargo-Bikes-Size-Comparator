@@ -3723,5 +3723,22 @@
     "url": "https://www.radkutsche.de/solid",
     "frame_made_in": "Taiwan",
     "assembled_in": "Germany"
+  },
+  {
+    "id": "cycles-du-midi-cargo-électrique-familliale",
+    "manufacturer": "Cycles du Midi",
+    "model": "Cargo électrique familliale",
+    "bike_type": "longjohn",
+    "src": "cycles-du-midi-cargo.png",
+    "bike_length_cm": 245,
+    "weight": "",
+    "bike_length_percent": 0.993,
+    "left_margin_percent": 0.002,
+    "bottom_margin_percent": 0.052,
+    "url": "https://www.cyclesdumidi.fr",
+    "frame_made_in": "France",
+    "assembled_in": "France",
+    "wheel_size": ["20", "26"],
+    "frame_material": "Chromoly Steel"
   }
 ]
