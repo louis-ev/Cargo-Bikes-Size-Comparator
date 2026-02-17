@@ -72,6 +72,7 @@ export default {
       else if (country === 'japan') return '🇯🇵'
       else if (country === 'netherlands') return '🇳🇱'
       else if (country === 'uk') return '🇬🇧'
+      else if (country === 'spain') return '🇪🇸'
       else if (country === 'poland') return '🇵🇱'
       else if (country === 'sweden') return '🇸🇪'
       else if (country === 'australia') return '🇦🇺'
