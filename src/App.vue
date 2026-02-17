@@ -301,9 +301,10 @@ input {
 .listComplete {
   &-move {
     position: relative;
+    z-index: 1;
     transition:
-      transform 0.6s cubic-bezier(0.19, 1, 0.22, 1),
-      opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+      transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+      opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important;
   }
 
   &-leave-active {

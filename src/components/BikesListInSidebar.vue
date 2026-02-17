@@ -1,79 +1,66 @@
 <template>
-  <div>
-    <transition-group tag="div" class="_bikeList" name="list">
-      <template v-if="enabled_bikes.length > 0">
-        <div class="_itemTitle" :key="'enabled_bikes'">
-          <span>{{ $t('message.bikes_selected', { count: enabled_bikes.length }) }}</span>
-          <button type="button" @click="$root.resetBikes">
-            {{ $t('message.reset') }}
-          </button>
-        </div>
-        <BikeEntry
-          v-for="bike in enabled_bikes"
-          :key="bike.id"
-          :position="enabled_bikes.indexOf(bike)"
-          :total_enabled_bikes="enabled_bikes.length"
-          :bike="bike"
-          :is-enabled="bikeIsEnabled(bike.id)"
-          :canvas_image_style_outline="canvas_image_style_outline"
-          :bikes_adjustments="bikes_adjustments"
-          :thumb-image="getBikeThumbImage(bike)"
-          @toggle="toggleBike(bike.id)"
-          @positionInEnabledBikes="positionInEnabledBikes"
-          @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
-        />
-
-        <hr />
-      </template>
-
-      <SearchField v-model="search_str" />
-      <div
-        class="_itemTitle"
-        :key="'not_enabled_bikes'"
-        v-if="filtered_not_enabled_bikes.length > 0"
-      >
-        {{
-          $t('message.or_click_on_bikes', {
-            count: filtered_not_enabled_bikes.length
-          })
-        }}
-      </div>
-
-      <div v-if="filtered_bikes.length === 0" class="_noMatch">
-        {{ $t('message.no_bikes_matched_your_search') }}<br />
-        <div class="_addMissingBike">
-          <button
-            type="button"
-            data-color="black"
-            data-size="big"
-            @click="$emit('showAddBikeModal')"
-          >
-            ＋
-            {{ $t('message.add_a_bike') }}
-          </button>
-        </div>
-
-        <!-- {{ $t('message.to_contribute_a_bike') }}
-        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
-          {{ $t('message.read_the_guide') }}
-        </a>
-        {{ $t('message.or_ask_me') }}
-        <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}.</a>. -->
-      </div>
-
+  <transition-group tag="div" class="_bikeList" name="listComplete">
+    <div class="_itemTitle" :key="'enabled_bikes'" v-if="enabled_bikes.length > 0">
+      <span>{{ $t('message.bikes_selected', { count: enabled_bikes.length }) }}</span>
+      <button type="button" @click="$root.resetBikes">
+        {{ $t('message.reset') }}
+      </button>
+    </div>
+    <div :key="bike.id" v-for="bike in enabled_bikes">
       <BikeEntry
-        v-for="bike in filtered_not_enabled_bikes"
-        :key="bike.id"
+        :position="enabled_bikes.indexOf(bike)"
+        :total_enabled_bikes="enabled_bikes.length"
         :bike="bike"
         :is-enabled="bikeIsEnabled(bike.id)"
         :canvas_image_style_outline="canvas_image_style_outline"
         :bikes_adjustments="bikes_adjustments"
         :thumb-image="getBikeThumbImage(bike)"
         @toggle="toggleBike(bike.id)"
+        @positionInEnabledBikes="positionInEnabledBikes"
         @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
       />
-    </transition-group>
-  </div>
+    </div>
+
+    <hr v-if="enabled_bikes.length > 0" key="'separator'" />
+
+    <SearchField :key="'search_field'" v-model="search_str" />
+    <div class="_itemTitle" :key="'not_enabled_bikes'" v-if="filtered_not_enabled_bikes.length > 0">
+      {{
+        $t('message.or_click_on_bikes', {
+          count: filtered_not_enabled_bikes.length
+        })
+      }}
+    </div>
+
+    <div v-if="filtered_bikes.length === 0" :key="'no_match'" class="_noMatch">
+      {{ $t('message.no_bikes_matched_your_search') }}<br />
+      <div class="_addMissingBike">
+        <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
+          ＋
+          {{ $t('message.add_a_bike') }}
+        </button>
+      </div>
+
+      <!-- {{ $t('message.to_contribute_a_bike') }}
+        <a href="https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9" target="_blank">
+          {{ $t('message.read_the_guide') }}
+        </a>
+        {{ $t('message.or_ask_me') }}
+        <a href="mailto:hello@louiseveillard.com" target="_blank">{{ $t('message.via_email') }}.</a>. -->
+    </div>
+
+    <BikeEntry
+      v-for="bike in filtered_not_enabled_bikes"
+      :key="bike.id"
+      :bike="bike"
+      :is-enabled="bikeIsEnabled(bike.id)"
+      :canvas_image_style_outline="canvas_image_style_outline"
+      :bikes_adjustments="bikes_adjustments"
+      :thumb-image="getBikeThumbImage(bike)"
+      @toggle="toggleBike(bike.id)"
+      @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
+    />
+  </transition-group>
 </template>
 <script>
 import BikeEntry from './BikeEntry.vue'
@@ -155,10 +142,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 ._bikeList {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.25rem;
-  padding: 0.25rem 0;
+  position: relative;
+
+  > *:not(hr) {
+    margin: 0.25rem 0;
+  }
 }
 
 ._item {
