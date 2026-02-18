@@ -3687,6 +3687,8 @@
     "bottom_margin_percent": 0.1,
     "url": "https://rawbike.com/en/articles/2.3.313/rawbike-rawbike-classic-electric-moped",
     "frame_made_in": "",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium",
     "assembled_in": "Sweden"
   },
   {
@@ -3721,6 +3723,7 @@
     "left_margin_percent": 0.194,
     "bottom_margin_percent": 0.075,
     "url": "https://www.radkutsche.de/solid",
+    "wheel_size": ["20", "27.5"],
     "frame_made_in": "Taiwan",
     "assembled_in": "Germany"
   },
