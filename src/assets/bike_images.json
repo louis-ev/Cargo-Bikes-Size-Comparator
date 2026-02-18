@@ -3775,5 +3775,38 @@
     "assembled_in": "",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "xtracycle-swoop-asm",
+
+    "manufacturer": "Xtracycle",
+    "model": "Swoop ASM",
+    "bike_type": "longtail",
+    "src": "swoop-asm.png",
+    "bike_length_cm": 208,
+    "weight": 31,
+    "bike_length_percent": 0.88,
+    "left_margin_percent": 0.06,
+    "bottom_margin_percent": 0.139,
+    "url": "https://xtracycle.com/products/swoop-asm-family-cargo",
+    "wheel_size": ["26", "20"],
+    "frame_material": "Steel (Chromoly)"
+  },
+  {
+    "id": "omnium-nano",
+    "manufacturer": "Omnium",
+    "model": "Nano",
+    "bike_type": "shortjohn",
+    "src": "omnium-nano.png",
+    "bike_length_cm": 150,
+    "weight": "",
+    "bike_length_percent": 0.861,
+    "left_margin_percent": 0.056,
+    "bottom_margin_percent": 0.066,
+    "url": "https://omniumcargo.com/nano/",
+    "wheel_size": ["20"],
+    "frame_material": "4130 Chromoly Steel",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
