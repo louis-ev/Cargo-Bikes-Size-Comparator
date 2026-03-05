@@ -1,42 +1,46 @@
 <template>
   <div class="_homeView">
-    <div class="_leftPane">
-      <transition name="slide" mode="out-in">
-        <SideBar
-          v-if="show_sidebar && enabled_bikes.length > 0"
-          :bikes="bikes"
-          :enabled_bikes="enabled_bikes"
-          :grid_step="grid_step"
-          v-model:default_padding_percent="default_padding_percent"
-          v-model:grid_step="grid_step"
-          v-model:bikes_adjustments="bikes_adjustments"
-          :canvas_image_style_outline="canvas_image_style_outline"
-          @showAddBikeModal="add_bike_modal = true"
-          @closeSidebar="show_sidebar = false"
-        />
-      </transition>
-    </div>
-    <div class="_rightPane">
-      <transition name="fade" mode="out-in">
-        <ListOfBikes
-          v-if="enabled_bikes.length === 0"
-          :bikes="bikes"
-          @showAddBikeModal="add_bike_modal = true"
-        />
-        <CanvasView
-          v-else
-          :enabled_bikes="enabled_bikes"
-          :bikes="bikes"
-          :default_padding_percent="default_padding_percent"
-          :grid_step="grid_step"
-          :bikes_adjustments="bikes_adjustments"
-          :canvas_image_style_outline="canvas_image_style_outline"
-          :show_sidebar="show_sidebar"
-          :use_inches="$root.useInches"
-          @toggleSidebar="toggleSidebar"
-        />
-      </transition>
-    </div>
+    <transition name="fade" mode="out-in">
+      <ListOfBikes
+        v-if="enabled_bikes.length === 0"
+        key="no_enabled_bikes"
+        :bikes="bikes"
+        @showAddBikeModal="add_bike_modal = true"
+      />
+      <div v-else class="_enabledBikes" key="enabled_bikes">
+        <div class="_leftPane">
+          <transition name="slide" mode="out-in">
+            <SideBar
+              v-if="show_sidebar && enabled_bikes.length > 0"
+              :bikes="bikes"
+              :enabled_bikes="enabled_bikes"
+              :grid_step="grid_step"
+              v-model:default_padding_percent="default_padding_percent"
+              v-model:grid_step="grid_step"
+              v-model:bikes_adjustments="bikes_adjustments"
+              :canvas_image_style_outline="canvas_image_style_outline"
+              @showAddBikeModal="add_bike_modal = true"
+              @closeSidebar="show_sidebar = false"
+            />
+          </transition>
+        </div>
+        <div class="_rightPane">
+          <transition name="fade" mode="out-in">
+            <CanvasView
+              :enabled_bikes="enabled_bikes"
+              :bikes="bikes"
+              :default_padding_percent="default_padding_percent"
+              :grid_step="grid_step"
+              :bikes_adjustments="bikes_adjustments"
+              :canvas_image_style_outline="canvas_image_style_outline"
+              :show_sidebar="show_sidebar"
+              :use_inches="$root.useInches"
+              @toggleSidebar="toggleSidebar"
+            />
+          </transition>
+        </div>
+      </div>
+    </transition>
     <transition name="fade" mode="out-in">
       <AddBikeModal v-if="add_bike_modal" :bikes="bikes" @close="add_bike_modal = false" />
     </transition>
@@ -138,9 +142,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 ._homeView {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 100svh;
 }
 ._leftPane {
   position: relative;
@@ -155,5 +156,10 @@ export default {
   flex: 1 1 auto;
   height: 100%;
   overflow: auto;
+}
+._enabledBikes {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100dvh;
 }
 </style>

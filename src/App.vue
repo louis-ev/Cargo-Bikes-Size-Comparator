@@ -1,7 +1,5 @@
 <template>
-  <div class="">
-    <RouterView :bikes="sorted_bikes" />
-  </div>
+  <RouterView :bikes="sorted_bikes" />
 </template>
 <script>
 import { RouterView } from 'vue-router'
@@ -39,6 +37,7 @@ export default {
   created() {
     this.loadBakfiets()
     this.loadLongtails()
+
     if (localStorage.getItem('draw_rect_in_canvas')) {
       try {
         this.draw_rect_in_canvas = JSON.parse(

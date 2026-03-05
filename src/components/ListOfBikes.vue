@@ -587,8 +587,6 @@ export default {
   // gap: 10px;
   z-index: 10;
   background-color: var(--color-background);
-  overflow-y: auto;
-  height: 100%;
   padding: 0 1rem;
 }
 
