@@ -29,6 +29,7 @@
             v-for="[bike_type, count] in all_bike_types"
             :key="bike_type"
             type="button"
+            class="_buttonFilter"
             :class="{
               'is--active': bike_type_filter === bike_type,
               'is--disabled': count === 0
@@ -48,6 +49,7 @@
             v-for="[wheel_size, count] in all_wheel_sizes"
             :key="wheel_size"
             type="button"
+            class="_buttonFilter"
             :class="{
               'is--active': wheel_size_filter === wheel_size,
               'is--disabled': count === 0
@@ -61,7 +63,7 @@
           <button
             v-if="unknown_wheel_size_count > 0"
             type="button"
-            class="_unknownWheelSize"
+            class="_buttonFilter _unknownWheelSize"
             :class="{
               'is--active': wheel_size_filter === 'unknown'
             }"
@@ -78,6 +80,7 @@
             v-for="[material, count] in all_frame_materials"
             :key="material"
             type="button"
+            class="_buttonFilter"
             :class="{
               'is--active': frame_material_filter === material,
               'is--disabled': count === 0
@@ -656,41 +659,41 @@ export default {
   gap: 0.5rem;
   padding: 0.5rem 0;
   justify-content: flex-end;
+}
 
-  button {
-    position: relative;
-    padding: 0.25rem 0.5rem;
-    color: black;
+._buttonFilter {
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  color: black;
+  font-weight: normal;
+  font-size: 0.8rem;
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    transform: rotate(-5deg) scale(1.2);
+    z-index: 11;
+    // background-color: white !important;
+  }
+
+  &.is--active {
+    z-index: 10;
+    font-weight: bold;
+    transform: rotate(-10deg) scale(1.4) !important;
+  }
+
+  &.is--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    filter: grayscale(0.8);
+  }
+
+  ._count {
+    font-size: 0.6rem;
     font-weight: normal;
-    font-size: 0.8rem;
-
-    &:hover:not(:disabled),
-    &:focus-visible:not(:disabled) {
-      transform: rotate(-5deg) scale(1.2);
-      z-index: 11;
-      // background-color: white !important;
-    }
-
-    &.is--active {
-      z-index: 10;
-      font-weight: bold;
-      transform: rotate(-10deg) scale(1.4) !important;
-    }
-
-    &.is--disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-      filter: grayscale(0.8);
-    }
-
-    ._count {
-      font-size: 0.6rem;
-      font-weight: normal;
-      border-radius: 0.5rem;
-      padding: 0;
-      font-weight: bold;
-      // background-color: rgba(50, 50, 50, 0.2);
-    }
+    border-radius: 0.5rem;
+    padding: 0;
+    font-weight: bold;
+    // background-color: rgba(50, 50, 50, 0.2);
   }
 }
 
@@ -708,35 +711,6 @@ export default {
   }
 
   button {
-    position: relative;
-    padding: 0.25rem 0.75rem;
-    background-color: rgba(200, 200, 200, 0.4);
-    color: black;
-    font-weight: normal;
-    font-size: 0.8rem;
-    border-radius: 0.25rem;
-    transition: all 0.2s ease;
-
-    &:hover:not(:disabled),
-    &:focus-visible:not(:disabled) {
-      transform: scale(1.1);
-      z-index: 10;
-      // background-color: rgba(200, 200, 200, 0.7);
-    }
-
-    &.is--active {
-      z-index: 10;
-      background-color: var(--color-accent);
-      font-weight: bold;
-      transform: scale(1.15);
-    }
-
-    &.is--disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-      background-color: rgba(200, 200, 200, 0.2);
-    }
-
     ._count {
       font-size: 0.6rem;
       font-weight: bold;

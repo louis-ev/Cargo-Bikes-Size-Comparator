@@ -75,6 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 ._item {
+  width: 100%;
   line-height: 1.2;
   background-color: white;
   border-radius: 0.5rem;

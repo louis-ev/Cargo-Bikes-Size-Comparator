@@ -6,20 +6,21 @@
         {{ $t('message.reset') }}
       </button>
     </div>
-    <div :key="bike.id" v-for="bike in enabled_bikes">
-      <BikeEntry
-        :position="enabled_bikes.indexOf(bike)"
-        :total_enabled_bikes="enabled_bikes.length"
-        :bike="bike"
-        :is-enabled="bikeIsEnabled(bike.id)"
-        :canvas_image_style_outline="canvas_image_style_outline"
-        :bikes_adjustments="bikes_adjustments"
-        :thumb-image="getBikeThumbImage(bike)"
-        @toggle="toggleBike(bike.id)"
-        @positionInEnabledBikes="positionInEnabledBikes"
-        @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
-      />
-    </div>
+
+    <BikeEntry
+      :key="bike.id"
+      v-for="bike in enabled_bikes"
+      :position="enabled_bikes.indexOf(bike)"
+      :total_enabled_bikes="enabled_bikes.length"
+      :bike="bike"
+      :is-enabled="bikeIsEnabled(bike.id)"
+      :canvas_image_style_outline="canvas_image_style_outline"
+      :bikes_adjustments="bikes_adjustments"
+      :thumb-image="getBikeThumbImage(bike)"
+      @toggle="toggleBike(bike.id)"
+      @positionInEnabledBikes="positionInEnabledBikes"
+      @update:bikes_adjustments="$emit('update:bikes_adjustments', $event)"
+    />
 
     <hr v-if="enabled_bikes.length > 0" key="'separator'" />
 
@@ -150,6 +151,7 @@ export default {
 }
 
 ._item {
+  width: 100%;
   line-height: 1.2;
   background-color: white;
   border-radius: 0.5rem;
