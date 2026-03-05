@@ -992,7 +992,7 @@ canvas {
 ._canvasWrapper {
   position: relative;
   overflow: hidden;
-  min-width: 420px;
+  min-width: 320px;
   height: 100%;
 
   padding: 1rem;
