@@ -8,10 +8,12 @@
       }}</span>
     </div> -->
 
-    <transition name="showPreview" mode="in-out">
-      <div v-if="preview_bike" :key="preview_bike" class="_previewBikeWrapper">
+    <transition name="showPreview">
+      <div v-if="preview_bike" class="_previewBikeWrapper">
         <div class="_previewBikeOverlay" />
-        <img :key="preview_bike" :src="preview_bike" />
+        <transition name="showPreview" mode="out-in">
+          <img :key="preview_bike" :src="preview_bike" />
+        </transition>
       </div>
     </transition>
 
@@ -1204,7 +1206,7 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 70%;
     height: 100%;
     object-fit: scale-down;
   }

@@ -3036,19 +3036,29 @@
     "manufacturer": "Avnson",
     "model": "e-FOLD",
     "bike_type": "longjohn/foldable",
-    "src": "avnson-efold.png",
+    "src": "avnson-efold-2.png",
     "bike_length_cm": 236,
     "weight": 31,
-    "bike_length_percent": 0.98,
-    "left_margin_percent": 0.02,
-    "bottom_margin_percent": 0.206,
+    "bike_length_percent": 0.843,
+    "left_margin_percent": 0.132,
+    "bottom_margin_percent": 0.25,
     "url": "https://foldride.com/e-fold",
     "frame_made_in": "Germany",
     "assembled_in": "Germany",
     "wheel_size": ["20"],
-    "frame_material": "Aluminium"
+    "frame_material": "Aluminium",
+    "folded_view": {
+      "src": "avnson-efold-2-folded.png",
+      "bike_length_cm": 159,
+      "bike_length_percent": 0.488,
+      "left_margin_percent": 0.293,
+      "bottom_margin_percent": 0.135
+    }
   },
   {
+    "disabled": true,
+    "note": "Disabled because manufacturer wrote to tell us they are focusing on the non-mini version",
+
     "id": "avnson-e-fold-mini",
     "manufacturer": "Avnson",
     "model": "e-FOLD Mini",

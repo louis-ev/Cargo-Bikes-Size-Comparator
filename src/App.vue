@@ -289,7 +289,7 @@ input {
 
 .showPreview-enter-active,
 .showPreview-leave-active {
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.45s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .showPreview-enter-from,
 .showPreview-leave-to {
