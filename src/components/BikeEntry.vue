@@ -1,5 +1,5 @@
 <template>
-  <div class="_item" :data-active="isEnabled" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
+  <div class="_item" :data-active="isEnabled">
     <label :for="bike.id" class="_itemTop">
       <input
         v-show="!isEnabled"
@@ -19,7 +19,7 @@
         <BikeName :bike="bike" />
       </div>
 
-      <div v-if="bike.id" class="_img">
+      <div v-if="bike.id" class="_img" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
         <div
           v-if="isEnabled && canvas_image_style_outline"
           class="_color"
@@ -60,6 +60,7 @@ export default {
     },
     onMouseEnter() {
       // not very effective, triggers an hover on next bike when enabling a bike
+      if (this.bike.isEnabled) return
       this.$preview_bike.id = this.bike.id
     },
     onMouseLeave() {
@@ -142,6 +143,10 @@ export default {
     width: 44px;
     height: 44px;
 
+    &:hover {
+      opacity: 0.2;
+    }
+
     ._color {
       position: absolute;
       top: 0;
@@ -150,6 +155,7 @@ export default {
       width: 100%;
       opacity: 0.8;
       background-color: #fff;
+      pointer-events: none;
 
       &::before {
         content: '';
@@ -169,6 +175,7 @@ export default {
       padding: 0 0.25rem 0 0;
       object-fit: scale-down;
       object-position: center;
+      pointer-events: auto;
     }
   }
 
