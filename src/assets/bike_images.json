@@ -3821,5 +3821,97 @@
     "frame_material": "4130 Chromoly Steel",
     "frame_made_in": "",
     "assembled_in": ""
+  },
+  {
+    "id": "isy-cargo-n38-zr-maxi",
+    "manufacturer": "i:SY",
+    "model": "Cargo N3.8 ZR Maxi",
+    "bike_type": "longjohn",
+    "src": "isy-cargo-n38-zr-maxi.png",
+    "bike_length_cm": 233,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.16,
+    "weight": 35,
+    "frame_material": "Aluminium",
+    "url": "https://www.isy.de/gb-en/produkt/i-sy-cargo-n3-8-zr-maxi-2023-kompakt",
+    "additional_links": [
+      {
+        "text": "More dimensions",
+        "url": "https://www.isy.de/gb-en/about-isy/technical-dimensions#cargo-maxi-1.0"
+      }
+    ],
+    "wheel_size": ["20"],
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
+  },
+  {
+    "id": "isy-cargo-p12-zr",
+    "manufacturer": "i:SY",
+    "model": "Cargo P12 ZR",
+    "bike_type": "longjohn",
+    "src": "isy-cargo-p12-zr.png",
+    "bike_length_cm": 219,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.116875,
+    "weight": 33,
+    "frame_material": "Aluminium",
+    "url": "https://www.isy.de/gb-en/produkt/i-sy-cargo-p12-zr-2026-long-john",
+    "additional_links": [
+      {
+        "text": "More dimensions",
+        "url": "https://www.isy.de/gb-en/about-isy/technical-dimensions#cargo-2.0"
+      }
+    ],
+    "wheel_size": ["20"],
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
+  },
+  {
+    "id": "isy-cargo-p12-zr-maxi",
+    "manufacturer": "i:SY",
+    "model": "Cargo P12 ZR Maxi",
+    "bike_type": "longjohn",
+    "src": "isy-cargo-p12-zr-maxi.png",
+    "bike_length_cm": 239,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.14125,
+    "weight": 35,
+    "frame_material": "Aluminium",
+    "url": "https://www.isy.de/gb-en/produkt/i-sy-cargo-p12-zr-maxi-2026-long-john",
+    "additional_links": [
+      {
+        "text": "More dimensions",
+        "url": "https://www.isy.de/gb-en/about-isy/technical-dimensions#cargo-maxi-2.0"
+      }
+    ],
+    "wheel_size": ["20"],
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
+  },
+  {
+    "id": "isy-cargo-p12-zr-longtail",
+    "manufacturer": "i:SY",
+    "model": "Cargo P12 ZR Longtail",
+    "bike_type": "longtail",
+    "src": "isy-cargo-p12-zr-longtail.png",
+    "bike_length_cm": 198,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.066875,
+    "weight": 32,
+    "frame_material": "Aluminium",
+    "url": "https://www.isy.de/gb-en/produkt/i-sy-p12-zr-longtail-2026-backpacker",
+    "additional_links": [
+      {
+        "text": "More dimensions",
+        "url": "https://www.isy.de/gb-en/about-isy/technical-dimensions#Longtail"
+      }
+    ],
+    "wheel_size": ["20"],
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany"
   }
 ]
