@@ -2529,7 +2529,7 @@
     "url": "https://www.bicicapace.com/de/bikes/classic/",
     "frame_made_in": "",
     "assembled_in": "",
-    "wheel_size": ["20"],
+    "wheel_size": ["20", "26"],
     "frame_material": "Steel"
   },
   {
@@ -3927,7 +3927,26 @@
     "left_margin_percent": 0.057,
     "bottom_margin_percent": 0.159,
     "url": "https://www.bicicapace.com/bikes/pelican/",
+    "wheel_size": ["20", "26"],
     "frame_made_in": "Italy",
     "assembled_in": "Italy"
+  },
+  {
+    "id": "rad-power-bikes-radcity-5-plus",
+
+    "manufacturer": "Rad Power Bikes",
+    "model": "RadCity 5 Plus Step Thru",
+    "bike_type": "midtail",
+    "src": "radpower-city-5-plus.png",
+    "bike_length_cm": 181,
+    "weight": 29,
+    "bike_length_percent": 0.843,
+    "left_margin_percent": 0.085,
+    "bottom_margin_percent": 0.144,
+    "wheel_size": ["27.5"],
+    "frame_material": "Aluminium",
+    "url": "https://radpowerbikes.eu/pages/ebike-technical-specifications?srsltid=AfmBOorpzTwwsqpxpncYC-YMvD05fgAbBOglso7i5jvMcJYqkcPEm4W7",
+    "frame_made_in": "China",
+    "assembled_in": "USA"
   }
 ]
