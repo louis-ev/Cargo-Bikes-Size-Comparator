@@ -3948,5 +3948,22 @@
     "url": "https://radpowerbikes.eu/pages/ebike-technical-specifications?srsltid=AfmBOorpzTwwsqpxpncYC-YMvD05fgAbBOglso7i5jvMcJYqkcPEm4W7",
     "frame_made_in": "China",
     "assembled_in": "USA"
+  },
+
+  {
+    "id": "wike-wicycle®-'wike-electric-salamander'-e-cargo-bicycle-&-stroller",
+
+    "manufacturer": "Wike",
+    "model": "Electric Salamander",
+    "bike_type": "longjohn/foldable",
+    "src": "wike-electric-salamander.png",
+    "bike_length_cm": 228,
+    "weight": 55,
+    "bike_length_percent": 0.96,
+    "left_margin_percent": 0.012,
+    "bottom_margin_percent": 0.248,
+    "url": "https://wikeinc.com/en-ca/products/salamander-e-cargo-bike-stroller",
+    "frame_made_in": "",
+    "assembled_in": "Canada"
   }
 ]
