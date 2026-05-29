@@ -4009,5 +4009,22 @@
     "frame_material": "Aluminium 6061",
     "frame_made_in": "Taiwan",
     "assembled_in": "France"
+  },
+  {
+    "id": "l1-tarran",
+    "manufacturer": "TARRAN",
+    "model": "L1",
+    "bike_type": "longtail",
+    "src": "tarran-l1.png",
+    "bike_length_percent": 0.875,
+    "bike_length_cm": 196,
+    "left_margin_percent": 0.09,
+    "bottom_margin_percent": 0.268,
+    "url": "https://tarranbikes.com/pages/tarran-l1",
+    "weight": 37.5,
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium alloy",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
