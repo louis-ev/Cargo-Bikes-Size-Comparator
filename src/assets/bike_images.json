@@ -3967,5 +3967,20 @@
     "frame_material": "4130 Chromoly Steel",
     "frame_made_in": "",
     "assembled_in": "Canada"
+  },
+  {
+    "id": "tern-byb",
+    "manufacturer": "Tern",
+    "model": "BYB",
+    "bike_type": "foldable",
+    "src": "byb-p8-g1.png",
+    "bike_length_cm": 157,
+    "weight": 14,
+    "bike_length_percent": 0.747,
+    "left_margin_percent": 0.125,
+    "bottom_margin_percent": 0.129,
+    "url": "https://www.ternbicycles.com/fr/bikes/471/byb",
+    "frame_made_in": "",
+    "assembled_in": ""
   }
 ]
