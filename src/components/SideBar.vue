@@ -147,6 +147,13 @@
         </template>
       </details>
 
+      <div class="_sidebarActions">
+        <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+          ＋
+          {{ $t('message.add_a_bike') }}
+        </button>
+      </div>
+
       <Credits />
     </div>
 
@@ -341,6 +348,14 @@ export default {
   button {
     display: inline-block;
   }
+}
+
+._sidebarActions {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  align-items: center;
 }
 
 ._addMissingBike {

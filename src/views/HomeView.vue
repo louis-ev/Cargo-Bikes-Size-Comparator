@@ -6,6 +6,7 @@
         key="no_enabled_bikes"
         :bikes="bikes"
         @showAddBikeModal="add_bike_modal = true"
+        @showChangelogModal="openChangelog"
       />
       <div v-else class="_enabledBikes" key="enabled_bikes">
         <div class="_leftPane">
@@ -44,12 +45,16 @@
     <transition name="fade" mode="out-in">
       <AddBikeModal v-if="add_bike_modal" :bikes="bikes" @close="add_bike_modal = false" />
     </transition>
+    <transition name="fade" mode="out-in">
+      <ChangelogModal v-if="changelog_modal" @close="onChangelogClose" />
+    </transition>
   </div>
 </template>
 <script>
 import SideBar from '@/components/SideBar.vue'
 import CanvasView from '@/components/CanvasView.vue'
 import AddBikeModal from '@/components/AddBikeModal.vue'
+import ChangelogModal from '@/components/ChangelogModal.vue'
 import ListOfBikes from '@/components/ListOfBikes.vue'
 
 export default {
@@ -60,6 +65,7 @@ export default {
     SideBar,
     CanvasView,
     AddBikeModal,
+    ChangelogModal,
     ListOfBikes
   },
   data() {
@@ -67,6 +73,7 @@ export default {
       ro: null,
 
       add_bike_modal: false,
+      changelog_modal: false,
       show_sidebar: true,
 
       default_padding_percent: 5,
@@ -83,9 +90,14 @@ export default {
     if (Object.prototype.hasOwnProperty.call(this.$route.query, 'addbike')) {
       this.add_bike_modal = true
     }
+    this.syncChangelogFromRoute()
   },
   beforeUnmount() {},
-  watch: {},
+  watch: {
+    $route() {
+      this.syncChangelogFromRoute()
+    }
+  },
   computed: {
     canvas_image_style_outline() {
       return this.$route.query.outline && this.$route.query.outline === '1'
@@ -136,6 +148,19 @@ export default {
     },
     toggleSidebar() {
       this.show_sidebar = !this.show_sidebar
+    },
+    openChangelog() {
+      if (this.$route.name === 'changelog') return
+      this.$router.push({ name: 'changelog', query: this.$route.query })
+    },
+    syncChangelogFromRoute() {
+      this.changelog_modal = this.$route.name === 'changelog'
+    },
+    onChangelogClose() {
+      this.changelog_modal = false
+      if (this.$route.name === 'changelog') {
+        this.$router.replace({ name: 'home', query: this.$route.query })
+      }
     }
   }
 }

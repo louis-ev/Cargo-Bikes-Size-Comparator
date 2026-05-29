@@ -73,6 +73,19 @@ button,
       background-color: var(--color-accent);
     }
   }
+
+  &[data-color='secondary'] {
+    background-color: #555;
+    color: var(--color-background);
+
+    &:hover,
+    &:focus-visible {
+      &:not(:disabled) {
+        color: var(--color-text);
+        background-color: var(--color-accent);
+      }
+    }
+  }
 }
 
 button,

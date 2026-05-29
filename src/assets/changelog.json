@@ -1,0 +1,338 @@
+[
+  {
+    "date": "2026-05-29",
+    "type": "bike",
+    "title_en": "TARRAN L1",
+    "title_fr": "TARRAN L1",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base."
+  },
+  {
+    "date": "2026-05-29",
+    "type": "bike",
+    "title_en": "O2feel Buzz",
+    "title_fr": "O2feel Buzz",
+    "body_en": "New midtail added to the database.",
+    "body_fr": "Nouveau midtail ajouté à la base."
+  },
+  {
+    "date": "2026-05-29",
+    "type": "bike",
+    "title_en": "Tern BYB",
+    "title_fr": "Tern BYB",
+    "body_en": "New foldable bike added; frame origin info added for Tern models.",
+    "body_fr": "Nouveau pliant ajouté ; infos d’origine du cadre ajoutées pour les modèles Tern."
+  },
+  {
+    "date": "2026-05-04",
+    "type": "bike",
+    "title_en": "Wike Salamander",
+    "title_fr": "Wike Salamander",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2026-05-04",
+    "type": "bike",
+    "title_en": "Rad Power City 5 Plus Step-Thru",
+    "title_fr": "Rad Power City 5 Plus Step-Thru",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2026-05-04",
+    "type": "bike",
+    "title_en": "Bicicapace Pelican Sport",
+    "title_fr": "Bicicapace Pelican Sport",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2026-04-09",
+    "type": "bike",
+    "title_en": "i:SY cargo models",
+    "title_fr": "Modèles cargo i:SY",
+    "body_en": "Several i:SY models added (community contribution).",
+    "body_fr": "Plusieurs modèles i:SY ajoutés (contribution communautaire)."
+  },
+  {
+    "date": "2026-03-12",
+    "type": "ui",
+    "title_en": "Calmer bike previews",
+    "title_fr": "Aperçus vélo plus sobres",
+    "body_en": "Tweaked preview thumbnails on the home list.",
+    "body_fr": "Ajustement des vignettes sur la liste d’accueil."
+  },
+  {
+    "date": "2026-03-12",
+    "type": "bike",
+    "title_en": "Aventon E-Fold folded view",
+    "title_fr": "Vue pliée Aventon E-Fold",
+    "body_en": "Folded silhouette added; E-Fold Mini temporarily disabled.",
+    "body_fr": "Silhouette pliée ajoutée ; E-Fold Mini temporairement désactivé."
+  },
+  {
+    "date": "2026-03-05",
+    "type": "ui",
+    "title_en": "Smarterphone layout",
+    "title_fr": "Affichage mobile amélioré",
+    "body_en": "Improved display and overflow handling on small screens.",
+    "body_fr": "Meilleur affichage et gestion du débordement sur petits écrans."
+  },
+  {
+    "date": "2026-03-05",
+    "type": "fix",
+    "title_en": "Sidebar bike list animation",
+    "title_fr": "Animation liste vélo (barre latérale)",
+    "body_en": "Fixed animation when bikes are added or removed in the sidebar.",
+    "body_fr": "Correction de l’animation lors de l’ajout ou du retrait de vélos dans la barre latérale."
+  },
+  {
+    "date": "2026-02-18",
+    "type": "bike",
+    "title_en": "Omnium Nano & Swoop ASM",
+    "title_fr": "Omnium Nano & Swoop ASM",
+    "body_en": "New bikes added to the database.",
+    "body_fr": "Nouveaux vélos ajoutés à la base."
+  },
+  {
+    "date": "2026-02-17",
+    "type": "ui",
+    "title_en": "Sidebar transitions",
+    "title_fr": "Transitions barre latérale",
+    "body_en": "Reworked sidebar transitions and unit selector tweak.",
+    "body_fr": "Transitions de la barre latérale retravaillées et sélecteur d’unité ajusté."
+  },
+  {
+    "date": "2026-02-17",
+    "type": "bike",
+    "title_en": "Moma longtail, Bike43 Mid, Cycles du Midi Cargo",
+    "title_fr": "Moma longtail, Bike43 Mid, Cycles du Midi Cargo",
+    "body_en": "Three new bikes added to the database.",
+    "body_fr": "Trois nouveaux vélos ajoutés à la base."
+  },
+  {
+    "date": "2026-01-27",
+    "type": "bike",
+    "title_en": "Radkutsche",
+    "title_fr": "Radkutsche",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2026-01-03",
+    "type": "bike",
+    "title_en": "Rawbike 4x",
+    "title_fr": "Rawbike 4x",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2026-01-02",
+    "type": "bike",
+    "title_en": "Brompton G-Line folded view",
+    "title_fr": "Vue pliée Brompton G-Line",
+    "body_en": "Folded silhouette added for the G-Line.",
+    "body_fr": "Silhouette pliée ajoutée pour la G-Line."
+  },
+  {
+    "date": "2026-01-02",
+    "type": "bike",
+    "title_en": "Ecoride Loader",
+    "title_fr": "Ecoride Loader",
+    "body_en": "Fixed bottom margin and frame material metadata.",
+    "body_fr": "Correction de la marge basse et des métadonnées de matériau de cadre."
+  },
+  {
+    "date": "2025-12-16",
+    "type": "bike",
+    "title_en": "Ecoride Loader 421",
+    "title_fr": "Ecoride Loader 421",
+    "body_en": "New bike added to the database.",
+    "body_fr": "Nouveau vélo ajouté à la base."
+  },
+  {
+    "date": "2025-12-15",
+    "type": "ui",
+    "title_en": "Filter by frame material",
+    "title_fr": "Filtre par matériau de cadre",
+    "body_en": "Frame material filter on the home list; metadata added for most bikes.",
+    "body_fr": "Filtre par matériau de cadre sur la liste d’accueil ; métadonnées ajoutées pour la plupart des vélos."
+  },
+  {
+    "date": "2025-12-15",
+    "type": "ui",
+    "title_en": "Angled measure lines",
+    "title_fr": "Lignes de mesure inclinées",
+    "body_en": "Draw measure lines at an angle while holding Shift.",
+    "body_fr": "Tracer des lignes de mesure inclinées en maintenant Maj."
+  },
+  {
+    "date": "2025-12-12",
+    "type": "bike",
+    "title_en": "Btwin Fold 500 folded view",
+    "title_fr": "Vue pliée Btwin Fold 500",
+    "body_en": "Folded silhouette added.",
+    "body_fr": "Silhouette pliée ajoutée."
+  },
+  {
+    "date": "2025-12-12",
+    "type": "ui",
+    "title_en": "Measure tool rework",
+    "title_fr": "Outil de mesure retravaillé",
+    "body_en": "Improved measure lines and controls on the comparison canvas.",
+    "body_fr": "Lignes de mesure et contrôles améliorés sur le canevas de comparaison."
+  },
+  {
+    "date": "2025-12-11",
+    "type": "ui",
+    "title_en": "Multiple measure lines",
+    "title_fr": "Plusieurs lignes de mesure",
+    "body_en": "Draw several measure lines at once on the canvas.",
+    "body_fr": "Tracer plusieurs lignes de mesure à la fois sur le canevas."
+  },
+  {
+    "date": "2025-12-11",
+    "type": "ui",
+    "title_en": "Measure on canvas",
+    "title_fr": "Mesure sur le canevas",
+    "body_en": "New measure tool to draw dimensions directly on the comparison view.",
+    "body_fr": "Nouvel outil de mesure pour tracer des dimensions sur la vue de comparaison."
+  },
+  {
+    "date": "2025-12-10",
+    "type": "bike",
+    "title_en": "Bastille, Ketch Cleen, Butchers & Bicycles MK1, Gepida Cargo City",
+    "title_fr": "Bastille, Ketch Cleen, Butchers & Bicycles MK1, Gepida Cargo City",
+    "body_en": "Several new bikes and folded views added.",
+    "body_fr": "Plusieurs nouveaux vélos et vues pliées ajoutés."
+  },
+  {
+    "date": "2025-11-25",
+    "type": "ui",
+    "title_en": "Fold / unfold comparison",
+    "title_fr": "Comparaison plié / déplié",
+    "body_en": "Toggle folded silhouettes for compatible bikes (first iteration with FOLDEE and others).",
+    "body_fr": "Basculer entre silhouettes pliées et dépliées pour les vélos compatibles."
+  },
+  {
+    "date": "2025-11-13",
+    "type": "ui",
+    "title_en": "Responsive home list",
+    "title_fr": "Liste d’accueil responsive",
+    "body_en": "Homepage layout and filters improved for smaller screens.",
+    "body_fr": "Mise en page et filtres de la page d’accueil améliorés sur petits écrans."
+  },
+  {
+    "date": "2025-11-13",
+    "type": "bike",
+    "title_en": "Foldee Cargo, Packster 40, Ginkgo, Gitane G-Life",
+    "title_fr": "Foldee Cargo, Packster 40, Ginkgo, Gitane G-Life",
+    "body_en": "Batch of new cargo bikes added to the database.",
+    "body_fr": "Lot de nouveaux vélos cargo ajoutés à la base."
+  },
+  {
+    "date": "2025-10-14",
+    "type": "ui",
+    "title_en": "Centimeters / inches toggle",
+    "title_fr": "Bascule centimètres / pouces",
+    "body_en": "Switch display units for lengths across the tool.",
+    "body_fr": "Changer l’unité d’affichage des longueurs dans l’outil."
+  },
+  {
+    "date": "2025-10-14",
+    "type": "bike",
+    "title_en": "Urban Arrow Breeze, Super Mini",
+    "title_fr": "Urban Arrow Breeze, Super Mini",
+    "body_en": "New bikes added to the database.",
+    "body_fr": "Nouveaux vélos ajoutés à la base."
+  },
+  {
+    "date": "2025-09-04",
+    "type": "bike",
+    "title_en": "Tern NBD, Gazelle Cabby, Yuba Boda Boda, ADO Air 20",
+    "title_fr": "Tern NBD, Gazelle Cabby, Yuba Boda Boda, ADO Air 20",
+    "body_en": "Several new models added; improved search by manufacturer and model.",
+    "body_fr": "Plusieurs nouveaux modèles ajoutés ; recherche fabricant / modèle améliorée."
+  },
+  {
+    "date": "2025-08-08",
+    "type": "bike",
+    "title_en": "Brompton C-Line, Aventon Abound SR, Macina Multi",
+    "title_fr": "Brompton C-Line, Aventon Abound SR, Macina Multi",
+    "body_en": "New bikes added to the database.",
+    "body_fr": "Nouveaux vélos ajoutés à la base."
+  },
+  {
+    "date": "2025-06-02",
+    "type": "bike",
+    "title_en": "Aventon Abound LR",
+    "title_fr": "Aventon Abound LR",
+    "body_en": "New longtail added (community contribution).",
+    "body_fr": "Nouveau longtail ajouté (contribution communautaire)."
+  },
+  {
+    "date": "2025-05-12",
+    "type": "ui",
+    "title_en": "Bike position & rotation adjustments",
+    "title_fr": "Ajustements position et rotation",
+    "body_en": "Fine-tune each bike’s placement and angle on the canvas.",
+    "body_fr": "Ajuster la position et l’angle de chaque vélo sur le canevas."
+  },
+  {
+    "date": "2025-05-15",
+    "type": "ui",
+    "title_en": "Rotated measure rectangles",
+    "title_fr": "Rectangles de mesure pivotés",
+    "body_en": "Measure areas can be rotated on the canvas.",
+    "body_fr": "Les zones de mesure peuvent être pivotées sur le canevas."
+  },
+  {
+    "date": "2024-08-05",
+    "type": "bike",
+    "title_en": "Specialized Turbo Porto, Bike Friday Ever-E-Day",
+    "title_fr": "Specialized Turbo Porto, Bike Friday Ever-E-Day",
+    "body_en": "New bikes added to the database.",
+    "body_fr": "Nouveaux vélos ajoutés à la base."
+  },
+  {
+    "date": "2024-07-31",
+    "type": "bike",
+    "title_en": "Tern Quick Haul Long, Bullitt image",
+    "title_fr": "Tern Quick Haul Long, image Bullitt",
+    "body_en": "New models and improved silhouettes for Tern GSD and Bullitt.",
+    "body_fr": "Nouveaux modèles et silhouettes améliorées pour Tern GSD et Bullitt."
+  },
+  {
+    "date": "2024-07-29",
+    "type": "ui",
+    "title_en": "Frame & assembly origin",
+    "title_fr": "Origine cadre et assemblage",
+    "body_en": "Separate fields for where the frame is made and where the bike is assembled.",
+    "body_fr": "Champs distincts pour le lieu de fabrication du cadre et d’assemblage du vélo."
+  },
+  {
+    "date": "2024-07-29",
+    "type": "bike",
+    "title_en": "Veloe, Bergamont E-Cargoville, Carqon, Peugeot LT",
+    "title_fr": "Veloe, Bergamont E-Cargoville, Carqon, Peugeot LT",
+    "body_en": "Large batch of European cargo bikes added.",
+    "body_fr": "Important lot de vélos cargo européens ajoutés."
+  },
+  {
+    "date": "2024-07-25",
+    "type": "ui",
+    "title_en": "In situ photos",
+    "title_fr": "Photos in situ",
+    "body_en": "View real-world photos contributed for select bikes.",
+    "body_fr": "Voir des photos réelles contribuées pour certains vélos."
+  },
+  {
+    "date": "2024-07-08",
+    "type": "ui",
+    "title_en": "Unselect from bike label",
+    "title_fr": "Désélection depuis le nom",
+    "body_en": "Click a selected bike’s name in the sidebar to remove it from the comparison.",
+    "body_fr": "Cliquer sur le nom d’un vélo sélectionné dans la barre latérale pour le retirer de la comparaison."
+  }
+]

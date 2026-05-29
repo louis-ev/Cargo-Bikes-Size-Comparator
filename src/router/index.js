@@ -8,6 +8,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/changelog',
+      name: 'changelog',
+      component: HomeView,
+      meta: { open_changelog: true }
     }
     // {
     //   path: '/about',

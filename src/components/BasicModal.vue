@@ -54,11 +54,18 @@ export default {
   },
   components: {},
   data() {
-    return {}
+    return {
+      previous_body_overflow: ''
+    }
   },
   created() {},
-  mounted() {},
-  beforeUnmount() {},
+  mounted() {
+    this.previous_body_overflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+  },
+  beforeUnmount() {
+    document.body.style.overflow = this.previous_body_overflow
+  },
   watch: {},
   computed: {},
   methods: {}
@@ -67,30 +74,39 @@ export default {
 <style lang="scss" scoped>
 ._basicModal {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 10000;
-  top: 0;
-  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100dvh;
+  margin: 0;
   padding: 2rem;
-  // background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
   background-color: rgba(210, 210, 210, 0.9);
   backdrop-filter: blur(10px);
-
   border: none;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 ._basicModal--content {
   position: relative;
   width: 100%;
   height: 100%;
+  max-height: 100%;
   max-width: 500px;
   margin: 0 auto;
   border-radius: 0.5rem;
   background: var(--color-background);
-  overflow-y: auto;
+  overflow: hidden;
 
   display: flex;
   flex-flow: column nowrap;
+  flex: 1 1 auto;
+  min-height: 0;
 
   // gap: 2rem;
 
@@ -113,15 +129,15 @@ export default {
   background-color: var(--color-text);
   color: var(--color-background);
   padding: 0.5rem 1rem;
-  // margin: -1rem;
-  // margin-bottom: -1.5rem;
   z-index: 10;
-  // border-radius: 0.5rem;
 }
 
 ._content {
   flex: 1 1 0;
-  overflow: auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 ._close {

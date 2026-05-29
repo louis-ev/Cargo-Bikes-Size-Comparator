@@ -124,6 +124,15 @@ const i18n = createI18n({
         compact: 'Compact',
         other: 'Other'
       },
+      changelog: {
+        title: "What's new",
+        empty: 'No updates in the last two years.',
+        button_label: "What's new",
+        type_bike: 'Bike',
+        type_ui: 'UI',
+        type_fix: 'Fix',
+        type_release: 'Release'
+      },
       add_bike: {
         title: 'Add a bike',
         how_to_add: 'How to add a bike to this tool',
@@ -321,6 +330,15 @@ const i18n = createI18n({
         longdiamond: 'Longdiamond',
         compact: 'Compact',
         other: 'Autre'
+      },
+      changelog: {
+        title: 'Nouveautés',
+        empty: 'Aucune mise à jour sur les deux dernières années.',
+        button_label: 'Nouveautés',
+        type_bike: 'Vélo',
+        type_ui: 'Interface',
+        type_fix: 'Correction',
+        type_release: 'Version'
       },
       add_bike: {
         title: 'Ajouter un vélo',

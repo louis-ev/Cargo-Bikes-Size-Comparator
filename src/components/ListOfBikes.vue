@@ -9,10 +9,19 @@
         <Credits @showAddBikeModal="$emit('showAddBikeModal')" />
 
         <hr />
-        <div>
-          <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
+        <div class="_homeActions">
+          <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
             ＋
             {{ $t('message.add_a_bike') }}
+          </button>
+          <button
+            type="button"
+            data-color="secondary"
+            data-size="big"
+            @click="$emit('showChangelogModal')"
+          >
+            ✦
+            {{ $t('changelog.button_label') }}
           </button>
         </div>
       </div>
@@ -623,6 +632,13 @@ export default {
   }
 
   ._credits {
+  }
+
+  ._homeActions {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   :deep(._madeBy hr) {
