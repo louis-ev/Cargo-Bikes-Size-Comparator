@@ -2,7 +2,6 @@
 
 ![Screenshot](public/og_image2.png)
 
-
 Source code for https://bikes.louiseveillard.com/
 
 Contributions welcome.
@@ -12,6 +11,8 @@ To contribute a bike, refer to https://github.com/louis-ev/Cargo-Bikes-Size-Comp
 If necessary, upscale image with https://www.iloveimg.com/upscale-image
 
 Remove background with https://bg.addy.ie/ (or https://new.express.adobe.com).
+
+Optimize images with ImageOptim, if possible.
 
 To contribute with code, follow these instructions:
 

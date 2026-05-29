@@ -3992,5 +3992,22 @@
     "frame_material": "Aluminium 6061",
     "frame_made_in": "Taiwan",
     "assembled_in": "Taiwan"
+  },
+  {
+    "id": "o2feel-buzz",
+    "manufacturer": "O2feel",
+    "model": "Buzz",
+    "bike_type": "midtail",
+    "src": "o2feel-buzz.png",
+    "bike_length_cm": 175,
+    "weight": 29,
+    "bike_length_percent": 0.883,
+    "left_margin_percent": 0.059,
+    "bottom_margin_percent": 0.05,
+    "url": "https://www.o2feel.com/buzz/",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061",
+    "frame_made_in": "Taiwan",
+    "assembled_in": "France"
   }
 ]
