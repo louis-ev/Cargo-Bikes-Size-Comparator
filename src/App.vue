@@ -39,18 +39,14 @@ export default {
     this.loadLongtails()
 
     if (localStorage.getItem('draw_rect_in_canvas')) {
-      try {
         this.draw_rect_in_canvas = JSON.parse(
           localStorage.getItem('draw_rect_in_canvas', JSON.stringify())
         )
-      } catch (e) {}
     }
     if (localStorage.getItem('accessories_in_canvas')) {
-      try {
-        this.accessories_in_canvas = JSON.parse(
-          localStorage.getItem('accessories_in_canvas', JSON.stringify())
-        )
-      } catch (e) {}
+      this.accessories_in_canvas = JSON.parse(
+        localStorage.getItem('accessories_in_canvas', JSON.stringify())
+      )
     }
   },
   mounted() {},
@@ -117,7 +113,7 @@ export default {
           const bikes = this.$route.query.bikes
           if (bikes.includes('[')) return JSON.parse(bikes)
           else return bikes.split(',')
-        } catch (e) {
+        } catch {
           return []
         }
       }

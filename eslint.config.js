@@ -8,6 +8,6 @@ const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
 export default defineConfig([
 	includeIgnoreFile(gitignorePath, { gitignoreResolution: true }),
-  { files: ["**/*.{js,mjs,cjs,vue}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
+  { files: ["**/*.{js,mjs,cjs,vue}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
   pluginVue.configs["flat/essential"],
 ]);
