@@ -134,9 +134,10 @@ export default {
       return thumb.url
     },
     positionInEnabledBikes(old_position, new_position) {
-      const bike = this.enabled_bikes.splice(old_position, 1)[0]
-      this.enabled_bikes.splice(new_position, 0, bike)
-      this.$root.updateBikesQuery(this.enabled_bikes.map((b) => b.id))
+      const updated_enabled_bikes = [...this.enabled_bikes]
+      const bike = updated_enabled_bikes.splice(old_position, 1)[0]
+      updated_enabled_bikes.splice(new_position, 0, bike)
+      this.$root.updateBikesQuery(updated_enabled_bikes.map((b) => b.id))
     }
   }
 }

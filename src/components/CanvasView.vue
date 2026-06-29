@@ -934,7 +934,7 @@ export default {
           return
         }
 
-        let label = ''
+        let label
         if (this.use_inches) {
           const inches = dist_cm / 2.54
           label = `${inches.toFixed(1)} in`
