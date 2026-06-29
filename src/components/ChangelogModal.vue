@@ -8,11 +8,7 @@
         <p v-if="grouped_entries.length === 0" class="_empty">
           {{ $t('changelog.empty') }}
         </p>
-        <section
-          v-for="group in grouped_entries"
-          :key="group.month_key"
-          class="_monthGroup"
-        >
+        <section v-for="group in grouped_entries" :key="group.month_key" class="_monthGroup">
           <h3 class="_monthLabel">{{ group.month_label }}</h3>
           <ul class="_entries">
             <li

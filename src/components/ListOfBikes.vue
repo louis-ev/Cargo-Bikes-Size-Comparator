@@ -10,7 +10,12 @@
 
         <hr />
         <div class="_homeActions">
-          <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
+          <button
+            type="button"
+            data-color="black"
+            data-size="big"
+            @click="$emit('showAddBikeModal')"
+          >
             ＋
             {{ $t('message.add_a_bike') }}
           </button>
