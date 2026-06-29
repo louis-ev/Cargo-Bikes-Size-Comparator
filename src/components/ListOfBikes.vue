@@ -190,7 +190,7 @@ const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
   query: { format: 'webp', w: 600 }
 })
 
-import Credits from './Credits.vue'
+import Credits from './SiteCredits.vue'
 import LangSelect from '@/components/LangSelect.vue'
 import SearchField from '@/components/SearchField.vue'
 
