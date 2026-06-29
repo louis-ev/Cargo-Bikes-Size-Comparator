@@ -38,16 +38,14 @@ export default {
     this.loadBakfiets()
     this.loadLongtails()
 
-    if (localStorage.getItem('draw_rect_in_canvas')) {
-        this.draw_rect_in_canvas = JSON.parse(
-          localStorage.getItem('draw_rect_in_canvas', JSON.stringify())
-        )
-    }
-    if (localStorage.getItem('accessories_in_canvas')) {
-      this.accessories_in_canvas = JSON.parse(
-        localStorage.getItem('accessories_in_canvas', JSON.stringify())
-      )
-    }
+    this.draw_rect_in_canvas = this.parseStoredSetting(
+      'draw_rect_in_canvas',
+      this.draw_rect_in_canvas
+    )
+    this.accessories_in_canvas = this.parseStoredSetting(
+      'accessories_in_canvas',
+      this.accessories_in_canvas
+    )
   },
   mounted() {},
   beforeUnmount() {},
@@ -121,6 +119,15 @@ export default {
     }
   },
   methods: {
+    parseStoredSetting(key, fallback) {
+      const stored = localStorage.getItem(key)
+      if (!stored) return fallback
+      try {
+        return JSON.parse(stored)
+      } catch {
+        return fallback
+      }
+    },
     loadBakfiets() {
       fetch('./Cargo bike measurements - Bakfiets.csv')
         .then((response) => response.text())
