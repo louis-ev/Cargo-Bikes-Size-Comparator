@@ -3,15 +3,15 @@
   "version": "3.3.35",
   "type": "module",
   "engines": {
-    "node": "^24.0.0",
-    "npm": "^11.13.0"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
+    "lint": "eslint . --fix",
+    "format": "prettier --write .",
     "version": "npm run build && git add -f dist",
     "postversion": "git push --follow-tags",
     "prepare": "husky"
@@ -25,7 +25,6 @@
   "devDependencies": {
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
-    "@rushstack/eslint-patch": "^1.10.4",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/eslint-config-prettier": "^10.1.0",
     "eslint": "^9.15.0",

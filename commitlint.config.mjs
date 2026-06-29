@@ -1,14 +1,13 @@
 export default {
   extends: ['@commitlint/config-conventional'],
 
-  /*
-   * Any rules defined here will override rules from @commitlint/config-conventional
-   */
   rules: {
     'type-enum': [
       2,
       'always',
-      ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'style', 'test'],
+      ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'style', 'test', 'bike']
     ],
-  },
+    'subject-case': [0],
+    'header-max-length': [2, 'always', 100]
+  }
 }

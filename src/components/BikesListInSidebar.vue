@@ -134,9 +134,10 @@ export default {
       return thumb.url
     },
     positionInEnabledBikes(old_position, new_position) {
-      const bike = this.enabled_bikes.splice(old_position, 1)[0]
-      this.enabled_bikes.splice(new_position, 0, bike)
-      this.$root.updateBikesQuery(this.enabled_bikes.map((b) => b.id))
+      const enabled_bikes = [...this.enabled_bikes]
+      const bike = enabled_bikes.splice(old_position, 1)[0]
+      enabled_bikes.splice(new_position, 0, bike)
+      this.$root.updateBikesQuery(enabled_bikes.map((b) => b.id))
     }
   }
 }
@@ -262,5 +263,4 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
 </style>
