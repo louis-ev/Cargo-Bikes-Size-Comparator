@@ -8,28 +8,32 @@
         <p v-if="grouped_entries.length === 0" class="_empty">
           {{ $t('changelog.empty') }}
         </p>
-        <section
-          v-for="group in grouped_entries"
-          :key="group.month_key"
-          class="_monthGroup"
-        >
+        <section v-for="group in grouped_entries" :key="group.month_key" class="_monthGroup">
           <h3 class="_monthLabel">{{ group.month_label }}</h3>
-          <ul class="_entries">
+          <ul class="_dateGroups">
             <li
-              v-for="(entry, index) in group.entries"
-              :key="`${group.month_key}-${index}`"
-              class="_entry"
+              v-for="date_group in group.date_groups"
+              :key="`${group.month_key}-${date_group.date}`"
+              class="_dateGroup"
             >
-              <div class="_entryMeta">
-                <time class="_entryDate" :datetime="entry.date">{{
-                  formatEntryDate(entry.date)
-                }}</time>
-                <span class="_type" :data-type="entry.type">{{
-                  $t(`changelog.type_${entry.type}`)
-                }}</span>
-              </div>
-              <strong class="_entryTitle">{{ entryTitle(entry) }}</strong>
-              <p v-if="entryBody(entry)" class="_entryBody">{{ entryBody(entry) }}</p>
+              <time class="_entryDate" :datetime="date_group.date">{{
+                formatEntryDate(date_group.date)
+              }}</time>
+              <ul class="_entries">
+                <li
+                  v-for="(entry, index) in date_group.entries"
+                  :key="`${date_group.date}-${index}`"
+                  class="_entry"
+                >
+                  <div class="_entryMeta">
+                    <span class="_type" :data-type="entry.type">{{
+                      $t(`changelog.type_${entry.type}`)
+                    }}</span>
+                  </div>
+                  <strong class="_entryTitle">{{ entryTitle(entry) }}</strong>
+                  <p v-if="entryBody(entry)" class="_entryBody">{{ entryBody(entry) }}</p>
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
@@ -69,12 +73,20 @@ export default {
             month: 'long',
             year: 'numeric'
           }).format(date)
-          groups.set(month_key, { month_key, month_label, entries: [] })
+          groups.set(month_key, { month_key, month_label, date_groups: new Map() })
         }
-        groups.get(month_key).entries.push(entry)
+        const month_group = groups.get(month_key)
+        if (!month_group.date_groups.has(entry.date)) {
+          month_group.date_groups.set(entry.date, { date: entry.date, entries: [] })
+        }
+        month_group.date_groups.get(entry.date).entries.push(entry)
       }
 
-      return Array.from(groups.values())
+      return Array.from(groups.values()).map((group) => ({
+        month_key: group.month_key,
+        month_label: group.month_label,
+        date_groups: Array.from(group.date_groups.values())
+      }))
     }
   },
   methods: {
@@ -126,18 +138,33 @@ export default {
   background: var(--color-background);
 }
 
-._entries {
+._dateGroups {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-._entry {
+._dateGroup {
   padding: 0.65rem 0;
   border-bottom: 1px solid var(--color-gray-light);
 
   &:last-child {
     border-bottom: none;
+  }
+}
+
+._entries {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0 0 0 0.75rem;
+  border-left: 2px solid var(--color-gray-light);
+}
+
+._entry {
+  padding: 0.45rem 0 0.45rem 0.65rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed var(--color-gray-light);
   }
 }
 

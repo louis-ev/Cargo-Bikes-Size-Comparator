@@ -196,7 +196,8 @@ ul {
   height: 56px;
   display: block;
   margin: 30px auto;
-  background-image: linear-gradient(var(--color) 50px, transparent 0),
+  background-image:
+    linear-gradient(var(--color) 50px, transparent 0),
     linear-gradient(var(--color) 50px, transparent 0),
     linear-gradient(var(--color) 50px, transparent 0),
     linear-gradient(var(--color) 50px, transparent 0),
@@ -229,7 +230,8 @@ ul {
   left: -45px;
   top: -10px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(var(--color) 64px, transparent 0),
+  background-image:
+    linear-gradient(var(--color) 64px, transparent 0),
     linear-gradient(var(--color) 66px, transparent 0),
     radial-gradient(circle 4px, var(--color) 100%, transparent 0);
   background-size:

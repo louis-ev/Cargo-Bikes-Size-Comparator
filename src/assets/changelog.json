@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Cargobike of Sweden Delight",
+    "title_fr": "Cargobike of Sweden Delight",
+    "body_en": "New tricycle added to the database.",
+    "body_fr": "Nouveau triporteur ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Fiido T3 Max",
+    "title_fr": "Fiido T3 Max",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Iumentum 1890",
+    "title_fr": "Iumentum 1890",
+    "body_en": "New longjohn added to the database.",
+    "body_fr": "Nouveau longjohn ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Blacksnow EDC Mk2",
+    "title_fr": "Blacksnow EDC Mk2",
+    "body_en": "New shortjohn added to the database.",
+    "body_fr": "Nouveau shortjohn ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Swyff Cargo LT",
+    "title_fr": "Swyff Cargo LT",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
     "date": "2026-05-29",
     "type": "bike",
     "title_en": "TARRAN L1",
