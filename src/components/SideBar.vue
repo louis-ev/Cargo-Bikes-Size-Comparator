@@ -168,7 +168,7 @@
 <script>
 import LangSelect from './LangSelect.vue'
 import BikesListInSidebar from './BikesListInSidebar.vue'
-import Credits from './Credits.vue'
+import Credits from './SiteCredits.vue'
 
 export default {
   props: {
