@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-06-30",
+    "type": "bike",
+    "title_en": "Swyff Cargo LT",
+    "title_fr": "Swyff Cargo LT",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
     "date": "2026-05-29",
     "type": "bike",
     "title_en": "TARRAN L1",
