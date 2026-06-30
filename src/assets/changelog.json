@@ -2,6 +2,14 @@
   {
     "date": "2026-06-30",
     "type": "bike",
+    "title_en": "Fiido T3 Max",
+    "title_fr": "Fiido T3 Max",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
     "title_en": "Iumentum 1890",
     "title_fr": "Iumentum 1890",
     "body_en": "New longjohn added to the database.",

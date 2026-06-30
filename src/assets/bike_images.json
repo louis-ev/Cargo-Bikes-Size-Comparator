@@ -4078,5 +4078,23 @@
     "assembled_in": "Germany",
     "wheel_size": ["20", "26"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "fiido-t3-max",
+
+    "manufacturer": "Fiido",
+    "model": "T3 Max",
+    "bike_type": "longtail",
+    "src": "fiido-t3-max.png",
+    "bike_length_cm": 202,
+    "weight": 36,
+    "bike_length_percent": 0.972,
+    "left_margin_percent": 0.008,
+    "bottom_margin_percent": 0.134,
+    "url": "https://uk.fiido.com/products/electric-cargo-bike-family-longtail-dual-battery-t3-max",
+    "frame_made_in": "China",
+    "assembled_in": "",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]
