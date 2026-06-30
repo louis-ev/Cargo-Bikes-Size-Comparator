@@ -2,6 +2,14 @@
   {
     "date": "2026-06-30",
     "type": "bike",
+    "title_en": "Iumentum 1890",
+    "title_fr": "Iumentum 1890",
+    "body_en": "New longjohn added to the database.",
+    "body_fr": "Nouveau longjohn ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
     "title_en": "Blacksnow EDC Mk2",
     "title_fr": "Blacksnow EDC Mk2",
     "body_en": "New shortjohn added to the database.",
