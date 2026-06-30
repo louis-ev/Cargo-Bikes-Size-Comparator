@@ -2,6 +2,14 @@
   {
     "date": "2026-06-30",
     "type": "bike",
+    "title_en": "Cargobike of Sweden Delight",
+    "title_fr": "Cargobike of Sweden Delight",
+    "body_en": "New tricycle added to the database.",
+    "body_fr": "Nouveau triporteur ajouté à la base de données."
+  },
+  {
+    "date": "2026-06-30",
+    "type": "bike",
     "title_en": "Fiido T3 Max",
     "title_fr": "Fiido T3 Max",
     "body_en": "New longtail added to the database.",
