@@ -9,13 +9,13 @@
         :disabled="!bike.bike_length_cm"
         @change="$emit('toggle')"
       />
-      <select v-if="isEnabled" :value="position" @change="onChangePosition">
+      <select v-if="isEnabled && twoOrMoreSelected" :value="position" @change="onChangePosition">
         <option v-for="i in total_enabled_bikes" :value="i - 1" :key="i">
           {{ i }}
         </option>
       </select>
 
-      <div class="_names">
+      <div class="_names" :class="{ _names_with_padding: !twoOrMoreSelected }">
         <BikeName :bike="bike" />
       </div>
 
@@ -69,6 +69,11 @@ export default {
           this.$preview_bike.id = null
         }
       }, 100)
+    }
+  }, 
+  computed: {
+    twoOrMoreSelected() {
+      this.total_enabled_bikes >= 2
     }
   }
 }
@@ -135,6 +140,10 @@ export default {
     flex: 1 1 auto;
     padding: 0.25rem 0;
     align-self: center;
+
+    &_with_padding {
+      padding-left: 0.5rem;
+    }
   }
 
   ._img {
