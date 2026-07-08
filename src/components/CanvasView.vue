@@ -49,7 +49,23 @@
           :checked="canvas_image_style_outline"
           @change="toggleOutlineView"
         />
-        &nbsp;{{ $t('message.outline_view') }}
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+          <path
+            d="M8 16c2-4 6-4 8 0"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        {{ $t('message.outline_view') }}
       </label>
       <label
         class="u-button _setImageStyle"
@@ -63,7 +79,23 @@
           :checked="show_human_silhouette"
           @change="toggleHumanSilhouette"
         />
-        &nbsp;{{ $t('message.show_human_silhouette') }}
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="2" />
+          <path
+            d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        {{ $t('message.show_human_silhouette') }}
         <fieldset v-if="show_human_silhouette" class="_humanSilhouetteHeight" @click.stop="">
           <input
             type="number"
@@ -96,20 +128,87 @@
           :checked="show_regular_bike_silhouette"
           @change="toggleRegularBikeSilhouette"
         />
-        &nbsp;{{ $t('message.show_regular_bike_silhouette') }}
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <circle cx="6" cy="17" r="3" stroke="currentColor" stroke-width="2" />
+          <circle cx="18" cy="17" r="3" stroke="currentColor" stroke-width="2" />
+          <path
+            d="M9 17h2.5l1.5-6h2.5l2 3.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M9 17l2-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        {{ $t('message.show_regular_bike_silhouette') }}
       </label>
+    </div>
 
-      <transition-group name="scale">
+    <div v-if="enabled_bikes.length > 0" class="_activeBikesPanel">
+      <button
+        type="button"
+        class="_swapBikes"
+        :disabled="enabled_bikes.length < 2"
+        :title="$t('message.swap_bikes_order')"
+        @click="swapFirstBikeToEnd"
+      >
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M17 2l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3 11V9a4 4 0 0 1 4-4h14"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 22l-4-4 4-4"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M21 13v2a4 4 0 0 1-4 4H3"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        {{ $t('message.swap') }}
+      </button>
+
+      <transition-group name="scale" tag="div" class="_activeBikesList">
         <button
           type="button"
           class="_activeBike"
-          v-for="bike in reversed_sorted_enabled_bikes"
+          v-for="bike in enabled_bikes"
           :key="bike.id"
           :data-showcolor="canvas_image_style_outline"
           :style="{ '--bike-color': `#${bike.color}` }"
           @click="unselectBike(bike.id)"
         >
-          <!-- <img class="_activeBikeImage" :src="getBikeFullImage(bike)" /> -->
           <span class="_activeBike--name">
             <BikeName :bike="bike" :show_length="false" />
           </span>
@@ -117,6 +216,7 @@
         </button>
       </transition-group>
     </div>
+
     <small class="_downloadCanvas">
       <button type="button" class="" :class="{ 'is--active': is_measuring }" @click="toggleMeasure">
         <svg
@@ -729,6 +829,12 @@ export default {
       const new_bikes_ids = bikes_ids.filter((id) => id !== bike_id)
       this.$root.updateBikesQuery(new_bikes_ids)
     },
+    swapFirstBikeToEnd() {
+      const bikes_ids = this.$root.enabled_bikes_ids.slice()
+      if (bikes_ids.length < 2) return
+      bikes_ids.push(bikes_ids.shift())
+      this.$root.updateBikesQuery(bikes_ids)
+    },
     downloadCanvas() {
       const canvas = this.$refs.bikes
       const img = canvas.toDataURL()
@@ -1060,8 +1166,69 @@ canvas {
 //   gap: 0.5rem;
 // }
 
+._activeBikesPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  pointer-events: none;
+  padding: 0.5rem;
+  max-height: 100%;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+
+  > * {
+    pointer-events: auto;
+  }
+}
+
+._activeBikesList {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 20ch;
+}
+
+._swapBikes {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text);
+  font-weight: 500;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus-visible {
+    &:not(:disabled) {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  svg {
+    flex: 0 0 auto;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 ._activeBike {
-  flex: 0 0 20ch;
+  flex: 0 0 auto;
+  width: 100%;
   height: auto;
   border-radius: 0.5rem;
 
@@ -1088,22 +1255,33 @@ canvas {
 }
 
 ._setImageStyle {
-  // display: flex;
-  // flex-direction: row nowrap;
-  // align-items: center;
-  // justify-content: center;
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
   gap: 0.25rem;
   pointer-events: auto;
   background-color: var(--color-text);
-  // background-color: #fff;
-  // color: var(--color-text);
   color: white;
-  // border: 2px solid var(--color-text);
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.5rem;
   cursor: pointer;
   font-weight: 500;
+
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  svg {
+    display: block;
+    flex: 0 0 auto;
+    width: 1rem;
+    height: 1rem;
+  }
 
   &:hover,
   &:focus-visible,
