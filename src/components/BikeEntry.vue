@@ -70,10 +70,10 @@ export default {
         }
       }, 100)
     }
-  }, 
+  },
   computed: {
     twoOrMoreSelected() {
-      this.total_enabled_bikes >= 2
+      return this.total_enabled_bikes >= 2
     }
   }
 }
