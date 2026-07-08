@@ -62,6 +62,7 @@ app.config.globalProperties.$bikeMatchesSearch = (bike, searchStr) => {
   const haystacks = [
     normalize(bike.model),
     normalize(bike.manufacturer),
+    normalize(bike.search_terms),
     normalize(`${bike.manufacturer} ${bike.model}`),
     normalize(`${bike.model} ${bike.manufacturer}`)
   ]

@@ -4048,8 +4048,9 @@
   {
     "id": "blacksnow-edc-mk2",
 
-    "manufacturer": "Blacksnow",
+    "manufacturer": "Blacksnow Cycles",
     "model": "EDC Mk2",
+    "search_terms": "Soma Fab Soma",
     "bike_type": "shortjohn",
     "src": "blacksnow.png",
     "bike_length_cm": 184,
