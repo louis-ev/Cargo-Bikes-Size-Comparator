@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-08-26",
+    "type": "bike",
+    "title_en": "estarli L20 2.0",
+    "title_fr": "estarli L20 2.0",
+    "body_en": "New longtail added; original L20 length updated from 183 cm to 200 cm.",
+    "body_fr": "Nouveau longtail ajouté ; longueur du L20 d’origine mise à jour de 183 cm à 200 cm."
+  },
+  {
     "date": "2026-07-08",
     "type": "ui",
     "title_en": "Swap bike order",
