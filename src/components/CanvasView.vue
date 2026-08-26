@@ -153,10 +153,11 @@
 
     <div v-if="enabled_bikes.length > 0" class="_activeBikesPanel">
       <button
+        v-if="enabled_bikes.length > 1"
         type="button"
         class="_swapBikes"
-        :disabled="enabled_bikes.length < 2"
         :title="$t('message.swap_bikes_order')"
+        :aria-label="$t('message.swap_bikes_order')"
         @click="swapFirstBikeToEnd"
       >
         <svg
@@ -168,35 +169,20 @@
           aria-hidden="true"
         >
           <path
-            d="M17 2l4 4-4 4"
+            d="M7 6h10v12"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
-            d="M3 11V9a4 4 0 0 1 4-4h14"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M7 22l-4-4 4-4"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M21 13v2a4 4 0 0 1-4 4H3"
+            d="M13 14l4 4 4-4"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
         </svg>
-        {{ $t('message.swap') }}
       </button>
 
       <transition-group name="scale" tag="div" class="_activeBikesList">
@@ -1177,9 +1163,9 @@ canvas {
   overflow-y: auto;
 
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.5rem;
+  flex-direction: row nowrap;
+  align-items: flex-start;
+  gap: 0.35rem;
 
   > * {
     pointer-events: auto;
@@ -1195,34 +1181,26 @@ canvas {
 }
 
 ._swapBikes {
+  flex: 0 0 auto;
   display: flex;
-  flex-direction: row nowrap;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  width: 2rem;
+  min-height: 2rem;
   border-radius: 0.5rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.25rem;
   background-color: rgba(255, 255, 255, 0.95);
   color: var(--color-text);
-  font-weight: 500;
-  white-space: nowrap;
 
   &:hover,
   &:focus-visible {
-    &:not(:disabled) {
-      background-color: var(--color-accent);
-    }
-  }
-
-  &:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
+    background-color: var(--color-accent);
   }
 
   svg {
     flex: 0 0 auto;
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
   }
 }
 
