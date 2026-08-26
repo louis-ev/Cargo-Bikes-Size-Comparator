@@ -4133,5 +4133,19 @@
     "assembled_in": "UK",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "granville-longtail",
+    "manufacturer": "Granville",
+    "model": "Longtail",
+    "bike_type": "longtail",
+    "src": "granville-longtail.png",
+    "bike_length_cm": 205,
+    "bike_length_percent": 0.912,
+    "left_margin_percent": 0.031,
+    "bottom_margin_percent": 0.244,
+    "url": "https://granville-urbanbikes.com/product/longtail-545wh/",
+    "wheel_size": ["24", "20"],
+    "frame_material": "Aluminium"
   }
 ]
