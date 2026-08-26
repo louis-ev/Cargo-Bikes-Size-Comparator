@@ -2151,10 +2151,11 @@
   {
     "id": "ecargo-longtail-estarli",
     "manufacturer": "estarli",
-    "model": "eCargo Longtail",
+    "model": "L20",
+    "search_terms": "eCargo Longtail e-cargo",
     "bike_type": "longtail",
     "src": "estarli.png",
-    "bike_length_cm": 183,
+    "bike_length_cm": 200,
     "weight": 28,
     "bike_length_percent": 0.889,
     "left_margin_percent": 0.1,
@@ -4113,6 +4114,38 @@
     "frame_made_in": "",
     "assembled_in": "Sweden",
     "wheel_size": ["24", "26"],
+    "frame_material": "Aluminium"
+  },
+  {
+    "id": "l20-2.0-estarli",
+    "manufacturer": "estarli",
+    "model": "L20 2.0",
+    "search_terms": "eCargo Longtail e-cargo",
+    "bike_type": "longtail",
+    "src": "estarli-l20-2.png",
+    "bike_length_cm": 203,
+    "weight": 33,
+    "bike_length_percent": 0.881,
+    "left_margin_percent": 0.1,
+    "bottom_margin_percent": 0.21,
+    "url": "https://www.estarli.co.uk/products/l20-e-cargo-longtail",
+    "frame_made_in": "China",
+    "assembled_in": "UK",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
+  },
+  {
+    "id": "granville-longtail",
+    "manufacturer": "Granville",
+    "model": "Longtail",
+    "bike_type": "longtail",
+    "src": "granville-longtail.png",
+    "bike_length_cm": 205,
+    "bike_length_percent": 0.912,
+    "left_margin_percent": 0.031,
+    "bottom_margin_percent": 0.244,
+    "url": "https://granville-urbanbikes.com/product/longtail-545wh/",
+    "wheel_size": ["24", "20"],
     "frame_material": "Aluminium"
   }
 ]
