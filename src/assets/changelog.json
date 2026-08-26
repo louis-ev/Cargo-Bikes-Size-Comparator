@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-07-08",
+    "type": "ui",
+    "title_en": "Swap bike order",
+    "title_fr": "Inverser l’ordre des vélos",
+    "body_en": "Move the first selected bike to the end of the comparison from the canvas panel.",
+    "body_fr": "Déplacer le premier vélo sélectionné à la fin de la comparaison depuis le panneau du canevas."
+  },
+  {
     "date": "2026-06-30",
     "type": "bike",
     "title_en": "Cargobike of Sweden Delight",
