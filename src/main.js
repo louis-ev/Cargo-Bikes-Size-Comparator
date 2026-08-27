@@ -10,6 +10,8 @@ import BikeName from './components/BikeName.vue'
 
 import VueMatomo from 'vue-matomo'
 const app = createApp(App)
+// Vite 8 wraps vue-matomo's UMD build, so the install function is on `.default`
+const vue_matomo = typeof VueMatomo === 'function' ? VueMatomo : VueMatomo.default
 app.config.globalProperties.$preview_bike = reactive({ id: null })
 app.config.globalProperties.$loadBikeImages = async (paths) => {
   const full_paths = []
@@ -73,7 +75,7 @@ app.config.globalProperties.$filterBikesBySearch = (bikes, searchStr) => {
   return bikes.filter((bike) => app.config.globalProperties.$bikeMatchesSearch(bike, searchStr))
 }
 
-app.use(VueMatomo, {
+app.use(vue_matomo, {
   host: 'https://sv.louiseveillard.com',
   siteId: 1,
   disableCookies: true,
