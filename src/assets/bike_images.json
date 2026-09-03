@@ -4147,5 +4147,21 @@
     "url": "https://granville-urbanbikes.com/product/longtail-545wh/",
     "wheel_size": ["24", "20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "officine-recycle-bronte-xl",
+    "manufacturer": "Officine Recycle",
+    "model": "Bronte XL",
+    "bike_type": "longjohn",
+    "src": "officine-bronte.png",
+    "bike_length_cm": 260,
+    "bike_length_percent": 0.957,
+    "left_margin_percent": 0.024,
+    "bottom_margin_percent": 0.066,
+    "url": "https://officinerecycle.com/de/products/elektro-lastenrad-bronte/",
+    "frame_made_in": "Italy",
+    "assembled_in": "Italy",
+    "wheel_size": ["20", "28"],
+    "frame_material": "Steel"
   }
 ]
