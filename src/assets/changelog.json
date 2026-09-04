@@ -2,6 +2,14 @@
   {
     "date": "2026-09-04",
     "type": "bike",
+    "title_en": "QiO Long",
+    "title_fr": "QiO Long",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-04",
+    "type": "bike",
     "title_en": "Wike Electric Salamander folded view",
     "title_fr": "Vue pliée Wike Electric Salamander",
     "body_en": "Folded (stroller) silhouette added.",

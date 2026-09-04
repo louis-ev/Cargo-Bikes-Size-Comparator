@@ -4251,5 +4251,21 @@
     "assembled_in": "France",
     "wheel_size": ["24"],
     "frame_material": "Aluminium 6061"
+  },
+  {
+    "id": "qio-long",
+    "manufacturer": "QiO",
+    "model": "Long",
+    "bike_type": "longtail",
+    "src": "qio-long.png",
+    "bike_length_cm": 201,
+    "weight": 38,
+    "bike_length_percent": 0.701,
+    "left_margin_percent": 0.15,
+    "bottom_margin_percent": 0.15,
+    "url": "https://www.qio-bikes.com/fr/modelle/long/",
+    "assembled_in": "Germany",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]
