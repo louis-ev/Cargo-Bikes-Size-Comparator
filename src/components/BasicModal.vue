@@ -62,13 +62,22 @@ export default {
   mounted() {
     this.previous_body_overflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', this.handleKeyDown)
   },
   beforeUnmount() {
     document.body.style.overflow = this.previous_body_overflow
+    window.removeEventListener('keydown', this.handleKeyDown)
   },
   watch: {},
   computed: {},
-  methods: {}
+  methods: {
+    handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        this.$emit('close')
+      }
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
