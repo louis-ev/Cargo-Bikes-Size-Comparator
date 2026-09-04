@@ -19,7 +19,7 @@
           <template v-if="useInches">
             {{ getLengthInInches(bike.bike_length_cm) }} inches
           </template>
-          <template v-else> {{ bike.bike_length_cm }}cm </template>
+          <template v-else> {{ getLengthInCm(bike.bike_length_cm) }}cm </template>
         </template>
         <template v-else>{{ $t('message.missing_length_information') }}</template>
       </small>
@@ -79,6 +79,9 @@ export default {
       else if (country === 'estonia') return '🇪🇪'
       else alert('Missing unicode flag: ' + country)
       return
+    },
+    getLengthInCm(length_cm) {
+      return Math.round(length_cm)
     },
     getLengthInInches(length_cm) {
       return Number((length_cm / 2.54).toFixed(1))

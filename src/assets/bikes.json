@@ -4195,5 +4195,22 @@
     "url": "https://powabyke.com/product/revom-t2-fat-tyre-electric-mountain-trike/",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "segway-muxi",
+    "manufacturer": "Segway",
+    "model": "Muxi",
+    "bike_type": "midtail",
+    "src": "segway-muxi.png",
+    "bike_length_cm": 169.3,
+    "weight": 33,
+    "bike_length_percent": 0.984,
+    "left_margin_percent": 0.007,
+    "bottom_margin_percent": 0.003,
+    "url": "https://www.segway.com/ebike/products/muxi.html",
+    "frame_made_in": "China",
+    "assembled_in": "China",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]

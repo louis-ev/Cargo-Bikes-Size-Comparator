@@ -201,6 +201,10 @@ export default {
     background: #e8eef8;
     color: #2d3d5a;
   }
+  &[data-type='code'] {
+    background: #e8f0f0;
+    color: #2d4a4a;
+  }
   &[data-type='fix'] {
     background: #f8f0e8;
     color: #5a4a2d;

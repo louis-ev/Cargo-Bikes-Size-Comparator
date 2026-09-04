@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-09-04",
+    "type": "bike",
+    "title_en": "Segway Muxi",
+    "title_fr": "Segway Muxi",
+    "body_en": "New midtail added to the database.",
+    "body_fr": "Nouveau midtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-04",
     "type": "code",
     "title_en": "Bike database file renamed",
     "title_fr": "Fichier de la base de données renommé",
