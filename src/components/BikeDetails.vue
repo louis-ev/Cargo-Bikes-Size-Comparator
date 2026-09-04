@@ -5,7 +5,7 @@
         {{
           $t('message.bike_frame_made_in') +
           ' ' +
-          $t('message.in_' + bike.frame_made_in.toLowerCase())
+          $t('message.in_' + countryKey(bike.frame_made_in))
         }}.
       </template>
       <br v-if="shouldShowFrameMadeIn && bike.assembled_in" />
@@ -13,7 +13,7 @@
         {{
           $t('message.bike_assembled_in') +
           ' ' +
-          $t('message.in_' + bike.assembled_in.toLowerCase())
+          $t('message.in_' + countryKey(bike.assembled_in))
         }}.
       </template>
     </div>
@@ -154,7 +154,7 @@
 <script>
 import InsituImageSlide from '@/components/InsituImageSlide.vue'
 import RangeInput from '@/components/RangeInput.vue'
-import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper } from '@/helpers.js'
+import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper, countryKey } from '@/helpers.js'
 
 const insitu_images_thumbs_paths = import.meta.glob('@/assets/insitu/*', {
   eager: true,
@@ -209,6 +209,7 @@ export default {
     }
   },
   methods: {
+    countryKey,
     getImgThumbUrl(src) {
       return this.bike_images_thumbs_urls.find((img) => img.original_filename === src)?.url
     },

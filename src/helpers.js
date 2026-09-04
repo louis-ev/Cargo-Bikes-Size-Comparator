@@ -86,3 +86,51 @@ export const colorize = function (canvas, colorHex) {
 export const shouldShowFrameMadeIn = function (frameMadeIn) {
   return frameMadeIn && frameMadeIn.toLowerCase() !== 'china'
 }
+
+/**
+ * Normalize a country value from bikes.json into an i18n / flag key
+ * (e.g. "Czech Republic" → "czech_republic", "Germany " → "germany")
+ * @param {string} country
+ * @returns {string}
+ */
+export const countryKey = function (country) {
+  if (!country) return ''
+  return String(country).trim().toLowerCase().replace(/\s+/g, '_')
+}
+
+/**
+ * Unicode flag for a country key (from countryKey or raw bikes.json value)
+ * @param {string} country
+ * @returns {string|undefined}
+ */
+export const unicodeFlag = function (country) {
+  const key = countryKey(country)
+  const flags = {
+    usa: '🇺🇸',
+    taiwan: '🇹🇼',
+    germany: '🇩🇪',
+    austria: '🇦🇹',
+    hungary: '🇭🇺',
+    denmark: '🇩🇰',
+    portugal: '🇵🇹',
+    turkey: '🇹🇷',
+    france: '🇫🇷',
+    belgium: '🇧🇪',
+    italy: '🇮🇹',
+    europe: '🇪🇺',
+    eu: '🇪🇺',
+    china: '🇨🇳',
+    japan: '🇯🇵',
+    netherlands: '🇳🇱',
+    uk: '🇬🇧',
+    spain: '🇪🇸',
+    poland: '🇵🇱',
+    sweden: '🇸🇪',
+    australia: '🇦🇺',
+    estonia: '🇪🇪',
+    canada: '🇨🇦',
+    czech_republic: '🇨🇿'
+  }
+  if (flags[key]) return flags[key]
+  alert('Missing unicode flag: ' + country)
+}

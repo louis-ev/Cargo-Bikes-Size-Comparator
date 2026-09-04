@@ -113,6 +113,7 @@
             <label for="assembled_in">{{ $t('add_bike.bike_assembled_in') }}</label>
             <input type="text" v-model="assembled_in" id="assembled_in" />
           </div>
+          <small class="_countryHint">{{ $t('add_bike.country_must_be_supported') }}</small>
 
           <div class="_nav">
             <button type="button" @click="step--">&lt; {{ $t('add_bike.back') }}</button>
@@ -441,5 +442,10 @@ pre {
     // color: white;
     // background-color: var(--color-text-secondary);
   }
+}
+._countryHint {
+  display: block;
+  margin: -0.5rem 0 1rem;
+  opacity: 0.75;
 }
 </style>

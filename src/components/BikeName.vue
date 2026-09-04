@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper } from '@/helpers.js'
+import { shouldShowFrameMadeIn as shouldShowFrameMadeInHelper, unicodeFlag } from '@/helpers.js'
 
 export default {
   props: {
@@ -54,32 +54,7 @@ export default {
     }
   },
   methods: {
-    unicodeFlag(country) {
-      country = country.toLowerCase()
-      if (country === 'usa') return '🇺🇸'
-      else if (country === 'taiwan') return '🇹🇼'
-      else if (country === 'germany') return '🇩🇪'
-      else if (country === 'austria') return '🇦🇹'
-      else if (country === 'hungary') return '🇭🇺'
-      else if (country === 'denmark') return '🇩🇰'
-      else if (country === 'portugal') return '🇵🇹'
-      else if (country === 'turkey') return '🇹🇷'
-      else if (country === 'france') return '🇫🇷'
-      else if (country === 'belgium') return '🇧🇪'
-      else if (country === 'italy') return '🇮🇹'
-      else if (country === 'europe') return '🇪🇺'
-      else if (country === 'china') return '🇨🇳'
-      else if (country === 'japan') return '🇯🇵'
-      else if (country === 'netherlands') return '🇳🇱'
-      else if (country === 'uk') return '🇬🇧'
-      else if (country === 'spain') return '🇪🇸'
-      else if (country === 'poland') return '🇵🇱'
-      else if (country === 'sweden') return '🇸🇪'
-      else if (country === 'australia') return '🇦🇺'
-      else if (country === 'estonia') return '🇪🇪'
-      else alert('Missing unicode flag: ' + country)
-      return
-    },
+    unicodeFlag,
     getLengthInCm(length_cm) {
       return Math.round(length_cm)
     },

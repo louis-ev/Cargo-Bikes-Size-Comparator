@@ -4,23 +4,13 @@
 
 Source code for https://bikes.louiseveillard.com/
 
-Contributions welcome.
+**Contributions welcome** — see [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to add bikes, country metadata, and code guidelines.
 
 ## Bike database
 
-Bike metadata (manufacturer, model, length, margins, materials, etc.) lives in [`src/assets/bikes.json`](src/assets/bikes.json). Profile images are in [`src/assets/bikes/`](src/assets/bikes/).
+Bike metadata lives in [`src/assets/bikes.json`](src/assets/bikes.json). Profile images are in [`src/assets/bikes/`](src/assets/bikes/).
 
-> **Note:** this file was previously named `bike_images.json`. Update any bookmarks or scripts that still point to the old path.
-
-To contribute a bike, refer to https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9
-
-If necessary, upscale image with https://www.iloveimg.com/upscale-image
-
-Remove background with https://bg.addy.ie/ (or https://new.express.adobe.com).
-
-Optimize images with ImageOptim, if possible.
-
-To contribute with code, follow these instructions:
+> **Note:** this file was previously named `bike_images.json`.
 
 ## Recommended IDE Setup
 

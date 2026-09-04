@@ -81,6 +81,8 @@ const i18n = createI18n({
         in_eu: 'in the European Union',
         in_spain: 'in Spain',
         in_estonia: 'in Estonia',
+        in_canada: 'in Canada',
+        in_czech_republic: 'in Czechia',
         add_a_bike: 'Add a bike',
         cant_find_a_bike: 'Can’t find what you’re looking for?',
         left: 'Left',
@@ -174,6 +176,8 @@ const i18n = createI18n({
         product_page_url: 'Official product page URL',
         bike_frame_country: 'Country where the bike frame is made (and not just assembled).',
         bike_assembled_in: 'Country where the bike is assembled',
+        country_must_be_supported:
+          'Use a country name already supported in the app (see existing bikes). If it is new, translations (`in_*` in i18n) and the flag must be added.',
 
         send_me_an_email: 'Send me an email',
         with_this_information:
@@ -292,6 +296,8 @@ const i18n = createI18n({
         in_eu: 'en Union européenne',
         in_spain: 'en Espagne',
         in_estonia: 'en Estonie',
+        in_canada: 'au Canada',
+        in_czech_republic: 'en Tchéquie',
         add_a_bike: 'Ajouter un vélo',
         cant_find_a_bike: 'Vous ne trouvez pas ce que vous cherchez ?',
         left: 'Gauche',
@@ -383,6 +389,8 @@ const i18n = createI18n({
         product_page_url: 'URL de la page produit officielle',
         bike_frame_country: 'Pays où le cadre du vélo est fabriqué',
         bike_assembled_in: 'Pays où le vélo est assemblé',
+        country_must_be_supported:
+          'Utilisez un nom de pays déjà géré dans l’app (voir les vélos existants). S’il est nouveau, il faut ajouter les traductions (`in_*` dans i18n) et le drapeau.',
 
         send_me_an_email: 'Envoyer un email à',
         with_this_information:
