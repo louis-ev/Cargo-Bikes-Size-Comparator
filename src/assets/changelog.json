@@ -2,6 +2,14 @@
   {
     "date": "2026-09-04",
     "type": "bike",
+    "title_en": "Powabyke Revom",
+    "title_fr": "Powabyke Revom",
+    "body_en": "New tricycle added to the database.",
+    "body_fr": "Nouveau triporteur ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-04",
+    "type": "bike",
     "title_en": "Hagen XL",
     "title_fr": "Hagen XL",
     "body_en": "New longjohn added to the database.",

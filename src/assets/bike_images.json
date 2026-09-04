@@ -4180,5 +4180,20 @@
     "assembled_in": "Estonia",
     "wheel_size": ["20", "28"],
     "frame_material": "4130 Chromoly"
+  },
+  {
+    "id": "powabyke-revom",
+    "manufacturer": "Powabyke",
+    "model": "Revom",
+    "bike_type": "tricycle",
+    "src": "powabyke-revom.png",
+    "bike_length_cm": 188,
+    "weight": 40,
+    "bike_length_percent": 0.951,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0.048,
+    "url": "https://powabyke.com/product/revom-t2-fat-tyre-electric-mountain-trike/",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]
