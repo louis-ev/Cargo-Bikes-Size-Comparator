@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-09-04",
+    "type": "code",
+    "title_en": "Bike database file renamed",
+    "title_fr": "Fichier de la base de données renommé",
+    "body_en": "bike_images.json is now bikes.json (same data; old name was misleading).",
+    "body_fr": "bike_images.json s’appelle désormais bikes.json (mêmes données ; l’ancien nom était trompeur)."
+  },
+  {
+    "date": "2026-09-04",
     "type": "bike",
     "title_en": "Powabyke Revom",
     "title_fr": "Powabyke Revom",

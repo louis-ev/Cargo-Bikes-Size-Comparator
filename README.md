@@ -6,6 +6,12 @@ Source code for https://bikes.louiseveillard.com/
 
 Contributions welcome.
 
+## Bike database
+
+Bike metadata (manufacturer, model, length, margins, materials, etc.) lives in [`src/assets/bikes.json`](src/assets/bikes.json). Profile images are in [`src/assets/bikes/`](src/assets/bikes/).
+
+> **Note:** this file was previously named `bike_images.json`. Update any bookmarks or scripts that still point to the old path.
+
 To contribute a bike, refer to https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9
 
 If necessary, upscale image with https://www.iloveimg.com/upscale-image

@@ -3,7 +3,7 @@
 </template>
 <script>
 import { RouterView } from 'vue-router'
-import bikes from '@/assets/bike_images.json'
+import bikes from '@/assets/bikes.json'
 
 export default {
   props: {},

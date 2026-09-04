@@ -133,6 +133,7 @@ const i18n = createI18n({
         button_label: "What's new",
         type_bike: 'Bike',
         type_ui: 'UI',
+        type_code: 'Code',
         type_fix: 'Fix',
         type_release: 'Release'
       },
@@ -142,7 +143,7 @@ const i18n = createI18n({
         simple_steps: 'There are 3 simple steps and it should take you between 2 and 5 minutes.',
         data_license:
           'The data you will provide will be added to the database with the same free and open-source license (AGPL v3) as the rest of the tool.',
-        collaborative_bike_database_if_you_have_questions: `You can see the collaborative bike database <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>here</a>. 
+        collaborative_bike_database_if_you_have_questions: `You can see the collaborative bike database <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bikes.json' target='_blank'>here</a>. 
           And if you have any questions, send me an email at <a href='mailto:hello{'@'}louiseveillard.com'>hello{'@'}louiseveillard.com</a>.`,
         step_1_basic_informations: 'Step 1: basic informations',
         step_2_profile_image_and_size: 'Step 2: profile image and size',
@@ -343,6 +344,7 @@ const i18n = createI18n({
         button_label: 'Nouveautés',
         type_bike: 'Vélo',
         type_ui: 'Interface',
+        type_code: 'Code',
         type_fix: 'Correction',
         type_release: 'Version'
       },
@@ -352,7 +354,7 @@ const i18n = createI18n({
         simple_steps: 'Il y a 3 étapes simples et cela devrait vous prendre entre 2 et 5 minutes.',
         data_license:
           'Les données que vous fournirez seront ajoutées à la base de données avec la même licence libre et open-source (AGPL v3) que le reste de l’outil.',
-        collaborative_bike_database_if_you_have_questions: `Vous pouvez voir la base de données collaborative <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>ici</a>. Si vous avez des questions, envoyez-moi un email à <a href='mailto:hello{'@'}louiseveillard.com'>hello{'@'}louiseveillard.com</a>.`,
+        collaborative_bike_database_if_you_have_questions: `Vous pouvez voir la base de données collaborative <a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bikes.json' target='_blank'>ici</a>. Si vous avez des questions, envoyez-moi un email à <a href='mailto:hello{'@'}louiseveillard.com'>hello{'@'}louiseveillard.com</a>.`,
         step_1_basic_informations: 'Étape 1: informations de base',
         step_2_profile_image_and_size: 'Étape 2: image de profil et taille',
         step_3_share_this_information: 'Étape 3: envoyer ces informations',

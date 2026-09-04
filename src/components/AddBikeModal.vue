@@ -191,7 +191,7 @@
                 <li
                   v-html="
                     $t('add_bike.add_the_bike_informations_to_the', {
-                      link: `<a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bike_images.json' target='_blank'>bike_images.json</a>`
+                      link: `<a href='https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/blob/main/src/assets/bikes.json' target='_blank'>bikes.json</a>`
                     })
                   "
                 ></li>
