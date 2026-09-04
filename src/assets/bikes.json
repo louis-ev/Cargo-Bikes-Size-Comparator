@@ -4227,5 +4227,22 @@
     "assembled_in": "Italy",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "douze-cycles-lt24",
+    "manufacturer": "Douze Cycles",
+    "model": "LT24",
+    "bike_type": "longtail",
+    "src": "douze-lt24.png",
+    "bike_length_cm": 205,
+    "weight": 32.5,
+    "bike_length_percent": 0.924,
+    "left_margin_percent": 0.043,
+    "bottom_margin_percent": 0.069,
+    "url": "https://www.douze-cycles.com/velos-cargos/lt",
+    "frame_made_in": "France",
+    "assembled_in": "France",
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium 6061"
   }
 ]
