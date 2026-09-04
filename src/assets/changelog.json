@@ -2,6 +2,14 @@
   {
     "date": "2026-09-04",
     "type": "bike",
+    "title_en": "XP X-2LOAD",
+    "title_fr": "XP X-2LOAD",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-04",
+    "type": "bike",
     "title_en": "Segway Muxi",
     "title_fr": "Segway Muxi",
     "body_en": "New midtail added to the database.",

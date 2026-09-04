@@ -4212,5 +4212,20 @@
     "assembled_in": "China",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "xp-x-2load",
+    "manufacturer": "XP",
+    "model": "X-2LOAD",
+    "bike_type": "longtail",
+    "src": "xp-x2load.png",
+    "bike_length_cm": 190,
+    "bike_length_percent": 0.875,
+    "left_margin_percent": 0.053,
+    "bottom_margin_percent": 0.111,
+    "url": "https://www.xpbikes.it/it/long-tail/x-2load/",
+    "assembled_in": "Italy",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium"
   }
 ]
