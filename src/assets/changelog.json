@@ -2,6 +2,14 @@
   {
     "date": "2026-09-04",
     "type": "bike",
+    "title_en": "Wike Electric Salamander folded view",
+    "title_fr": "Vue pliée Wike Electric Salamander",
+    "body_en": "Folded (stroller) silhouette added.",
+    "body_fr": "Silhouette pliée (mode poussette) ajoutée."
+  },
+  {
+    "date": "2026-09-04",
+    "type": "bike",
     "title_en": "Douze Cycles LT24",
     "title_fr": "Douze Cycles LT24",
     "body_en": "New longtail added to the database.",
