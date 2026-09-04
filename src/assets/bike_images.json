@@ -4163,5 +4163,22 @@
     "assembled_in": "Italy",
     "wheel_size": ["20", "28"],
     "frame_material": "Steel"
+  },
+  {
+    "id": "hagen-bikes-hagen-xl",
+    "manufacturer": "Hagen Bikes",
+    "model": "Hagen XL",
+    "bike_type": "longjohn",
+    "src": "hagen-xl.png",
+    "bike_length_cm": 272,
+    "weight": 28.5,
+    "bike_length_percent": 0.951,
+    "left_margin_percent": 0.02,
+    "bottom_margin_percent": 0.204,
+    "url": "https://hagenbikes.com/de/products/fahrraeder/hagen-xl/",
+    "frame_made_in": "Estonia",
+    "assembled_in": "Estonia",
+    "wheel_size": ["20", "28"],
+    "frame_material": "4130 Chromoly"
   }
 ]

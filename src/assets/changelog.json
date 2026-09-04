@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-09-04",
+    "type": "bike",
+    "title_en": "Hagen XL",
+    "title_fr": "Hagen XL",
+    "body_en": "New longjohn added to the database.",
+    "body_fr": "Nouveau longjohn ajouté à la base de données."
+  },
+  {
     "date": "2026-08-26",
     "type": "bike",
     "title_en": "Granville Longtail",
