@@ -4,6 +4,7 @@
 <script>
 import { RouterView } from 'vue-router'
 import bikes from '@/assets/bikes.json'
+import { bikeMatchesId, bikeResolvableIds, legacyIdsList } from '@/helpers.js'
 
 export default {
   props: {},
@@ -37,6 +38,7 @@ export default {
   created() {
     this.loadBakfiets()
     this.loadLongtails()
+    this.validateBikeIds()
 
     this.draw_rect_in_canvas = this.parseStoredSetting(
       'draw_rect_in_canvas',
@@ -64,6 +66,12 @@ export default {
     },
     useInches() {
       localStorage.setItem('useInches', this.useInches)
+    },
+    enabled_bikes_ids: {
+      handler(ids) {
+        this.canonicalizeBikesQuery(ids)
+      },
+      immediate: true
     }
   },
   computed: {
@@ -71,18 +79,21 @@ export default {
       return this.bikes
         .filter((item) => item.disabled !== true)
         .map((item) => {
-          if (item.id.includes(','))
-            alert('id includes comma (forbidden because of URL sharing) for ' + item.id)
           if (typeof item.bike_length_cm !== 'number')
             alert('bike_length_cm is not cm for ' + item.id)
+
+          const normalized = {
+            ...item,
+            legacy_ids: legacyIdsList(item.legacy_ids)
+          }
 
           if (this.all_measures.length > 0) {
             const found = this.all_measures.find(
               (i) => (i.Manufacturer || '') + '/' + (i.Model || '') === item.id_in_csv
             )
-            if (found) item._measurements = found
+            if (found) normalized._measurements = found
           }
-          return item
+          return normalized
         })
         .concat(this.local_bikes)
     },
@@ -128,6 +139,34 @@ export default {
         return fallback
       }
     },
+    validateBikeIds() {
+      const claimed = new Map()
+      for (const item of this.bikes) {
+        if (item.disabled === true) continue
+        if (typeof item.id !== 'string' || !item.id) {
+          alert('bike id must be a non-empty string for ' + JSON.stringify(item.id))
+          continue
+        }
+        if (
+          Object.prototype.hasOwnProperty.call(item, 'legacy_ids') &&
+          !Array.isArray(item.legacy_ids)
+        ) {
+          alert('legacy_ids must be an array for ' + item.id)
+          continue
+        }
+        for (const id of bikeResolvableIds(item)) {
+          if (id.includes(','))
+            alert('id includes comma (forbidden because of URL sharing) for ' + id)
+          if (claimed.has(id)) {
+            alert(
+              'Bike id collision: "' + id + '" used by "' + claimed.get(id) + '" and "' + item.id + '"'
+            )
+          } else {
+            claimed.set(id, item.id)
+          }
+        }
+      }
+    },
     loadBakfiets() {
       fetch('./Cargo bike measurements - Bakfiets.csv')
         .then((response) => response.text())
@@ -163,9 +202,32 @@ export default {
       }
       return result
     },
+    normalizeBikeId(id) {
+      if (!id) return { base_id: id, is_folded: false }
+      const is_folded = id.endsWith('_folded')
+      return {
+        base_id: is_folded ? id.replace(/_folded$/, '') : id,
+        is_folded
+      }
+    },
+    resolveCanonicalBikeId(raw_id) {
+      const { base_id, is_folded } = this.normalizeBikeId(raw_id)
+      const bike = this.sorted_bikes.find((item) => bikeMatchesId(item, base_id))
+      if (!bike) return raw_id
+      return is_folded ? `${bike.id}_folded` : bike.id
+    },
+    canonicalizeBikesQuery(enabled_bikes_ids) {
+      if (!enabled_bikes_ids?.length) return
+      const canonical_ids = enabled_bikes_ids.map((id) => this.resolveCanonicalBikeId(id))
+      const needs_update = canonical_ids.some((id, index) => id !== enabled_bikes_ids[index])
+      if (!needs_update) return
+      let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
+      query.bikes = canonical_ids.join(',')
+      this.$router.replace({ query })
+    },
     updateBikesQuery(enabled_bikes_ids) {
       let query = JSON.parse(JSON.stringify(this.$route.query)) || {}
-      query.bikes = enabled_bikes_ids.join(',')
+      query.bikes = enabled_bikes_ids.map((id) => this.resolveCanonicalBikeId(id)).join(',')
       this.$router.push({
         query
       })
@@ -180,7 +242,10 @@ export default {
     setBikeFoldState(base_id, shouldFold) {
       if (!base_id) return
       const ids = this.enabled_bikes_ids.slice()
-      const targetIndex = ids.findIndex((id) => id === base_id || id === `${base_id}_folded`)
+      const targetIndex = ids.findIndex((id) => {
+        const canonical_id = this.resolveCanonicalBikeId(id)
+        return canonical_id === base_id || canonical_id === `${base_id}_folded`
+      })
       if (targetIndex === -1) return
       ids[targetIndex] = shouldFold ? `${base_id}_folded` : base_id
       this.updateBikesQuery(ids)

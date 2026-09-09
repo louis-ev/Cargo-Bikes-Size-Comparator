@@ -812,7 +812,9 @@ export default {
     },
     async unselectBike(bike_id) {
       const bikes_ids = this.$root.enabled_bikes_ids
-      const new_bikes_ids = bikes_ids.filter((id) => id !== bike_id)
+      const new_bikes_ids = bikes_ids.filter(
+        (id) => this.$root.resolveCanonicalBikeId(id) !== bike_id
+      )
       this.$root.updateBikesQuery(new_bikes_ids)
     },
     swapFirstBikeToEnd() {

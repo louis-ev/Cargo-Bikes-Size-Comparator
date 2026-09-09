@@ -79,6 +79,37 @@ export const colorize = function (canvas, colorHex) {
 }
 
 /**
+ * Normalize `legacy_ids` (array only) into a list of former ids.
+ * @param {string[]|undefined|null} legacy_ids
+ * @returns {string[]}
+ */
+export const legacyIdsList = function (legacy_ids) {
+  if (!Array.isArray(legacy_ids)) return []
+  return legacy_ids.filter((value) => typeof value === 'string' && value.length > 0)
+}
+
+/**
+ * All ids that resolve to a bike: canonical `id` plus `legacy_ids`.
+ * @param {{ id?: string, legacy_ids?: string[] }} bike
+ * @returns {string[]}
+ */
+export const bikeResolvableIds = function (bike) {
+  if (!bike?.id) return legacyIdsList(bike?.legacy_ids)
+  return [bike.id, ...legacyIdsList(bike.legacy_ids)]
+}
+
+/**
+ * Whether a bike matches a candidate id (canonical or legacy).
+ * @param {{ id?: string, legacy_ids?: string[] }} bike
+ * @param {string} candidate_id
+ * @returns {boolean}
+ */
+export const bikeMatchesId = function (bike, candidate_id) {
+  if (!bike || !candidate_id) return false
+  return bikeResolvableIds(bike).includes(candidate_id)
+}
+
+/**
  * Check if frame_made_in should be displayed (hides China to avoid discrimination)
  * @param {string} frameMadeIn - The frame_made_in value
  * @returns {boolean} - Whether to show the frame origin

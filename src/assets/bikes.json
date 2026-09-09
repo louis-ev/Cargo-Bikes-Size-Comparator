@@ -143,7 +143,8 @@
     "wheel_size": ["20", "26"]
   },
   {
-    "id": "bullit",
+    "id": "bullitt",
+    "legacy_ids": ["bullit"],
     "id_in_csv": "Bullitt/",
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt",
@@ -1165,7 +1166,8 @@
     "frame_material": "Aluminium"
   },
   {
-    "id": "bullitt-x-larry-vs-harry",
+    "id": "bullitt-x",
+    "legacy_ids": ["bullitt-x-larry-vs-harry"],
     "manufacturer": "Larry vs Harry",
     "model": "Bullitt X",
     "bike_type": "longjohn",

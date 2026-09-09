@@ -56,6 +56,7 @@ import CanvasView from '@/components/CanvasView.vue'
 import AddBikeModal from '@/components/AddBikeModal.vue'
 import ChangelogModal from '@/components/ChangelogModal.vue'
 import ListOfBikes from '@/components/ListOfBikes.vue'
+import { bikeMatchesId } from '@/helpers.js'
 
 export default {
   props: {
@@ -109,10 +110,11 @@ export default {
         if (!bike) return acc
 
         const color_options = this.bike_outline_colors
+        const canonical_id = isFolded ? `${bike.id}_folded` : bike.id
         const displayBike = {
           ...bike,
-          id: rawId,
-          base_id: baseId,
+          id: canonical_id,
+          base_id: bike.id,
           is_folded: isFolded,
           color: color_options[index % color_options.length]
         }
@@ -144,7 +146,7 @@ export default {
       }
     },
     findMatchingBike(id) {
-      return this.bikes.find((i) => i.id === id)
+      return this.bikes.find((i) => bikeMatchesId(i, id))
     },
     toggleSidebar() {
       this.show_sidebar = !this.show_sidebar
