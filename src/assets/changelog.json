@@ -1,11 +1,43 @@
 [
   {
+    "date": "2026-09-15",
+    "type": "bike",
+    "title_en": "Hercules Rob Cargo F5",
+    "title_fr": "Hercules Rob Cargo F5",
+    "body_en": "New midtail added to the database.",
+    "body_fr": "Nouveau midtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-15",
+    "type": "ui",
+    "title_en": "Ca Go search aliases",
+    "title_fr": "Alias de recherche Ca Go",
+    "body_en": "Searching for “cago” (and related terms) now finds Ca Go bikes.",
+    "body_fr": "La recherche « cago » (et termes associés) trouve désormais les vélos Ca Go."
+  },
+  {
+    "date": "2026-09-09",
+    "type": "fix",
+    "title_en": "Legacy bike IDs",
+    "title_fr": "Anciens identifiants de vélos",
+    "body_en": "Corrected Bullitt IDs; old share links and saved comparisons keep working via legacy_ids.",
+    "body_fr": "Identifiants Bullitt corrigés ; les anciens liens partagés et comparaisons enregistrées restent valides via legacy_ids."
+  },
+  {
     "date": "2026-09-04",
     "type": "bike",
     "title_en": "QiO Long",
     "title_fr": "QiO Long",
     "body_en": "New longtail added to the database.",
     "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
+    "date": "2026-09-04",
+    "type": "ui",
+    "title_en": "Close modals with Escape",
+    "title_fr": "Fermer les modales avec Échap",
+    "body_en": "Press Escape to close the add-a-bike modal and other dialogs.",
+    "body_fr": "Appuyer sur Échap ferme la modale d’ajout de vélo et les autres dialogues."
   },
   {
     "date": "2026-09-04",
