@@ -4273,5 +4273,22 @@
     "assembled_in": "Germany",
     "wheel_size": ["20"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "hercules-hercules-rob-cargo-f5",
+    "manufacturer": "Hercules",
+    "model": "Rob Cargo F5",
+    "bike_type": "midtail",
+    "src": "rob-cargo-f5.png",
+    "bike_length_cm": 174,
+    "weight": 30,
+    "bike_length_percent": 0.949,
+    "left_margin_percent": 0.027,
+    "bottom_margin_percent": 0.006,
+    "url": "https://www.hercules-bikes.de/de-de/produkt/hercules-rob-cargo-f5-2025-baeckerrad-postrad",
+    "frame_made_in": "",
+    "assembled_in": "",
+    "wheel_size": ["24"],
+    "frame_material": "Aluminium"
   }
 ]
