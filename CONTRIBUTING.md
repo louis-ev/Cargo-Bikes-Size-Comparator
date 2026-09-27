@@ -1,8 +1,8 @@
 # Contributing
 
-Thanks for contributing to the [Cargo Bikes Size Comparator](https://bikes.louiseveillard.com/).
+Thanks for contributing to the [Cargo Bikes Size Comparator](https://cargobikesizes.com/).
 
-The easiest way to start is the in-app **Add a bike** button (also available at [bikes.louiseveillard.com/?addbike](https://bikes.louiseveillard.com/?addbike)): it walks you through the fields and measures image margins, then gives you a JSON snippet to send or submit.
+The easiest way to start is the in-app **Add a bike** button (also available at [cargobikesizes.com/?addbike](https://cargobikesizes.com/?addbike)): it walks you through the fields and measures image margins, then gives you a JSON snippet to send or submit.
 
 You can also follow [issue #9](https://github.com/louis-ev/Cargo-Bikes-Size-Comparator/issues/9), or open a pull request with the files below.
 

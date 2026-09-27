@@ -2,7 +2,7 @@
 
 ![Screenshot](public/og_image2.png)
 
-Source code for https://bikes.louiseveillard.com/
+Source code for https://cargobikesizes.com/
 
 **Contributions welcome** — see [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to add bikes, country metadata, and code guidelines.
 
