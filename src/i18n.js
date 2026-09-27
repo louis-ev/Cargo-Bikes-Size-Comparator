@@ -11,7 +11,7 @@ const i18n = createI18n({
   messages: {
     en: {
       message: {
-        title: 'Cargo Bikes Size Comparator',
+        title: 'Cargo Bike Size Comparator',
         search_placeholder: 'Search by model or manufacturer',
         no_bikes_matched_your_search: 'No bikes matched your search.',
         to_contribute_a_bike: 'To contribute a bike,',

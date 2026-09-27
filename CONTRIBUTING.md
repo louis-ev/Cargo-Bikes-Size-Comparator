@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for contributing to the [Cargo Bikes Size Comparator](https://cargobikesizes.com/).
+Thanks for contributing to the [Cargo Bike Size Comparator](https://cargobikesizes.com/).
 
 The easiest way to start is the in-app **Add a bike** button (also available at [cargobikesizes.com/?addbike](https://cargobikesizes.com/?addbike)): it walks you through the fields and measures image margins, then gives you a JSON snippet to send or submit.
 

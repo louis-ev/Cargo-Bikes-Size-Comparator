@@ -1,4 +1,4 @@
-# Cargo Bikes Size Comparator
+# Cargo Bike Size Comparator
 
 ![Screenshot](public/og_image2.png)
 
