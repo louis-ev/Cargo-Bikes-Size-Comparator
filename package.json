@@ -1,6 +1,6 @@
 {
   "name": "cargo-bikes-size-comparator",
-  "version": "3.3.45",
+  "version": "3.3.46",
   "type": "module",
   "engines": {
     "node": "^22.13.0 || >=24"
