@@ -179,12 +179,18 @@
       </template>
     </div>
 
-    <transition-group name="list" tag="div" class="_bikesPreview">
+    <transition-group
+      name="bikesGrid"
+      tag="div"
+      class="_bikesPreview"
+      @before-leave="pinLeavingBike"
+    >
       <button
         type="button"
         class="_bikePreview"
         v-for="bike in filtered_bikes"
         :key="bike.id"
+        :data-bike-id="bike.id"
         @click="onBikePreviewClick(bike.id)"
         :class="{ 'is--selected': selected_bikes.includes(bike.id) }"
       >
@@ -298,12 +304,21 @@ export default {
       more_filters_open: false
     }
   },
-  created() {},
+  created() {
+    this.leaving_bike_ids = null
+  },
   async mounted() {
     this.bike_images_preview_urls = await this.$loadBikeImages2(bike_images_preview_urls)
   },
   beforeUnmount() {},
-  watch: {},
+  watch: {
+    filtered_bikes(new_bikes, old_bikes) {
+      const new_ids = new Set(new_bikes.map((bike) => bike.id))
+      this.leaving_bike_ids = new Set(
+        old_bikes.map((bike) => bike.id).filter((id) => !new_ids.has(id))
+      )
+    }
+  },
   computed: {
     all_bike_types() {
       // Sizes to merge into one button (ETRTO 622mm rim standard)
@@ -604,6 +619,38 @@ export default {
     }
   },
   methods: {
+    pinLeavingBike(el) {
+      // Pin every leaving tile in one pass: measuring them one by one forces a layout per tile.
+      if (!this.leaving_bike_ids) return
+      const leaving_ids = this.leaving_bike_ids
+      this.leaving_bike_ids = null
+
+      const leaving_tiles = [...el.parentNode.children].filter((tile) =>
+        leaving_ids.has(tile.dataset.bikeId)
+      )
+      const viewport_height = window.innerHeight
+      const boxes = leaving_tiles.map((tile) => {
+        const rect = tile.getBoundingClientRect()
+        return {
+          tile,
+          left: tile.offsetLeft,
+          top: tile.offsetTop,
+          width: tile.offsetWidth,
+          height: tile.offsetHeight,
+          is_visible: rect.bottom > 0 && rect.top < viewport_height
+        }
+      })
+      boxes.forEach(({ tile, left, top, width, height, is_visible }) => {
+        Object.assign(tile.style, {
+          position: 'absolute',
+          left: `${left}px`,
+          top: `${top}px`,
+          width: `${width}px`,
+          height: `${height}px`,
+          visibility: is_visible ? '' : 'hidden'
+        })
+      })
+    },
     isOftenCompared(bike_id) {
       return often_compared_bike_ids.includes(bike_id)
     },
@@ -924,6 +971,7 @@ export default {
 }
 
 ._bikesPreview {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
@@ -1067,6 +1115,26 @@ export default {
 .count-leave-from {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+.bikesGrid-move,
+.bikesGrid-enter-active,
+.bikesGrid-leave-active {
+  transition:
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.3s ease;
+}
+
+.bikesGrid-leave-active {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bikesGrid-enter-from,
+.bikesGrid-leave-to {
+  opacity: 0;
+  transform: scale(0.94);
 }
 
 ._addMissingBike {
