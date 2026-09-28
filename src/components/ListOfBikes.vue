@@ -109,16 +109,61 @@
       </div>
     </div>
 
+    <div v-if="often_compared_bikes.length" class="_oftenCompared">
+      <div class="_oftenComparedTitle">
+        {{ $t('message.pick_from_most_compared', { count: often_compared_bikes.length }) }}
+      </div>
+      <div class="_oftenComparedList">
+        <button
+          v-for="bike in often_compared_bikes"
+          :key="bike.id"
+          type="button"
+          class="_bikePreview"
+          :class="{ 'is--selected': selected_bikes.includes(bike.id) }"
+          @click="onBikePreviewClick(bike.id)"
+        >
+          <div v-if="getBikePreviewImage(bike)">
+            <img
+              loading="lazy"
+              :src="getBikePreviewImage(bike)"
+              :style="{
+                '--scale-factor': 1 / bike.bike_length_percent + '',
+                '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
+              }"
+            />
+          </div>
+          <div class="_bikeTypes">
+            <div
+              v-for="bike_type in getBikeTypes(bike)"
+              :key="bike_type"
+              class="_bikeType"
+              :style="bikeStyleColor(bike_type)"
+              :title="$t(`bike_types.${bike_type}`)"
+            ></div>
+          </div>
+          <span class="_bikeLabel">
+            <BikeName :bike="bike" :show_length="false" />
+          </span>
+          <div v-if="selected_bikes.includes(bike.id)" class="_checkmark">✓</div>
+        </button>
+      </div>
+    </div>
+
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br /><br />
     </div>
 
     <div class="_itemTitle" :key="'not_enabled_bikes'" v-else>
-      {{
-        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-          count: filtered_bikes.length
-        })
-      }}
+      <template v-if="often_compared_bikes.length">
+        {{ $t('message.or_pick_from_all_bikes', { count: filtered_bikes.length }) }}
+      </template>
+      <template v-else>
+        {{
+          $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+            count: filtered_bikes.length
+          })
+        }}
+      </template>
     </div>
 
     <transition-group name="list" tag="div" class="_bikesPreview">
@@ -151,6 +196,13 @@
             :title="$t(`bike_types.${bike_type}`)"
           ></div>
         </div>
+        <span
+          v-if="isOftenCompared(bike.id)"
+          class="_oftenComparedBadge"
+          :title="$t('message.often_compared')"
+        >
+          {{ $t('message.often_compared_badge') }}
+        </span>
         <span class="_bikeLabel">
           <BikeName :bike="bike" />
         </span>
@@ -189,6 +241,20 @@
   </div>
 </template>
 <script>
+// Most viewed comparisons in Matomo for 2026, export of 27 Sep 2026.
+const often_compared_bike_ids = [
+  'carrie-rm',
+  'muli',
+  'load60-rm',
+  'urbanarrow',
+  'tern-gsd',
+  'gsd-p10-tern',
+  'quick-haul-long-tern',
+  'tern-hsd',
+  'lepetitporteur-shorty',
+  'omnium-nano'
+]
+
 const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
   eager: true,
   import: 'default',
@@ -458,6 +524,19 @@ export default {
     filtered_bikes_with_search() {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
+    is_filtering() {
+      return Boolean(
+        this.search_str ||
+          this.bike_type_filter ||
+          this.wheel_size_filter ||
+          this.frame_material_filter
+      )
+    },
+    often_compared_bikes() {
+      if (this.is_filtering) return []
+      const bikes_by_id = new Map(this.bikes.map((bike) => [bike.id, bike]))
+      return often_compared_bike_ids.map((id) => bikes_by_id.get(id)).filter(Boolean)
+    },
     compareBikesText() {
       const count = this.selected_bikes.length
       const fullText = this.$t('message.compare_bikes', { count })
@@ -508,6 +587,9 @@ export default {
     }
   },
   methods: {
+    isOftenCompared(bike_id) {
+      return often_compared_bike_ids.includes(bike_id)
+    },
     getBikePreviewImage(bike) {
       const thumb = this.bike_images_preview_urls.find((i) => i.original_filename === bike.src)
       if (!thumb) return
@@ -753,6 +835,51 @@ export default {
       }
     }
   }
+}
+
+._oftenCompared {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+._oftenComparedTitle {
+  // font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+._oftenComparedList {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+
+  ._bikePreview {
+    flex: 0 0 11rem;
+    width: 11rem;
+    height: 11rem;
+    padding: 1.25rem;
+  }
+}
+
+._oftenComparedBadge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  max-width: calc(100% - 2.5rem);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-text);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+._bikePreview.is--selected ._oftenComparedBadge {
+  left: 2.4rem;
 }
 
 ._bikesPreview {
