@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-09-28",
+    "type": "bike",
+    "title_en": "Belleville Machine Folgo",
+    "title_fr": "Belleville Machine Folgo",
+    "body_en": "New foldable longjohn added to the database, with its folded view.",
+    "body_fr": "Nouveau longjohn pliant ajouté à la base de données, avec sa vue pliée."
+  },
+  {
     "date": "2026-09-15",
     "type": "bike",
     "title_en": "Hercules Rob Cargo F5",

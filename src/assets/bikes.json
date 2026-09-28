@@ -4290,5 +4290,30 @@
     "assembled_in": "",
     "wheel_size": ["24"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "belleville-machine-folgo",
+    "manufacturer": "Belleville Machine",
+    "model": "Folgo",
+    "bike_type": "longjohn/foldable",
+    "src": "folgo.png",
+    "bike_length_cm": 206,
+    "weight": 19,
+    "bike_length_percent": 0.959,
+    "left_margin_percent": 0.024,
+    "bottom_margin_percent": 0.195,
+    "url": "https://bellevillemachine.com/folgo",
+    "frame_made_in": "France",
+    "assembled_in": "France",
+    "comment_en": "Length given for size M. Rear wheel can be 26\" or 27.5\". Folded dimensions: 50 × 70 × 90 cm. Use the Fold button to see it folded.",
+    "wheel_size": ["20", "26", "27.5"],
+    "frame_material": "4130 Chromoly Steel",
+    "folded_view": {
+      "src": "folgo-folded.png",
+      "bike_length_cm": 90,
+      "bike_length_percent": 0.607,
+      "left_margin_percent": 0.273,
+      "bottom_margin_percent": 0.043
+    }
   }
 ]
