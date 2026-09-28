@@ -3,15 +3,44 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
-concurrency:
-  group: 'production'
-  cancel-in-progress: true
+permissions:
+  contents: read
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.version.outputs.changed }}
+    steps:
+      # Compare package.json versions through the API to avoid fetching history (the repo holds many images)
+      - id: version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          readVersion() {
+            gh api "repos/${{ github.repository }}/contents/package.json?ref=$1" --jq .content 2>/dev/null \
+              | base64 -d | jq -r .version
+          }
+          current=$(readVersion "${{ github.sha }}")
+          previous=$(readVersion "$BEFORE" || true)
+          echo "Version: ${previous:-none} -> $current"
+          if [ "$current" != "$previous" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
   deploy:
+    needs: check-version
+    if: github.event_name == 'workflow_dispatch' || needs.check-version.outputs.changed == 'true'
+    # Job-level so a push without version bump can't cancel an ongoing deploy
+    concurrency:
+      group: 'production'
+      cancel-in-progress: true
     environment:
       name: production
     runs-on: ubuntu-latest
