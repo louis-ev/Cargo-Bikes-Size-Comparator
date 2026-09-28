@@ -36,27 +36,40 @@
         <SearchField v-model="search_str" />
       </div>
 
-      <div class="_filters">
-        <div class="_bikeTypeFilter">
-          <span v-html="$t('bike_types.by_category')" />
-          <button
-            v-for="[bike_type, count] in all_bike_types"
-            :key="bike_type"
-            type="button"
-            class="_buttonFilter"
-            :class="{
-              'is--active': bike_type_filter === bike_type,
-              'is--disabled': count === 0
-            }"
-            :style="bikeStyleColor(bike_type)"
-            :disabled="count === 0"
-            @click="onBikeTypeFilterClick(bike_type)"
-          >
-            {{ $t(`bike_types.${bike_type}`) }}
-            <span class="_count">{{ count }}</span>
-          </button>
-        </div>
+      <div class="_bikeTypeFilter">
+        <span v-html="$t('bike_types.by_category')" />
+        <button
+          v-for="[bike_type, count] in all_bike_types"
+          :key="bike_type"
+          type="button"
+          class="_buttonFilter"
+          :class="{
+            'is--active': bike_type_filter === bike_type,
+            'is--disabled': count === 0
+          }"
+          :style="bikeStyleColor(bike_type)"
+          :disabled="count === 0"
+          @click="onBikeTypeFilterClick(bike_type)"
+        >
+          {{ $t(`bike_types.${bike_type}`) }}
+          <span class="_count">{{ count }}</span>
+        </button>
 
+        <button
+          type="button"
+          class="_moreFiltersToggle"
+          :aria-expanded="more_filters_open ? 'true' : 'false'"
+          @click="more_filters_open = !more_filters_open"
+        >
+          {{ more_filters_open ? '−' : '+' }}
+          {{ $t('message.more_filters') }}
+          <span v-if="active_more_filters_count" class="_count">
+            {{ active_more_filters_count }}
+          </span>
+        </button>
+      </div>
+
+      <div v-if="more_filters_open" class="_filters">
         <div class="_wheelSizeFilter">
           <span>{{ $t('message.by_wheel_size') }}</span>
           <button
@@ -281,7 +294,8 @@ export default {
       bike_images_preview_urls: [],
       bike_type_filter: null,
       wheel_size_filter: null,
-      frame_material_filter: null
+      frame_material_filter: null,
+      more_filters_open: false
     }
   },
   created() {},
@@ -524,6 +538,9 @@ export default {
     filtered_bikes_with_search() {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
+    active_more_filters_count() {
+      return [this.wheel_size_filter, this.frame_material_filter].filter(Boolean).length
+    },
     is_filtering() {
       return Boolean(
         this.search_str ||
@@ -741,10 +758,11 @@ export default {
 ._topBar {
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: baseline;
   padding: 1rem 0;
 }
 
@@ -752,16 +770,39 @@ export default {
   display: flex;
   flex-flow: column;
   gap: 0;
-  flex: 1 1 30ch;
-  align-items: flex-end;
+  flex: 1 1 100%;
+  align-items: flex-start;
 }
 
 ._bikeTypeFilter {
   display: flex;
   flex-flow: row wrap;
+  flex: 1 1 40ch;
   gap: 0.5rem;
   padding: 0.5rem 0;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+._moreFiltersToggle {
+  flex: 0 0 auto;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(150, 150, 150, 0.2);
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: normal;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(150, 150, 150, 0.4);
+  }
+
+  ._count {
+    margin-left: 0.25rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+  }
 }
 
 ._buttonFilter {
@@ -806,7 +847,7 @@ export default {
   gap: 0.5rem;
   padding: 0.5rem 0;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   > span {
     font-weight: normal;
