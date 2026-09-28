@@ -294,6 +294,7 @@
       @click="handleCanvasClick"
       @mousemove="handleCanvasMouseMove"
     />
+    <canvas ref="work_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
   </div>
 </template>
@@ -344,6 +345,8 @@ export default {
   created() {
     // Non-reactive: bike_id -> { key, canvas }
     this.outline_cache = new Map()
+    // Incremented by each showBikes() call so older in-flight calls can bail out
+    this.draw_generation = 0
   },
   async mounted() {
     this.bike_images_full_paths = await this.$loadBikeImages2(bike_images_full_paths)
@@ -369,6 +372,7 @@ export default {
     this.ro.unobserve(this.$el)
     window.removeEventListener('keydown', this.handleKeyDown)
     window.removeEventListener('keyup', this.handleKeyUp)
+    this.draw_generation++
     this.clearOutlineCache()
   },
   watch: {
@@ -468,11 +472,16 @@ export default {
       return full_path.url
     },
     async showBikes() {
+      const generation = ++this.draw_generation
+      const isStale = () => generation !== this.draw_generation
+
       this.is_loading = true
 
       await new Promise((resolve) => setTimeout(resolve, 100))
+      if (isStale()) return
 
-      const canvas = this.$refs.offscreen_canvas
+      // Draw in a work canvas: offscreen_canvas keeps the last complete frame for drawMeasurement()
+      const canvas = this.$refs.work_canvas
       if (!canvas) return
 
       // Match canvas buffer size to display size (times dPR) to prevent stretching
@@ -517,10 +526,14 @@ export default {
 
       this.drawBackground(ctx, canvas)
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
-      if (this.show_human_silhouette)
+      if (this.show_human_silhouette) {
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
-      if (this.show_regular_bike_silhouette)
+        if (isStale()) return
+      }
+      if (this.show_regular_bike_silhouette) {
         await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
+        if (isStale()) return
+      }
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -536,6 +549,7 @@ export default {
         const img = new Image()
         img.src = this.getBikeFullImage(bike)
         await img.decode()
+        if (isStale()) return
 
         const img_ratio = img.width / img.height
         const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
@@ -609,6 +623,7 @@ export default {
           bakkieImg.onload = resolve
           bakkieImg.onerror = resolve
         })
+        if (isStale()) return
         const bakkie_width_cm = 34.8
         const bakkie_x = padding + (accessories.l || 0) * each_px_measures_in_cm
         const bakkie_y = canvas.height - padding - (accessories.b || 0) * each_px_measures_in_cm
@@ -620,6 +635,11 @@ export default {
         ctx.drawImage(bakkieImg, bakkie_x, bakkie_y - draw_h, draw_w, draw_h)
         ctx.restore()
       }
+
+      const offscreen_canvas = this.$refs.offscreen_canvas
+      offscreen_canvas.width = canvas.width
+      offscreen_canvas.height = canvas.height
+      offscreen_canvas.getContext('2d').drawImage(canvas, 0, 0)
 
       const visible_canvas = this.$refs.bikes
       visible_canvas.width = canvas.width
