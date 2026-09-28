@@ -6,6 +6,7 @@ else if (navigator.language && navigator.language.includes('fr')) locale = 'fr'
 document.documentElement.lang = locale
 
 const i18n = createI18n({
+  legacy: false,
   locale: locale,
   fallbackLocale: 'en',
   messages: {
