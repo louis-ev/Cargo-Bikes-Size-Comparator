@@ -249,3 +249,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,react,windows,visualstudiocode
 
+# Local Matomo exports
+analytics/
+

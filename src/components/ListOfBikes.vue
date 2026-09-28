@@ -36,27 +36,40 @@
         <SearchField v-model="search_str" />
       </div>
 
-      <div class="_filters">
-        <div class="_bikeTypeFilter">
-          <span v-html="$t('bike_types.by_category')" />
-          <button
-            v-for="[bike_type, count] in all_bike_types"
-            :key="bike_type"
-            type="button"
-            class="_buttonFilter"
-            :class="{
-              'is--active': bike_type_filter === bike_type,
-              'is--disabled': count === 0
-            }"
-            :style="bikeStyleColor(bike_type)"
-            :disabled="count === 0"
-            @click="onBikeTypeFilterClick(bike_type)"
-          >
-            {{ $t(`bike_types.${bike_type}`) }}
-            <span class="_count">{{ count }}</span>
-          </button>
-        </div>
+      <div class="_bikeTypeFilter">
+        <span v-html="$t('bike_types.by_category')" />
+        <button
+          v-for="[bike_type, count] in all_bike_types"
+          :key="bike_type"
+          type="button"
+          class="_buttonFilter"
+          :class="{
+            'is--active': bike_type_filter === bike_type,
+            'is--disabled': count === 0
+          }"
+          :style="bikeStyleColor(bike_type)"
+          :disabled="count === 0"
+          @click="onBikeTypeFilterClick(bike_type)"
+        >
+          {{ $t(`bike_types.${bike_type}`) }}
+          <span class="_count">{{ count }}</span>
+        </button>
 
+        <button
+          type="button"
+          class="_moreFiltersToggle"
+          :aria-expanded="more_filters_open ? 'true' : 'false'"
+          @click="more_filters_open = !more_filters_open"
+        >
+          {{ more_filters_open ? '−' : '+' }}
+          {{ $t('message.more_filters') }}
+          <span v-if="active_more_filters_count" class="_count">
+            {{ active_more_filters_count }}
+          </span>
+        </button>
+      </div>
+
+      <div v-if="more_filters_open" class="_filters">
         <div class="_wheelSizeFilter">
           <span>{{ $t('message.by_wheel_size') }}</span>
           <button
@@ -109,24 +122,75 @@
       </div>
     </div>
 
+    <div v-if="often_compared_bikes.length" class="_oftenCompared">
+      <div class="_oftenComparedTitle">
+        {{ $t('message.pick_from_most_compared', { count: often_compared_bikes.length }) }}
+      </div>
+      <div class="_oftenComparedList">
+        <button
+          v-for="bike in often_compared_bikes"
+          :key="bike.id"
+          type="button"
+          class="_bikePreview"
+          :class="{ 'is--selected': selected_bikes.includes(bike.id) }"
+          @click="onBikePreviewClick(bike.id)"
+        >
+          <div v-if="getBikePreviewImage(bike)">
+            <img
+              loading="lazy"
+              :src="getBikePreviewImage(bike)"
+              :style="{
+                '--scale-factor': 1 / bike.bike_length_percent + '',
+                '--bottom-margin': 1 - bike.bottom_margin_percent / 1 + ''
+              }"
+            />
+          </div>
+          <div class="_bikeTypes">
+            <div
+              v-for="bike_type in getBikeTypes(bike)"
+              :key="bike_type"
+              class="_bikeType"
+              :style="bikeStyleColor(bike_type)"
+              :title="$t(`bike_types.${bike_type}`)"
+            ></div>
+          </div>
+          <span class="_bikeLabel">
+            <BikeName :bike="bike" :show_length="false" />
+          </span>
+          <div v-if="selected_bikes.includes(bike.id)" class="_checkmark">✓</div>
+        </button>
+      </div>
+    </div>
+
     <div v-if="filtered_bikes.length === 0" class="_noMatch">
       {{ $t('message.no_bikes_matched_your_search') }}<br /><br />
     </div>
 
     <div class="_itemTitle" :key="'not_enabled_bikes'" v-else>
-      {{
-        $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
-          count: filtered_bikes.length
-        })
-      }}
+      <template v-if="often_compared_bikes.length">
+        {{ $t('message.or_pick_from_all_bikes', { count: filtered_bikes.length }) }}
+      </template>
+      <template v-else>
+        {{
+          $t('message.click_on_bikes_in_this_list_to_compare_their_size', {
+            count: filtered_bikes.length
+          })
+        }}
+      </template>
     </div>
 
-    <transition-group name="list" tag="div" class="_bikesPreview">
+    <transition-group
+      name="bikesGrid"
+      tag="div"
+      class="_bikesPreview"
+      @before-leave="pinLeavingBike"
+    >
       <button
         type="button"
         class="_bikePreview"
         v-for="bike in filtered_bikes"
         :key="bike.id"
+        :data-bike-id="bike.id"
         @click="onBikePreviewClick(bike.id)"
         :class="{ 'is--selected': selected_bikes.includes(bike.id) }"
       >
@@ -151,6 +215,13 @@
             :title="$t(`bike_types.${bike_type}`)"
           ></div>
         </div>
+        <span
+          v-if="isOftenCompared(bike.id)"
+          class="_oftenComparedBadge"
+          :title="$t('message.often_compared')"
+        >
+          {{ $t('message.often_compared_badge') }}
+        </span>
         <span class="_bikeLabel">
           <BikeName :bike="bike" />
         </span>
@@ -189,6 +260,20 @@
   </div>
 </template>
 <script>
+// Most viewed comparisons in Matomo for 2026, export of 27 Sep 2026.
+const often_compared_bike_ids = [
+  'carrie-rm',
+  'muli',
+  'load60-rm',
+  'urbanarrow',
+  'tern-gsd',
+  'gsd-p10-tern',
+  'quick-haul-long-tern',
+  'tern-hsd',
+  'lepetitporteur-shorty',
+  'omnium-nano'
+]
+
 const bike_images_preview_urls = import.meta.glob('@/assets/bikes/*.png', {
   eager: true,
   import: 'default',
@@ -215,15 +300,25 @@ export default {
       bike_images_preview_urls: [],
       bike_type_filter: null,
       wheel_size_filter: null,
-      frame_material_filter: null
+      frame_material_filter: null,
+      more_filters_open: false
     }
   },
-  created() {},
+  created() {
+    this.leaving_bike_ids = null
+  },
   async mounted() {
     this.bike_images_preview_urls = await this.$loadBikeImages2(bike_images_preview_urls)
   },
   beforeUnmount() {},
-  watch: {},
+  watch: {
+    filtered_bikes(new_bikes, old_bikes) {
+      const new_ids = new Set(new_bikes.map((bike) => bike.id))
+      this.leaving_bike_ids = new Set(
+        old_bikes.map((bike) => bike.id).filter((id) => !new_ids.has(id))
+      )
+    }
+  },
   computed: {
     all_bike_types() {
       // Sizes to merge into one button (ETRTO 622mm rim standard)
@@ -458,6 +553,22 @@ export default {
     filtered_bikes_with_search() {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
+    active_more_filters_count() {
+      return [this.wheel_size_filter, this.frame_material_filter].filter(Boolean).length
+    },
+    is_filtering() {
+      return Boolean(
+        this.search_str ||
+          this.bike_type_filter ||
+          this.wheel_size_filter ||
+          this.frame_material_filter
+      )
+    },
+    often_compared_bikes() {
+      if (this.is_filtering) return []
+      const bikes_by_id = new Map(this.bikes.map((bike) => [bike.id, bike]))
+      return often_compared_bike_ids.map((id) => bikes_by_id.get(id)).filter(Boolean)
+    },
     compareBikesText() {
       const count = this.selected_bikes.length
       const fullText = this.$t('message.compare_bikes', { count })
@@ -508,6 +619,41 @@ export default {
     }
   },
   methods: {
+    pinLeavingBike(el) {
+      // Pin every leaving tile in one pass: measuring them one by one forces a layout per tile.
+      if (!this.leaving_bike_ids) return
+      const leaving_ids = this.leaving_bike_ids
+      this.leaving_bike_ids = null
+
+      const leaving_tiles = [...el.parentNode.children].filter((tile) =>
+        leaving_ids.has(tile.dataset.bikeId)
+      )
+      const viewport_height = window.innerHeight
+      const boxes = leaving_tiles.map((tile) => {
+        const rect = tile.getBoundingClientRect()
+        return {
+          tile,
+          left: tile.offsetLeft,
+          top: tile.offsetTop,
+          width: tile.offsetWidth,
+          height: tile.offsetHeight,
+          is_visible: rect.bottom > 0 && rect.top < viewport_height
+        }
+      })
+      boxes.forEach(({ tile, left, top, width, height, is_visible }) => {
+        Object.assign(tile.style, {
+          position: 'absolute',
+          left: `${left}px`,
+          top: `${top}px`,
+          width: `${width}px`,
+          height: `${height}px`,
+          visibility: is_visible ? '' : 'hidden'
+        })
+      })
+    },
+    isOftenCompared(bike_id) {
+      return often_compared_bike_ids.includes(bike_id)
+    },
     getBikePreviewImage(bike) {
       const thumb = this.bike_images_preview_urls.find((i) => i.original_filename === bike.src)
       if (!thumb) return
@@ -659,10 +805,11 @@ export default {
 ._topBar {
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: baseline;
   padding: 1rem 0;
 }
 
@@ -670,16 +817,39 @@ export default {
   display: flex;
   flex-flow: column;
   gap: 0;
-  flex: 1 1 30ch;
-  align-items: flex-end;
+  flex: 1 1 100%;
+  align-items: flex-start;
 }
 
 ._bikeTypeFilter {
   display: flex;
   flex-flow: row wrap;
+  flex: 1 1 40ch;
   gap: 0.5rem;
   padding: 0.5rem 0;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+._moreFiltersToggle {
+  flex: 0 0 auto;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(150, 150, 150, 0.2);
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: normal;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(150, 150, 150, 0.4);
+  }
+
+  ._count {
+    margin-left: 0.25rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+  }
 }
 
 ._buttonFilter {
@@ -724,7 +894,7 @@ export default {
   gap: 0.5rem;
   padding: 0.5rem 0;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   > span {
     font-weight: normal;
@@ -755,7 +925,53 @@ export default {
   }
 }
 
+._oftenCompared {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+._oftenComparedTitle {
+  // font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+._oftenComparedList {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+
+  ._bikePreview {
+    flex: 0 0 11rem;
+    width: 11rem;
+    height: 11rem;
+    padding: 1.25rem;
+  }
+}
+
+._oftenComparedBadge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  max-width: calc(100% - 2.5rem);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-text);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+._bikePreview.is--selected ._oftenComparedBadge {
+  left: 2.4rem;
+}
+
 ._bikesPreview {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
@@ -899,6 +1115,26 @@ export default {
 .count-leave-from {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+.bikesGrid-move,
+.bikesGrid-enter-active,
+.bikesGrid-leave-active {
+  transition:
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.3s ease;
+}
+
+.bikesGrid-leave-active {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bikesGrid-enter-from,
+.bikesGrid-leave-to {
+  opacity: 0;
+  transform: scale(0.94);
 }
 
 ._addMissingBike {

@@ -294,8 +294,8 @@
       @click="handleCanvasClick"
       @mousemove="handleCanvasMouseMove"
     />
+    <canvas ref="work_canvas" width="1920" height="1920" style="display: none" />
     <canvas ref="offscreen_canvas" width="1920" height="1920" style="display: none" />
-    <canvas ref="processor" width="1920" height="1920" style="display: none" />
   </div>
 </template>
 <script>
@@ -342,7 +342,12 @@ export default {
       canvas_height: 0
     }
   },
-  created() {},
+  created() {
+    // Non-reactive: bike_id -> { key, canvas }
+    this.outline_cache = new Map()
+    // Incremented by each showBikes() call so older in-flight calls can bail out
+    this.draw_generation = 0
+  },
   async mounted() {
     this.bike_images_full_paths = await this.$loadBikeImages2(bike_images_full_paths)
 
@@ -367,9 +372,12 @@ export default {
     this.ro.unobserve(this.$el)
     window.removeEventListener('keydown', this.handleKeyDown)
     window.removeEventListener('keyup', this.handleKeyUp)
+    this.draw_generation++
+    this.clearOutlineCache()
   },
   watch: {
-    canvas_image_style_outline() {
+    canvas_image_style_outline(is_outline) {
+      if (!is_outline) this.clearOutlineCache()
       setTimeout(() => {
         this.showBikes()
       }, 30)
@@ -464,11 +472,16 @@ export default {
       return full_path.url
     },
     async showBikes() {
+      const generation = ++this.draw_generation
+      const isStale = () => generation !== this.draw_generation
+
       this.is_loading = true
 
       await new Promise((resolve) => setTimeout(resolve, 100))
+      if (isStale()) return
 
-      const canvas = this.$refs.offscreen_canvas
+      // Draw in a work canvas: offscreen_canvas keeps the last complete frame for drawMeasurement()
+      const canvas = this.$refs.work_canvas
       if (!canvas) return
 
       // Match canvas buffer size to display size (times dPR) to prevent stretching
@@ -513,10 +526,14 @@ export default {
 
       this.drawBackground(ctx, canvas)
       this.drawGrid(ctx, canvas, padding, each_px_measures_in_cm)
-      if (this.show_human_silhouette)
+      if (this.show_human_silhouette) {
         await this.drawSilhouette(ctx, canvas, padding, each_px_measures_in_cm)
-      if (this.show_regular_bike_silhouette)
+        if (isStale()) return
+      }
+      if (this.show_regular_bike_silhouette) {
         await this.drawRegularBike(ctx, canvas, padding, each_px_measures_in_cm)
+        if (isStale()) return
+      }
 
       if (this.canvas_image_style_outline) {
         ctx.globalCompositeOperation = 'multiply'
@@ -524,12 +541,15 @@ export default {
         ctx.globalCompositeOperation = 'source-over'
       }
 
+      if (this.canvas_image_style_outline) this.pruneOutlineCache()
+
       console.log('drawing bikes')
       for (const bike of this.sorted_enabled_bikes) {
         console.log('drawing bike', bike.id)
         const img = new Image()
         img.src = this.getBikeFullImage(bike)
         await img.decode()
+        if (isStale()) return
 
         const img_ratio = img.width / img.height
         const draw_w = (bike.bike_length_cm / bike.bike_length_percent) * each_px_measures_in_cm
@@ -549,40 +569,13 @@ export default {
         let user_rotation = this.bikes_adjustments[bike.id]?.rotation || 0
 
         if (this.canvas_image_style_outline) {
-          // Offscreen canvas for edge detection on the image
-          const processorCanvas = this.$refs.processor
-          if (!processorCanvas) return
-
-          processorCanvas.width = canvas.width
-          processorCanvas.height = canvas.height
-
-          const processorCtx = processorCanvas.getContext('2d')
-          processorCtx.globalCompositeOperation = 'source-over'
-
-          // white BG for a clean edge detect result
-          processorCtx.fillStyle = 'white'
-          processorCtx.fillRect(0, 0, canvas.width, canvas.height)
-
-          // Save context state
-          processorCtx.save()
-          // Translate to center of image
-          processorCtx.translate(draw_x + draw_w / 2, draw_y + draw_h / 2)
-          // Rotate
-          processorCtx.rotate((user_rotation * Math.PI) / 180)
-          // Draw image centered
-          processorCtx.drawImage(img, -draw_w / 2, -draw_h / 2, draw_w, draw_h)
-          // Restore context state
-          processorCtx.restore()
-
-          // detect edges
-          edge_detect(processorCanvas)
-
-          // colorize
-          let color = bike.color
-          colorize(processorCanvas, color)
+          const outline_canvas = this.getBikeOutline(bike, img, draw_w, draw_h, user_rotation)
+          // Integer offsets keep the 1px edges crisp instead of resampling them
+          const outline_x = Math.round(draw_x + draw_w / 2 - outline_canvas.width / 2)
+          const outline_y = Math.round(draw_y + draw_h / 2 - outline_canvas.height / 2)
 
           ctx.globalAlpha = user_opacity_adjustment
-          ctx.drawImage(processorCanvas, 0, 0, processorCanvas.width, processorCanvas.height)
+          ctx.drawImage(outline_canvas, outline_x, outline_y)
           ctx.globalAlpha = 1
         } else {
           // Save context state
@@ -630,6 +623,7 @@ export default {
           bakkieImg.onload = resolve
           bakkieImg.onerror = resolve
         })
+        if (isStale()) return
         const bakkie_width_cm = 34.8
         const bakkie_x = padding + (accessories.l || 0) * each_px_measures_in_cm
         const bakkie_y = canvas.height - padding - (accessories.b || 0) * each_px_measures_in_cm
@@ -642,6 +636,11 @@ export default {
         ctx.restore()
       }
 
+      const offscreen_canvas = this.$refs.offscreen_canvas
+      offscreen_canvas.width = canvas.width
+      offscreen_canvas.height = canvas.height
+      offscreen_canvas.getContext('2d').drawImage(canvas, 0, 0)
+
       const visible_canvas = this.$refs.bikes
       visible_canvas.width = canvas.width
       visible_canvas.height = canvas.height
@@ -652,6 +651,49 @@ export default {
       }
 
       this.is_loading = false
+    },
+    getBikeOutline(bike, img, draw_w, draw_h, rotation) {
+      // Edges depend on the drawn size (line thickness stays 1 device px), not on position/opacity
+      const key = [img.src, draw_w, draw_h, rotation, bike.color].join('|')
+      const cached = this.outline_cache.get(bike.id)
+      if (cached?.key === key) return cached.canvas
+
+      const angle = (rotation * Math.PI) / 180
+      const cos = Math.abs(Math.cos(angle))
+      const sin = Math.abs(Math.sin(angle))
+      // White margin so the image border is detected as an edge
+      const margin = 2
+      const outline_canvas = cached?.canvas || document.createElement('canvas')
+      outline_canvas.width = Math.ceil(draw_w * cos + draw_h * sin) + margin * 2
+      outline_canvas.height = Math.ceil(draw_w * sin + draw_h * cos) + margin * 2
+
+      const outline_ctx = outline_canvas.getContext('2d', { willReadFrequently: true })
+      outline_ctx.fillStyle = 'white'
+      outline_ctx.fillRect(0, 0, outline_canvas.width, outline_canvas.height)
+      outline_ctx.save()
+      outline_ctx.translate(outline_canvas.width / 2, outline_canvas.height / 2)
+      outline_ctx.rotate(angle)
+      outline_ctx.drawImage(img, -draw_w / 2, -draw_h / 2, draw_w, draw_h)
+      outline_ctx.restore()
+
+      edge_detect(outline_canvas)
+      colorize(outline_canvas, bike.color)
+
+      this.outline_cache.set(bike.id, { key, canvas: outline_canvas })
+      return outline_canvas
+    },
+    pruneOutlineCache() {
+      const enabled_ids = new Set(this.enabled_bikes.map((bike) => bike.id))
+      for (const [bike_id, { canvas }] of this.outline_cache) {
+        if (enabled_ids.has(bike_id)) continue
+        // Zero-sizing frees the pixel buffer right away (Safari keeps it until GC otherwise)
+        canvas.width = canvas.height = 0
+        this.outline_cache.delete(bike_id)
+      }
+    },
+    clearOutlineCache() {
+      for (const { canvas } of this.outline_cache.values()) canvas.width = canvas.height = 0
+      this.outline_cache.clear()
     },
     drawBackground(ctx, canvas) {
       ctx.globalCompositeOperation = 'source-over'

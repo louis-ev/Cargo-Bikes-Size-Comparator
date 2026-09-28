@@ -6,6 +6,7 @@ else if (navigator.language && navigator.language.includes('fr')) locale = 'fr'
 document.documentElement.lang = locale
 
 const i18n = createI18n({
+  legacy: false,
   locale: locale,
   fallbackLocale: 'en',
   messages: {
@@ -105,6 +106,11 @@ const i18n = createI18n({
         unit: 'Unit',
         centimeters: 'centimeters',
         inches: 'inches',
+        often_compared: 'Bikes most compared on this website in 2026',
+        pick_from_most_compared: 'Pick from the {count} bikes most compared in 2026…',
+        or_pick_from_all_bikes: '…or from all {count} bikes',
+        often_compared_badge: 'Most compared, 2026',
+        more_filters: 'More filters',
         by_wheel_size: 'By wheel size:',
         by_frame_material: 'By frame material:',
         unknown_wheel_size: 'Unknown',
@@ -320,6 +326,11 @@ const i18n = createI18n({
         unit: 'Unité',
         centimeters: 'centimètres',
         inches: 'pouces',
+        often_compared: 'Vélos les plus comparés sur ce site en 2026',
+        pick_from_most_compared: 'Choisissez parmi les {count} vélos les plus comparés en 2026…',
+        or_pick_from_all_bikes: '…ou parmi les {count} vélos',
+        often_compared_badge: 'Les plus comparés, 2026',
+        more_filters: 'Plus de filtres',
         by_wheel_size: 'Par taille de roues :',
         by_frame_material: 'Par matériau de cadre :',
         unknown_wheel_size: 'Inconnue',
