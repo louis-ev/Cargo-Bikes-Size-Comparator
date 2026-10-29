@@ -897,7 +897,28 @@ export default {
   flex-flow: column;
   gap: 0;
   flex: 1 1 100%;
-  align-items: flex-start;
+  align-items: stretch;
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.5rem;
+
+  ._wheelSizeFilter {
+    padding: 0.75rem 0;
+
+    + ._wheelSizeFilter {
+      border-top: 1px solid var(--color-gray-light);
+    }
+
+    > span,
+    > label {
+      flex: 0 0 20ch;
+      margin-right: 0;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
 }
 
 ._bikeTypeFilter {
