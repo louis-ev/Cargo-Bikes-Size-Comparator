@@ -559,9 +559,9 @@ export default {
     is_filtering() {
       return Boolean(
         this.search_str ||
-          this.bike_type_filter ||
-          this.wheel_size_filter ||
-          this.frame_material_filter
+        this.bike_type_filter ||
+        this.wheel_size_filter ||
+        this.frame_material_filter
       )
     },
     often_compared_bikes() {
@@ -902,10 +902,28 @@ export default {
   }
 
   button {
+    background-color: white;
+    // box-shadow: inset 0 0 0 1px var(--color-gray-light);
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      background-color: var(--color-accent);
+      box-shadow: none;
+    }
+
+    &.is--active,
+    &.is--active:hover,
+    &.is--active:focus-visible {
+      background-color: var(--color-text);
+      color: var(--color-background);
+      box-shadow: none;
+    }
+
     ._count {
       font-size: 0.6rem;
       font-weight: bold;
       margin-left: 0.25rem;
+      opacity: 0.6;
     }
 
     &._unknownWheelSize {
@@ -918,8 +936,8 @@ export default {
       }
 
       &.is--active {
-        // background-color: rgba(100, 100, 100, 0.7);
-        color: white;
+        background-color: var(--color-text);
+        color: var(--color-background);
       }
     }
   }
