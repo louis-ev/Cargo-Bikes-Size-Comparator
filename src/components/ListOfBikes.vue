@@ -119,6 +119,35 @@
             <span class="_count">{{ count }}</span>
           </button>
         </div>
+
+        <div class="_wheelSizeFilter">
+          <label for="manufacturer_filter">{{ $t('message.by_manufacturer') }}</label>
+          <select
+            id="manufacturer_filter"
+            class="_manufacturerSelect"
+            :class="{ 'is--active': manufacturer_filter }"
+            v-model="manufacturer_filter"
+          >
+            <option :value="null">{{ $t('message.all_manufacturers') }}</option>
+            <option
+              v-for="[manufacturer, count] in all_manufacturers"
+              :key="manufacturer"
+              :value="manufacturer"
+              :disabled="count === 0"
+            >
+              {{ manufacturer }} ({{ count }})
+            </option>
+          </select>
+          <button
+            v-if="manufacturer_filter"
+            type="button"
+            class="_buttonFilter _clearManufacturer"
+            :title="$t('message.all_manufacturers')"
+            @click="manufacturer_filter = null"
+          >
+            ×
+          </button>
+        </div>
       </div>
     </div>
 
@@ -301,6 +330,7 @@ export default {
       bike_type_filter: null,
       wheel_size_filter: null,
       frame_material_filter: null,
+      manufacturer_filter: null,
       more_filters_open: false
     }
   },
@@ -335,7 +365,7 @@ export default {
       })
 
       // Filter bikes based on wheel_size_filter and search
-      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+      const bikes_to_count = this.filtered_bikes_with_manufacturer.filter((bike) => {
         // Apply wheel size filter if active
         if (this.wheel_size_filter) {
           if (this.wheel_size_filter === 'unknown') {
@@ -387,7 +417,7 @@ export default {
       })
 
       // Filter bikes based on bike_type_filter, frame_material_filter and search
-      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+      const bikes_to_count = this.filtered_bikes_with_manufacturer.filter((bike) => {
         // Apply bike type filter if active
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
@@ -449,7 +479,7 @@ export default {
       categories.forEach((c) => (all_materials[c] = 0))
 
       // Filter bikes based on other filters
-      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+      const bikes_to_count = this.filtered_bikes_with_manufacturer.filter((bike) => {
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
           if (!types.includes(this.bike_type_filter)) return false
@@ -497,7 +527,7 @@ export default {
     },
     unknown_wheel_size_count() {
       // Filter bikes based on bike_type_filter and search
-      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+      const bikes_to_count = this.filtered_bikes_with_manufacturer.filter((bike) => {
         // Apply bike type filter if active
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
@@ -519,7 +549,7 @@ export default {
       const etrto_622_sizes = ['28', '29', '700c']
       const etrto_622_label = '28/29/700c'
 
-      return this.filtered_bikes_with_search.filter((bike) => {
+      return this.filtered_bikes_with_manufacturer.filter((bike) => {
         // Bike type filter
         if (this.bike_type_filter) {
           const types = bike.bike_type ? bike.bike_type.split('/') : []
@@ -553,15 +583,64 @@ export default {
     filtered_bikes_with_search() {
       return this.$filterBikesBySearch(this.bikes, this.search_str)
     },
+    filtered_bikes_with_manufacturer() {
+      if (!this.manufacturer_filter) return this.filtered_bikes_with_search
+      return this.filtered_bikes_with_search.filter(
+        (bike) => bike.manufacturer === this.manufacturer_filter
+      )
+    },
+    all_manufacturers() {
+      const all_manufacturers = {}
+      this.bikes.forEach((bike) => {
+        if (bike.manufacturer) all_manufacturers[bike.manufacturer] = 0
+      })
+
+      // Filter bikes based on other filters
+      const etrto_622_sizes = ['28', '29', '700c']
+      const etrto_622_label = '28/29/700c'
+      const bikes_to_count = this.filtered_bikes_with_search.filter((bike) => {
+        if (this.bike_type_filter) {
+          const types = bike.bike_type ? bike.bike_type.split('/') : []
+          if (!types.includes(this.bike_type_filter)) return false
+        }
+        if (this.wheel_size_filter) {
+          if (this.wheel_size_filter === 'unknown') {
+            if (bike.wheel_size && bike.wheel_size.length > 0) return false
+          } else if (this.wheel_size_filter === etrto_622_label) {
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.some((size) => etrto_622_sizes.includes(size))) return false
+          } else {
+            if (!bike.wheel_size || bike.wheel_size.length === 0) return false
+            if (!bike.wheel_size.includes(this.wheel_size_filter)) return false
+          }
+        }
+        if (this.frame_material_filter) {
+          if (!this.bikeHasMaterial(bike, this.frame_material_filter)) return false
+        }
+        return true
+      })
+
+      bikes_to_count.forEach((bike) => {
+        if (all_manufacturers[bike.manufacturer] !== undefined)
+          all_manufacturers[bike.manufacturer]++
+      })
+
+      return Object.entries(all_manufacturers).sort((a, b) =>
+        a[0].localeCompare(b[0], undefined, { sensitivity: 'base' })
+      )
+    },
     active_more_filters_count() {
-      return [this.wheel_size_filter, this.frame_material_filter].filter(Boolean).length
+      return [this.wheel_size_filter, this.frame_material_filter, this.manufacturer_filter].filter(
+        Boolean
+      ).length
     },
     is_filtering() {
       return Boolean(
         this.search_str ||
         this.bike_type_filter ||
         this.wheel_size_filter ||
-        this.frame_material_filter
+        this.frame_material_filter ||
+        this.manufacturer_filter
       )
     },
     often_compared_bikes() {
@@ -896,9 +975,28 @@ export default {
   align-items: center;
   justify-content: flex-start;
 
-  > span {
+  > span,
+  > label {
     font-weight: normal;
     margin-right: 0.5rem;
+  }
+
+  > label {
+    display: inline;
+    margin-bottom: 0;
+  }
+
+  ._manufacturerSelect {
+    max-width: 30ch;
+    font-size: 0.8rem;
+    // box-shadow: inset 0 0 0 1px var(--color-gray-light);
+
+    &.is--active {
+      background-color: var(--color-text);
+      color: var(--color-background);
+      font-weight: bold;
+      box-shadow: none;
+    }
   }
 
   button {
