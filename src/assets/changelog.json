@@ -1,11 +1,67 @@
 [
   {
+    "date": "2026-10-29",
+    "type": "ui",
+    "title_en": "Filter by manufacturer",
+    "title_fr": "Filtre par fabricant",
+    "body_en": "A new filter in “More filters” lets you pick a manufacturer, with the number of matching bikes.",
+    "body_fr": "Un nouveau filtre dans « Plus de filtres » permet de choisir un fabricant, avec le nombre de vélos correspondants."
+  },
+  {
+    "date": "2026-10-29",
+    "type": "ui",
+    "title_en": "Clearer extra filters",
+    "title_fr": "Filtres supplémentaires plus lisibles",
+    "body_en": "Extra filters now sit in their own panel, opened by a button on its own line, and the active filter is easier to spot.",
+    "body_fr": "Les filtres supplémentaires sont regroupés dans un encart, ouvert par un bouton sur sa propre ligne, et le filtre actif est plus facile à repérer."
+  },
+  {
+    "date": "2026-10-29",
+    "type": "bike",
+    "title_en": "Decathlon E-Three 500",
+    "title_fr": "Decathlon E-Three 500",
+    "body_en": "The R500E now also covers its successor, the E-Three 500, which shares the same frame and dimensions.",
+    "body_fr": "Le R500E couvre désormais aussi son successeur, l’E-Three 500, qui partage le même cadre et les mêmes dimensions."
+  },
+  {
+    "date": "2026-10-29",
+    "type": "bike",
+    "title_en": "Lemmo 3",
+    "title_fr": "Lemmo 3",
+    "body_en": "New longtail added to the database.",
+    "body_fr": "Nouveau longtail ajouté à la base de données."
+  },
+  {
     "date": "2026-09-28",
     "type": "bike",
     "title_en": "Belleville Machine Folgo",
     "title_fr": "Belleville Machine Folgo",
     "body_en": "New foldable longjohn added to the database, with its folded view.",
     "body_fr": "Nouveau longjohn pliant ajouté à la base de données, avec sa vue pliée."
+  },
+  {
+    "date": "2026-09-28",
+    "type": "ui",
+    "title_en": "Most compared bikes in 2026",
+    "title_fr": "Vélos les plus comparés en 2026",
+    "body_en": "The home page now suggests the bikes most compared on this website in 2026.",
+    "body_fr": "La page d’accueil propose désormais les vélos les plus comparés sur ce site en 2026."
+  },
+  {
+    "date": "2026-09-28",
+    "type": "ui",
+    "title_en": "Reorganised filters",
+    "title_fr": "Filtres réorganisés",
+    "body_en": "Filters moved to the left, extra filters are folded by default, and the bike list animates faster when filtering.",
+    "body_fr": "Les filtres sont à gauche, les filtres supplémentaires sont repliés par défaut, et la liste des vélos s’anime plus vite lors du filtrage."
+  },
+  {
+    "date": "2026-09-28",
+    "type": "fix",
+    "title_en": "Bike drawing in comparisons",
+    "title_fr": "Affichage des vélos dans la comparaison",
+    "body_en": "Fixed bikes that sometimes failed to draw in the comparison view, and sped up drawing their outlines.",
+    "body_fr": "Correction des vélos qui ne s’affichaient parfois pas dans la comparaison, et tracé de leurs contours plus rapide."
   },
   {
     "date": "2026-09-15",
