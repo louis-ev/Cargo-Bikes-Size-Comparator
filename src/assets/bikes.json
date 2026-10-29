@@ -4382,5 +4382,22 @@
     "assembled_in": "",
     "wheel_size": ["20"],
     "frame_material": "Aluminium 6061"
+  },
+  {
+    "id": "hara-cargo",
+    "manufacturer": "Hara",
+    "model": "Cargo",
+    "bike_type": "longjohn",
+    "src": "hara-cargo.png",
+    "bike_length_cm": 241,
+    "weight": 22,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.009,
+    "url": "https://hara-cargo.cc/en/hara-bike/",
+    "frame_made_in": "Germany",
+    "assembled_in": "Germany",
+    "wheel_size": ["20", "27.5"],
+    "frame_material": "Steel"
   }
 ]
