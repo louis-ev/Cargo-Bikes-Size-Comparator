@@ -4334,5 +4334,19 @@
     "assembled_in": "China",
     "wheel_size": ["20", "24"],
     "frame_material": "Aluminium"
+  },
+  {
+    "id": "circe-morpheus",
+    "manufacturer": "Circe",
+    "model": "Morpheus",
+    "bike_type": "shortjohn",
+    "src": "circe-morpheus.png",
+    "bike_length_cm": 190,
+    "weight": 20,
+    "bike_length_percent": 0.961,
+    "left_margin_percent": 0.018,
+    "bottom_margin_percent": 0.056,
+    "url": "https://www.circecycles.com/products/morpheus/",
+    "assembled_in": "UK"
   }
 ]
