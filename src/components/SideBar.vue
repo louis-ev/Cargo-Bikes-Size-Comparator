@@ -149,7 +149,7 @@
 
       <div class="_sidebarActions">
         <button type="button" data-color="black" @click="$emit('showAddBikeModal')">
-          ＋
+          +
           {{ $t('message.add_a_bike') }}
         </button>
       </div>
@@ -159,7 +159,7 @@
 
     <!-- <div class="_addMissingBike">
       <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
-        ＋
+        +
         {{ $t('message.add_a_bike') }}
       </button>
     </div> -->

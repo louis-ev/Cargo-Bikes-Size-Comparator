@@ -16,7 +16,7 @@
             data-size="big"
             @click="$emit('showAddBikeModal')"
           >
-            ＋
+            +
             {{ $t('message.add_a_bike') }}
           </button>
           <button
@@ -261,7 +261,7 @@
       <div class="_addMissingBike">
         {{ $t('message.cant_find_a_bike') }}
         <button type="button" data-color="black" data-size="big" @click="$emit('showAddBikeModal')">
-          ＋
+          +
           {{ $t('message.add_a_bike') }}
         </button>
       </div>
@@ -868,7 +868,7 @@ export default {
     display: flex;
     flex-flow: row wrap;
     gap: 0.5rem;
-    align-items: center;
+    align-items: stretch;
   }
 
   :deep(._madeBy hr) {
