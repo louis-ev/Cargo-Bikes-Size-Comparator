@@ -54,10 +54,13 @@
           {{ $t(`bike_types.${bike_type}`) }}
           <span class="_count">{{ count }}</span>
         </button>
+      </div>
 
+      <div class="_moreFiltersRow">
         <button
           type="button"
           class="_moreFiltersToggle"
+          :class="{ 'is--open': more_filters_open }"
           :aria-expanded="more_filters_open ? 'true' : 'false'"
           @click="more_filters_open = !more_filters_open"
         >
@@ -931,24 +934,41 @@ export default {
   justify-content: flex-start;
 }
 
-._moreFiltersToggle {
-  flex: 0 0 auto;
-  margin-left: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  background-color: rgba(150, 150, 150, 0.2);
-  color: inherit;
-  font-size: 0.8rem;
-  font-weight: normal;
+._moreFiltersRow {
+  flex: 1 1 100%;
+}
 
-  &:hover,
-  &:focus-visible {
-    background-color: rgba(150, 150, 150, 0.4);
+._moreFiltersToggle {
+  padding: 0.35rem 0.9rem;
+  border-radius: 1.5rem;
+  background-color: white;
+  box-shadow: inset 0 0 0 1px var(--color-text);
+  color: inherit;
+  font-size: 0.9rem;
+
+  &.is--open {
+    background-color: var(--color-text);
+    color: var(--color-background);
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    box-shadow: none;
   }
 
   ._count {
-    margin-left: 0.25rem;
-    font-size: 0.6rem;
+    display: inline-block;
+    min-width: 1.2rem;
+    margin-left: 0.35rem;
+    padding: 0 0.3rem;
+    border-radius: 0.6rem;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-size: 0.7rem;
     font-weight: bold;
+    text-align: center;
   }
 }
 
