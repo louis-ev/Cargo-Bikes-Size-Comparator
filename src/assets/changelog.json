@@ -2,6 +2,14 @@
   {
     "date": "2026-10-29",
     "type": "bike",
+    "title_en": "REI Co-op Cycles Generation e1.1",
+    "title_fr": "REI Co-op Cycles Generation e1.1",
+    "body_en": "New compact bike added to the database.",
+    "body_fr": "Nouveau vélo compact ajouté à la base de données."
+  },
+  {
+    "date": "2026-10-29",
+    "type": "bike",
     "title_en": "Gitane G-Life Compact",
     "title_fr": "Gitane G-Life Compact",
     "body_en": "New compact bike added to the database.",

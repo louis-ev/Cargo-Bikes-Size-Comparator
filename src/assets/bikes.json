@@ -4365,5 +4365,22 @@
     "assembled_in": "",
     "wheel_size": ["20"],
     "frame_material": "Aluminium 6061T6"
+  },
+  {
+    "id": "rei-generation-e1-1",
+    "manufacturer": "REI Co-op Cycles",
+    "model": "Generation e1.1",
+    "bike_type": "compact",
+    "src": "rei-generation-e1-1.png",
+    "bike_length_cm": 160,
+    "weight": 24.5,
+    "bike_length_percent": 1,
+    "left_margin_percent": 0,
+    "bottom_margin_percent": 0.076,
+    "url": "https://www.rei.com/product/189967/co-op-cycles-generation-e11-electric-bike",
+    "frame_made_in": "",
+    "assembled_in": "",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061"
   }
 ]
