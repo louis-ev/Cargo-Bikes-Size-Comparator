@@ -2,6 +2,14 @@
   {
     "date": "2026-10-29",
     "type": "bike",
+    "title_en": "Gitane G-Life Compact",
+    "title_fr": "Gitane G-Life Compact",
+    "body_en": "New compact bike added to the database.",
+    "body_fr": "Nouveau vélo compact ajouté à la base de données."
+  },
+  {
+    "date": "2026-10-29",
+    "type": "bike",
     "title_en": "Circe Morpheus",
     "title_fr": "Circe Morpheus",
     "body_en": "New shortjohn added to the database.",

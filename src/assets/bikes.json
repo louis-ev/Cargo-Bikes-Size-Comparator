@@ -4348,5 +4348,22 @@
     "bottom_margin_percent": 0.056,
     "url": "https://www.circecycles.com/products/morpheus/",
     "assembled_in": "UK"
+  },
+  {
+    "id": "gitane-compact",
+    "manufacturer": "Gitane",
+    "model": "G-Life Compact",
+    "bike_type": "compact",
+    "src": "gitane-compact.png",
+    "bike_length_cm": 172,
+    "weight": 27.5,
+    "bike_length_percent": 0.838,
+    "left_margin_percent": 0.082,
+    "bottom_margin_percent": 0.076,
+    "url": "https://www.cyclesgitane.fr/velos/g-life-compact-2-1",
+    "frame_made_in": "",
+    "assembled_in": "",
+    "wheel_size": ["20"],
+    "frame_material": "Aluminium 6061T6"
   }
 ]
