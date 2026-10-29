@@ -4315,5 +4315,22 @@
       "left_margin_percent": 0.273,
       "bottom_margin_percent": 0.043
     }
+  },
+  {
+    "id": "lemmo-3",
+    "manufacturer": "Lemmo",
+    "model": "Lemmo 3",
+    "bike_type": "longtail",
+    "src": "lemmo-3.png",
+    "bike_length_cm": 195.6,
+    "weight": 39,
+    "bike_length_percent": 0.916,
+    "left_margin_percent": 0.042,
+    "bottom_margin_percent": 0.324,
+    "url": "https://www.lemmofuture.com/pages/apv",
+    "frame_made_in": "China",
+    "assembled_in": "China",
+    "wheel_size": ["20", "24"],
+    "frame_material": "Aluminium"
   }
 ]
